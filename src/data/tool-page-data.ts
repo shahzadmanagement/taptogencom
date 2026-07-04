@@ -1,4 +1,4 @@
-﻿import type { Tool } from './tools';
+import type { Tool } from './tools';
 
 const pass28NameControls = { modeId: 'pass28-style', modeLabel: 'Idea Type', modes: [{ value: 'all', label: 'All Ideas' }, { value: 'original-names', label: 'Original Names' }, { value: 'world-style', label: 'World Style' }, { value: 'handle-style', label: 'Handle Style' }, { value: 'lore-card', label: 'Lore Card' }, { value: 'safety-note', label: 'Safety Note' }] };
 const pass28TextControls = { modeId: 'pass28-style', modeLabel: 'Text Type', modes: [{ value: 'all', label: 'All Text' }, { value: 'dialogue', label: 'Dialogue' }, { value: 'status-text', label: 'Status Text' }, { value: 'lore-card', label: 'Lore Card' }, { value: 'caption', label: 'Caption' }, { value: 'safety-note', label: 'Safety Note' }] };
@@ -2041,6 +2041,20 @@ const premiumGuideCopy: Record<string, { howTo: string[]; tips: { title: string;
       { title: "Keep it usable", body: "Favor clear wording that can be adapted without extra cleanup." },
       { title: "Compare before choosing", body: "Generate multiple drafts, then combine the strongest parts instead of accepting the first result." },
       { title: "Review the details", body: "Check accuracy, originality, tone, and any rules that apply to product pages, help centers, landing pages, and onboarding docs." }]},
+  'fancy-text-generator': {
+    howTo: [
+      "Type or paste your text into the input field above. The tool automatically maps standard characters to stylistic Unicode representations.",
+      "Use the Style Category filter to focus on Unicode Fonts, Decorations & Borders, or High Compatibility options.",
+      "Select a Decor Wrap option to wrap all previews in decorative symbols like stars, hearts, brackets, or wings.",
+      "Browse the live preview cards showing the formatted outputs, then click Copy on your favorite style to copy it directly to your clipboard."
+    ],
+    tips: [
+      { title: "Check platform compatibility", body: "While bold, italic, and small caps work on most social media apps, ornate gothic or complex Zalgo symbols can look like boxes on older operating systems." },
+      { title: "Prioritize accessibility (WCAG)", body: "Decorative Unicode characters are read aloud by screen readers as mathematical symbols (e.g., 'Mathematical Bold Capital A') rather than normal letters. Avoid using them for main body text or critical links." },
+      { title: "Combine with emojis", body: "Aesthetic borders like stars and hearts look even better when you add relevant emojis (like Sparkles ✨ or Hearts ❤️) inside the input text." },
+      { title: "Use for emphasis only", body: "Keep decorative fonts limited to profile names, bio taglines, post headings, or short captions to keep your content highly scannable and professional." }
+    ]
+  },
   'flashcard-generator': {
     howTo: [
       "Enter the flashcard prompts you need, including topic, difficulty, answer style, examples, and number of cards.",

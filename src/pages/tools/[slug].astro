@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseLayout from 'theme/layouts/BaseLayout.astro';
 import { tools, getRelatedTools, type Tool } from '@/data/tools';
 import { getEffectiveGuideCopy, getNoindexSafetyProfile, noindexToolSlugs, pass20ControlMap } from '@/data/tool-page-data';
@@ -31,7 +31,7 @@ const toolSchema = {
   "@type": "WebApplication",
   "name": tool.name,
   "url": `https://taptogen.com/tools/${tool.slug}/`,
-  "description": tool.description,
+  "description": tool.description.replace(/<[^>]*>/g, ''), // Strip HTML tags for JSON schema validity
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -63,7 +63,7 @@ const faqSchema = effectiveFaqItems.length > 0 ? {
   "mainEntity": effectiveFaqItems.map(f => ({
     "@type": "Question",
     "name": f.q,
-    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    "acceptedAnswer": { "@type": "Answer", "text": f.a.replace(/<[^>]*>/g, '') } // Strip HTML for schema validity
   }))
 } : null;
 
@@ -217,7 +217,7 @@ const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => ge
       <div class="content-section premium-content-section">
         <section class="content-card intro-card">
           <h2>What is {tool.name}?</h2>
-          <p>{tool.description}</p>
+          <p set:html={tool.description}></p>
         </section>
 
         <section class="content-card">
@@ -273,7 +273,7 @@ const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => ge
                     <span>{faq.q}</span>
                     <span class="faq-icon">+</span>
                   </button>
-                  <div class="faq-answer"><p>{faq.a}</p></div>
+                  <div class="faq-answer"><p set:html={faq.a}></p></div>
                 </div>
               ))}
             </div>
@@ -325,4 +325,3 @@ const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => ge
     import '@/scripts/tool-workspace';
   </script>
 </BaseLayout>
-

@@ -35,25 +35,74 @@ export const tools: Tool[] = [
     slug: 'fancy-text-generator',
     name: 'Fancy Text Generator',
     icon: '✨',
-    tagline: 'Fancy Text Generator with focused options and review notes',
-    description: 'Use Fancy Text Generator to create focused draft options with your topic and constraints. Review, edit, and adapt results before use.',
+    tagline: 'Convert plain text to 50+ aesthetic Unicode fonts & decorations instantly',
+    description: 'The <strong>Fancy Text Generator</strong> is a free browser-based utility that transforms plain text into stylish, decorative Unicode font variations. Convert standard text into bold, italic, cursive/script, monospace, gothic, small caps, or symbol-wrapped designs for Instagram, TikTok, Twitter, Discord, and more. Try our specialized sibling utilities like the <a href="/tools/bold-text-generator/">Bold Text Generator</a>, <a href="/tools/cursive-text-generator/">Cursive Text Generator</a>, <a href="/tools/italic-text-generator/">Italic Text Generator</a>, <a href="/tools/strikethrough-text-generator/">Strikethrough Text Generator</a>, <a href="/tools/underline-text-generator/">Underline Text Generator</a>, and <a href="/tools/vaporwave-text-generator/">Vaporwave Text Generator</a> to customize individual styles.',
     category: 'Font & Text Style Generators',
     categorySlug: 'text-font-generators',
     primaryKeyword: 'fancy text generator',
-    secondaryKeywords: ['cool text generator', 'text font generator', 'special text generator', 'stylish text generator', 'font generator copy and paste'],
-    metaTitle: "Fancy Text Generator - Specific text variations",
-    metaDescription: 'Use Fancy Text Generator to create focused draft options with your topic and constraints. Review, edit, and adapt results before use.',
+    secondaryKeywords: ['fancy font generator', 'cool text generator', 'copy and paste fonts', 'aesthetic text generator', 'text font generator', 'stylish text generator', 'unicode text converter'],
+    metaTitle: 'Fancy Text Generator - Copy & Paste 50+ Aesthetic Fonts',
+    metaDescription: 'Generate stylish fancy text with 50+ aesthetic fonts, symbols, and decorations. Copy and paste cursive, bold, gothic, small caps, and bubble styles for social media.',
     userIntent: 'User wants to convert plain text into decorative Unicode font styles for social media.',
     generatorType: 'text-transform',
     popular: true,
-    faqItems: [{"q":"What should I enter in Fancy Text Generator?","a":"Add the topic, audience, tone, format, and limits the result should follow."},{"q":"How do I improve Fancy Text Generator results?","a":"Use examples or constraints, compare outputs, and keep the clearest editable draft."},{"q":"Can I publish Fancy Text Generator output as-is?","a":"Review accuracy, originality, readability, and project rules before publishing."}],
-    relatedSlugs: ["bold-text-generator","cursive-text-generator","unicode-text-generator","cool-text-generator"],
+    toolOptions: [
+      {
+        type: 'select',
+        options: [
+          { value: 'all', label: 'All Styles' },
+          { value: 'fonts', label: 'Unicode Fonts Only' },
+          { value: 'decorations', label: 'Decorations & Borders' },
+          { value: 'compat', label: 'High Compatibility' }
+        ],
+        id: 'fancy-filter',
+        label: 'Style Category',
+        default: 'all'
+      },
+      {
+        type: 'select',
+        options: [
+          { value: 'none', label: 'None' },
+          { value: 'stars', label: '★彡 Stars 彡★' },
+          { value: 'hearts', label: '♥ Heart Cuties ♥' },
+          { value: 'brackets', label: '【】 Bold Brackets' },
+          { value: 'wings', label: '꧁༒ Winged Borders ༒꧂' },
+          { value: 'sparkles', label: '✧*。Sparkles ✧*。' }
+        ],
+        id: 'fancy-decor',
+        label: 'Decor Wrap',
+        default: 'none'
+      }
+    ],
+    faqItems: [
+      {
+        q: 'What is a Fancy Text Generator and how does it work?',
+        a: 'A fancy text generator is a client-side tool that takes regular ASCII character inputs (like \'A\' or \'b\') and maps them to special Unicode characters in different blocks (such as mathematical alphanumeric symbols). The resulting output is not a traditional font file (like TTF or OTF), but a sequence of distinct Unicode glyphs. This allows you to copy and paste the formatted text directly into social media bios, chat apps, and posts without downloading anything.'
+      },
+      {
+        q: 'Are these fancy fonts compatible with Instagram, TikTok, and Twitter?',
+        a: 'Yes! Because the output is standard Unicode text, it is highly compatible with platforms like Instagram, TikTok, Twitter (X), Facebook, and Discord. However, some older operating systems or devices may lack support for specific ornate Unicode blocks (like Gothic or double-struck math symbols), which might display as blank boxes or question marks. If compatibility is your priority, select the \'High Compatibility\' filter in our options.'
+      },
+      {
+        q: 'Does using fancy text affect accessibility (WCAG)?',
+        a: 'Yes, it can. Assistive technologies, such as screen readers, do not read Unicode decorative characters as standard English letters. Instead, they read out the mathematical symbol names (e.g., \'Mathematical Bold Capital A\'). To meet <strong>WCAG AA accessibility guidelines</strong>, we recommend using fancy text only for short profile names, bio taglines, or minor decorations, rather than full sentences, critical headings, or call-to-action links.'
+      },
+      {
+        q: 'What are the common mistakes to avoid when using stylish fonts?',
+        a: 'The most common mistakes are: 1) Overusing styled text in long captions, which hurts scannability and readability; 2) Using Unicode symbols in email addresses, usernames, or hashtags where they will break system matching and searchability; and 3) Ignoring accessibility rules for screen-reader users. Keep your fancy text limited to small accents for the best results.'
+      },
+      {
+        q: 'Does TapToGen store or collect the text I enter?',
+        a: 'No. Your privacy is fully protected. The text translation is executed 100% locally in your browser using JavaScript. No text is sent to our servers, and no personal data is collected, stored, or analyzed. You can use this utility offline once the page has loaded.'
+      }
+    ],
+    relatedSlugs: ['bold-text-generator', 'cursive-text-generator', 'unicode-text-generator', 'cool-text-generator'],
   },
   {
     slug: 'name-generator',
     name: 'Name Generator',
     icon: '👤',
-    tagline: "Brainstorm general name ideas for characters, brands, games, profiles, and creative drafts",
+    tagline: 'Brainstorm general name ideas for characters, brands, games, profiles, and creative drafts',
     description: "Brainstorm general name ideas with first names, full names, naming styles, and shortlist prompts. Add the purpose, audience, tone, and constraints so the result is easier to review and adapt.",
     category: 'Name Generators',
     categorySlug: 'name-generators',
@@ -89,14 +138,6 @@ export const tools: Tool[] = [
       { q: 'Can I use this for TikTok handles?', a: 'Yes. Use it for TikTok-style handle brainstorming, then check availability, trademarks, confusing similarity, impersonation risk, and current platform rules yourself.' },
       { q: 'Does this guarantee availability, followers, or reach?', a: 'No. This tool only drafts username ideas. It does not verify availability or guarantee followers, views, ranking, engagement, verification, or growth.' }],
     relatedSlugs: ['name-generator', 'discord-name-generator', 'display-name-generator', 'nickname-generator'],
-  },
-  {
-    slug: 'business-name-generator',
-    name: 'Business Name Generator',
-    icon: '💼',
-    tagline: 'Generate creative business and brand name ideas instantly',
-    description: 'Create catchy business names, brand names, and company names. Enter keywords and get hundreds of creative name ideas for your startup, shop, or brand.',
-    category: 'Business & Brand Generators',
     categorySlug: 'business-generators',
     primaryKeyword: 'business name generator',
     secondaryKeywords: ['brand name generator', 'company name generator', 'startup name generator', 'shop name generator', 'store name generator'],

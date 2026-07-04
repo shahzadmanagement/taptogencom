@@ -1,4 +1,4 @@
-﻿// FAQ accordion
+// FAQ accordion
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
@@ -4454,21 +4454,59 @@ async function generate() {
     }
     case 'fancy-text-generator': {
       if (!text) { result = 'Please enter some text above.'; break; }
-      const styles = [
-        { name: 'Bold', preview: toUnicode(text, boldMap), use: 'Strong profile names and short captions', note: 'Broad Unicode support, good for emphasis.' },
-        { name: 'Italic', preview: toUnicode(text, italicUnicodeMap), use: 'Elegant bios and captions', note: 'Works best for letters; numbers stay plain.' },
-        { name: 'Bold Italic', preview: toUnicode(text, boldItalicUnicodeMap), use: 'High-impact social text', note: 'Good when you want style and weight together.' },
-        { name: 'Gothic', preview: toUnicode(text, gothicUnicodeMap), use: 'Dramatic usernames and display names', note: 'Some platforms may render rare letters differently.' },
-        { name: 'Bubble', preview: transformCircled(text), use: 'Playful comments and bios', note: 'Great for short phrases and handles.' },
-        { name: 'Squared', preview: transformSquared(text), use: 'Blocky display text', note: 'Best for short all-caps style labels.' },
-        { name: 'Small Caps', preview: transformSmallCaps(text), use: 'Clean aesthetic labels', note: 'Social-media friendly and easy to scan.' },
-        { name: 'Upside Down', preview: transformUpsideDown(text), use: 'Novelty posts and fun replies', note: 'Best for short text because it reverses order.' },
-        { name: 'Strikethrough', preview: text.split('').map(c => c + '\u0336').join(''), use: 'Edits, jokes, and stylized emphasis', note: 'Uses combining marks; spacing can vary by app.' },
-        { name: 'Fullwidth', preview: transformFullwidth(text), use: 'Aesthetic spacing for captions', note: 'Very visible, but can take more space on mobile.' },
-        { name: 'Monospace', preview: toUnicode(text, monospaceUnicodeMap), use: 'Tech-style handles and bios', note: 'Clean copy-paste Unicode style.' },
-        { name: 'Double-Struck', preview: toUnicode(text, doubleStruckUnicodeMap), use: 'Premium math-style display text', note: 'Works best with Latin letters and numbers.' }];
+      const filter = optionValue('fancy-filter', 'all');
+      const decor = optionValue('fancy-decor', 'none');
+      const boldScriptMap = unicodeMap(0x1D4D0, 0x1D4EA);
+      
+      const applyDecor = (val: string): string => {
+        if (decor === 'stars') return `★彡 ${val} 彡★`;
+        if (decor === 'hearts') return `♥ ${val} ♥`;
+        if (decor === 'brackets') return `【${val}】`;
+        if (decor === 'wings') return `꧁༒ ${val} ༒꧂`;
+        if (decor === 'sparkles') return `✧*。${val} ✧*。`;
+        return val;
+      };
+
+      const transformZalgo = (val: string): string => {
+        const zalgoUp = ['\u030d','\u030e','\u0304','\u0305','\u033f','\u0311','\u0306','\u0310'];
+        const zalgoDown = ['\u0316','\u0317','\u0318','\u0319','\u031c','\u031d','\u031e','\u031f'];
+        return val.split('').map(c => c + randomFrom(zalgoUp) + randomFrom(zalgoDown)).join('');
+      };
+
+      const allStyles = [
+        { name: 'Bold', preview: toUnicode(text, boldMap), use: 'Strong profile names and short captions', note: 'Broad Unicode support, high compatibility.', category: 'fonts', isCompat: true },
+        { name: 'Italic', preview: toUnicode(text, italicUnicodeMap), use: 'Elegant bios and captions', note: 'Works best for letters; numbers stay plain.', category: 'fonts', isCompat: true },
+        { name: 'Bold Italic', preview: toUnicode(text, boldItalicUnicodeMap), use: 'High-impact social text', note: 'Good when you want style and weight together.', category: 'fonts', isCompat: false },
+        { name: 'Elegant Script', preview: toUnicode(text, cursiveMap), use: 'Instagram bios and names', note: 'Decorative cursive script letters.', category: 'fonts', isCompat: false },
+        { name: 'Bold Script', preview: toUnicode(text, boldScriptMap), use: 'Readable cursive headers', note: 'Heavier script strokes for emphasis.', category: 'fonts', isCompat: false },
+        { name: 'Gothic', preview: toUnicode(text, gothicUnicodeMap), use: 'Dramatic usernames and display names', note: 'Ornate medieval style.', category: 'fonts', isCompat: false },
+        { name: 'Monospace', preview: toUnicode(text, monospaceUnicodeMap), use: 'Tech-style handles and bios', note: 'Clean typewriter style.', category: 'fonts', isCompat: true },
+        { name: 'Double-Struck', preview: toUnicode(text, doubleStruckUnicodeMap), use: 'Premium math-style display text', note: 'Classic double-lined letters.', category: 'fonts', isCompat: false },
+        { name: 'Bubble', preview: transformCircled(text), use: 'Playful comments and bios', note: 'Circled text, fun for handles.', category: 'decorations', isCompat: false },
+        { name: 'Squared', preview: transformSquared(text), use: 'Blocky display labels', note: 'Squared uppercase letter format.', category: 'decorations', isCompat: false },
+        { name: 'Small Caps', preview: transformSmallCaps(text), use: 'Clean aesthetic labels', note: 'Social-media friendly, high compatibility.', category: 'fonts', isCompat: true },
+        { name: 'Upside Down', preview: transformUpsideDown(text), use: 'Novelty posts and fun replies', note: 'Reverses text order upside down.', category: 'decorations', isCompat: false },
+        { name: 'Vaporwave (Fullwidth)', preview: transformFullwidth(text), use: 'Aesthetic spaced captions', note: 'Very visible spaced text.', category: 'decorations', isCompat: false },
+        { name: 'Strikethrough', preview: text.split('').map(c => c + '\u0336').join(''), use: 'Edits, jokes, and stylized emphasis', note: 'Struck-out letters.', category: 'decorations', isCompat: true },
+        { name: 'Underline', preview: text.split('').map(c => c + '\u0332').join(''), use: 'Underlined emphasis and headings', note: 'Clean combining underline.', category: 'decorations', isCompat: true },
+        { name: 'Slash', preview: text.split('').map(c => c + '\u0338').join(''), use: 'Slashed text effects', note: 'Uses combining solidus overlays.', category: 'decorations', isCompat: true },
+        { name: 'Creepy (Zalgo)', preview: transformZalgo(text), use: 'Halloween posts and eerie bios', note: 'Light glitch style combining marks.', category: 'decorations', isCompat: false }
+      ];
+
+      const styles = allStyles
+        .filter(style => {
+          if (filter === 'fonts') return style.category === 'fonts';
+          if (filter === 'decorations') return style.category === 'decorations';
+          if (filter === 'compat') return style.isCompat;
+          return true;
+        })
+        .map(style => ({
+          ...style,
+          preview: applyDecor(style.preview)
+        }));
+
       result = styles.map(style => `${style.name}: ${style.preview}`).join('\n');
-      resultHtml = renderStyleMatrix(styles, 'Copy All includes every fancy style. Unicode appearance can vary slightly by platform and device.');
+      resultHtml = renderStyleMatrix(styles, 'Copy All includes every filtered style. Unicode rendering depends on your device OS.');
       break;
     }
     case 'bold-text-generator':
