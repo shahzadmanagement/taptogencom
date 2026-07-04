@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from '@/config/site';
 import { headerNav, footerNav } from '@/data/navigation';
+import { getSupportedLanguage } from '@/data/localization';
 
 interface Props {
   title: string;
@@ -108,6 +109,66 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
   ))}
   <style is:global>
     @import '../styles/global.css';
+    
+    .nav-dropdown-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background-color: var(--card-bg, #ffffff);
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 8px;
+      margin: 0 8px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    
+    .nav-dropdown-wrapper:hover {
+      border-color: var(--primary-color, #4f46e5);
+    }
+    
+    .language-globe-nav {
+      font-size: 14px;
+      color: var(--text-muted, #718096);
+    }
+    
+    .nav-language-select-dropdown {
+      border: none;
+      background: transparent;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-color, #2d3748);
+      cursor: pointer;
+      padding: 2px 20px 2px 0;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a5568'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: 14px;
+    }
+    
+    .nav-language-select-dropdown:focus {
+      outline: none;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-dropdown-wrapper {
+        margin: 12px 0;
+        width: calc(100% - 24px);
+        box-sizing: border-box;
+      }
+    }
   </style>
 </head>
 <body>
@@ -119,9 +180,32 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
         {siteConfig.name}
       </a>
       <div class="nav-links" id="nav-links" role="navigation" aria-label={isSpanish ? 'Navegación principal' : 'Main navigation'}>
-        {headerNav.map(item => (
-          <a href={item.href} class={currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'active' : ''}>{localizeLabel(item.href, item.label)}</a>
-        ))}
+        <a href="/" class={currentPath === '/' ? 'active' : ''}>{localizeLabel('/', 'Home')}</a>
+        <a href="/tools/" class={currentPath === '/tools/' || (currentPath.startsWith('/tools/') && currentPath !== '/tools/categories/') ? 'active' : ''}>{localizeLabel('/tools/', 'Tools')}</a>
+        <a href="/categories/" class={currentPath === '/categories/' || currentPath.startsWith('/categories/') ? 'active' : ''}>{localizeLabel('/categories/', 'Categories')}</a>
+        
+        {alternates && alternates.length > 0 && (
+          <div class="nav-dropdown-wrapper">
+            <span class="language-globe-nav" aria-hidden="true">🌐</span>
+            <label for="nav-language-select" class="sr-only">Change Language</label>
+            <select id="nav-language-select" class="nav-language-select-dropdown" onchange="window.location.href=this.value">
+              {alternates
+                .filter(alt => alt.lang !== 'x-default')
+                .map((alternate) => (
+                  <option 
+                    value={alternate.href.replace(siteConfig.url, '')}
+                    selected={alternate.lang === lang}
+                  >
+                    {alternate.lang === 'en' ? 'English' : getSupportedLanguage(alternate.lang).nativeName}
+                  </option>
+                ))
+              }
+            </select>
+          </div>
+        )}
+
+        <a href="/blog/" class={currentPath === '/blog/' || currentPath.startsWith('/blog/') ? 'active' : ''}>{localizeLabel('/blog/', 'Blog')}</a>
+        <a href="/about-us/" class={currentPath === '/about-us/' || currentPath.startsWith('/about-us/') ? 'active' : ''}>{localizeLabel('/about-us/', 'About')}</a>
       </div>
       <button class="mobile-toggle" id="mobile-toggle" aria-label={isSpanish ? 'Abrir menú' : 'Toggle menu'} aria-expanded="false">☰</button>
     </div>
