@@ -645,7 +645,16 @@ const italicUnicodeMap = unicodeMap(0x1D434, 0x1D44E);
 const boldItalicUnicodeMap = unicodeMap(0x1D468, 0x1D482);
 const gothicUnicodeMap = unicodeMap(0x1D504, 0x1D51E);
 const monospaceUnicodeMap = unicodeMap(0x1D670, 0x1D68A, 0x1D7F6);
-const doubleStruckUnicodeMap = unicodeMap(0x1D538, 0x1D552, 0x1D7D8);
+const doubleStruckUnicodeMap = {
+  ...unicodeMap(0x1D538, 0x1D552, 0x1D7D8),
+  C: 'ℂ',
+  H: 'ℍ',
+  N: 'ℕ',
+  P: 'ℙ',
+  Q: 'ℚ',
+  R: 'ℝ',
+  Z: 'ℤ'
+};
 const smallCapsUnicodeMap: Record<string, string> = Object.fromEntries('abcdefghijklmnopqrstuvwxyz'.split('').map(char => [char, char.toUpperCase()]));
 const upsideDownMap: Record<string, string> = {
   a: '\u0250', b: 'q', c: '\u0254', d: 'p', e: '\u01dd', f: '\u025f', g: '\u0183', h: '\u0265', i: '\u1d09', j: '\u027e', k: '\u029e', l: 'l', m: '\u026f',
@@ -4473,6 +4482,26 @@ async function generate() {
         return val.split('').map(c => c + randomFrom(zalgoUp) + randomFrom(zalgoDown)).join('');
       };
 
+      const transformSuperscript = (val: string): string => {
+        const superMap: Record<string, string> = {
+          a: 'ᵃ', b: 'ᵇ', c: 'ᶜ', d: 'ᵈ', e: 'ᵉ', f: 'ᶠ', g: 'ᵍ', h: 'ʰ', i: 'ⁱ', j: 'ʲ', k: 'ᵏ', l: 'ˡ', m: 'ᵐ',
+          n: 'ⁿ', o: 'ᵒ', p: 'ᵖ', q: 'ᵠ', r: 'ʳ', s: 'ˢ', t: 'ᵗ', u: 'ᵘ', v: 'ᵛ', w: 'ʷ', x: 'ˣ', y: 'ʸ', z: 'ᶻ',
+          A: 'ᴬ', B: 'ᴮ', C: 'ᶜ', D: 'ᴰ', E: 'ᴱ', F: 'ᶠ', G: 'ᴳ', H: 'ᴴ', I: 'ᴵ', J: 'ᴶ', K: 'ᴷ', L: 'ᴸ', M: 'ᴹ',
+          N: 'ᴺ', O: 'ᴼ', P: 'ᴾ', R: 'ᴿ', T: 'ᵀ', U: 'ᵁ', V: 'ⱽ', W: 'ᵂ',
+          '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'
+        };
+        return val.split('').map(c => superMap[c] || superMap[c.toLowerCase()] || c).join('');
+      };
+
+      const transformSubscript = (val: string): string => {
+        const subMap: Record<string, string> = {
+          a: 'ₐ', e: 'ₑ', h: 'ₕ', i: 'ᵢ', j: 'ⱼ', k: 'ₖ', l: 'ₗ', m: 'ₘ', n: 'ₙ', o: 'ₒ', p: 'ₚ', r: 'ᵣ', s: 'ₛ', t: 'ₜ', u: 'ᵤ', v: 'ᵥ', x: 'ₓ',
+          A: 'ₐ', E: 'ₑ', H: 'ₕ', I: 'ᵢ', J: 'ⱼ', K: 'ₖ', L: 'ₗ', M: 'ₘ', N: 'ₙ', O: 'ₒ', P: 'ₚ', R: 'ᵣ', S: 'ₛ', T: 'ₜ', U: 'ᵤ', V: 'ᵥ', X: 'ₓ',
+          '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉'
+        };
+        return val.split('').map(c => subMap[c] || subMap[c.toLowerCase()] || c).join('');
+      };
+
       const allStyles = [
         { name: 'Bold', preview: toUnicode(text, boldMap), use: 'Strong profile names and short captions', note: 'Broad Unicode support, high compatibility.', category: 'fonts', isCompat: true },
         { name: 'Italic', preview: toUnicode(text, italicUnicodeMap), use: 'Elegant bios and captions', note: 'Works best for letters; numbers stay plain.', category: 'fonts', isCompat: true },
@@ -4482,6 +4511,8 @@ async function generate() {
         { name: 'Gothic', preview: toUnicode(text, gothicUnicodeMap), use: 'Dramatic usernames and display names', note: 'Ornate medieval style.', category: 'fonts', isCompat: false },
         { name: 'Monospace', preview: toUnicode(text, monospaceUnicodeMap), use: 'Tech-style handles and bios', note: 'Clean typewriter style.', category: 'fonts', isCompat: true },
         { name: 'Double-Struck', preview: toUnicode(text, doubleStruckUnicodeMap), use: 'Premium math-style display text', note: 'Classic double-lined letters.', category: 'fonts', isCompat: false },
+        { name: 'Superscript (Tiny)', preview: transformSuperscript(text), use: 'Instagram bio highlights', note: 'Small letters stacked high.', category: 'fonts', isCompat: true },
+        { name: 'Subscript (Tiny)', preview: transformSubscript(text), use: 'Scientific or aesthetic spacing', note: 'Small letters hanging low.', category: 'fonts', isCompat: true },
         { name: 'Bubble', preview: transformCircled(text), use: 'Playful comments and bios', note: 'Circled text, fun for handles.', category: 'decorations', isCompat: false },
         { name: 'Squared', preview: transformSquared(text), use: 'Blocky display labels', note: 'Squared uppercase letter format.', category: 'decorations', isCompat: false },
         { name: 'Small Caps', preview: transformSmallCaps(text), use: 'Clean aesthetic labels', note: 'Social-media friendly, high compatibility.', category: 'fonts', isCompat: true },
@@ -4509,9 +4540,61 @@ async function generate() {
       resultHtml = renderStyleMatrix(styles, 'Copy All includes every filtered style. Unicode rendering depends on your device OS.');
       break;
     }
-    case 'bold-text-generator':
-      result = text ? toUnicode(text, boldMap) : 'Please enter some text above.';
+    case 'bold-text-generator': {
+      if (!text) { result = 'Please enter some text above.'; break; }
+      const filter = optionValue('bold-filter', 'all');
+      const decor = optionValue('bold-decor', 'none');
+      
+      const applyDecor = (val: string): string => {
+        if (decor === 'stars') return `★彡 ${val} 彡★`;
+        if (decor === 'hearts') return `♥ ${val} ♥`;
+        if (decor === 'brackets') return `【${val}】`;
+        if (decor === 'wings') return `꧁༒ ${val} ༒꧂`;
+        if (decor === 'sparkles') return `✧*。${val} ✧*。`;
+        return val;
+      };
+
+      const boldSansMap = unicodeMap(0x1D5D4, 0x1D5EE, 0x1D7EC);
+      const boldItalicSansMap = unicodeMap(0x1D608, 0x1D622);
+      const boldGothicMap = unicodeMap(0x1D56C, 0x1D586);
+      const boldScriptMap = unicodeMap(0x1D4D0, 0x1D4EA);
+      const doubleStruckMap = {
+        ...unicodeMap(0x1D538, 0x1D552, 0x1D7D8),
+        C: 'ℂ',
+        H: 'ℍ',
+        N: 'ℕ',
+        P: 'ℙ',
+        Q: 'ℚ',
+        R: 'ℝ',
+        Z: 'ℤ'
+      };
+
+      const allStyles = [
+        { name: 'Bold Sans-Serif', preview: toUnicode(text, boldSansMap), use: 'Clean, modern social headings', note: 'Best readability on standard mobile screens.', category: 'standard', isCompat: true },
+        { name: 'Bold Serif', preview: toUnicode(text, boldMap), use: 'Classic editorial headers and names', note: 'Ornate serif font style.', category: 'standard', isCompat: true },
+        { name: 'Bold Italic Sans', preview: toUnicode(text, boldItalicSansMap), use: 'Dynamic bios and captions', note: 'Modern slanted bold typeface.', category: 'standard', isCompat: true },
+        { name: 'Bold Italic Serif', preview: toUnicode(text, boldItalicUnicodeMap), use: 'Sophisticated profile lines', note: 'Slanted serif bold style.', category: 'standard', isCompat: false },
+        { name: 'Bold Script', preview: toUnicode(text, boldScriptMap), use: 'Decorative cursive bios', note: 'Ornate cursive script with extra weight.', category: 'decorative', isCompat: false },
+        { name: 'Bold Gothic', preview: toUnicode(text, boldGothicMap), use: 'Dramatic display headers', note: 'Blackletter medieval bold characters.', category: 'decorative', isCompat: false },
+        { name: 'Double-Struck', preview: toUnicode(text, doubleStruckMap), use: 'Mathematical-style highlight labels', note: 'Double-lined hollow font face.', category: 'decorative', isCompat: false }
+      ];
+
+      const styles = allStyles
+        .filter(style => {
+          if (filter === 'standard') return style.category === 'standard';
+          if (filter === 'decorative') return style.category === 'decorative';
+          if (filter === 'compat') return style.isCompat;
+          return true;
+        })
+        .map(style => ({
+          ...style,
+          preview: applyDecor(style.preview)
+        }));
+
+      result = styles.map(style => `${style.name}: ${style.preview}`).join('\n');
+      resultHtml = renderStyleMatrix(styles, 'Copy All includes every filtered bold style. Render support varies by client device.');
       break;
+    }
     case 'cursive-text-generator': {
       if (!text) { result = 'Please enter some text above.'; break; }
       const scriptMap = unicodeMap(0x1D49C, 0x1D4B6);

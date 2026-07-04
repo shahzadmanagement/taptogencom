@@ -220,18 +220,67 @@ export const tools: Tool[] = [
     slug: 'bold-text-generator',
     name: 'Bold Text Generator',
     icon: '𝗕',
-    tagline: "Convert bold Unicode text for profile lines, short labels, captions, and messages",
-    description: "Convert bold Unicode text with bold styles, readability notes, and copy-paste variants. Add the purpose, audience, tone, and constraints so the output is easier to adapt and review.",
+    tagline: 'Convert normal text into bold serif, bold sans-serif, and decorative styles instantly',
+    description: 'Use the free online **Bold Text Generator** to instantly convert normal text into bold Unicode styles. You can generate bold sans-serif, bold serif, bold italic, and script lettering for Instagram, Twitter, and Facebook bios, captions, or short headers. For additional creative styling, check out our [Fancy Text Generator](/tools/fancy-text-generator/), combine emphasis using the [Italic Text Generator](/tools/italic-text-generator/), or explore the comprehensive [Unicode Text Generator](/tools/unicode-text-generator/) for symbols and special characters. All character translations occur 100% locally in your web browser, ensuring complete data privacy.',
     category: 'Font & Text Style Generators',
     categorySlug: 'text-font-generators',
     primaryKeyword: 'bold text generator',
-    secondaryKeywords: ['bold font generator', 'bold letter generator'],
-    metaTitle: "Bold Text Generator - Copyable Bold Unicode Text",
-    metaDescription: "Convert bold Unicode text with context-aware options, practical notes, and review reminders before use.",
-    userIntent: "User wants bold Unicode text for profile lines, short labels, captions, and messages, with editable options and practical review notes before publishing or using the result.",
+    secondaryKeywords: ['bold font generator', 'bold letter generator', 'make text bold'],
+    metaTitle: 'Bold Text Generator - Copy & Paste Bold Fonts (sans & serif)',
+    metaDescription: 'Generate bold Unicode text with our free online bold text generator. Convert normal text into bold serif, bold sans-serif, gothic, and script fonts instantly.',
+    userIntent: 'User wants to generate copy-pasteable bold letters for bios, captions, and short messaging, with device compatibility filters and decoration framing options.',
     generatorType: 'text-transform',
-    faqItems: [{"q":"What should I enter in the Bold Text Generator?","a":"Add the topic, audience, style, tone, and any words or constraints that should shape the bold Unicode text. Specific context usually creates more useful options."},{"q":"Who is this bold text generator for?","a":"It is useful for profile lines, short labels, captions, and messages when you need quick draft options, naming angles, copy ideas, or structured starting points to review."},{"q":"Can I use the results as-is?","a":"Use the output as an editable starting point. Check spelling, originality, context, and any platform or project rules before publishing."},{"q":"How do I choose the best result?","a":"Pick the option that is clear, relevant to profile lines, short labels, captions, and messages, easy to adapt, and consistent with the tone or format you need."}],
-    relatedSlugs: ["fancy-text-generator","italic-text-generator","unicode-text-generator","small-text-generator"],
+    toolOptions: [
+      {
+        id: 'bold-filter',
+        label: 'Style Category',
+        type: 'select',
+        defaultValue: 'all',
+        options: [
+          { value: 'all', label: 'All Bold Styles' },
+          { value: 'standard', label: 'Standard Bold (Serif & Sans)' },
+          { value: 'decorative', label: 'Decorative Bold (Gothic & Script)' },
+          { value: 'compat', label: 'High Compatibility' }
+        ]
+      },
+      {
+        id: 'bold-decor',
+        label: 'Decor Wrap',
+        type: 'select',
+        defaultValue: 'none',
+        options: [
+          { value: 'none', label: 'None' },
+          { value: 'stars', label: 'Stars (★彡)' },
+          { value: 'hearts', label: 'Hearts (♥)' },
+          { value: 'brackets', label: 'Brackets (【】)' },
+          { value: 'wings', label: 'Wings (꧁༒꧂)' },
+          { value: 'sparkles', label: 'Sparkles (✧*。)' }
+        ]
+      }
+    ],
+    faqItems: [
+      {
+        q: 'How does the Bold Text Generator convert text?',
+        a: 'Instead of loading external font files (.ttf or .otf), this generator uses character translation maps to match standard ASCII letters with mathematical alphanumeric symbols within the Unicode standard. This allows the styled bold text to be copied and pasted onto any platform that supports modern Unicode standards.'
+      },
+      {
+        q: 'Are bold Unicode characters readable by screen readers?',
+        a: 'No. Screen readers parse mathematical alphanumeric symbols as mathematical operators (e.g., reading 𝗕 as &quot;mathematical sans-serif bold capital B&quot;). This makes the text completely unreadable for visually impaired users. We strongly recommend using bold Unicode text sparingly for short emphasis words, rather than formatting full paragraphs or sentences.'
+      },
+      {
+        q: 'Why do some devices show empty squares (tofu) instead of bold letters?',
+        a: 'This happens when the host operating system or device lacks font fallback definitions for specific mathematical Unicode blocks. Older Android or Windows builds are particularly prone to this. You can toggle the &quot;High Compatibility&quot; mode filter in the sidebar to display only basic bold fonts that render reliably on older screens.'
+      },
+      {
+        q: 'Does bold Unicode text affect Google SEO indexing?',
+        a: 'Search crawlers can read and index Unicode symbols, but they do not interpret them as semantic structural weights (such as standard HTML strong tags). Overusing bold Unicode characters in title tags or headings can make your pages look like spam and negatively impact indexing quality.'
+      },
+      {
+        q: 'Is it safe to copy-paste this bold text onto social media platforms?',
+        a: 'Yes, this bold text is fully compatible with social media profiles and captions across Instagram, X (Twitter), Facebook, TikTok, and Discord. However, we advise against using Unicode bold characters for display names, as it can block users from searching your profile.'
+      }
+    ],
+    relatedSlugs: ['fancy-text-generator', 'italic-text-generator', 'unicode-text-generator', 'small-text-generator'],
   },
   {
     slug: 'cursive-text-generator',

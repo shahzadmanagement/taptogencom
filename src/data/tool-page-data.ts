@@ -591,15 +591,16 @@ const premiumGuideCopy: Record<string, { howTo: string[]; tips: { title: string;
       { title: "Review before publishing", body: "Check spelling, originality, factual details, claims, and any platform or project rules before public use." }]},
   'bold-text-generator': {
     howTo: [
-      "Enter the bold Unicode text, audience, style, and any constraints that should shape the result.",
-      "Generate a set of options, then compare fit, clarity, originality, and usefulness for profile lines, short labels, captions, and messages.",
-      "Regenerate with a narrower prompt if the first set feels too broad, too generic, or off-tone.",
-      "Edit the final choice and review it for accuracy, rights, platform rules, and real-world context before using it."],
+      "Type or paste your text into the primary input box at the top of the page.",
+      "Select a Style Category in the sidebar settings (such as Standard Bold or Decorative Gothic/Script) to filter your options.",
+      "Choose a Decor Wrap pattern (like Brackets or Stars) if you want to automatically frame your bold text in aesthetic symbols.",
+      "Click the copy button on your preferred bold card, or click 'Copy All' to copy all styled variations to your clipboard instantly."],
     tips: [
-      { title: "Add real context", body: "Mention the use case, audience, tone, format, and must-include or avoid terms so the generated results feel specific." },
-      { title: "Compare options", body: "Look for wording that is clear, adaptable, and appropriate for profile lines, short labels, captions, and messages rather than picking the first result." },
-      { title: "Keep it usable", body: "Short, readable outputs are usually easier to copy, edit, remember, and fit into a real project." },
-      { title: "Review before publishing", body: "Check spelling, originality, factual details, claims, and any platform or project rules before public use." }]},
+      { title: "Verify device rendering", body: "Toggle the High Compatibility filter if you are posting to platforms where readers may use older mobile devices, ensuring they don't see empty tofu blocks." },
+      { title: "Prioritize screen readability", body: "Avoid formatting large blocks of paragraph text in bold Unicode, as screen readers read mathematical symbol characters individually, degrading user accessibility." },
+      { title: "Use for visual emphasis", body: "Use bold Unicode characters selectively for display headers, names, hooks, or single words in social media captions to maximize conversion rates." },
+      { title: "Verify search limitations", body: "Since search engines index Unicode alphanumeric symbols literally rather than as standard text weights, avoid using them in critical keyword-optimized taglines." }
+    ]},
   'border-radius-generator': {
     howTo: [
       "Enter the CSS border radius values, audience, style, and any constraints that should shape the result.",
