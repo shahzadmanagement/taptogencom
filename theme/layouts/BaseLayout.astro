@@ -110,49 +110,107 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
   <style is:global>
     @import '../styles/global.css';
     
-    .nav-dropdown-wrapper {
+    /* First-class Navigation Dropdown Styles */
+    .nav-item-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .nav-dropdown-toggle {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 4px 10px;
-      background-color: var(--card-bg, #ffffff);
-      border: 1px solid var(--border-color, #e2e8f0);
-      border-radius: 8px;
-      margin: 0 8px;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    
-    .nav-dropdown-wrapper:hover {
-      border-color: var(--primary-color, #4f46e5);
-    }
-    
-    .nav-dropdown-wrapper:focus-within {
-      border-color: var(--primary-color, #4f46e5);
-      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-    }
-    
-    .language-globe-nav {
-      font-size: 14px;
-      color: var(--text-muted, #718096);
-    }
-    
-    .nav-language-select-dropdown {
-      border: none;
-      background: transparent;
-      font-size: 14px;
+      padding: 6px 12px;
+      font-size: 16px;
       font-weight: 500;
       color: var(--text-color, #2d3748);
+      background: transparent;
+      border: none;
       cursor: pointer;
-      padding: 2px 20px 2px 0;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a5568'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right center;
-      background-size: 14px;
+      font-family: inherit;
+      transition: color 0.2s;
+      line-height: inherit;
     }
     
-    .nav-language-select-dropdown:focus {
+    .nav-dropdown-toggle:hover,
+    .nav-item-dropdown:hover .nav-dropdown-toggle,
+    .nav-dropdown-toggle:focus {
+      color: var(--primary-color, #4f46e5);
       outline: none;
+    }
+    
+    .dropdown-chevron {
+      font-size: 8px;
+      margin-left: 2px;
+      opacity: 0.7;
+      transition: transform 0.2s;
+    }
+    
+    .nav-item-dropdown:hover .dropdown-chevron {
+      transform: rotate(180deg);
+    }
+    
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      background-color: #1a202c; /* Dark theme matching the footer/dark layout */
+      min-width: 180px;
+      border-radius: 8px;
+      padding: 8px 0;
+      margin: 0;
+      list-style: none;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+      z-index: 1000;
+    }
+    
+    .nav-item-dropdown:hover .nav-dropdown-menu,
+    .nav-item-dropdown:focus-within .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    
+    .nav-dropdown-menu li {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-dropdown-menu a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 16px;
+      font-size: 14px;
+      color: #e2e8f0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.2s, color 0.2s;
+      border: none;
+      background: transparent;
+      text-align: left;
+    }
+    
+    .nav-dropdown-menu a:hover,
+    .nav-dropdown-menu a:focus {
+      background-color: #2d3748;
+      color: #ffffff;
+      outline: none;
+    }
+    
+    .nav-dropdown-menu a.active-lang {
+      color: var(--primary-color, #4f46e5);
+      font-weight: 600;
+    }
+    
+    .lang-check {
+      font-size: 12px;
+      font-weight: bold;
+      color: var(--primary-color, #4f46e5);
     }
 
     .sr-only {
@@ -168,10 +226,46 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
     }
 
     @media (max-width: 768px) {
-      .nav-dropdown-wrapper {
-        margin: 12px 0;
-        width: calc(100% - 24px);
-        box-sizing: border-box;
+      .nav-item-dropdown {
+        display: block;
+        width: 100%;
+      }
+      
+      .nav-dropdown-toggle {
+        width: 100%;
+        padding: 10px 16px;
+        justify-content: space-between;
+        font-size: 18px; /* Match standard mobile menu list font size */
+      }
+      
+      .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        background-color: rgba(0, 0, 0, 0.05);
+        box-shadow: none;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        transition: max-height 0.3s ease-out;
+      }
+      
+      .nav-item-dropdown:hover .nav-dropdown-menu,
+      .nav-item-dropdown:focus-within .nav-dropdown-menu,
+      .nav-item-dropdown.mobile-open .nav-dropdown-menu {
+        max-height: 500px;
+        padding: 8px 0;
+      }
+      
+      .nav-dropdown-menu a {
+        padding: 10px 24px;
+        color: var(--text-color, #2d3748);
+      }
+      
+      .nav-dropdown-menu a:hover {
+        background-color: rgba(0, 0, 0, 0.02);
       }
     }
   </style>
@@ -190,22 +284,35 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
         <a href="/categories/" class={currentPath === '/categories/' || currentPath.startsWith('/categories/') ? 'active' : ''}>{localizeLabel('/categories/', 'Categories')}</a>
         
         {alternates && alternates.length > 0 && (
-          <div class="nav-dropdown-wrapper">
-            <span class="language-globe-nav" aria-hidden="true">🌐</span>
-            <label for="nav-language-select" class="sr-only">Change Language</label>
-            <select id="nav-language-select" class="nav-language-select-dropdown" onchange="window.location.href=this.value">
+          <div class="nav-item-dropdown" id="language-dropdown">
+            <button 
+              class="nav-dropdown-toggle" 
+              aria-haspopup="true" 
+              aria-expanded="false"
+              aria-label="Select Language"
+            >
+              <span>🌐 Language</span>
+              <span class="dropdown-chevron" aria-hidden="true">▼</span>
+            </button>
+            <ul class="nav-dropdown-menu" role="menu" aria-label="Languages">
               {alternates
                 .filter(alt => alt.lang !== 'x-default')
                 .map((alternate) => (
-                  <option 
-                    value={alternate.href.replace(siteConfig.url, '')}
-                    selected={alternate.lang === lang}
-                  >
-                    {alternate.lang === 'en' ? 'English' : getSupportedLanguage(alternate.lang).nativeName}
-                  </option>
+                  <li role="none">
+                    <a 
+                      href={alternate.href.replace(siteConfig.url, '')}
+                      role="menuitem"
+                      class={alternate.lang === lang ? 'active-lang' : ''}
+                    >
+                      <span class="lang-name">
+                        {alternate.lang === 'en' ? 'English' : getSupportedLanguage(alternate.lang).nativeName}
+                      </span>
+                      {alternate.lang === lang && <span class="lang-check" aria-hidden="true">✓</span>}
+                    </a>
+                  </li>
                 ))
               }
-            </select>
+            </ul>
           </div>
         )}
 
@@ -261,6 +368,16 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
       nav?.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    const dropdown = document.getElementById('language-dropdown');
+    const dropdownToggle = dropdown?.querySelector('.nav-dropdown-toggle');
+    dropdownToggle?.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const isOpen = dropdown.classList.toggle('mobile-open');
+        dropdownToggle.setAttribute('aria-expanded', String(isOpen));
+      }
     });
 
     const toggle = document.getElementById('mobile-toggle');
