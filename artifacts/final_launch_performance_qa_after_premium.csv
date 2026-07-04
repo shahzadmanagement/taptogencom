@@ -1,0 +1,41 @@
+section,check,status,details
+technical_validation,tsc_no_emit,pass,npx.cmd tsc --noEmit passed with no output errors.
+technical_validation,astro_check,pass,"npx.cmd astro check passed: 0 errors, 0 warnings, 0 hints."
+technical_validation,build,pass,npm.cmd run build passed; 472 HTML pages built.
+tool_page_integrity,total_tools,info,449
+tool_page_integrity,total_pages,info,472
+tool_page_integrity,duplicate_slugs,pass,none
+tool_page_integrity,broken_relatedSlugs,pass,none
+tool_page_integrity,invalid_categorySlugs,pass,none
+tool_page_integrity,missing_required_fields,pass,none
+tool_page_integrity,missing_meta_titles_descriptions,pass,none
+tool_page_integrity,missing_faqs,warn,345 tools have empty faqItems.
+tool_page_integrity,tools_with_disclaimers,info,15 tools include disclaimers.
+tool_page_integrity,noindex_or_low_priority_count,info,57
+tool_page_integrity,hold_sensitive_count,info,74
+premium_coverage,premium_done,info,190
+premium_coverage,good_enough,info,82
+premium_coverage,needs_premium_upgrade,info,46
+premium_coverage,noindex_or_low_priority,info,57
+premium_coverage,hold_sensitive,info,74
+premium_coverage,remaining_needs_upgrade_tools,info,fantasy-name-generator; team-name-generator; baby-name-generator; middle-name-generator; last-name-generator; discord-name-generator; clan-name-generator; superhero-name-generator; pirate-name-generator; medieval-name-generator; town-name-generator; kingdom-name-generator; dragon-name-generator; wolf-name-generator; elf-name-generator; anime-name-generator; dnd-name-generator; alien-name-generator; guild-name-generator; planet-name-generator; island-name-generator; wrestling-name-generator; couple-name-generator; school-name-generator; street-name-generator; magic-name-generator; tavern-name-generator; dungeon-name-generator; cat-name-generator; horse-name-generator; snapchat-name-generator; passphrase-generator; testimonial-generator; meme-text-generator; avatar-name-generator; video-game-name-generator; drag-name-generator; gamertag-generator; name-tag-generator; random-id-generator; viking-name-generator; wizard-name-generator; japanese-name-generator; korean-name-generator; city-name-generator; breadcrumb-generator
+premium_coverage,pass19_candidates_optional_later,info,fantasy-name-generator; team-name-generator; baby-name-generator; middle-name-generator; last-name-generator; discord-name-generator; clan-name-generator; superhero-name-generator; pirate-name-generator; medieval-name-generator; town-name-generator; kingdom-name-generator; dragon-name-generator; wolf-name-generator; elf-name-generator; alien-name-generator; guild-name-generator; planet-name-generator; island-name-generator; couple-name-generator
+performance,vite_chunk_warning,warn,Some chunks are larger than 500 kB after minification.
+performance,largest_assets,info,_slug_.astro_astro_type_script_index_0_lang.9uB_d3gG.js (591.6 KB); BaseLayout.BfA9BTIw.css (38.5 KB)
+performance,launch_blocker,pass,Chunk warning is not a launch blocker; optimize after launch.
+seo_index_readiness,high_index_pages_count,info,30
+seo_index_readiness,medium_index_pages_count,info,13
+seo_index_readiness,low_index_pages_count,info,325
+seo_index_readiness,noindex_pages_count,info,81
+seo_index_readiness,sitemap_exists,pass,dist/sitemap-index.xml exists.
+seo_index_readiness,robots_txt_exists,pass,public/robots.txt exists.
+seo_index_readiness,llms_txt_exists,pass,public/llms.txt exists.
+seo_index_readiness,canonical_tags_present,pass,Canonical tag present in built homepage via BaseLayout.
+seo_index_readiness,category_pages_build,pass,Category index and sampled category pages exist.
+visual_ux_readiness,premium_shared_ui,pass,"Shared premium tool workspace, section suites, copy buttons, and generated tool routes build successfully."
+visual_ux_readiness,mojibake_corrupted_characters,pass,No mojibake markers detected.
+visual_ux_readiness,route_rendering,pass,Dynamic tool routes render; build generated all tool pages.
+visual_ux_readiness,tool_pages_content,pass,Tool pages build with tool-specific metadata and shared generator UI.
+visual_ux_readiness,mobile_layout_known_issues,warn,"No fresh browser visual pass was run; CSS has responsive rules, but mojibake should be fixed before final visual QA."
+launch_recommendation,launch_ready,yes,No launch blockers found.
+launch_recommendation,pass19_timing,info,"Pass 19 should be after launch, not before launch."

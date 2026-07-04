@@ -1,0 +1,57 @@
+row_type,check,slug,status,reason_or_details,metric,value
+metric,current_total_tools,,pass,"Source src/data/tools.ts contains 449 tool slugs.",current_total_tools,449
+metric,final_page_count,,pass,"Fresh generated dist contains 472 HTML pages.",final_html_page_count,472
+metric,final_tool_page_count,,pass,"Fresh generated dist/tools contains 449 tool index pages.",final_tool_page_count,449
+metric,current_rendered_noindex_count,,pass,"Rendered dist/tools pages containing noindex, follow.",current_rendered_noindex_count,42
+metric,source_noindexToolSlugs_count,,pass,"Source noindexToolSlugs still contains 43 entries.",source_noindexToolSlugs_count,43
+metric,redirected_or_merged_tools,,pass,"Only tiktok-username-generator is redirected/merged.",redirected_or_merged_tools_count,1
+redirect,redirected_or_merged_tools,tiktok-username-generator,pass,"Removed from source tool data and standalone rendering; Vercel output has one 301 to /tools/username-generator/.",redirect_target,/tools/username-generator/
+verification,no_duplicate_slugs,,pass,"No duplicate slugs found in src/data/tools.ts.",duplicate_slug_count,0
+verification,no_broken_relatedSlugs,,pass,"Every relatedSlugs entry resolves to an existing source slug.",broken_relatedSlugs_count,0
+verification,sitemap_discovery_redirect_absence,tiktok-username-generator,pass,"No tiktok-username-generator hits in dist sitemap files, HTML sitemap, tools index, or category discovery pages.",discovery_sitemap_tiktok_hits,0
+verification,no_accidentally_indexed_risky_tools,,pass,"Every rendered source noindex slug still renders noindex, follow; tiktok-username-generator is the only source noindex slug without a page.",accidentally_indexed_risky_count,0
+verification,all_indexable_tools_index_follow,,pass,"Every generated tool outside noindexToolSlugs renders index, follow.",indexable_missing_index_follow_count,0
+verification,username_generator_target,username-generator,pass,"Redirect target exists and renders index, follow.",robots,"index, follow"
+noindex_tool,permanent_noindex,x-post-generator,pass,"Platform post generation remains spam, misinformation, harassment, affiliate/ad, and deceptive engagement sensitive despite premium framing.",risk_type,policy_sensitive
+noindex_tool,permanent_noindex,instagram-hashtag-generator,pass,"Platform hashtag generation remains spam, reach/ranking, banned-tag, platform-affiliation, and deceptive engagement sensitive.",risk_type,policy_sensitive
+noindex_tool,permanent_noindex,tiktok-hashtag-generator,pass,"Platform hashtag generation remains trend-abuse, spam, reach/ranking, monetization-claim, and deceptive engagement sensitive.",risk_type,policy_sensitive
+noindex_tool,permanent_noindex,shakespeare-insult-generator,pass,"Insult/banter tooling remains harassment, bullying, hate, threat, doxxing, and humiliation sensitive.",risk_type,policy_sensitive
+noindex_tool,permanent_noindex,comeback-generator,pass,"Comeback tooling remains escalation, harassment, bullying, and targeted-abuse sensitive.",risk_type,policy_sensitive
+noindex_tool,permanent_noindex,roast-generator,pass,"Roast tooling remains bullying, humiliation, harassment, and targeted-abuse sensitive.",risk_type,policy_sensitive
+noindex_tool,held_noindex_pending_audit,contract-generator,pass,"Hardened with draft-only safeguards but remains legal/enforceability sensitive pending final legal approval.",risk_type,legal_template
+noindex_tool,permanent_noindex,dmca-policy-generator,pass,"Copyright/DMCA workflow content remains high-risk legal-process content despite safeguards.",risk_type,policy_sensitive
+noindex_tool,permanent_noindex,privacy-policy-generator,pass,"Privacy notice generation remains privacy-law and compliance sensitive despite safeguards.",risk_type,policy_sensitive
+noindex_tool,permanent_noindex,terms-generator,pass,"Terms generation remains enforceability, consumer-rights, subscription, jurisdiction, and legal-reliance sensitive.",risk_type,policy_sensitive
+noindex_tool,held_noindex_pending_audit,nda-generator,pass,"Hardened with draft-only safeguards but remains confidentiality/enforceability sensitive pending final legal approval.",risk_type,legal_template
+noindex_tool,held_noindex_pending_audit,service-agreement-generator,pass,"Hardened with draft-only safeguards but remains legal, payment, IP, liability, and jurisdiction sensitive pending final legal approval.",risk_type,legal_template
+noindex_tool,permanent_noindex,invoice-generator,pass,"Invoice generation is official-record, debt, payment, tax, and accounting adjacent even with draft-only safeguards.",risk_type,risky
+noindex_tool,permanent_noindex,receipt-generator,pass,"Receipt generation is proof-of-payment, official-record, tax, and accounting adjacent even with draft-only safeguards.",risk_type,risky
+noindex_tool,permanent_noindex,ao3-tag-generator,pass,"AO3/platform/fandom tag tooling is brand/platform/fandom adjacent and can imply unofficial affiliation or metadata abuse.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,random-address-generator,pass,"Fake address/location data can enable deception, fraud, account abuse, false records, or evasion.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,fake-name-generator,pass,"Fake identity output can enable impersonation, evasion, synthetic identity misuse, account abuse, or deceptive records.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,pin-generator,pass,"PIN-like numeric secret generation is credential-adjacent and high-stakes even when sample-framed.",risk_type,security_sensitive
+noindex_tool,permanent_noindex,ransom-note-text-generator,pass,"Threat-adjacent typography can support intimidation, coercion, extortion aesthetics, or harassment.",risk_type,risky
+noindex_tool,permanent_noindex,sith-name-generator,pass,"Protected franchise/IP name tool with unofficial affiliation and brand-signal risk.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,api-key-generator,pass,"API-key-like output is credential-adjacent and can be confused with production secrets.",risk_type,security_sensitive
+noindex_tool,permanent_noindex,license-key-generator,pass,"License-key-like output can be confused with entitlement, activation, piracy, or access material.",risk_type,security_sensitive
+noindex_tool,permanent_noindex,recovery-code-generator,pass,"Recovery-code-like output is account-security sensitive and can be mistaken for real backup credentials.",risk_type,security_sensitive
+noindex_tool,permanent_noindex,jwt-generator,pass,"JWT-like output is auth/security sensitive and can be confused with production token material.",risk_type,security_sensitive
+noindex_tool,permanent_noindex,password-generator,pass,"Password generation is security-sensitive and high-stakes even with browser-local framing.",risk_type,security_sensitive
+noindex_tool,permanent_noindex,token-generator,pass,"Token-like output is credential-adjacent and high-stakes even with demo-safe framing.",risk_type,security_sensitive
+noindex_tool,permanent_noindex,star-wars-name-generator,pass,"Protected franchise/IP name tool with unofficial affiliation risk.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,roblox-name-generator,pass,"Brand/platform/IP name tool with account, availability, impersonation, and platform-rule risks.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,harry-potter-name-generator,pass,"Protected franchise/IP name tool with unofficial affiliation risk.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,pokemon-name-generator,pass,"Protected franchise/IP name tool with unofficial affiliation risk.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,fortnite-name-generator,pass,"Brand/platform/IP name tool with account, availability, and unofficial affiliation risks.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,minecraft-name-generator,pass,"Protected game/platform name tool with unofficial affiliation risk.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,valorant-name-generator,pass,"Protected game/platform name tool with unofficial affiliation risk.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,league-of-legends-name-generator,pass,"Protected game/platform name tool with unofficial affiliation risk.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,minecraft-text-generator,pass,"Protected game/IP text-style tool with unofficial affiliation risk.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,dark-souls-text-generator,pass,"Protected game/IP text-style tool with unofficial affiliation risk.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,star-wars-text-generator,pass,"Protected franchise/IP text-style tool with unofficial affiliation risk.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,spongebob-text-generator,pass,"Protected character/franchise/IP text-style tool with unofficial affiliation risk.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,undertale-text-generator,pass,"Protected game/IP text-style tool with unofficial affiliation risk.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,pokemon-text-generator,pass,"Protected franchise/IP text-style tool with unofficial affiliation risk.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,roblox-username-generator,pass,"Brand/platform/IP username tool with availability, impersonation, account-abuse, and platform-rule risks.",risk_type,brand_ip_or_fake_identity
+noindex_tool,permanent_noindex,facebook-hashtag-generator,pass,"Platform hashtag generation remains platform/spam/reach-abuse sensitive and lacks final approval-to-index artifact.",risk_type,policy_sensitive
+summary,final_status_summary,,pass,"Closure audit passes: 449 tools, 472 generated HTML pages, 42 rendered noindex pages, 43 source noindex slugs, 1 redirected/merged tool, no duplicate slugs, no broken relatedSlugs, no discovery/sitemap leak for tiktok-username-generator, no risky tools accidentally indexed, and all indexable tools render index/follow.",safe_to_commit,false

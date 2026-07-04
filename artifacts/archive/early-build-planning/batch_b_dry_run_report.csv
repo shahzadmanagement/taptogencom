@@ -1,0 +1,51 @@
+tool_name,slug,category,already_exists,duplicate_slug,duplicate_intent_risk,brand_or_policy_risk,implementation_complexity,recommended_action,reason
+Newsletter Name Generator,newsletter-name-generator,business-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Price Tag Generator,price-tag-generator,utility-generators,yes,no,high,low,medium,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Product Tag Generator,product-tag-generator,utility-generators,yes,no,high,low,medium,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Clothing Tag Generator,clothing-tag-generator,utility-generators,yes,no,high,low,medium,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Minutes Of Meeting Generator,minutes-of-meeting-generator,business-generators,yes,no,high,low,medium,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Event Name Generator,event-name-generator,business-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+College Name Generator,college-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Diner Name Generator,diner-name-generator,business-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Flower Name Generator,flower-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Newspaper Name Generator,newspaper-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Plant Name Generator,plant-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Sibling Name Generator,sibling-name-generator,human-name-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Pick A Name Generator,pick-a-name-generator,utility-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Name Generator Wheel,name-generator-wheel,utility-generators,yes,no,high,low,high,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Cake Company Names Generator,cake-company-names-generator,business-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Car Name Generator,car-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Title Name Generator,title-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Geo Tag Generator,geo-tag-generator,utility-generators,yes,no,high,low,medium,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Pet Tag Generator,pet-tag-generator,utility-generators,yes,no,high,low,medium,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Dj Tag Generator,dj-tag-generator,utility-generators,yes,no,high,low,medium,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Clan Tag Generator,clan-tag-generator,utility-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Hang Tag Generator,hang-tag-generator,utility-generators,yes,no,high,low,medium,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Art Tag Generator,art-tag-generator,utility-generators,yes,no,high,low,medium,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Email Tag Generator,email-tag-generator,utility-generators,yes,no,high,low,medium,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Tag Team Name Generator,tag-team-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Rap Name Generator,rap-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Warrior Name Generator,warrior-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Secret Santa Name Generator,secret-santa-name-generator,utility-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Anagram Of Name Generator,anagram-of-name-generator,utility-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Cyberpunk Name Generator,cyberpunk-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Goth Name Generator,goth-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Project Name Generator Keywords,project-name-generator-keywords,business-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Scifi Name Generator,scifi-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Last Name And First Name Generator,last-name-and-first-name-generator,utility-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Baby Name Generator With Last Name,baby-name-generator-with-last-name,human-name-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Nickname Generator Based On Name,nickname-generator-based-on-name,human-name-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Phonetic Spelling Of Name Generator,phonetic-spelling-of-name-generator,utility-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Name Combination Generator,name-combination-generator,utility-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Performer Names Generator,performer-names-generator,business-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Disc Jockey Names Generator,disc-jockey-names-generator,business-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Name Pronunciation Generator,name-pronunciation-generator,utility-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Language Generator,language-generator,writing-generators,no,no,medium,low,low,merge_as_mode,"Not present as a slug, but the intent overlaps nearby text/name generators; best considered as a mode unless a distinct scope is approved."
+Color Palette Generator From Name,color-palette-generator-from-name,utility-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Name Design Generator,name-design-generator,text-generators,no,no,medium,low,medium,merge_as_mode,"Not present as a slug, but the intent overlaps nearby text/name generators; best considered as a mode unless a distinct scope is approved."
+Mountain Name Generator,mountain-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Forest Name Generator,forest-name-generator,writing-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Team Name Generator Using Keywords,team-name-generator-using-keywords,utility-generators,yes,no,high,low,low,hold,Exact slug already exists in src/data/tools.ts; adding it again would create a duplicate Astro route.
+Lettering Generator,lettering-generator,text-generators,no,no,medium,low,medium,merge_as_mode,"Not present as a slug, but the intent overlaps nearby text/name generators; best considered as a mode unless a distinct scope is approved."
+Papyrus Generator,papyrus-generator,text-generators,no,no,low,low,low,add,"New Batch B tool, brand-safe, index-safe, and suitable for a focused generator implementation."
+Serif Generator,serif-generator,text-generators,no,no,low,low,low,add,"New Batch B tool, brand-safe, index-safe, and suitable for a focused generator implementation."

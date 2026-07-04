@@ -1,0 +1,18 @@
+check,actual,expected,status,details
+total_active_tools,430,430,pass,Current tools exported from src/data/tools.ts.
+total_indexable_tools,379,379,pass,Active tools minus active noindex tools.
+total_noindex_tools,51,51,pass,Active intersection with noindexToolSlugs; tiktok-username-generator is no longer active.
+noindexToolSlugs_changed,0,0,pass,Sitemap exclusion list matches current noindexToolSlugs membership/order; src/pages/tools/[slug].astro had no diff.
+xml_sitemap_tool_urls,380,379 indexable tool URLs plus non-tool pages separately,pass,Tool URLs found across dist sitemap XML files.
+indexable_tool_urls_in_sitemap,379,379,pass,All intended indexable tool URLs included.
+indexable_tool_urls_missing,0,0,pass,
+noindex_tool_urls_in_sitemap,0,0,pass,
+redirected_urls_in_sitemap,0,0,pass,
+duplicate_sitemap_urls,0,0,pass,
+duplicate_tool_slugs,0,0,pass,
+broken_relatedSlugs,0,0,pass,
+html_sitemap_indexable_tool_links,379,379,pass,Rendered dist/sitemap/index.html includes intended indexable tool links.
+html_sitemap_noindex_tool_links,0,0,pass,
+validation_tsc,passed,passed,pass,npx.cmd tsc --noEmit
+validation_astro_check,passed,passed,pass,npx.cmd astro check; existing unused-code hints only.
+validation_build,passed,passed,pass,npm.cmd run build; one transient WASM OOM retry succeeded.

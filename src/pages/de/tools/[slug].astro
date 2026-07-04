@@ -1,0 +1,329 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import { getRelatedTools, getToolBySlug, type Tool } from '@/data/tools';
+import { noindexToolSlugs, pass20ControlMap } from '@/data/tool-page-data';
+import { toolHubs } from '@/data/hubs';
+import {
+  createLocalizedFaqItems,
+  createLocalizedGuide,
+  getLanguageSwitchRoute,
+  getLocalizedToolByCanonicalId,
+  getLocalizedToolBySlug,
+  getLocalizedPageCopy,
+  getLocalizedSafetyNote,
+  getLocalizedHubCopy,
+  getLocalizedUiLabel,
+  getToolLanguageAlternates,
+  getSupportedLanguage,
+  localizedPilotLanguages,
+  germanPilotTools,
+} from '@/data/localization';
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return germanPilotTools
+    .filter((entry) => !noindexToolSlugs.has(entry.canonicalToolId))
+    .map((entry) => {
+      const tool = getToolBySlug(entry.canonicalToolId);
+      if (!tool) return null;
+      return {
+        params: { slug: entry.localizedSlug },
+        props: { tool, localized: entry },
+      };
+    })
+    .filter((path): path is { params: { slug: string }; props: { tool: Tool; localized: (typeof germanPilotTools)[number] } } => path !== null);
+}
+
+interface Props {
+  tool: Tool;
+  localized: (typeof germanPilotTools)[number];
+}
+
+const { tool, localized } = Astro.props;
+const slug = tool.slug;
+
+const resolvedLocalization = getLocalizedToolBySlug(Astro.params.slug || '', 'de');
+if (!resolvedLocalization || resolvedLocalization.canonicalToolId !== slug) {
+  return Astro.redirect(getLanguageSwitchRoute(slug, 'en'));
+}
+
+const related = getRelatedTools(slug, 8).filter((item) => !noindexToolSlugs.has(item.slug)).slice(0, 4);
+const matchingHub = toolHubs.find((hub) => hub.slug === tool.categorySlug || hub.categorySlugs.includes(tool.categorySlug));
+const nextStepHubs = toolHubs
+  .filter((hub) => hub.slug !== matchingHub?.slug && (matchingHub?.relatedHubSlugs.includes(hub.slug) || hub.relatedHubSlugs.includes(matchingHub?.slug || '')))
+  .slice(0, 3);
+
+const faqItems = createLocalizedFaqItems(localized);
+const guideCopy = createLocalizedGuide(tool, localized);
+const copy = getLocalizedPageCopy(localized);
+const safetyNote = getLocalizedSafetyNote(localized);
+const englishRoute = getLanguageSwitchRoute(slug, 'en');
+const localizedRoute = getLanguageSwitchRoute(slug, 'de');
+const alternates = getToolLanguageAlternates(slug);
+
+const toolSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": copy.h1,
+  "url": `https://taptogen.com${localizedRoute}`,
+  "description": copy.metaDescription,
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "browserRequirements": "Requires JavaScript",
+  "inLanguage": "de"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://taptogen.com/de/" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://taptogen.com/de/tools/" },
+    { "@type": "ListItem", "position": 3, "name": copy.h1, "item": `https://taptogen.com${localizedRoute}` }]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+
+const pass20Controls = pass20ControlMap[slug];
+---
+<BaseLayout
+  title={copy.metaTitle}
+  description={copy.metaDescription}
+  canonical={localizedRoute}
+  schema={[toolSchema, breadcrumbSchema, faqSchema]}
+  noindex={false}
+  lang="de"
+  dir="ltr"
+  alternates={alternates}
+>
+  <section class="tool-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Startseite</a><span class="sep">/</span>
+        <a href="/tools/">Tools</a><span class="sep">/</span>
+        <a href={`/tools/${tool.slug}/`}>Englische Version</a><span class="sep">/</span>
+        <span>{copy.h1}</span>
+      </div>
+
+      <div class="tool-page-header premium-tool-header">
+        <span class="section-badge tool-category-badge">{tool.icon} {getLocalizedUiLabel(tool.category, 'de')}</span>
+        <h1>{copy.h1}</h1>
+        <p>{copy.intro}</p>
+        <nav class="language-switcher" aria-label="Sprachauswahl">
+          <a href={englishRoute} hreflang="en" lang="en">English</a>
+          {localizedPilotLanguages.map((language) => (
+            <a class={language === 'de' ? 'active' : ''} href={getLanguageSwitchRoute(slug, language)} hreflang={language} lang={language}>{getSupportedLanguage(language).nativeName}</a>
+          ))}
+        </nav>
+        <div class="tool-benefits" aria-label="Vorteile des Tools">
+          <span>Kostenlos</span>
+          <span>Sofort</span>
+          <span>Ohne Anmeldung</span>
+          <span>Privat im Browser</span>
+        </div>
+      </div>
+
+      <div class="tool-workspace premium-tool-workspace" id="tool-workspace" data-tool={tool.slug} data-type={tool.generatorType} data-format={tool.outputFormat || 'text'}>
+        <div id="generator-ui">
+          <div class="workspace-panel input-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">Eingabe</span>
+                <h2>Ergebnis anpassen</h2>
+              </div>
+              <span class="generator-type-pill">{getLocalizedUiLabel(tool.generatorType.replace('-', ' '), 'de')}</span>
+            </div>
+
+            {tool.toolOptions && tool.toolOptions.length > 0 && (
+              <div class="tool-options-panel">
+                {tool.toolOptions.map(opt => (
+                  <div class="tool-option">
+                    <label for={opt.id}>{getLocalizedUiLabel(opt.label, 'de')}</label>
+                    {opt.type === 'select' && (
+                      <select id={opt.id} class="tool-select">
+                        {opt.options?.map(o => (
+                          <option value={o.value} selected={o.value === opt.default}>{getLocalizedUiLabel(o.label, 'de')}</option>
+                        ))}
+                      </select>
+                    )}
+                    {opt.type === 'number' && (
+                      <input type="number" id={opt.id} class="tool-number" value={typeof opt.default === 'number' || typeof opt.default === 'string' ? opt.default : undefined} min={opt.min} max={opt.max} />
+                    )}
+                    {opt.type === 'checkbox' && (
+                      <div class="checkbox-option">
+                        <input type="checkbox" id={opt.id} class="tool-checkbox" checked={!!opt.default} />
+                        <span>Aktiviert</span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {pass20Controls && (
+              <div class="tool-options-panel">
+                <div class="tool-option">
+                  <label for={pass20Controls.modeId}>{getLocalizedUiLabel(pass20Controls.modeLabel, 'de')}</label>
+                  <select id={pass20Controls.modeId} class="tool-select">
+                    {pass20Controls.modes.map(option => (
+                      <option value={option.value}>{getLocalizedUiLabel(option.label, 'de')}</option>
+                    ))}
+                  </select>
+                </div>
+                {pass20Controls.toneId && (
+                  <div class="tool-option">
+                    <label for={pass20Controls.toneId}>Ton</label>
+                    <select id={pass20Controls.toneId} class="tool-select">
+                      <option value="balanced">Ausgewogen</option>
+                      <option value="polished">Ausgearbeitet</option>
+                      <option value="creative">Kreativ</option>
+                      <option value="friendly">Freundlich</option>
+                    </select>
+                  </div>
+                )}
+                {pass20Controls.countId && (
+                  <div class="tool-option">
+                    <label for={pass20Controls.countId}>Anzahl</label>
+                    <input type="number" id={pass20Controls.countId} class="tool-number" value={pass20Controls.countDefault} min={pass20Controls.countMin} max={pass20Controls.countMax} />
+                  </div>
+                )}
+              </div>
+            )}
+
+            <label class="input-label" for="tool-input">Prompt, Keyword, Text oder Details</label>
+            <textarea class="tool-input" id="tool-input" placeholder="Gib ein Keyword, einen Prompt oder Text ein, um diesen Generator anzupassen..." rows="4"></textarea>
+            <div class="example-chip-row" aria-label="Beispiele">
+              <button type="button" class="example-chip" data-example={copy.primaryKeyword}>{copy.primaryKeyword}</button>
+              {copy.faqTopics.slice(0, 2).map(keyword => (
+                <button type="button" class="example-chip" data-example={keyword}>{keyword}</button>
+              ))}
+            </div>
+            <div class="tool-controls premium-controls">
+              <button class="btn btn-primary" id="generate-btn">Generieren</button>
+              <button class="btn btn-outline" id="example-btn">Beispiel nutzen</button>
+              <button class="btn btn-ghost" id="reset-btn">Löschen</button>
+              <button class="btn btn-ghost" id="regenerate-btn">Neu generieren</button>
+            </div>
+          </div>
+
+          <div class="workspace-panel output-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">Ausgabe</span>
+                <h2>Deine Ergebnisse</h2>
+              </div>
+              <button class="copy-btn copy-all-btn" id="copy-btn">Alles kopieren</button>
+            </div>
+            <div class="tool-output premium-output empty" id="tool-output">Deine Ergebnisse erscheinen hier.</div>
+          </div>
+        </div>
+      </div>
+
+      {safetyNote && (
+        <div class="tool-disclaimer" style="margin-top: 15px; padding: 15px; background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; border-radius: 4px; font-size: 0.9rem; color: #b8860b;">
+          <strong>Hinweis:</strong> {safetyNote}
+        </div>
+      )}
+
+      <div class="content-section premium-content-section">
+        <section class="content-card intro-card">
+          <h2>Was ist {copy.h1}?</h2>
+          <p>{copy.metaDescription}</p>
+          <p>{copy.intro}</p>
+        </section>
+
+        <section class="content-card">
+          <h2>So nutzt du {copy.h1}</h2>
+          <ol>
+            {guideCopy.howTo.map(step => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="content-card">
+          <h2>Tipps für bessere Ergebnisse</h2>
+          <ul>
+            {guideCopy.tips.map(tip => <li><strong>{tip.title}</strong> - {tip.body}</li>)}
+          </ul>
+        </section>
+
+        <section class="content-card">
+          <h2>Warum TapToGen nutzen?</h2>
+          <ul>
+            <li><strong>Sofortige Ergebnisse</strong> - erstelle Ideen direkt in deinem Browser.</li>
+            <li><strong>Kostenlos</strong> - ohne Anmeldung und ohne versteckte Kosten.</li>
+            <li><strong>Praktische Privatsphäre</strong> - der Ablauf funktioniert auf der Seite, ohne ein Konto zu verlangen.</li>
+            <li><strong>Leicht zu prüfen</strong> - kopiere, vergleiche und passe Ergebnisse vor der Nutzung an.</li>
+          </ul>
+        </section>
+
+        <section class="content-card">
+          <h2>Häufige Fragen</h2>
+          <div class="faq-list">
+            {faqItems.map(faq => (
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>{faq.q}</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer"><p>{faq.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {related.length > 0 && (
+          <section class="content-card related-card">
+            <h2>Ähnliche Tools</h2>
+            <div class="tools-grid related-tools-grid">
+              {related.map(r => (
+                <a href={getLanguageSwitchRoute(r.slug, 'de')} class="tool-card">
+                  <div class="tool-icon">{r.icon}</div>
+                  <h3>{getLocalizedToolByCanonicalId(r.slug, 'de') ? getLocalizedPageCopy(getLocalizedToolByCanonicalId(r.slug, 'de')!).h1 : r.name}</h3>
+                  <p>{getLocalizedToolByCanonicalId(r.slug, 'de') ? getLocalizedPageCopy(getLocalizedToolByCanonicalId(r.slug, 'de')!).intro : r.tagline}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {(matchingHub || nextStepHubs.length > 0) && (
+          <section class="content-card">
+            <h2>Mehr TapToGen-Tools entdecken</h2>
+            <p>Diese Links führen zu aktiven, indexierbaren Tools.</p>
+            <div class="category-grid">
+              {matchingHub && (
+                <a href={`/tools/${matchingHub.slug}/`} class="category-card">
+                  <span class="cat-icon">#</span>
+                  <h3>{getLocalizedHubCopy(matchingHub.slug, matchingHub.h1, matchingHub.description, 'de').title}</h3>
+                  <p>{getLocalizedHubCopy(matchingHub.slug, matchingHub.h1, matchingHub.description, 'de').description}</p>
+                </a>
+              )}
+              {nextStepHubs.map((hub) => (
+                <a href={`/tools/${hub.slug}/`} class="category-card">
+                  <span class="cat-icon">#</span>
+                  <h3>{getLocalizedHubCopy(hub.slug, hub.h1, hub.description, 'de').title}</h3>
+                  <p>{getLocalizedHubCopy(hub.slug, hub.h1, hub.description, 'de').description}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import '@/scripts/tool-workspace';
+  </script>
+</BaseLayout>

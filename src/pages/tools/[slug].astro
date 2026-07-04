@@ -1,0 +1,328 @@
+﻿---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import { tools, getRelatedTools, type Tool } from '@/data/tools';
+import { getEffectiveGuideCopy, getNoindexSafetyProfile, noindexToolSlugs, pass20ControlMap } from '@/data/tool-page-data';
+import { toolHubs } from '@/data/hubs';
+import { getLanguageSwitchRoute, getLocalizedToolByCanonicalId, getSupportedLanguage, getToolLanguageAlternates, localizedPilotLanguages } from '@/data/localization';
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return tools.map(tool => ({
+    params: { slug: tool.slug },
+    props: { tool }}));
+}
+
+interface Props {
+  tool: Tool;
+}
+
+const { tool } = Astro.props;
+const slug = tool.slug;
+
+const related = getRelatedTools(slug, 8).filter((item) => !noindexToolSlugs.has(item.slug)).slice(0, 4);
+const matchingHub = toolHubs.find((hub) => hub.slug === tool.categorySlug || hub.categorySlugs.includes(tool.categorySlug));
+const nextStepHubs = toolHubs
+  .filter((hub) => hub.slug !== matchingHub?.slug && (matchingHub?.relatedHubSlugs.includes(hub.slug) || hub.relatedHubSlugs.includes(matchingHub?.slug || '')))
+  .slice(0, 3);
+
+const toolSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": tool.name,
+  "url": `https://taptogen.com/tools/${tool.slug}/`,
+  "description": tool.description,
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "browserRequirements": "Requires JavaScript"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taptogen.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://taptogen.com/tools/" },
+    { "@type": "ListItem", "position": 3, "name": tool.name, "item": `https://taptogen.com/tools/${tool.slug}/` }]
+};
+
+const pass20Controls = pass20ControlMap[slug];
+
+const noindexSafetyProfile = getNoindexSafetyProfile(slug);
+const effectiveDisclaimer = tool.disclaimer || noindexSafetyProfile?.disclaimer || '';
+const effectiveFaqItems = tool.faqItems.length > 0 ? tool.faqItems : noindexSafetyProfile ? [
+  { q: `What is ${tool.name} best used for?`, a: noindexSafetyProfile.use },
+  { q: `What should I avoid with ${tool.name}?`, a: noindexSafetyProfile.disclaimer },
+  { q: `Does ${tool.name} verify official status, availability, compliance, or results?`, a: noindexSafetyProfile.limits },
+  { q: `What should I check before using the output?`, a: noindexSafetyProfile.beforeUse }] : [];
+
+const faqSchema = effectiveFaqItems.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": effectiveFaqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+} : null;
+
+const schemas = [toolSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+
+const effectiveGuideCopy = getEffectiveGuideCopy(tool);
+const alternates = getToolLanguageAlternates(slug);
+const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => getLocalizedToolByCanonicalId(slug, language));
+---
+<BaseLayout
+  title={tool.metaTitle}
+  description={tool.metaDescription}
+  canonical={`/tools/${tool.slug}/`}
+  schema={schemas}
+  noindex={noindexToolSlugs.has(slug)}
+  alternates={alternates}
+>
+  <section class="tool-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span class="sep">/</span>
+        <a href="/tools/">Tools</a><span class="sep">/</span>
+        <a href={`/categories/${tool.categorySlug}/`}>{tool.category}</a><span class="sep">/</span>
+        <span>{tool.name}</span>
+      </div>
+
+      <div class="tool-page-header premium-tool-header">
+        <span class="section-badge tool-category-badge">{tool.icon} {tool.category}</span>
+        <h1>{tool.name}</h1>
+        <p>{tool.tagline}</p>
+        {localizedSwitchLanguages.length > 0 && (
+          <nav class="language-switcher" aria-label="Language switcher">
+            <a class="active" href={`/tools/${tool.slug}/`} hreflang="en" lang="en">English</a>
+            {localizedSwitchLanguages.map((language) => (
+              <a href={getLanguageSwitchRoute(slug, language)} hreflang={language} lang={language}>{getSupportedLanguage(language).nativeName}</a>
+            ))}
+          </nav>
+        )}
+        <div class="tool-benefits" aria-label="Tool benefits">
+          <span>Free</span>
+          <span>Instant</span>
+          <span>No signup</span>
+          <span>Private in your browser</span>
+        </div>
+      </div>
+
+      <!-- Generator Workspace -->
+      <div class="tool-workspace premium-tool-workspace" id="tool-workspace" data-tool={tool.slug} data-type={tool.generatorType} data-format={tool.outputFormat || 'text'}>
+        <div id="generator-ui">
+          <div class="workspace-panel input-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">Input</span>
+                <h2>Customize Your Result</h2>
+              </div>
+              <span class="generator-type-pill">{tool.generatorType.replace('-', ' ')}</span>
+            </div>
+
+            {tool.toolOptions && tool.toolOptions.length > 0 && (
+              <div class="tool-options-panel">
+                {tool.toolOptions.map(opt => (
+                  <div class="tool-option">
+                    <label for={opt.id}>{opt.label}</label>
+                    {opt.type === 'select' && (
+                      <select id={opt.id} class="tool-select">
+                        {opt.options?.map(o => (
+                          <option value={o.value} selected={o.value === opt.default}>{o.label}</option>
+                        ))}
+                      </select>
+                    )}
+                    {opt.type === 'number' && (
+                      <input type="number" id={opt.id} class="tool-number" value={typeof opt.default === 'number' || typeof opt.default === 'string' ? opt.default : undefined} min={opt.min} max={opt.max} />
+                    )}
+                    {opt.type === 'checkbox' && (
+                      <div class="checkbox-option">
+                        <input type="checkbox" id={opt.id} class="tool-checkbox" checked={!!opt.default} />
+                        <span>Enabled</span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {pass20Controls && (
+              <div class="tool-options-panel">
+                <div class="tool-option">
+                  <label for={pass20Controls.modeId}>{pass20Controls.modeLabel}</label>
+                  <select id={pass20Controls.modeId} class="tool-select">
+                    {pass20Controls.modes.map(option => (
+                      <option value={option.value}>{option.label}</option>
+                    ))}
+                  </select>
+                </div>
+                {pass20Controls.toneId && (
+                  <div class="tool-option">
+                    <label for={pass20Controls.toneId}>Tone</label>
+                    <select id={pass20Controls.toneId} class="tool-select">
+                      <option value="balanced">Balanced</option>
+                      <option value="polished">Polished</option>
+                      <option value="creative">Creative</option>
+                      <option value="friendly">Friendly</option>
+                    </select>
+                  </div>
+                )}
+                {pass20Controls.countId && (
+                  <div class="tool-option">
+                    <label for={pass20Controls.countId}>Result Count</label>
+                    <input type="number" id={pass20Controls.countId} class="tool-number" value={pass20Controls.countDefault} min={pass20Controls.countMin} max={pass20Controls.countMax} />
+                  </div>
+                )}
+              </div>
+            )}
+
+            <label class="input-label" for="tool-input">Prompt, keyword, text, or details</label>
+            <textarea class="tool-input" id="tool-input" placeholder="Enter a keyword, prompt, or text to customize this generator..." rows="4"></textarea>
+            <div class="example-chip-row" aria-label="Example prompts">
+              <button type="button" class="example-chip" data-example={tool.primaryKeyword}>{tool.primaryKeyword}</button>
+              {tool.secondaryKeywords.slice(0, 2).map(keyword => (
+                <button type="button" class="example-chip" data-example={keyword}>{keyword}</button>
+              ))}
+            </div>
+            <div class="tool-controls premium-controls">
+              <button class="btn btn-primary" id="generate-btn">Generate</button>
+              <button class="btn btn-outline" id="example-btn">Use Example</button>
+              <button class="btn btn-ghost" id="reset-btn">Clear</button>
+              <button class="btn btn-ghost" id="regenerate-btn">Regenerate</button>
+            </div>
+          </div>
+
+          <div class="workspace-panel output-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">Output</span>
+                <h2>Your Results</h2>
+              </div>
+              <button class="copy-btn copy-all-btn" id="copy-btn">Copy All</button>
+            </div>
+            <div class="tool-output premium-output empty" id="tool-output">Your generated results will appear here.</div>
+          </div>
+        </div>
+      </div>
+
+      {effectiveDisclaimer && (
+        <div class="tool-disclaimer" style="margin-top: 15px; padding: 15px; background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; border-radius: 4px; font-size: 0.9rem; color: #b8860b;">
+          <strong>Disclaimer:</strong> {effectiveDisclaimer}
+        </div>
+      )}
+
+      <!-- Content Below Tool -->
+      <div class="content-section premium-content-section">
+        <section class="content-card intro-card">
+          <h2>What is {tool.name}?</h2>
+          <p>{tool.description}</p>
+        </section>
+
+        <section class="content-card">
+          <h2>How to Use {tool.name}</h2>
+          {effectiveGuideCopy ? (
+            <ol>
+              {effectiveGuideCopy.howTo.map(step => <li>{step}</li>)}
+            </ol>
+          ) : (
+            <ol>
+              <li>Enter your text, keyword, or details in the input field.</li>
+              <li>Adjust any options to match the style or format you need.</li>
+              <li>Click Generate to create fresh results.</li>
+              <li>Copy one result, a section, or the full output.</li>
+            </ol>
+          )}
+        </section>
+
+        <section class="content-card">
+          <h2>Tips for Better Results</h2>
+          {effectiveGuideCopy ? (
+            <ul>
+              {effectiveGuideCopy.tips.map(tip => <li><strong>{tip.title}</strong> - {tip.body}</li>)}
+            </ul>
+          ) : (
+            <ul>
+              <li><strong>Be specific</strong> - a clear keyword or short brief usually gives stronger output.</li>
+              <li><strong>Try variations</strong> - regenerate a few times to compare different directions.</li>
+              <li><strong>Use options</strong> - style, tone, count, and format settings can change the result quickly.</li>
+              <li><strong>Copy selectively</strong> - use individual copy buttons when you only need one card or section.</li>
+            </ul>
+          )}
+        </section>
+
+        <section class="content-card">
+          <h2>Why Use TapToGen's {tool.name}?</h2>
+          <ul>
+            <li><strong>Instant results</strong> - generate output in milliseconds, right in your browser.</li>
+            <li><strong>100% free</strong> - no signup, no limits, no hidden costs.</li>
+            <li><strong>Privacy-first</strong> - your input stays on your device.</li>
+            <li><strong>Mobile-friendly</strong> - works on phones, tablets, and desktops.</li>
+            <li><strong>Copy with one click</strong> - copy individual results or the full output.</li>
+          </ul>
+        </section>
+
+        {effectiveFaqItems.length > 0 && (
+          <section class="content-card">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              {effectiveFaqItems.map(faq => (
+                <div class="faq-item">
+                  <button class="faq-question" aria-expanded="false">
+                    <span>{faq.q}</span>
+                    <span class="faq-icon">+</span>
+                  </button>
+                  <div class="faq-answer"><p>{faq.a}</p></div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {related.length > 0 && (
+          <section class="content-card related-card">
+            <h2>Related Tools</h2>
+            <div class="tools-grid related-tools-grid">
+              {related.map(r => (
+                <a href={`/tools/${r.slug}/`} class="tool-card">
+                  <div class="tool-icon">{r.icon}</div>
+                  <h3>{r.name}</h3>
+                  <p>{r.tagline}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {(matchingHub || nextStepHubs.length > 0) && (
+          <section class="content-card">
+            <h2>Explore More TapToGen Tools</h2>
+            <p>Use these hub links to move from this generator into related active, indexable TapToGen discovery pages.</p>
+            <div class="category-grid">
+              {matchingHub && (
+                <a href={`/tools/${matchingHub.slug}/`} class="category-card">
+                  <span class="cat-icon">#</span>
+                  <h3>{matchingHub.h1}</h3>
+                  <p>{matchingHub.description}</p>
+                </a>
+              )}
+              {nextStepHubs.map((hub) => (
+                <a href={`/tools/${hub.slug}/`} class="category-card">
+                  <span class="cat-icon">#</span>
+                  <h3>{hub.h1}</h3>
+                  <p>{hub.description}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import '@/scripts/tool-workspace';
+  </script>
+</BaseLayout>
+

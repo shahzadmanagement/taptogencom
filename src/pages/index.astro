@@ -1,0 +1,245 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import { tools, getPopularTools, getToolBySlug, type Tool } from '@/data/tools';
+import { categories } from '@/data/categories';
+import { toolHubs } from '@/data/hubs';
+import { noindexToolSlugs } from '@/data/tool-page-data';
+
+const noindex = new Set(noindexToolSlugs);
+const hubLinks = toolHubs.map((hub) => ({
+  href: `/tools/${hub.slug}/`,
+  title: hub.h1,
+  description: hub.description,
+}));
+
+const highValueToolSlugs = [
+  'name-generator',
+  'fancy-text-generator',
+  'paragraph-generator',
+  'writing-prompt-generator',
+  'meta-tag-generator',
+  'seo-title-generator',
+  'business-name-generator',
+  'domain-name-generator',
+  'story-plot-generator',
+  'character-name-generator',
+  'blog-outline-generator',
+  'content-brief-generator',
+];
+const highValueTools = highValueToolSlugs
+  .map((slug) => getToolBySlug(slug))
+  .filter((tool): tool is Tool => {
+    if (!tool) return false;
+    return !noindex.has(tool.slug);
+  });
+const popularTools = getPopularTools().filter((tool) => !noindex.has(tool.slug)).slice(0, 12);
+
+const homeFaqs = [
+  { q: 'What is TapToGen?', a: 'TapToGen is a free discovery hub for browser-based generator tools. It helps you draft names, text styles, writing ideas, SEO snippets, business assets, creative prompts, and practical utilities without signing up.' },
+  { q: 'Are TapToGen tools free?', a: 'Yes. The tools are free to open and use, with no account or credit card required.' },
+  { q: 'Does TapToGen store my inputs?', a: 'TapToGen tools are designed to run in your browser. Avoid entering private, sensitive, legal, financial, medical, or security-critical information into any online tool.' },
+  { q: 'Which generator should I start with?', a: 'Start with a hub that matches your intent: name generators for naming, text generators for formatting, writing generators for drafts, SEO generators for metadata, business generators for brand work, and creative generators for story or idea exploration.' },
+  { q: 'Can I publish generated results as-is?', a: 'Treat generated output as a draft. Review originality, accuracy, claims, availability, trademarks, platform rules, accessibility, and audience fit before publishing or using it commercially.' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": homeFaqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+};
+---
+<BaseLayout
+  title="TapToGen - Free Online Generator Tools for Names, Text, Writing, SEO and More"
+  description="TapToGen is a free hub for generator tools. Find name generators, text generators, writing generators, SEO generators, business generators, and creative generators."
+  canonical="/"
+  schema={[faqSchema]}
+>
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-content">
+      <span class="section-badge animate-in">TapToGen</span>
+      <h1 class="animate-in delay-1">Free generator tools for names, text, writing, SEO, business, and creative work</h1>
+      <p class="animate-in delay-2">
+        TapToGen helps creators, marketers, writers, founders, students, and builders find the right generator fast, create useful drafts, and move from a blank page to editable options.
+      </p>
+      <div class="search-bar animate-in delay-3">
+        <span class="search-icon" aria-hidden="true">?</span>
+        <input type="text" id="hero-search" placeholder="Search generator tools..." aria-label="Search generator tools" />
+      </div>
+      <div class="hero-buttons animate-in delay-3">
+        <a href="/tools/" class="btn btn-primary">Explore all tools</a>
+        <a href="/tools/name-generators/" class="btn btn-outline">Start with name generators</a>
+      </div>
+      <div class="hero-stats animate-in delay-4">
+        <div class="hero-stat">
+          <div class="num gradient-text">{tools.length}+</div>
+          <div class="label">Active tools</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num gradient-text">6</div>
+          <div class="label">Featured hubs</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num gradient-text">Free</div>
+          <div class="label">No signup</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tools-section" id="hubs">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Discovery Hubs</span>
+        <h2>Find the right TapToGen hub</h2>
+        <p>Start broad, then jump into curated tools with focused descriptions, FAQs, and next-step links.</p>
+      </div>
+      <div class="category-grid">
+        {hubLinks.map((hub) => (
+          <a href={hub.href} class="category-card">
+            <span class="cat-icon">#</span>
+            <h3>{hub.title}</h3>
+            <p>{hub.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tools-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">High Value Tools</span>
+        <h2>Popular starting points</h2>
+        <p>Useful generators for naming, content drafting, metadata, brand planning, and creative exploration.</p>
+      </div>
+      <div class="tools-grid">
+        {highValueTools.map((tool) => (
+          <a href={`/tools/${tool.slug}/`} class="tool-card">
+            <div class="tool-icon">{tool.icon}</div>
+            <h3>{tool.name}</h3>
+            <p>{tool.tagline}</p>
+            <span class="tool-tag">{tool.category}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tools-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Popular Tools</span>
+        <h2>Frequently used generators</h2>
+        <p>Fast, practical tools people use for profiles, pages, ideas, names, tags, and polished text.</p>
+      </div>
+      <div class="tools-grid">
+        {popularTools.map((tool) => (
+          <a href={`/tools/${tool.slug}/`} class="tool-card">
+            <div class="tool-icon">{tool.icon}</div>
+            <h3>{tool.name}</h3>
+            <p>{tool.tagline}</p>
+            <span class="tool-tag">{tool.category}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tools-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Categories</span>
+        <h2>Browse every generator category</h2>
+        <p>Use categories when you want the full TapToGen library grouped by topic.</p>
+      </div>
+      <div class="category-grid">
+        {categories.map((cat) => (
+          <a href={`/categories/${cat.slug}/`} class="category-card">
+            <span class="cat-icon">{cat.icon}</span>
+            <h3>{cat.name}</h3>
+            <p>{cat.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">What TapToGen Is</span>
+        <h2>A practical generator toolbox</h2>
+        <p>TapToGen is built for quick drafting and discovery, not blind automation.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">1</div>
+          <h3>Choose a focused tool</h3>
+          <p>Pick a hub, category, or high-value generator that matches the job you are trying to do.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">2</div>
+          <h3>Generate editable options</h3>
+          <p>Add context, compare results, and use the output as a starting point instead of a finished answer.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">3</div>
+          <h3>Review before using</h3>
+          <p>Check accuracy, originality, claims, rights, safety, and platform rules before you publish or share.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">FAQ</span>
+        <h2>TapToGen questions</h2>
+        <p>Quick answers for using generator tools responsibly.</p>
+      </div>
+      <div class="faq-list">
+        {homeFaqs.map((faq) => (
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>{faq.q}</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>{faq.a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item?.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach((faqItem) => {
+          faqItem.classList.remove('open');
+          faqItem.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item?.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    const searchInput = document.getElementById('hero-search') as HTMLInputElement;
+    searchInput?.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' && searchInput.value.trim()) {
+        window.location.href = `/tools/?q=${encodeURIComponent(searchInput.value.trim())}`;
+      }
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,21 @@
+check,actual,expected,status,notes
+fr_pages_generated,40,40,pass,
+de_pages_generated,40,40,pass,
+es_pages_generated,40,40,pass,
+localized_pages_total,120,120,pass,
+sitemap_localized_urls,120,120,pass,
+duplicate_localized_slugs_es,0,0,pass,
+duplicate_localized_slugs_fr,0,0,pass,
+duplicate_localized_slugs_de,0,0,pass,
+localized_noindex_tools,0,0,pass,
+localized_redirect_source_tools,0,0,pass,
+html_lang_dir_failures,0,0,pass,
+canonicals_self_reference_failures,0,0,pass,
+hreflang_en_es_fr_de_x_default_failures,0,0,pass,
+language_switch_same_tool_failures,0,0,pass,
+hardcoded_vercel_or_localhost,0,0,pass,
+broken_internal_links,0,0,pass,
+content_quality_risky_claim_flags,0,0,pass,manual scan found only cautionary/non-promise language
+active_tools,430,430,pass,
+english_noindex_tools,51,51,pass,active English noindex slugs; source set also contains redirected tiktok-username-generator
+redirects,20,20,pass,

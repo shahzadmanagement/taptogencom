@@ -1,0 +1,51 @@
+tool_name,slug,exists,current_status,generator_logic_status,content_status,toolOptions_status,relatedSlugs_status,recommended_action,exact_fix_needed
+Newsletter Name Generator,newsletter-name-generator,yes,complete,present,complete,complete,valid,keep,Completed in Batch B pass 1 with option-aware newsletter name output.
+Price Tag Generator,price-tag-generator,yes,complete,present,complete,complete,valid,keep,Completed in Batch B pass 1 with fixed currency options and useful tag output.
+Product Tag Generator,product-tag-generator,yes,complete,present,complete,complete,valid,keep,Completed in Batch B pass 1 with specific product tag output.
+Clothing Tag Generator,clothing-tag-generator,yes,complete,present,complete,complete,valid,keep,Completed in Batch B pass 1 with clothing label output.
+Minutes Of Meeting Generator,minutes-of-meeting-generator,yes,complete,present,complete,complete,valid,keep,Completed in Batch B pass 1 with structured meeting minutes output.
+Event Name Generator,event-name-generator,yes,complete,present,complete,complete,valid,keep,Completed in Batch B pass 1 with event-type and vibe output.
+College Name Generator,college-name-generator,yes,complete,present,complete,complete,valid,keep,Completed in Batch B pass 1 with valid category and institution naming output.
+Diner Name Generator,diner-name-generator,yes,complete,present,complete,complete,valid,keep,Completed in Batch B pass 1 with diner style output.
+Flower Name Generator,flower-name-generator,yes,complete,present,complete,complete,valid,keep,Completed in Batch B pass 1 with valid category and flower style output.
+Newspaper Name Generator,newspaper-name-generator,yes,complete,present,complete,complete,valid,keep,Completed in Batch B pass 1 with valid category and era-specific output.
+Plant Name Generator,plant-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 2 with valid category and option-aware plant naming output.
+Sibling Name Generator,sibling-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 2 with stronger metadata and matching-style output.
+Pick A Name Generator,pick-a-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 2 with real list parsing and random pick output.
+Name Generator Wheel,name-generator-wheel,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 2 with wheel-style result and next-round output.
+Cake Company Names Generator,cake-company-names-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 2 with vibe-specific bakery names and SEO copy.
+Car Name Generator,car-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 2 with valid category and vehicle-class naming output.
+Title Name Generator,title-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 2 with valid category and genre-specific title patterns.
+Geo Tag Generator,geo-tag-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 2 with place parsing and format-aware hashtag output.
+Pet Tag Generator,pet-tag-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 2 with tag-shape layouts and microchip option output.
+Dj Tag Generator,dj-tag-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 2 with DJ drop phrases and vibe-specific output.
+Clan Tag Generator,clan-tag-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 3 with short-tag options and specific gaming group output.
+Hang Tag Generator,hang-tag-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 3 with retail hang tag layouts and density-aware output.
+Art Tag Generator,art-tag-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 3 with medium-specific art tags and safer content.
+Email Tag Generator,email-tag-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 3 as email labels/plus-tags for inbox organization.
+Tag Team Name Generator,tag-team-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 3 with valid category and generic duo/team naming output.
+Rap Name Generator,rap-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 3 with brand-safe metadata/options and original alias output.
+Warrior Name Generator,warrior-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 3 with valid category and warrior-class output.
+Secret Santa Name Generator,secret-santa-name-generator,yes,complete,present,complete,complete,valid,keep,No immediate fix needed.
+Anagram Of Name Generator,anagram-of-name-generator,yes,complete,present,complete,complete,valid,keep,No immediate fix needed.
+Cyberpunk Name Generator,cyberpunk-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 3 with valid category and fictional role-based output.
+Goth Name Generator,goth-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 3 with valid category and safe aesthetic output.
+Project Name Generator Keywords,project-name-generator-keywords,yes,complete,present,complete,complete,valid,keep,No immediate fix needed.
+Scifi Name Generator,scifi-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 3 with valid category and entity-type sci-fi output.
+Last Name And First Name Generator,last-name-and-first-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 4 with valid category and full-name format output.
+Baby Name Generator With Last Name,baby-name-generator-with-last-name,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 4 with surname-aware baby name flow output.
+Nickname Generator Based On Name,nickname-generator-based-on-name,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 4 with safe friendly nickname styles.
+Phonetic Spelling Of Name Generator,phonetic-spelling-of-name-generator,yes,complete,present,complete,complete,valid,keep,No immediate fix needed.
+Name Combination Generator,name-combination-generator,yes,complete,present,complete,complete,valid,keep,No immediate fix needed.
+Performer Names Generator,performer-names-generator,yes,complete,present,complete,complete,valid,keep,No immediate fix needed.
+Disc Jockey Names Generator,disc-jockey-names-generator,yes,complete,present,complete,complete,valid,keep,No immediate fix needed.
+Name Pronunciation Generator,name-pronunciation-generator,yes,complete,present,complete,complete,valid,keep,No immediate fix needed.
+Language Generator,language-generator,no,placeholder,missing,missing entry,not required,missing entry,merge_mode,Do not create a standalone page; merge as a mode/preset into an existing text/name tool.
+Color Palette Generator From Name,color-palette-generator-from-name,yes,complete,present,complete,complete,valid,keep,No immediate fix needed.
+Name Design Generator,name-design-generator,no,placeholder,missing,missing entry,not required,missing entry,merge_mode,Do not create a standalone page; merge as a mode/preset into an existing text/name tool.
+Mountain Name Generator,mountain-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 4 with valid category and fictional geography output.
+Forest Name Generator,forest-name-generator,yes,complete,present,complete,complete,valid,keep,Upgraded in Batch B pass 4 with valid category and fictional woodland output.
+Team Name Generator Using Keywords,team-name-generator-using-keywords,yes,complete,present,complete,complete,valid,keep,No immediate fix needed.
+Lettering Generator,lettering-generator,no,placeholder,missing,missing entry,not required,missing entry,merge_mode,Do not create a standalone page; merge as a mode/preset into an existing text/name tool.
+Papyrus Generator,papyrus-generator,yes,complete,present,complete,complete,valid,keep,Added in Batch B pass 1 with complete metadata and real papyrus-style output.
+Serif Generator,serif-generator,yes,complete,present,complete,complete,valid,keep,Added in Batch B pass 1 with complete metadata and real serif Unicode output.

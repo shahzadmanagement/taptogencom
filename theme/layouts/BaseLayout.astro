@@ -1,0 +1,199 @@
+---
+import { siteConfig } from '@/config/site';
+import { headerNav, footerNav } from '@/data/navigation';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  schema?: object[];
+  noindex?: boolean;
+  lang?: string;
+  dir?: 'ltr' | 'rtl';
+  alternates?: { lang: string; href: string }[];
+}
+
+const { title, description, canonical, ogImage, schema = [], noindex = false, lang = 'en', dir = 'ltr', alternates = [] } = Astro.props;
+const canonicalUrl = canonical ? `${siteConfig.url}${canonical}` : `${siteConfig.url}${Astro.url.pathname}`;
+const ogImg = ogImage || `${siteConfig.url}${siteConfig.defaultOgImage}`;
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": siteConfig.name,
+  "url": siteConfig.url,
+  "description": siteConfig.description,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": `${siteConfig.url}/tools/?q={search_term_string}`,
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": siteConfig.name,
+  "url": siteConfig.url,
+  "logo": `${siteConfig.url}/favicon.svg`,
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": siteConfig.contactEmail,
+    "contactType": "customer support"
+  }
+};
+
+const allSchemas = [websiteSchema, orgSchema, ...schema];
+const currentPath = Astro.url.pathname;
+const isSpanish = lang === 'es';
+const navLabelMap: Record<string, string> = {
+  '/': 'Inicio',
+  '/tools/': 'Herramientas',
+  '/categories/': 'Categorías',
+  '/blog/': 'Blog',
+  '/about-us/': 'Acerca de',
+};
+const footerLabelMap: Record<string, string> = {
+  '/tools/name-generators/': 'Generadores de nombres',
+  '/tools/text-generators/': 'Generadores de texto',
+  '/tools/writing-generators/': 'Generadores de escritura',
+  '/tools/seo-generators/': 'Generadores SEO',
+  '/tools/business-generators/': 'Generadores para negocios',
+  '/tools/creative-generators/': 'Generadores creativos',
+  '/tools/fancy-text-generator/': 'Generador de letras bonitas',
+  '/tools/name-generator/': 'Generador de nombres',
+  '/tools/username-generator/': 'Generador de nombres de usuario',
+  '/tools/bio-generator/': 'Generador de biografías',
+  '/tools/youtube-tag-generator/': 'Generador de etiquetas para videos',
+  '/tools/business-name-generator/': 'Generador de nombres para empresas',
+  '/about-us/': 'Acerca de',
+  '/contact-us/': 'Contacto',
+  '/privacy/': 'Privacidad',
+  '/terms/': 'Términos',
+  '/disclaimer/': 'Aviso legal',
+  '/sitemap/': 'Mapa del sitio',
+};
+const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelMap[href] || navLabelMap[href] || label) : label;
+---
+<!DOCTYPE html>
+<html lang={lang} dir={dir}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  {alternates.map((alternate) => (
+    <link rel="alternate" hreflang={alternate.lang} href={alternate.href} />
+  ))}
+  <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
+  <meta name="googlebot" content={noindex ? 'noindex, follow' : 'index, follow'} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content={siteConfig.name} />
+  <meta property="og:image" content={ogImg} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImg} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  {siteConfig.verification.google && <meta name="google-site-verification" content={siteConfig.verification.google} />}
+  {siteConfig.verification.bing && <meta name="msvalidate.01" content={siteConfig.verification.bing} />}
+  {allSchemas.map(s => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))}
+  <style is:global>
+    @import '../styles/global.css';
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="logo-icon">⚡</span>
+        {siteConfig.name}
+      </a>
+      <div class="nav-links" id="nav-links" role="navigation" aria-label={isSpanish ? 'Navegación principal' : 'Main navigation'}>
+        {headerNav.map(item => (
+          <a href={item.href} class={currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'active' : ''}>{localizeLabel(item.href, item.label)}</a>
+        ))}
+      </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label={isSpanish ? 'Abrir menú' : 'Toggle menu'} aria-expanded="false">☰</button>
+    </div>
+  </nav>
+
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">
+            <span class="logo-icon">⚡</span>
+            {siteConfig.name}
+          </a>
+          <p>{isSpanish ? 'TapToGen ofrece generadores online gratuitos para crear nombres, texto, etiquetas, ideas SEO y borradores útiles con revisión humana antes de publicar.' : siteConfig.description}</p>
+        </div>
+        <div class="footer-col">
+          <h4>{isSpanish ? 'Categorías' : 'Categories'}</h4>
+          {footerNav.categories.map(item => (
+            <a href={item.href}>{localizeLabel(item.href, item.label)}</a>
+          ))}
+        </div>
+        <div class="footer-col">
+          <h4>{isSpanish ? 'Herramientas populares' : 'Popular Tools'}</h4>
+          {footerNav.popular.map(item => (
+            <a href={item.href}>{localizeLabel(item.href, item.label)}</a>
+          ))}
+        </div>
+        <div class="footer-col">
+          <h4>{isSpanish ? 'Empresa' : 'Company'}</h4>
+          {footerNav.legal.map(item => (
+            <a href={item.href}>{localizeLabel(item.href, item.label)}</a>
+          ))}
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; {new Date().getFullYear()} {siteConfig.name}.com — {isSpanish ? 'Todos los derechos reservados.' : 'All rights reserved.'}</span>
+        <span>{isSpanish ? 'Creado para personas que necesitan generar ideas con criterio' : 'Built with ❤️ for creators everywhere'}</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav?.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    const toggle = document.getElementById('mobile-toggle');
+    const links = document.getElementById('nav-links');
+    toggle?.addEventListener('click', () => {
+      const isOpen = links?.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    links?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle?.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate-in'); observer.unobserve(e.target); }});
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.tool-card, .feature-card, .category-card, .step-card, .faq-item').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

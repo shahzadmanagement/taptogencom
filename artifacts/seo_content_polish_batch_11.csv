@@ -1,0 +1,2 @@
+batch,position,slug,name,metadata_fix,faq_fix,relatedSlugs_fix,duplicate_slug_check,broken_relatedSlugs_check,rendered_index_follow,canonical_check,noindexToolSlugs_unchanged,active_tools_count,indexable_in_sitemap,noindex_in_sitemap
+11,0,,No unresolved should-fix tools remained for Batch 11,none,none,none,pass,pass,n/a,n/a,pass,430,379,0

@@ -1,0 +1,21 @@
+check,status,count,details
+total active tools,PASS,430,Active source tools in src/data/tools.ts.
+final HTML page count,PASS,453,Built HTML files under dist.
+final rendered noindex count,PASS,51,"HTML pages with robots noindex, follow."
+source noindexToolSlugs count,PASS,52,Parsed from src/pages/tools/[slug].astro.
+total redirect count,PASS,20,301 routes in .vercel/output/config.json.
+all redirects in config,PASS,20,missing=none; wrong=none
+redirect targets exist and indexable,PASS,6,"All redirect targets exist and render index, follow."
+removed brand/IP pages absent from dist,PASS,19,unexpectedPages=none; distLeakFiles=none
+removed brand/IP absent from client JS,PASS,19,No removed slug appears in dist/_astro client JS.
+removed brand/IP absent from source client data,PASS,19,No removed slug appears under src. Redirect mappings remain outside src.
+ao3-tag-generator remains generated noindex,PASS,1,"Generated; in source noindexToolSlugs; not redirected; renders robots/googlebot noindex, follow."
+no duplicate slugs,PASS,0,none
+no broken relatedSlugs,PASS,0,none
+no accidentally indexed active risk-profile slugs,PASS,0,Every active risk-profile slug is noindex.
+all generated noindex pages render noindex follow,PASS,0,"All generated source noindex tools render robots/googlebot noindex, follow."
+all generated indexable tools render index follow,PASS,0,"All generated indexable tools render robots/googlebot index, follow."
+all source tools generated,PASS,0,Every active source tool has a built page.
+generated noindex not in source,PASS,0,No unexpected generated tool noindex pages found.
+build tsc astro status,PASS,3,npx.cmd tsc --noEmit PASS; npx.cmd astro check PASS with 12 hints; npm.cmd run build PASS.
+final status,PASS,0,Ready for deployment.

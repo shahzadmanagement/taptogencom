@@ -1,0 +1,63 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import { tools } from '@/data/tools';
+import { categories } from '@/data/categories';
+import { toolHubs } from '@/data/hubs';
+import { noindexToolSlugsForSitemap } from '@/data/sitemap-exclusions.mjs';
+
+const visibleTools = tools.filter((tool) => !noindexToolSlugsForSitemap.includes(tool.slug));
+---
+<BaseLayout title="Sitemap — TapToGen" description="Browse the complete TapToGen sitemap. Find every page, tool, and category on our free online generator tools platform." canonical="/sitemap/">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><span>Sitemap</span></div>
+      <span class="section-badge">🗺️ Sitemap</span>
+      <h1>Site <span class="gradient-text">Map</span></h1>
+      <p>Browse every page on TapToGen</p>
+    </div>
+  </section>
+  <div class="container">
+    <div class="content-section" style="max-width:1000px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:40px;">
+        <div>
+          <h2 style="margin-top:0;">Main Pages</h2>
+          <ul>
+            <li><a href="/" style="color:var(--color-accent-2);">Home</a></li>
+            <li><a href="/tools/" style="color:var(--color-accent-2);">All Tools</a></li>
+            <li><a href="/categories/" style="color:var(--color-accent-2);">Categories</a></li>
+            <li><a href="/blog/" style="color:var(--color-accent-2);">Blog</a></li>
+            <li><a href="/about-us/" style="color:var(--color-accent-2);">About Us</a></li>
+            <li><a href="/contact-us/" style="color:var(--color-accent-2);">Contact Us</a></li>
+            <li><a href="/privacy/" style="color:var(--color-accent-2);">Privacy Policy</a></li>
+            <li><a href="/terms/" style="color:var(--color-accent-2);">Terms of Service</a></li>
+            <li><a href="/disclaimer/" style="color:var(--color-accent-2);">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 style="margin-top:0;">Categories</h2>
+          <ul>
+            {categories.map(cat => (
+              <li><a href={`/categories/${cat.slug}/`} style="color:var(--color-accent-2);">{cat.name}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 style="margin-top:0;">Tool Hubs</h2>
+          <ul>
+            {toolHubs.map(hub => (
+              <li><a href={`/tools/${hub.slug}/`} style="color:var(--color-accent-2);">{hub.h1}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 style="margin-top:0;">Generator Tools</h2>
+          <ul>
+            {visibleTools.map(tool => (
+              <li><a href={`/tools/${tool.slug}/`} style="color:var(--color-accent-2);">{tool.name}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

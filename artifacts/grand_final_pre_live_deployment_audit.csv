@@ -1,0 +1,85 @@
+area,check,expected,actual,status,notes
+Git and build readiness,Working tree clean before audit,clean,clean,PASS,git status --short returned no output before audit.
+Git and build readiness,TypeScript validation,pass,pass,PASS,npx.cmd tsc --noEmit exited 0.
+Git and build readiness,Astro check,pass,pass,PASS,"0 errors, 0 warnings, 16 known hints."
+Git and build readiness,Production build,pass,pass,PASS,npm.cmd run build exited 0.
+Git and build readiness,Build page count,6902,6902,PASS,Confirmed from build output and dist HTML count.
+Git and build readiness,Postbuild redirect patch,20 redirects,20 redirects,PASS,Patch output confirmed 20 tool merge 301 redirects.
+Git and build readiness,No OOM/build crash,0,0,PASS,
+Git and build readiness,Only known non-blocking warnings/hints,known only,known only,PASS,Vite chunk warning and Astro hints only.
+English tool inventory,Active tools count,430,430,PASS,
+English tool inventory,Duplicate English slugs,0,0,PASS,
+English tool inventory,Protected/noindex tools count,current source state,52,PASS,Recorded from noindexToolSlugs.
+English tool inventory,English indexable tool count,379,379,PASS,Filtered to active English tool slugs only; hub directories are not tools.
+English tool inventory,English noindex/protected tools handled,52,52,PASS,"51 render noindex/follow; tiktok-username-generator is protected by the 301 merge redirect and has no standalone page."
+English tool inventory,Removed/redirected tools do not generate indexable standalone pages,0,0,PASS,
+English tool inventory,Broken relatedSlugs,0,0,PASS,
+English tool inventory,Risky legal/security/fake/IP/social-spam tools accidentally indexable,0,0,PASS,
+Localization inventory,es pages,379,379,PASS,duplicates=0
+Localization inventory,fr pages,379,379,PASS,duplicates=0
+Localization inventory,de pages,379,379,PASS,duplicates=0
+Localization inventory,pt pages,379,379,PASS,duplicates=0
+Localization inventory,it pages,379,379,PASS,duplicates=0
+Localization inventory,pl pages,379,379,PASS,duplicates=0
+Localization inventory,ru pages,379,379,PASS,duplicates=0
+Localization inventory,tr pages,379,379,PASS,duplicates=0
+Localization inventory,id pages,379,379,PASS,duplicates=0
+Localization inventory,sv pages,379,379,PASS,duplicates=0
+Localization inventory,ms pages,379,379,PASS,duplicates=0
+Localization inventory,bg pages,379,379,PASS,duplicates=0
+Localization inventory,hi pages,379,379,PASS,duplicates=0
+Localization inventory,bn pages,379,379,PASS,duplicates=0
+Localization inventory,ja pages,379,379,PASS,duplicates=0
+Localization inventory,ko pages,379,379,PASS,duplicates=0
+Localization inventory,ar pages,379,379,PASS,duplicates=0
+Localization inventory,17 localized languages present,17,17,PASS,es fr de pt it pl ru tr id sv ms bg hi bn ja ko ar
+Localization inventory,Total localized tool pages,6443,6443,PASS,
+Localization inventory,Duplicate localized slugs per language,0,0,PASS,
+Localization inventory,English indexable/localized tools,379,379,PASS,
+Localization inventory,No noindex English tools have localized pages,0,0,PASS,
+Localization inventory,No removed/redirected tools have localized pages,0,0,PASS,
+Localization inventory,Localized pages render index/follow,6443,6443,PASS,
+Localization inventory,Localized pages self-canonicalize,6443,6443,PASS,
+Localization inventory,Language switch same-tool mapping,0,0,PASS,
+Localization inventory,Broken localized internal links,0,0,PASS,
+Hreflang and canonical,Hreflang includes en + 17 + x-default,0 missing,0,PASS,
+Hreflang and canonical,x-default points to English same-tool URL,0,0,PASS,
+Hreflang and canonical,No duplicate hreflang URLs,0,0,PASS,"No duplicate language alternates; x-default intentionally equals English same-tool URL."
+Hreflang and canonical,English pages keep English self-canonicals,379,379,PASS,
+Hreflang and canonical,English hreflang coverage,0 missing,0,PASS,
+Hreflang and canonical,Canonicals use https://taptogen.com,0,0,PASS,
+Hreflang and canonical,Arabic RTL and non-Arabic LTR/lang behavior,0,0,PASS,
+Hreflang and canonical,UTF-8 rendering for hi/bn/ja/ko/ar/ru/bg,0,0,PASS,
+Sitemap audit,sitemap-index.xml generated,exists,exists,PASS,
+Sitemap audit,Sitemap URLs use https://taptogen.com only,0,0,PASS,
+Sitemap audit,No Vercel/localhost sitemap URLs,0,0,PASS,
+Sitemap audit,All localized tool URLs included,6443,6443,PASS,
+Sitemap audit,No noindex/redirected URLs in sitemap,0,0,PASS,
+Sitemap audit,No duplicate sitemap URLs,0,0,PASS,
+Sitemap audit,No broken sitemap paths,0,0,PASS,
+Sitemap audit,Robots references apex sitemap,present,present,PASS,
+Sitemap audit,Robots does not block important indexable pages,no broad disallow,no broad disallow,PASS,
+Redirect audit,.vercel/output/config.json exists,exists,exists,PASS,
+Redirect audit,Exactly expected tool merge redirects present,20,20,PASS,"Verified in .vercel/output/config.json as 301 routes with Location headers."
+Redirect audit,Redirect targets exist and index/follow,0,0,PASS,
+Redirect audit,Redirected URLs absent from sitemap/homepage/hubs/categories/discovery,0,0,PASS,
+Redirect audit,No redirect points to preview/local hosts,0,0,PASS,
+Homepage/hubs/categories/internal links,Homepage required sections/signals,all present,all present,PASS,
+Homepage/hubs/categories/internal links,Six hub pages exist index/follow and in sitemap,6,6,PASS,
+Homepage/hubs/categories/internal links,Footer/nav/tool related/internal links valid,0,0,PASS,"All public navigation/tool links resolve; 404 self URL excluded as error-page fallback behavior."
+Homepage/hubs/categories/internal links,No internal links to preview/local hosts,0,0,PASS,
+Content and quality,Localization/SEO quality artifacts failures,0,0,PASS,"Latest final_sitewide_premium_seo_quality_audit_after_full_polish.csv and final localization audit show zero failing rows; older historical audit files are superseded."
+Content and quality,Representative unsupported promises/keyword stuffing,0,0,PASS,
+Content and quality,Unsafe protected framing absent from indexable pages,0,0,PASS,Protected/noindex slugs are not indexable; text-only mentions in shared safety/discovery copy are not indexed tool pages.
+Tool functionality/client bundle,Tool workspace script loads from built pages,present,present,PASS,
+Tool functionality/client bundle,No preview/local hosts in built client JS,0,0,PASS,
+Tool functionality/client bundle,Redirect source slugs absent from client JS,0,0,PASS,
+Tool functionality/client bundle,No hardcoded preview/local hosts in source/dist/.vercel config,0,0,PASS,
+Custom domain readiness,astro.config.mjs site,https://taptogen.com,https://taptogen.com,PASS,
+Custom domain readiness,Canonicals/sitemap/robots use apex domain,apex only,0,PASS,
+Custom domain readiness,OG/Twitter metadata production-safe,0,0,PASS,
+Custom domain readiness,Internal links root-relative where possible,ready,ready,PASS,Navigation/discovery links are root-relative; absolute production URLs are used for SEO metadata/hreflang.
+Custom domain readiness,Recommended live strategy,"primary apex, www redirects to apex",ready,PASS,DNS/www redirect is hosting-layer work; code emits apex production URLs.
+
+
+Live DNS status,taptogen.com resolution,informational,DNS name does not exist,PASS,"DNS/live deployment pending; not treated as a code blocker per audit instructions."

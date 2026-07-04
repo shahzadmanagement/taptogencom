@@ -1,0 +1,27 @@
+# TapToGen — Free Online Generator Tools
+
+## About
+TapToGen (https://taptogen.com) is a free, privacy-first online generator tools platform. We offer 205+ instant generator tools covering text, names, fonts, hashtags, bios, usernames, SEO, gaming, security, legal, business, and more. All tools work 100% in-browser with no signup required.
+
+## Categories (12)
+- Name Generators: name, username, baby name, nickname, couple name, cat name, horse name, fake name, middle name, last name
+- Font & Text Style Generators: fancy text, bold, italic, cursive, glitch, small, strikethrough, underline, vaporwave, reverse, unicode, cool text, old english, uwu, leet speak, creepy text, ascii art, special characters, typography, word art
+- Social Media & Tag Generators: YouTube tags, Instagram hashtags, TikTok hashtags, hashtag, etsy tags, facebook hashtags, pinterest tags, soundcloud tags
+- Bio & Caption Generators: Instagram bio/caption, Twitter bio, TikTok bio/caption, LinkedIn bio/headline/post, Facebook post, YouTube description, social media post, bio generator
+- SEO & Marketing Generators: meta tags, robots.txt, hreflang, schema markup, canonical tags, UTM links, SEO titles, open graph, twitter card, keyword, FAQ, privacy policy, terms, cookie policy, disclaimer, refund policy, shipping policy, affiliate disclosure
+- Gaming & Fantasy Generators: 40+ tools including D&D, dragons, elves, orcs, witches, Fortnite, Minecraft, Valorant, LoL, taverns, dungeons, planets, RPG character, NPC, quest, game idea, video game name, avatar name
+- Creative & Story Generators: band, superhero, rap, song, podcast, anime, character, story title/plot, twitch, meme text, art name, photography name
+- AI Text & Writing Generators: AI prompt, Midjourney prompt, paragraph, sentence, blog names/outline, writing prompts, email subjects, headline, citation, cold email, cover letter, resume summary, ad copy, CTA, product description, testimonial
+- Business & Brand Generators: business name, domain, product name/title, shop, cafe, project, slogan, startup name, email signature, invoice, meeting agenda, coupon code, SKU
+- Developer & Web Generators: UUID, hash, JSON formatter, slug, color palette, text-to-binary, morse code, discord timestamp, error message, cipher, color name, hex color, RGB, gradient, font pairing, CSS button, box shadow, border radius, regex, cron expression, API key, license key, recovery code, barcode
+- Utility Generators: password, passphrase, PIN, lorem ipsum, word counter, text case converter, fake name, QR code, repeat text, text summary
+- Random Generators: random number, coin flip, dice roller, random text/phrase/letter/emoji/country/date/choice, gibberish, Shakespeare insult, comeback, WiFi name, truth or dare, would you rather, joke, compliment, riddle, icebreaker
+
+## Policies
+- Privacy-first: no data collection or storage
+- Family-safe and AdSense-compliant content
+- All tools are free with no usage limits
+
+## Links
+- Sitemap: https://taptogen.com/sitemap-index.xml
+- Contact: contact@taptogen.com

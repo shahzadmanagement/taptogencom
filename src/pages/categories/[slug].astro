@@ -1,0 +1,125 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import { categories } from '@/data/categories';
+import { getToolsByCategory } from '@/data/tools';
+import { noindexToolSlugs } from '@/data/tool-page-data';
+import { toolHubs } from '@/data/hubs';
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return categories.map(cat => ({
+    params: { slug: cat.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const cat = categories.find(c => c.slug === slug);
+if (!cat) return Astro.redirect('/404/');
+
+const noindex = new Set(noindexToolSlugs);
+const catTools = getToolsByCategory(slug!).filter((tool) => !noindex.has(tool.slug));
+const otherCategories = categories.filter(c => c.slug !== slug).slice(0, 6);
+const matchingHub = toolHubs.find((hub) => hub.categorySlugs.includes(slug!));
+const relatedHubs = toolHubs.filter((hub) => hub.slug !== matchingHub?.slug && hub.relatedHubSlugs.includes(matchingHub?.slug || '')).slice(0, 3);
+const categoryFaqs = [
+  { q: `What can I make with ${cat.name}?`, a: `Use this category to find focused TapToGen tools for ${cat.description.toLowerCase()}` },
+  { q: 'Are these category links indexable tools?', a: 'Yes. This category page highlights active, indexable tools and avoids noindex utility or risk-sensitive pages.' },
+  { q: 'How should I use generated results?', a: 'Treat every output as a draft. Review accuracy, originality, availability, claims, and platform or project rules before publishing.' }
+];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": categoryFaqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+};
+---
+<BaseLayout
+  title={cat.metaTitle + ' — TapToGen'}
+  description={cat.metaDescription}
+  canonical={`/categories/${cat.slug}/`}
+  schema={[faqSchema]}
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span class="sep">›</span>
+        <a href="/categories/">Categories</a><span class="sep">›</span>
+        <span>{cat.name}</span>
+      </div>
+      <span class="section-badge">{cat.icon} Category</span>
+      <h1>{cat.name}</h1>
+      <p>{cat.description}</p>
+    </div>
+  </section>
+
+  <section class="tools-section" style="padding-top:0;">
+    <div class="container">
+      {catTools.length > 0 ? (
+        <div class="tools-grid">
+          {catTools.map(tool => (
+            <a href={`/tools/${tool.slug}/`} class="tool-card">
+              <div class="tool-icon">{tool.icon}</div>
+              <h3>{tool.name}</h3>
+              <p>{tool.tagline}</p>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div style="text-align:center;padding:60px 0;color:var(--color-text-muted);">
+          <p style="font-size:2rem;margin-bottom:12px;">{cat.icon}</p>
+          <p>More tools in this category are coming soon!</p>
+          <a href="/tools/" class="btn btn-primary" style="margin-top:24px;">Browse All Tools</a>
+        </div>
+      )}
+
+      <div class="content-section">
+        <h2>About {cat.name}</h2>
+        <p>{cat.description}</p>
+        <p>TapToGen keeps this category focused on active, indexable tools so you can move from broad discovery to useful generators without landing on removed, redirected, or intentionally noindex pages.</p>
+        {matchingHub && (
+          <p><a href={`/tools/${matchingHub.slug}/`}>Explore the {matchingHub.h1} hub</a> for curated next-step tools, FAQs, and related TapToGen hubs.</p>
+        )}
+        <h2>Frequently Asked Questions</h2>
+        {categoryFaqs.map((faq) => (
+          <>
+            <h3>{faq.q}</h3>
+            <p>{faq.a}</p>
+          </>
+        ))}
+      </div>
+
+      {relatedHubs.length > 0 && (
+        <div style="margin-top:40px;">
+          <h2 style="text-align:center;margin-bottom:24px;">Related Tool Hubs</h2>
+          <div class="category-grid">
+            {relatedHubs.map(hub => (
+              <a href={`/tools/${hub.slug}/`} class="category-card">
+                <span class="cat-icon">#</span>
+                <h3>{hub.h1}</h3>
+                <p>{hub.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {otherCategories.length > 0 && (
+        <div style="margin-top:40px;">
+          <h2 style="text-align:center;margin-bottom:24px;">Related Categories</h2>
+          <div class="category-grid">
+            {otherCategories.map(c => (
+              <a href={`/categories/${c.slug}/`} class="category-card">
+                <span class="cat-icon">{c.icon}</span>
+                <h3>{c.name}</h3>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

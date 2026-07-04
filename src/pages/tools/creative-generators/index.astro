@@ -1,0 +1,8 @@
+---
+import HubPage from '@/components/HubPage.astro';
+import { getToolHub } from '@/data/hubs';
+
+const hub = getToolHub('creative-generators');
+if (!hub) return Astro.redirect('/404/');
+---
+<HubPage hub={hub} />

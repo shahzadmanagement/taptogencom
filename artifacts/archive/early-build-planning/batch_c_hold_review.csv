@@ -1,0 +1,100 @@
+tool_name,slug,current_action,risk_reason,suggested_future_action
+God Name Generator,god-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Greek Name Generator,greek-name-generator,add,"Religion, language, culture, ethnicity, or heritage naming needs human review for respectful scope and sourcing.",rename
+Behind The Name Generator,behind-the-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Deity Name Generator,deity-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Wutang Clan Name Generator,wutang-clan-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Roman Name Generator,roman-name-generator,add,"Religion, language, culture, ethnicity, or heritage naming needs human review for respectful scope and sourcing.",rename
+Saiyan Name Generator,saiyan-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Secret Santa Name Generator,secret-santa-name-generator,upgrade_existing,"Existing low-risk tool, but not selected for the stricter first pass capacity.",later_noindex
+Stand Name Generator Ai,stand-name-generator-ai,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Cyberpunk Crew Name Generator,cyberpunk-crew-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Gang Name Generator,gang-name-generator,hold,Crime/gang identity framing creates policy and ads-safety risk.,hold
+Navi Name Generator,navi-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Asia Name Generator,asia-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Furry Name Generator,furry-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Gangster Name Generator,gangster-name-generator,hold,Crime/gang identity framing creates policy and ads-safety risk.,hold
+Graffiti Name Generator,graffiti-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Iupac Name Generator,iupac-name-generator,add,"Potentially safe add, but deferred because stricter first pass prioritizes existing low-risk upgrades.",hold
+Reddit Name Generator,reddit-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Reedsy Name Generator,reedsy-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Feamle Name Generators,feamle-name-generators,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Miqote Name Generator,miqote-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Muslim Name Generator,muslim-name-generator,add,"Religion, language, culture, ethnicity, or heritage naming needs human review for respectful scope and sourcing.",rename
+Sword Name Generator,sword-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+United States Name Generator,united-states-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Wcue Name Generator,wcue-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Bg3 Name Generator,bg3-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Bracket Name Generator,bracket-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Clown Name Generator,clown-name-generator,add,"Too niche, potentially sensitive, or not useful enough for first implementation pass.",later_noindex
+Got Name Generator,got-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Imperial Name Generator,imperial-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Mlp Fim Name Generator,mlp-fim-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Soviet Name Generator,soviet-name-generator,add,Political or historical ideology framing; avoid standalone build without editorial review.,hold
+Victorian Name Generator,victorian-name-generator,add,"Potentially safe add, but deferred because stricter first pass prioritizes existing low-risk upgrades.",hold
+Wutang Name Generator,wutang-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Ffxiv Name Generator,ffxiv-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Mandarin Name Generator,mandarin-name-generator,add,"Religion, language, culture, ethnicity, or heritage naming needs human review for respectful scope and sourcing.",rename
+Na Vi Name Generator,na-vi-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Native Name Generator,native-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Romanized Name Generator,romanized-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Royal Name Generator,royal-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Social Media Name Generator,social-media-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Space Marine Name Generator,space-marine-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Stand Name Generator Jjba,stand-name-generator-jjba,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Us Name Generator,us-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Usa Name Generator,usa-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Villainess Name Generator,villainess-name-generator,add,"Too niche, potentially sensitive, or not useful enough for first implementation pass.",later_noindex
+Celtic Name Generator,celtic-name-generator,add,"Religion, language, culture, ethnicity, or heritage naming needs human review for respectful scope and sourcing.",rename
+Chapter Name Generator,chapter-name-generator,add,"Too niche, potentially sensitive, or not useful enough for first implementation pass.",later_noindex
+Choose Name Generator,choose-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Egyptian Name Generator,egyptian-name-generator,add,"Religion, language, culture, ethnicity, or heritage naming needs human review for respectful scope and sourcing.",rename
+Fallout Name Generator,fallout-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Fursona Name Generator,fursona-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Gift Exchange Name Generator,gift-exchange-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+House Name Generator,house-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Kryptonian Name Generator,kryptonian-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Monster Hunter Name Generator,monster-hunter-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Name Generator Antasy,name-generator-antasy,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Non Binary Name Generator,non-binary-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Nonbinary Name Generator,nonbinary-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Racehorse Name Generator,racehorse-name-generator,add,"Too niche, potentially sensitive, or not useful enough for first implementation pass.",later_noindex
+Religion Name Generator,religion-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Scientific Name Generator,scientific-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Steam Name Generator,steam-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Behindthename Name Generator,behindthename-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Christmas Name Generator,christmas-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Emo Name Generator,emo-name-generator,add,"Too niche, potentially sensitive, or not useful enough for first implementation pass.",later_noindex
+Gaelic Name Generator,gaelic-name-generator,add,"Religion, language, culture, ethnicity, or heritage naming needs human review for respectful scope and sourcing.",rename
+Jewish Name Generator,jewish-name-generator,add,"Religion, language, culture, ethnicity, or heritage naming needs human review for respectful scope and sourcing.",rename
+King Name Generator,king-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Kitsune Name Generator,kitsune-name-generator,add,"Religion, language, culture, ethnicity, or heritage naming needs human review for respectful scope and sourcing.",rename
+Leprechaun Name Generator,leprechaun-name-generator,add,"Religion, language, culture, ethnicity, or heritage naming needs human review for respectful scope and sourcing.",rename
+Lion Coaliiton Name Generator,lion-coaliiton-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Login Name Generator,login-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Name Generator With Keywords,name-generator-with-keywords,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Nobility Name Generator,nobility-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Npc Name Generator,npc-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Pony Name Generator Mlp,pony-name-generator-mlp,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Phonetic Name Generator,phonetic-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Reedsy Character Name Generator,reedsy-character-name-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Username Generator With Name,username-generator-with-name,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Number 1 10 Generator,number-1-10-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Number 1 3 Generator,number-1-3-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Youtube Thumbnail Generator,youtube-thumbnail-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Poster Generator,poster-generator,add,Likely needs a richer visual/print workflow; hold for separate UX and implementation planning.,later_noindex
+Flyer Generator,flyer-generator,add,Likely needs a richer visual/print workflow; hold for separate UX and implementation planning.,later_noindex
+Meme Generator,meme-generator,add,Likely needs a richer visual/print workflow; hold for separate UX and implementation planning.,later_noindex
+Logo Name Generator,logo-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+D N D Name Generator,d-n-d-name-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Draw Names Generator,draw-names-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Mon Calamari Names Generator,mon-calamari-names-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Name Trace Generator,name-trace-generator,merge_as_mode,Likely needs a richer visual/print workflow; hold for separate UX and implementation planning.,merge_as_mode
+Name Tracing Generator,name-tracing-generator,merge_as_mode,Likely needs a richer visual/print workflow; hold for separate UX and implementation planning.,merge_as_mode
+Signature Generator For My Name,signature-generator-for-my-name,merge_as_mode,Likely needs a richer visual/print workflow; hold for separate UX and implementation planning.,merge_as_mode
+Name Shipping Generator,name-shipping-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+China Names Generator,china-names-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Wizarding Names Generator,wizarding-names-generator,hold,"Brand, franchise, platform, or third-party site dependency creates IP/policy risk.",hold
+Fey Names Generator,fey-names-generator,merge_as_mode,Overlaps an existing tool and should be reviewed as a mode/preset instead of a standalone page.,merge_as_mode
+Good Last Smauaro Name Generator,good-last-smauaro-name-generator,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold
+Gothic Generator Name,gothic-generator-name,hold,"Intent is unclear, misspelled, anomalous, overly broad, or keyword data appears corrupted.",hold

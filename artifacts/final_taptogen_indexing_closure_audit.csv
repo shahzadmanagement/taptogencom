@@ -1,0 +1,23 @@
+check,status,count,details
+total_active_tools,PASS,430,Active tools counted from src/data/tools.ts.
+final_html_page_count,PASS,453,Built HTML files in dist after npm.cmd run build.
+final_rendered_noindex_count,PASS,23,Built HTML pages with robots noindex follow.
+source_noindexToolSlugs_count,PASS,24,Source noindexToolSlugs count; unchanged by this audit.
+total_redirect_count,PASS,22,Redirect route entries in .vercel/output/config.json.
+expected_tool_redirects_present,PASS,20,All expected tool redirects are present in .vercel/output/config.json, including preserved tiktok-username-generator.
+redirect_targets_exist_index_follow,PASS,6,"All unique redirect targets exist and render robots index, follow plus googlebot index, follow."
+removed_brand_ip_standalone_pages,PASS,0,No standalone generated HTML pages exist for the 19 removed brand/IP/platform tools.
+removed_brand_ip_sitemap_leaks,PASS,0,No removed brand/IP/platform tool URLs appear in XML sitemap files.
+removed_brand_ip_category_leaks,PASS,0,No removed brand/IP/platform tool URLs appear in built category pages.
+removed_brand_ip_discovery_leaks,PASS,0,No removed brand/IP/platform tool URLs appear in home, tools, category, or HTML sitemap discovery pages.
+removed_brand_ip_search_data_leaks,PASS,0,No standalone search data files were detected in dist.
+removed_brand_ip_dist_leaks,FAIL,19,"Removed brand/IP/platform slugs still appear in the built client bundle dist/_astro/_slug_.astro_astro_type_script_index_0_lang.DnRNAdoF.js."
+duplicate_slugs,PASS,0,No duplicate slugs in src/data/tools.ts.
+broken_relatedSlugs,PASS,0,No broken relatedSlugs in src/data/tools.ts.
+accidentally_indexed_source_risk_set_tools,FAIL,43,"Source risk-profile set slugs rendering indexable: shipping-policy-generator; acceptable-use-policy-generator; purchase-order-generator; quotation-generator; return-policy-generator; cookie-policy-generator; disclaimer-generator; refund-policy-generator; affiliate-disclosure-generator; fake-text-generator; geo-tag-generator; art-tag-generator; email-tag-generator; instagram-bio-generator; instagram-caption-generator; midjourney-prompt-generator; facebook-post-generator; stable-diffusion-prompt-generator; twitter-bio-generator; tiktok-bio-generator; linkedin-bio-generator; youtube-name-generator; tiktok-name-generator; instagram-name-generator; twitter-name-generator; linkedin-headline-generator; youtube-description-generator; tiktok-caption-generator; linkedin-post-generator; amazon-listing-generator; etsy-listing-generator; youtube-hook-generator; linkedin-summary-generator; chatgpt-prompt-generator; dalle-prompt-generator; youtube-tag-generator; etsy-tag-generator; pinterest-tag-generator; soundcloud-tag-generator; twitter-card-generator; shopify-product-description-generator; random-choice-generator; wheel-spinner-generator."
+generated_noindex_pages_robots,PASS,23,"All generated noindex pages render robots noindex, follow and googlebot noindex, follow. tiktok-username-generator is in source noindexToolSlugs but is not generated because it redirects."
+generated_indexable_tools_robots,PASS,407,"All generated indexable tool pages render robots index, follow and googlebot index, follow."
+tsc_status,PASS,0,npx.cmd tsc --noEmit passed.
+astro_check_status,PASS,0,"npx.cmd astro check passed with 0 errors, 0 warnings, 0 hints."
+build_status,PASS,453,npm.cmd run build passed; Astro reported 453 pages built; postbuild added 20 tool merge redirects.
+final_status,BLOCKED,2,"Blockers: removed brand/IP/platform slugs remain in built JS bundle; 43 source risk-profile set tools render indexable because they are not in noindexToolSlugs."

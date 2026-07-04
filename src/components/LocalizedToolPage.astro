@@ -1,0 +1,936 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import { getRelatedTools, type Tool } from '@/data/tools';
+import { noindexToolSlugs, pass20ControlMap } from '@/data/tool-page-data';
+import { toolHubs } from '@/data/hubs';
+import {
+  createLocalizedFaqItems,
+  createLocalizedGuide,
+  getLanguageSwitchRoute,
+  getLocalizedToolByCanonicalId,
+  getLocalizedPageCopy,
+  getLocalizedSafetyNote,
+  getLocalizedHubCopy,
+  getLocalizedUiLabel,
+  getToolLanguageAlternates,
+  getSupportedLanguage,
+  localizedPilotLanguages,
+  type LocalizedLanguageCode,
+  type LocalizedToolContent,
+} from '@/data/localization';
+
+interface Props {
+  tool: Tool;
+  localized: LocalizedToolContent;
+  language: Extract<LocalizedLanguageCode, 'pt' | 'it' | 'pl' | 'ru' | 'tr' | 'id' | 'sv' | 'ms' | 'bg' | 'hi' | 'bn' | 'ja' | 'ko' | 'ar'>;
+}
+
+interface LocalizedUiText {
+  home: string;
+  tools: string;
+  englishVersion: string;
+  languageSwitcher: string;
+  benefitsLabel: string;
+  benefits: string[];
+  inputKicker: string;
+  customize: string;
+  enabled: string;
+  tone: string;
+  tones: string[];
+  count: string;
+  inputLabel: string;
+  placeholder: string;
+  examples: string;
+  generate: string;
+  example: string;
+  reset: string;
+  regenerate: string;
+  outputKicker: string;
+  outputTitle: string;
+  copyAll: string;
+  empty: string;
+  note: string;
+  whatIs: string;
+  howTo: string;
+  tips: string;
+  why: string;
+  whyItems: string[][];
+  faq: string;
+  related: string;
+  explore: string;
+  activeLinks: string;
+}
+
+const { tool, localized, language } = Astro.props;
+const slug = tool.slug;
+
+const text = ({
+  pt: {
+    home: 'Início',
+    tools: 'Ferramentas',
+    englishVersion: 'Versão em inglês',
+    languageSwitcher: 'Seletor de idioma',
+    benefitsLabel: 'Benefícios da ferramenta',
+    benefits: ['Grátis', 'Instantâneo', 'Sem cadastro', 'Privado no navegador'],
+    inputKicker: 'Entrada',
+    customize: 'Personalize o resultado',
+    enabled: 'Ativado',
+    tone: 'Tom',
+    tones: ['Equilibrado', 'Polido', 'Criativo', 'Amigável'],
+    count: 'Quantidade',
+    inputLabel: 'Prompt, palavra-chave, texto ou detalhes',
+    placeholder: 'Digite uma palavra-chave, prompt ou texto para personalizar este gerador...',
+    examples: 'Exemplos',
+    generate: 'Gerar',
+    example: 'Usar exemplo',
+    reset: 'Limpar',
+    regenerate: 'Gerar novamente',
+    outputKicker: 'Resultado',
+    outputTitle: 'Seus resultados',
+    copyAll: 'Copiar tudo',
+    empty: 'Seus resultados aparecerão aqui.',
+    note: 'Nota:',
+    whatIs: 'O que é',
+    howTo: 'Como usar',
+    tips: 'Dicas para melhores resultados',
+    why: 'Por que usar TapToGen?',
+    whyItems: [
+      ['Resultados instantâneos', 'gere ideias diretamente no navegador.'],
+      ['Grátis', 'sem cadastro nem custos ocultos.'],
+      ['Privacidade prática', 'o fluxo funciona na página sem pedir conta.'],
+      ['Fácil de revisar', 'copie, compare e adapte antes de usar.'],
+    ],
+    faq: 'Perguntas frequentes',
+    related: 'Ferramentas relacionadas',
+    explore: 'Explore mais ferramentas TapToGen',
+    activeLinks: 'Estes links levam a ferramentas ativas e indexáveis.',
+  },
+  it: {
+    home: 'Home',
+    tools: 'Strumenti',
+    englishVersion: 'Versione inglese',
+    languageSwitcher: 'Selettore lingua',
+    benefitsLabel: 'Vantaggi dello strumento',
+    benefits: ['Gratis', 'Istantaneo', 'Senza registrazione', 'Privato nel browser'],
+    inputKicker: 'Input',
+    customize: 'Personalizza il risultato',
+    enabled: 'Attivo',
+    tone: 'Tono',
+    tones: ['Bilanciato', 'Curato', 'Creativo', 'Amichevole'],
+    count: 'Quantità',
+    inputLabel: 'Prompt, parola chiave, testo o dettagli',
+    placeholder: 'Inserisci una parola chiave, un prompt o un testo per personalizzare questo generatore...',
+    examples: 'Esempi',
+    generate: 'Genera',
+    example: 'Usa esempio',
+    reset: 'Cancella',
+    regenerate: 'Rigenera',
+    outputKicker: 'Risultato',
+    outputTitle: 'I tuoi risultati',
+    copyAll: 'Copia tutto',
+    empty: 'I tuoi risultati appariranno qui.',
+    note: 'Nota:',
+    whatIs: "Che cos'è",
+    howTo: 'Come usare',
+    tips: 'Consigli per risultati migliori',
+    why: 'Perché usare TapToGen?',
+    whyItems: [
+      ['Risultati istantanei', 'genera idee direttamente nel browser.'],
+      ['Gratis', 'senza registrazione né costi nascosti.'],
+      ['Privacy pratica', 'il flusso funziona nella pagina senza richiedere account.'],
+      ['Facile da rivedere', "copia, confronta e adatta prima dell'uso."],
+    ],
+    faq: 'Domande frequenti',
+    related: 'Strumenti correlati',
+    explore: 'Esplora altri strumenti TapToGen',
+    activeLinks: 'Questi link portano a strumenti attivi e indicizzabili.',
+  },
+  pl: {
+    home: 'Start',
+    tools: 'Narzędzia',
+    englishVersion: 'Wersja angielska',
+    languageSwitcher: 'Przełącznik języka',
+    benefitsLabel: 'Zalety narzędzia',
+    benefits: ['Darmowe', 'Natychmiastowe', 'Bez rejestracji', 'Prywatne w przeglądarce'],
+    inputKicker: 'Dane',
+    customize: 'Dostosuj wynik',
+    enabled: 'Włączone',
+    tone: 'Ton',
+    tones: ['Zrównoważony', 'Dopracowany', 'Kreatywny', 'Przyjazny'],
+    count: 'Liczba',
+    inputLabel: 'Prompt, słowo kluczowe, tekst lub szczegóły',
+    placeholder: 'Wpisz słowo kluczowe, prompt lub tekst, aby dostosować ten generator...',
+    examples: 'Przykłady',
+    generate: 'Generuj',
+    example: 'Użyj przykładu',
+    reset: 'Wyczyść',
+    regenerate: 'Generuj ponownie',
+    outputKicker: 'Wynik',
+    outputTitle: 'Twoje wyniki',
+    copyAll: 'Kopiuj wszystko',
+    empty: 'Twoje wyniki pojawią się tutaj.',
+    note: 'Uwaga:',
+    whatIs: 'Czym jest',
+    howTo: 'Jak używać',
+    tips: 'Wskazówki dla lepszych wyników',
+    why: 'Dlaczego TapToGen?',
+    whyItems: [
+      ['Natychmiastowe wyniki', 'generuj pomysły bezpośrednio w przeglądarce.'],
+      ['Darmowe', 'bez rejestracji i ukrytych kosztów.'],
+      ['Praktyczna prywatność', 'proces działa na stronie bez konta.'],
+      ['Łatwe sprawdzanie', 'kopiuj, porównuj i dopasowuj przed użyciem.'],
+    ],
+    faq: 'Częste pytania',
+    related: 'Powiązane narzędzia',
+    explore: 'Odkryj więcej narzędzi TapToGen',
+    activeLinks: 'Te linki prowadzą do aktywnych, indeksowalnych narzędzi.',
+  },
+  ru: {
+    home: 'Главная',
+    tools: 'Инструменты',
+    englishVersion: 'Английская версия',
+    languageSwitcher: 'Выбор языка',
+    benefitsLabel: 'Преимущества инструмента',
+    benefits: ['Бесплатно', 'Мгновенно', 'Без регистрации', 'Локально в браузере'],
+    inputKicker: 'Ввод',
+    customize: 'Настройте результат',
+    enabled: 'Включено',
+    tone: 'Тон',
+    tones: ['Сбалансированный', 'Отполированный', 'Креативный', 'Дружелюбный'],
+    count: 'Количество',
+    inputLabel: 'Промпт, ключевое слово, текст или детали',
+    placeholder: 'Введите ключевое слово, промпт или текст, чтобы настроить генератор...',
+    examples: 'Примеры',
+    generate: 'Сгенерировать',
+    example: 'Использовать пример',
+    reset: 'Очистить',
+    regenerate: 'Сгенерировать снова',
+    outputKicker: 'Результат',
+    outputTitle: 'Ваши результаты',
+    copyAll: 'Скопировать все',
+    empty: 'Ваши результаты появятся здесь.',
+    note: 'Примечание:',
+    whatIs: 'Что такое',
+    howTo: 'Как использовать',
+    tips: 'Советы для лучших результатов',
+    why: 'Почему TapToGen?',
+    whyItems: [
+      ['Мгновенные результаты', 'создавайте идеи прямо в браузере.'],
+      ['Бесплатно', 'без регистрации и скрытых затрат.'],
+      ['Практичная приватность', 'процесс работает на странице без учетной записи.'],
+      ['Легко проверить', 'копируйте, сравнивайте и адаптируйте перед использованием.'],
+    ],
+    faq: 'Частые вопросы',
+    related: 'Похожие инструменты',
+    explore: 'Больше инструментов TapToGen',
+    activeLinks: 'Эти ссылки ведут на активные индексируемые инструменты.',
+  },
+  tr: {
+    home: 'Ana sayfa',
+    tools: 'Araçlar',
+    englishVersion: 'İngilizce sürüm',
+    languageSwitcher: 'Dil seçici',
+    benefitsLabel: 'Araç avantajları',
+    benefits: ['Ücretsiz', 'Anında', 'Kayıt yok', 'Tarayıcıda özel'],
+    inputKicker: 'Girdi',
+    customize: 'Sonucu özelleştir',
+    enabled: 'Etkin',
+    tone: 'Ton',
+    tones: ['Dengeli', 'Düzenli', 'Yaratıcı', 'Samimi'],
+    count: 'Sayı',
+    inputLabel: 'Prompt, anahtar kelime, metin veya ayrıntılar',
+    placeholder: 'Bu oluşturucuyu özelleştirmek için anahtar kelime, prompt veya metin girin...',
+    examples: 'Örnekler',
+    generate: 'Oluştur',
+    example: 'Örnek kullan',
+    reset: 'Temizle',
+    regenerate: 'Yeniden oluştur',
+    outputKicker: 'Sonuç',
+    outputTitle: 'Sonuçlarınız',
+    copyAll: 'Tümünü kopyala',
+    empty: 'Sonuçlarınız burada görünecek.',
+    note: 'Not:',
+    whatIs: 'Nedir:',
+    howTo: 'Nasıl kullanılır:',
+    tips: 'Daha iyi sonuçlar için ipuçları',
+    why: 'Neden TapToGen?',
+    whyItems: [
+      ['Anında sonuçlar', 'fikirleri doğrudan tarayıcınızda oluşturun.'],
+      ['Ücretsiz', 'kayıt veya gizli ücret yok.'],
+      ['Pratik gizlilik', 'akış hesap istemeden sayfada çalışır.'],
+      ['Kolay inceleme', 'kullanmadan önce kopyalayın, karşılaştırın ve uyarlayın.'],
+    ],
+    faq: 'Sık sorulan sorular',
+    related: 'İlgili araçlar',
+    explore: 'Diğer TapToGen araçlarını keşfedin',
+    activeLinks: 'Bu bağlantılar aktif ve dizine eklenebilir araçlara gider.',
+  },
+  id: {
+    home: 'Beranda',
+    tools: 'Alat',
+    englishVersion: 'Versi Inggris',
+    languageSwitcher: 'Pemilih bahasa',
+    benefitsLabel: 'Manfaat alat',
+    benefits: ['Gratis', 'Instan', 'Tanpa daftar', 'Privat di browser'],
+    inputKicker: 'Input',
+    customize: 'Sesuaikan hasil',
+    enabled: 'Aktif',
+    tone: 'Nada',
+    tones: ['Seimbang', 'Rapi', 'Kreatif', 'Ramah'],
+    count: 'Jumlah',
+    inputLabel: 'Prompt, kata kunci, teks, atau detail',
+    placeholder: 'Masukkan kata kunci, prompt, atau teks untuk menyesuaikan generator ini...',
+    examples: 'Contoh',
+    generate: 'Buat',
+    example: 'Gunakan contoh',
+    reset: 'Bersihkan',
+    regenerate: 'Buat ulang',
+    outputKicker: 'Hasil',
+    outputTitle: 'Hasil Anda',
+    copyAll: 'Salin semua',
+    empty: 'Hasil Anda akan muncul di sini.',
+    note: 'Catatan:',
+    whatIs: 'Apa itu',
+    howTo: 'Cara menggunakan',
+    tips: 'Tips untuk hasil yang lebih baik',
+    why: 'Mengapa memakai TapToGen?',
+    whyItems: [
+      ['Hasil instan', 'buat ide langsung di browser.'],
+      ['Gratis', 'tanpa daftar dan tanpa biaya tersembunyi.'],
+      ['Privasi praktis', 'alur berjalan di halaman tanpa akun.'],
+      ['Mudah ditinjau', 'salin, bandingkan, dan sesuaikan sebelum digunakan.'],
+    ],
+    faq: 'Pertanyaan umum',
+    related: 'Alat terkait',
+    explore: 'Jelajahi alat TapToGen lainnya',
+    activeLinks: 'Tautan ini menuju alat aktif yang dapat diindeks.',
+  },
+  sv: {
+    home: 'Hem',
+    tools: 'Verktyg',
+    englishVersion: 'Engelsk version',
+    languageSwitcher: 'Sprakvaljare',
+    benefitsLabel: 'Verktygsfordelar',
+    benefits: ['Gratis', 'Direkt', 'Ingen registrering', 'Privat i webblasaren'],
+    inputKicker: 'Input',
+    customize: 'Anpassa resultatet',
+    enabled: 'Aktiverad',
+    tone: 'Ton',
+    tones: ['Balanserad', 'Polerad', 'Kreativ', 'Vanlig'],
+    count: 'Antal',
+    inputLabel: 'Prompt, sokord, text eller detaljer',
+    placeholder: 'Ange ett sokord, en prompt eller text for att anpassa generatorn...',
+    examples: 'Exempel',
+    generate: 'Generera',
+    example: 'Anvand exempel',
+    reset: 'Rensa',
+    regenerate: 'Generera igen',
+    outputKicker: 'Resultat',
+    outputTitle: 'Dina resultat',
+    copyAll: 'Kopiera allt',
+    empty: 'Dina resultat visas har.',
+    note: 'Obs:',
+    whatIs: 'Vad ar',
+    howTo: 'Sa anvander du',
+    tips: 'Tips for battre resultat',
+    why: 'Varfor anvanda TapToGen?',
+    whyItems: [
+      ['Direkta resultat', 'skapa ideer direkt i webblasaren.'],
+      ['Gratis', 'utan registrering eller dolda kostnader.'],
+      ['Praktisk integritet', 'flodet fungerar pa sidan utan konto.'],
+      ['Latt att granska', 'kopiera, jamfor och anpassa fore anvandning.'],
+    ],
+    faq: 'Vanliga fragor',
+    related: 'Relaterade verktyg',
+    explore: 'Utforska fler TapToGen-verktyg',
+    activeLinks: 'Dessa lankar gar till aktiva och indexerbara verktyg.',
+  },
+  ms: {
+    home: 'Laman utama',
+    tools: 'Alat',
+    englishVersion: 'Versi Inggeris',
+    languageSwitcher: 'Pemilih bahasa',
+    benefitsLabel: 'Manfaat alat',
+    benefits: ['Percuma', 'Segera', 'Tanpa daftar', 'Peribadi dalam pelayar'],
+    inputKicker: 'Input',
+    customize: 'Sesuaikan hasil',
+    enabled: 'Aktif',
+    tone: 'Nada',
+    tones: ['Seimbang', 'Kemas', 'Kreatif', 'Mesra'],
+    count: 'Bilangan',
+    inputLabel: 'Prompt, kata kunci, teks atau butiran',
+    placeholder: 'Masukkan kata kunci, prompt atau teks untuk menyesuaikan penjana ini...',
+    examples: 'Contoh',
+    generate: 'Jana',
+    example: 'Guna contoh',
+    reset: 'Kosongkan',
+    regenerate: 'Jana semula',
+    outputKicker: 'Hasil',
+    outputTitle: 'Hasil anda',
+    copyAll: 'Salin semua',
+    empty: 'Hasil anda akan muncul di sini.',
+    note: 'Nota:',
+    whatIs: 'Apa itu',
+    howTo: 'Cara menggunakan',
+    tips: 'Tip untuk hasil lebih baik',
+    why: 'Mengapa guna TapToGen?',
+    whyItems: [
+      ['Hasil segera', 'jana idea terus dalam pelayar.'],
+      ['Percuma', 'tanpa daftar atau kos tersembunyi.'],
+      ['Privasi praktikal', 'aliran berfungsi pada halaman tanpa akaun.'],
+      ['Mudah disemak', 'salin, bandingkan dan sesuaikan sebelum digunakan.'],
+    ],
+    faq: 'Soalan lazim',
+    related: 'Alat berkaitan',
+    explore: 'Terokai lebih banyak alat TapToGen',
+    activeLinks: 'Pautan ini menuju ke alat aktif yang boleh diindeks.',
+  },
+  bg: {
+    home: 'Начало',
+    tools: 'Инструменти',
+    englishVersion: 'Английска версия',
+    languageSwitcher: 'Избор на език',
+    benefitsLabel: 'Предимства на инструмента',
+    benefits: ['Безплатно', 'Моментално', 'Без регистрация', 'Лично в браузъра'],
+    inputKicker: 'Вход',
+    customize: 'Настройте резултата',
+    enabled: 'Включено',
+    tone: 'Тон',
+    tones: ['Балансиран', 'Изчистен', 'Креативен', 'Приятелски'],
+    count: 'Брой',
+    inputLabel: 'Промпт, ключова дума, текст или детайли',
+    placeholder: 'Въведете ключова дума, промпт или текст, за да настроите този генератор...',
+    examples: 'Примери',
+    generate: 'Генерирай',
+    example: 'Използвай пример',
+    reset: 'Изчисти',
+    regenerate: 'Генерирай отново',
+    outputKicker: 'Резултат',
+    outputTitle: 'Вашите резултати',
+    copyAll: 'Копирай всичко',
+    empty: 'Вашите резултати ще се появят тук.',
+    note: 'Бележка:',
+    whatIs: 'Какво е',
+    howTo: 'Как да използвате',
+    tips: 'Съвети за по-добри резултати',
+    why: 'Защо TapToGen?',
+    whyItems: [
+      ['Моментални резултати', 'създавайте идеи директно в браузъра.'],
+      ['Безплатно', 'без регистрация и скрити разходи.'],
+      ['Практична поверителност', 'процесът работи на страницата без акаунт.'],
+      ['Лесно за преглед', 'копирайте, сравнявайте и адаптирайте преди употреба.'],
+    ],
+    faq: 'Често задавани въпроси',
+    related: 'Свързани инструменти',
+    explore: 'Разгледайте още инструменти TapToGen',
+    activeLinks: 'Тези връзки водят към активни инструменти, които могат да се индексират.',
+  },
+  hi: {
+    home: 'होम',
+    tools: 'टूल्स',
+    englishVersion: 'अंग्रेजी संस्करण',
+    languageSwitcher: 'भाषा चयन',
+    benefitsLabel: 'टूल लाभ',
+    benefits: ['मुफ्त', 'तुरंत', 'साइनअप नहीं', 'आपके ब्राउजर में निजी'],
+    inputKicker: 'इनपुट',
+    customize: 'परिणाम अनुकूलित करें',
+    enabled: 'चालू',
+    tone: 'टोन',
+    tones: ['संतुलित', 'साफ', 'रचनात्मक', 'दोस्ताना'],
+    count: 'संख्या',
+    inputLabel: 'प्रॉम्प्ट, कीवर्ड, टेक्स्ट या विवरण',
+    placeholder: 'इस जनरेटर को अनुकूलित करने के लिए कीवर्ड, प्रॉम्प्ट या टेक्स्ट लिखें...',
+    examples: 'उदाहरण',
+    generate: 'जनरेट करें',
+    example: 'उदाहरण उपयोग करें',
+    reset: 'साफ करें',
+    regenerate: 'फिर जनरेट करें',
+    outputKicker: 'आउटपुट',
+    outputTitle: 'आपके परिणाम',
+    copyAll: 'सब कॉपी करें',
+    empty: 'आपके परिणाम यहां दिखेंगे.',
+    note: 'नोट:',
+    whatIs: 'क्या है',
+    howTo: 'कैसे उपयोग करें',
+    tips: 'बेहतर परिणामों के सुझाव',
+    why: 'TapToGen क्यों उपयोग करें?',
+    whyItems: [
+      ['तेज मसौदे', 'विकल्प तुरंत बनाएं और सबसे मजबूत दिशा चुनें.'],
+      ['साफ नियंत्रण', 'टोन, संख्या और संदर्भ बदलकर बेहतर आउटपुट पाएं.'],
+      ['समीक्षा में आसान', 'कॉपी करें, तुलना करें और प्रकाशित करने से पहले संपादित करें.'],
+    ],
+    faq: 'अक्सर पूछे जाने वाले सवाल',
+    related: 'संबंधित टूल्स',
+    explore: 'और TapToGen टूल्स देखें',
+    activeLinks: 'ये लिंक सक्रिय, इंडेक्स होने योग्य टूल्स पर जाते हैं.',
+  },
+  bn: {
+    home: 'হোম',
+    tools: 'টুলস',
+    englishVersion: 'ইংরেজি সংস্করণ',
+    languageSwitcher: 'ভাষা নির্বাচন',
+    benefitsLabel: 'টুল সুবিধা',
+    benefits: ['ফ্রি', 'তাৎক্ষণিক', 'সাইনআপ নেই', 'আপনার ব্রাউজারে ব্যক্তিগত'],
+    inputKicker: 'ইনপুট',
+    customize: 'ফলাফল কাস্টমাইজ করুন',
+    enabled: 'চালু',
+    tone: 'টোন',
+    tones: ['সুষম', 'পরিষ্কার', 'সৃজনশীল', 'বন্ধুত্বপূর্ণ'],
+    count: 'সংখ্যা',
+    inputLabel: 'প্রম্পট, কীওয়ার্ড, টেক্সট বা বিবরণ',
+    placeholder: 'এই জেনারেটর কাস্টমাইজ করতে কীওয়ার্ড, প্রম্পট বা টেক্সট লিখুন...',
+    examples: 'উদাহরণ',
+    generate: 'জেনারেট করুন',
+    example: 'উদাহরণ ব্যবহার করুন',
+    reset: 'সাফ করুন',
+    regenerate: 'আবার জেনারেট করুন',
+    outputKicker: 'আউটপুট',
+    outputTitle: 'আপনার ফলাফল',
+    copyAll: 'সব কপি করুন',
+    empty: 'আপনার ফলাফল এখানে দেখা যাবে.',
+    note: 'নোট:',
+    whatIs: 'কি',
+    howTo: 'কিভাবে ব্যবহার করবেন',
+    tips: 'ভালো ফলাফলের টিপস',
+    why: 'TapToGen কেন ব্যবহার করবেন?',
+    whyItems: [
+      ['দ্রুত খসড়া', 'তাৎক্ষণিক বিকল্প তৈরি করুন এবং সেরা দিক বেছে নিন.'],
+      ['সহজ নিয়ন্ত্রণ', 'টোন, সংখ্যা এবং প্রসঙ্গ বদলে আউটপুট উন্নত করুন.'],
+      ['পর্যালোচনা সহজ', 'কপি, তুলনা এবং প্রকাশের আগে সম্পাদনা করুন.'],
+    ],
+    faq: 'সাধারণ প্রশ্ন',
+    related: 'সম্পর্কিত টুলস',
+    explore: 'আরও TapToGen টুল দেখুন',
+    activeLinks: 'এই লিংকগুলো সক্রিয়, ইনডেক্সযোগ্য টুলে যায়.',
+  },
+  ja: {
+    home: 'ホーム',
+    tools: 'ツール',
+    englishVersion: '英語版',
+    languageSwitcher: '言語選択',
+    benefitsLabel: 'ツールの利点',
+    benefits: ['無料', '即時', '登録不要', 'ブラウザ内でプライベート'],
+    inputKicker: '入力',
+    customize: '結果を調整',
+    enabled: '有効',
+    tone: 'トーン',
+    tones: ['バランス', '洗練', 'クリエイティブ', '親しみやすい'],
+    count: '数',
+    inputLabel: 'プロンプト、キーワード、テキスト、詳細',
+    placeholder: 'このジェネレーターを調整するキーワード、プロンプト、テキストを入力...',
+    examples: '例',
+    generate: '生成',
+    example: '例を使う',
+    reset: 'クリア',
+    regenerate: '再生成',
+    outputKicker: '出力',
+    outputTitle: '結果',
+    copyAll: 'すべてコピー',
+    empty: '結果はここに表示されます.',
+    note: '注:',
+    whatIs: 'とは',
+    howTo: '使い方',
+    tips: 'より良い結果のコツ',
+    why: 'TapToGenを使う理由',
+    whyItems: [
+      ['すばやい下書き', '候補をすぐ作り、強い方向性を選べます.'],
+      ['わかりやすい操作', 'トーン、数、文脈を変えて出力を調整できます.'],
+      ['確認しやすい', 'コピー、比較、編集して公開前に整えられます.'],
+    ],
+    faq: 'FAQ',
+    related: '関連ツール',
+    explore: 'TapToGenの他のツールを見る',
+    activeLinks: 'これらのリンクは有効でインデックス可能なツールに移動します.',
+  },
+  ko: {
+    home: '홈',
+    tools: '도구',
+    englishVersion: '영어 버전',
+    languageSwitcher: '언어 선택',
+    benefitsLabel: '도구 장점',
+    benefits: ['무료', '즉시 생성', '가입 없음', '브라우저에서 비공개'],
+    inputKicker: '입력',
+    customize: '결과 맞춤 설정',
+    enabled: '사용',
+    tone: '톤',
+    tones: ['균형', '정돈됨', '창의적', '친근함'],
+    count: '개수',
+    inputLabel: '프롬프트, 키워드, 텍스트 또는 세부 정보',
+    placeholder: '이 생성기를 맞춤 설정할 키워드, 프롬프트 또는 텍스트를 입력하세요...',
+    examples: '예시',
+    generate: '생성',
+    example: '예시 사용',
+    reset: '지우기',
+    regenerate: '다시 생성',
+    outputKicker: '출력',
+    outputTitle: '결과',
+    copyAll: '전체 복사',
+    empty: '결과가 여기에 표시됩니다.',
+    note: '참고:',
+    whatIs: '무엇인가요',
+    howTo: '사용 방법',
+    tips: '더 좋은 결과를 위한 팁',
+    why: 'TapToGen을 사용하는 이유',
+    whyItems: [
+      ['빠른 초안', '즉시 여러 옵션을 만들고 가장 좋은 방향을 고를 수 있습니다.'],
+      ['명확한 조절', '톤, 개수, 맥락을 바꾸어 출력 품질을 높입니다.'],
+      ['쉬운 검토', '복사하고 비교한 뒤 게시 전에 다듬을 수 있습니다.'],
+    ],
+    faq: '자주 묻는 질문',
+    related: '관련 도구',
+    explore: '더 많은 TapToGen 도구 보기',
+    activeLinks: '이 링크는 활성 상태이며 인덱싱 가능한 도구로 이동합니다.',
+  },
+  ar: {
+    home: 'الرئيسية',
+    tools: 'الأدوات',
+    englishVersion: 'النسخة الإنجليزية',
+    languageSwitcher: 'اختيار اللغة',
+    benefitsLabel: 'فوائد الأداة',
+    benefits: ['مجانا', 'فوري', 'بدون تسجيل', 'خاص داخل المتصفح'],
+    inputKicker: 'الإدخال',
+    customize: 'خصص النتيجة',
+    enabled: 'مفعل',
+    tone: 'النبرة',
+    tones: ['متوازن', 'مصقول', 'إبداعي', 'ودود'],
+    count: 'العدد',
+    inputLabel: 'موجه أو كلمة مفتاحية أو نص أو تفاصيل',
+    placeholder: 'اكتب كلمة مفتاحية أو موجها أو نصا لتخصيص هذا المولد...',
+    examples: 'أمثلة',
+    generate: 'أنشئ',
+    example: 'استخدم مثالا',
+    reset: 'مسح',
+    regenerate: 'إعادة الإنشاء',
+    outputKicker: 'المخرجات',
+    outputTitle: 'نتائجك',
+    copyAll: 'نسخ الكل',
+    empty: 'ستظهر نتائجك هنا.',
+    note: 'ملاحظة:',
+    whatIs: 'ما هو',
+    howTo: 'كيفية استخدام',
+    tips: 'نصائح لنتائج أفضل',
+    why: 'لماذا تستخدم TapToGen؟',
+    whyItems: [
+      ['مسودات سريعة', 'أنشئ خيارات فورا واختر الاتجاه الأقوى.'],
+      ['تحكم واضح', 'غير النبرة والعدد والسياق لتحسين النتائج.'],
+      ['مراجعة سهلة', 'انسخ وقارن وعدل قبل النشر.'],
+    ],
+    faq: 'الأسئلة الشائعة',
+    related: 'أدوات ذات صلة',
+    explore: 'استكشف المزيد من أدوات TapToGen',
+    activeLinks: 'تؤدي هذه الروابط إلى أدوات نشطة وقابلة للفهرسة.',
+  },
+} as Record<string, LocalizedUiText>)[language] || {
+  home: 'Home',
+  tools: 'Tools',
+  englishVersion: 'English version',
+  languageSwitcher: 'Language selector',
+  benefitsLabel: 'Tool benefits',
+  benefits: ['Free', 'Instant', 'No signup', 'Private in your browser'],
+  inputKicker: 'Input',
+  customize: 'Customize the result',
+  enabled: 'Enabled',
+  tone: 'Tone',
+  tones: ['Balanced', 'Polished', 'Creative', 'Friendly'],
+  count: 'Count',
+  inputLabel: 'Prompt, keyword, text, or details',
+  placeholder: 'Enter a keyword, prompt, or text to customize this generator...',
+  examples: 'Examples',
+  generate: 'Generate',
+  example: 'Use example',
+  reset: 'Clear',
+  regenerate: 'Regenerate',
+  outputKicker: 'Output',
+  outputTitle: 'Your results',
+  copyAll: 'Copy all',
+  empty: 'Your results will appear here.',
+  note: 'Note:',
+  whatIs: 'What is',
+  howTo: 'How to use',
+  tips: 'Tips for better results',
+  why: 'Why use TapToGen?',
+  whyItems: [],
+  faq: 'FAQ',
+  related: 'Related tools',
+  explore: 'Explore more TapToGen tools',
+  activeLinks: 'These links lead to active, indexable tools.',
+};
+
+const related = getRelatedTools(slug, 8).filter((item) => !noindexToolSlugs.has(item.slug)).slice(0, 4);
+const matchingHub = toolHubs.find((hub) => hub.slug === tool.categorySlug || hub.categorySlugs.includes(tool.categorySlug));
+const nextStepHubs = toolHubs
+  .filter((hub) => hub.slug !== matchingHub?.slug && (matchingHub?.relatedHubSlugs.includes(hub.slug) || hub.relatedHubSlugs.includes(matchingHub?.slug || '')))
+  .slice(0, 3);
+
+const faqItems = createLocalizedFaqItems(localized);
+const guideCopy = createLocalizedGuide(tool, localized);
+const copy = getLocalizedPageCopy(localized);
+const safetyNote = getLocalizedSafetyNote(localized);
+const languageConfig = getSupportedLanguage(language);
+const englishRoute = getLanguageSwitchRoute(slug, 'en');
+const localizedRoute = getLanguageSwitchRoute(slug, language);
+const alternates = getToolLanguageAlternates(slug);
+const pass20Controls = pass20ControlMap[slug];
+
+const toolSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: copy.h1,
+  url: `https://taptogen.com${localizedRoute}`,
+  description: copy.metaDescription,
+  applicationCategory: 'UtilityApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  browserRequirements: 'Requires JavaScript',
+  inLanguage: language,
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: text.home, item: `https://taptogen.com/${language}/` },
+    { '@type': 'ListItem', position: 2, name: text.tools, item: `https://taptogen.com/${language}/tools/` },
+    { '@type': 'ListItem', position: 3, name: copy.h1, item: `https://taptogen.com${localizedRoute}` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: language,
+  mainEntity: faqItems.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<BaseLayout
+  title={copy.metaTitle}
+  description={copy.metaDescription}
+  canonical={localizedRoute}
+  schema={[toolSchema, breadcrumbSchema, faqSchema]}
+  noindex={false}
+  lang={language}
+  dir={languageConfig.dir}
+  alternates={alternates}
+>
+  <section class="tool-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">{text.home}</a><span class="sep">/</span>
+        <a href="/tools/">{text.tools}</a><span class="sep">/</span>
+        <a href={`/tools/${tool.slug}/`}>{text.englishVersion}</a><span class="sep">/</span>
+        <span>{copy.h1}</span>
+      </div>
+
+      <div class="tool-page-header premium-tool-header">
+        <span class="section-badge tool-category-badge">{tool.icon} {getLocalizedUiLabel(tool.category, language)}</span>
+        <h1>{copy.h1}</h1>
+        <p>{copy.intro}</p>
+        <nav class="language-switcher" aria-label={text.languageSwitcher}>
+          <a href={englishRoute} hreflang="en" lang="en">English</a>
+          {localizedPilotLanguages.map((item) => (
+            <a class={item === language ? 'active' : ''} href={getLanguageSwitchRoute(slug, item)} hreflang={item} lang={item}>{getSupportedLanguage(item).nativeName}</a>
+          ))}
+        </nav>
+        <div class="tool-benefits" aria-label={text.benefitsLabel}>
+          {text.benefits.map((benefit) => <span>{benefit}</span>)}
+        </div>
+      </div>
+
+      <div class="tool-workspace premium-tool-workspace" id="tool-workspace" data-tool={tool.slug} data-type={tool.generatorType} data-format={tool.outputFormat || 'text'}>
+        <div id="generator-ui">
+          <div class="workspace-panel input-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">{text.inputKicker}</span>
+                <h2>{text.customize}</h2>
+              </div>
+              <span class="generator-type-pill">{getLocalizedUiLabel(tool.generatorType.replace('-', ' '), language)}</span>
+            </div>
+
+            {tool.toolOptions && tool.toolOptions.length > 0 && (
+              <div class="tool-options-panel">
+                {tool.toolOptions.map((opt) => (
+                  <div class="tool-option">
+                    <label for={opt.id}>{getLocalizedUiLabel(opt.label, language)}</label>
+                    {opt.type === 'select' && (
+                      <select id={opt.id} class="tool-select">
+                        {opt.options?.map((o) => (
+                          <option value={o.value} selected={o.value === opt.default}>{getLocalizedUiLabel(o.label, language)}</option>
+                        ))}
+                      </select>
+                    )}
+                    {opt.type === 'number' && (
+                      <input type="number" id={opt.id} class="tool-number" value={typeof opt.default === 'number' || typeof opt.default === 'string' ? opt.default : undefined} min={opt.min} max={opt.max} />
+                    )}
+                    {opt.type === 'checkbox' && (
+                      <div class="checkbox-option">
+                        <input type="checkbox" id={opt.id} class="tool-checkbox" checked={!!opt.default} />
+                        <span>{text.enabled}</span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {pass20Controls && (
+              <div class="tool-options-panel">
+                <div class="tool-option">
+                  <label for={pass20Controls.modeId}>{getLocalizedUiLabel(pass20Controls.modeLabel, language)}</label>
+                  <select id={pass20Controls.modeId} class="tool-select">
+                    {pass20Controls.modes.map((option) => (
+                      <option value={option.value}>{getLocalizedUiLabel(option.label, language)}</option>
+                    ))}
+                  </select>
+                </div>
+                {pass20Controls.toneId && (
+                  <div class="tool-option">
+                    <label for={pass20Controls.toneId}>{text.tone}</label>
+                    <select id={pass20Controls.toneId} class="tool-select">
+                      <option value="balanced">{text.tones[0]}</option>
+                      <option value="polished">{text.tones[1]}</option>
+                      <option value="creative">{text.tones[2]}</option>
+                      <option value="friendly">{text.tones[3]}</option>
+                    </select>
+                  </div>
+                )}
+                {pass20Controls.countId && (
+                  <div class="tool-option">
+                    <label for={pass20Controls.countId}>{text.count}</label>
+                    <input type="number" id={pass20Controls.countId} class="tool-number" value={pass20Controls.countDefault} min={pass20Controls.countMin} max={pass20Controls.countMax} />
+                  </div>
+                )}
+              </div>
+            )}
+
+            <label class="input-label" for="tool-input">{text.inputLabel}</label>
+            <textarea class="tool-input" id="tool-input" placeholder={text.placeholder} rows="4"></textarea>
+            <div class="example-chip-row" aria-label={text.examples}>
+              <button type="button" class="example-chip" data-example={copy.primaryKeyword}>{copy.primaryKeyword}</button>
+              {copy.faqTopics.slice(0, 2).map((keyword) => (
+                <button type="button" class="example-chip" data-example={keyword}>{keyword}</button>
+              ))}
+            </div>
+            <div class="tool-controls premium-controls">
+              <button class="btn btn-primary" id="generate-btn">{text.generate}</button>
+              <button class="btn btn-outline" id="example-btn">{text.example}</button>
+              <button class="btn btn-ghost" id="reset-btn">{text.reset}</button>
+              <button class="btn btn-ghost" id="regenerate-btn">{text.regenerate}</button>
+            </div>
+          </div>
+
+          <div class="workspace-panel output-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">{text.outputKicker}</span>
+                <h2>{text.outputTitle}</h2>
+              </div>
+              <button class="copy-btn copy-all-btn" id="copy-btn">{text.copyAll}</button>
+            </div>
+            <div class="tool-output premium-output empty" id="tool-output">{text.empty}</div>
+          </div>
+        </div>
+      </div>
+
+      {safetyNote && (
+        <div class="tool-disclaimer" style="margin-top: 15px; padding: 15px; background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; border-radius: 4px; font-size: 0.9rem; color: #b8860b;">
+          <strong>{text.note}</strong> {safetyNote}
+        </div>
+      )}
+
+      <div class="content-section premium-content-section">
+        <section class="content-card intro-card">
+          <h2>{text.whatIs} {copy.h1}?</h2>
+          <p>{copy.metaDescription}</p>
+          <p>{copy.intro}</p>
+        </section>
+
+        <section class="content-card">
+          <h2>{text.howTo} {copy.h1}</h2>
+          <ol>
+            {guideCopy.howTo.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="content-card">
+          <h2>{text.tips}</h2>
+          <ul>
+            {guideCopy.tips.map((tip) => <li><strong>{tip.title}</strong> - {tip.body}</li>)}
+          </ul>
+        </section>
+
+        <section class="content-card">
+          <h2>{text.why}</h2>
+          <ul>
+            {text.whyItems.map((item) => <li><strong>{item[0]}</strong> - {item[1]}</li>)}
+          </ul>
+        </section>
+
+        <section class="content-card">
+          <h2>{text.faq}</h2>
+          <div class="faq-list">
+            {faqItems.map((faq) => (
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>{faq.q}</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer"><p>{faq.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {related.length > 0 && (
+          <section class="content-card related-card">
+            <h2>{text.related}</h2>
+            <div class="tools-grid related-tools-grid">
+              {related.map((r) => {
+                const relatedLocalized = getLocalizedToolByCanonicalId(r.slug, language);
+                const relatedCopy = relatedLocalized ? getLocalizedPageCopy(relatedLocalized) : undefined;
+                return (
+                  <a href={getLanguageSwitchRoute(r.slug, language)} class="tool-card">
+                    <div class="tool-icon">{r.icon}</div>
+                    <h3>{relatedCopy?.h1 || r.name}</h3>
+                    <p>{relatedCopy?.intro || r.tagline}</p>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {(matchingHub || nextStepHubs.length > 0) && (
+          <section class="content-card">
+            <h2>{text.explore}</h2>
+            <p>{text.activeLinks}</p>
+            <div class="category-grid">
+              {matchingHub && (
+                <a href={`/tools/${matchingHub.slug}/`} class="category-card">
+                  <span class="cat-icon">#</span>
+                  <h3>{getLocalizedHubCopy(matchingHub.slug, matchingHub.h1, matchingHub.description, language).title}</h3>
+                  <p>{getLocalizedHubCopy(matchingHub.slug, matchingHub.h1, matchingHub.description, language).description}</p>
+                </a>
+              )}
+              {nextStepHubs.map((hub) => (
+                <a href={`/tools/${hub.slug}/`} class="category-card">
+                  <span class="cat-icon">#</span>
+                  <h3>{getLocalizedHubCopy(hub.slug, hub.h1, hub.description, language).title}</h3>
+                  <p>{getLocalizedHubCopy(hub.slug, hub.h1, hub.description, language).description}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import '@/scripts/tool-workspace';
+  </script>
+</BaseLayout>

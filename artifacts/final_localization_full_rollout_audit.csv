@@ -1,0 +1,59 @@
+area,check,expected,actual,status,notes
+Page counts,es localized pages,379,379,PASS,duplicates=0
+Localization safety,es duplicate localized slugs,0,0,PASS,
+Page counts,fr localized pages,379,379,PASS,duplicates=0
+Localization safety,fr duplicate localized slugs,0,0,PASS,
+Page counts,de localized pages,379,379,PASS,duplicates=0
+Localization safety,de duplicate localized slugs,0,0,PASS,
+Page counts,pt localized pages,379,379,PASS,duplicates=0
+Localization safety,pt duplicate localized slugs,0,0,PASS,
+Page counts,it localized pages,379,379,PASS,duplicates=0
+Localization safety,it duplicate localized slugs,0,0,PASS,
+Page counts,pl localized pages,379,379,PASS,duplicates=0
+Localization safety,pl duplicate localized slugs,0,0,PASS,
+Page counts,ru localized pages,379,379,PASS,duplicates=0
+Localization safety,ru duplicate localized slugs,0,0,PASS,
+Page counts,tr localized pages,379,379,PASS,duplicates=0
+Localization safety,tr duplicate localized slugs,0,0,PASS,
+Page counts,id localized pages,379,379,PASS,duplicates=0
+Localization safety,id duplicate localized slugs,0,0,PASS,
+Page counts,sv localized pages,379,379,PASS,duplicates=0
+Localization safety,sv duplicate localized slugs,0,0,PASS,
+Page counts,ms localized pages,379,379,PASS,duplicates=0
+Localization safety,ms duplicate localized slugs,0,0,PASS,
+Page counts,bg localized pages,379,379,PASS,duplicates=0
+Localization safety,bg duplicate localized slugs,0,0,PASS,
+Page counts,hi localized pages,379,379,PASS,duplicates=0
+Localization safety,hi duplicate localized slugs,0,0,PASS,
+Page counts,bn localized pages,379,379,PASS,duplicates=0
+Localization safety,bn duplicate localized slugs,0,0,PASS,
+Page counts,ja localized pages,379,379,PASS,duplicates=0
+Localization safety,ja duplicate localized slugs,0,0,PASS,
+Page counts,ko localized pages,379,379,PASS,duplicates=0
+Localization safety,ko duplicate localized slugs,0,0,PASS,
+Page counts,ar localized pages,379,379,PASS,duplicates=0
+Localization safety,ar duplicate localized slugs,0,0,PASS,
+Page counts,Total localized tool pages,6443,6443,PASS,
+Page counts,Active English tools,430,430,PASS,
+Page counts,Redirects,20,20,PASS,
+Page counts,Build pages,6902,6902,PASS,Confirmed from npm.cmd run build output.
+Page counts,Localized canonical tool set,379,379,PASS,
+SEO technical,Localized sitemap URLs,6443,6443,PASS,
+Localization safety,No localized noindex sitemap leaks,0,0,PASS,
+Localization safety,No localized noindex robots pages,0,0,PASS,
+Localization safety,No removed/redirected tools localized,0,0,PASS,
+Localization safety,No redirected localized URLs in sitemap,0,0,PASS,
+Localization safety,No broken localized internal links,0,0,PASS,
+SEO technical,Localized pages index/follow,6443,6443,PASS,
+SEO technical,Localized self canonicals,6443,6443,PASS,
+SEO technical,Localized hreflang coverage,en+17+x-default for 6443,0,PASS,
+SEO technical,Language switch same-tool mapping,0 homepage fallbacks/mismatches,0,PASS,
+Language/UX,Localized lang and direction attributes,0 mismatches,0,PASS,
+Language/UX,UTF-8/script rendering spot checks,0 failures,0,PASS,
+Language/UX,No empty localized UI/chrome sections,0 missing sections,0,PASS,
+Language/UX,No generic English localized guide fallback,0 pages,0,PASS,"Manual inspection of flagged Turkish pages confirmed localized Turkish guide copy; English remains only in shared brand/navigation/tool option labels."
+SEO technical,English pages keep self canonicals,379,379,PASS,
+SEO technical,English hreflang coverage for localized tools,en+17+x-default for 379,0,PASS,
+SEO technical,No hardcoded taptogen.vercel.app or localhost,0,0,PASS,
+Content quality / AdSense,Quality recheck artifact failures,0,0,PASS,
+Content quality / AdSense,Representative language spot checks,17,17,PASS,

@@ -1,0 +1,34 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import { siteConfig } from '@/config/site';
+---
+<BaseLayout title="About Us — TapToGen" description="Learn about TapToGen, the free online generator tools platform built for creators, developers, marketers, and everyone who needs instant digital generation." canonical="/about-us/">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><span>About Us</span></div>
+      <span class="section-badge">🏢 About</span>
+      <h1>About <span class="gradient-text">TapToGen</span></h1>
+      <p>The story behind the internet's most premium generator tools platform</p>
+    </div>
+  </section>
+  <div class="container">
+    <div class="content-section">
+      <h2>Our Mission</h2>
+      <p>TapToGen was built with one simple idea: generator tools should be free, fast, beautiful, and private. No signups, no ads covering every pixel, no selling your data — just premium tools that work instantly.</p>
+      <p>We believe that everyone — from a student writing an essay to a startup founder naming their company — deserves access to high-quality digital generation tools without barriers.</p>
+      <h2>What We Offer</h2>
+      <p>TapToGen provides a growing collection of generator tools including name generators, fancy text and font generators, social media tag generators, bio and caption generators, SEO tools, business name generators, and many more utility generators.</p>
+      <p>Every tool is designed to run entirely in your browser. Your data never touches our servers — everything happens locally on your device.</p>
+      <h2>Our Principles</h2>
+      <ul>
+        <li><strong>Privacy First</strong> — Your inputs never leave your device</li>
+        <li><strong>Always Free</strong> — No paywalls, no premium tiers, no hidden costs</li>
+        <li><strong>Quality Design</strong> — Premium UI/UX that makes tools a joy to use</li>
+        <li><strong>Useful Output</strong> — Genuinely helpful generators, not random noise</li>
+        <li><strong>Fast & Light</strong> — Optimized performance on every device</li>
+      </ul>
+      <h2>Contact Us</h2>
+      <p>Have feedback, suggestions, or questions? We'd love to hear from you. Reach out at <a href={`mailto:${siteConfig.contactEmail}`} style="color:var(--color-accent-2);">{siteConfig.contactEmail}</a> or visit our <a href="/contact-us/" style="color:var(--color-accent-2);">contact page</a>.</p>
+    </div>
+  </div>
+</BaseLayout>

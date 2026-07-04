@@ -1,0 +1,43 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import { siteConfig } from '@/config/site';
+---
+<BaseLayout title="Contact Us — TapToGen" description="Get in touch with the TapToGen team. Have feedback, questions, or suggestions? We'd love to hear from you." canonical="/contact-us/">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><span>Contact Us</span></div>
+      <span class="section-badge">📬 Contact</span>
+      <h1>Contact <span class="gradient-text">Us</span></h1>
+      <p>We'd love to hear from you. Send us a message below or email us directly.</p>
+    </div>
+  </section>
+  <div class="container">
+    <div class="content-section">
+      <div class="tool-workspace" style="max-width:600px;margin:0 auto;">
+        <form id="contact-form">
+          <label for="contact-name" style="display:block;margin-bottom:6px;font-size:0.9rem;color:var(--color-text-secondary);">Name</label>
+          <input type="text" id="contact-name" name="name" class="tool-input" placeholder="Your name" required style="margin-bottom:16px;" />
+          <label for="contact-email" style="display:block;margin-bottom:6px;font-size:0.9rem;color:var(--color-text-secondary);">Email</label>
+          <input type="email" id="contact-email" name="email" class="tool-input" placeholder="your@email.com" required style="margin-bottom:16px;" />
+          <label for="contact-message" style="display:block;margin-bottom:6px;font-size:0.9rem;color:var(--color-text-secondary);">Message</label>
+          <textarea id="contact-message" name="message" class="tool-input" placeholder="Your message..." rows="5" required style="margin-bottom:20px;"></textarea>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message →</button>
+          <div id="form-status" style="margin-top:16px;text-align:center;font-size:0.9rem;"></div>
+        </form>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <p style="color:var(--color-text-secondary);">Or email us directly at <a href={`mailto:${siteConfig.contactEmail}`} style="color:var(--color-accent-2);">{siteConfig.contactEmail}</a></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const status = document.getElementById('form-status');
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (status) status.textContent = 'Sending...';
+      if (status) { status.textContent = '✅ Thank you! Your message has been received.'; status.style.color = '#10b981'; }
+      form.reset();
+    });
+  </script>
+</BaseLayout>

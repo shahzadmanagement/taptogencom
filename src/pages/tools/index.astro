@@ -1,0 +1,92 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import { tools } from '@/data/tools';
+import { categories } from '@/data/categories';
+
+const categoryNames = categories.map(c => ({ slug: c.slug, name: c.name }));
+---
+<BaseLayout
+  title="Free Online Generator Tools — TapToGen"
+  description="Browse all free online generator tools. Fancy text, name generators, hashtag tools, bio generators, SEO tools, and more — all free, fast, and private."
+  canonical="/tools/"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span class="sep">›</span><span>Tools</span>
+      </div>
+      <span class="section-badge">🛠️ All Tools</span>
+      <h1>Generator <span class="gradient-text">Tools</span></h1>
+      <p>{tools.length}+ free online generators — pick a tool and start generating instantly</p>
+    </div>
+  </section>
+
+  <section class="tools-section" style="padding-top: 0;">
+    <div class="container">
+      <div class="search-bar" style="margin-bottom: 24px;">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="tool-search" placeholder="Search tools..." aria-label="Search tools" />
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;justify-content:center;">
+        <button class="btn btn-ghost filter-btn active" data-cat="all">All</button>
+        {categoryNames.map(cat => (
+          <button class="btn btn-ghost filter-btn" data-cat={cat.slug}>{cat.name}</button>
+        ))}
+      </div>
+      <div class="tools-grid" id="tools-grid">
+        {tools.map((tool) => (
+          <a href={`/tools/${tool.slug}/`} class="tool-card" data-category={tool.categorySlug} data-name={tool.name.toLowerCase()}>
+            <div class="tool-icon">{tool.icon}</div>
+            <h3>{tool.name}</h3>
+            <p>{tool.tagline}</p>
+            <span class="tool-tag">{tool.category}</span>
+          </a>
+        ))}
+      </div>
+      <div id="empty-state" style="display:none;text-align:center;padding:60px 0;color:var(--color-text-muted);">
+        <p style="font-size:2rem;margin-bottom:12px;">🔍</p>
+        <p>No tools found. Try a different search or category.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Filter by category
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterTools();
+      });
+    });
+
+    // Search
+    const searchInput = document.getElementById('tool-search') as HTMLInputElement;
+    searchInput?.addEventListener('input', filterTools);
+
+    // Pre-fill from URL
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('q') && searchInput) {
+      searchInput.value = params.get('q') || '';
+      filterTools();
+    }
+
+    function filterTools() {
+      const cat = document.querySelector('.filter-btn.active')?.getAttribute('data-cat') || 'all';
+      const query = searchInput?.value.toLowerCase().trim() || '';
+      let visible = 0;
+
+      document.querySelectorAll('.tool-card').forEach(card => {
+        const el = card as HTMLElement;
+        const matchCat = cat === 'all' || el.dataset.category === cat;
+        const matchSearch = !query || (el.dataset.name?.includes(query) ?? false);
+        const show = matchCat && matchSearch;
+        el.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      const empty = document.getElementById('empty-state');
+      if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
+    }
+  </script>
+</BaseLayout>
