@@ -3,8 +3,17 @@ import { getFeatureFlags } from '../../platform/featureFlags';
 import { logger } from '../../platform/logger';
 import { startMark, endMark } from '../../platform/performance';
 import { analytics } from '../../platform/analytics';
+import { errorReporter } from '../../platform/errorReporter';
+import { wrapErrorBoundary } from '../../platform/errorBoundary';
+import { observeBundlePerformance, initPerformanceObservers } from '../../platform/bundleAnalyzer';
+import { initResourcePrefetchRules } from '../../platform/resourceHints';
 
-export async function createWorkspace(
+// Initialize global observability listeners immediately on import load
+errorReporter.init();
+initPerformanceObservers();
+initResourcePrefetchRules();
+
+export const createWorkspace = wrapErrorBoundary(async function (
   toolSlug: string,
   input: HTMLTextAreaElement,
   output: HTMLElement,
@@ -99,4 +108,8 @@ export async function createWorkspace(
 
   const duration = endMark('workspace-init');
   logger.info(`Workspace for "${toolSlug}" successfully initialized in ${duration.toFixed(2)}ms`);
-}
+
+  setTimeout(() => {
+    observeBundlePerformance();
+  }, 1000);
+});

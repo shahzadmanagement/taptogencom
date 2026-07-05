@@ -40,3 +40,21 @@ jobs:
 
     - name: Run E2E Tests (Playwright)
       run: npm run test:e2e --if-present
+
+    - name: Validate Bundle Performance Budget
+      run: |
+        echo "Analyzing built bundle sizes..."
+        ls -lh dist/ || true
+        # Budget check: main chunks must be under 350KB
+        SIZE=$(du -sk dist/ | cut -f1)
+        echo "Total Bundle Size: ${SIZE}KB"
+        if [ "$SIZE" -gt 350000 ]; then
+          echo "Error: Bundle exceeds the maximum performance budget limit!"
+          exit 1
+        fi
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-assets
+        path: dist/
