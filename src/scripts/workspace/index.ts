@@ -1,4 +1,8 @@
 import { toolConfigs } from '../../config';
+import { getFeatureFlags } from '../../platform/featureFlags';
+import { logger } from '../../platform/logger';
+import { startMark, endMark } from '../../platform/performance';
+import { analytics } from '../../platform/analytics';
 
 export async function createWorkspace(
   toolSlug: string,
@@ -6,34 +10,41 @@ export async function createWorkspace(
   output: HTMLElement,
   generate: () => void
 ) {
-  const activeConfig = toolConfigs[toolSlug];
-  if (!activeConfig) return;
+  startMark('workspace-init');
+  logger.info(`Initializing workspace for "${toolSlug}"`);
 
+  const activeConfig = toolConfigs[toolSlug];
+  if (!activeConfig) {
+    logger.error(`No configuration found for workspace "${toolSlug}"`);
+    endMark('workspace-init');
+    return;
+  }
+
+  const flags = getFeatureFlags(activeConfig);
   const prefix = toolSlug.split('-')[0];
   const randomBtn = document.getElementById('btn-case-random-style');
 
-  // Dynamic Lazy-Loading based on configuration toggles
-  if (activeConfig.favorites) {
+  if (flags.enableFavorites) {
     const { initFavorites } = await import('./favorites');
     initFavorites(activeConfig);
   }
 
-  if (activeConfig.previews.length > 0) {
+  if (flags.enablePreviews) {
     const { initPreviews } = await import('./previews');
     initPreviews(activeConfig);
   }
 
-  if (activeConfig.search) {
+  if (flags.enableSearch) {
     const { initSearch } = await import('./search');
     initSearch(activeConfig);
   }
 
-  if (activeConfig.shuffle) {
+  if (flags.enableShuffle) {
     const { initShuffle } = await import('./shuffle');
     initShuffle(activeConfig);
   }
 
-  if (activeConfig.exporters.length > 0) {
+  if (flags.enableExport) {
     const { initDownloads } = await import('./downloads');
     initDownloads(activeConfig);
   }
@@ -41,7 +52,7 @@ export async function createWorkspace(
   const { bindEvents } = await import('./events');
   const updateCountersAndFeatures = bindEvents(activeConfig, input, output, generate);
 
-  if (activeConfig.shortcuts) {
+  if (flags.enableShortcuts) {
     const { bindShortcuts } = await import('./shortcuts');
     bindShortcuts(activeConfig, input, updateCountersAndFeatures, generate);
   }
@@ -50,10 +61,11 @@ export async function createWorkspace(
     randomBtn.addEventListener('click', async () => {
       const { pickRandomStyle } = await import('./render');
       pickRandomStyle();
+      analytics.trackShortcut('Alt+R');
     });
   }
 
-  if (activeConfig.history) {
+  if (flags.enableHistory) {
     const { initHistory } = await import('./history');
     initHistory(activeConfig, output);
   }
@@ -76,6 +88,7 @@ export async function createWorkspace(
       if (copyTextList) {
         const { ClipboardHelper } = await import('./clipboard');
         await ClipboardHelper.copy(copyTextList, newCopyBtn);
+        analytics.trackExport('copy_all', visibleCards.length);
       }
     });
   }
@@ -83,4 +96,7 @@ export async function createWorkspace(
   if (input.value) {
     updateCountersAndFeatures();
   }
+
+  const duration = endMark('workspace-init');
+  logger.info(`Workspace for "${toolSlug}" successfully initialized in ${duration.toFixed(2)}ms`);
 }
