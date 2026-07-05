@@ -1,0 +1,33 @@
+---
+interface Props {
+  h1: string;
+  examplesText: string;
+  examples: { input: string; output: string }[];
+}
+
+const { h1, examplesText, examples } = Astro.props;
+---
+
+{examples && examples.length > 0 && (
+  <section class="content-card examples-card">
+    <h2>{examplesText} - {h1}</h2>
+    <div class="table-container" style="overflow-x: auto; margin-top: 16px;">
+      <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--color-border); color: var(--color-text-primary);">
+            <th style="padding: 12px 8px;">Original Text</th>
+            <th style="padding: 12px 8px;">Converted Style Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          {examples.map(ex => (
+            <tr style="border-bottom: 1px solid var(--color-border); color: var(--color-text-secondary);">
+              <td style="padding: 12px 8px;">{ex.input}</td>
+              <td style="padding: 12px 8px; font-weight: 600; color: var(--color-accent-1);">{ex.output}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+)}

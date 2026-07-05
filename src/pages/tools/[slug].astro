@@ -10,6 +10,11 @@ import DownloadToolbar from '@/components/DownloadToolbar.astro';
 import PreviewTabs from '@/components/PreviewTabs.astro';
 import HistoryPanel from '@/components/HistoryPanel.astro';
 import KeyboardShortcuts from '@/components/KeyboardShortcuts.astro';
+import SchemaMarkup from '@/components/SchemaMarkup.astro';
+import IntroSection from '@/components/IntroSection.astro';
+import ExamplesSection from '@/components/ExamplesSection.astro';
+import FaqSection from '@/components/FaqSection.astro';
+import RelatedSection from '@/components/RelatedSection.astro';
 
 export const prerender = true;
 
@@ -255,10 +260,7 @@ const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => ge
 
       <!-- Content Below Tool -->
       <div class="content-section premium-content-section">
-        <section class="content-card intro-card">
-          <h2>What is {tool.name}?</h2>
-          <p set:html={tool.description}></p>
-        </section>
+        <IntroSection h1={tool.name} metaDescription={tool.tagline} intro={tool.description} whatIsText="What is" />
 
         <section class="content-card">
           <h2>How to Use {tool.name}</h2>
@@ -292,48 +294,9 @@ const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => ge
           )}
         </section>
 
-        <section class="content-card">
-          <h2>Why Use TapToGen's {tool.name}?</h2>
-          <ul>
-            <li><strong>Instant results</strong> - generate output in milliseconds, right in your browser.</li>
-            <li><strong>100% free</strong> - no signup, no limits, no hidden costs.</li>
-            <li><strong>Privacy-first</strong> - your input stays on your device.</li>
-            <li><strong>Mobile-friendly</strong> - works on phones, tablets, and desktops.</li>
-            <li><strong>Copy with one click</strong> - copy individual results or the full output.</li>
-          </ul>
-        </section>
+        <FaqSection faqTitle="Frequently Asked Questions" faqItems={effectiveFaqItems.map(f => ({ question: f.q, answer: f.a }))} />
 
-        {effectiveFaqItems.length > 0 && (
-          <section class="content-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-list">
-              {effectiveFaqItems.map(faq => (
-                <div class="faq-item">
-                  <button class="faq-question" aria-expanded="false">
-                    <span>{faq.q}</span>
-                    <span class="faq-icon">+</span>
-                  </button>
-                  <div class="faq-answer"><p set:html={faq.a}></p></div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {related.length > 0 && (
-          <section class="content-card related-card">
-            <h2>Related Tools</h2>
-            <div class="tools-grid related-tools-grid">
-              {related.map(r => (
-                <a href={`/tools/${r.slug}/`} class="tool-card">
-                  <div class="tool-icon">{r.icon}</div>
-                  <h3>{r.name}</h3>
-                  <p>{r.tagline}</p>
-                </a>
-              ))}
-            </div>
-          </section>
-        )}
+        <RelatedSection title="Related Tools" relatedTools={related} isSpanish={false} />
 
         {(matchingHub || nextStepHubs.length > 0) && (
           <section class="content-card">

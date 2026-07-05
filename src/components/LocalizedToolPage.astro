@@ -24,6 +24,9 @@ import DownloadToolbar from '@/components/DownloadToolbar.astro';
 import PreviewTabs from '@/components/PreviewTabs.astro';
 import HistoryPanel from '@/components/HistoryPanel.astro';
 import KeyboardShortcuts from '@/components/KeyboardShortcuts.astro';
+import IntroSection from '@/components/IntroSection.astro';
+import FaqSection from '@/components/FaqSection.astro';
+import RelatedSection from '@/components/RelatedSection.astro';
 
 interface Props {
   tool: Tool;
@@ -886,11 +889,7 @@ const faqSchema = {
       )}
 
       <div class="content-section premium-content-section">
-        <section class="content-card intro-card">
-          <h2>{text.whatIs} {copy.h1}?</h2>
-          <p>{copy.metaDescription}</p>
-          <p>{copy.intro}</p>
-        </section>
+        <IntroSection h1={copy.h1} metaDescription={copy.metaDescription} intro={copy.intro} whatIsText={text.whatIs} />
 
         <section class="content-card">
           <h2>{text.howTo} {copy.h1}</h2>
@@ -913,39 +912,9 @@ const faqSchema = {
           </ul>
         </section>
 
-        <section class="content-card">
-          <h2>{text.faq}</h2>
-          <div class="faq-list">
-            {faqItems.map((faq) => (
-              <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                  <span>{faq.q}</span>
-                  <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer"><p>{faq.a}</p></div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <FaqSection faqTitle={text.faq} faqItems={faqItems.map(f => ({ question: f.q, answer: f.a }))} />
 
-        {related.length > 0 && (
-          <section class="content-card related-card">
-            <h2>{text.related}</h2>
-            <div class="tools-grid related-tools-grid">
-              {related.map((r) => {
-                const relatedLocalized = getLocalizedToolByCanonicalId(r.slug, language);
-                const relatedCopy = relatedLocalized ? getLocalizedPageCopy(relatedLocalized) : undefined;
-                return (
-                  <a href={getLanguageSwitchRoute(r.slug, language)} class="tool-card">
-                    <div class="tool-icon">{r.icon}</div>
-                    <h3>{relatedCopy?.h1 || r.name}</h3>
-                    <p>{relatedCopy?.intro || r.tagline}</p>
-                  </a>
-                );
-              })}
-            </div>
-          </section>
-        )}
+        <RelatedSection title={text.related} relatedTools={related} isSpanish={language === 'es'} />
 
         {(matchingHub || nextStepHubs.length > 0) && (
           <section class="content-card">

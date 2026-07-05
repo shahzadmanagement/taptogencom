@@ -1,0 +1,16 @@
+---
+interface Props {
+  h1: string;
+  metaDescription: string;
+  intro: string;
+  whatIsText: string;
+}
+
+const { h1, metaDescription, intro, whatIsText } = Astro.props;
+---
+
+<section class="content-card intro-card">
+  <h2>{whatIsText} {h1}?</h2>
+  <p>{metaDescription}</p>
+  <p>{intro}</p>
+</section>

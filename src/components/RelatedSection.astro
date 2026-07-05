@@ -1,0 +1,28 @@
+---
+import type { Tool } from '../data/tools';
+
+interface Props {
+  title: string;
+  relatedTools: Tool[];
+  isSpanish: boolean;
+}
+
+const { title, relatedTools, isSpanish } = Astro.props;
+---
+
+{relatedTools && relatedTools.length > 0 && (
+  <section class="content-card related-card">
+    <h2>{title}</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 16px;">
+      {relatedTools.map(item => (
+        <a href={isSpanish ? `/es/tools/${item.slug}/` : `/tools/${item.slug}/`} style="padding: 14px; border: 1px solid var(--color-border); border-radius: 8px; text-decoration: none; background: rgba(255,255,255,0.02); display: flex; align-items: center; gap: 8px; transition: var(--transition); color: var(--color-text-primary);" class="related-tool-link">
+          <span style="font-size: 1.25rem;">{item.icon}</span>
+          <div>
+            <div style="font-weight: 600; font-size: 0.88rem;">{item.name}</div>
+            <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 2px;">{item.category}</div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+)}
