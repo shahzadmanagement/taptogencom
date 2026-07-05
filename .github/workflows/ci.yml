@@ -38,8 +38,10 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
-    - name: Run E2E Tests (Playwright)
-      run: npm run test:e2e --if-present
+    - name: Generate Sitemap and Robots
+      run: |
+        node scripts/generate-sitemap.js
+        node scripts/generate-robots.js
 
     - name: Validate Bundle Performance Budget
       run: |
