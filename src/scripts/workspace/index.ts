@@ -1,16 +1,6 @@
 import { toolConfigs } from '../../config';
-import { initFavorites } from './favorites';
-import { initHistory } from './history';
-import { initPreviews } from './previews';
-import { initSearch } from './search';
-import { initShuffle } from './shuffle';
-import { initDownloads } from './downloads';
-import { bindShortcuts } from './shortcuts';
-import { bindEvents } from './events';
-import { pickRandomStyle } from './render';
-import { ClipboardHelper } from './clipboard';
 
-export function createWorkspace(
+export async function createWorkspace(
   toolSlug: string,
   input: HTMLTextAreaElement,
   output: HTMLElement,
@@ -20,26 +10,51 @@ export function createWorkspace(
   if (!activeConfig) return;
 
   const prefix = toolSlug.split('-')[0];
-  const historyListId = `${prefix}-history-list`;
   const randomBtn = document.getElementById('btn-case-random-style');
 
-  initFavorites(activeConfig);
-  initPreviews(activeConfig);
-  initSearch(activeConfig);
-  initShuffle(activeConfig);
-  initDownloads(activeConfig);
+  // Dynamic Lazy-Loading based on configuration toggles
+  if (activeConfig.favorites) {
+    const { initFavorites } = await import('./favorites');
+    initFavorites(activeConfig);
+  }
 
+  if (activeConfig.previews.length > 0) {
+    const { initPreviews } = await import('./previews');
+    initPreviews(activeConfig);
+  }
+
+  if (activeConfig.search) {
+    const { initSearch } = await import('./search');
+    initSearch(activeConfig);
+  }
+
+  if (activeConfig.shuffle) {
+    const { initShuffle } = await import('./shuffle');
+    initShuffle(activeConfig);
+  }
+
+  if (activeConfig.exporters.length > 0) {
+    const { initDownloads } = await import('./downloads');
+    initDownloads(activeConfig);
+  }
+
+  const { bindEvents } = await import('./events');
   const updateCountersAndFeatures = bindEvents(activeConfig, input, output, generate);
 
   if (activeConfig.shortcuts) {
+    const { bindShortcuts } = await import('./shortcuts');
     bindShortcuts(activeConfig, input, updateCountersAndFeatures, generate);
   }
 
-  randomBtn?.addEventListener('click', () => {
-    pickRandomStyle();
-  });
+  if (randomBtn) {
+    randomBtn.addEventListener('click', async () => {
+      const { pickRandomStyle } = await import('./render');
+      pickRandomStyle();
+    });
+  }
 
   if (activeConfig.history) {
+    const { initHistory } = await import('./history');
     initHistory(activeConfig, output);
   }
 
@@ -59,6 +74,7 @@ export function createWorkspace(
       }).join('\n');
       
       if (copyTextList) {
+        const { ClipboardHelper } = await import('./clipboard');
         await ClipboardHelper.copy(copyTextList, newCopyBtn);
       }
     });
