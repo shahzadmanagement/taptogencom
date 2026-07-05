@@ -703,7 +703,7 @@ function transformFullwidth(value: string): string {
 
 function renderStyleMatrix(styles: { name: string; preview: string; use: string; note: string }[], extraNote = ''): string {
   return '<div class="intent-style-matrix">' + styles.map(style => (
-    '<article class="intent-style-card"><div class="result-card-top"><div><span class="result-label">' + escapeHtml(style.name) + '</span><p class="intent-mini-note">' + escapeHtml(style.use) + '</p></div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(style.preview) + '">Copy</button></div><div class="intent-preview-text">' + escapeHtml(style.preview) + '</div><p class="result-note">' + escapeHtml(style.note) + '</p></article>'
+    '<article class="intent-style-card" data-style-name="' + escapeHtml(style.name) + '"><div class="result-card-top"><div><span class="result-label">' + escapeHtml(style.name) + '</span><p class="intent-mini-note">' + escapeHtml(style.use) + '</p></div><div style="display: flex; align-items: center; gap: 6px;"><button class="fav-btn" type="button" data-fav-style="' + escapeHtml(style.name) + '" aria-label="Favorite style">☆</button><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(style.preview) + '">Copy</button></div></div><div class="intent-preview-text">' + escapeHtml(style.preview) + '</div><p class="result-note">' + escapeHtml(style.note) + '</p></article>'
   )).join('') + (extraNote ? '<p class="intent-output-note">' + escapeHtml(extraNote) + '</p>' : '') + '</div>';
 }
 
@@ -11756,6 +11756,216 @@ if (toolSlug === 'bold-text-generator') {
   let historyItems: string[] = [];
   const historyList = document.getElementById('bold-history-list');
 
+  output.addEventListener('click', async event => {
+    const target = event.target as HTMLElement;
+    const button = target.closest<HTMLElement>('[data-copy]');
+    if (!button) return;
+    const copiedText = button.dataset.copy || '';
+    if (!copiedText || historyItems.includes(copiedText)) return;
+
+    historyItems.unshift(copiedText);
+    if (historyItems.length > 5) historyItems.pop();
+
+    if (historyList) {
+      historyList.innerHTML = historyItems.map(item => `
+        <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: 8px; padding: 10px 14px; font-size: 0.85rem; margin-bottom: 8px;">
+          <div style="font-family: monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80%; color: var(--color-text-primary);">${escapeHtml(item)}</div>
+          <button class="copy-btn result-copy" type="button" data-copy="${escapeHtml(item)}" style="margin-top: 0; padding: 4px 8px; font-size: 0.75rem;">Copy</button>
+        </div>
+      `).join('');
+    }
+  });
+
+  // Run initial trigger if examples or defaults are populated
+  if (input.value) {
+    updateCountersAndFeatures();
+  }
+}
+
+// Custom interactive extensions for fancy-text-generator
+if (toolSlug === 'fancy-text-generator') {
+  const charCounter = document.getElementById('char-counter');
+  const uniCounter = document.getElementById('uni-counter');
+  const wordCounter = document.getElementById('word-counter');
+  const lineCounter = document.getElementById('line-counter');
+  const searchContainer = document.getElementById('style-search-container');
+  const extensionsContainer = document.getElementById('fancy-extensions-container');
+  const searchInput = document.getElementById('fancy-style-search') as HTMLInputElement;
+  const shuffleBtn = document.getElementById('btn-shuffle-styles');
+  const randomBtn = document.getElementById('btn-case-random-style');
+  const historyList = document.getElementById('fancy-history-list');
+  const mockupTargets = document.querySelectorAll('.mockup-preview-target');
+  const tabs = document.querySelectorAll('.mockup-tab-group button');
+  const panels = document.querySelectorAll('.mockup-panel');
+
+  const getFavs = (): string[] => JSON.parse(localStorage.getItem('taptogen-favs') || '[]');
+  const saveFavs = (favs: string[]) => localStorage.setItem('taptogen-favs', JSON.stringify(favs));
+
+  const syncFavorites = () => {
+    const favs = getFavs();
+    document.querySelectorAll('[data-fav-style]').forEach(btn => {
+      const styleName = btn.getAttribute('data-fav-style') || '';
+      const isFav = favs.includes(styleName);
+      btn.textContent = isFav ? '★' : '☆';
+      btn.classList.toggle('active', isFav);
+    });
+
+    // Re-order matrix elements: favorites first!
+    const matrix = document.querySelector('.intent-style-matrix');
+    if (matrix) {
+      const cards = Array.from(matrix.querySelectorAll('.intent-style-card'));
+      cards.sort((a, b) => {
+        const nameA = a.getAttribute('data-style-name') || '';
+        const nameB = b.getAttribute('data-style-name') || '';
+        const favA = favs.includes(nameA) ? 1 : 0;
+        const favB = favs.includes(nameB) ? 1 : 0;
+        return favB - favA;
+      });
+      cards.forEach(card => matrix.appendChild(card));
+    }
+  };
+
+  const updateCountersAndFeatures = () => {
+    const textVal = input.value;
+    if (charCounter) charCounter.textContent = `${textVal.length} chars`;
+    if (uniCounter) uniCounter.textContent = `${[...textVal].length} glyphs`;
+    if (wordCounter) {
+      const words = textVal.trim() ? textVal.trim().split(/\s+/).length : 0;
+      wordCounter.textContent = `${words} words`;
+    }
+    if (lineCounter) {
+      const lines = textVal ? textVal.split('\n').length : 0;
+      lineCounter.textContent = `${lines} lines`;
+    }
+    if (searchContainer) searchContainer.style.display = textVal ? 'block' : 'none';
+    if (extensionsContainer) extensionsContainer.style.display = textVal ? 'block' : 'none';
+
+    // Update social previews
+    const firstPreview = document.querySelector('.intent-preview-text')?.textContent || textVal || 'Your fancy text...';
+    mockupTargets.forEach(el => {
+      el.textContent = firstPreview;
+    });
+
+    // Update favorites
+    syncFavorites();
+  };
+
+  // Run on input change (live update)
+  input?.addEventListener('input', () => {
+    generate();
+    updateCountersAndFeatures();
+  });
+
+  // Observe render changes in output to sync previews when filters/buttons update
+  const observer = new MutationObserver(updateCountersAndFeatures);
+  if (output) {
+    observer.observe(output, { childList: true, subtree: true });
+  }
+
+  // Handle case converters
+  document.getElementById('btn-case-lower')?.addEventListener('click', () => {
+    input.value = input.value.toLowerCase();
+    generate();
+    updateCountersAndFeatures();
+  });
+  document.getElementById('btn-case-upper')?.addEventListener('click', () => {
+    input.value = input.value.toUpperCase();
+    generate();
+    updateCountersAndFeatures();
+  });
+  document.getElementById('btn-case-title')?.addEventListener('click', () => {
+    input.value = input.value.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+    generate();
+    updateCountersAndFeatures();
+  });
+  document.getElementById('btn-case-sentence')?.addEventListener('click', () => {
+    const val = input.value.trim();
+    if (val) {
+      input.value = val.charAt(0).toUpperCase() + val.slice(1).toLowerCase();
+    }
+    generate();
+    updateCountersAndFeatures();
+  });
+
+  // Pick random style to copy
+  randomBtn?.addEventListener('click', () => {
+    const cards = Array.from(document.querySelectorAll('.intent-style-card'));
+    if (cards.length > 0) {
+      const randomCard = cards[Math.floor(Math.random() * cards.length)];
+      const text = randomCard.querySelector('.intent-preview-text')?.textContent || '';
+      if (text) {
+        navigator.clipboard.writeText(text);
+        const copyBtn = randomCard.querySelector('.copy-btn') as HTMLElement;
+        if (copyBtn) {
+          copyBtn.textContent = 'Copied!';
+          copyBtn.classList.add('copied');
+          setTimeout(() => {
+            copyBtn.textContent = 'Copy';
+            copyBtn.classList.remove('copied');
+          }, 2000);
+        }
+      }
+    }
+  });
+
+  // Shuffle styles order
+  shuffleBtn?.addEventListener('click', () => {
+    const matrix = document.querySelector('.intent-style-matrix');
+    if (matrix) {
+      const cards = Array.from(matrix.querySelectorAll('.intent-style-card'));
+      cards.sort(() => Math.random() - 0.5);
+      cards.forEach(card => matrix.appendChild(card));
+    }
+  });
+
+  // Toggle favorite when star is clicked
+  document.addEventListener('click', event => {
+    const target = event.target as HTMLElement;
+    const favBtn = target.closest<HTMLElement>('[data-fav-style]');
+    if (!favBtn) return;
+    
+    const styleName = favBtn.getAttribute('data-fav-style') || '';
+    if (!styleName) return;
+
+    let favs = getFavs();
+    if (favs.includes(styleName)) {
+      favs = favs.filter(f => f !== styleName);
+    } else {
+      favs.push(styleName);
+    }
+    saveFavs(favs);
+    syncFavorites();
+  });
+
+  // Mockup tab controls
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const tabName = (tab as HTMLElement).dataset.tab;
+      panels.forEach(panel => {
+        const isTarget = panel.id === `mockup-panel-${tabName}`;
+        (panel as HTMLElement).style.display = isTarget ? 'block' : 'none';
+      });
+    });
+  });
+
+  // Filter list results in real time
+  searchInput?.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase().trim();
+    document.querySelectorAll('.intent-style-card').forEach(card => {
+      const label = card.querySelector('.result-label')?.textContent?.toLowerCase() || '';
+      const use = card.querySelector('.intent-mini-note')?.textContent?.toLowerCase() || '';
+      if (label.includes(query) || use.includes(query)) {
+        (card as HTMLElement).style.display = '';
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+  });
+
+  // clipboard session history
+  let historyItems: string[] = [];
   output.addEventListener('click', async event => {
     const target = event.target as HTMLElement;
     const button = target.closest<HTMLElement>('[data-copy]');
