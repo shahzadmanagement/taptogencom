@@ -3935,7 +3935,11 @@ async function copyText(value: string, trigger?: HTMLElement | null): Promise<vo
   if (!trigger) return;
   const original = trigger.textContent || 'Copy';
   trigger.textContent = 'Copied!';
-  setTimeout(() => { trigger.textContent = original; }, 1600);
+  trigger.classList.add('copied');
+  setTimeout(() => {
+    trigger.textContent = original;
+    trigger.classList.remove('copied');
+  }, 1600);
 }
 
 function generateFantasyMap(scope: string, bias: string, density: string, tone: string, includeLegend: boolean, detailLevel: string, seedText: string) {

@@ -83,15 +83,20 @@ const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => ge
 >
   <section class="tool-page">
     <div class="container">
-      <div class="breadcrumb">
-        <a href="/">Home</a><span class="sep">/</span>
-        <a href="/tools/">Tools</a><span class="sep">/</span>
-        <a href={`/categories/${tool.categorySlug}/`}>{tool.category}</a><span class="sep">/</span>
-        <span>{tool.name}</span>
-      </div>
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li><a href="/">Home</a></li>
+          <li class="sep" aria-hidden="true">/</li>
+          <li><a href="/tools/">Tools</a></li>
+          <li class="sep" aria-hidden="true">/</li>
+          <li><a href={`/categories/${tool.categorySlug}/`}>{tool.category}</a></li>
+          <li class="sep" aria-hidden="true">/</li>
+          <li aria-current="page">{tool.name}</li>
+        </ol>
+      </nav>
 
       <div class="tool-page-header premium-tool-header">
-        <span class="section-badge tool-category-badge">{tool.icon} {tool.category}</span>
+        <a href={`/categories/${tool.categorySlug}/`} class="section-badge tool-category-badge">{tool.icon} {tool.category}</a>
         <h1>{tool.name}</h1>
         <p>{tool.tagline}</p>
         <div class="tool-benefits" aria-label="Tool benefits">
@@ -200,7 +205,7 @@ const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => ge
       </div>
 
       {effectiveDisclaimer && (
-        <div class="tool-disclaimer" style="margin-top: 15px; padding: 15px; background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; border-radius: 4px; font-size: 0.9rem; color: #b8860b;">
+        <div class="tool-disclaimer" style="margin-top: 16px; padding: 16px 20px; background: rgba(251, 191, 36, 0.08); border-left: 3px solid rgba(251, 191, 36, 0.6); border-radius: 8px; font-size: 0.9rem; color: #d4a843;">
           <strong>Disclaimer:</strong> {effectiveDisclaimer}
         </div>
       )}

@@ -66,10 +66,10 @@ const faqSchema = {
       <p class="animate-in delay-2">
         TapToGen helps creators, marketers, writers, founders, students, and builders find the right generator fast, create useful drafts, and move from a blank page to editable options.
       </p>
-      <div class="search-bar animate-in delay-3">
-        <span class="search-icon" aria-hidden="true">?</span>
-        <input type="text" id="hero-search" placeholder="Search generator tools..." aria-label="Search generator tools" />
-      </div>
+      <form class="search-bar animate-in delay-3" action="/tools/" method="GET" role="search">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input type="text" id="hero-search" name="q" placeholder="Search generator tools..." aria-label="Search generator tools" />
+      </form>
       <div class="hero-buttons animate-in delay-3">
         <a href="/tools/" class="btn btn-primary">Explore all tools</a>
         <a href="/tools/name-generators/" class="btn btn-outline">Start with name generators</a>
@@ -235,10 +235,11 @@ const faqSchema = {
       });
     });
 
-    const searchInput = document.getElementById('hero-search') as HTMLInputElement;
-    searchInput?.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' && searchInput.value.trim()) {
-        window.location.href = `/tools/?q=${encodeURIComponent(searchInput.value.trim())}`;
+    const searchForm = document.querySelector('.search-bar') as HTMLFormElement;
+    searchForm?.addEventListener('submit', (event) => {
+      const input = searchForm.querySelector('input') as HTMLInputElement;
+      if (!input?.value.trim()) {
+        event.preventDefault();
       }
     });
   </script>
