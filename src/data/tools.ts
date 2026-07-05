@@ -8170,8 +8170,16 @@ export function getPopularTools(): Tool[] {
 export function getRelatedTools(slug: string, limit = 4): Tool[] {
   const tool = getToolBySlug(slug);
   if (!tool) return [];
-  return tool.relatedSlugs
+  
+  let results = tool.relatedSlugs
     .map(s => getToolBySlug(s))
-    .filter((t): t is Tool => t !== undefined)
-    .slice(0, limit);
+    .filter((t): t is Tool => t !== undefined);
+
+  if (results.length < limit) {
+    const categoryTools = getToolsByCategory(tool.categorySlug)
+      .filter(t => t.slug !== slug && !tool.relatedSlugs.includes(t.slug));
+    results = [...results, ...categoryTools];
+  }
+
+  return results.slice(0, limit);
 }
