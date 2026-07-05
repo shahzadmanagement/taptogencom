@@ -12101,6 +12101,28 @@ if (toolSlug === 'fancy-text-generator') {
     renderHistory();
   });
 
+  // Copy All / Copy Filtered override for fancy-text-generator
+  const copyBtnAll = document.getElementById('copy-btn');
+  if (copyBtnAll) {
+    const newCopyBtn = copyBtnAll.cloneNode(true) as HTMLElement;
+    copyBtnAll.parentNode?.replaceChild(newCopyBtn, copyBtnAll);
+    
+    newCopyBtn.addEventListener('click', async () => {
+      const visibleCards = Array.from(document.querySelectorAll('.intent-style-card'))
+        .filter(card => (card as HTMLElement).style.display !== 'none');
+      
+      const copyTextList = visibleCards.map(card => {
+        const name = card.querySelector('.result-label')?.textContent?.trim() || '';
+        const preview = card.querySelector('.intent-preview-text')?.textContent || '';
+        return `${name}: ${preview}`;
+      }).join('\n');
+      
+      if (copyTextList) {
+        await copyText(copyTextList, newCopyBtn);
+      }
+    });
+  }
+
   // Run initial trigger if examples or defaults are populated
   renderHistory();
   if (input.value) {
