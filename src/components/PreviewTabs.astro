@@ -1,0 +1,167 @@
+---
+interface Props {
+  previews: string[];
+  placeholder?: string;
+}
+const { previews = [], placeholder = 'Your text...' } = Astro.props;
+
+const platformsMap: Record<string, { label: string; bg: string; border: string; font: string; color: string }> = {
+  ig: { label: 'Instagram', bg: '#000', border: '#262626', font: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif", color: '#fff' },
+  fb: { label: 'Facebook', bg: '#18191a', border: '#3a3b3c', font: 'Segoe UI, Helvetica, Arial, sans-serif', color: '#e4e6eb' },
+  tw: { label: 'Twitter/X', bg: '#000', border: '#2f3336', font: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif", color: '#e7e9ea' },
+  ds: { label: 'Discord', bg: '#313338', border: '#232428', font: 'gg sans, Whitney, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif', color: '#dbdee1' },
+  wa: { label: 'WhatsApp', bg: '#0b141a', border: '#202c33', font: 'Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif', color: '#e9edef' },
+  tt: { label: 'TikTok', bg: '#121212', border: '#2f2f2f', font: 'ProximaNova, Arial, Tahoma, sans-serif', color: '#fff' },
+  tg: { label: 'Telegram', bg: '#182533', border: '#101921', font: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif", color: '#fff' },
+  yt: { label: 'YouTube', bg: '#0f0f0f', border: '#272727', font: 'Roboto, Arial, sans-serif', color: '#f1f1f1' },
+  tv: { label: 'Twitch', bg: '#0e0e10', border: '#1f1f23', font: 'Inter, Roobert, Helvetica Neue, Arial, sans-serif', color: '#efeff1' },
+  un: { label: 'Game Tag', bg: 'linear-gradient(135deg, #1f1c2c, #928dab)', border: 'rgba(255,255,255,0.1)', font: 'monospace', color: '#fff' }
+};
+---
+{previews.length > 0 && (
+  <div class="mockup-section" style="margin-top: 24px; border-top: 1px solid var(--color-border); padding-top: 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+      <span class="panel-kicker" style="padding: 4px 8px; font-size: 0.75rem;">Live Context Preview</span>
+      <div style="display: flex; gap: 4px; flex-wrap: wrap;" class="mockup-tab-group">
+        {previews.map((p, idx) => (
+          <button type="button" class={`btn btn-ghost ${idx === 0 ? 'active' : ''}`} data-tab={p} style="padding: 4px 8px; font-size: 0.7rem; border-radius: 4px; min-height: 24px;">{platformsMap[p]?.label || p}</button>
+        ))}
+      </div>
+    </div>
+
+    {previews.includes('ig') && (
+      <div class="mockup-panel" id="mockup-panel-ig" style={`background: ${platformsMap.ig.bg}; border: 1px solid ${platformsMap.ig.border}; border-radius: 12px; padding: 16px; font-family: ${platformsMap.ig.font}; font-size: 0.88rem; display: block;`}>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 2px;">
+            <div style="width: 100%; height: 100%; border-radius: 50%; background: #000; border: 2px solid #000; display: grid; place-items: center; font-size: 1.25rem;">✨</div>
+          </div>
+          <div>
+            <div style="font-weight: 600; color: #fff;">aesthetic_profile</div>
+            <div style="color: #a8a8a8; font-size: 0.75rem;">Digital Creator</div>
+          </div>
+        </div>
+        <div style={`color: ${platformsMap.ig.color}; line-height: 1.4; white-space: pre-wrap;`} class="mockup-preview-target">{placeholder}</div>
+      </div>
+    )}
+
+    {previews.includes('fb') && (
+      <div class="mockup-panel" id="mockup-panel-fb" style={`background: ${platformsMap.fb.bg}; border: 1px solid ${platformsMap.fb.border}; border-radius: 12px; padding: 16px; font-family: ${platformsMap.fb.font}; font-size: 0.93rem; display: none;`}>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: #3a3b3c; display: grid; place-items: center; font-size: 1.2rem; color: #b0b3b8;">👤</div>
+          <div>
+            <div style="font-weight: 600; color: #e4e6eb;">Creative Soul</div>
+            <div style="color: #b0b3b8; font-size: 0.75rem;">Just now • 🌐</div>
+          </div>
+        </div>
+        <div style={`color: ${platformsMap.fb.color}; line-height: 1.4; white-space: pre-wrap; margin-bottom: 12px;`} class="mockup-preview-target">{placeholder}</div>
+        <div style="border-top: 1px solid #3a3b3c; padding-top: 8px; display: flex; justify-content: space-around; color: #b0b3b8; font-size: 0.85rem; font-weight: 600;">
+          <span>👍 Like</span> <span>💬 Comment</span> <span>➡️ Share</span>
+        </div>
+      </div>
+    )}
+
+    {previews.includes('tw') && (
+      <div class="mockup-panel" id="mockup-panel-tw" style={`background: ${platformsMap.tw.bg}; border: 1px solid ${platformsMap.tw.border}; border-radius: 12px; padding: 16px; font-family: ${platformsMap.tw.font}; font-size: 0.95rem; display: none;`}>
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: #1d9bf0; display: grid; place-items: center; font-size: 1.1rem; color: #fff;">⚡</div>
+          <div>
+            <div style="font-weight: 700; color: #e7e9ea; line-height: 1.2; display: flex; align-items: center; gap: 4px;">TapToGen <span style="font-weight: 400; color: #71767b; font-size: 0.9rem;">@taptogen • Just now</span></div>
+          </div>
+        </div>
+        <div style={`color: ${platformsMap.tw.color}; line-height: 1.5; white-space: pre-wrap; margin-bottom: 10px;`} class="mockup-preview-target">{placeholder}</div>
+        <div style="color: #71767b; font-size: 0.8rem; display: flex; justify-content: space-between; max-width: 320px; border-top: 1px solid #2f3336; padding-top: 8px;">
+          <span>💬 0</span> <span>🔁 0</span> <span>❤️ 0</span> <span>📊 0</span>
+        </div>
+      </div>
+    )}
+
+    {previews.includes('ds') && (
+      <div class="mockup-panel" id="mockup-panel-ds" style={`background: ${platformsMap.ds.bg}; border: 1px solid ${platformsMap.ds.border}; border-radius: 12px; padding: 16px; font-family: ${platformsMap.ds.font}; font-size: 0.93rem; display: none;`}>
+        <div style="display: flex; gap: 16px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: #5865f2; display: grid; place-items: center; font-size: 1.25rem; color: #fff; flex-shrink: 0;">💬</div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+              <span style="font-weight: 600; color: #f2f3f5;">GamerX</span>
+              <span style="background: #5865f2; color: #fff; font-size: 0.62rem; font-weight: 700; padding: 1px 4px; border-radius: 3px; text-transform: uppercase;">Bot</span>
+              <span style="color: #949ba4; font-size: 0.75rem;">Today at 2:24 AM</span>
+            </div>
+            <div style={`color: ${platformsMap.ds.color}; line-height: 1.375; white-space: pre-wrap;`} class="mockup-preview-target">{placeholder}</div>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {previews.includes('wa') && (
+      <div class="mockup-panel" id="mockup-panel-wa" style={`background: ${platformsMap.wa.bg}; border: 1px solid ${platformsMap.wa.border}; border-radius: 12px; padding: 12px; font-family: ${platformsMap.wa.font}; font-size: 0.88rem; display: none;`}>
+        <div style="background: #1f2c34; border-radius: 8px; padding: 8px 12px; max-width: 85%; margin-left: auto; position: relative; color: #e9edef; line-height: 1.4;">
+          <div style={`color: ${platformsMap.wa.color}; white-space: pre-wrap;`} class="mockup-preview-target">{placeholder}</div>
+          <div style="text-align: right; font-size: 0.68rem; color: #8696a0; margin-top: 4px;">2:24 AM ✔️✔️</div>
+        </div>
+      </div>
+    )}
+
+    {previews.includes('tt') && (
+      <div class="mockup-panel" id="mockup-panel-tt" style={`background: ${platformsMap.tt.bg}; border: 1px solid ${platformsMap.tt.border}; border-radius: 12px; padding: 16px; font-family: ${platformsMap.tt.font}; font-size: 0.93rem; display: none;`}>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background: #2f2f2f; display: grid; place-items: center; font-size: 1.5rem; color: #fff;">🎵</div>
+          <div>
+            <div style="font-weight: 700; color: #fff; font-size: 1.1rem;">@creativetok</div>
+            <button type="button" style="background: #fe2c55; color: #fff; border: none; padding: 4px 16px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; margin-top: 4px;">Edit Profile</button>
+          </div>
+        </div>
+        <div style={`color: ${platformsMap.tt.color}; font-size: 0.88rem; line-height: 1.4; border-top: 1px solid #2f2f2f; padding-top: 10px; white-space: pre-wrap;`} class="mockup-preview-target">{placeholder}</div>
+      </div>
+    )}
+
+    {previews.includes('tg') && (
+      <div class="mockup-panel" id="mockup-panel-tg" style={`background: ${platformsMap.tg.bg}; border: 1px solid ${platformsMap.tg.border}; border-radius: 12px; padding: 12px; font-family: ${platformsMap.tg.font}; font-size: 0.88rem; display: none;`}>
+        <div style="background: #182533; display: flex; flex-direction: column; gap: 8px;">
+          <div style="background: #2b5278; border-radius: 10px; padding: 8px 12px; max-width: 75%; margin-right: auto; position: relative; color: #fff; line-height: 1.4;">
+            <span style="font-weight: 600; color: #b2e3ff; display: block; font-size: 0.8rem; margin-bottom: 2px;">Channel Admin</span>
+            <div style="white-space: pre-wrap;" class="mockup-preview-target">{placeholder}</div>
+            <div style="text-align: right; font-size: 0.65rem; color: #7da5ca; margin-top: 4px;">2:24 AM</div>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {previews.includes('yt') && (
+      <div class="mockup-panel" id="mockup-panel-yt" style={`background: ${platformsMap.yt.bg}; border: 1px solid ${platformsMap.yt.border}; border-radius: 12px; padding: 16px; font-family: ${platformsMap.yt.font}; font-size: 0.88rem; display: none;`}>
+        <div style="display: flex; gap: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: #ff0000; display: grid; place-items: center; font-weight: 700; color: #fff; font-size: 1.1rem; flex-shrink: 0;">Y</div>
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+              <span style="font-weight: 500; color: #f1f1f1; font-size: 0.82rem;">@creator_hub</span>
+              <span style="color: #aaa; font-size: 0.75rem;">2 hours ago</span>
+            </div>
+            <div style={`color: ${platformsMap.yt.color}; line-height: 1.4; white-space: pre-wrap; margin-bottom: 8px;`} class="mockup-preview-target">{placeholder}</div>
+            <div style="display: flex; align-items: center; gap: 16px; color: #aaa; font-size: 0.75rem;">
+              <span>👍 1.2K</span> <span>👎</span> <span>💬 Reply</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {previews.includes('tv') && (
+      <div class="mockup-panel" id="mockup-panel-tv" style={`background: ${platformsMap.tv.bg}; border: 1px solid ${platformsMap.tv.border}; border-radius: 12px; padding: 12px; font-family: ${platformsMap.tv.font}; font-size: 0.82rem; display: none;`}>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; padding: 4px 8px; border-radius: 4px; background: rgba(255,255,255,0.02);">
+            <span style="background: #9146ff; color: #fff; font-size: 0.62rem; font-weight: 700; padding: 1px 4px; border-radius: 2px; text-transform: uppercase; align-self: center;">Sub</span>
+            <span style="font-weight: 700; color: #adadb8;">mod_gamer:</span>
+            <span style={`color: ${platformsMap.tv.color}; white-space: pre-wrap;`} class="mockup-preview-target">{placeholder}</span>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {previews.includes('un') && (
+      <div class="mockup-panel" id="mockup-panel-un" style={`background: ${platformsMap.un.bg}; border: 1px solid ${platformsMap.un.border}; border-radius: 12px; padding: 24px; text-align: center; font-family: ${platformsMap.un.font}; display: none;`}>
+        <div style="display: inline-block; background: rgba(0,0,0,0.6); padding: 16px 32px; border: 2px solid #ff007f; border-radius: 8px; box-shadow: 0 0 20px rgba(255,0,127,0.5);">
+          <div style="font-size: 0.75rem; text-transform: uppercase; color: #00ffff; letter-spacing: 2px; margin-bottom: 4px;">Lobby Player</div>
+          <div style="font-size: 1.5rem; font-weight: bold; color: #fff; letter-spacing: 1px;" class="mockup-preview-target">{placeholder}</div>
+        </div>
+      </div>
+    )}
+  </div>
+)}

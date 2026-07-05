@@ -1,0 +1,15 @@
+---
+interface Props {
+  enabled: boolean;
+  prefix: string;
+}
+const { enabled, prefix } = Astro.props;
+---
+{enabled && (
+  <div class={`${prefix}-history-section`} style="margin-top: 24px; border-top: 1px solid var(--color-border); padding-top: 20px;" id={`${prefix}-history-panel`}>
+    <span class="panel-kicker" style="padding: 4px 8px; font-size: 0.75rem; margin-bottom: 12px; display: inline-block;">Recently Copied</span>
+    <div id={`${prefix}-history-list`} style="display: flex; flex-direction: column; gap: 8px;">
+      <p style="color: var(--color-text-muted); font-size: 0.8rem; font-style: italic; margin: 0;">No copy history yet this session.</p>
+    </div>
+  </div>
+)}

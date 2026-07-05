@@ -18,6 +18,12 @@ import {
   type LocalizedLanguageCode,
   type LocalizedToolContent,
 } from '@/data/localization';
+import { toolConfigs } from '@/config';
+import MetricsPanel from '@/components/MetricsPanel.astro';
+import DownloadToolbar from '@/components/DownloadToolbar.astro';
+import PreviewTabs from '@/components/PreviewTabs.astro';
+import HistoryPanel from '@/components/HistoryPanel.astro';
+import KeyboardShortcuts from '@/components/KeyboardShortcuts.astro';
 
 interface Props {
   tool: Tool;
@@ -63,6 +69,7 @@ interface LocalizedUiText {
 
 const { tool, localized, language } = Astro.props;
 const slug = tool.slug;
+const toolConfig = toolConfigs[slug];
 
 const text = ({
   pt: {
@@ -808,6 +815,20 @@ const faqSchema = {
             )}
 
             <label class="input-label" for="tool-input">{text.inputLabel}</label>
+            {toolConfig && (toolConfig.counters.chars || toolConfig.counters.glyphs || toolConfig.counters.words || toolConfig.counters.lines) && (
+              <div class="casing-toolbar" style="margin-bottom: 8px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: 8px;">
+                <div style="display: flex; gap: 6px;">
+                  <button type="button" class="btn btn-ghost" id="btn-case-lower" style="padding: 4px 8px; font-size: 0.75rem; border-radius: 4px; font-weight: 500; min-height: 28px;">lowercase</button>
+                  <button type="button" class="btn btn-ghost" id="btn-case-upper" style="padding: 4px 8px; font-size: 0.75rem; border-radius: 4px; font-weight: 500; min-height: 28px;">UPPERCASE</button>
+                  <button type="button" class="btn btn-ghost" id="btn-case-title" style="padding: 4px 8px; font-size: 0.75rem; border-radius: 4px; font-weight: 500; min-height: 28px;">Title Case</button>
+                  <button type="button" class="btn btn-ghost" id="btn-case-sentence" style="padding: 4px 8px; font-size: 0.75rem; border-radius: 4px; font-weight: 500; min-height: 28px;">Sentence case</button>
+                  {toolConfig.slug === 'fancy-text-generator' && (
+                    <button type="button" class="btn btn-ghost" id="btn-case-random-style" style="padding: 4px 8px; font-size: 0.75rem; border-radius: 4px; font-weight: 500; min-height: 28px; color: var(--color-accent-2);">🎲 Random</button>
+                  )}
+                </div>
+                <MetricsPanel chars={toolConfig.counters.chars} glyphs={toolConfig.counters.glyphs} words={toolConfig.counters.words} lines={toolConfig.counters.lines} />
+              </div>
+            )}
             <textarea class="tool-input" id="tool-input" placeholder={text.placeholder} rows="4"></textarea>
             <div class="example-chip-row" aria-label={text.examples}>
               <button type="button" class="example-chip" data-example={copy.primaryKeyword}>{copy.primaryKeyword}</button>
@@ -815,6 +836,9 @@ const faqSchema = {
                 <button type="button" class="example-chip" data-example={keyword}>{keyword}</button>
               ))}
             </div>
+            {toolConfig && toolConfig.shortcuts && (
+              <KeyboardShortcuts shortcuts={toolConfig.shortcuts} />
+            )}
             <div class="tool-controls premium-controls">
               <button class="btn btn-primary" id="generate-btn">{text.generate}</button>
               <button class="btn btn-outline" id="example-btn">{text.example}</button>
@@ -831,7 +855,26 @@ const faqSchema = {
               </div>
               <button class="copy-btn copy-all-btn" id="copy-btn">{text.copyAll}</button>
             </div>
+            {toolConfig && (toolConfig.search || toolConfig.exporters.length > 0) && (
+              <div class="style-search-container" style="margin-bottom: 12px; display: none;" id="style-search-container">
+                <div style="display: flex; gap: 8px; align-items: center; width: 100%; flex-wrap: wrap;">
+                  {toolConfig.search && (
+                    <input type="text" id={`${toolConfig.slug.split('-')[0]}-style-search`} placeholder={`Search ${toolConfig.slug === 'fancy-text-generator' ? '50+' : ''} styles...`} style="flex: 1; min-width: 200px; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--color-border); background: var(--color-bg-secondary); color: var(--color-text-primary); font-size: 0.85rem; outline: none; transition: var(--transition);" />
+                  )}
+                  {toolConfig.shuffle && (
+                    <button type="button" class="btn btn-ghost" id="btn-shuffle-styles" style="padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; min-height: 35px; white-space: nowrap;">🔀 Shuffle</button>
+                  )}
+                  <DownloadToolbar exporters={toolConfig.exporters} />
+                </div>
+              </div>
+            )}
             <div class="tool-output premium-output empty" id="tool-output">{text.empty}</div>
+            {toolConfig && (toolConfig.previews.length > 0 || toolConfig.history) && (
+              <div class={`${toolConfig.slug.split('-')[0]}-premium-extensions`} style="display: none;" id={`${toolConfig.slug.split('-')[0]}-extensions-container`}>
+                <PreviewTabs previews={toolConfig.previews} placeholder={toolConfig.slug === 'fancy-text-generator' ? 'Your fancy text...' : 'Your bold text...'} />
+                <HistoryPanel enabled={toolConfig.history} prefix={toolConfig.slug.split('-')[0]} />
+              </div>
+            )}
           </div>
         </div>
       </div>

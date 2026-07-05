@@ -1,0 +1,18 @@
+---
+interface Props {
+  chars?: boolean;
+  glyphs?: boolean;
+  words?: boolean;
+  lines?: boolean;
+}
+const { chars = true, glyphs = false, words = true, lines = false } = Astro.props;
+---
+<div style="display: flex; gap: 8px; font-size: 0.75rem; color: var(--color-text-secondary); font-weight: 600;">
+  {chars && <span id="char-counter">0 chars</span>}
+  {chars && (glyphs || words || lines) && <span style="color: var(--color-border);">|</span>}
+  {glyphs && <span id="uni-counter">0 glyphs</span>}
+  {glyphs && (words || lines) && <span style="color: var(--color-border);">|</span>}
+  {words && <span id="word-counter">0 words</span>}
+  {words && lines && <span style="color: var(--color-border);">|</span>}
+  {lines && <span id="line-counter">0 lines</span>}
+</div>

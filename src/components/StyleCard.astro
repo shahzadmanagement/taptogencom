@@ -1,0 +1,32 @@
+---
+interface Props {
+  name: string;
+  preview: string;
+  use: string;
+  note: string;
+  isCompat?: boolean;
+}
+const { name, preview, use, note, isCompat } = Astro.props;
+---
+<article class="intent-style-card" data-style-name={name}>
+  <div class="result-card-top">
+    <div>
+      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+        <span class="result-label">{name}</span>
+        {isCompat === true && (
+          <span class="compat-badge high" style="background: rgba(16,185,129,0.12); color: #10b981; border: 1px solid rgba(16,185,129,0.2); padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; white-space: nowrap;">High Compat</span>
+        )}
+        {isCompat === false && (
+          <span class="compat-badge low" style="background: rgba(245,158,11,0.12); color: #f59e0b; border: 1px solid rgba(245,158,11,0.2); padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; white-space: nowrap;">Partial Compat</span>
+        )}
+      </div>
+      <p class="intent-mini-note">{use}</p>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <button class="fav-btn" type="button" data-fav-style={name} aria-label="Favorite style">☆</button>
+      <button class="copy-btn result-copy" type="button" data-copy={preview}>Copy</button>
+    </div>
+  </div>
+  <div class="intent-preview-text">{preview}</div>
+  <p class="result-note">{note}</p>
+</article>

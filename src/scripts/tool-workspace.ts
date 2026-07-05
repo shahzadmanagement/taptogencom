@@ -11660,199 +11660,46 @@ document.querySelectorAll('.tool-select, .tool-number, .tool-checkbox').forEach(
   el.addEventListener('change', generate);
 });
 
-// Custom interactive extensions for bold-text-generator
-if (toolSlug === 'bold-text-generator') {
-  const charCounter = document.getElementById('char-counter');
-  const wordCounter = document.getElementById('word-counter');
+// Dynamic configuration-driven workspace extensions loader
+import { toolConfigs } from '../config';
+import { MetricsManager } from '../lib/MetricsManager';
+import { FavoritesManager } from '../lib/FavoritesManager';
+import { HistoryManager } from '../lib/HistoryManager';
+import { SearchManager } from '../lib/SearchManager';
+import { ExportManager } from '../lib/ExportManager';
+import { ShortcutManager } from '../lib/ShortcutManager';
+import { ClipboardManager } from '../lib/ClipboardManager';
+
+const activeConfig = toolConfigs[toolSlug];
+if (activeConfig) {
+  const prefix = toolSlug.split('-')[0];
   const searchContainer = document.getElementById('style-search-container');
-  const extensionsContainer = document.getElementById('bold-extensions-container');
-  
-  const updateCountersAndFeatures = () => {
-    const textVal = input.value;
-    if (charCounter) charCounter.textContent = `${textVal.length} chars`;
-    if (wordCounter) {
-      const words = textVal.trim() ? textVal.trim().split(/\s+/).length : 0;
-      wordCounter.textContent = `${words} words`;
-    }
-    if (searchContainer) searchContainer.style.display = textVal ? 'block' : 'none';
-    if (extensionsContainer) extensionsContainer.style.display = textVal ? 'block' : 'none';
-    
-    // Update social previews
-    const firstPreview = document.querySelector('.intent-preview-text')?.textContent || textVal || 'Your bold text...';
-    const igBio = document.getElementById('mockup-ig-bio');
-    const twTweet = document.getElementById('mockup-tw-tweet');
-    if (igBio) igBio.textContent = firstPreview;
-    if (twTweet) twTweet.textContent = firstPreview;
-  };
-
-  // Run on input change (live update)
-  input?.addEventListener('input', () => {
-    generate();
-    updateCountersAndFeatures();
-  });
-
-  // Observe render changes in output to sync previews when filters/buttons update
-  const observer = new MutationObserver(updateCountersAndFeatures);
-  if (output) {
-    observer.observe(output, { childList: true, subtree: true });
-  }
-
-  // Handle case converters
-  document.getElementById('btn-case-lower')?.addEventListener('click', () => {
-    input.value = input.value.toLowerCase();
-    generate();
-    updateCountersAndFeatures();
-  });
-  document.getElementById('btn-case-upper')?.addEventListener('click', () => {
-    input.value = input.value.toUpperCase();
-    generate();
-    updateCountersAndFeatures();
-  });
-  document.getElementById('btn-case-title')?.addEventListener('click', () => {
-    input.value = input.value.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
-    generate();
-    updateCountersAndFeatures();
-  });
-  document.getElementById('btn-case-sentence')?.addEventListener('click', () => {
-    const val = input.value.trim();
-    if (val) {
-      input.value = val.charAt(0).toUpperCase() + val.slice(1).toLowerCase();
-    }
-    generate();
-    updateCountersAndFeatures();
-  });
-
-  // Mockup tab controls
-  const tabIg = document.getElementById('mockup-tab-ig');
-  const tabTw = document.getElementById('mockup-tab-tw');
-  const igCont = document.getElementById('mockup-ig-container');
-  const twCont = document.getElementById('mockup-tw-container');
-
-  tabIg?.addEventListener('click', () => {
-    tabIg.classList.add('active');
-    tabTw?.classList.remove('active');
-    if (igCont) igCont.style.display = 'block';
-    if (twCont) twCont.style.display = 'none';
-  });
-
-  tabTw?.addEventListener('click', () => {
-    tabTw.classList.add('active');
-    tabIg?.classList.remove('active');
-    if (twCont) twCont.style.display = 'block';
-    if (igCont) igCont.style.display = 'none';
-  });
-
-  // Filter list results in real time
-  const searchInput = document.getElementById('bold-style-search') as HTMLInputElement;
-  searchInput?.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase().trim();
-    document.querySelectorAll('.intent-style-card').forEach(card => {
-      const label = card.querySelector('.result-label')?.textContent?.toLowerCase() || '';
-      const use = card.querySelector('.intent-mini-note')?.textContent?.toLowerCase() || '';
-      if (label.includes(query) || use.includes(query)) {
-        (card as HTMLElement).style.display = '';
-      } else {
-        (card as HTMLElement).style.display = 'none';
-      }
-    });
-  });
-
-  // clipboard session history
-  let historyItems: string[] = [];
-  const historyList = document.getElementById('bold-history-list');
-
-  output.addEventListener('click', async event => {
-    const target = event.target as HTMLElement;
-    const button = target.closest<HTMLElement>('[data-copy]');
-    if (!button) return;
-    const copiedText = button.dataset.copy || '';
-    if (!copiedText || historyItems.includes(copiedText)) return;
-
-    historyItems.unshift(copiedText);
-    if (historyItems.length > 5) historyItems.pop();
-
-    if (historyList) {
-      historyList.innerHTML = historyItems.map(item => `
-        <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: 8px; padding: 10px 14px; font-size: 0.85rem; margin-bottom: 8px;">
-          <div style="font-family: monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80%; color: var(--color-text-primary);">${escapeHtml(item)}</div>
-          <button class="copy-btn result-copy" type="button" data-copy="${escapeHtml(item)}" style="margin-top: 0; padding: 4px 8px; font-size: 0.75rem;">Copy</button>
-        </div>
-      `).join('');
-    }
-  });
-
-  // Run initial trigger if examples or defaults are populated
-  if (input.value) {
-    updateCountersAndFeatures();
-  }
-}
-
-// Custom interactive extensions for fancy-text-generator
-if (toolSlug === 'fancy-text-generator') {
-  const charCounter = document.getElementById('char-counter');
-  const uniCounter = document.getElementById('uni-counter');
-  const wordCounter = document.getElementById('word-counter');
-  const lineCounter = document.getElementById('line-counter');
-  const searchContainer = document.getElementById('style-search-container');
-  const extensionsContainer = document.getElementById('fancy-extensions-container');
-  const searchInput = document.getElementById('fancy-style-search') as HTMLInputElement;
+  const extensionsContainer = document.getElementById(`${prefix}-extensions-container`);
+  const searchInput = document.getElementById(`${prefix}-style-search`) as HTMLInputElement;
   const shuffleBtn = document.getElementById('btn-shuffle-styles');
   const randomBtn = document.getElementById('btn-case-random-style');
-  const historyList = document.getElementById('fancy-history-list');
+  const historyListId = `${prefix}-history-list`;
   const mockupTargets = document.querySelectorAll('.mockup-preview-target');
   const tabs = document.querySelectorAll('.mockup-tab-group button');
   const panels = document.querySelectorAll('.mockup-panel');
 
-  const getFavs = (): string[] => JSON.parse(localStorage.getItem('taptogen-favs') || '[]');
-  const saveFavs = (favs: string[]) => localStorage.setItem('taptogen-favs', JSON.stringify(favs));
-
-  const syncFavorites = () => {
-    const favs = getFavs();
-    document.querySelectorAll('[data-fav-style]').forEach(btn => {
-      const styleName = btn.getAttribute('data-fav-style') || '';
-      const isFav = favs.includes(styleName);
-      btn.textContent = isFav ? '★' : '☆';
-      btn.classList.toggle('active', isFav);
-    });
-
-    // Re-order matrix elements: favorites first!
-    const matrix = document.querySelector('.intent-style-matrix');
-    if (matrix) {
-      const cards = Array.from(matrix.querySelectorAll('.intent-style-card'));
-      cards.sort((a, b) => {
-        const nameA = a.getAttribute('data-style-name') || '';
-        const nameB = b.getAttribute('data-style-name') || '';
-        const favA = favs.includes(nameA) ? 1 : 0;
-        const favB = favs.includes(nameB) ? 1 : 0;
-        return favB - favA;
-      });
-      cards.forEach(card => matrix.appendChild(card));
-    }
-  };
-
   const updateCountersAndFeatures = () => {
     const textVal = input.value;
-    if (charCounter) charCounter.textContent = `${textVal.length} chars`;
-    if (uniCounter) uniCounter.textContent = `${[...textVal].length} glyphs`;
-    if (wordCounter) {
-      const words = textVal.trim() ? textVal.trim().split(/\s+/).length : 0;
-      wordCounter.textContent = `${words} words`;
-    }
-    if (lineCounter) {
-      const lines = textVal ? textVal.split('\n').length : 0;
-      lineCounter.textContent = `${lines} lines`;
-    }
+    MetricsManager.update(textVal, activeConfig.counters);
+
     if (searchContainer) searchContainer.style.display = textVal ? 'block' : 'none';
     if (extensionsContainer) extensionsContainer.style.display = textVal ? 'block' : 'none';
 
     // Update social previews
-    const firstPreview = document.querySelector('.intent-preview-text')?.textContent || textVal || 'Your fancy text...';
+    const firstPreview = document.querySelector('.intent-preview-text')?.textContent || textVal || 'Your text...';
     mockupTargets.forEach(el => {
       el.textContent = firstPreview;
     });
 
     // Update favorites
-    syncFavorites();
+    if (activeConfig.favorites) {
+      FavoritesManager.syncUI();
+    }
   };
 
   // Run on input change (live update)
@@ -11899,48 +11746,30 @@ if (toolSlug === 'fancy-text-generator') {
       const randomCard = cards[Math.floor(Math.random() * cards.length)];
       const text = randomCard.querySelector('.intent-preview-text')?.textContent || '';
       if (text) {
-        navigator.clipboard.writeText(text);
-        const copyBtn = randomCard.querySelector('.copy-btn') as HTMLElement;
-        if (copyBtn) {
-          copyBtn.textContent = 'Copied!';
-          copyBtn.classList.add('copied');
-          setTimeout(() => {
-            copyBtn.textContent = 'Copy';
-            copyBtn.classList.remove('copied');
-          }, 2000);
-        }
+        ClipboardManager.copy(text, randomCard.querySelector('.copy-btn') as HTMLElement);
       }
     }
   });
 
   // Shuffle styles order
   shuffleBtn?.addEventListener('click', () => {
-    const matrix = document.querySelector('.intent-style-matrix');
-    if (matrix) {
-      const cards = Array.from(matrix.querySelectorAll('.intent-style-card'));
-      cards.sort(() => Math.random() - 0.5);
-      cards.forEach(card => matrix.appendChild(card));
-    }
+    SearchManager.shuffle();
   });
 
   // Toggle favorite when star is clicked
-  document.addEventListener('click', event => {
-    const target = event.target as HTMLElement;
-    const favBtn = target.closest<HTMLElement>('[data-fav-style]');
-    if (!favBtn) return;
-    
-    const styleName = favBtn.getAttribute('data-fav-style') || '';
-    if (!styleName) return;
+  if (activeConfig.favorites) {
+    document.addEventListener('click', event => {
+      const target = event.target as HTMLElement;
+      const favBtn = target.closest<HTMLElement>('[data-fav-style]');
+      if (!favBtn) return;
+      
+      const styleName = favBtn.getAttribute('data-fav-style') || '';
+      if (!styleName) return;
 
-    let favs = getFavs();
-    if (favs.includes(styleName)) {
-      favs = favs.filter(f => f !== styleName);
-    } else {
-      favs.push(styleName);
-    }
-    saveFavs(favs);
-    syncFavorites();
-  });
+      FavoritesManager.toggle(styleName);
+      FavoritesManager.syncUI();
+    });
+  }
 
   // Mockup tab controls
   tabs.forEach(tab => {
@@ -11956,152 +11785,62 @@ if (toolSlug === 'fancy-text-generator') {
   });
 
   // Filter list results in real time
-  searchInput?.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase().trim();
-    document.querySelectorAll('.intent-style-card').forEach(card => {
-      const label = card.querySelector('.result-label')?.textContent?.toLowerCase() || '';
-      const use = card.querySelector('.intent-mini-note')?.textContent?.toLowerCase() || '';
-      if (label.includes(query) || use.includes(query)) {
-        (card as HTMLElement).style.display = '';
-      } else {
-        (card as HTMLElement).style.display = 'none';
-      }
+  if (activeConfig.search && searchInput) {
+    searchInput.addEventListener('input', () => {
+      SearchManager.filter(searchInput.value);
     });
-  });
+  }
 
   // download capabilities
-  const downloadFile = (content: string, filename: string, mimeType: string) => {
-    const blob = new Blob([content], { type: mimeType });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  };
-
-  const getGeneratedPairs = () => {
-    const cards = Array.from(document.querySelectorAll('.intent-style-card'));
-    return cards.map(card => {
-      const name = card.querySelector('.result-label')?.textContent?.trim() || '';
-      const text = card.querySelector('.intent-preview-text')?.textContent || '';
-      return { name, text };
+  if (activeConfig.exporters.length > 0) {
+    document.getElementById('btn-download-txt')?.addEventListener('click', () => {
+      ExportManager.exportAsTxt();
     });
-  };
-
-  document.getElementById('btn-download-txt')?.addEventListener('click', () => {
-    const pairs = getGeneratedPairs();
-    if (pairs.length === 0) return;
-    const txtContent = pairs.map(p => `${p.name}: ${p.text}`).join('\n');
-    downloadFile(txtContent, 'taptogen-fancy-text.txt', 'text/plain');
-  });
-
-  document.getElementById('btn-download-html')?.addEventListener('click', () => {
-    const pairs = getGeneratedPairs();
-    if (pairs.length === 0) return;
-    const htmlContent = `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>TapToGen Fancy Text Export</title>
-  <style>
-    body { font-family: sans-serif; padding: 20px; background: #0a0a1e; color: #fff; }
-    .style-row { margin-bottom: 16px; padding: 12px; border-bottom: 1px solid #333; }
-    .name { font-weight: bold; color: #a855f7; margin-bottom: 4px; }
-    .text { font-size: 1.2rem; }
-  </style>
-</head>
-<body>
-  <h1>Fancy Text Export</h1>
-  ${pairs.map(p => `
-  <div class="style-row">
-    <div class="name">${p.name}</div>
-    <div class="text">${p.text}</div>
-  </div>`).join('')}
-</body>
-</html>`;
-    downloadFile(htmlContent, 'taptogen-fancy-text.html', 'text/html');
-  });
-
-  document.getElementById('btn-download-json')?.addEventListener('click', () => {
-    const pairs = getGeneratedPairs();
-    if (pairs.length === 0) return;
-    const jsonContent = JSON.stringify(pairs, null, 2);
-    downloadFile(jsonContent, 'taptogen-fancy-text.json', 'application/json');
-  });
+    document.getElementById('btn-download-html')?.addEventListener('click', () => {
+      ExportManager.exportAsHtml();
+    });
+    document.getElementById('btn-download-json')?.addEventListener('click', () => {
+      ExportManager.exportAsJson();
+    });
+  }
 
   // keyboard shortcuts
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
-      const activeEl = document.activeElement;
-      if (activeEl === input || activeEl === document.body) {
-        input.value = '';
-        generate();
-        updateCountersAndFeatures();
+  if (activeConfig.shortcuts) {
+    ShortcutManager.bind(
+      () => {
+        const activeEl = document.activeElement;
+        if (activeEl === input || activeEl === document.body) {
+          input.value = '';
+          generate();
+          updateCountersAndFeatures();
+        }
+      },
+      () => {
+        shuffleBtn?.click();
+      },
+      () => {
+        randomBtn?.click();
       }
-    }
-    if (event.altKey && event.key.toLowerCase() === 's') {
-      event.preventDefault();
-      shuffleBtn?.click();
-    }
-    if (event.altKey && event.key.toLowerCase() === 'r') {
-      event.preventDefault();
-      randomBtn?.click();
-    }
-  });
+    );
+  }
 
-  // clipboard session history (persisted in LocalStorage)
-  const getHistory = (): string[] => {
-    try {
-      return JSON.parse(localStorage.getItem('taptogen-history') || '[]');
-    } catch {
-      return [];
-    }
-  };
-  const saveHistory = (items: string[]) => {
-    try {
-      localStorage.setItem('taptogen-history', JSON.stringify(items));
-    } catch (e) {
-      console.warn(e);
-    }
-  };
+  // clipboard session history
+  if (activeConfig.history) {
+    output.addEventListener('click', async event => {
+      const target = event.target as HTMLElement;
+      const button = target.closest<HTMLElement>('[data-copy]');
+      if (!button) return;
+      const copiedText = button.dataset.copy || '';
+      if (!copiedText) return;
 
-  const renderHistory = () => {
-    if (!historyList) return;
-    const items = getHistory();
-    if (items.length === 0) {
-      historyList.innerHTML = '<p style="color: var(--color-text-muted); font-size: 0.8rem; font-style: italic; margin: 0;">No copy history yet this session.</p>';
-      return;
-    }
-    historyList.innerHTML = items.map(item => `
-      <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: 8px; padding: 10px 14px; font-size: 0.85rem; margin-bottom: 8px;">
-        <div style="font-family: monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80%; color: var(--color-text-primary);">${escapeHtml(item)}</div>
-        <button class="copy-btn result-copy" type="button" data-copy="${escapeHtml(item)}" style="margin-top: 0; padding: 4px 8px; font-size: 0.75rem;">Copy</button>
-      </div>
-    `).join('');
-  };
+      HistoryManager.add(copiedText);
+      HistoryManager.renderUI(historyListId, escapeHtml);
+    });
 
-  output.addEventListener('click', async event => {
-    const target = event.target as HTMLElement;
-    const button = target.closest<HTMLElement>('[data-copy]');
-    if (!button) return;
-    const copiedText = button.dataset.copy || '';
-    if (!copiedText) return;
+    HistoryManager.renderUI(historyListId, escapeHtml);
+  }
 
-    let items = getHistory();
-    if (items.includes(copiedText)) {
-      items = items.filter(i => i !== copiedText);
-    }
-    items.unshift(copiedText);
-    if (items.length > 5) items.pop();
-
-    saveHistory(items);
-    renderHistory();
-  });
-
-  // Copy All / Copy Filtered override for fancy-text-generator
+  // Copy All / Copy Filtered override
   const copyBtnAll = document.getElementById('copy-btn');
   if (copyBtnAll) {
     const newCopyBtn = copyBtnAll.cloneNode(true) as HTMLElement;
@@ -12118,13 +11857,11 @@ if (toolSlug === 'fancy-text-generator') {
       }).join('\n');
       
       if (copyTextList) {
-        await copyText(copyTextList, newCopyBtn);
+        await ClipboardManager.copy(copyTextList, newCopyBtn);
       }
     });
   }
 
-  // Run initial trigger if examples or defaults are populated
-  renderHistory();
   if (input.value) {
     updateCountersAndFeatures();
   }
