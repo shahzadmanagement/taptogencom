@@ -1,14 +1,8 @@
-import type { ToolConfig } from './fancy';
+import { mergeConfig, type ToolConfig } from './index';
 
-export const config: ToolConfig = {
-  slug: 'bold-text-generator',
+export const config: ToolConfig = mergeConfig('bold-text-generator', {
   counters: { chars: true, glyphs: false, words: true, lines: false },
   previews: ['ig', 'tw'],
-  exporters: [],
-  favorites: false,
   history: true,
-  search: true,
-  shuffle: false,
-  shortcuts: false,
-  compatibilityBadges: false
-};
+  search: true
+});
