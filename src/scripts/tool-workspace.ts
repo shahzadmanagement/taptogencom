@@ -4562,6 +4562,7 @@ async function generate() {
       const boldItalicSansMap = unicodeMap(0x1D608, 0x1D622);
       const boldGothicMap = unicodeMap(0x1D56C, 0x1D586);
       const boldScriptMap = unicodeMap(0x1D4D0, 0x1D4EA);
+      const circledMap = unicodeMap(0x24B6, 0x24D0);
       const doubleStruckMap = {
         ...unicodeMap(0x1D538, 0x1D552, 0x1D7D8),
         C: 'ℂ',
@@ -4573,6 +4574,12 @@ async function generate() {
         Z: 'ℤ'
       };
 
+      const squareMap = (t: string) => t.toUpperCase().split('').map(c => {
+        const code = c.charCodeAt(0);
+        if (code >= 65 && code <= 90) return String.fromCodePoint(0x1F130 + code - 65);
+        return c;
+      }).join('');
+
       const allStyles = [
         { name: 'Bold Sans-Serif', preview: toUnicode(text, boldSansMap), use: 'Clean, modern social headings', note: 'Best readability on standard mobile screens.', category: 'standard', isCompat: true },
         { name: 'Bold Serif', preview: toUnicode(text, boldMap), use: 'Classic editorial headers and names', note: 'Ornate serif font style.', category: 'standard', isCompat: true },
@@ -4580,7 +4587,10 @@ async function generate() {
         { name: 'Bold Italic Serif', preview: toUnicode(text, boldItalicUnicodeMap), use: 'Sophisticated profile lines', note: 'Slanted serif bold style.', category: 'standard', isCompat: false },
         { name: 'Bold Script', preview: toUnicode(text, boldScriptMap), use: 'Decorative cursive bios', note: 'Ornate cursive script with extra weight.', category: 'decorative', isCompat: false },
         { name: 'Bold Gothic', preview: toUnicode(text, boldGothicMap), use: 'Dramatic display headers', note: 'Blackletter medieval bold characters.', category: 'decorative', isCompat: false },
-        { name: 'Double-Struck', preview: toUnicode(text, doubleStruckMap), use: 'Mathematical-style highlight labels', note: 'Double-lined hollow font face.', category: 'decorative', isCompat: false }
+        { name: 'Double-Struck', preview: toUnicode(text, doubleStruckMap), use: 'Mathematical-style highlight labels', note: 'Double-lined hollow font face.', category: 'decorative', isCompat: false },
+        { name: 'Bold Monospace', preview: toUnicode(text, monospaceUnicodeMap), use: 'Developer tags and monospace labels', note: 'Fixed-width bold characters.', category: 'decorative', isCompat: true },
+        { name: 'Circled Bold (Bubble)', preview: toUnicode(text, circledMap), use: 'Circled highlight words', note: 'Hollow circled bubble style.', category: 'decorative', isCompat: false },
+        { name: 'Squared Bold (Block)', preview: squareMap(text), use: 'Squared header labels', note: 'Capital block squared characters.', category: 'decorative', isCompat: false }
       ];
 
       const styles = allStyles
@@ -11644,3 +11654,131 @@ regenBtn?.addEventListener('click', generate);
 document.querySelectorAll('.tool-select, .tool-number, .tool-checkbox').forEach(el => {
   el.addEventListener('change', generate);
 });
+
+// Custom interactive extensions for bold-text-generator
+if (toolSlug === 'bold-text-generator') {
+  const charCounter = document.getElementById('char-counter');
+  const wordCounter = document.getElementById('word-counter');
+  const searchContainer = document.getElementById('style-search-container');
+  const extensionsContainer = document.getElementById('bold-extensions-container');
+  
+  const updateCountersAndFeatures = () => {
+    const textVal = input.value;
+    if (charCounter) charCounter.textContent = `${textVal.length} chars`;
+    if (wordCounter) {
+      const words = textVal.trim() ? textVal.trim().split(/\s+/).length : 0;
+      wordCounter.textContent = `${words} words`;
+    }
+    if (searchContainer) searchContainer.style.display = textVal ? 'block' : 'none';
+    if (extensionsContainer) extensionsContainer.style.display = textVal ? 'block' : 'none';
+    
+    // Update social previews
+    const firstPreview = document.querySelector('.intent-preview-text')?.textContent || textVal || 'Your bold text...';
+    const igBio = document.getElementById('mockup-ig-bio');
+    const twTweet = document.getElementById('mockup-tw-tweet');
+    if (igBio) igBio.textContent = firstPreview;
+    if (twTweet) twTweet.textContent = firstPreview;
+  };
+
+  // Run on input change (live update)
+  input?.addEventListener('input', () => {
+    generate();
+    updateCountersAndFeatures();
+  });
+
+  // Observe render changes in output to sync previews when filters/buttons update
+  const observer = new MutationObserver(updateCountersAndFeatures);
+  if (output) {
+    observer.observe(output, { childList: true, subtree: true });
+  }
+
+  // Handle case converters
+  document.getElementById('btn-case-lower')?.addEventListener('click', () => {
+    input.value = input.value.toLowerCase();
+    generate();
+    updateCountersAndFeatures();
+  });
+  document.getElementById('btn-case-upper')?.addEventListener('click', () => {
+    input.value = input.value.toUpperCase();
+    generate();
+    updateCountersAndFeatures();
+  });
+  document.getElementById('btn-case-title')?.addEventListener('click', () => {
+    input.value = input.value.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+    generate();
+    updateCountersAndFeatures();
+  });
+  document.getElementById('btn-case-sentence')?.addEventListener('click', () => {
+    const val = input.value.trim();
+    if (val) {
+      input.value = val.charAt(0).toUpperCase() + val.slice(1).toLowerCase();
+    }
+    generate();
+    updateCountersAndFeatures();
+  });
+
+  // Mockup tab controls
+  const tabIg = document.getElementById('mockup-tab-ig');
+  const tabTw = document.getElementById('mockup-tab-tw');
+  const igCont = document.getElementById('mockup-ig-container');
+  const twCont = document.getElementById('mockup-tw-container');
+
+  tabIg?.addEventListener('click', () => {
+    tabIg.classList.add('active');
+    tabTw?.classList.remove('active');
+    if (igCont) igCont.style.display = 'block';
+    if (twCont) twCont.style.display = 'none';
+  });
+
+  tabTw?.addEventListener('click', () => {
+    tabTw.classList.add('active');
+    tabIg?.classList.remove('active');
+    if (twCont) twCont.style.display = 'block';
+    if (igCont) igCont.style.display = 'none';
+  });
+
+  // Filter list results in real time
+  const searchInput = document.getElementById('bold-style-search') as HTMLInputElement;
+  searchInput?.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase().trim();
+    document.querySelectorAll('.intent-style-card').forEach(card => {
+      const label = card.querySelector('.result-label')?.textContent?.toLowerCase() || '';
+      const use = card.querySelector('.intent-mini-note')?.textContent?.toLowerCase() || '';
+      if (label.includes(query) || use.includes(query)) {
+        (card as HTMLElement).style.display = '';
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+  });
+
+  // clipboard session history
+  let historyItems: string[] = [];
+  const historyList = document.getElementById('bold-history-list');
+
+  output.addEventListener('click', async event => {
+    const target = event.target as HTMLElement;
+    const button = target.closest<HTMLElement>('[data-copy]');
+    if (!button) return;
+    const copiedText = button.dataset.copy || '';
+    if (!copiedText || historyItems.includes(copiedText)) return;
+
+    historyItems.unshift(copiedText);
+    if (historyItems.length > 5) historyItems.pop();
+
+    if (historyList) {
+      historyList.innerHTML = historyItems.map(item => `
+        <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: 8px; padding: 10px 14px; font-size: 0.85rem; margin-bottom: 8px;">
+          <div style="font-family: monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80%; color: var(--color-text-primary);">${escapeHtml(item)}</div>
+          <button class="copy-btn result-copy" type="button" data-copy="${escapeHtml(item)}" style="margin-top: 0; padding: 4px 8px; font-size: 0.75rem;">Copy</button>
+        </div>
+      `).join('');
+    }
+  });
+
+  // Run initial trigger if examples or defaults are populated
+  if (input.value) {
+    updateCountersAndFeatures();
+  }
+}
+
