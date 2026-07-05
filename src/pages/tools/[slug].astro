@@ -218,6 +218,13 @@ const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => ge
                 <button type="button" class="example-chip" data-example={keyword}>{keyword}</button>
               ))}
             </div>
+            {slug === 'fancy-text-generator' && (
+              <div class="shortcut-legend" style="margin-top: 12px; margin-bottom: 8px; padding: 8px 12px; background: rgba(255,255,255,0.02); border: 1px dashed var(--color-border); border-radius: 6px; font-size: 0.7rem; color: var(--color-text-secondary); display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <span>💡 <strong>Esc</strong> to clear</span>
+                <span><strong>Alt+S</strong> to shuffle</span>
+                <span><strong>Alt+R</strong> to copy random</span>
+              </div>
+            )}
             <div class="tool-controls premium-controls">
               <button class="btn btn-primary" id="generate-btn">Generate</button>
               <button class="btn btn-outline" id="example-btn">Use Example</button>
@@ -241,9 +248,12 @@ const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => ge
             )}
             {slug === 'fancy-text-generator' && (
               <div class="style-search-container" style="margin-bottom: 12px; display: none;" id="style-search-container">
-                <div style="display: flex; gap: 8px; align-items: center; width: 100%;">
-                  <input type="text" id="fancy-style-search" placeholder="Search 50+ styles (e.g. cursive, gothic, monospace, circles)..." style="flex: 1; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--color-border); background: var(--color-bg-secondary); color: var(--color-text-primary); font-size: 0.85rem; outline: none; transition: var(--transition);" />
+                <div style="display: flex; gap: 8px; align-items: center; width: 100%; flex-wrap: wrap;">
+                  <input type="text" id="fancy-style-search" placeholder="Search 50+ styles (e.g. cursive, gothic, monospace, circles)..." style="flex: 1; min-width: 200px; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--color-border); background: var(--color-bg-secondary); color: var(--color-text-primary); font-size: 0.85rem; outline: none; transition: var(--transition);" />
                   <button type="button" class="btn btn-ghost" id="btn-shuffle-styles" style="padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; min-height: 35px; white-space: nowrap;">🔀 Shuffle</button>
+                  <button type="button" class="btn btn-ghost" id="btn-download-txt" title="Download Plain Text File" style="padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; min-height: 35px; white-space: nowrap;">📥 TXT</button>
+                  <button type="button" class="btn btn-ghost" id="btn-download-html" title="Download HTML File" style="padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; min-height: 35px; white-space: nowrap;">🌐 HTML</button>
+                  <button type="button" class="btn btn-ghost" id="btn-download-json" title="Download JSON File" style="padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; min-height: 35px; white-space: nowrap;">📄 JSON</button>
                 </div>
               </div>
             )}
@@ -306,6 +316,9 @@ const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => ge
                       <button type="button" class="btn btn-ghost" data-tab="ds" style="padding: 4px 8px; font-size: 0.7rem; border-radius: 4px; min-height: 24px;">Discord</button>
                       <button type="button" class="btn btn-ghost" data-tab="wa" style="padding: 4px 8px; font-size: 0.7rem; border-radius: 4px; min-height: 24px;">WhatsApp</button>
                       <button type="button" class="btn btn-ghost" data-tab="tt" style="padding: 4px 8px; font-size: 0.7rem; border-radius: 4px; min-height: 24px;">TikTok</button>
+                      <button type="button" class="btn btn-ghost" data-tab="tg" style="padding: 4px 8px; font-size: 0.7rem; border-radius: 4px; min-height: 24px;">Telegram</button>
+                      <button type="button" class="btn btn-ghost" data-tab="yt" style="padding: 4px 8px; font-size: 0.7rem; border-radius: 4px; min-height: 24px;">YouTube</button>
+                      <button type="button" class="btn btn-ghost" data-tab="tv" style="padding: 4px 8px; font-size: 0.7rem; border-radius: 4px; min-height: 24px;">Twitch</button>
                       <button type="button" class="btn btn-ghost" data-tab="un" style="padding: 4px 8px; font-size: 0.7rem; border-radius: 4px; min-height: 24px;">Game Tag</button>
                     </div>
                   </div>
@@ -380,6 +393,42 @@ const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => ge
                       </div>
                     </div>
                     <div style="color: #eaeaea; font-size: 0.88rem; line-height: 1.4; border-top: 1px solid #2f2f2f; padding-top: 10px; white-space: pre-wrap;" class="mockup-preview-target">Your fancy text...</div>
+                  </div>
+
+                  <div class="mockup-panel" id="mockup-panel-tg" style="background: #182533; border: 1px solid #101921; border-radius: 12px; padding: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 0.88rem; display: none;">
+                    <div style="background: #182533; display: flex; flex-direction: column; gap: 8px;">
+                      <div style="background: #2b5278; border-radius: 10px; padding: 8px 12px; max-width: 75%; margin-right: auto; position: relative; color: #fff; line-height: 1.4;">
+                        <span style="font-weight: 600; color: #b2e3ff; display: block; font-size: 0.8rem; margin-bottom: 2px;">Channel Admin</span>
+                        <div style="white-space: pre-wrap;" class="mockup-preview-target">Your fancy text...</div>
+                        <div style="text-align: right; font-size: 0.65rem; color: #7da5ca; margin-top: 4px;">2:24 AM</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mockup-panel" id="mockup-panel-yt" style="background: #0f0f0f; border: 1px solid #272727; border-radius: 12px; padding: 16px; font-family: Roboto, Arial, sans-serif; font-size: 0.88rem; display: none;">
+                    <div style="display: flex; gap: 12px;">
+                      <div style="width: 40px; height: 40px; border-radius: 50%; background: #ff0000; display: grid; place-items: center; font-weight: 700; color: #fff; font-size: 1.1rem; flex-shrink: 0;">Y</div>
+                      <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                          <span style="font-weight: 500; color: #f1f1f1; font-size: 0.82rem;">@creator_hub</span>
+                          <span style="color: #aaa; font-size: 0.75rem;">2 hours ago</span>
+                        </div>
+                        <div style="color: #f1f1f1; line-height: 1.4; white-space: pre-wrap; margin-bottom: 8px;" class="mockup-preview-target">Your fancy text...</div>
+                        <div style="display: flex; align-items: center; gap: 16px; color: #aaa; font-size: 0.75rem;">
+                          <span>👍 1.2K</span> <span>👎</span> <span>💬 Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mockup-panel" id="mockup-panel-tv" style="background: #0e0e10; border: 1px solid #1f1f23; border-radius: 12px; padding: 12px; font-family: Inter, Roobert, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 0.82rem; display: none;">
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                      <div style="display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; padding: 4px 8px; border-radius: 4px; background: rgba(255,255,255,0.02);">
+                        <span style="background: #9146ff; color: #fff; font-size: 0.62rem; font-weight: 700; padding: 1px 4px; border-radius: 2px; text-transform: uppercase; align-self: center;">Sub</span>
+                        <span style="font-weight: 700; color: #adadb8;">mod_gamer:</span>
+                        <span style="color: #efeff1; white-space: pre-wrap;" class="mockup-preview-target">Your fancy text...</span>
+                      </div>
+                    </div>
                   </div>
 
                   <div class="mockup-panel" id="mockup-panel-un" style="background: linear-gradient(135deg, #1f1c2c, #928dab); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; text-align: center; font-family: monospace; display: none;">

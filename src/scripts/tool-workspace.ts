@@ -701,10 +701,15 @@ function transformFullwidth(value: string): string {
   }).join('');
 }
 
-function renderStyleMatrix(styles: { name: string; preview: string; use: string; note: string }[], extraNote = ''): string {
-  return '<div class="intent-style-matrix">' + styles.map(style => (
-    '<article class="intent-style-card" data-style-name="' + escapeHtml(style.name) + '"><div class="result-card-top"><div><span class="result-label">' + escapeHtml(style.name) + '</span><p class="intent-mini-note">' + escapeHtml(style.use) + '</p></div><div style="display: flex; align-items: center; gap: 6px;"><button class="fav-btn" type="button" data-fav-style="' + escapeHtml(style.name) + '" aria-label="Favorite style">☆</button><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(style.preview) + '">Copy</button></div></div><div class="intent-preview-text">' + escapeHtml(style.preview) + '</div><p class="result-note">' + escapeHtml(style.note) + '</p></article>'
-  )).join('') + (extraNote ? '<p class="intent-output-note">' + escapeHtml(extraNote) + '</p>' : '') + '</div>';
+function renderStyleMatrix(styles: { name: string; preview: string; use: string; note: string; isCompat?: boolean }[], extraNote = ''): string {
+  return '<div class="intent-style-matrix">' + styles.map(style => {
+    const compatBadge = style.isCompat === true
+      ? '<span class="compat-badge high" style="background: rgba(16,185,129,0.12); color: #10b981; border: 1px solid rgba(16,185,129,0.2); padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; white-space: nowrap;">High Compat</span>'
+      : style.isCompat === false
+      ? '<span class="compat-badge low" style="background: rgba(245,158,11,0.12); color: #f59e0b; border: 1px solid rgba(245,158,11,0.2); padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; white-space: nowrap;">Partial Compat</span>'
+      : '';
+    return '<article class="intent-style-card" data-style-name="' + escapeHtml(style.name) + '"><div class="result-card-top"><div><div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;"><span class="result-label">' + escapeHtml(style.name) + '</span>' + compatBadge + '</div><p class="intent-mini-note">' + escapeHtml(style.use) + '</p></div><div style="display: flex; align-items: center; gap: 6px;"><button class="fav-btn" type="button" data-fav-style="' + escapeHtml(style.name) + '" aria-label="Favorite style">☆</button><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(style.preview) + '">Copy</button></div></div><div class="intent-preview-text">' + escapeHtml(style.preview) + '</div><p class="result-note">' + escapeHtml(style.note) + '</p></article>';
+  }).join('') + (extraNote ? '<p class="intent-output-note">' + escapeHtml(extraNote) + '</p>' : '') + '</div>';
 }
 
 function renderGroupedIdeas(groups: { title: string; note: string; items: { name: string; reason: string; extra?: string }[] }[], footer = ''): string {
@@ -11964,29 +11969,140 @@ if (toolSlug === 'fancy-text-generator') {
     });
   });
 
-  // clipboard session history
-  let historyItems: string[] = [];
+  // download capabilities
+  const downloadFile = (content: string, filename: string, mimeType: string) => {
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  const getGeneratedPairs = () => {
+    const cards = Array.from(document.querySelectorAll('.intent-style-card'));
+    return cards.map(card => {
+      const name = card.querySelector('.result-label')?.textContent?.trim() || '';
+      const text = card.querySelector('.intent-preview-text')?.textContent || '';
+      return { name, text };
+    });
+  };
+
+  document.getElementById('btn-download-txt')?.addEventListener('click', () => {
+    const pairs = getGeneratedPairs();
+    if (pairs.length === 0) return;
+    const txtContent = pairs.map(p => `${p.name}: ${p.text}`).join('\n');
+    downloadFile(txtContent, 'taptogen-fancy-text.txt', 'text/plain');
+  });
+
+  document.getElementById('btn-download-html')?.addEventListener('click', () => {
+    const pairs = getGeneratedPairs();
+    if (pairs.length === 0) return;
+    const htmlContent = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TapToGen Fancy Text Export</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #0a0a1e; color: #fff; }
+    .style-row { margin-bottom: 16px; padding: 12px; border-bottom: 1px solid #333; }
+    .name { font-weight: bold; color: #a855f7; margin-bottom: 4px; }
+    .text { font-size: 1.2rem; }
+  </style>
+</head>
+<body>
+  <h1>Fancy Text Export</h1>
+  ${pairs.map(p => `
+  <div class="style-row">
+    <div class="name">${p.name}</div>
+    <div class="text">${p.text}</div>
+  </div>`).join('')}
+</body>
+</html>`;
+    downloadFile(htmlContent, 'taptogen-fancy-text.html', 'text/html');
+  });
+
+  document.getElementById('btn-download-json')?.addEventListener('click', () => {
+    const pairs = getGeneratedPairs();
+    if (pairs.length === 0) return;
+    const jsonContent = JSON.stringify(pairs, null, 2);
+    downloadFile(jsonContent, 'taptogen-fancy-text.json', 'application/json');
+  });
+
+  // keyboard shortcuts
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      const activeEl = document.activeElement;
+      if (activeEl === input || activeEl === document.body) {
+        input.value = '';
+        generate();
+        updateCountersAndFeatures();
+      }
+    }
+    if (event.altKey && event.key.toLowerCase() === 's') {
+      event.preventDefault();
+      shuffleBtn?.click();
+    }
+    if (event.altKey && event.key.toLowerCase() === 'r') {
+      event.preventDefault();
+      randomBtn?.click();
+    }
+  });
+
+  // clipboard session history (persisted in LocalStorage)
+  const getHistory = (): string[] => {
+    try {
+      return JSON.parse(localStorage.getItem('taptogen-history') || '[]');
+    } catch {
+      return [];
+    }
+  };
+  const saveHistory = (items: string[]) => {
+    try {
+      localStorage.setItem('taptogen-history', JSON.stringify(items));
+    } catch (e) {
+      console.warn(e);
+    }
+  };
+
+  const renderHistory = () => {
+    if (!historyList) return;
+    const items = getHistory();
+    if (items.length === 0) {
+      historyList.innerHTML = '<p style="color: var(--color-text-muted); font-size: 0.8rem; font-style: italic; margin: 0;">No copy history yet this session.</p>';
+      return;
+    }
+    historyList.innerHTML = items.map(item => `
+      <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: 8px; padding: 10px 14px; font-size: 0.85rem; margin-bottom: 8px;">
+        <div style="font-family: monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80%; color: var(--color-text-primary);">${escapeHtml(item)}</div>
+        <button class="copy-btn result-copy" type="button" data-copy="${escapeHtml(item)}" style="margin-top: 0; padding: 4px 8px; font-size: 0.75rem;">Copy</button>
+      </div>
+    `).join('');
+  };
+
   output.addEventListener('click', async event => {
     const target = event.target as HTMLElement;
     const button = target.closest<HTMLElement>('[data-copy]');
     if (!button) return;
     const copiedText = button.dataset.copy || '';
-    if (!copiedText || historyItems.includes(copiedText)) return;
+    if (!copiedText) return;
 
-    historyItems.unshift(copiedText);
-    if (historyItems.length > 5) historyItems.pop();
-
-    if (historyList) {
-      historyList.innerHTML = historyItems.map(item => `
-        <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: 8px; padding: 10px 14px; font-size: 0.85rem; margin-bottom: 8px;">
-          <div style="font-family: monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80%; color: var(--color-text-primary);">${escapeHtml(item)}</div>
-          <button class="copy-btn result-copy" type="button" data-copy="${escapeHtml(item)}" style="margin-top: 0; padding: 4px 8px; font-size: 0.75rem;">Copy</button>
-        </div>
-      `).join('');
+    let items = getHistory();
+    if (items.includes(copiedText)) {
+      items = items.filter(i => i !== copiedText);
     }
+    items.unshift(copiedText);
+    if (items.length > 5) items.pop();
+
+    saveHistory(items);
+    renderHistory();
   });
 
   // Run initial trigger if examples or defaults are populated
+  renderHistory();
   if (input.value) {
     updateCountersAndFeatures();
   }
