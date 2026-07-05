@@ -55,6 +55,11 @@ jobs:
           exit 1
         fi
 
+    - name: Run Production and Security Checks
+      run: |
+        node scripts/check-security.js
+        node scripts/check-performance.js
+
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
