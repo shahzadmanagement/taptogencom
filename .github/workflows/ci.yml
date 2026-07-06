@@ -55,41 +55,9 @@ jobs:
           exit 1
         fi
 
-    - name: Validate Analytics and Telemetry configurations
+    - name: Run Production Build Verification
       run: |
-        node scripts/check-analytics.js
-        node scripts/check-telemetry.js
-        node scripts/generate-platform-report.js
-        node scripts/check-deployments.js
-        node scripts/check-dashboard.js
-        node scripts/check-notifications.js
-        node scripts/generate-release-report.js
-        node scripts/check-feature-flags.js
-        node scripts/check-admin-console.js
-        node scripts/check-governance.js
-        node scripts/check-config.js
-        node scripts/generate-admin-report.js
-        node scripts/check-ai-providers.js
-        node scripts/check-prompts.js
-        node scripts/check-ai-performance.js
-        node scripts/generate-ai-report.js
-        node scripts/check-auth.js
-        node scripts/check-api-platform.js
-        node scripts/check-users.js
-        node scripts/generate-auth-report.js
-        node scripts/check-search.js
-        node scripts/check-vector-store.js
-        node scripts/check-rag.js
-        node scripts/generate-search-report.js
-        node scripts/check-agents.js
-        node scripts/check-tools.js
-        node scripts/check-workflows.js
-        node scripts/check-memory.js
-        node scripts/generate-agent-report.js
-        node scripts/check-connectors.js
-        node scripts/check-tools-platform.js
-        node scripts/check-shell.js
-        node scripts/generate-connectors-report.js
+        node scripts/verify-production.js
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
