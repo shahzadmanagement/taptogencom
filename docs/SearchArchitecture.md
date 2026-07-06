@@ -1,10 +1,9 @@
-# Platform Search Architecture
+# Enterprise Search Engine Architecture
 
-This document describes how search engines index and read platform generators metadata.
+This document describes inverted token index mappings, relevance scoring ranking algorithms, and results autocomplete prefix caching.
 
 ---
 
-## 1. Unified Search Index
+## 1. Indexing & Tokenization
 
-* **Registry**: [`src/data/search-index.ts`](file:///c:/Users/shahz/OneDrive/Documents/GitHub/taptogencom/src/data/search-index.ts) manages search entries.
-* **Fields**: Each tool records slugs, canonical metadata, descriptions, category groupings, keywords, locales, priority scores, and update dates.
+Text is parsed using `queryParser.ts` and fed into `searchIndexer.ts` terms map tables. Highlighting tags dynamically wrap matches for user UI presentation views.

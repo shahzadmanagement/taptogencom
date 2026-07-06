@@ -77,6 +77,10 @@ jobs:
         node scripts/check-api-platform.js
         node scripts/check-users.js
         node scripts/generate-auth-report.js
+        node scripts/check-search.js
+        node scripts/check-vector-store.js
+        node scripts/check-rag.js
+        node scripts/generate-search-report.js
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
