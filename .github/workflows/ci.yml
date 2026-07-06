@@ -86,6 +86,10 @@ jobs:
         node scripts/check-workflows.js
         node scripts/check-memory.js
         node scripts/generate-agent-report.js
+        node scripts/check-connectors.js
+        node scripts/check-tools-platform.js
+        node scripts/check-shell.js
+        node scripts/generate-connectors-report.js
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
