@@ -55,10 +55,11 @@ jobs:
           exit 1
         fi
 
-    - name: Run Production and Security Checks
+    - name: Validate Analytics and Telemetry configurations
       run: |
-        node scripts/check-security.js
-        node scripts/check-performance.js
+        node scripts/check-analytics.js
+        node scripts/check-telemetry.js
+        node scripts/generate-platform-report.js
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
