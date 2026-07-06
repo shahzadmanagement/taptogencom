@@ -73,6 +73,10 @@ jobs:
         node scripts/check-prompts.js
         node scripts/check-ai-performance.js
         node scripts/generate-ai-report.js
+        node scripts/check-auth.js
+        node scripts/check-api-platform.js
+        node scripts/check-users.js
+        node scripts/generate-auth-report.js
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
