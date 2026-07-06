@@ -60,6 +60,10 @@ jobs:
         node scripts/check-analytics.js
         node scripts/check-telemetry.js
         node scripts/generate-platform-report.js
+        node scripts/check-deployments.js
+        node scripts/check-dashboard.js
+        node scripts/check-notifications.js
+        node scripts/generate-release-report.js
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
