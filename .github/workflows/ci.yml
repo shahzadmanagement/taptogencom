@@ -81,6 +81,11 @@ jobs:
         node scripts/check-vector-store.js
         node scripts/check-rag.js
         node scripts/generate-search-report.js
+        node scripts/check-agents.js
+        node scripts/check-tools.js
+        node scripts/check-workflows.js
+        node scripts/check-memory.js
+        node scripts/generate-agent-report.js
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
