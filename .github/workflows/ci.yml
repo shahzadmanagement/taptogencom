@@ -69,6 +69,10 @@ jobs:
         node scripts/check-governance.js
         node scripts/check-config.js
         node scripts/generate-admin-report.js
+        node scripts/check-ai-providers.js
+        node scripts/check-prompts.js
+        node scripts/check-ai-performance.js
+        node scripts/generate-ai-report.js
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
