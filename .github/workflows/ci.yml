@@ -64,6 +64,11 @@ jobs:
         node scripts/check-dashboard.js
         node scripts/check-notifications.js
         node scripts/generate-release-report.js
+        node scripts/check-feature-flags.js
+        node scripts/check-admin-console.js
+        node scripts/check-governance.js
+        node scripts/check-config.js
+        node scripts/generate-admin-report.js
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
