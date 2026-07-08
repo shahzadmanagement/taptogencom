@@ -1171,13 +1171,24 @@ async function generate() {
         'ligula', 'eget', 'lacinia', 'odio', 'sem', 'nec', 'elit', 'aenean', 'eu', 'leo',
         'quam', 'pellentesque', 'ornare', 'sem', 'lacinia', 'quam', 'venenatis', 'vestibulum'
       ];
+      const standardPrefix = ['lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit', 'sed', 'do', 'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore', 'magna', 'aliqua', 'enim', 'ad', 'minim', 'veniam', 'quis', 'nostrud', 'exercitation', 'ullamco', 'laboris', 'nisi', 'ut'];
+      const standardSentences = [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+        'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      ];
+
       const mode = optionValue('lorem-mode', 'paragraphs');
-      const count = Math.max(1, Math.min(100, Number(optionValue('lorem-count', '3')) || 3));
+      const count = Math.max(1, Math.min(50, Number(optionValue('lorem-count', '3')) || 3));
       const startLorem = optionValue('lorem-start', 'true') === 'true';
       const format = optionValue('lorem-format', 'plain');
 
-      const makeRandomSentence = (isFirst = false) => {
-        if (isFirst && startLorem) return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+      const makeRandomSentence = (index: number) => {
+        if (startLorem && index < standardSentences.length) {
+          return standardSentences[index];
+        }
         const len = Math.floor(Math.random() * 11) + 8; // 8 to 18 words
         const words: string[] = [];
         for (let i = 0; i < len; i++) {
@@ -1185,37 +1196,80 @@ async function generate() {
         }
         if (len > 10) {
           const commaIndex = Math.floor(Math.random() * (len - 6)) + 3;
-          words[commaIndex] = words[commaIndex] + ',';
+          words[commaIndex] = words[commaIndex].replace(/,$/, '') + ',';
         }
         const sentence = words.join(' ');
         return sentence.charAt(0).toUpperCase() + sentence.slice(1) + '.';
       };
 
+      let sentenceCounter = 0;
       const makeRandomParagraph = (isFirst = false) => {
-        const sentenceCount = Math.floor(Math.random() * 3) + 3;
-        return Array.from({ length: sentenceCount }, (_, i) => makeRandomSentence(isFirst && i === 0)).join(' ');
+        const sentenceCount = Math.floor(Math.random() * 4) + 3; // 3 to 6 sentences
+        return Array.from({ length: sentenceCount }, () => makeRandomSentence(sentenceCounter++)).join(' ');
       };
 
       let output = '';
       if (mode === 'words') {
-        output = Array.from({ length: count }, (_, i) => i === 0 && startLorem ? 'Lorem' : randomFrom(latinVocab)).join(' ');
+        output = Array.from({ length: count }, (_, i) => {
+          if (startLorem && i < standardPrefix.length) {
+            return i === 0 ? 'Lorem' : standardPrefix[i];
+          }
+          return randomFrom(latinVocab);
+        }).join(' ');
       } else if (mode === 'sentences') {
-        output = Array.from({ length: count }, (_, i) => makeRandomSentence(i === 0)).join(' ');
+        output = Array.from({ length: count }, (_, i) => makeRandomSentence(i)).join(' ');
       } else {
         output = Array.from({ length: count }, (_, i) => makeRandomParagraph(i === 0)).join('\n\n');
       }
 
-      if (format === 'list') {
+      if (format === 'list' || format === 'bullet') {
         if (mode === 'words') {
           const words = output.split(' ');
           const items: string[] = [];
-          for (let i = 0; i < words.length; i += 5) {
-            items.push(words.slice(i, i + 5).join(' '));
+          for (let i = 0; i < words.length; i += 8) {
+            const chunk = words.slice(i, i + 8).join(' ');
+            if (chunk) {
+              items.push(chunk.trim() + '.');
+            }
           }
-          output = items.map((item, index) => `${index + 1}. ${item.trim()}.`).join('\n');
+          output = items.map((item, index) => {
+            const prefix = format === 'bullet' ? '• ' : `${index + 1}. `;
+            return `${prefix}${item}`;
+          }).join('\n');
+        } else if (mode === 'paragraphs') {
+          output = output.split('\n\n').map((item, index) => {
+            const prefix = format === 'bullet' ? '• ' : `${index + 1}. `;
+            return `${prefix}${item.trim()}`;
+          }).join('\n');
         } else {
-          output = output.split(mode === 'paragraphs' ? '\n\n' : '. ').filter(Boolean).map((item, index) => `${index + 1}. ${item.trim().replace(/\.$/, '')}.`).join('\n');
+          output = output.split('. ').filter(Boolean).map((item, index) => {
+            const prefix = format === 'bullet' ? '• ' : `${index + 1}. `;
+            return `${prefix}${item.trim().replace(/\.$/, '')}.`;
+          }).join('\n');
         }
+      } else if (format === 'html-p') {
+        if (mode === 'paragraphs') {
+          output = output.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('\n');
+        } else {
+          output = `<p>${output.trim()}</p>`;
+        }
+      } else if (format === 'html-list' || format === 'html-bullet') {
+        const listTag = format === 'html-list' ? 'ol' : 'ul';
+        let items: string[] = [];
+        if (mode === 'words') {
+          const words = output.split(' ');
+          for (let i = 0; i < words.length; i += 8) {
+            const chunk = words.slice(i, i + 8).join(' ');
+            if (chunk) {
+              items.push(chunk.trim() + '.');
+            }
+          }
+        } else if (mode === 'paragraphs') {
+          items = output.split('\n\n').map(p => p.trim());
+        } else {
+          items = output.split('. ').filter(Boolean).map(s => s.trim().replace(/\.$/, '') + '.');
+        }
+        output = `<${listTag}>\n` + items.map(item => `  <li>${item}</li>`).join('\n') + `\n</${listTag}>`;
       }
 
       const sections = [
