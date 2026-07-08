@@ -1155,19 +1155,69 @@ async function generate() {
       break;
     }
     case 'lorem-ipsum-generator': {
-      const sentenceBank = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit.','Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.','Duis aute irure dolor in reprehenderit in voluptate velit esse.','Excepteur sint occaecat cupidatat non proident.','Cras mattis consectetur purus sit amet fermentum.','Donec ullamcorper nulla non metus auctor fringilla.','Maecenas faucibus mollis interdum.','Praesent commodo cursus magna vel scelerisque nisl consectetur.'];
-      const wordBank = sentenceBank.join(' ').toLowerCase().replace(/[.]/g, '').split(/\s+/);
+      const latinVocab = [
+        'lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit', 'sed', 'do',
+        'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore', 'magna', 'aliqua', 'enim',
+        'ad', 'minim', 'veniam', 'quis', 'nostrud', 'exercitation', 'ullamco', 'laboris', 'nisi', 'ut',
+        'aliquip', 'ex', 'ea', 'commodo', 'consequat', 'duis', 'aute', 'irure', 'dolor', 'in',
+        'reprehenderit', 'in', 'voluptate', 'velit', 'esse', 'cillum', 'dolore', 'eu', 'fugiat', 'nulla',
+        'pariatur', 'excepteur', 'sint', 'occaecat', 'cupidatat', 'non', 'proident', 'sunt', 'in', 'culpa',
+        'qui', 'officia', 'deserunt', 'mollit', 'anim', 'id', 'est', 'laborum', 'cras', 'mattis',
+        'consectetur', 'purus', 'sit', 'amet', 'fermentum', 'donec', 'ullamcorper', 'nulla', 'non', 'metus',
+        'auctor', 'fringilla', 'maecenas', 'faucibus', 'mollis', 'interdum', 'praesent', 'commodo', 'cursus', 'magna',
+        'vel', 'scelerisque', 'nisl', 'consectetur', 'etiam', 'porta', 'sem', 'malesuada', 'magna', 'mollis',
+        'euismod', 'vivamus', 'sagittis', 'lacus', 'vel', 'augue', 'laoreet', 'rutrum', 'faucibus', 'dolor',
+        'auctor', 'duis', 'mollis', 'est', 'non', 'commodo', 'luctus', 'nisi', 'erat', 'porttitor',
+        'ligula', 'eget', 'lacinia', 'odio', 'sem', 'nec', 'elit', 'aenean', 'eu', 'leo',
+        'quam', 'pellentesque', 'ornare', 'sem', 'lacinia', 'quam', 'venenatis', 'vestibulum'
+      ];
       const mode = optionValue('lorem-mode', 'paragraphs');
-      const count = Math.max(1, Math.min(20, Number(optionValue('lorem-count', '3')) || 3));
+      const count = Math.max(1, Math.min(100, Number(optionValue('lorem-count', '3')) || 3));
       const startLorem = optionValue('lorem-start', 'true') === 'true';
       const format = optionValue('lorem-format', 'plain');
-      const makeSentence = (index: number) => index === 0 && startLorem ? sentenceBank[0] : randomFrom(sentenceBank);
-      const makeParagraph = (index: number) => Array.from({ length: 4 + (index % 3) }, (_, i) => makeSentence(index === 0 && i === 0 ? 0 : i + 1)).join(' ');
+
+      const makeRandomSentence = (isFirst = false) => {
+        if (isFirst && startLorem) return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+        const len = Math.floor(Math.random() * 11) + 8; // 8 to 18 words
+        const words: string[] = [];
+        for (let i = 0; i < len; i++) {
+          words.push(randomFrom(latinVocab));
+        }
+        if (len > 10) {
+          const commaIndex = Math.floor(Math.random() * (len - 6)) + 3;
+          words[commaIndex] = words[commaIndex] + ',';
+        }
+        const sentence = words.join(' ');
+        return sentence.charAt(0).toUpperCase() + sentence.slice(1) + '.';
+      };
+
+      const makeRandomParagraph = (isFirst = false) => {
+        const sentenceCount = Math.floor(Math.random() * 3) + 3;
+        return Array.from({ length: sentenceCount }, (_, i) => makeRandomSentence(isFirst && i === 0)).join(' ');
+      };
+
       let output = '';
-      if (mode === 'words') output = Array.from({ length: Math.min(count * 10, 200) }, (_, i) => i === 0 && startLorem ? 'Lorem' : randomFrom(wordBank)).join(' ');
-      else if (mode === 'sentences') output = Array.from({ length: count }, (_, i) => makeSentence(i)).join(' ');
-      else output = Array.from({ length: count }, (_, i) => makeParagraph(i)).join('\n\n');
-      if (format === 'list') output = output.split(mode === 'paragraphs' ? '\n\n' : '. ').filter(Boolean).map((item, index) => `${index + 1}. ${item.trim().replace(/\.$/, '')}.`).join('\n');
+      if (mode === 'words') {
+        output = Array.from({ length: count }, (_, i) => i === 0 && startLorem ? 'Lorem' : randomFrom(latinVocab)).join(' ');
+      } else if (mode === 'sentences') {
+        output = Array.from({ length: count }, (_, i) => makeRandomSentence(i === 0)).join(' ');
+      } else {
+        output = Array.from({ length: count }, (_, i) => makeRandomParagraph(i === 0)).join('\n\n');
+      }
+
+      if (format === 'list') {
+        if (mode === 'words') {
+          const words = output.split(' ');
+          const items: string[] = [];
+          for (let i = 0; i < words.length; i += 5) {
+            items.push(words.slice(i, i + 5).join(' '));
+          }
+          output = items.map((item, index) => `${index + 1}. ${item.trim()}.`).join('\n');
+        } else {
+          output = output.split(mode === 'paragraphs' ? '\n\n' : '. ').filter(Boolean).map((item, index) => `${index + 1}. ${item.trim().replace(/\.$/, '')}.`).join('\n');
+        }
+      }
+
       const sections = [
         { title: `${titleCase(mode)} Output`, body: output, note: `${count} requested item(s), ${output.split(/\s+/).filter(Boolean).length} words.` },
         { title: 'Design Use Note', body: 'Use this as placeholder text for mockups, layout testing, and content spacing. Replace it with real copy before publishing.', note: 'Placeholder text only.' }];
