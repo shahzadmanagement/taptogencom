@@ -1463,18 +1463,40 @@ async function generate() {
       const domain = compactSeed(text, 'example.com').replace(/^https?:\/\//, '').replace(/\/.*$/, '');
       const mode = optionValue('robots-mode', 'standard');
       const includeSitemap = optionValue('robots-include-sitemap', 'true') === 'true';
+      const crawlDelay = optionValue('robots-crawl-delay', 'none');
+      const blockAI = optionValue('robots-block-ai', 'false') === 'true';
+      const blockSEO = optionValue('robots-block-seo', 'false') === 'true';
+
+      const delayLine = crawlDelay !== 'none' ? `\nCrawl-delay: ${crawlDelay}` : '';
+
       const templates: Record<string, string> = {
-        standard: `User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /private/`,
-        wordpress: `User-agent: *\nAllow: /wp-content/uploads/\nAllow: /wp-admin/admin-ajax.php\nDisallow: /wp-admin/\nDisallow: /wp-login.php\nDisallow: /?s=`,
-        ecommerce: `User-agent: *\nAllow: /\nDisallow: /cart/\nDisallow: /checkout/\nDisallow: /account/\nDisallow: /search/`,
-        staging: `User-agent: *\nDisallow: /\n\n# Staging mode blocks crawling. Do not use this on a live public site unless you intentionally want noindex-style crawl blocking.`};
-      const robots = templates[mode] || templates.standard;
+        standard: `User-agent: *\nAllow: /${delayLine}\nDisallow: /admin/\nDisallow: /private/`,
+        wordpress: `User-agent: *\nAllow: /wp-content/uploads/\nAllow: /wp-admin/admin-ajax.php${delayLine}\nDisallow: /wp-admin/\nDisallow: /wp-login.php\nDisallow: /?s=`,
+        ecommerce: `User-agent: *\nAllow: /${delayLine}\nDisallow: /cart/\nDisallow: /checkout/\nDisallow: /account/\nDisallow: /search/`,
+        staging: `User-agent: *\nDisallow: /\n\n# Staging mode blocks all crawling. Do not use this on a live public site unless you intentionally want noindex-style crawl blocking.`
+      };
+
+      let robots = templates[mode] || templates.standard;
+
+      if (blockAI) {
+        robots += `\n\n# Block AI Scrapers and Crawlers\nUser-agent: GPTBot\nDisallow: /\n\nUser-agent: ClaudeBot\nDisallow: /\n\nUser-agent: Google-Extended\nDisallow: /\n\nUser-agent: CCBot\nDisallow: /\n\nUser-agent: ChatGPT-User\nDisallow: /`;
+      }
+
+      if (blockSEO) {
+        robots += `\n\n# Block Aggressive SEO Audit Bots\nUser-agent: AhrefsBot\nDisallow: /\n\nUser-agent: SemrushBot\nDisallow: /\n\nUser-agent: DotBot\nDisallow: /\n\nUser-agent: Rogerbot\nDisallow: /`;
+      }
+
       const body = robots + (includeSitemap ? `\n\nSitemap: https://${domain}/sitemap.xml` : '');
       const sections = [
-        { title: `${titleCase(mode)} robots.txt`, body, note: includeSitemap ? 'Includes sitemap line.' : 'Sitemap line omitted by option.' },
-        { title: 'Safety Checklist', body: 'Do not block important CSS, JavaScript, image folders, or public pages by accident.\nUse staging mode only for non-public environments.\nTest crawl rules before deploying to production.', note: 'Review before publishing.' }];
+        { title: `${titleCase(mode)} robots.txt`, body, note: includeSitemap ? 'Includes sitemap line.' : 'Sitemap line omitted.' },
+        { 
+          title: 'Robots.txt Safety Checklist', 
+          body: '1. Do not block CSS, JavaScript, or image assets required by search engines to render your site.\n2. Double check lowercase/uppercase routes (disallow paths are case-sensitive).\n3. Staging configuration blocks all indexing. Remove it when launching live.\n4. Make sure this file is placed at the root of your domain: https://example.com/robots.txt',
+          note: 'Pre-deployment review.' 
+        }
+      ];
       result = body;
-      resultHtml = renderSectionSuite('Robots.txt Template', sections, 'Crawler rules are powerful. Verify paths against your real site before uploading robots.txt.');
+      resultHtml = renderSectionSuite('Robots.txt Template', sections, 'Crawler rules are suggestions. Well-behaved search bots respect them, but malicious bots might ignore them.');
       break;
     }
     case 'word-counter': {
@@ -2047,50 +2069,238 @@ async function generate() {
       if (!text) { result = 'Please paste your JSON above.'; break; }
       const indent = Math.max(2, Math.min(8, Number(optionValue('json-indent', '2')) || 2));
       const sortKeys = optionValue('json-sort-keys', 'false') === 'true';
+      const autofix = optionValue('json-autofix', 'false') === 'true';
+
       const sortJson = (value: unknown): unknown => {
         if (Array.isArray(value)) return value.map(sortJson);
-        if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value as Record<string, unknown>).sort(([a], [b]) => a.localeCompare(b)).map(([key, item]) => [key, sortJson(item)]));
+        if (value && typeof value === 'object') {
+          return Object.fromEntries(
+            Object.entries(value as Record<string, unknown>)
+              .sort(([a], [b]) => a.localeCompare(b))
+              .map(([key, item]) => [key, sortJson(item)])
+          );
+        }
         return value;
       };
+
       const countNodes = (value: unknown): { objects: number; arrays: number; keys: number } => {
-        if (Array.isArray(value)) return value.reduce((acc, item) => { const child = countNodes(item); return { objects: acc.objects + child.objects, arrays: acc.arrays + child.arrays, keys: acc.keys + child.keys }; }, { objects: 0, arrays: 1, keys: 0 });
-        if (value && typeof value === 'object') return Object.values(value as Record<string, unknown>).reduce<{ objects: number; arrays: number; keys: number }>((acc, item) => { const child = countNodes(item); return { objects: acc.objects + child.objects, arrays: acc.arrays + child.arrays, keys: acc.keys + child.keys }; }, { objects: 1, arrays: 0, keys: Object.keys(value as Record<string, unknown>).length });
+        if (Array.isArray(value)) {
+          return value.reduce((acc, item) => {
+            const child = countNodes(item);
+            return { objects: acc.objects + child.objects, arrays: acc.arrays + child.arrays, keys: acc.keys + child.keys };
+          }, { objects: 0, arrays: 1, keys: 0 });
+        }
+        if (value && typeof value === 'object') {
+          return Object.values(value as Record<string, unknown>).reduce<{ objects: number; arrays: number; keys: number }>((acc, item) => {
+            const child = countNodes(item);
+            return { objects: acc.objects + child.objects, arrays: acc.arrays + child.arrays, keys: acc.keys + child.keys };
+          }, { objects: 1, arrays: 0, keys: Object.keys(value as Record<string, unknown>).length });
+        }
         return { objects: 0, arrays: 0, keys: 0 };
       };
+
+      const tryAutoFixJson = (str: string): { fixed: string; logs: string[] } => {
+        let val = str.trim();
+        const logs: string[] = [];
+        const trailingCommaRegex = /,\s*([}\]])/g;
+        if (trailingCommaRegex.test(val)) {
+          val = val.replace(trailingCommaRegex, '$1');
+          logs.push('Removed trailing comma(s).');
+        }
+        const unquotedKeysRegex = /([{,]\s*)([a-zA-Z_$][a-zA-Z0-9_$]*)(\s*:)/g;
+        if (unquotedKeysRegex.test(val)) {
+          val = val.replace(unquotedKeysRegex, '$1"$2"$3');
+          logs.push('Wrapped unquoted key(s) in double quotes.');
+        }
+        const singleQuotedKeysRegex = /([{,]\s*)'([^']*)'(\s*:)/g;
+        if (singleQuotedKeysRegex.test(val)) {
+          val = val.replace(singleQuotedKeysRegex, '$1"$2"$3');
+          logs.push('Converted single-quoted keys to double quotes.');
+        }
+        const singleQuotedValuesRegex = /(:\s*)'([^']*)'/g;
+        if (singleQuotedValuesRegex.test(val)) {
+          val = val.replace(singleQuotedValuesRegex, '$1"$2"');
+          logs.push('Converted single-quoted string values to double quotes.');
+        }
+        return { fixed: val, logs };
+      };
+
+      const runDiagnostics = (str: string): string[] => {
+        const diagnostics: string[] = [];
+        const openBraces = (str.match(/{/g) || []).length;
+        const closeBraces = (str.match(/}/g) || []).length;
+        if (openBraces !== closeBraces) {
+          diagnostics.push(`Curly brace mismatch: found ${openBraces} open '{' and ${closeBraces} close '}'.`);
+        }
+        const openBrackets = (str.match(/\[/g) || []).length;
+        const closeBrackets = (str.match(/\]/g) || []).length;
+        if (openBrackets !== closeBrackets) {
+          diagnostics.push(`Square bracket mismatch: found ${openBrackets} open '[' and ${closeBrackets} close ']'.`);
+        }
+        if (/'[^']*'/g.test(str)) {
+          diagnostics.push('Single quotes detected. JSON requires double quotes for keys and strings.');
+        }
+        if (/[{,]\s*[a-zA-Z_$][a-zA-Z0-9_$]*\s*:/g.test(str)) {
+          diagnostics.push('Unquoted keys detected. JSON keys must be wrapped in double quotes.');
+        }
+        if (/,\s*[}\]]/g.test(str)) {
+          diagnostics.push('Trailing comma detected before a closing brace or bracket.');
+        }
+        if (diagnostics.length === 0) {
+          diagnostics.push('Check for unclosed strings, hidden control characters, or non-JSON content.');
+        }
+        return diagnostics;
+      };
+
+      let parsed: any;
+      let usedText = text;
+      let fixLogs: string[] = [];
+      let parseError: string | null = null;
+
       try {
-        const parsed = sortKeys ? sortJson(JSON.parse(text)) : JSON.parse(text);
-        const formatted = JSON.stringify(parsed, null, indent);
-        const minified = JSON.stringify(parsed);
-        const counts = countNodes(parsed);
+        parsed = JSON.parse(text);
+      } catch (e) {
+        parseError = (e as Error).message;
+        if (autofix) {
+          const autofixResult = tryAutoFixJson(text);
+          try {
+            parsed = JSON.parse(autofixResult.fixed);
+            usedText = autofixResult.fixed;
+            fixLogs = autofixResult.logs;
+            parseError = null; // Cleared on successful fix
+          } catch (innerError) {
+            // Keep original parse error if auto-fix fails
+          }
+        }
+      }
+
+      if (parseError === null) {
+        const sorted = sortKeys ? sortJson(parsed) : parsed;
+        const formatted = JSON.stringify(sorted, null, indent);
+        const minified = JSON.stringify(sorted);
+        const counts = countNodes(sorted);
+        
         const sections = [
           { title: 'Formatted JSON', body: formatted, note: `Valid JSON, ${indent}-space indentation.` },
           { title: 'Minified JSON', body: minified, note: `${minified.length} characters.` },
-          { title: 'Structure Summary', body: `State: valid\nObjects: ${counts.objects}\nArrays: ${counts.arrays}\nKeys: ${counts.keys}\nSorted keys: ${sortKeys ? 'yes' : 'no'}`, note: 'Lightweight structure inspection.' }];
+          { title: 'Structure Summary', body: `State: Valid\nObjects: ${counts.objects}\nArrays: ${counts.arrays}\nKeys: ${counts.keys}\nSorted Keys: ${sortKeys ? 'yes' : 'no'}`, note: 'Lightweight structure inspection.' }
+        ];
+
+        if (fixLogs.length > 0) {
+          sections.push({
+            title: 'Auto-Fix Logs',
+            body: fixLogs.map((log, index) => `${index + 1}. ${log}`).join('\n'),
+            note: 'Notice: JSON fixed automatically to make it valid.'
+          });
+        }
+
         result = formatted;
-        resultHtml = renderSectionSuite('JSON Formatter', sections, 'JSON is parsed locally in your browser. Invalid JSON will show an error instead of breaking the tool.');
-      } catch (e) {
-        const message = (e as Error).message;
+        resultHtml = renderSectionSuite('JSON Formatter', sections, 'JSON is formatted and validated client-side for privacy. No data is sent to the server.');
+      } else {
+        const diagnostics = runDiagnostics(text);
         const sections = [
-          { title: 'Invalid JSON', body: message, note: 'Parser error.' },
-          { title: 'Troubleshooting', body: 'Check for missing commas, trailing commas, unquoted keys, mismatched braces, and strings that are not closed.', note: 'Common JSON fixes.' }];
-        result = `Invalid JSON:\n${message}`;
-        resultHtml = renderSectionSuite('JSON Validation Error', sections, 'The tool keeps working on invalid JSON and shows the parse error for review.');
+          { title: 'Invalid JSON Error', body: parseError, note: 'Standard JSON parser error message.' },
+          { title: 'Syntax Diagnostics', body: diagnostics.map(d => `• ${d}`).join('\n'), note: 'Heuristic checks.' },
+          { title: 'Troubleshooting Advice', body: 'Make sure all keys and string values are wrapped in double quotes (not single quotes).\nRemove trailing commas before closing braces/brackets.\nEnsure all braces and brackets are properly closed.', note: 'Common fixes.' }
+        ];
+
+        result = `Invalid JSON:\n${parseError}\n\nDiagnostics:\n${diagnostics.join('\n')}`;
+        resultHtml = renderSectionSuite('JSON Validation Error', sections, 'The tool keeps working on invalid JSON and provides diagnostics to help you fix it.');
       }
       break;
     }
     case 'coin-flip': {
-      const flips = Array.from({ length: 10 }, () => Math.random() < 0.5 ? 'Heads' : 'Tails');
-      const heads = flips.filter(f => f.includes('Heads')).length;
-      const tails = 10 - heads;
-      result = flips.join('\n') + `\n\nResults: ${heads} Heads, ${tails} Tails`;
+      const count = Math.max(1, Math.min(100, Number(optionValue('coin-count', '10')) || 10));
+      const arr = new Uint8Array(count);
+      crypto.getRandomValues(arr);
+      
+      const flips = Array.from(arr).map(val => (val % 2 === 0) ? 'Heads' : 'Tails');
+      const heads = flips.filter(f => f === 'Heads').length;
+      const tails = count - heads;
+      const headsPercent = ((heads / count) * 100).toFixed(1);
+      const tailsPercent = ((tails / count) * 100).toFixed(1);
+
+      const listStr = flips.map((f, i) => `Flip #${i + 1}: ${f}`).join('\n');
+      
+      const sections = [
+        { title: 'Flip History', body: listStr, note: `${count} secure coin toss(es).` },
+        { 
+          title: 'Statistics Summary', 
+          body: `Total Flips: ${count}\nHeads: ${heads} (${headsPercent}%)\nTails: ${tails} (${tailsPercent}%)`, 
+          note: 'Distribution percentage.' 
+        },
+        {
+          title: 'Visual Distribution',
+          body: `Heads: [${'█'.repeat(Math.round(heads / count * 10))}${'░'.repeat(10 - Math.round(heads / count * 10))}]\nTails: [${'█'.repeat(Math.round(tails / count * 10))}${'░'.repeat(10 - Math.round(tails / count * 10))}]`,
+          note: 'Bar graph representation.'
+        }
+      ];
+
+      result = flips.join('\n');
+      resultHtml = renderSectionSuite('Coin Flip Results', sections, 'Flips are generated locally in your browser using cryptographically secure random values.');
       break;
     }
     case 'dice-roller': {
-      const diceTypes = [4, 6, 8, 10, 12, 20];
-      result = diceTypes.map(d => {
-        const roll = Math.floor(Math.random() * d) + 1;
-        return `D${d}: ${roll}`;
-      }).join('\n') + `\n\nD100: ${Math.floor(Math.random() * 100) + 1}`;
+      const count = Math.max(1, Math.min(50, Number(optionValue('dice-count', '5')) || 5));
+      const sides = Number(optionValue('dice-sides', '6')) || 6;
+      const modifier = Number(optionValue('dice-modifier', '0')) || 0;
+      
+      const rolls: number[] = [];
+      const arr = new Uint32Array(count);
+      crypto.getRandomValues(arr);
+      
+      const limit = Math.floor(4294967296 / sides) * sides;
+      for (let i = 0; i < count; i++) {
+        let randVal = arr[i];
+        while (randVal >= limit) {
+          const tempArr = new Uint32Array(1);
+          crypto.getRandomValues(tempArr);
+          randVal = tempArr[0];
+        }
+        rolls.push((randVal % sides) + 1);
+      }
+
+      const rawSum = rolls.reduce((a, b) => a + b, 0);
+      const total = rawSum + modifier;
+      const avg = (rawSum / count).toFixed(2);
+      const min = Math.min(...rolls);
+      const max = Math.max(...rolls);
+      
+      const notation = `${count}d${sides}${modifier >= 0 ? '+' : ''}${modifier}`;
+      const rollsStr = rolls.map((r, i) => `Die #${i + 1}: ${r}`).join('\n');
+      
+      const sections = [
+        { 
+          title: 'Roll Log', 
+          body: rollsStr, 
+          note: `Individual rolls for ${count}d${sides}.` 
+        },
+        { 
+          title: 'Total & Stats', 
+          body: `Notation: ${notation}\nSum (with modifier): ${total} (Raw Sum: ${rawSum})\nAverage Roll: ${avg}\nMinimum: ${min}\nMaximum: ${max}\nModifier Applied: ${modifier >= 0 ? '+' : ''}${modifier}`,
+          note: 'Standard mathematical results.' 
+        }
+      ];
+
+      if (sides === 6 && count <= 15) {
+        const d6Faces: Record<number, string> = {
+          1: '┌─────────┐\n│         │\n│    ●    │\n│         │\n└─────────┘',
+          2: '┌─────────┐\n│  ●      │\n│         │\n│      ●  │\n└─────────┘',
+          3: '┌─────────┐\n│  ●      │\n│    ●    │\n│      ●  │\n└─────────┘',
+          4: '┌─────────┐\n│  ●   ●  │\n│         │\n│  ●   ●  │\n└─────────┘',
+          5: '┌─────────┐\n│  ●   ●  │\n│    ●    │\n│  ●   ●  │\n└─────────┘',
+          6: '┌─────────┐\n│  ●   ●  │\n│  ●   ●  │\n│  ●   ●  │\n└─────────┘'
+        };
+        const visualDice = rolls.map(r => d6Faces[r] || '').join('\n\n');
+        sections.push({
+          title: 'Visual Dice (D6)',
+          body: visualDice,
+          note: 'ASCII Art representations.'
+        });
+      }
+
+      result = rolls.join(', ') + (modifier !== 0 ? ` (${modifier >= 0 ? '+' : ''}${modifier})` : '') + ` = ${total}`;
+      resultHtml = renderSectionSuite(`Dice Roller - ${notation}`, sections, 'Dice values are rolled locally using cryptographically secure random values.');
       break;
     }
     case 'color-palette-generator': {
