@@ -1389,25 +1389,12 @@ async function generate() {
     }
     case 'reverse-text-generator': {
       if (!text) { result = 'Please enter some text above.'; break; }
-      const flipChars = 'a\u0250b\u0071c\u0254d\u0070e\u01DD' + 'f\u025Fg\u0183h\u0265i\u1D09j\u027Ek\u029El\u006Cm\u026Fn\u0075o\u006Fp\u0064q\u0062r\u0279s\u0073t\u0287u\u006Ev\u028Cw\u028Dx\u0078y\u028Ez\u007A';
-      const flipM = new Map();
-      for (let i = 0; i + 1 < flipChars.length; i += 2) flipM.set(flipChars[i], flipChars[i + 1]);
-      result = `Reversed Characters:\n${text.split('').reverse().join('')}\n\nReversed Words:\n${text.split(' ').reverse().join(' ')}\n\nFlipped (Upside Down):\n${text.toLowerCase().split('').reverse().map(c => flipM.get(c) || c).join('')}`;
+      result = `Reversed Characters:\n${[...text].reverse().join('')}\n\nReversed Words:\n${text.split(/\s+/).reverse().join(' ')}\n\nFlipped (Upside Down):\n${transformUpsideDown(text)}`;
       break;
     }
     case 'unicode-text-generator': {
       if (!text) { result = 'Please enter some text above.'; break; }
-      const monoMap: Record<string, string> = {};
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('').forEach((c, i) => {
-        if (i < 26) monoMap[c] = String.fromCodePoint(0x1D670 + i);
-        else monoMap[c] = String.fromCodePoint(0x1D68A + (i - 26));
-      });
-      const dsMap: Record<string, string> = {};
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('').forEach((c, i) => {
-        if (i < 26) dsMap[c] = String.fromCodePoint(0x1D538 + i);
-        else dsMap[c] = String.fromCodePoint(0x1D552 + (i - 26));
-      });
-      result = `Bold:\n${toUnicode(text, boldMap)}\n\nCursive:\n${toUnicode(text, cursiveMap)}\n\nMonospace:\n${toUnicode(text, monoMap)}\n\nDouble-Struck:\n${toUnicode(text, dsMap)}\n\nCircled:\n${text.split('').map(c => { const code = c.charCodeAt(0); if (code >= 65 && code <= 90) return String.fromCodePoint(0x24B6 + code - 65); if (code >= 97 && code <= 122) return String.fromCodePoint(0x24D0 + code - 97); return c; }).join('')}\n\nFullwidth:\n${text.split('').map(c => { const code = c.charCodeAt(0); if (code >= 33 && code <= 126) return String.fromCodePoint(code + 0xFEE0); if (c === ' ') return '\u3000'; return c; }).join('')}`;
+      result = `Bold:\n${toUnicode(text, boldMap)}\n\nCursive:\n${toUnicode(text, cursiveMap)}\n\nMonospace:\n${toUnicode(text, monospaceUnicodeMap)}\n\nDouble-Struck:\n${toUnicode(text, doubleStruckUnicodeMap)}\n\nCircled:\n${transformCircled(text)}\n\nFullwidth:\n${transformFullwidth(text)}`;
       break;
     }
     case 'twitter-bio-generator': {
