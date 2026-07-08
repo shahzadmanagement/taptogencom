@@ -4049,7 +4049,38 @@ function generateFantasyMap(scope: string, bias: string, density: string, tone: 
   return { blueprint, html };
 }
 
+const undoStack: string[] = [];
+const redoStack: string[] = [];
+let lastValue = '';
+
+function updateUndoRedoButtons() {
+  const undoBtn = document.getElementById('undo-btn') as HTMLButtonElement | null;
+  const redoBtn = document.getElementById('redo-btn') as HTMLButtonElement | null;
+  if (undoBtn) {
+    undoBtn.disabled = undoStack.length === 0;
+    undoBtn.style.opacity = undoStack.length === 0 ? '0.5' : '1';
+  }
+  if (redoBtn) {
+    redoBtn.disabled = redoStack.length === 0;
+    redoBtn.style.opacity = redoStack.length === 0 ? '0.5' : '1';
+  }
+}
+
 async function generate() {
+  if (output) {
+    output.classList.add('loading');
+  }
+  
+  if (input) {
+    const rawVal = input.value;
+    if (rawVal !== lastValue) {
+      undoStack.push(lastValue);
+      redoStack.length = 0;
+      lastValue = rawVal;
+      updateUndoRedoButtons();
+    }
+  }
+
   const text = input.value.trim();
   let result = '';
   let resultHtml = '';
@@ -11626,11 +11657,22 @@ async function generate() {
     }
 
   renderPremiumOutput(result, resultHtml);
+  if (output) {
+    output.classList.remove('loading');
+  }
 }
 
 generateBtn?.addEventListener('click', generate);
 resetBtn?.addEventListener('click', () => {
-  input.value = '';
+  if (input) {
+    if (input.value !== '') {
+      undoStack.push(input.value);
+      redoStack.length = 0;
+      lastValue = '';
+      updateUndoRedoButtons();
+    }
+    input.value = '';
+  }
   output.innerHTML = 'Your generated results will appear here.';
   delete output.dataset.copyText;
   output.classList.add('empty');
@@ -11658,6 +11700,80 @@ regenBtn?.addEventListener('click', generate);
 // Auto-generate when options change
 document.querySelectorAll('.tool-select, .tool-number, .tool-checkbox').forEach(el => {
   el.addEventListener('change', generate);
+});
+
+// Undo, Redo and Share handlers
+const undoBtn = document.getElementById('undo-btn') as HTMLButtonElement | null;
+const redoBtn = document.getElementById('redo-btn') as HTMLButtonElement | null;
+const shareBtn = document.getElementById('share-btn');
+
+if (input) {
+  // Capture the text input history
+  input.addEventListener('focus', () => {
+    lastValue = input.value;
+  });
+  
+  let inputTimeout: any;
+  input.addEventListener('input', () => {
+    clearTimeout(inputTimeout);
+    inputTimeout = setTimeout(() => {
+      if (input.value !== lastValue) {
+        undoStack.push(lastValue);
+        redoStack.length = 0; // clear redo on new input
+        lastValue = input.value;
+        updateUndoRedoButtons();
+      }
+    }, 500);
+  });
+}
+
+undoBtn?.addEventListener('click', () => {
+  if (undoStack.length > 0) {
+    const val = undoStack.pop()!;
+    redoStack.push(input.value);
+    input.value = val;
+    lastValue = val;
+    generate();
+    
+    const prefix = toolSlug.split('-')[0];
+    const extensionsContainer = document.getElementById(`${prefix}-extensions-container`);
+    const searchContainer = document.getElementById('style-search-container');
+    if (searchContainer) searchContainer.style.display = val ? 'block' : 'none';
+    if (extensionsContainer) extensionsContainer.style.display = val ? 'block' : 'none';
+    updateUndoRedoButtons();
+  }
+});
+
+redoBtn?.addEventListener('click', () => {
+  if (redoStack.length > 0) {
+    const val = redoStack.pop()!;
+    undoStack.push(input.value);
+    input.value = val;
+    lastValue = val;
+    generate();
+    
+    const prefix = toolSlug.split('-')[0];
+    const extensionsContainer = document.getElementById(`${prefix}-extensions-container`);
+    const searchContainer = document.getElementById('style-search-container');
+    if (searchContainer) searchContainer.style.display = val ? 'block' : 'none';
+    if (extensionsContainer) extensionsContainer.style.display = val ? 'block' : 'none';
+    updateUndoRedoButtons();
+  }
+});
+
+shareBtn?.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(window.location.href);
+    const origText = shareBtn.innerHTML;
+    shareBtn.innerHTML = '✅ Copied Link!';
+    shareBtn.classList.add('copied');
+    setTimeout(() => {
+      shareBtn.innerHTML = origText;
+      shareBtn.classList.remove('copied');
+    }, 2000);
+  } catch (err) {
+    console.error('Failed to copy link: ', err);
+  }
 });
 
 // Dynamic configuration-driven workspace extensions loader
