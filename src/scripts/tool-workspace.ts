@@ -1112,38 +1112,101 @@ async function generate() {
       const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       const numbers = '0123456789';
       const symbols = '!@#$%^&*()_+-=';
-      const words = ['river', 'signal', 'orbit', 'copper', 'bright', 'forest', 'pixel', 'harbor', 'lunar', 'matrix', 'summit', 'velvet', 'anchor', 'ember'];
+      const words = [
+        'river', 'signal', 'orbit', 'copper', 'bright', 'forest', 'pixel', 'harbor', 'lunar', 'matrix',
+        'summit', 'velvet', 'anchor', 'ember', 'shadow', 'canyon', 'cradle', 'plasma', 'meteor', 'nebula',
+        'glacier', 'beacon', 'island', 'jungle', 'desert', 'safari', 'planet', 'cosmic', 'galaxy', 'quantum',
+        'cipher', 'vector', 'vertex', 'aurora', 'vortex', 'cobalt', 'bronze', 'silver', 'golden', 'indigo',
+        'violet', 'scarlet', 'crimson', 'emerald', 'sapphire', 'crystal', 'quartz', 'marble', 'granite', 'timber',
+        'bamboo', 'autumn', 'spring', 'summer', 'winter', 'breeze', 'monsoon', 'typhoon', 'tempest', 'zenith',
+        'pinnacle', 'canopy', 'meadow', 'prairie', 'sierra', 'valley', 'cavern', 'geyser', 'lagoon', 'marina',
+        'wharf', 'pillar', 'tower', 'castle', 'temple', 'bridge', 'portal', 'mirror', 'prisma', 'shield',
+        'helmet', 'armour', 'sabre', 'quiver', 'compass', 'rudder', 'lantern', 'candle', 'fossil', 'relic',
+        'scroll', 'parchment', 'feather', 'falcon', 'osprey', 'condor', 'eagle', 'phoenix', 'dragon', 'griffin',
+        'sphinx', 'leopard', 'panther', 'jaguar', 'cheetah', 'cougar', 'badger', 'otter', 'beaver', 'dolphin',
+        'narwhal'
+      ];
       const length = Math.max(4, Math.min(64, Number(optionValue('password-length', '16')) || 16));
       const mode = optionValue('password-mode', 'strong');
       const useUpper = optionValue('pw-uppercase', 'true') === 'true';
       const useLower = optionValue('pw-lowercase', 'true') === 'true';
       const useNumbers = optionValue('pw-numbers', 'true') === 'true';
       const useSymbols = optionValue('pw-symbols', 'true') === 'true';
-      const randomInt = (max: number) => crypto.getRandomValues(new Uint32Array(1))[0] % max;
+
+      // Rejection sampling to completely eliminate modulo bias
+      const randomInt = (max: number): number => {
+        const limit = Math.floor(4294967296 / max) * max;
+        const arr = new Uint32Array(1);
+        let val = 0;
+        do {
+          crypto.getRandomValues(arr);
+          val = arr[0];
+        } while (val >= limit);
+        return val % max;
+      };
+
       const pick = (pool: string) => pool[randomInt(pool.length)];
-      const shuffle = (chars: string[]) => chars.map(char => ({ char, sort: randomInt(1000000) })).sort((a, b) => a.sort - b.sort).map(item => item.char).join('');
+
+      // Unbiased Fisher-Yates shuffle
+      const shuffle = (chars: string[]) => {
+        for (let i = chars.length - 1; i > 0; i--) {
+          const j = randomInt(i + 1);
+          const temp = chars[i];
+          chars[i] = chars[j];
+          chars[j] = temp;
+        }
+        return chars.join('');
+      };
+
       const makeStrong = () => {
+        const hasFlags = useLower || useUpper || useNumbers || useSymbols;
+        const activeLower = useLower || !hasFlags;
         const required = [
-          ...(useLower ? [pick(lower)] : []),
+          ...(activeLower ? [pick(lower)] : []),
           ...(useUpper ? [pick(upper)] : []),
           ...(useNumbers ? [pick(numbers)] : []),
-          ...(useSymbols ? [pick(symbols)] : [])];
+          ...(useSymbols ? [pick(symbols)] : [])
+        ];
         const pool = [
-          ...(useLower ? [lower] : []),
+          ...(activeLower ? [lower] : []),
           ...(useUpper ? [upper] : []),
           ...(useNumbers ? [numbers] : []),
-          ...(useSymbols ? [symbols] : [])].join('') || lower + upper + numbers + symbols;
+          ...(useSymbols ? [symbols] : [])
+        ].join('');
         const remaining = Array.from({ length: Math.max(0, length - required.length) }, () => pick(pool));
         return shuffle([...required, ...remaining]);
       };
+
       const makePin = () => Array.from({ length: Math.max(4, Math.min(12, length)) }, () => pick(numbers)).join('');
-      const makePassphrase = () => Array.from({ length: 4 }, () => titleCase(randomFrom(words))).join('-') + '-' + pick(numbers) + pick(numbers);
-      const makeMemorable = () => titleCase(randomFrom(words)) + titleCase(randomFrom(words)) + pick(numbers) + pick(numbers) + (useSymbols ? pick('!?#') : '');
+
+      const makePassphrase = () => {
+        const sep = useSymbols ? '-' : '';
+        const formattedWords = Array.from({ length: 4 }, () => {
+          const w = randomFrom(words);
+          if (useUpper && useLower) return titleCase(w);
+          if (useUpper) return w.toUpperCase();
+          return w.toLowerCase();
+        });
+        const suffix = useNumbers ? sep + pick(numbers) + pick(numbers) : '';
+        return formattedWords.join(sep) + suffix;
+      };
+
+      const makeMemorable = () => {
+        const w1 = randomFrom(words);
+        const w2 = randomFrom(words);
+        const word1 = useUpper && useLower ? titleCase(w1) : useUpper ? w1.toUpperCase() : w1.toLowerCase();
+        const word2 = useUpper && useLower ? titleCase(w2) : useUpper ? w2.toUpperCase() : w2.toLowerCase();
+        const suffixNum = useNumbers ? pick(numbers) + pick(numbers) : '';
+        const suffixSym = useSymbols ? pick('!?#@$%&*') : '';
+        return word1 + word2 + suffixNum + suffixSym;
+      };
+
       const makers: Record<string, () => string> = {
         strong: makeStrong,
         memorable: makeMemorable,
         passphrase: makePassphrase,
-        pin: makePin};
+        pin: makePin
+      };
       const selectedMaker = makers[mode] || makeStrong;
       const sections = Array.from({ length: 6 }, (_, index) => {
         const value = selectedMaker();
