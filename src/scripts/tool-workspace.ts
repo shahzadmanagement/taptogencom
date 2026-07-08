@@ -1346,7 +1346,12 @@ async function generate() {
       'abcdefghijklmnopqrstuvwxyz'.split('').forEach((c, i) => {
         supMap[c] = superscriptLetters[i];
       });
-      result = `Superscript:\n${text.toLowerCase().split('').map(c => supMap[c] || c).join('')}\n\nSmall Caps:\n${text.toLowerCase().split('').map(c => smallCapsMap[c] || c).join('')}`;
+      const subMap: Record<string, string> = {
+        a: 'ₐ', e: 'ₑ', h: 'ₕ', i: 'ᵢ', j: 'ⱼ', k: 'ₖ', l: 'ₗ', m: 'ₘ', n: 'ₙ', o: 'ₒ', p: 'ₚ', r: 'ᵣ', s: 'ₛ', t: 'ₜ', u: 'ᵤ', v: 'ᵥ', x: 'ₓ',
+        '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉'
+      };
+      const subText = text.toLowerCase().split('').map(c => subMap[c] || c).join('');
+      result = `Superscript:\n${text.toLowerCase().split('').map(c => supMap[c] || c).join('')}\n\nSubscript:\n${subText}\n\nSmall Caps:\n${text.toLowerCase().split('').map(c => smallCapsMap[c] || c).join('')}`;
       break;
     }
     case 'italic-text-generator': {
