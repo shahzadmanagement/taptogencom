@@ -36,6 +36,228 @@ function toUnicode(text: string, map: Record<string, string>): string {
 }
 
 // Name banks
+function randomFrom<T>(arr: T[]): T { return arr[Math.floor(Math.random() * arr.length)]; }
+function generateMultiple(fn: () => string, count: number): string { return Array.from({ length: count }, fn).join('\n'); }
+function escapeHtml(value: string): string {
+  return value.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char] || char));
+}
+const superscriptLetters = ['\u1d43','\u1d47','\u1d9c','\u1d48','\u1d49','\u1da0','\u1d4d','\u02b0','\u2071','\u02b2','\u1d4f','\u02e1','\u1d50','\u207f','\u1d52','\u1d56','q','\u02b3','\u02e2','\u1d57','\u1d58','\u1d5b','\u02b7','\u02e3','\u02b8','\u1dbb'];
+const smallCapsMap: Record<string, string> = Object.fromEntries('abcdefghijklmnopqrstuvwxyz'.split('').map(c => [c, c.toUpperCase()]));
+
+function splitBlocks(raw: string): string[] {
+  return raw.split(/\n\s*\n|---+/).map(part => part.trim()).filter(Boolean);
+}
+
+function lineItems(raw: string): string[] {
+  return raw.split(/\n|,\s+/).map(item => item.trim()).filter(Boolean);
+}
+
+function labelForItem(index: number): string {
+  const labels = toolType === 'random-combo'
+    ? ['Name idea', 'Creative', 'Short', 'Brandable', 'Memorable', 'Fresh']
+    : ['Result', 'Variation', 'Option', 'Idea'];
+  return labels[index % labels.length];
+}
+
+function renderResultCard(text: string, label: string): string {
+  return '<article class="result-card"><div class="result-card-top"><span class="result-label">' + escapeHtml(label) + '</span><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(text) + '">Copy</button></div><div class="result-text">' + escapeHtml(text) + '</div></article>';
+}
+
+function renderSections(raw: string): string {
+  const blocks = splitBlocks(raw);
+  if (blocks.length <= 1) return renderRaw(raw);
+  return '<div class="result-section-list">' + blocks.map((block, index) => {
+    const lines = block.split('\n').map(line => line.trim()).filter(Boolean);
+    const heading = lines.length > 1 && lines[0].length < 80 ? lines.shift() || 'Section' : 'Section ' + (index + 1);
+    const body = lines.length ? lines.join('\n') : block;
+    return '<section class="result-section"><div class="result-card-top"><span class="result-label">' + escapeHtml(heading.replace(/:$/, '')) + '</span><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(body) + '">Copy</button></div><pre>' + escapeHtml(body) + '</pre></section>';
+  }).join('') + '</div>';
+}
+
+function renderGroupedTags(raw: string): string {
+  const tags = lineItems(raw).filter(item => item.startsWith('#') || item.length > 0);
+  if (tags.length < 4) return renderList(raw);
+  const groups = [
+    ['Primary Tags', tags.slice(0, 10)],
+    ['Support Tags', tags.slice(10, 20)],
+    ['Extra Tags', tags.slice(20)]
+  ].filter(([ items]) => (items as string[]).length > 0) as [string, string[]][];
+  return '<div class="result-group-list">' + groups.map(([title, items]) => {
+    const groupText = items.join(' ');
+    return '<section class="result-group"><div class="result-card-top"><span class="result-label">' + escapeHtml(title) + '</span><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(groupText) + '">Copy Group</button></div><div class="tag-chip-list">' + items.map(item => '<span class="tag-chip">' + escapeHtml(item) + '</span>').join('') + '</div></section>';
+  }).join('') + '</div>';
+}
+
+function renderList(raw: string): string {
+  const items = lineItems(raw);
+  if (items.length <= 1) return renderRaw(raw);
+  return '<div class="result-card-grid">' + items.slice(0, 40).map((item, index) => renderResultCard(item, labelForItem(index))).join('') + '</div>';
+}
+
+function renderCards(raw: string): string {
+  const blocks = splitBlocks(raw);
+  if (blocks.length <= 1) return renderList(raw);
+  return '<div class="result-card-grid">' + blocks.map((block, index) => renderResultCard(block, 'Variation ' + (index + 1))).join('') + '</div>';
+}
+
+function renderBusinessCards(raw: string): string {
+  const items = lineItems(raw);
+  if (items.length <= 1) return renderSections(raw);
+  return '<div class="result-card-grid">' + items.slice(0, 40).map((item, index) => {
+    const safeItem = escapeHtml(item);
+    return '<article class="result-card result-card-business"><div class="result-card-top"><span class="result-label">Business idea ' + (index + 1) + '</span><button class="copy-btn result-copy" type="button" data-copy="' + safeItem + '">Copy</button></div><div class="result-text">' + safeItem + '</div><p class="result-note">Use as a starting point, then check domain, trademark, and audience fit before publishing.</p></article>';
+  }).join('') + '</div>';
+}
+
+function renderRaw(raw: string): string {
+  return '<div class="raw-result"><pre>' + escapeHtml(raw) + '</pre><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(raw) + '">Copy Result</button></div>';
+}
+
+function slugWords(value: string): string[] {
+  return value.toLowerCase().replace(/[^a-z0-9\s-]/g, ' ').split(/\s+/).filter(Boolean);
+}
+
+function titleCase(value: string): string {
+  return value.split(/\s+/).filter(Boolean).map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+}
+
+function compactSeed(value: string, fallback = 'Nova'): string {
+  const words = slugWords(value || fallback);
+  const seed = words.length ? words.join(' ') : fallback;
+  return titleCase(seed);
+}
+
+function toSafeHandle(value: string, fallback = 'player'): string {
+  return (slugWords(value || fallback).join('') || fallback).slice(0, 22);
+}
+
+function unicodeMap(upperStart: number, lowerStart: number, digitStart?: number): Record<string, string> {
+  const map: Record<string, string> = {};
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach((c, i) => { map[c] = String.fromCodePoint(upperStart + i); });
+  'abcdefghijklmnopqrstuvwxyz'.split('').forEach((c, i) => { map[c] = String.fromCodePoint(lowerStart + i); });
+  if (digitStart !== undefined) '0123456789'.split('').forEach((c, i) => { map[c] = String.fromCodePoint(digitStart + i); });
+  return map;
+}
+
+const italicUnicodeMap = unicodeMap(0x1D434, 0x1D44E);
+const boldItalicUnicodeMap = unicodeMap(0x1D468, 0x1D482);
+const gothicUnicodeMap = unicodeMap(0x1D504, 0x1D51E);
+const monospaceUnicodeMap = unicodeMap(0x1D670, 0x1D68A, 0x1D7F6);
+const doubleStruckUnicodeMap = {
+  ...unicodeMap(0x1D538, 0x1D552, 0x1D7D8),
+  C: 'ℂ',
+  H: 'ℍ',
+  N: 'ℕ',
+  P: 'ℙ',
+  Q: 'ℚ',
+  R: 'ℝ',
+  Z: 'ℤ'
+};
+const smallCapsUnicodeMap: Record<string, string> = Object.fromEntries('abcdefghijklmnopqrstuvwxyz'.split('').map(char => [char, char.toUpperCase()]));
+const upsideDownMap: Record<string, string> = {
+  a: '\u0250', b: 'q', c: '\u0254', d: 'p', e: '\u01dd', f: '\u025f', g: '\u0183', h: '\u0265', i: '\u1d09', j: '\u027e', k: '\u029e', l: 'l', m: '\u026f',
+  n: 'u', o: 'o', p: 'd', q: 'b', r: '\u0279', s: 's', t: '\u0287', u: 'n', v: '\u028c', w: '\u028d', x: 'x', y: '\u028e', z: 'z',
+  A: '\u2200', B: 'B', C: '\u0186', D: 'D', E: '\u018e', F: '\u2132', G: '\u05e4', H: 'H', I: 'I', J: '\u017f', K: 'K', L: '\u02e5', M: 'W',
+  N: 'N', O: 'O', P: '\u0500', Q: 'Q', R: 'R', S: 'S', T: '\u22a5', U: '\u2229', V: '\u039b', W: 'M', X: 'X', Y: '\u2144', Z: 'Z',
+  '1': '\u0196', '2': '\u1105', '3': '\u0190', '4': '\u3123', '5': '\u03db', '6': '9', '7': '\u3125', '8': '8', '9': '6', '0': '0',
+  '.': '\u02d9', ',': "'", "'": ',', '"': ',', '!': '\u00a1', '?': '\u00bf', '(': ')', ')': '('
+};
+
+function transformSmallCaps(value: string): string {
+  return value.toLowerCase().split('').map(c => smallCapsUnicodeMap[c] || c).join('');
+}
+
+function transformCircled(value: string): string {
+  return value.split('').map(c => {
+    const code = c.charCodeAt(0);
+    if (code >= 65 && code <= 90) return String.fromCodePoint(0x24B6 + code - 65);
+    if (code >= 97 && code <= 122) return String.fromCodePoint(0x24D0 + code - 97);
+    if (code >= 49 && code <= 57) return String.fromCodePoint(0x2460 + code - 49);
+    if (c === '0') return String.fromCodePoint(0x24EA);
+    return c;
+  }).join('');
+}
+
+function transformSquared(value: string): string {
+  return value.toUpperCase().split('').map(c => {
+    const code = c.charCodeAt(0);
+    if (code >= 65 && code <= 90) return String.fromCodePoint(0x1F130 + code - 65);
+    return c;
+  }).join('');
+}
+
+function transformUpsideDown(value: string): string {
+  return value.split('').reverse().map(c => upsideDownMap[c] || c).join('');
+}
+
+function transformFullwidth(value: string): string {
+  return value.split('').map(c => {
+    const code = c.charCodeAt(0);
+    if (code >= 33 && code <= 126) return String.fromCodePoint(code + 0xFEE0);
+    if (c === ' ') return String.fromCodePoint(0x3000);
+    return c;
+  }).join('');
+}
+
+function renderStyleMatrix(styles: { name: string; preview: string; use: string; note: string; isCompat?: boolean }[], extraNote = ''): string {
+  return '<div class="intent-style-matrix">' + styles.map(style => {
+    const compatBadge = style.isCompat === true
+      ? '<span class="compat-badge high" style="background: rgba(16,185,129,0.12); color: #10b981; border: 1px solid rgba(16,185,129,0.2); padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; white-space: nowrap;">High Compat</span>'
+      : style.isCompat === false
+      ? '<span class="compat-badge low" style="background: rgba(245,158,11,0.12); color: #f59e0b; border: 1px solid rgba(245,158,11,0.2); padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; white-space: nowrap;">Partial Compat</span>'
+      : '';
+    return '<article class="intent-style-card" data-style-name="' + escapeHtml(style.name) + '"><div class="result-card-top"><div><div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;"><span class="result-label">' + escapeHtml(style.name) + '</span>' + compatBadge + '</div><p class="intent-mini-note">' + escapeHtml(style.use) + '</p></div><div style="display: flex; align-items: center; gap: 6px;"><button class="fav-btn" type="button" data-fav-style="' + escapeHtml(style.name) + '" aria-label="Favorite style">☆</button><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(style.preview) + '">Copy</button></div></div><div class="intent-preview-text">' + escapeHtml(style.preview) + '</div><p class="result-note">' + escapeHtml(style.note) + '</p></article>';
+  }).join('') + (extraNote ? '<p class="intent-output-note">' + escapeHtml(extraNote) + '</p>' : '') + '</div>';
+}
+
+function renderGroupedIdeas(groups: { title: string; note: string; items: { name: string; reason: string; extra?: string }[] }[], footer = ''): string {
+  const allText = groups.map(group => group.title + '\n' + group.items.map(item => item.name + (item.extra ? ' - ' + item.extra : '')).join('\n')).join('\n\n');
+  return '<div class="intent-grouped-output"><div class="intent-suite-heading"><div><span class="result-label">Premium result set</span>' + (footer ? '<p class="intent-mini-note">' + escapeHtml(footer) + '</p>' : '') + '</div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(allText) + '">Copy All</button></div>' + groups.map(group => {
+    const copyText = group.items.map(item => item.name + (item.extra ? ' - ' + item.extra : '')).join('\n');
+    return '<section class="intent-result-group"><div class="result-card-top"><div><span class="result-label">' + escapeHtml(group.title) + '</span><p class="intent-mini-note">' + escapeHtml(group.note) + '</p></div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(copyText) + '">Copy Group</button></div><div class="intent-idea-grid">' + group.items.map(item => '<article class="intent-idea-card"><div class="intent-idea-name">' + escapeHtml(item.name) + '</div><p>' + escapeHtml(item.reason) + '</p>' + (item.extra ? '<p class="intent-card-extra">' + escapeHtml(item.extra) + '</p>' : '') + '<button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(item.name) + '">Copy</button></article>').join('') + '</div></section>';
+  }).join('') + '</div>';
+}
+
+function renderBioVariations(groups: { title: string; text: string; note: string }[]): string {
+  return '<div class="intent-card-list">' + groups.map(group => '<article class="intent-wide-card"><div class="result-card-top"><div><span class="result-label">' + escapeHtml(group.title) + '</span><p class="intent-mini-note">' + escapeHtml(group.note) + '</p></div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(group.text) + '">Copy</button></div><div class="result-text">' + escapeHtml(group.text) + '</div><p class="result-note">' + group.text.length + ' characters</p></article>').join('') + '</div>';
+}
+
+function renderSectionSuite(title: string, sections: { title: string; body: string; note?: string }[], footer = ''): string {
+  const allText = title + '\n\n' + sections.map(section => section.title + '\n' + section.body).join('\n\n');
+  return '<div class="intent-section-suite"><div class="intent-suite-heading"><div><span class="result-label">' + escapeHtml(title) + '</span>' + (footer ? '<p class="intent-mini-note">' + escapeHtml(footer) + '</p>' : '') + '</div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(allText) + '">Copy All</button></div>' + sections.map(section => '<article class="intent-wide-card"><div class="result-card-top"><div><span class="result-label">' + escapeHtml(section.title) + '</span>' + (section.note ? '<p class="intent-mini-note">' + escapeHtml(section.note) + '</p>' : '') + '</div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(section.body) + '">Copy Section</button></div><pre class="intent-section-pre">' + escapeHtml(section.body) + '</pre></article>').join('') + '</div>';
+}
+
+function renderHeadlineGroups(groups: { title: string; note: string; items?: string[]; text?: string }[], footer = ''): string {
+  const allText = groups.map(group => group.title + '\n' + (group.items ?? (group.text ? [group.text] : [])).join('\n')).join('\n\n');
+  return '<div class="intent-grouped-output"><div class="intent-suite-heading"><div><span class="result-label">Premium result set</span>' + (footer ? '<p class="intent-mini-note">' + escapeHtml(footer) + '</p>' : '') + '</div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(allText) + '">Copy All</button></div>' + groups.map(group => {
+    const items = group.items ?? (group.text ? [group.text] : []);
+    const groupText = items.join('\n');
+    return '<section class="intent-result-group"><div class="result-card-top"><div><span class="result-label">' + escapeHtml(group.title) + '</span><p class="intent-mini-note">' + escapeHtml(group.note) + '</p></div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(groupText) + '">Copy Group</button></div><div class="intent-idea-grid">' + items.map(item => '<article class="intent-idea-card"><div class="intent-idea-name">' + escapeHtml(item) + '</div><p>' + item.length + ' characters</p><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(item) + '">Copy</button></article>').join('') + '</div></section>';
+  }).join('') + '</div>';
+}
+
+function filterGroupsByOption<T extends { title: string }>(groups: T[], selected: string): T[] {
+  if (!selected || selected === 'all') return groups;
+  const wanted = selected.toLowerCase();
+  const filtered = groups.filter(group => slugWords(group.title).join('-') === wanted || slugWords(group.title).join('-').includes(wanted));
+  return filtered.length ? filtered : groups;
+}
+
+type Pass19NameGroup = {
+  title: string;
+  note: string;
+  words: string[];
+  nouns: string[];
+  use: string;
+};
+
+type Pass19NameConfig = {
+  title: string;
+  kind: 'person' | 'place' | 'group' | 'creature' | 'stage';
+  groups: Pass19NameGroup[];
+  footer: string;
+};
+
 function generateFantasyMap(scope: string, bias: string, density: string, tone: string, includeLegend: boolean, detailLevel: string, seedText: string) {
   const regionRoots = ['Alder', 'Bracken', 'Cairn', 'Eld', 'Fallow', 'Glimmer', 'Harrow', 'Ironglen', 'Lark', 'Mire', 'Northmere', 'Oaken', 'Rime', 'Silver', 'Thorn', 'Westfall'];
   const regionEnds = ['reach', 'vale', 'march', 'moor', 'crown', 'fen', 'coast', 'wold', 'mere', 'barrow', 'hearth', 'wilds'];
@@ -7794,6 +8016,7 @@ document.querySelectorAll('.example-chip').forEach(chip => {
     input.value = value;
     generate();
   });
+});
 });
 copyBtn?.addEventListener('click', async () => copyText(output.dataset.copyText || output.textContent || '', copyBtn as HTMLElement));
 output.addEventListener('click', async event => {
