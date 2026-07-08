@@ -141,7 +141,14 @@ function unicodeMap(upperStart: number, lowerStart: number, digitStart?: number)
 
 const italicUnicodeMap = unicodeMap(0x1D434, 0x1D44E);
 const boldItalicUnicodeMap = unicodeMap(0x1D468, 0x1D482);
-const gothicUnicodeMap = unicodeMap(0x1D504, 0x1D51E);
+const gothicUnicodeMap = {
+  ...unicodeMap(0x1D504, 0x1D51E),
+  C: 'ℭ',
+  H: 'ℌ',
+  I: 'ℑ',
+  R: 'ℜ',
+  Z: 'ℨ'
+};
 const monospaceUnicodeMap = unicodeMap(0x1D670, 0x1D68A, 0x1D7F6);
 const doubleStruckUnicodeMap = {
   ...unicodeMap(0x1D538, 0x1D552, 0x1D7D8),
@@ -164,11 +171,11 @@ const upsideDownMap: Record<string, string> = {
 };
 
 function transformSmallCaps(value: string): string {
-  return value.toLowerCase().split('').map(c => smallCapsUnicodeMap[c] || c).join('');
+  return [...value.toLowerCase()].map(c => smallCapsUnicodeMap[c] || c).join('');
 }
 
 function transformCircled(value: string): string {
-  return value.split('').map(c => {
+  return [...value].map(c => {
     const code = c.charCodeAt(0);
     if (code >= 65 && code <= 90) return String.fromCodePoint(0x24B6 + code - 65);
     if (code >= 97 && code <= 122) return String.fromCodePoint(0x24D0 + code - 97);
@@ -179,7 +186,7 @@ function transformCircled(value: string): string {
 }
 
 function transformSquared(value: string): string {
-  return value.toUpperCase().split('').map(c => {
+  return [...value.toUpperCase()].map(c => {
     const code = c.charCodeAt(0);
     if (code >= 65 && code <= 90) return String.fromCodePoint(0x1F130 + code - 65);
     return c;
@@ -187,11 +194,11 @@ function transformSquared(value: string): string {
 }
 
 function transformUpsideDown(value: string): string {
-  return value.split('').reverse().map(c => upsideDownMap[c] || c).join('');
+  return [...value].reverse().map(c => upsideDownMap[c] || c).join('');
 }
 
 function transformFullwidth(value: string): string {
-  return value.split('').map(c => {
+  return [...value].map(c => {
     const code = c.charCodeAt(0);
     if (code >= 33 && code <= 126) return String.fromCodePoint(code + 0xFEE0);
     if (c === ' ') return String.fromCodePoint(0x3000);
@@ -1365,14 +1372,14 @@ async function generate() {
       break;
     }
     case 'strikethrough-text-generator':
-      result = text ? text.split('').map(c => c + '\u0336').join('') : 'Please enter some text above.';
+      result = text ? [...text].map(c => c + '\u0336').join('') : 'Please enter some text above.';
       break;
     case 'underline-text-generator':
-      result = text ? text.split('').map(c => c + '\u0332').join('') : 'Please enter some text above.';
+      result = text ? [...text].map(c => c + '\u0332').join('') : 'Please enter some text above.';
       break;
     case 'vaporwave-text-generator': {
       if (!text) { result = 'Please enter some text above.'; break; }
-      result = text.split('').map(c => {
+      result = [...text].map(c => {
         const code = c.charCodeAt(0);
         if (code >= 33 && code <= 126) return String.fromCodePoint(code + 0xFEE0);
         if (c === ' ') return '\u3000';
