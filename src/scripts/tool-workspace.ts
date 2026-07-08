@@ -1407,15 +1407,42 @@ async function generate() {
     }
     case 'text-case-converter': {
       if (!text) { result = 'Please enter some text above.'; break; }
-      const words = text.trim().split(/[\s_-]+/).filter(Boolean);
-      const capWord = (word: string) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      
+      // Smart word splitter that handles camelCase, PascalCase, snake_case, kebab-case, and spaces
+      const splitWords = (str: string): string[] => {
+        const adjusted = str
+          .replace(/([a-z])([A-Z])/g, '$1 $2')
+          .replace(/([A-Z])([A-Z][a-z])/g, '$1 $2');
+        return adjusted.trim().split(/[\s_-]+/).filter(Boolean);
+      };
+      
+      const words = splitWords(text);
+      const capWord = (word: string) => word ? word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() : '';
       const title = words.map(capWord).join(' ');
       const sentence = text.trim().toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, match => match.toUpperCase());
       const camel = words.map((word, index) => index === 0 ? word.toLowerCase() : capWord(word)).join('');
       const pascal = words.map(capWord).join('');
       const snake = words.map(word => word.toLowerCase()).join('_');
       const kebab = words.map(word => word.toLowerCase()).join('-');
-      const alternating = text.split('').map((char, index) => index % 2 === 0 ? char.toLowerCase() : char.toUpperCase()).join('');
+      const constant = words.map(word => word.toUpperCase()).join('_');
+      
+      // Surrogate-safe alternating case aligning parity count to letters only
+      let letterIndex = 0;
+      const alternating = [...text].map(char => {
+        if (/[a-zA-Z]/.test(char)) {
+          const res = letterIndex % 2 === 0 ? char.toLowerCase() : char.toUpperCase();
+          letterIndex++;
+          return res;
+        }
+        return char;
+      }).join('');
+
+      // Toggle case swapping uppercase and lowercase chars
+      const toggle = [...text].map(char => {
+        if (char === char.toUpperCase()) return char.toLowerCase();
+        return char.toUpperCase();
+      }).join('');
+
       const sections = [
         { title: 'Uppercase', body: text.toUpperCase(), note: 'All letters converted to uppercase.' },
         { title: 'Lowercase', body: text.toLowerCase(), note: 'All letters converted to lowercase.' },
@@ -1425,7 +1452,9 @@ async function generate() {
         { title: 'PascalCase', body: pascal, note: 'Developer-friendly class/type style.' },
         { title: 'snake_case', body: snake, note: 'Underscore-separated lowercase.' },
         { title: 'kebab-case', body: kebab, note: 'Hyphen-separated lowercase.' },
-        { title: 'Alternating Case', body: alternating, note: 'Alternating lowercase/uppercase characters.' }];
+        { title: 'CONSTANT_CASE', body: constant, note: 'Uppercase underscore-separated style.' },
+        { title: 'Alternating Case', body: alternating, note: 'Alternating lowercase/uppercase letters only.' },
+        { title: 'Toggle Case', body: toggle, note: 'Swapped uppercase and lowercase letters.' }];
       result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
       resultHtml = renderSectionSuite('Case Conversion Matrix', sections, 'Uses your exact input text as the source. Copy each format individually or copy all.');
       break;
@@ -1474,17 +1503,75 @@ async function generate() {
       break;
     }
     case 'uuid-generator': {
+      const version = optionValue('uuid-version', 'v4');
       const count = Math.max(1, Math.min(50, Number(optionValue('uuid-count', '8')) || 8));
       const caseMode = optionValue('uuid-case', 'lowercase');
       const hyphenMode = optionValue('uuid-hyphens', 'with');
+
+      const generateUUIDv7 = () => {
+        const bytes = new Uint8Array(16);
+        crypto.getRandomValues(bytes);
+        const timestamp = Date.now();
+        bytes[0] = (timestamp / 0x10000000000) & 0xff;
+        bytes[1] = (timestamp / 0x100000000) & 0xff;
+        bytes[2] = (timestamp / 0x1000000) & 0xff;
+        bytes[3] = (timestamp / 0x10000) & 0xff;
+        bytes[4] = (timestamp / 0x100) & 0xff;
+        bytes[5] = timestamp & 0xff;
+        bytes[6] = (bytes[6] & 0x0f) | 0x70; // Set version to 7
+        bytes[8] = (bytes[8] & 0x3f) | 0x80; // Set variant to RFC 4122
+        const hex = Array.from(bytes).map(b => b.toString(16).padStart(2, '0')).join('');
+        return [
+          hex.slice(0, 8),
+          hex.slice(8, 12),
+          hex.slice(12, 16),
+          hex.slice(16, 20),
+          hex.slice(20, 32)
+        ].join('-');
+      };
+
+      if (!(window as any)._uuidV1State) {
+        const nodeId = new Uint8Array(6);
+        crypto.getRandomValues(nodeId);
+        nodeId[0] |= 0x01; // Multicast bit
+        (window as any)._uuidV1State = {
+          clockSeq: Math.floor(Math.random() * 0x3fff),
+          nodeId
+        };
+      }
+      const v1State = (window as any)._uuidV1State;
+
+      const generateUUIDv1 = () => {
+        const intervals = Date.now() * 10000 + 122192928000000000;
+        const timeLow = intervals % 0x100000000;
+        const timeMid = Math.floor(intervals / 0x100000000) % 0x10000;
+        const timeHi = Math.floor(intervals / 0x1000000000000) & 0x0fff;
+
+        const hexTimeLow = timeLow.toString(16).padStart(8, '0');
+        const hexTimeMid = timeMid.toString(16).padStart(4, '0');
+        const hexTimeHi = (timeHi | 0x1000).toString(16).padStart(4, '0'); // v1
+
+        const cSeq = (v1State.clockSeq++) & 0x3fff;
+        const hexClockSeq = (cSeq | 0x8000).toString(16).padStart(4, '0'); // variant 1
+
+        const hexNode = Array.from(v1State.nodeId as Uint8Array).map(b => b.toString(16).padStart(2, '0')).join('');
+        return `${hexTimeLow}-${hexTimeMid}-${hexTimeHi}-${hexClockSeq}-${hexNode}`;
+      };
+
       const formatUuid = (value: string) => {
         let formatted = hyphenMode === 'without' ? value.replace(/-/g, '') : value;
         formatted = caseMode === 'uppercase' ? formatted.toUpperCase() : formatted.toLowerCase();
         return formatted;
       };
-      const items = Array.from({ length: count }, () => formatUuid(crypto.randomUUID()));
+
+      const items = Array.from({ length: count }, () => {
+        if (version === 'v7') return formatUuid(generateUUIDv7());
+        if (version === 'v1') return formatUuid(generateUUIDv1());
+        return formatUuid(crypto.randomUUID());
+      });
+
       result = items.join('\n');
-      resultHtml = renderHeadlineGroups([{ title: 'UUID Results', note: `${count} UUID v4 value(s). Use as identifiers, not secrets.`, items }], 'UUIDs are identifiers. Do not use them as passwords, API secrets, or authentication tokens.');
+      resultHtml = renderHeadlineGroups([{ title: 'UUID Results', note: `${count} UUID ${version.toUpperCase()} value(s). Use as identifiers.`, items }], 'UUIDs are identifiers. Do not use them as passwords, API secrets, or authentication tokens.');
       break;
     }
     case 'random-number-generator': {
@@ -1498,20 +1585,44 @@ async function generate() {
       const decimals = optionValue('random-decimals', 'false') === 'true';
       const values: number[] = [];
       const range = high - low + 1;
-      const target = unique && !decimals ? Math.min(quantity, range) : quantity;
+
+      // Uniqueness target clamping to prevent infinite loops (decimals have 100 intervals per integer step)
+      const maxPossibleUnique = decimals ? Math.floor((high - low) * 100) + 1 : range;
+      const target = unique ? Math.min(quantity, maxPossibleUnique) : quantity;
+
       while (values.length < target) {
-        const value = decimals ? Number((low + Math.random() * (high - low)).toFixed(2)) : Math.floor(Math.random() * range) + low;
-        if (!unique || decimals || !values.includes(value)) values.push(value);
+        let value = 0;
+        if (decimals) {
+          const arr = new Uint32Array(1);
+          crypto.getRandomValues(arr);
+          const val = low + (arr[0] / 4294967295) * (high - low);
+          value = Number(val.toFixed(2));
+        } else {
+          // Rejection sampling for uniform random integer
+          const limit = Math.floor(4294967296 / range) * range;
+          const arr = new Uint32Array(1);
+          let randVal = 0;
+          do {
+            crypto.getRandomValues(arr);
+            randVal = arr[0];
+          } while (randVal >= limit);
+          value = (randVal % range) + low;
+        }
+
+        if (!unique || !values.includes(value)) {
+          values.push(value);
+        }
       }
+
       if (sorted) values.sort((a, b) => a - b);
       const list = values.join('\n');
-      const avg = values.reduce((sum, value) => sum + value, 0) / values.length;
+      const avg = values.reduce((sum, val) => sum + val, 0) / values.length;
       const sections = [
         { title: 'Random Number List', body: list, note: `${values.length} generated number(s).` },
         { title: 'CSV List', body: values.join(', '), note: 'Copy-friendly comma-separated output.' },
-        { title: 'Summary Stats', body: `Minimum generated: ${Math.min(...values)}\nMaximum generated: ${Math.max(...values)}\nAverage: ${avg.toFixed(2)}\nRequested range: ${low} to ${high}\nUnique: ${unique && !decimals ? 'yes' : 'no'}`, note: 'Browser-side utility randomness.' }];
+        { title: 'Summary Stats', body: `Minimum generated: ${Math.min(...values)}\nMaximum generated: ${Math.max(...values)}\nAverage: ${avg.toFixed(2)}\nRequested range: ${low} to ${high}\nUnique: ${unique ? 'yes' : 'no'}`, note: 'Cryptographically secure browser-side randomness.' }];
       result = list;
-      resultHtml = renderSectionSuite('Random Number Results', sections, 'Randomness note: this is browser-side utility randomness, not cryptographic lottery or gambling advice.');
+      resultHtml = renderSectionSuite('Random Number Results', sections, 'Randomness note: this is browser-side secure randomness. Use for utilities and mockups, not cryptographic key pairs.');
       break;
     }
     case 'small-text-generator': {
