@@ -62,5 +62,11 @@ export function bindEvents(
     updateCountersAndFeatures();
   });
 
+  document.getElementById('btn-case-random-style')?.addEventListener('click', () => {
+    input.value = input.value.split('').map(char => Math.random() > 0.5 ? char.toLowerCase() : char.toUpperCase()).join('');
+    generate();
+    updateCountersAndFeatures();
+  });
+
   return updateCountersAndFeatures;
 }
