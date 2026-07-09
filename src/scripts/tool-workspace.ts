@@ -2895,9 +2895,7 @@ async function generate() {
         { title: 'Spacing Legend', body: legend, note: 'Learning reference' },
         { title: 'Warnings', body: warning, note: 'Unsupported characters are surfaced' }], 'Educational converter only; this does not certify radio or emergency signalling compliance.');
       break;
-    }case 'anime-name-generator':
-      result = generateMultiple(() => `${randomFrom(animeLast)} ${randomFrom(animeFirst)}`, 10);
-      break;
+    }
     case 'fake-name-generator': {
       const fakeResults = Array.from({ length: 5 }, () => {
         const first = randomFrom(firstNames);
