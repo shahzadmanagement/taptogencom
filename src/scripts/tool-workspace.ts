@@ -398,7 +398,7 @@ async function generate() {
     randomPhrases, guildAdj, guildNouns, planetPrefixes, planetSuffixes, islandPrefixes, islandSuffixes,
     wrestleAdj, wrestleNouns, leetMap, dwarfFirst, dwarfLast, dwarfClan, tiefFirst, hpFirst, hpLast,
     pokePrefixes, pokeSuffixes, schoolNames, schoolTypes, streetNames, streetTypes, pass19NameConfigs,
-    morseMap
+    morseMap, buildYouTubeTagSuite
   } = datasets;
 
   if (output) {
@@ -628,7 +628,7 @@ async function generate() {
     const groups = buildPass25CreatureGroups(toolSlug, text, style);
     result = groups.map(group => group.title + '\n' + group.items.map(item => item.name + ' - ' + (item.extra || item.reason)).join('\n')).join('\n\n');
     resultHtml = renderGroupedIdeas(groups, 'Fictional fantasy naming only. No franchise copying, protected character references, hateful/graphic/extremist content, or real-world identity claims.');
-  } else if (['instagram-bio-generator','instagram-caption-generator','facebook-post-generator'].includes(toolSlug)) {
+  } else if (['instagram-caption-generator','facebook-post-generator'].includes(toolSlug)) {
     const style = optionValue('pass26-style', 'all');
     const groups = buildPass26SocialGroups(toolSlug, text, style);
     result = groups.map(group => group.title + '\n' + group.items.map(item => item.name + ' - ' + (item.extra || item.reason)).join('\n')).join('\n\n');
@@ -720,7 +720,7 @@ async function generate() {
         : 'Safe business draft only. Confirm details with participants and avoid deceptive, harmful, or regulated-advice framing.';
     result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
     resultHtml = renderSectionSuite('Premium Draft Template Pack', sections, footer);
-  } else if (['youtube-tag-generator','pinterest-tag-generator','soundcloud-tag-generator','twitter-card-generator'].includes(toolSlug)) {
+  } else if (['pinterest-tag-generator','soundcloud-tag-generator','twitter-card-generator'].includes(toolSlug)) {
     const style = optionValue('pass29-style', 'all');
     const groups = buildPass29SocialGroups(toolSlug, text, style);
     result = groups.map(group => group.title + '\n' + group.items.map(item => item.name + ' - ' + (item.extra || item.reason)).join('\n')).join('\n\n');
@@ -731,10 +731,10 @@ async function generate() {
     const groups = buildPass29SecretGroups(toolSlug, text, style, count);
     result = groups.map(group => group.title + '\n' + group.items.map(item => item.name + ' - ' + (item.extra || item.reason)).join('\n')).join('\n\n');
     resultHtml = renderGroupedIdeas(groups, 'Browser-local/demo-safe generation only. No storage, no security guarantee, no audited cryptographic-safety claim, and the user is responsible for secure storage and use.');
-  } else if (['privacy-policy-generator','terms-generator','cookie-policy-generator','disclaimer-generator','refund-policy-generator','affiliate-disclosure-generator','nda-generator','service-agreement-generator'].includes(toolSlug)) {
-    const style = optionValue('pass29-style', 'all');
+  } else if (['privacy-policy-generator','terms-generator','cookie-policy-generator','disclaimer-generator','refund-policy-generator','affiliate-disclosure-generator','nda-generator','service-agreement-generator','contract-generator','dmca-policy-generator'].includes(toolSlug)) {
+    const style = optionValue('pass29-style', optionValue('pass28-style', 'all'));
     const sections = buildPass29TemplateSections(toolSlug, text, style, {
-      region: optionValue('privacy-region', optionValue('terms-region', optionValue('cookie-region', optionValue('disclaimer-region', optionValue('refund-region', optionValue('affiliate-region', 'global')))))),
+      region: optionValue('dmca-region', optionValue('privacy-region', optionValue('terms-region', optionValue('cookie-region', optionValue('disclaimer-region', optionValue('refund-region', optionValue('affiliate-region', 'global'))))))),
       businessType: optionValue('privacy-business-type', optionValue('terms-business-model', optionValue('disclaimer-content-type', optionValue('refund-business-type', 'website')))),
       dataScope: optionValue('privacy-data-scope', 'contact-only'),
       usesCookies: Boolean((document.getElementById('policy-cookies') as HTMLInputElement | null)?.checked),
@@ -762,7 +762,13 @@ async function generate() {
       affiliateRelationship: optionValue('affiliate-relationship', 'commission'),
       affiliatePlacement: optionValue('affiliate-placement', 'near-link'),
       affiliateAmazonNote: Boolean((document.getElementById('affiliate-amazon-note') as HTMLInputElement | null)?.checked),
-      affiliateReviewIntegrity: Boolean((document.getElementById('affiliate-review-integrity') as HTMLInputElement | null)?.checked)});
+      affiliateReviewIntegrity: Boolean((document.getElementById('affiliate-review-integrity') as HTMLInputElement | null)?.checked),
+      serviceType: optionValue('dmca-service-type', 'website'),
+      intake: optionValue('dmca-intake', 'email-only'),
+      processDepth: optionValue('dmca-process', 'takedown-review'),
+      includeCounterNotice: Boolean((document.getElementById('dmca-counter-notice') as HTMLInputElement | null)?.checked),
+      includeRepeatInfringer: Boolean((document.getElementById('dmca-repeat-infringer') as HTMLInputElement | null)?.checked)
+    });
     result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
     resultHtml = renderSectionSuite('Informational Template Pack', sections, 'Informational templates only. Not legal or compliance advice. Review with a qualified professional before use; no official/legal validity or jurisdiction-specific claim is made.');
   } else if (['shakespeare-insult-generator','comeback-generator','roast-generator'].includes(toolSlug)) {
@@ -1354,19 +1360,43 @@ async function generate() {
       const cap = titleCase(niche);
       const accountType = optionValue('ig-account-type', 'creator');
       const emojiLevel = optionValue('emoji-level', 'light');
-      const emojiPrefix = emojiLevel === 'none' ? '' : emojiLevel === 'medium' ? 'New: ' : '';
+
+      // Unicode stylers
+      const boldNiche = toUnicode(cap, boldMap);
+      const cursiveNiche = toUnicode(cap, cursiveMap);
+
+      const emojiPrefix = emojiLevel === 'none' ? '' : emojiLevel === 'medium' ? '⚡ ' : '✨ ';
+      const ctaEmoji = emojiLevel === 'none' ? '' : '👇';
+
       const groups = [
-        { title: 'Creator', text: `${emojiPrefix}${cap} creator | practical ideas, honest notes, fresh posts | new work weekly`, note: 'Creator profile, under 150 characters' },
-        { title: 'Business', text: `${cap} for people who want clear results | tips, offers, and behind-the-scenes | DM to connect`, note: 'Service or small business account' },
-        { title: 'Aesthetic', text: `${cap} moodboard | soft systems, sharp ideas, everyday inspiration`, note: 'Minimal visual profile' },
-        { title: 'Funny', text: `${cap}, but make it slightly over-caffeinated | useful posts, occasional chaos`, note: 'Casual personal brand' },
-        { title: 'Professional', text: `${cap} specialist | sharing practical lessons, projects, and useful resources`, note: 'Polished profile bio' },
-        { title: 'CTA-Focused', text: `${cap} resources and ideas | follow for practical tips | latest link below`, note: 'Clear follow/link-in-bio direction' },
-        { title: 'Emoji-Light', text: `${cap} creator. Useful ideas. Clean execution. Follow for notes you can use.`, note: 'Low-emoji, platform-friendly option' }];
-      if (accountType === 'business') groups.unshift({ title: 'Selected Account Type', text: `${cap} services | clear process, useful updates, easy next steps | message to start`, note: 'Business-first variant from selected option' });
-      if (accountType === 'aesthetic') groups.unshift({ title: 'Selected Account Type', text: `${cap} notes | quiet visuals, useful ideas, simple systems`, note: 'Aesthetic-first variant from selected option' });
-      result = groups.map(group => `${group.title}: ${group.text}`).join('\n\n');
-      resultHtml = renderBioVariations(groups);
+        { title: 'Creator (Classic)', text: `${emojiPrefix}${cap} creator\n🎬 sharing practical ideas & creative updates\n📩 DM for collaborations`, note: 'Clean creator profile.' },
+        { title: 'Creator (Aesthetic Cursive)', text: `${emojiPrefix}${cursiveNiche} Artist\n✨ chasing light & capturing stories\n✉️ hello: [user-fill contact]`, note: 'Elegant aesthetic profile.' },
+        { title: 'Creator (Bold Accent)', text: `${emojiPrefix}${boldNiche}\n💡 tutorials, tips, & coding workflow\n🚀 new projects weekly`, note: 'Professional creator profile.' },
+        { title: 'Business (Clean)', text: `${cap} Services\n📈 helping you get clear results\n💼 DM us to start a project`, note: 'Standard business profile.' },
+        { title: 'Business (Bold CTA)', text: `${boldNiche} Studio\n🌿 custom designs for creative brands\n📥 client spots open for [Month] ${ctaEmoji}`, note: 'Action-oriented business bio.' },
+        { title: 'Aesthetic (Minimal)', text: `${cap} notes.\n- soft systems & simple spaces\n- documentation in highlights`, note: 'Minimalist visual bio.' },
+        { title: 'Professional (Specialist)', text: `${cap} Specialist\n📚 sharing practical lessons & frameworks\n🌐 read my notes: [user-fill link] ${ctaEmoji}`, note: 'Polished professional profile.' },
+        { title: 'Short & Punchy', text: `${cap} / learning & making in public.`, note: 'Ultra-short personal tagline.' }
+      ];
+
+      // Filtering/prioritizing based on accountType
+      let sortedGroups = [...groups];
+      if (accountType === 'business') {
+        sortedGroups = [
+          groups[3], groups[4], groups[0], groups[2], groups[6], groups[5], groups[1], groups[7]
+        ];
+      } else if (accountType === 'aesthetic') {
+        sortedGroups = [
+          groups[5], groups[1], groups[7], groups[0], groups[2], groups[3], groups[4], groups[6]
+        ];
+      } else if (accountType === 'professional') {
+        sortedGroups = [
+          groups[6], groups[2], groups[3], groups[0], groups[4], groups[5], groups[1], groups[7]
+        ];
+      }
+
+      result = sortedGroups.map(group => `${group.title}:\n${group.text}`).join('\n\n');
+      resultHtml = renderBioVariations(sortedGroups);
       break;
     }
     case 'meta-tag-generator': {

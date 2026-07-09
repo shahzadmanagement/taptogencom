@@ -3348,7 +3348,7 @@ function buildBusinessDocumentSuite(kind: 'purchase-order' | 'quotation', seed: 
     { title: 'Review Checklist', body: '- Buyer and seller details are verified\n- Scope, item rows, quantities, prices, tax, discounts, validity, and delivery terms are accurate\n- Exclusions and assumptions are clear\n- No guaranteed acceptance, payment, delivery, tax treatment, or commercial outcome is implied\n- Legal, accounting, tax, and commercial review completed if needed', note: 'Before sending.' }];
 }
 
-function buildYouTubeTagSuite(seed: string, getOption: OptionGetter) {
+export function buildYouTubeTagSuite(seed: string, getOption: OptionGetter) {
   const topic = compactSeed(seed, 'beginner sourdough tutorial');
   const words = slugWords(topic).slice(0, 5);
   const phrase = words.join(' ') || 'video topic';
