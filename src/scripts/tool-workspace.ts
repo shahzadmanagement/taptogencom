@@ -1370,39 +1370,62 @@ async function generate() {
       break;
     }
     case 'meta-tag-generator': {
-      const pageTopic = compactSeed(text, 'Example Product Page');
+      const pageTopic = compactSeed(text, 'Example Page');
       const pageType = optionValue('meta-page-type', 'website');
       const robotsMode = optionValue('meta-robots', 'index-follow');
       const cardType = optionValue('meta-card-type', 'summary_large_image');
       const includeCanonical = optionValue('meta-include-canonical', 'true') === 'true';
-      const slug = slugWords(pageTopic).join('-') || 'example-page';
+
+      let pageTitle = '';
+      let pageDesc = '';
+      const lines = pageTopic.split('\n').map(l => l.trim()).filter(Boolean);
+      if (lines.length >= 2) {
+        pageTitle = lines[0];
+        pageDesc = lines.slice(1).join(' ');
+      } else if (lines.length === 1) {
+        pageTitle = lines[0];
+        pageDesc = pageType === 'product'
+          ? `Buy ${pageTitle} online at the best price. Explore product details, features, reviews, and secure checkout.`
+          : pageType === 'article'
+            ? `Read a practical guide to ${pageTitle} with tips, analysis, key takeaways, and expert insights.`
+            : pageType === 'landing'
+              ? `Discover ${pageTitle}. Sign up today to access exclusive benefits, features, and special promotions.`
+              : `Welcome to our page about ${pageTitle}. Find details, resources, and everything you need to know here.`;
+      } else {
+        pageTitle = 'Example Page';
+        pageDesc = 'Example description for the website.';
+      }
+
+      const slug = slugWords(pageTitle).join('-') || 'example-page';
       const titleSuffix = pageType === 'product' ? 'Product Details' : pageType === 'article' ? 'Guide' : pageType === 'landing' ? 'Official Page' : 'Website';
-      const seoTitle = `${pageTopic} - ${titleSuffix}`.slice(0, 62);
-      const description = pageType === 'product'
-        ? `Explore ${pageTopic.toLowerCase()} with clear benefits, product details, and a simple next step.`
-        : pageType === 'article'
-          ? `Read a practical guide to ${pageTopic.toLowerCase()} with useful context, key points, and next steps.`
-          : pageType === 'landing'
-            ? `See how ${pageTopic.toLowerCase()} helps visitors understand the offer, compare benefits, and take action.`
-            : `Learn about ${pageTopic.toLowerCase()} with clear page details and social sharing metadata.`;
+      const seoTitle = `${pageTitle} - ${titleSuffix}`.slice(0, 62);
+      
+      const esc = (s: string) => s.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+      const cleanTitle = esc(seoTitle);
+      const cleanDesc = esc(pageDesc.slice(0, 160));
+
       const robots = robotsMode === 'noindex-follow' ? 'noindex, follow' : robotsMode === 'index-nofollow' ? 'index, nofollow' : 'index, follow';
       const canonical = `https://example.com/${slug}/`;
       const imageUrl = `https://example.com/images/${slug}-social.jpg`;
-      const titleTags = `<title>${seoTitle}</title>\n<meta name="title" content="${seoTitle}">\n<meta name="description" content="${description}">`;
+
+      const titleTags = `<title>${cleanTitle}</title>\n<meta name="title" content="${cleanTitle}">\n<meta name="description" content="${cleanDesc}">`;
       const canonicalTags = includeCanonical ? `<link rel="canonical" href="${canonical}">` : '<!-- Canonical tag omitted by option. Add one if this page has a preferred URL. -->';
-      const robotsTags = `<meta name="robots" content="${robots}">\n<meta name="viewport" content="width=device-width, initial-scale=1">`;
-      const ogTags = `<meta property="og:type" content="${pageType === 'article' ? 'article' : 'website'}">\n<meta property="og:title" content="${seoTitle}">\n<meta property="og:description" content="${description}">\n<meta property="og:url" content="${canonical}">\n<meta property="og:image" content="${imageUrl}">\n<meta property="og:site_name" content="Optional user-fill site name">`;
-      const twitterTags = `<meta name="twitter:card" content="${cardType}">\n<meta name="twitter:title" content="${seoTitle}">\n<meta name="twitter:description" content="${description}">\n<meta name="twitter:image" content="${imageUrl}">`;
-      const fullHtml = `<!-- Primary Meta Tags -->\n${titleTags}\n${canonicalTags}\n${robotsTags}\n\n<!-- Open Graph -->\n${ogTags}\n\n<!-- Twitter/X Card -->\n${twitterTags}`;
+      const robotsTags = `<meta name="robots" content="${robots}">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta charset="utf-8">`;
+      const ogTags = `<meta property="og:type" content="${pageType === 'article' ? 'article' : 'website'}">\n<meta property="og:title" content="${cleanTitle}">\n<meta property="og:description" content="${cleanDesc}">\n<meta property="og:url" content="${canonical}">\n<meta property="og:image" content="${imageUrl}">\n<meta property="og:site_name" content="Optional site name">`;
+      const twitterTags = `<meta name="twitter:card" content="${cardType}">\n<meta name="twitter:title" content="${cleanTitle}">\n<meta name="twitter:description" content="${cleanDesc}">\n<meta name="twitter:image" content="${imageUrl}">`;
+
+      const fullHtml = `<!-- Primary Meta Tags -->\n${titleTags}\n${canonicalTags}\n${robotsTags}\n\n<!-- Open Graph / Facebook -->\n${ogTags}\n\n<!-- Twitter/X Card -->\n${twitterTags}`;
       const sections = [
-        { title: 'Full HTML Meta Tag Set', body: fullHtml, note: `${titleCase(pageType)} page package` },
-        { title: 'SEO Title And Description', body: titleTags, note: `${seoTitle.length} title characters; ${description.length} description characters` },
+        { title: 'Full HTML Meta Tag Set', body: fullHtml, note: `${titleCase(pageType)} page bundle.` },
+        { title: 'SEO Title And Description', body: titleTags, note: `${seoTitle.length} title chars; ${pageDesc.length} desc chars (clipped to 160).` },
         { title: 'Canonical, Robots, Viewport', body: `${canonicalTags}\n${robotsTags}`, note: `Robots: ${robots}` },
-        { title: 'Open Graph Basics', body: ogTags, note: 'Use an absolute image URL and test the final preview.' },
-        { title: 'Twitter/X Card Basics', body: twitterTags, note: `Card type: ${cardType}` },
-        { title: 'Validation Checklist', body: 'Verify the canonical URL, replace optional user-fill site name, use a real social image URL, and test previews after publishing. This does not guarantee rankings or instant platform cache updates.', note: 'Pre-publish review' }];
+        { title: 'Open Graph Tags', body: ogTags, note: 'Use an absolute image URL for previews.' },
+        { title: 'Twitter/X Card Tags', body: twitterTags, note: `Card type: ${cardType}` },
+        { title: 'Validation Checklist', body: '1. Verify the canonical URL matches the page domain.\n2. Set content of og:site_name with your actual business name.\n3. Make sure og:image and twitter:image URLs point to a real hosted image.\n4. Validate output code in standard HTML debuggers.', note: 'Pre-launch review.' }
+      ];
+
       result = fullHtml;
-      resultHtml = renderSectionSuite('Meta Tag Package', sections, 'Copy full HTML or individual SEO, canonical, Open Graph, and Twitter/X sections.');
+      resultHtml = renderSectionSuite('Meta Tag Package', sections, 'Copy full HTML bundle or individual groups depending on your setup.');
       break;
     }
     case 'text-case-converter': {
@@ -1982,41 +2005,215 @@ async function generate() {
       break;
     case 'hreflang-tag-generator': {
       const base = ensureUrl(text, 'https://example.com/product');
-      const cleanBase = base.replace(/\/$/, '');
-      const localeInput = parseInputList(optionValue('hreflang-locales', 'en-US, es-ES, fr-FR'), ['en-US', 'es-ES', 'fr-FR']);
+      const parsedUrl = new URL(base);
+      const host = parsedUrl.origin;
+      const pathname = parsedUrl.pathname.replace(/\/$/, '');
+      const search = parsedUrl.search;
+      
+      const localeInputRaw = optionValue('hreflang-locales', 'en, es, fr');
+      const locales = localeInputRaw.split(',').map(s => s.trim()).filter(Boolean);
       const includeDefault = optionValue('hreflang-x-default', 'true') === 'true';
-      const target = optionValue('hreflang-target', 'html');
-      const rows = localeInput.map(locale => ({ locale, url: `${cleanBase}/${locale.toLowerCase()}/` }));
-      const htmlTags = rows.map(row => `<link rel="alternate" hreflang="${row.locale}" href="${row.url}" />`).concat(includeDefault ? [`<link rel="alternate" hreflang="x-default" href="${cleanBase}/" />`] : []).join('\n');
-      const sitemap = `<url>\n  <loc>${cleanBase}/</loc>\n${rows.map(row => `  <xhtml:link rel="alternate" hreflang="${row.locale}" href="${row.url}" />`).join('\n')}${includeDefault ? `\n  <xhtml:link rel="alternate" hreflang="x-default" href="${cleanBase}/" />` : ''}\n</url>`;
-      const table = rows.map(row => `${row.locale} | ${row.url}`).join('\n');
-      const checklist = `Target: ${target}\n- Every localized page should list the full alternate cluster.\n- Each alternate URL should return the matching language page.\n- Canonical URLs should point to the matching localized URL, not one global URL.\n- x-default is ${includeDefault ? 'included for the global/default page.' : 'not included in this draft.'}`;
-      const warnings = rows.some(row => !/^[a-z]{2}(-[A-Z]{2})?$/i.test(row.locale)) ? 'Review locale codes; use language or language-region values such as en or en-US.' : 'No live validation was run. Review reciprocal tags before publishing.';
-      result = `Locale URL Table\n${table}\n\nHTML Link Tags\n${htmlTags}\n\nXML Sitemap Alternates\n${sitemap}\n\nReciprocal Validation Checklist\n${checklist}\n\nValidation Notes\n${warnings}`;
+      const pattern = optionValue('hreflang-url-pattern', 'subfolder');
+
+      const buildLocalizedUrl = (loc: string): string => {
+        const cleanLoc = loc.toLowerCase();
+        if (pattern === 'subdomain') {
+          const cleanHost = host.replace(/^(https?:\/\/)(www\.)?/, '$1' + cleanLoc + '.');
+          return `${cleanHost}${pathname}${search}`;
+        }
+        if (pattern === 'query') {
+          const sep = search ? '&' : '?';
+          return `${host}${pathname}${search}${sep}lang=${cleanLoc}`;
+        }
+        return `${host}/${cleanLoc}${pathname}${search}`;
+      };
+
+      const rows = locales.map(locale => ({ locale, url: buildLocalizedUrl(locale) }));
+      const defaultUrl = `${host}${pathname}${search}`;
+
+      const htmlTagsArray = rows.map(row => `<link rel="alternate" hreflang="${row.locale}" href="${row.url}" />`);
+      if (includeDefault) {
+        htmlTagsArray.push(`<link rel="alternate" hreflang="x-default" href="${defaultUrl}" />`);
+      }
+      const htmlTags = htmlTagsArray.join('\n');
+
+      const sitemapLinkTags = rows.map(row => `  <xhtml:link rel="alternate" hreflang="${row.locale}" href="${row.url}" />`);
+      if (includeDefault) {
+        sitemapLinkTags.push(`  <xhtml:link rel="alternate" hreflang="x-default" href="${defaultUrl}" />`);
+      }
+      const sitemap = `<url>\n  <loc>${defaultUrl}</loc>\n${sitemapLinkTags.join('\n')}\n</url>`;
+      const table = rows.map(row => `${row.locale} | ${row.url}`).concat(includeDefault ? [`x-default | ${defaultUrl}`] : []).join('\n');
+
+      const checklist = `- Every page in the alternate cluster must link back to all other versions (including itself).\n- Each alternate URL must serve the page in the appropriate language (no redirects).\n- Canonical tags on localized pages must point to the localized URL itself, not the default page.\n- x-default points to the generic/global page for un-targeted visitors.`;
+
+      const invalidLocales = locales.filter(loc => !/^[a-z]{2}(-[a-z]{2}|-[A-Z]{2})?$/i.test(loc));
+      let warnings = 'No validation errors found.';
+      if (invalidLocales.length > 0) {
+        warnings = `Review invalid locale codes: [${invalidLocales.join(', ')}]. Use standard ISO 639-1 for language (e.g. "en") or language-region combination (e.g. "en-us" or "es-es").`;
+      }
+
+      result = `Locale URL Table\n${table}\n\nHTML Link Tags\n${htmlTags}\n\nXML Sitemap Alternates\n${sitemap}`;
       resultHtml = renderSectionSuite('Hreflang Implementation Suite', [
-        { title: 'Locale URL Table', body: table, note: `${rows.length} locales from your options` },
-        { title: 'HTML Link Tags', body: htmlTags, note: 'Place in the HTML head for each page in this cluster' },
-        { title: 'XML Sitemap Alternates', body: sitemap, note: 'Use only if your sitemap setup supports xhtml alternates' },
-        { title: 'Reciprocal QA Checklist', body: checklist, note: 'Manual checks before publishing' },
-        { title: 'Validation Notes', body: warnings, note: 'Structure guidance only' }], 'This generator formats tags from your input; it does not crawl or verify live URLs.');
+        { title: 'Locale URL Table', body: table, note: `${locales.length} locales generated via ${pattern} mapping.` },
+        { title: 'HTML Link Tags', body: htmlTags, note: 'Insert this into the <head> of every page within the cluster.' },
+        { title: 'XML Sitemap Alternates', body: sitemap, note: 'Optionally insert into your sitemap for indexing.' },
+        { title: 'Implementation Checklist', body: checklist, note: 'Standard SEO rules for international clusters.' },
+        { title: 'Locale Validation', body: warnings, note: invalidLocales.length > 0 ? 'Validation Warning' : 'Status: OK' }
+      ], 'Hreflang tags are essential for multilingual sites to prevent duplicate content issues.');
       break;
     }
     case 'schema-tag-generator': {
       const name = compactSeed(text, 'Example Site');
       const schemaType = optionValue('schema-type', 'WebSite');
       const slug = toSafeHandle(name, 'page');
-      const schemas: Record<string, Record<string, unknown>> = {
-        WebSite: { '@context': 'https://schema.org', '@type': 'WebSite', name, url: 'https://example.com/', description: `${name} resources and information.`, potentialAction: { '@type': 'SearchAction', target: 'https://example.com/search?q={search_term_string}', 'query-input': 'required name=search_term_string' } },
-        Article: { '@context': 'https://schema.org', '@type': 'Article', headline: name, description: `A helpful article about ${name}.`, author: { '@type': 'Person', name: 'Author Name' }, publisher: { '@type': 'Organization', name: 'Publisher Name' }, datePublished: new Date().toISOString().split('T')[0], mainEntityOfPage: `https://example.com/${slug}` },
-        FAQPage: { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: `What is ${name}?`, acceptedAnswer: { '@type': 'Answer', text: `Add a clear answer about ${name}.` } }, { '@type': 'Question', name: `How do I use ${name}?`, acceptedAnswer: { '@type': 'Answer', text: 'Add the practical answer here.' } }] },
-        Product: { '@context': 'https://schema.org', '@type': 'Product', name, description: `Product information for ${name}.`, brand: { '@type': 'Brand', name: 'Brand Name' }, offers: { '@type': 'Offer', priceCurrency: 'USD', price: '0.00', availability: 'https://schema.org/InStock', url: `https://example.com/${slug}` } },
-        LocalBusiness: { '@context': 'https://schema.org', '@type': 'LocalBusiness', name, url: 'https://example.com/', telephone: '+1-555-123-4567', address: { '@type': 'PostalAddress', streetAddress: '123 Main Street', addressLocality: 'City', addressRegion: 'State', postalCode: '00000', addressCountry: 'US' } },
-        BreadcrumbList: { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://example.com/' }, { '@type': 'ListItem', position: 2, name, item: `https://example.com/${slug}` }] }};
-      const selected = schemas[schemaType] || schemas.WebSite;
+      
+      let selected: Record<string, unknown> = {};
+      const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+
+      if (schemaType === 'WebSite') {
+        const url = lines.find(l => /^https?:\/\//i.test(l)) || 'https://example.com/';
+        selected = {
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name,
+          url,
+          description: `${name} resources and information.`,
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: `${url.replace(/\/$/, '')}/search?q={search_term_string}`,
+            'query-input': 'required name=search_term_string'
+          }
+        };
+      } else if (schemaType === 'Article') {
+        const headline = lines[0] || 'Example Headline';
+        const author = lines.find(l => l !== headline && l.split(' ').length <= 3) || 'Author Name';
+        const desc = lines.find(l => l.length > 50) || `A helpful article about ${headline}.`;
+        selected = {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline,
+          description: desc,
+          author: { '@type': 'Person', name: author },
+          publisher: { '@type': 'Organization', name: 'Publisher Name' },
+          datePublished: new Date().toISOString().split('T')[0],
+          mainEntityOfPage: `https://example.com/${slug}`
+        };
+      } else if (schemaType === 'FAQPage') {
+        const mainEntity: { '@type': 'Question'; name: string; acceptedAnswer: { '@type': 'Answer'; text: string } }[] = [];
+        let currentQ = '';
+        for (const line of lines) {
+          if (/^(q|question|preg|pregunta):/i.test(line)) {
+            currentQ = line.replace(/^(q|question|preg|pregunta):\s*/i, '');
+          } else if (/^(a|answer|resp|respuesta):/i.test(line) && currentQ) {
+            const ans = line.replace(/^(a|answer|resp|respuesta):\s*/i, '');
+            mainEntity.push({
+              '@type': 'Question',
+              name: currentQ,
+              acceptedAnswer: { '@type': 'Answer', text: ans }
+            });
+            currentQ = '';
+          } else if (line.endsWith('?') || line.endsWith('¿')) {
+            if (currentQ) {
+              mainEntity.push({
+                '@type': 'Question',
+                name: currentQ,
+                acceptedAnswer: { '@type': 'Answer', text: 'Please add a clear answer here.' }
+              });
+            }
+            currentQ = line;
+          } else if (currentQ) {
+            mainEntity.push({
+              '@type': 'Question',
+              name: currentQ,
+              acceptedAnswer: { '@type': 'Answer', text: line }
+            });
+            currentQ = '';
+          }
+        }
+        if (currentQ) {
+          mainEntity.push({
+            '@type': 'Question',
+            name: currentQ,
+            acceptedAnswer: { '@type': 'Answer', text: 'Please add a clear answer here.' }
+          });
+        }
+        if (mainEntity.length === 0) {
+          mainEntity.push(
+            { '@type': 'Question', name: 'What is the name of this product?', acceptedAnswer: { '@type': 'Answer', text: `It is ${name}.` } },
+            { '@type': 'Question', name: 'How do I use this tool?', acceptedAnswer: { '@type': 'Answer', text: 'Enter your custom questions and answers to generate customized schema.' } }
+          );
+        }
+        selected = {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity
+        };
+      } else if (schemaType === 'Product') {
+        const prodName = lines[0] || 'Example Product';
+        const prodPrice = lines.find(l => /^[0-9]+(\.[0-9]{2})?$/.test(l)) || '0.00';
+        const prodBrand = lines.find(l => !/^[0-9]+(\.[0-9]{2})?$/.test(l) && l !== prodName && !/^https?:\/\//.test(l)) || 'Brand Name';
+        const prodDesc = lines.find(l => l.length > 50) || `Product information for ${prodName}.`;
+        selected = {
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: prodName,
+          description: prodDesc,
+          brand: { '@type': 'Brand', name: prodBrand },
+          offers: {
+            '@type': 'Offer',
+            priceCurrency: 'USD',
+            price: prodPrice,
+            availability: 'https://schema.org/InStock',
+            url: `https://example.com/${slug}`
+          }
+        };
+      } else if (schemaType === 'LocalBusiness') {
+        const bizName = lines[0] || 'Local Business Name';
+        const bizPhone = lines.find(l => /^\+?[0-9\s-()]{7,20}$/.test(l)) || '+1-555-123-4567';
+        const bizUrl = lines.find(l => /^https?:\/\//i.test(l)) || 'https://example.com/';
+        const bizAddress = lines.find(l => l !== bizName && l !== bizPhone && l !== bizUrl) || '123 Main Street, City, State, 00000, US';
+        const addrParts = bizAddress.split(',').map(x => x.trim());
+        selected = {
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: bizName,
+          url: bizUrl,
+          telephone: bizPhone,
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: addrParts[0] || '123 Main Street',
+            addressLocality: addrParts[1] || 'City',
+            addressRegion: addrParts[2] || 'State',
+            postalCode: addrParts[3] || '00000',
+            addressCountry: addrParts[4] || 'US'
+          }
+        };
+      } else if (schemaType === 'BreadcrumbList') {
+        const breadcrumbItems = text.includes('>') 
+          ? text.split('>').map(x => x.trim()) 
+          : text.split('\n').map(x => x.trim()).filter(Boolean);
+        const elements = (breadcrumbItems.length > 0 ? breadcrumbItems : ['Home', name]).map((item, index) => {
+          const itemSlug = toSafeHandle(item, 'item');
+          const url = index === 0 ? 'https://example.com/' : `https://example.com/${itemSlug}/`;
+          return {
+            '@type': 'ListItem',
+            position: index + 1,
+            name: item,
+            item: url
+          };
+        });
+        selected = {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: elements
+        };
+      }
+
       const jsonLd = `<script type="application/ld+json">\n${JSON.stringify(selected, null, 2)}\n<\/script>`;
       const sections = [
         { title: `${schemaType} JSON-LD`, body: jsonLd, note: 'Copy into the page head or body where your framework supports structured data.' },
-        { title: 'Validation Checklist', body: 'Replace placeholder URLs, author names, prices, addresses, and dates with real source data.\nKeep visible page content consistent with the JSON-LD.\nTest before publishing.', note: 'Structured data must match the real page.' }];
+        { title: 'Validation Checklist', body: 'Replace placeholder URLs, author names, prices, addresses, and dates with real source data.\nKeep visible page content consistent with the JSON-LD.\nTest before publishing.', note: 'Structured data must match the real page.' }
+      ];
       result = jsonLd;
       resultHtml = renderSectionSuite('Schema Markup Draft', sections, 'Validation note: test this JSON-LD in official rich result and schema validation tools before publishing.');
       break;
@@ -6110,11 +6307,67 @@ async function generate() {
       break;
     }
     case 'wheel-spinner-generator': {
-      if (!text) { result = 'Enter items separated by commas above.'; break; }
-      const items = text.split(',').map(s => s.trim()).filter(Boolean);
-      const shuffled = [...items].sort(() => Math.random() - 0.5);
-      const winner = shuffled[0];
-      result = `\uD83C\uDFA1 SPINNING...\n\n\uD83C\uDFC6 RESULT: ${winner}!\n\nAll options (randomized):\n${shuffled.map((item, i) => `${i === 0 ? '\u2192' : ' '} ${item}`).join('\n')}\n\n(Click Generate to spin again!)`;
+      if (!text) { result = 'Enter items separated by commas or newlines above.'; break; }
+      
+      let items = text.split(/[\n,;]+/).map(s => s.trim()).filter(Boolean);
+      
+      const filterUnique = optionValue('wheel-unique', 'true') === 'true';
+      if (filterUnique) {
+        items = [...new Set(items)];
+      }
+
+      if (items.length === 0) {
+        result = 'Please enter at least one valid entry.';
+        break;
+      }
+
+      const spinCount = Math.max(1, Math.min(items.length, Number(optionValue('wheel-spin-count', '1')) || 1));
+      const removeWinner = optionValue('wheel-remove-winner', 'false') === 'true';
+
+      const secureShuffle = <T>(arr: T[]): T[] => {
+        const copy = [...arr];
+        const randomValues = new Uint32Array(copy.length);
+        crypto.getRandomValues(randomValues);
+        for (let i = copy.length - 1; i > 0; i--) {
+          const j = randomValues[i] % (i + 1);
+          const temp = copy[i];
+          copy[i] = copy[j];
+          copy[j] = temp;
+        }
+        return copy;
+      };
+
+      let pool = [...items];
+      const winners: string[] = [];
+
+      for (let w = 0; w < spinCount; w++) {
+        if (pool.length === 0) break;
+        pool = secureShuffle(pool);
+        const selected = pool[0];
+        winners.push(selected);
+        if (removeWinner) {
+          pool = pool.filter(item => item !== selected);
+        }
+      }
+
+      const winnersStr = winners.map((winner, i) => `Draw #${i + 1}: 🏆 ${winner}`).join('\n');
+      const remainingStr = pool.length > 0 ? pool.join(', ') : 'None (all entries drawn)';
+
+      const sections = [
+        { 
+          title: 'Spin Winners', 
+          body: winnersStr, 
+          note: `Selected ${spinCount} winner(s) out of ${items.length} options.` 
+        },
+        { 
+          title: 'Pool Details', 
+          body: `Deducted Winners: ${removeWinner ? 'Yes' : 'No'}\nUnique Entries: ${filterUnique ? 'Yes' : 'No'}\nOriginal Entries: ${items.join(', ')}\nRemaining Pool: ${remainingStr}`,
+          note: 'Detailed status of spinner pool.'
+        }
+      ];
+
+      result = `🏆 WINNERS:\n${winners.join('\n')}`;
+      resultHtml = renderSectionSuite('Wheel Spinner Results', sections, 'Spins are determined locally in your browser using cryptographically secure random values (PRNG).');
       break;
     }
     case 'shopify-description-generator': {
@@ -6507,20 +6760,122 @@ async function generate() {
     case 'sitemap-generator': {
       const fallbackUrls = ['https://example.com/', 'https://example.com/about', 'https://example.com/contact'];
       const rawUrls = text ? text.split(/\r?\n|,/).map(u => u.trim()).filter(Boolean) : fallbackUrls;
-      const urls = [...new Set(rawUrls)].slice(0, 50).map(url => /^https?:\/\//i.test(url) ? url : `https://${url}`);
+      
+      let urls = [...new Set(rawUrls)].map(url => {
+        if (/^https?:\/\//i.test(url)) return url;
+        return `https://${url}`;
+      });
+
+      urls.sort((a, b) => {
+        const depthA = a.split('/').length;
+        const depthB = b.split('/').length;
+        if (depthA !== depthB) return depthA - depthB;
+        return a.localeCompare(b);
+      });
+
+      urls = urls.slice(0, 100);
+
       const today = new Date().toISOString().split('T')[0];
+      const type = optionValue('sitemap-type', 'standard');
       const changefreq = optionValue('sitemap-changefreq', 'weekly');
       const priority = optionValue('sitemap-priority', '0.8');
       const includeLastmod = optionValue('sitemap-lastmod', 'true') === 'true';
+      
       const escXml = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
-      const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url>\n    <loc>${escXml(url)}</loc>${includeLastmod ? `\n    <lastmod>${today}</lastmod>` : ''}\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`).join('\n')}\n</urlset>`;
-      const rows = urls.map((url, index) => `${index + 1}. ${url} | ${changefreq} | ${priority}${includeLastmod ? ` | ${today}` : ''}`).join('\n');
+
+      const getSlugName = (urlStr: string): string => {
+        try {
+          const u = new URL(urlStr);
+          const parts = u.pathname.split('/').filter(Boolean);
+          if (parts.length === 0) return 'Home';
+          return parts[parts.length - 1].split(/[-_]+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        } catch {
+          return 'Page';
+        }
+      };
+
+      const getSocialSlug = (urlStr: string): string => {
+        try {
+          const u = new URL(urlStr);
+          const parts = u.pathname.split('/').filter(Boolean);
+          if (parts.length === 0) return 'index';
+          return parts[parts.length - 1];
+        } catch {
+          return 'page';
+        }
+      };
+
+      let body = '';
+      let fileNote = '';
+
+      if (type === 'standard') {
+        body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${
+          urls.map(url => {
+            const loc = escXml(url);
+            const lastmodLine = includeLastmod ? `\n    <lastmod>${today}</lastmod>` : '';
+            return `  <url>\n    <loc>${loc}</loc>${lastmodLine}\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+          }).join('\n')
+        }\n</urlset>`;
+        fileNote = 'Standard XML format for all search engines.';
+      } else if (type === 'image') {
+        body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${
+          urls.map(url => {
+            const loc = escXml(url);
+            const title = escXml(getSlugName(url));
+            const imgLoc = escXml(`${url.replace(/\/$/, '')}/images/${getSocialSlug(url)}.jpg`);
+            return `  <url>\n    <loc>${loc}</loc>\n    <image:image>\n      <image:loc>${imgLoc}</image:loc>\n      <image:title>${title} Banner</image:title>\n    </image:image>\n  </url>`;
+          }).join('\n')
+        }\n</urlset>`;
+        fileNote = 'Google Image sitemap format to index graphic assets.';
+      } else if (type === 'video') {
+        body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n${
+          urls.map(url => {
+            const loc = escXml(url);
+            const title = escXml(getSlugName(url));
+            const thumbLoc = escXml(`${url.replace(/\/$/, '')}/videos/thumb-${getSocialSlug(url)}.jpg`);
+            const contentLoc = escXml(`${url.replace(/\/$/, '')}/videos/${getSocialSlug(url)}.mp4`);
+            return `  <url>\n    <loc>${loc}</loc>\n    <video:video>\n      <video:thumbnail_loc>${thumbLoc}</video:thumbnail_loc>\n      <video:title>How to Use ${title}</video:title>\n      <video:description>A practical video explanation about ${title}.</video:description>\n      <video:content_loc>${contentLoc}</video:content_loc>\n    </video:video>\n  </url>`;
+          }).join('\n')
+        }\n</urlset>`;
+        fileNote = 'Google Video sitemap format for multimedia indexing.';
+      } else if (type === 'news') {
+        body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${
+          urls.map(url => {
+            const loc = escXml(url);
+            const title = escXml(getSlugName(url));
+            return `  <url>\n    <loc>${loc}</loc>\n    <news:news>\n      <news:publication>\n        <news:name>Official News Hub</news:name>\n        <news:language>en</news:language>\n      </news:publication>\n      <news:publication_date>${today}</news:publication_date>\n      <news:title>${title} Released</news:title>\n    </news:news>\n  </url>`;
+          }).join('\n')
+        }\n</urlset>`;
+        fileNote = 'Google News sitemap format (only include articles published in the last 2 days).';
+      } else if (type === 'rss') {
+        const buildDate = new Date().toUTCString();
+        body = `<?xml version="1.0" encoding="UTF-8" ?>\n<rss version="2.0">\n<channel>\n  <title>Recent Publications Feed</title>\n  <link>${escXml(urls[0] || 'https://example.com/')}</link>\n  <description>Recent page additions and updates.</description>\n  <lastBuildDate>${buildDate}</lastBuildDate>\n${
+          urls.map(url => {
+            const loc = escXml(url);
+            const title = escXml(getSlugName(url));
+            return `  <item>\n    <title>${title}</title>\n    <link>${loc}</link>\n    <guid>${loc}</guid>\n    <pubDate>${buildDate}</pubDate>\n  </item>`;
+          }).join('\n')
+        }\n</channel>\n</rss>`;
+        fileNote = 'RSS 2.0 feed format for indexing feed readers.';
+      } else {
+        body = urls.join('\n');
+        fileNote = 'Plain Text URL list (one URL per line).';
+      }
+
+      const rows = urls.map((url, index) => `${index + 1}. ${url} | Changefreq: ${changefreq} | Priority: ${priority}`).join('\n');
+      
       const sections = [
-        { title: 'XML Sitemap', body: xml, note: `${urls.length} URL row(s).` },
-        { title: 'URL Row Summary', body: rows, note: 'Review before uploading sitemap.xml.' },
-        { title: 'Publishing Note', body: 'A real sitemap should include live canonical URLs that return successful responses and are allowed to be indexed. Remove private, redirected, blocked, duplicate, and noindex URLs.', note: 'SEO safety check.' }];
-      result = xml;
-      resultHtml = renderSectionSuite('XML Sitemap Draft', sections, 'Sitemap note: this draft should match your live site URLs before submission.');
+        { title: 'Generated Sitemap Output', body, note: fileNote },
+        { title: 'Processed URL Summary', body: rows, note: `${urls.length} unique URLs included (canonical sort applied).` },
+        { 
+          title: 'SEO Sitemap Best Practices', 
+          body: '1. Place sitemap at root directory (e.g., https://example.com/sitemap.xml).\n2. Reference sitemap URL in robots.txt:\n   Sitemap: https://example.com/sitemap.xml\n3. Do not include URLs blocked by robots.txt or containing noindex meta tags.\n4. Keep sitemap size under 50MB and 50,000 URLs (split if exceeding).',
+          note: 'Google Webmasters instructions.'
+        }
+      ];
+
+      result = body;
+      resultHtml = renderSectionSuite('XML Sitemap Package', sections, 'Sitemaps tell search engines which pages are available for crawling. Keep it updated with live pages.');
       break;
     }
     case 'meta-description-generator': {
