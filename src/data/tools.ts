@@ -7756,6 +7756,37 @@ export const tools: Tool[] = [
     metaDescription: 'Generate browser-local token samples with storage and format reminders - free &#38; instant.',
     userIntent: 'User wants browser-local token samples and storage reminders.',
     generatorType: 'utility',
+    toolOptions: [
+      {
+        type: 'select',
+        options: [
+          { value: 'all', label: 'All Formats' },
+          { value: 'hex', label: 'HEX Only' },
+          { value: 'base64url', label: 'Base64URL Only' },
+          { value: 'alphanumeric', label: 'Alphanumeric Only' },
+          { value: 'uuid', label: 'UUID Only' }
+        ],
+        id: 'token-format',
+        label: 'Token Format',
+        default: 'all'
+      },
+      {
+        type: 'number',
+        id: 'token-count',
+        label: 'Count',
+        default: 5,
+        min: 1,
+        max: 20
+      },
+      {
+        type: 'number',
+        id: 'token-length',
+        label: 'Length (bytes/chars)',
+        default: 32,
+        min: 8,
+        max: 128
+      }
+    ],
     faqItems: [],
     relatedSlugs: []
   },

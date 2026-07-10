@@ -1044,17 +1044,87 @@ async function generate() {
       result = generateMultiple(() => `${randomFrom(fantasyPrefixes)}${randomFrom(fantasySuffixes)}`, 10);
       break;
     case 'username-generator': {
-      const base = toSafeHandle(text || 'creative user', 'user');
+      const base = toSafeHandle(text || 'creative user', 'user').replace(/-/g, '');
       const platform = optionValue('username-platform', 'social');
+      const style = optionValue('username-style', 'clean');
+
+      const cleanIdeas = [
+        `${base}`,
+        `the${base}`,
+        `real${base}`,
+        `${base}life`,
+        `${base}world`,
+        `its${base}`
+      ];
+      const aestheticIdeas = [
+        `${base}studio`,
+        `${base}notes`,
+        `hello${base}`,
+        `aesthetic${base}`,
+        `luna${base}`,
+        `vibe${base}`
+      ];
+      const shortIdeas = [
+        `${base.slice(0, 8)}`,
+        `${base.slice(0, 6)}x`,
+        `${base.slice(0, 7)}co`,
+        `${base.slice(0, 7)}_`,
+        `i${base.slice(0, 7)}`,
+        `${base.slice(0, 6)}io`
+      ];
+      const gamingIdeas = [
+        `${base}plays`,
+        `${base}_gg`,
+        `x${base}x`,
+        `${base}arcade`,
+        `${base}v2`,
+        `apex${base}`
+      ];
+      const creatorIdeas = [
+        `by${base}`,
+        `${base}daily`,
+        `${base}hub`,
+        `madeby${base}`,
+        `${base}creations`,
+        `${base}lab`
+      ];
+      const professionalIdeas = [
+        `${base}pro`,
+        `${base}official`,
+        `${base}hq`,
+        `consult${base}`,
+        `dr${base}`,
+        `${base}corp`
+      ];
+
       const groups = [
-        { title: 'Clean', note: `Readable options for ${platform}.`, items: [`${base}`, `${base}hq`, `the${base}`] },
-        { title: 'Aesthetic', note: 'Soft profile-friendly variants.', items: [`${base}.studio`, `${base}_notes`, `hello${base}`] },
-        { title: 'Gaming', note: 'Sharper gamer tag style.', items: [`${base}plays`, `${base}_gg`, `x${base}x`] },
-        { title: 'Creator', note: 'Good for creator accounts.', items: [`by${base}`, `${base}daily`, `${base}lab`] },
-        { title: 'Professional', note: 'Safer for work profiles.', items: [`${base}.work`, `${base}pro`, `${base}official`] },
-        { title: 'Short', note: 'Availability-friendly backups.', items: [`${base.slice(0, 10)}`, `${base.slice(0, 8)}co`, `${base.slice(0, 8)}_io`] }];
-      result = groups.map(group => group.title + '\n' + group.items.join('\n')).join('\n\n');
-      resultHtml = renderHeadlineGroups(groups, 'Availability note: these are idea variants only. Check each platform before using a handle.');
+        { title: 'Clean', note: 'Readable, simple, and memorable handles.', items: cleanIdeas },
+        { title: 'Aesthetic', note: 'Soft, creative, and visually balanced handles.', items: aestheticIdeas },
+        { title: 'Short', note: 'Compact handles optimized for character limits and availability.', items: shortIdeas },
+        { title: 'Gaming', note: 'Action-oriented handles for gaming and virtual platforms.', items: gamingIdeas },
+        { title: 'Creator', note: 'Designed for brand builders, artists, and creators.', items: creatorIdeas },
+        { title: 'Professional', note: 'Polished handles for expert and business networking.', items: professionalIdeas }
+      ];
+
+      const activeTitles = new Set<string>();
+      activeTitles.add(style.charAt(0).toUpperCase() + style.slice(1));
+      
+      const platTitle = platform.charAt(0).toUpperCase() + platform.slice(1);
+      if (groups.some(g => g.title === platTitle)) {
+        activeTitles.add(platTitle);
+      } else {
+        if (platform === 'social') {
+          activeTitles.add('Clean');
+          activeTitles.add('Creator');
+        } else if (platform === 'tiktok') {
+          activeTitles.add('Aesthetic');
+          activeTitles.add('Creator');
+        }
+      }
+
+      const visibleGroups = groups.filter(g => activeTitles.has(g.title));
+      result = visibleGroups.map(group => group.title + '\n' + group.items.join('\n')).join('\n\n');
+      resultHtml = renderHeadlineGroups(visibleGroups, 'Availability note: these are idea variants only. Check each platform before using a handle.');
       break;
     }
     case 'business-name-generator': {
@@ -1455,8 +1525,9 @@ async function generate() {
     }
     case 'text-case-converter': {
       if (!text) { result = 'Please enter some text above.'; break; }
-      
-      // Smart word splitter that handles camelCase, PascalCase, snake_case, kebab-case, and spaces
+      const preserveLines = optionValue('case-preserve-lines', 'true') === 'true';
+      const focus = optionValue('case-focus', 'simple');
+
       const splitWords = (str: string): string[] => {
         const adjusted = str
           .replace(/([a-z])([A-Z])/g, '$1 $2')
@@ -1464,45 +1535,67 @@ async function generate() {
         return adjusted.trim().split(/[\s_-]+/).filter(Boolean);
       };
       
-      const words = splitWords(text);
       const capWord = (word: string) => word ? word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() : '';
-      const title = words.map(capWord).join(' ');
-      const sentence = text.trim().toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, match => match.toUpperCase());
-      const camel = words.map((word, index) => index === 0 ? word.toLowerCase() : capWord(word)).join('');
-      const pascal = words.map(capWord).join('');
-      const snake = words.map(word => word.toLowerCase()).join('_');
-      const kebab = words.map(word => word.toLowerCase()).join('-');
-      const constant = words.map(word => word.toUpperCase()).join('_');
+
+      const uppercaseTrans = (val: string) => val.toUpperCase();
+      const lowercaseTrans = (val: string) => val.toLowerCase();
+      const titleTrans = (val: string) => splitWords(val).map(capWord).join(' ');
+      const sentenceTrans = (val: string) => val.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, match => match.toUpperCase());
+      const camelTrans = (val: string) => {
+        const words = splitWords(val);
+        return words.map((word, index) => index === 0 ? word.toLowerCase() : capWord(word)).join('');
+      };
+      const pascalTrans = (val: string) => splitWords(val).map(capWord).join('');
+      const snakeTrans = (val: string) => splitWords(val).map(word => word.toLowerCase()).join('_');
+      const kebabTrans = (val: string) => splitWords(val).map(word => word.toLowerCase()).join('-');
+      const constantTrans = (val: string) => splitWords(val).map(word => word.toUpperCase()).join('_');
       
-      // Surrogate-safe alternating case aligning parity count to letters only
-      let letterIndex = 0;
-      const alternating = [...text].map(char => {
-        if (/[a-zA-Z]/.test(char)) {
-          const res = letterIndex % 2 === 0 ? char.toLowerCase() : char.toUpperCase();
-          letterIndex++;
-          return res;
+      const alternatingTrans = (val: string) => {
+        let letterIndex = 0;
+        return [...val].map(char => {
+          if (/[a-zA-Z]/.test(char)) {
+            const res = letterIndex % 2 === 0 ? char.toLowerCase() : char.toUpperCase();
+            letterIndex++;
+            return res;
+          }
+          return char;
+        }).join('');
+      };
+
+      const toggleTrans = (val: string) => {
+        return [...val].map(char => {
+          if (char === char.toUpperCase()) return char.toLowerCase();
+          return char.toUpperCase();
+        }).join('');
+      };
+
+      const transformText = (trans: (v: string) => string): string => {
+        if (preserveLines) {
+          return text.split(/\r?\n/).map(line => trans(line)).join('\n');
         }
-        return char;
-      }).join('');
+        return trans(text);
+      };
 
-      // Toggle case swapping uppercase and lowercase chars
-      const toggle = [...text].map(char => {
-        if (char === char.toUpperCase()) return char.toLowerCase();
-        return char.toUpperCase();
-      }).join('');
+      const allSections = [
+        { title: 'Uppercase', body: transformText(uppercaseTrans), note: 'All letters converted to uppercase.', category: 'simple' },
+        { title: 'Lowercase', body: transformText(lowercaseTrans), note: 'All letters converted to lowercase.', category: 'simple' },
+        { title: 'Title Case', body: transformText(titleTrans), note: 'Each word capitalized.', category: 'simple' },
+        { title: 'Sentence Case', body: transformText(sentenceTrans), note: 'Sentence starts capitalized.', category: 'simple' },
+        { title: 'camelCase', body: transformText(camelTrans), note: 'Developer-friendly variable style.', category: 'developer' },
+        { title: 'PascalCase', body: transformText(pascalTrans), note: 'Developer-friendly class/type style.', category: 'developer' },
+        { title: 'snake_case', body: transformText(snakeTrans), note: 'Underscore-separated lowercase.', category: 'developer' },
+        { title: 'kebab-case', body: transformText(kebabTrans), note: 'Hyphen-separated lowercase.', category: 'developer' },
+        { title: 'CONSTANT_CASE', body: transformText(constantTrans), note: 'Uppercase underscore-separated style.', category: 'developer' },
+        { title: 'Alternating Case', body: transformText(alternatingTrans), note: 'Alternating lowercase/uppercase letters only.', category: 'simple' },
+        { title: 'Toggle Case', body: transformText(toggleTrans), note: 'Swapped uppercase and lowercase letters.', category: 'simple' }
+      ];
 
-      const sections = [
-        { title: 'Uppercase', body: text.toUpperCase(), note: 'All letters converted to uppercase.' },
-        { title: 'Lowercase', body: text.toLowerCase(), note: 'All letters converted to lowercase.' },
-        { title: 'Title Case', body: title, note: 'Each word capitalized.' },
-        { title: 'Sentence Case', body: sentence, note: 'Sentence starts capitalized.' },
-        { title: 'camelCase', body: camel, note: 'Developer-friendly variable style.' },
-        { title: 'PascalCase', body: pascal, note: 'Developer-friendly class/type style.' },
-        { title: 'snake_case', body: snake, note: 'Underscore-separated lowercase.' },
-        { title: 'kebab-case', body: kebab, note: 'Hyphen-separated lowercase.' },
-        { title: 'CONSTANT_CASE', body: constant, note: 'Uppercase underscore-separated style.' },
-        { title: 'Alternating Case', body: alternating, note: 'Alternating lowercase/uppercase letters only.' },
-        { title: 'Toggle Case', body: toggle, note: 'Swapped uppercase and lowercase letters.' }];
+      const sections = allSections.filter(sec => {
+        if (focus === 'simple') return sec.category === 'simple';
+        if (focus === 'developer') return sec.category === 'developer';
+        return true;
+      });
+
       result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
       resultHtml = renderSectionSuite('Case Conversion Matrix', sections, 'Uses your exact input text as the source. Copy each format individually or copy all.');
       break;
@@ -1923,14 +2016,31 @@ async function generate() {
         abstract: { first: ['Static', 'Orbit', 'Vowel', 'Prism', 'Signal'], second: ['Theory', 'Drift', 'Bloom', 'Syntax', 'Mode'] }
       };
       const bank = banks[style] || banks.lyrical;
-      result = generateMultiple(() => {
+      
+      const count = 12;
+      const items = Array.from({ length: count }, () => {
         const base = format === 'mc-prefix'
           ? 'MC ' + randomFrom(bank.second)
           : format === 'one-word'
             ? randomFrom(bank.first) + randomFrom(bank.second)
             : randomFrom(bank.first) + ' ' + randomFrom(bank.second);
-        return seed ? base + ' ' + seed : base;
-      }, 10);
+        const name = seed ? base + ' ' + seed : base;
+        return {
+          name,
+          reason: `Formed using a ${style} style prefix and suffix matching the selected ${format.replace('-', ' ')} format.`
+        };
+      });
+
+      const groups = [
+        {
+          title: `${titleCase(style)} Style Names`,
+          note: `Stage name recommendations matching your options.`,
+          items
+        }
+      ];
+
+      result = items.map(item => item.name).join('\n');
+      resultHtml = renderGroupedIdeas(groups, 'Check name availability on streaming services, social media, and local registries before commercial use.');
       break;
     }
     case 'song-name-generator': {
@@ -2012,14 +2122,38 @@ async function generate() {
       break;
     }
     case 'blog-name-generator': {
+      const style = optionValue('name-style', 'brandable');
+      const length = optionValue('name-length', 'balanced');
+      const includeTaglines = optionValue('include-taglines', 'true') === 'true';
+
       const built = makeNameIdeaGroups(text || 'lifestyle', {
         kind: 'blog',
-        style: optionValue('name-style', 'balanced'),
+        style: style,
         creator: true,
-        includeTaglines: optionValue('include-taglines', 'true') === 'true'
+        includeTaglines: includeTaglines
       });
-      result = built.text;
-      resultHtml = renderGroupedIdeas(built.groups, 'Blog name ideas are creative suggestions only; check domain, social handle, and trademark availability before publishing.');
+
+      // Filter groups and items by name-length
+      const filteredGroups = built.groups.map(group => {
+        const filteredItems = group.items.filter(item => {
+          const nameClean = item.name.replace(/\s/g, '');
+          if (length === 'short') {
+            return nameClean.length <= 12;
+          }
+          if (length === 'descriptive') {
+            return item.name.split(' ').length >= 2 || nameClean.length > 12;
+          }
+          return true; // balanced
+        });
+        return {
+          ...group,
+          items: filteredItems
+        };
+      }).filter(group => group.items.length > 0);
+
+      const allText = filteredGroups.map(group => group.title + '\n' + group.items.map(item => item.name + (item.extra ? ' - ' + item.extra : '')).join('\n')).join('\n\n');
+      result = allText || 'No names found matching the selected filters.';
+      resultHtml = renderGroupedIdeas(filteredGroups, 'Blog name ideas are creative suggestions only; check domain, social handle, and trademark availability before publishing.');
       break;
     }
     case 'pirate-name-generator':
@@ -6960,40 +7094,51 @@ async function generate() {
       break;
     }
     case 'token-generator': {
-      const getSecureBytes = (len: number): Uint8Array => {
-        const bytes = new Uint8Array(len);
+      const format = optionValue('token-format', 'all');
+      const count = Math.max(1, Math.min(20, Number(optionValue('token-count', '5')) || 5));
+      const len = Math.max(8, Math.min(128, Number(optionValue('token-length', '32')) || 32));
+
+      const getSecureBytes = (length: number): Uint8Array => {
+        const bytes = new Uint8Array(length);
         crypto.getRandomValues(bytes);
         return bytes;
       };
       
       const hexToken = () => {
-        const bytes = getSecureBytes(16);
-        return Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
+        const bytes = getSecureBytes(Math.ceil(len / 2));
+        return Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).slice(0, len).join('');
       };
       
       const b64Token = () => {
-        const bytes = getSecureBytes(32);
+        const bytes = getSecureBytes(len);
         return btoa(String.fromCharCode(...bytes))
           .replace(/\+/g, '-')
           .replace(/\//g, '_')
-          .replace(/=/g, '');
+          .replace(/=/g, '')
+          .slice(0, len);
       };
       
       const alphaToken = () => {
-        const bytes = getSecureBytes(32);
+        const bytes = getSecureBytes(len);
         const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         return Array.from(bytes, byte => chars[byte % chars.length]).join('');
       };
 
       const sections = [
-        { title: 'HEX Tokens (32 characters, 16 bytes secure)', body: generateMultiple(hexToken, 3), note: 'Ideal for API keys or simple random identifiers.' },
-        { title: 'Base64URL Safe Tokens (32 bytes secure)', body: generateMultiple(b64Token, 3), note: 'Url-safe base64 tokens, suitable for OAuth state/codes.' },
-        { title: 'Alphanumeric Tokens (32 characters secure)', body: generateMultiple(alphaToken, 3), note: 'Pure letters and numbers. Good for random passwords/pins.' },
-        { title: 'UUID v4 (Standard secure UUID)', body: generateMultiple(() => crypto.randomUUID(), 3), note: 'Standard unique identifiers generated by the browser.' }
+        { title: `HEX Tokens (${len} characters, secure)`, body: generateMultiple(hexToken, count), note: 'Ideal for API keys or simple random identifiers.' },
+        { title: `Base64URL Safe Tokens (${len} characters, secure)`, body: generateMultiple(b64Token, count), note: 'Url-safe base64 tokens, suitable for OAuth state/codes.' },
+        { title: `Alphanumeric Tokens (${len} characters, secure)`, body: generateMultiple(alphaToken, count), note: 'Pure letters and numbers. Good for random passwords/pins.' },
+        { title: 'UUID v4 (Standard secure UUID)', body: generateMultiple(() => crypto.randomUUID(), count), note: 'Standard unique identifiers generated by the browser.' }
       ];
 
-      result = sections.map(sec => `${sec.title}:\n${sec.body}`).join('\n\n');
-      resultHtml = renderSectionSuite('Secure Token Draw Suite', sections, 'All token generation runs entirely locally in your browser using secure window.crypto random APIs. No keys or tokens are sent to servers.');
+      const visible = format === 'hex' ? [sections[0]]
+        : format === 'base64url' ? [sections[1]]
+        : format === 'alphanumeric' ? [sections[2]]
+        : format === 'uuid' ? [sections[3]]
+        : sections;
+
+      result = visible.map(sec => `${sec.title}:\n${sec.body}`).join('\n\n');
+      resultHtml = renderSectionSuite('Secure Token Draw Suite', visible, 'All token generation runs entirely locally in your browser using secure window.crypto random APIs. No keys or tokens are sent to servers.');
       break;
     }
     case 'warrior-name-generator': {
@@ -8139,10 +8284,19 @@ async function generate() {
     case 'secret-santa-name-generator': {
       const mode = optionValue('output-mode', 'pair-list');
       const includeAlternates = optionValue('include-alternates', 'true') === 'true';
-      const names = [...new Set((text || 'Alex, Morgan, Priya, Sam')
+      const names = [...new Set((text || '')
         .split(/[\n,;]+/)
         .map((name) => name.trim())
         .filter(Boolean))];
+      
+      if (text && names.length < 2) {
+        result = 'Please enter at least 2 distinct participant names to draw names.';
+        resultHtml = renderSectionSuite('Secret Santa Draw Suite', [
+          { title: 'Error', body: 'Please enter at least 2 distinct participant names to draw names.', note: 'Validation error' }
+        ], 'At least two participants are required to perform a Secret Santa swap.');
+        break;
+      }
+      
       const participants = names.length >= 2 ? names : ['Alex', 'Morgan', 'Priya', 'Sam'];
       
       // Secure cryptographic shuffle using Fisher-Yates and crypto.getRandomValues
