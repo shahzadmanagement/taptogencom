@@ -8963,7 +8963,6 @@ document.querySelectorAll('.example-chip').forEach(chip => {
     generate();
   });
 });
-});
 copyBtn?.addEventListener('click', async () => copyText(output.dataset.copyText || output.textContent || '', copyBtn as HTMLElement));
 output.addEventListener('click', async event => {
   const target = event.target as HTMLElement;
