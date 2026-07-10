@@ -1,4 +1,4 @@
-import { mergeConfig, type ToolConfig } from './index';
+import { mergeConfig, type ToolConfig } from './base';
 
 export const config: ToolConfig = mergeConfig('fancy-text-generator', {
   counters: { chars: true, glyphs: true, words: true, lines: true },
