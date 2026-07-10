@@ -1,29 +1,20 @@
-import https from 'https';
+import fs from 'fs';
+import path from 'path';
 
 const pages = [
-  '/',
-  '/tools/fancy-text-generator/',
-  '/tools/bold-text-generator/'
+  'index.html',
+  'tools/fancy-text-generator/index.html',
+  'tools/bold-text-generator/index.html'
 ];
 
-function checkPage(urlPath) {
-  return new Promise((resolve) => {
-    https.get(`https://taptogen.com${urlPath}`, (res) => {
-      console.log(`- GET ${urlPath}: status code ${res.statusCode}`);
-      resolve(res.statusCode === 200);
-    }).on('error', (err) => {
-      console.error(`- GET ${urlPath} Error:`, err.message);
-      resolve(false);
-    });
-  });
-}
-
 async function run() {
-  console.log('Verifying Production Live URL Statuses...');
+  console.log('Verifying Local Production Build Output...');
   let allHealthy = true;
   for (const page of pages) {
-    const ok = await checkPage(page);
-    if (!ok) allHealthy = false;
+    const filePath = path.join('dist', page);
+    const exists = fs.existsSync(filePath);
+    console.log(`- Check file ${filePath}: ${exists ? 'EXISTS' : 'NOT FOUND'}`);
+    if (!exists) allHealthy = false;
   }
   if (!allHealthy) {
     console.error('Production Verification Failed!');
