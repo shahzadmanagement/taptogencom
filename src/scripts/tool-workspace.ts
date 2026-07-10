@@ -628,11 +628,6 @@ async function generate() {
     const groups = buildPass25CreatureGroups(toolSlug, text, style);
     result = groups.map(group => group.title + '\n' + group.items.map(item => item.name + ' - ' + (item.extra || item.reason)).join('\n')).join('\n\n');
     resultHtml = renderGroupedIdeas(groups, 'Fictional fantasy naming only. No franchise copying, protected character references, hateful/graphic/extremist content, or real-world identity claims.');
-  } else if (['instagram-caption-generator','facebook-post-generator'].includes(toolSlug)) {
-    const style = optionValue('pass26-style', 'all');
-    const groups = buildPass26SocialGroups(toolSlug, text, style);
-    result = groups.map(group => group.title + '\n' + group.items.map(item => item.name + ' - ' + (item.extra || item.reason)).join('\n')).join('\n\n');
-    resultHtml = renderGroupedIdeas(groups, 'Drafting/templates only. No spam, impersonation, evasion, deceptive engagement, fake follower/engagement claims, or trademark/platform affiliation claims.');
   } else if (['midjourney-prompt-generator','stable-diffusion-prompt-generator'].includes(toolSlug)) {
     const style = optionValue('pass26-style', 'all');
     const prefix = toolSlug === 'midjourney-prompt-generator' ? 'mj' : 'sd';
@@ -2605,16 +2600,31 @@ async function generate() {
       const lower = topic.toLowerCase();
       const tag = '#' + toSafeHandle(topic, 'caption');
       const emojiLevel = optionValue('ig-caption-emoji', 'light');
+      const style = optionValue('ig-caption-style', 'creator');
+
+      const emojiPrefix = emojiLevel === 'none' ? '' : emojiLevel === 'medium' ? '✨ ' : '🌿 ';
+      const endEmoji = emojiLevel === 'none' ? '' : emojiLevel === 'medium' ? ' 🎬🔥' : ' 💬';
+
       const groups = [
-        { title: 'Short Caption', text: `${topic}, made simple.`, note: 'Quick post or carousel cover' },
-        { title: 'Aesthetic Caption', text: `Soft light, clear mind, and a little ${lower}.`, note: 'Lifestyle or visual post' },
-        { title: 'Creator Caption', text: `What I learned from ${lower}: start small, keep noticing, and share the useful part.`, note: 'Creator education post' },
-        { title: 'Business Caption', text: `${topic} update: here is what matters, why it helps, and how to take the next step.`, note: 'Brand or business account' },
-        { title: 'CTA Caption', text: `Save this if ${lower} is on your list. Share it with someone who needs the shortcut.`, note: 'Action-focused' },
-        { title: 'Emoji-Light Caption', text: emojiLevel === 'none' ? `A simple note on ${lower}: make it useful, clear, and easy to act on.` : `A simple note on ${lower}: make it useful, clear, and easy to act on. Sparkle.`, note: `Emoji setting: ${emojiLevel}` },
-        { title: 'Hashtag Suggestions', text: `${tag} ${tag}tips #creativeideas #socialcontent #contentnotes`, note: 'Use a focused mix, not every tag' }];
-      result = groups.map(group => group.title + '\n' + group.text).join('\n\n');
-      resultHtml = renderBioVariations(groups);
+        { title: 'Aesthetic Style', text: `${emojiPrefix}quiet focus / finding beauty in ${lower}.${endEmoji}\n\n${tag} #aesthetic #visualnotes`, note: 'Minimalist visual caption.' },
+        { title: 'Creator Style', text: `${emojiPrefix}here is my honest take on ${lower}: start with a simple setup, focus on the details, and share what works.${endEmoji}\n\n${tag} #creativelife #learninpublic`, note: 'Value-first personal post.' },
+        { title: 'Business Style', text: `${emojiPrefix}need a clear system for ${lower}? We designed a process that is simple, clean, and gets results. Tap the link in our bio to learn more.${endEmoji}\n\n${tag} #growyourbrand #productivity`, note: 'Professional brand announcement.' },
+        { title: 'CTA Caption', text: `${emojiPrefix}save this post if you are working on ${lower} this week. What is your go-to tool? Let me know below!${endEmoji}`, note: 'High engagement question.' },
+        { title: 'Short & Punchy', text: `${emojiPrefix}${topic}, made simple.`, note: 'For headers or clean visual feeds.' }
+      ];
+
+      // Sort based on style choice
+      let sorted = [...groups];
+      if (style === 'business') {
+        sorted = [groups[2], groups[3], groups[1], groups[0], groups[4]];
+      } else if (style === 'aesthetic') {
+        sorted = [groups[0], groups[4], groups[1], groups[3], groups[2]];
+      } else { // creator
+        sorted = [groups[1], groups[3], groups[0], groups[4], groups[2]];
+      }
+
+      result = sorted.map(group => `${group.title}:\n${group.text}`).join('\n\n');
+      resultHtml = renderBioVariations(sorted);
       break;
     }
     case 'instagram-caption-generator-legacy': {
@@ -4735,15 +4745,37 @@ async function generate() {
       const lower = topic.toLowerCase();
       const tone = optionValue('facebook-tone', 'friendly');
       const goal = optionValue('facebook-goal', 'engagement');
+
+      const prefix = tone === 'friendly' ? '👋 Hello friends! ' 
+                   : tone === 'local' ? '📍 Local update: ' 
+                   : tone === 'community' ? '👥 Community Notice: ' 
+                   : '📢 Announcement: ';
+
+      const suffix = tone === 'friendly' ? ' Let us know what you think!' 
+                   : tone === 'local' ? ' Stop by or reply here!' 
+                   : tone === 'community' ? ' Thanks for being part of our community.' 
+                   : ' Contact our team for details.';
+
       const posts = [
-        { title: 'Short Post', text: `${topic} update: we are sharing a quick note for anyone interested in ${lower}. More details are coming soon.`, note: `Tone: ${tone}. Goal: ${goal}` },
-        { title: 'Story-Style Post', text: `We started thinking about ${lower} because [short customer or team insight].\n\nThat led us to [what changed]. The goal is simple: make this easier, clearer, and more useful for the people we serve.`, note: 'Good for page updates' },
-        { title: 'Promotional Post', text: `${topic} is ready for [audience].\n\nUse this post to add one verified benefit, one clear detail, and one simple next step. Keep the offer honest and easy to understand.`, note: 'Non-spammy promotion' },
-        { title: 'Educational Post', text: `A useful thing to know about ${lower}:\n\n[Tip or lesson]\n\nWhy it matters: [practical reason]\n\nTry this next: [small action]`, note: 'Value-first post' },
-        { title: 'Engagement Question', text: `Question for anyone working on ${lower}: what is the biggest challenge you are running into right now?`, note: 'Conversation starter' },
-        { title: 'CTA Version', text: `Interested in ${lower}? Start with [simple action], then check [link/resource] for the full details.`, note: 'Clear next step' }];
-      result = posts.map(post => post.title + '\n' + post.text).join('\n\n');
-      resultHtml = renderBioVariations(posts);
+        { title: 'Community Update', text: `${prefix}We are sharing a quick update about ${lower}.${suffix}\n\nKey detail: [user-fill detail]`, note: `Tone: ${tone}. Goal: ${goal}` },
+        { title: 'Story-Style Post', text: `${prefix}We started thinking about ${lower} because of a recent insight. That led us to adjust our approach to make things easier, clearer, and more useful for everyone.${suffix}`, note: 'Good for page updates' },
+        { title: 'Promotional Post', text: `${prefix}${topic} is officially available. We want to keep it simple: one verified benefit, one clear detail, and one easy next step. Check the link or DM us to get started.${suffix}`, note: 'Value-driven promotion' },
+        { title: 'Educational Post', text: `${prefix}Here is a quick, practical tip about ${lower}: [Tip or lesson]. Why it matters: it saves time and keeps the setup clean.${suffix}`, note: 'Value-first post' },
+        { title: 'Engagement Question', text: `${prefix}Quick question: when you are working on ${lower}, what is the biggest challenge or roadblock you usually run into?${suffix}`, note: 'Conversation starter' }
+      ];
+
+      // Prioritize list based on goal
+      let sorted = [...posts];
+      if (goal === 'promotion') {
+        sorted = [posts[2], posts[0], posts[1], posts[3], posts[4]];
+      } else if (goal === 'education') {
+        sorted = [posts[3], posts[0], posts[1], posts[2], posts[4]];
+      } else { // engagement
+        sorted = [posts[4], posts[0], posts[1], posts[2], posts[3]];
+      }
+
+      result = sorted.map(post => `${post.title}:\n${post.text}`).join('\n\n');
+      resultHtml = renderBioVariations(sorted);
       break;
     }
     case 'social-media-post-generator': {
@@ -6928,10 +6960,40 @@ async function generate() {
       break;
     }
     case 'token-generator': {
-      const hexToken = () => Array.from({length:32}, () => Math.floor(Math.random()*16).toString(16)).join('');
-      const b64Token = () => btoa(Array.from({length:32}, () => String.fromCharCode(Math.floor(Math.random()*256))).join('')).replace(/=/g,'');
-      const alphaToken = () => Array.from({length:48}, () => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[Math.floor(Math.random()*62)]).join('');
-      result = `HEX TOKENS (32 bytes):\n${generateMultiple(hexToken, 3)}\n\nBASE64 TOKENS:\n${generateMultiple(b64Token, 3)}\n\nALPHANUMERIC TOKENS:\n${generateMultiple(alphaToken, 3)}\n\nUUID v4:\n${generateMultiple(() => crypto.randomUUID(), 3)}`;
+      const getSecureBytes = (len: number): Uint8Array => {
+        const bytes = new Uint8Array(len);
+        crypto.getRandomValues(bytes);
+        return bytes;
+      };
+      
+      const hexToken = () => {
+        const bytes = getSecureBytes(16);
+        return Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
+      };
+      
+      const b64Token = () => {
+        const bytes = getSecureBytes(32);
+        return btoa(String.fromCharCode(...bytes))
+          .replace(/\+/g, '-')
+          .replace(/\//g, '_')
+          .replace(/=/g, '');
+      };
+      
+      const alphaToken = () => {
+        const bytes = getSecureBytes(32);
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        return Array.from(bytes, byte => chars[byte % chars.length]).join('');
+      };
+
+      const sections = [
+        { title: 'HEX Tokens (32 characters, 16 bytes secure)', body: generateMultiple(hexToken, 3), note: 'Ideal for API keys or simple random identifiers.' },
+        { title: 'Base64URL Safe Tokens (32 bytes secure)', body: generateMultiple(b64Token, 3), note: 'Url-safe base64 tokens, suitable for OAuth state/codes.' },
+        { title: 'Alphanumeric Tokens (32 characters secure)', body: generateMultiple(alphaToken, 3), note: 'Pure letters and numbers. Good for random passwords/pins.' },
+        { title: 'UUID v4 (Standard secure UUID)', body: generateMultiple(() => crypto.randomUUID(), 3), note: 'Standard unique identifiers generated by the browser.' }
+      ];
+
+      result = sections.map(sec => `${sec.title}:\n${sec.body}`).join('\n\n');
+      resultHtml = renderSectionSuite('Secure Token Draw Suite', sections, 'All token generation runs entirely locally in your browser using secure window.crypto random APIs. No keys or tokens are sent to servers.');
       break;
     }
     case 'warrior-name-generator': {
@@ -8082,7 +8144,21 @@ async function generate() {
         .map((name) => name.trim())
         .filter(Boolean))];
       const participants = names.length >= 2 ? names : ['Alex', 'Morgan', 'Priya', 'Sam'];
-      const shuffled = [...participants].sort(() => Math.random() - 0.5);
+      
+      // Secure cryptographic shuffle using Fisher-Yates and crypto.getRandomValues
+      const secureShuffle = <T>(arr: T[]): T[] => {
+        const copy = [...arr];
+        const randomValues = new Uint32Array(copy.length);
+        crypto.getRandomValues(randomValues);
+        for (let i = copy.length - 1; i > 0; i--) {
+          const j = randomValues[i] % (i + 1);
+          const temp = copy[i];
+          copy[i] = copy[j];
+          copy[j] = temp;
+        }
+        return copy;
+      };
+      const shuffled = secureShuffle(participants);
       const pairs = shuffled.map((giver, index) => ({
         giver,
         receiver: shuffled[(index + 1) % shuffled.length]}));
