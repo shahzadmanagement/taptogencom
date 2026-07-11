@@ -983,7 +983,49 @@ export const tools: Tool[] = [
     metaDescription: 'Use Hreflang Tag Generator to create focused draft options with your topic and constraints. Review, edit, and adapt results before use.',
     userIntent: 'User wants hreflang HTML tags.',
     generatorType: 'utility',
-    toolOptions: [{"type":"select","options":[{"value":"html","label":"HTML Head"},{"value":"sitemap","label":"XML Sitemap"},{"value":"both","label":"Both"}],"id":"hreflang-target","label":"Implementation Target","default":"html"},{"type":"checkbox","default":true,"id":"hreflang-x-default","label":"Include x-default"}],
+    toolOptions: [
+      {
+        type: 'select',
+        options: [
+          { value: 'html', label: 'HTML Head' },
+          { value: 'sitemap', label: 'XML Sitemap' },
+          { value: 'both', label: 'Both' }
+        ],
+        id: 'hreflang-target',
+        label: 'Implementation Target',
+        default: 'html'
+      },
+      {
+        type: 'checkbox',
+        id: 'hreflang-x-default',
+        label: 'Include x-default',
+        default: true
+      },
+      {
+        type: 'select',
+        options: [
+          { value: 'en, es, fr', label: 'English, Spanish, French' },
+          { value: 'en, es, fr, de, it', label: 'English, Spanish, French, German, Italian' },
+          { value: 'en-us, en-gb, es-es, es-mx', label: 'English US/UK, Spanish ES/MX' },
+          { value: 'zh, ja, ko', label: 'Chinese, Japanese, Korean' },
+          { value: 'pt, ru, ar', label: 'Portuguese, Russian, Arabic' }
+        ],
+        id: 'hreflang-locales',
+        label: 'Locale Cluster',
+        default: 'en, es, fr'
+      },
+      {
+        type: 'select',
+        options: [
+          { value: 'subfolder', label: 'Subfolder (example.com/es/)' },
+          { value: 'subdomain', label: 'Subdomain (es.example.com/)' },
+          { value: 'query', label: 'Query Param (?lang=es)' }
+        ],
+        id: 'hreflang-url-pattern',
+        label: 'URL Structure',
+        default: 'subfolder'
+      }
+    ],
     faqItems: [{"q":"What should I enter in Hreflang Tag Generator?","a":"Add the topic, audience, tone, format, and limits the result should follow."},{"q":"How do I improve Hreflang Tag Generator results?","a":"Use examples or constraints, compare outputs, and keep the clearest editable draft."},{"q":"Can I publish Hreflang Tag Generator output as-is?","a":"Review accuracy, originality, readability, and project rules before publishing."}],
     relatedSlugs: ["canonical-tag-generator","meta-tag-generator","robots-txt-generator","sitemap-generator"],
   },

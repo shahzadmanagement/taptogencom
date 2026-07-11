@@ -2173,6 +2173,7 @@ async function generate() {
       const locales = localeInputRaw.split(',').map(s => s.trim()).filter(Boolean);
       const includeDefault = optionValue('hreflang-x-default', 'true') === 'true';
       const pattern = optionValue('hreflang-url-pattern', 'subfolder');
+      const target = optionValue('hreflang-target', 'html');
 
       const buildLocalizedUrl = (loc: string): string => {
         const cleanLoc = loc.toLowerCase();
@@ -2211,14 +2212,22 @@ async function generate() {
         warnings = `Review invalid locale codes: [${invalidLocales.join(', ')}]. Use standard ISO 639-1 for language (e.g. "en") or language-region combination (e.g. "en-us" or "es-es").`;
       }
 
-      result = `Locale URL Table\n${table}\n\nHTML Link Tags\n${htmlTags}\n\nXML Sitemap Alternates\n${sitemap}`;
-      resultHtml = renderSectionSuite('Hreflang Implementation Suite', [
+      result = [
+        'Locale URL Table',
+        table,
+        ...(target === 'html' || target === 'both' ? ['', 'HTML Link Tags', htmlTags] : []),
+        ...(target === 'sitemap' || target === 'both' ? ['', 'XML Sitemap Alternates', sitemap] : [])
+      ].join('\n');
+
+      const sections = [
         { title: 'Locale URL Table', body: table, note: `${locales.length} locales generated via ${pattern} mapping.` },
-        { title: 'HTML Link Tags', body: htmlTags, note: 'Insert this into the <head> of every page within the cluster.' },
-        { title: 'XML Sitemap Alternates', body: sitemap, note: 'Optionally insert into your sitemap for indexing.' },
+        ...(target === 'html' || target === 'both' ? [{ title: 'HTML Link Tags', body: htmlTags, note: 'Insert this into the <head> of every page within the cluster.' }] : []),
+        ...(target === 'sitemap' || target === 'both' ? [{ title: 'XML Sitemap Alternates', body: sitemap, note: 'Optionally insert into your sitemap for indexing.' }] : []),
         { title: 'Implementation Checklist', body: checklist, note: 'Standard SEO rules for international clusters.' },
         { title: 'Locale Validation', body: warnings, note: invalidLocales.length > 0 ? 'Validation Warning' : 'Status: OK' }
-      ], 'Hreflang tags are essential for multilingual sites to prevent duplicate content issues.');
+      ];
+
+      resultHtml = renderSectionSuite('Hreflang Implementation Suite', sections, 'Hreflang tags are essential for multilingual sites to prevent duplicate content issues.');
       break;
     }
     case 'schema-tag-generator': {
@@ -2405,20 +2414,28 @@ async function generate() {
     }
     case 'hash-generator': {
       if (!text) { result = 'Please enter some text above.'; break; }
-      const encoder = new TextEncoder();
-      const data = encoder.encode(text);
-      const toHex = (buffer: ArrayBuffer) => Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-      const algorithmGroup = optionValue('hash-algorithm-group', 'all');
-      const uppercase = optionValue('hash-uppercase', 'false') === 'true';
-      const algorithms = algorithmGroup === 'sha256' ? ['SHA-256'] : ['SHA-1', 'SHA-256', 'SHA-384', 'SHA-512'];
-      const sections = await Promise.all(algorithms.map(async algorithm => {
-        const rawHash = toHex(await crypto.subtle.digest(algorithm, data));
-        const hash = uppercase ? rawHash.toUpperCase() : rawHash;
-        return { title: algorithm, body: hash, note: `${hash.length} hex characters.` };
-      }));
-      sections.push({ title: 'Input Summary', body: `Characters: ${text.length}\nUTF-8 bytes: ${data.byteLength}\nMD5: not generated because browser SubtleCrypto does not support MD5.`, note: 'Supported browser crypto algorithms only.' });
-      result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
-      resultHtml = renderSectionSuite('Hash Results', sections, 'Hashes are not encryption. They are one-way digests/checksums and should not be treated as passwords or secrets.');
+      try {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(text);
+        const toHex = (buffer: ArrayBuffer) => Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+        const algorithmGroup = optionValue('hash-algorithm-group', 'all');
+        const uppercase = optionValue('hash-uppercase', 'false') === 'true';
+        const algorithms = algorithmGroup === 'sha256' ? ['SHA-256'] : ['SHA-1', 'SHA-256', 'SHA-384', 'SHA-512'];
+        const sections = await Promise.all(algorithms.map(async algorithm => {
+          const rawHash = toHex(await crypto.subtle.digest(algorithm, data));
+          const hash = uppercase ? rawHash.toUpperCase() : rawHash;
+          return { title: algorithm, body: hash, note: `${hash.length} hex characters.` };
+        }));
+        sections.push({ title: 'Input Summary', body: `Characters: ${text.length}\nUTF-8 bytes: ${data.byteLength}\nMD5: not generated because browser SubtleCrypto does not support MD5.`, note: 'Supported browser crypto algorithms only.' });
+        result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
+        resultHtml = renderSectionSuite('Cryptographic Hash Drawer', sections, 'All cryptographic operations are performed completely client-side in your browser. No input text is sent to our servers.');
+      } catch (err) {
+        const errMsg = (err as Error).message;
+        result = `Hashing Error: ${errMsg}`;
+        resultHtml = renderSectionSuite('Cryptographic Hash Error', [
+          { title: 'Failure', body: errMsg, note: 'Error' }
+        ], 'Cryptographic processing failed in your browser.');
+      }
       break;
     }
     case 'json-formatter': {
@@ -2776,19 +2793,94 @@ async function generate() {
       break;
     }
     case 'nickname-generator': {
-      const name = text || 'Alex';
-      const nicks = [
-        name.slice(0, Math.ceil(name.length / 2)),
-        name.slice(0, 3) + 'ster',
-        name.slice(0, 3) + 'zy',
-        name[0] + '-' + randomFrom(['dawg','bear','bug','boo','bean','star']),
-        'Big ' + name.slice(0, 3),
-        'Lil ' + name.slice(0, 3),
-        name + 'inator',
-        name.slice(0, 3) + 'meister',
-        name + randomFrom(['y','ie','o','a']),
-        randomFrom(['Captain','Chief','Boss','King','Queen']) + ' ' + name.slice(0, 3)];
-      result = nicks.join('\n');
+      const name = (text || 'Alex').trim();
+      const category = optionValue('word-category', 'creative');
+      const count = Math.max(4, Math.min(40, Number(optionValue('word-count', '12')) || 12));
+      const lengthOpt = optionValue('word-length', 'mixed');
+
+      const banks: Record<string, { prefix: string[], suffix: string[] }> = {
+        common: {
+          prefix: ['Big', 'Lil', 'Doc', 'Sly', 'Kid', 'Papa', 'Mama'],
+          suffix: ['ster', 'zy', 'y', 'ie', 'o', 'bug', 'bear', 'bean', 'star']
+        },
+        creative: {
+          prefix: ['Aero', 'Pixel', 'Echo', 'Neon', 'Vibe', 'Nova', 'Flux'],
+          suffix: ['craft', 'verse', 'studio', 'notes', 'space', 'flow', 'wave']
+        },
+        business: {
+          prefix: ['Pro', 'HQ', 'Lead', 'Chief', 'Direct', 'Apex', 'Core'],
+          suffix: ['consult', 'corp', 'hub', 'pro', 'exec', 'lab', 'dept']
+        },
+        fantasy: {
+          prefix: ['Shadow', 'Storm', 'Frost', 'Iron', 'Star', 'Rogue', 'Dread'],
+          suffix: ['blade', 'heart', 'weaver', 'fury', 'walker', 'runner', 'shield']
+        },
+        funny: {
+          prefix: ['Mc', 'Sir', 'Mega', 'Hyper', 'Captain', 'Turbo', 'Giga'],
+          suffix: ['inator', 'saurus', 'zilla', 'goblin', 'noodle', 'pants', 'flop']
+        },
+        'adjective-noun': {
+          prefix: ['Lucky', 'Golden', 'Silent', 'Wild', 'Swift', 'Red', 'Dark'],
+          suffix: ['Fox', 'Eagle', 'Wolf', 'Hawk', 'Tiger', 'Bear', 'Lion']
+        }
+      };
+
+      const bank = banks[category] || banks.creative;
+
+      const items: { name: string, reason: string }[] = [];
+      const usedNames = new Set<string>();
+
+      // Generate pool of names
+      let attempts = 0;
+      while (items.length < count && attempts < 200) {
+        attempts++;
+        const p = randomFrom(bank.prefix);
+        const s = randomFrom(bank.suffix);
+        
+        let nick = '';
+        const roll = Math.floor(attempts % 4);
+        if (category === 'adjective-noun') {
+          nick = `${p}${s}`;
+        } else {
+          if (roll === 0) {
+            nick = `${p}${name}`;
+          } else if (roll === 1) {
+            nick = `${name}${s}`;
+          } else if (roll === 2) {
+            nick = `${p} ${name}`;
+          } else {
+            nick = `${name} ${s}`;
+          }
+        }
+
+        // Apply length filtering
+        const len = nick.replace(/\s/g, '').length;
+        if (lengthOpt === 'short' && len > 7) continue;
+        if (lengthOpt === 'medium' && (len < 6 || len > 11)) continue;
+        if (lengthOpt === 'long' && len < 10) continue;
+
+        if (!usedNames.has(nick)) {
+          usedNames.add(nick);
+          items.push({
+            name: nick,
+            reason: `Formed using ${category} style elements and length filter.`
+          });
+        }
+      }
+
+      // Fallback in case filtering was too restrictive
+      if (items.length === 0) {
+        items.push({ name: name, reason: 'Original input as fallback.' });
+      }
+
+      result = items.map(x => x.name).join('\n');
+      resultHtml = renderGroupedIdeas([
+        {
+          title: `${titleCase(category)} Style Nicknames`,
+          note: `Selected length: ${lengthOpt}.`,
+          items
+        }
+      ], 'Nicknames can be used for screen names, profiles, or characters. Check availability on platforms before registering.');
       break;
     }
     case 'hashtag-generator': {
@@ -2985,30 +3077,72 @@ async function generate() {
       if (!text) { result = 'Please enter some text above.'; break; }
       const binaryMode = optionValue('binary-mode', 'auto');
       const binaryFormat = optionValue('binary-format', 'space');
-      const bytes = Array.from(new TextEncoder().encode(text));
-      const byteStrings = bytes.map(byte => byte.toString(2).padStart(8, '0'));
-      const spaced = byteStrings.join(' ');
-      const plain = byteStrings.join('');
-      const grouped = byteStrings.reduce<string[]>((groups, byte, index) => {
-        const groupIndex = Math.floor(index / 4);
-        groups[groupIndex] = groups[groupIndex] ? groups[groupIndex] + ' ' + byte : byte;
-        return groups;
-      }, []).join('\n');
-      const binaryLike = /^[01\s]+$/.test(text.trim()) && text.replace(/\s/g, '').length % 8 === 0;
-      let decoded = 'Input is not a complete 8-bit binary string.';
-      if (binaryLike) {
-        const rawBits = text.replace(/\s/g, '');
-        const decodedBytes = rawBits.match(/.{8}/g)?.map(bits => parseInt(bits, 2)) || [];
-        decoded = new TextDecoder().decode(new Uint8Array(decodedBytes));
+
+      const isBinaryPattern = /^[01\s\r\n]+$/.test(text.trim());
+      const shouldDecode = binaryMode === 'decode' || (binaryMode === 'auto' && isBinaryPattern);
+
+      if (shouldDecode) {
+        // Decode mode
+        const cleanBinary = text.replace(/[^01]/g, '');
+        if (cleanBinary.length === 0) {
+          result = 'Error: No binary digits found in input.';
+          resultHtml = renderSectionSuite('Binary Decoder Error', [
+            { title: 'Decode Failure', body: 'No binary digits found to decode.', note: 'Invalid Binary' }
+          ], 'Ensure input contains binary 0s and 1s.');
+          break;
+        }
+        
+        const paddedBinary = cleanBinary.padStart(Math.ceil(cleanBinary.length / 8) * 8, '0');
+        const bytes: number[] = [];
+        for (let i = 0; i < paddedBinary.length; i += 8) {
+          bytes.push(parseInt(paddedBinary.substring(i, i + 8), 2));
+        }
+
+        let decoded = '';
+        let parseErrorMsg = '';
+        try {
+          decoded = new TextDecoder('utf-8', { fatal: true }).decode(new Uint8Array(bytes));
+        } catch (e) {
+          // fallback to non-fatal decoding to prevent complete failure
+          try {
+            decoded = new TextDecoder('utf-8').decode(new Uint8Array(bytes));
+            parseErrorMsg = 'Decoded string contains replacement characters due to invalid UTF-8 byte sequences.';
+          } catch (e2) {
+            decoded = 'Error decoding binary to text.';
+            parseErrorMsg = (e2 as Error).message;
+          }
+        }
+
+        result = decoded;
+
+        const sections = [
+          { title: 'Decoded Text Output', body: decoded, note: 'Text decoded from binary string.' },
+          { title: 'Clean Binary Input', body: cleanBinary, note: `${cleanBinary.length} bits parsed.` },
+          ...(parseErrorMsg ? [{ title: 'Decoding Warning', body: parseErrorMsg, note: 'Warning' }] : [])
+        ];
+        resultHtml = renderSectionSuite('Binary to Text Decoded Output', sections, 'Successfully parsed binary data.');
+      } else {
+        // Encode mode
+        const bytes = Array.from(new TextEncoder().encode(text));
+        const byteStrings = bytes.map(byte => byte.toString(2).padStart(8, '0'));
+        const spaced = byteStrings.join(' ');
+        const plain = byteStrings.join('');
+        const grouped = byteStrings.reduce<string[]>((groups, byte, index) => {
+          const groupIndex = Math.floor(index / 4);
+          groups[groupIndex] = groups[groupIndex] ? groups[groupIndex] + ' ' + byte : byte;
+          return groups;
+        }, []).join('\n');
+
+        const sections = [
+          { title: 'Spaced Binary', body: spaced, note: '8-bit byte groups separated by spaces.' },
+          { title: 'Plain Binary', body: plain, note: 'Continuous binary string.' },
+          { title: 'Grouped Binary', body: grouped, note: 'Four bytes per line for scanning.' },
+          { title: 'Input Summary', body: `Mode: ${binaryMode}\nCharacters: ${text.length}\nUTF-8 bytes: ${bytes.length}\nBits: ${bytes.length * 8}`, note: 'Binary represents UTF-8 bytes.' }
+        ];
+
+        result = binaryFormat === 'none' ? plain : binaryFormat === 'lines' ? grouped : spaced;
+        resultHtml = renderSectionSuite('Text to Binary Encoded Output', sections, 'Binary is an encoding representation, not encryption.');
       }
-      const sections = [
-        { title: 'Spaced Binary', body: spaced, note: '8-bit byte groups separated by spaces.' },
-        { title: 'Plain Binary', body: plain, note: 'Continuous binary string.' },
-        { title: 'Grouped Binary', body: grouped, note: 'Four bytes per line for scanning.' },
-        { title: 'Reverse Decode Preview', body: decoded, note: binaryLike ? 'Decoded from binary input.' : 'Only shown when input looks like binary.' },
-        { title: 'Input Summary', body: `Mode: ${binaryMode}\nCharacters: ${text.length}\nUTF-8 bytes: ${bytes.length}\nBits: ${bytes.length * 8}`, note: 'Binary represents UTF-8 bytes.' }];
-      result = binaryFormat === 'none' ? plain : binaryFormat === 'lines' ? grouped : spaced;
-      resultHtml = renderSectionSuite('Text to Binary Output', sections, 'Binary is an encoding representation, not encryption.');
       break;
     }
     case 'morse-code-generator': {

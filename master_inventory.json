@@ -1477,16 +1477,19 @@
     "outputRenderer": "renderRaw",
     "configuredOptions": [
       "hreflang-target",
-      "hreflang-x-default"
+      "hreflang-x-default",
+      "hreflang-locales",
+      "hreflang-url-pattern"
     ],
     "usedOptions": [
-      "hreflang-x-default"
+      "hreflang-target",
+      "hreflang-x-default",
+      "hreflang-locales",
+      "hreflang-url-pattern"
     ],
-    "missingOptions": [
-      "hreflang-target"
-    ],
-    "validation": false,
-    "errorHandling": false,
+    "missingOptions": [],
+    "validation": true,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -1496,9 +1499,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: hreflang-target."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Wired target selection to filter HTML/Sitemap previews, added full support for URL structure and locale options."
   },
   {
     "name": "Schema Markup Generator",
@@ -1550,16 +1553,15 @@
       "slug-keyword-focus"
     ],
     "usedOptions": [
-      "slug-separator"
-    ],
-    "missingOptions": [
+      "slug-separator",
       "slug-lowercase",
       "slug-remove-stopwords",
       "slug-max-length",
       "slug-keyword-focus"
     ],
-    "validation": false,
-    "errorHandling": false,
+    "missingOptions": [],
+    "validation": true,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -1569,9 +1571,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: slug-lowercase, slug-remove-stopwords, slug-max-length, slug-keyword-focus."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Verified separators, casing, stop words, length limits, and focus keywords."
   },
   {
     "name": "Hash Generator",
@@ -1587,13 +1589,13 @@
       "hash-algorithm-group",
       "hash-uppercase"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "hash-algorithm-group",
       "hash-uppercase"
     ],
+    "missingOptions": [],
     "validation": true,
-    "errorHandling": false,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -1603,9 +1605,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: hash-algorithm-group, hash-uppercase."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Wired algorithm group and uppercase casing, wrapped SubtleCrypto operations in a robust try-catch block for older browsers."
   },
   {
     "name": "JSON Formatter",
@@ -1622,14 +1624,14 @@
       "json-sort-keys",
       "json-autofix"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "json-indent",
       "json-sort-keys",
       "json-autofix"
     ],
+    "missingOptions": [],
     "validation": true,
-    "errorHandling": false,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -1639,9 +1641,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: json-indent, json-sort-keys, json-autofix."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Verified spaces, keys sorting, and common syntax error auto-fixes."
   },
   {
     "name": "Coin Flip Generator",
@@ -2018,13 +2020,12 @@
       "ig-caption-style"
     ],
     "usedOptions": [
-      "ig-caption-emoji"
-    ],
-    "missingOptions": [
+      "ig-caption-emoji",
       "ig-caption-style"
     ],
-    "validation": false,
-    "errorHandling": false,
+    "missingOptions": [],
+    "validation": true,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -2034,9 +2035,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: ig-caption-style."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Verified emoji level prefixing and style sorting order."
   },
   {
     "name": "Nickname Generator",
@@ -2053,14 +2054,14 @@
       "word-count",
       "word-length"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "word-category",
       "word-count",
       "word-length"
     ],
-    "validation": false,
-    "errorHandling": false,
+    "missingOptions": [],
+    "validation": true,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -2070,9 +2071,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: word-category, word-count, word-length."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Implemented word categories, name counts, length boundaries, and reused renderGroupedIdeas helper for beautiful grid layouts."
   },
   {
     "name": "Hashtag Generator",
@@ -2124,8 +2125,7 @@
       "tag-count",
       "include-long-tail"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "etsy-product-type",
       "etsy-material",
       "etsy-style",
@@ -2137,8 +2137,9 @@
       "tag-count",
       "include-long-tail"
     ],
+    "missingOptions": [],
     "validation": true,
-    "errorHandling": false,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -2148,9 +2149,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: etsy-product-type, etsy-material, etsy-style, etsy-occasion, etsy-buyer, etsy-personalization, etsy-positioning, tag-strategy, tag-count, include-long-tail."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Verified listing tags generation from materials, styles, occasions, personalization, and target buyers."
   },
   {
     "name": "Writing Prompt Generator",
@@ -2206,13 +2207,13 @@
       "binary-mode",
       "binary-format"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "binary-mode",
       "binary-format"
     ],
+    "missingOptions": [],
     "validation": true,
-    "errorHandling": false,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -2222,9 +2223,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: binary-mode, binary-format."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Wired binary-mode options to enable true encoding, decoding, or auto-detection of binary digits."
   },
   {
     "name": "Morse Code Generator",
@@ -2240,13 +2241,13 @@
       "morse-mode",
       "morse-word-separator"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "morse-mode",
       "morse-word-separator"
     ],
+    "missingOptions": [],
     "validation": true,
-    "errorHandling": false,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -2256,9 +2257,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: morse-mode, morse-word-separator."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Verified translation mode and custom word separators (slash/spaces)."
   },
   {
     "name": "Anime Name Generator",
@@ -3667,16 +3668,16 @@
       "pin-destination",
       "tag-count"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "tag-content-type",
       "tag-strategy",
       "pin-season",
       "pin-destination",
       "tag-count"
     ],
+    "missingOptions": [],
     "validation": true,
-    "errorHandling": false,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -3686,9 +3687,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: tag-content-type, tag-strategy, pin-season, pin-destination, tag-count."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Verified pin intents, keyword strategy constraints, seasons, destinations, and section sizes."
   },
   {
     "name": "SoundCloud Tag Generator",

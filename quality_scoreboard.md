@@ -3,13 +3,13 @@
 | Category | Total | Production Ready | Needs Polish | Partially Implemented | Broken | Missing | Average Score |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Font & Text Style Generators | 25 | 21 | 4 | 0 | 0 | 0 | 8.8 / 10 |
-| Name Generators | 18 | 12 | 6 | 0 | 0 | 0 | 8.4 / 10 |
-| Social Media & Tag Generators | 4 | 2 | 2 | 0 | 0 | 0 | 8.3 / 10 |
-| Bio & Caption Generators | 16 | 13 | 2 | 1 | 0 | 0 | 8.4 / 10 |
-| SEO & Marketing Generators | 23 | 12 | 11 | 0 | 0 | 0 | 8.0 / 10 |
+| Name Generators | 18 | 13 | 5 | 0 | 0 | 0 | 8.6 / 10 |
+| Social Media & Tag Generators | 4 | 3 | 1 | 0 | 0 | 0 | 9.0 / 10 |
+| Bio & Caption Generators | 16 | 14 | 1 | 1 | 0 | 0 | 8.6 / 10 |
+| SEO & Marketing Generators | 23 | 14 | 9 | 0 | 0 | 0 | 8.3 / 10 |
 | Utility Generators | 33 | 29 | 4 | 0 | 0 | 0 | 8.8 / 10 |
 | Gaming & Fantasy Generators | 47 | 44 | 3 | 0 | 0 | 0 | 8.9 / 10 |
-| Developer & Web Generators | 42 | 35 | 7 | 0 | 0 | 0 | 8.7 / 10 |
+| Developer & Web Generators | 42 | 40 | 2 | 0 | 0 | 0 | 9.0 / 10 |
 | Random Generators | 31 | 28 | 3 | 0 | 0 | 0 | 8.8 / 10 |
 | Business & Brand Generators | 25 | 22 | 3 | 0 | 0 | 0 | 8.8 / 10 |
 | Creative & Story Generators | 44 | 36 | 8 | 0 | 0 | 0 | 8.7 / 10 |

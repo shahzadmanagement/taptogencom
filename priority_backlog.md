@@ -2,16 +2,6 @@
 
 | Slug | Status | Score | Issues / Notes | Priority | Effort | Impact |
 | :--- | :--- | :---: | :--- | :--- | :--- | :--- |
-| hreflang-tag-generator | 🟡 Needs Polish | 7 | Ignores configured options: hreflang-target. | Low | Quick Win | Low |
-| slug-generator | 🟡 Needs Polish | 7 | Ignores configured options: slug-lowercase, slug-remove-stopwords, slug-max-length, slug-keyword-focus. | Low | Quick Win | Low |
-| hash-generator | 🟡 Needs Polish | 7 | Ignores configured options: hash-algorithm-group, hash-uppercase. | Low | Quick Win | Low |
-| json-formatter | 🟡 Needs Polish | 7 | Ignores configured options: json-indent, json-sort-keys, json-autofix. | Low | Quick Win | Low |
-| instagram-caption-generator | 🟡 Needs Polish | 7 | Ignores configured options: ig-caption-style. | Low | Quick Win | Low |
-| nickname-generator | 🟡 Needs Polish | 7 | Ignores configured options: word-category, word-count, word-length. | Low | Quick Win | Low |
-| etsy-tag-generator | 🟡 Needs Polish | 7 | Ignores configured options: etsy-product-type, etsy-material, etsy-style, etsy-occasion, etsy-buyer, etsy-personalization, etsy-positioning, tag-strategy, tag-count, include-long-tail. | Low | Quick Win | Low |
-| text-to-binary-generator | 🟡 Needs Polish | 7 | Ignores configured options: binary-mode, binary-format. | Low | Quick Win | Low |
-| morse-code-generator | 🟡 Needs Polish | 7 | Ignores configured options: morse-mode, morse-word-separator. | Low | Quick Win | Low |
-| pinterest-tag-generator | 🟡 Needs Polish | 7 | Ignores configured options: tag-content-type, tag-strategy, pin-season, pin-destination, tag-count. | Low | Quick Win | Low |
 | soundcloud-tag-generator | 🟡 Needs Polish | 7 | Ignores configured options: soundcloud-tag-style, soundcloud-track-type, soundcloud-genre, soundcloud-mood, soundcloud-vocal, soundcloud-release-context. | Low | Quick Win | Low |
 | cipher-generator | 🟡 Needs Polish | 7 | Ignores configured options: cipher-type, cipher-mode, cipher-shift. | Low | Quick Win | Low |
 | repeat-text-generator | 🟡 Needs Polish | 7 | Ignores configured options: repeat-count, repeat-separator. | Low | Quick Win | Low |
