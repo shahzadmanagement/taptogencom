@@ -14,7 +14,7 @@
 | Business & Brand Generators | 25 | 25 | 0 | 0 | 0 | 0 | 9.1 / 10 |
 | Creative & Story Generators | 44 | 44 | 0 | 0 | 0 | 0 | 9.2 / 10 |
 | AI Text & Writing Generators | 42 | 42 | 0 | 0 | 0 | 0 | 9.1 / 10 |
-| Business Generators | 11 | 11 | 0 | 0 | 0 | 0 | 9.4 / 10 |
+| Business Generators | 12 | 12 | 0 | 0 | 0 | 0 | 9.4 / 10 |
 | Human Name Generators | 1 | 1 | 0 | 0 | 0 | 0 | 10.0 / 10 |
 | Writing Generators | 1 | 1 | 0 | 0 | 0 | 0 | 9.0 / 10 |
 | Other | 66 | 66 | 0 | 0 | 0 | 0 | 9.1 / 10 |

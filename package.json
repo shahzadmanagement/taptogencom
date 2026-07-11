@@ -10,7 +10,14 @@
     "build": "astro build",
     "postbuild": "node scripts/patch-vercel-redirects.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "typecheck": "astro check",
+    "test": "node tests/run-all.cjs",
+    "test:unit": "node tests/run-unit.cjs",
+    "test:integration": "node tests/run-integration.cjs",
+    "test:inventory": "node tests/run-inventory.cjs",
+    "test:options": "node tests/run-options.cjs",
+    "verify": "node tests/run-verify.cjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.4",

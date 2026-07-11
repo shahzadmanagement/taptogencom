@@ -5775,7 +5775,7 @@ export const tools: Tool[] = [
     metaDescription: 'Draft NDA outline sections with professional-review reminders - free & instant.',
     userIntent: 'User wants an informational NDA draft outline with user-fill placeholders and professional review warnings.',
     generatorType: 'random-combo',
-    toolOptions: [{"type":"select","options":[{"value":"overview","label":"Overview"},{"value":"scope","label":"Scope"},{"value":"terms","label":"Terms"},{"value":"review-note","label":"Review Note"},{"value":"safety-note","label":"Safety Note"}],"id":"pass29-style","label":"Template Section","default":"all"}],
+    toolOptions: [{"type":"select","options":[{"value":"all","label":"All Sections"},{"value":"overview","label":"Overview"},{"value":"scope","label":"Scope"},{"value":"terms","label":"Terms"},{"value":"review-note","label":"Review Note"},{"value":"safety-note","label":"Safety Note"}],"id":"pass29-style","label":"Template Section","default":"all"}],
     faqItems: [
       { q: 'Is this NDA generator legal advice?', a: 'No. It creates informational outline sections only. It is not legal, compliance, confidentiality, employment, IP, or jurisdiction-specific advice.' },
       { q: 'Can I sign the generated NDA as-is?', a: 'Do not rely on it as a final agreement. Review confidentiality scope, exclusions, term, remedies, governing law, party authority, and enforceability with a qualified professional.' },

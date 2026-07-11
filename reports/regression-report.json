@@ -1,0 +1,4712 @@
+{
+  "summary": {
+    "totalGeneratorsTested": 430,
+    "passed": 430,
+    "failed": 0,
+    "warnings": 11,
+    "averageExecutionTimeMs": 3.01,
+    "totalRuntimeMs": 1385
+  },
+  "generators": [
+    {
+      "slug": "fancy-text-generator",
+      "name": "Fancy Text Generator",
+      "status": "PASSED",
+      "executionTime": 80.62,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "name-generator",
+      "name": "Name Generator",
+      "status": "PASSED",
+      "executionTime": 3.93,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "username-generator",
+      "name": "Username Generator",
+      "status": "PASSED",
+      "executionTime": 5.64,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "business-name-generator",
+      "name": "Business Name Generator",
+      "status": "PASSED",
+      "executionTime": 6.35,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "youtube-tag-generator",
+      "name": "YouTube Tag Generator",
+      "status": "PASSED",
+      "executionTime": 5.25,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "instagram-bio-generator",
+      "name": "Instagram Bio Generator",
+      "status": "PASSED",
+      "executionTime": 7.73,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "meta-tag-generator",
+      "name": "Meta Tag Generator",
+      "status": "PASSED",
+      "executionTime": 4.78,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "bold-text-generator",
+      "name": "Bold Text Generator",
+      "status": "PASSED",
+      "executionTime": 5.89,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "cursive-text-generator",
+      "name": "Cursive Text Generator",
+      "status": "PASSED",
+      "executionTime": 4.97,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "glitch-text-generator",
+      "name": "Glitch Text Generator",
+      "status": "PASSED",
+      "executionTime": 6.55,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "password-generator",
+      "name": "Password Generator",
+      "status": "PASSED",
+      "executionTime": 12.95,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "lorem-ipsum-generator",
+      "name": "Lorem Ipsum Generator",
+      "status": "PASSED",
+      "executionTime": 2.15,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "fantasy-name-generator",
+      "name": "Fantasy Name Generator",
+      "status": "PASSED",
+      "executionTime": 3.1,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "text-case-converter",
+      "name": "Text Case Converter",
+      "status": "PASSED",
+      "executionTime": 3.47,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "team-name-generator",
+      "name": "Team Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.7,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "robots-txt-generator",
+      "name": "Robots.txt Generator",
+      "status": "PASSED",
+      "executionTime": 6.95,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "word-counter",
+      "name": "Word Counter",
+      "status": "PASSED",
+      "executionTime": 2.48,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "uuid-generator",
+      "name": "UUID Generator",
+      "status": "PASSED",
+      "executionTime": 2.69,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "random-number-generator",
+      "name": "Random Number Generator",
+      "status": "PASSED",
+      "executionTime": 2.28,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "small-text-generator",
+      "name": "Small Text Generator",
+      "status": "PASSED",
+      "executionTime": 1.84,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "italic-text-generator",
+      "name": "Italic Text Generator",
+      "status": "PASSED",
+      "executionTime": 5.33,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "strikethrough-text-generator",
+      "name": "Strikethrough Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.3,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "underline-text-generator",
+      "name": "Underline Text Generator",
+      "status": "PASSED",
+      "executionTime": 3.79,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "vaporwave-text-generator",
+      "name": "Vaporwave Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.49,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "reverse-text-generator",
+      "name": "Reverse Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.71,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "unicode-text-generator",
+      "name": "Unicode Text Generator",
+      "status": "PASSED",
+      "executionTime": 4.95,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "twitter-bio-generator",
+      "name": "Twitter/X Bio Generator",
+      "status": "PASSED",
+      "executionTime": 2.53,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "tiktok-bio-generator",
+      "name": "TikTok Bio Generator",
+      "status": "PASSED",
+      "executionTime": 1.61,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "linkedin-bio-generator",
+      "name": "LinkedIn Bio Generator",
+      "status": "PASSED",
+      "executionTime": 2.17,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "domain-name-generator",
+      "name": "Domain Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.17,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "product-name-generator",
+      "name": "Product Name Generator",
+      "status": "PASSED",
+      "executionTime": 5.18,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "baby-name-generator",
+      "name": "Baby Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.04,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "middle-name-generator",
+      "name": "Middle Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.61,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "last-name-generator",
+      "name": "Last Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.03,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "discord-name-generator",
+      "name": "Discord Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.32,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "clan-name-generator",
+      "name": "Clan Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.29,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "band-name-generator",
+      "name": "Band Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.82,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "superhero-name-generator",
+      "name": "Superhero Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.32,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "rap-name-generator",
+      "name": "Rap Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.89,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "song-name-generator",
+      "name": "Song Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.71,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "paragraph-generator",
+      "name": "Paragraph Generator",
+      "status": "PASSED",
+      "executionTime": 2.68,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "sentence-generator",
+      "name": "Sentence Generator",
+      "status": "PASSED",
+      "executionTime": 6.45,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "blog-name-generator",
+      "name": "Blog Name Generator",
+      "status": "PASSED",
+      "executionTime": 3.63,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "pirate-name-generator",
+      "name": "Pirate Name Generator",
+      "status": "PASSED",
+      "executionTime": 3.03,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "medieval-name-generator",
+      "name": "Medieval Name Generator",
+      "status": "PASSED",
+      "executionTime": 3.03,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "hreflang-tag-generator",
+      "name": "Hreflang Tag Generator",
+      "status": "PASSED",
+      "executionTime": 3.44,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "schema-tag-generator",
+      "name": "Schema Markup Generator",
+      "status": "PASSED",
+      "executionTime": 6,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "slug-generator",
+      "name": "URL Slug Generator",
+      "status": "PASSED",
+      "executionTime": 4.78,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "hash-generator",
+      "name": "Hash Generator",
+      "status": "PASSED",
+      "executionTime": 5.99,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "json-formatter",
+      "name": "JSON Formatter",
+      "status": "PASSED",
+      "executionTime": 2.43,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "coin-flip",
+      "name": "Coin Flip Generator",
+      "status": "PASSED",
+      "executionTime": 4.25,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "dice-roller",
+      "name": "Dice Roller",
+      "status": "PASSED",
+      "executionTime": 2.38,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "color-palette-generator",
+      "name": "Color Palette Generator",
+      "status": "PASSED",
+      "executionTime": 2.08,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "town-name-generator",
+      "name": "Town Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.97,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "kingdom-name-generator",
+      "name": "Kingdom Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.28,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "dragon-name-generator",
+      "name": "Dragon Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.18,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "wolf-name-generator",
+      "name": "Wolf Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.73,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "demon-name-generator",
+      "name": "Demon Name Generator",
+      "status": "PASSED",
+      "executionTime": 3.39,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "elf-name-generator",
+      "name": "Elf Name Generator",
+      "status": "PASSED",
+      "executionTime": 6.74,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "podcast-name-generator",
+      "name": "Podcast Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.95,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "youtube-name-generator",
+      "name": "YouTube Channel Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.46,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "instagram-caption-generator",
+      "name": "Instagram Caption Generator",
+      "status": "PASSED",
+      "executionTime": 2.1,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "nickname-generator",
+      "name": "Nickname Generator",
+      "status": "PASSED",
+      "executionTime": 2.03,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "hashtag-generator",
+      "name": "Hashtag Generator",
+      "status": "PASSED",
+      "executionTime": 1.78,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "etsy-tag-generator",
+      "name": "Etsy Tag Generator",
+      "status": "PASSED",
+      "executionTime": 2.28,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "writing-prompt-generator",
+      "name": "Writing Prompt Generator",
+      "status": "PASSED",
+      "executionTime": 2,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "text-to-binary-generator",
+      "name": "Text to Binary Converter",
+      "status": "PASSED",
+      "executionTime": 1.92,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "morse-code-generator",
+      "name": "Morse Code Generator",
+      "status": "PASSED",
+      "executionTime": 2.32,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "anime-name-generator",
+      "name": "Anime Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.78,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "fake-name-generator",
+      "name": "Fake Name Generator",
+      "status": "PASSED",
+      "executionTime": 6.78,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "qr-code-text-generator",
+      "name": "QR Code Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.3,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "dnd-name-generator",
+      "name": "D&D Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.26,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "orc-name-generator",
+      "name": "Orc Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.72,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "witch-name-generator",
+      "name": "Witch Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.09,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "alien-name-generator",
+      "name": "Alien Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.7,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "vampire-name-generator",
+      "name": "Vampire Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.73,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "fairy-name-generator",
+      "name": "Fairy Name Generator",
+      "status": "PASSED",
+      "executionTime": 2,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "goblin-name-generator",
+      "name": "Goblin Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.1,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "character-name-generator",
+      "name": "Character Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.92,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "story-name-generator",
+      "name": "Story Title Generator",
+      "status": "PASSED",
+      "executionTime": 2.09,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "twitch-name-generator",
+      "name": "Twitch Name Generator",
+      "status": "PASSED",
+      "executionTime": 7.94,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "random-phrase-generator",
+      "name": "Random Phrase Generator",
+      "status": "PASSED",
+      "executionTime": 1.55,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "special-character-generator",
+      "name": "Special Character Generator",
+      "status": "PASSED",
+      "executionTime": 1.85,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "ascii-text-generator",
+      "name": "ASCII Text Art Generator",
+      "status": "PASSED",
+      "executionTime": 2.17,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "creepy-text-generator",
+      "name": "Creepy Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.23,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "gaming-name-generator",
+      "name": "Gaming Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.11,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "guild-name-generator",
+      "name": "Guild Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.67,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "planet-name-generator",
+      "name": "Planet Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.67,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "island-name-generator",
+      "name": "Island Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.96,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "shop-name-generator",
+      "name": "Shop Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.81,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "cafe-name-generator",
+      "name": "Cafe Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.8,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "project-name-generator",
+      "name": "Project Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.59,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "stage-name-generator",
+      "name": "Stage Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.15,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "wrestling-name-generator",
+      "name": "Wrestling Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.6,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "cool-text-generator",
+      "name": "Cool Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.72,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "old-english-text-generator",
+      "name": "Old English Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.84,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "uwu-text-generator",
+      "name": "UwU Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.41,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "leet-text-generator",
+      "name": "Leet Speak Generator",
+      "status": "PASSED",
+      "executionTime": 2.34,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "random-text-generator",
+      "name": "Random Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.64,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "discord-timestamp-generator",
+      "name": "Discord Timestamp Generator",
+      "status": "PASSED",
+      "executionTime": 27.36,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "canonical-tag-generator",
+      "name": "Canonical Tag Generator",
+      "status": "PASSED",
+      "executionTime": 2.28,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "utm-generator",
+      "name": "UTM Link Generator",
+      "status": "PASSED",
+      "executionTime": 3.06,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "gibberish-generator",
+      "name": "Gibberish Generator",
+      "status": "PASSED",
+      "executionTime": 9.09,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "shakespeare-insult-generator",
+      "name": "Shakespeare Insult Generator",
+      "status": "PASSED",
+      "executionTime": 2.79,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "tiktok-name-generator",
+      "name": "TikTok Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.83,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "instagram-name-generator",
+      "name": "Instagram Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.23,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "couple-name-generator",
+      "name": "Couple Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.06,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "dwarf-name-generator",
+      "name": "Dwarf Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.82,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "tiefling-name-generator",
+      "name": "Tiefling Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.14,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "school-name-generator",
+      "name": "School Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.88,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "street-name-generator",
+      "name": "Street Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.01,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "book-club-name-generator",
+      "name": "Book Club Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.1,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "seo-title-generator",
+      "name": "SEO Title Generator",
+      "status": "PASSED",
+      "executionTime": 1.44,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "pinterest-tag-generator",
+      "name": "Pinterest Tag Generator",
+      "status": "PASSED",
+      "executionTime": 3.21,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "soundcloud-tag-generator",
+      "name": "SoundCloud Tag Generator",
+      "status": "PASSED",
+      "executionTime": 1.56,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "comeback-generator",
+      "name": "Comeback Generator",
+      "status": "PASSED",
+      "executionTime": 2.84,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "error-message-generator",
+      "name": "Error Message Generator",
+      "status": "PASSED",
+      "executionTime": 2.93,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "cipher-generator",
+      "name": "Cipher Generator",
+      "status": "PASSED",
+      "executionTime": 2.01,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "repeat-text-generator",
+      "name": "Repeat Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.49,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "magic-name-generator",
+      "name": "Magic Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.26,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "angel-name-generator",
+      "name": "Angel Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.82,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "tavern-name-generator",
+      "name": "Tavern Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.02,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "dungeon-name-generator",
+      "name": "Dungeon Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.76,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "cat-name-generator",
+      "name": "Cat Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.57,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "horse-name-generator",
+      "name": "Horse Name Generator",
+      "status": "PASSED",
+      "executionTime": 9.99,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "twitter-name-generator",
+      "name": "Twitter/X Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.46,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "snapchat-name-generator",
+      "name": "Snapchat Name Generator",
+      "status": "PASSED",
+      "executionTime": 2,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "linkedin-headline-generator",
+      "name": "LinkedIn Headline Generator",
+      "status": "PASSED",
+      "executionTime": 1.63,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "bio-generator",
+      "name": "Bio Generator",
+      "status": "PASSED",
+      "executionTime": 2.07,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "slogan-generator",
+      "name": "Slogan Generator",
+      "status": "PASSED",
+      "executionTime": 2.03,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "wifi-name-generator",
+      "name": "WiFi Name Generator",
+      "status": "PASSED",
+      "executionTime": 3.23,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "color-name-generator",
+      "name": "Color Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.7,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "hex-color-generator",
+      "name": "Hex Color Generator",
+      "status": "PASSED",
+      "executionTime": 2.16,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "rgb-generator",
+      "name": "RGB Color Generator",
+      "status": "PASSED",
+      "executionTime": 1.87,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "ai-prompt-generator",
+      "name": "AI Prompt Generator",
+      "status": "PASSED",
+      "executionTime": 1.88,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "midjourney-prompt-generator",
+      "name": "Midjourney Prompt Generator",
+      "status": "PASSED",
+      "executionTime": 2.26,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "passphrase-generator",
+      "name": "Passphrase Generator",
+      "status": "PASSED",
+      "executionTime": 2.03,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "pin-generator",
+      "name": "PIN Generator",
+      "status": "PASSED",
+      "executionTime": 1.56,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "api-key-generator",
+      "name": "API Key Generator",
+      "status": "PASSED",
+      "executionTime": 2.2,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "privacy-policy-generator",
+      "name": "Privacy Policy Generator",
+      "status": "PASSED",
+      "executionTime": 2.51,
+      "errors": [],
+      "warnings": [
+        "No download controls found for document template style generator"
+      ],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 7
+    },
+    {
+      "slug": "terms-generator",
+      "name": "Terms and Conditions Generator",
+      "status": "PASSED",
+      "executionTime": 1.32,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "cookie-policy-generator",
+      "name": "Cookie Policy Generator",
+      "status": "PASSED",
+      "executionTime": 1.84,
+      "errors": [],
+      "warnings": [
+        "No download controls found for document template style generator"
+      ],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 7
+    },
+    {
+      "slug": "disclaimer-generator",
+      "name": "Disclaimer Generator",
+      "status": "PASSED",
+      "executionTime": 2.19,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "open-graph-generator",
+      "name": "Open Graph Tag Generator",
+      "status": "PASSED",
+      "executionTime": 1.66,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "twitter-card-generator",
+      "name": "Twitter Card Generator",
+      "status": "PASSED",
+      "executionTime": 1.84,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "youtube-description-generator",
+      "name": "YouTube Description Generator",
+      "status": "PASSED",
+      "executionTime": 2.23,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "tiktok-caption-generator",
+      "name": "TikTok Caption Generator",
+      "status": "PASSED",
+      "executionTime": 10.55,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "css-button-generator",
+      "name": "CSS Button Generator",
+      "status": "PASSED",
+      "executionTime": 2.18,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "box-shadow-generator",
+      "name": "CSS Box Shadow Generator",
+      "status": "PASSED",
+      "executionTime": 2.01,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "border-radius-generator",
+      "name": "CSS Border Radius Generator",
+      "status": "PASSED",
+      "executionTime": 1.86,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "regex-generator",
+      "name": "Regex Generator",
+      "status": "PASSED",
+      "executionTime": 1.95,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "cron-expression-generator",
+      "name": "Cron Expression Generator",
+      "status": "PASSED",
+      "executionTime": 1.73,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "random-letter-generator",
+      "name": "Random Letter Generator",
+      "status": "PASSED",
+      "executionTime": 2.61,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "random-question-generator",
+      "name": "Random Question Generator",
+      "status": "PASSED",
+      "executionTime": 2,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "truth-or-dare-generator",
+      "name": "Truth or Dare Generator",
+      "status": "PASSED",
+      "executionTime": 1.59,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "would-you-rather-generator",
+      "name": "Would You Rather Generator",
+      "status": "PASSED",
+      "executionTime": 1.45,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "joke-generator",
+      "name": "Joke Generator",
+      "status": "PASSED",
+      "executionTime": 1.99,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "compliment-generator",
+      "name": "Compliment Generator",
+      "status": "PASSED",
+      "executionTime": 1.34,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "email-signature-generator",
+      "name": "Email Signature Generator",
+      "status": "PASSED",
+      "executionTime": 1.54,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "gradient-generator",
+      "name": "CSS Gradient Generator",
+      "status": "PASSED",
+      "executionTime": 1.59,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "font-pairing-generator",
+      "name": "Font Pairing Generator",
+      "status": "PASSED",
+      "executionTime": 1.67,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "blog-outline-generator",
+      "name": "Blog Outline Generator",
+      "status": "PASSED",
+      "executionTime": 1.38,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "cold-email-generator",
+      "name": "Cold Email Generator",
+      "status": "PASSED",
+      "executionTime": 1.6,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "cover-letter-generator",
+      "name": "Cover Letter Generator",
+      "status": "PASSED",
+      "executionTime": 1.63,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "resume-summary-generator",
+      "name": "Resume Summary Generator",
+      "status": "PASSED",
+      "executionTime": 1.62,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "ad-copy-generator",
+      "name": "Ad Copy Generator",
+      "status": "PASSED",
+      "executionTime": 1.98,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "call-to-action-generator",
+      "name": "Call to Action Generator",
+      "status": "PASSED",
+      "executionTime": 2.28,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "product-description-generator",
+      "name": "Product Description Generator",
+      "status": "PASSED",
+      "executionTime": 2.36,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "random-emoji-generator",
+      "name": "Random Emoji Generator",
+      "status": "PASSED",
+      "executionTime": 11.92,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "random-country-generator",
+      "name": "Random Country Generator",
+      "status": "PASSED",
+      "executionTime": 2.47,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "random-date-generator",
+      "name": "Random Date Generator",
+      "status": "PASSED",
+      "executionTime": 3.19,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "random-choice-generator",
+      "name": "Random Choice Generator",
+      "status": "PASSED",
+      "executionTime": 1.46,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "game-idea-generator",
+      "name": "Game Idea Generator",
+      "status": "PASSED",
+      "executionTime": 2.69,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "rpg-character-generator",
+      "name": "RPG Character Generator",
+      "status": "PASSED",
+      "executionTime": 1.99,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "npc-generator",
+      "name": "NPC Generator",
+      "status": "PASSED",
+      "executionTime": 2.02,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "quest-generator",
+      "name": "Quest Generator",
+      "status": "PASSED",
+      "executionTime": 2.34,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "story-plot-generator",
+      "name": "Story Plot Generator",
+      "status": "PASSED",
+      "executionTime": 1.72,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "riddle-generator",
+      "name": "Riddle Generator",
+      "status": "PASSED",
+      "executionTime": 2.07,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "icebreaker-generator",
+      "name": "Icebreaker Generator",
+      "status": "PASSED",
+      "executionTime": 1.81,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "product-title-generator",
+      "name": "Product Title Generator",
+      "status": "PASSED",
+      "executionTime": 1.82,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "sku-generator",
+      "name": "SKU Generator",
+      "status": "PASSED",
+      "executionTime": 2.1,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "testimonial-generator",
+      "name": "Testimonial Generator",
+      "status": "PASSED",
+      "executionTime": 1.76,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "keyword-generator",
+      "name": "Keyword Generator",
+      "status": "PASSED",
+      "executionTime": 1.84,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "faq-generator",
+      "name": "FAQ Generator",
+      "status": "PASSED",
+      "executionTime": 1.96,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "license-key-generator",
+      "name": "License Key Generator",
+      "status": "PASSED",
+      "executionTime": 1.67,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "recovery-code-generator",
+      "name": "Recovery Code Generator",
+      "status": "PASSED",
+      "executionTime": 2.55,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "coupon-code-generator",
+      "name": "Coupon Code Generator",
+      "status": "PASSED",
+      "executionTime": 2.34,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "barcode-generator",
+      "name": "Barcode Text Generator",
+      "status": "PASSED",
+      "executionTime": 1.86,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "refund-policy-generator",
+      "name": "Refund Policy Generator",
+      "status": "PASSED",
+      "executionTime": 2.02,
+      "errors": [],
+      "warnings": [
+        "No download controls found for document template style generator"
+      ],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 7
+    },
+    {
+      "slug": "shipping-policy-generator",
+      "name": "Shipping Policy Generator",
+      "status": "PASSED",
+      "executionTime": 2.63,
+      "errors": [],
+      "warnings": [
+        "No download controls found for document template style generator"
+      ],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 7
+    },
+    {
+      "slug": "affiliate-disclosure-generator",
+      "name": "Affiliate Disclosure Generator",
+      "status": "PASSED",
+      "executionTime": 10.76,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "invoice-generator",
+      "name": "Invoice Generator",
+      "status": "PASSED",
+      "executionTime": 2.54,
+      "errors": [],
+      "warnings": [
+        "No download controls found for document template style generator"
+      ],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 7
+    },
+    {
+      "slug": "meeting-agenda-generator",
+      "name": "Meeting Agenda Generator",
+      "status": "PASSED",
+      "executionTime": 1.67,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "citation-generator",
+      "name": "Citation Generator",
+      "status": "PASSED",
+      "executionTime": 1.97,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "linkedin-post-generator",
+      "name": "LinkedIn Post Generator",
+      "status": "PASSED",
+      "executionTime": 1.79,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "facebook-post-generator",
+      "name": "Facebook Post Generator",
+      "status": "PASSED",
+      "executionTime": 2.16,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "headline-generator",
+      "name": "Headline Generator",
+      "status": "PASSED",
+      "executionTime": 1.75,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "meme-text-generator",
+      "name": "Meme Text Generator",
+      "status": "PASSED",
+      "executionTime": 1.51,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "startup-name-generator",
+      "name": "Startup Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.9,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "photography-name-generator",
+      "name": "Photography Business Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.8,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "art-name-generator",
+      "name": "Art Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.4,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "avatar-name-generator",
+      "name": "Avatar Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.62,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "video-game-name-generator",
+      "name": "Video Game Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.59,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "text-summary-generator",
+      "name": "Text Summary Generator",
+      "status": "PASSED",
+      "executionTime": 1.29,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "typography-generator",
+      "name": "Typography Generator",
+      "status": "PASSED",
+      "executionTime": 2.07,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "wordart-generator",
+      "name": "Word Art Generator",
+      "status": "PASSED",
+      "executionTime": 2.46,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "social-media-post-generator",
+      "name": "Social Media Post Generator",
+      "status": "PASSED",
+      "executionTime": 1.87,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "email-subject-generator",
+      "name": "Email Subject Line Generator",
+      "status": "PASSED",
+      "executionTime": 3.13,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "drag-name-generator",
+      "name": "Drag Queen Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.98,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "gamertag-generator",
+      "name": "Gamertag Generator",
+      "status": "PASSED",
+      "executionTime": 2.07,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "dragonborn-name-generator",
+      "name": "Dragonborn Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.22,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "email-name-generator",
+      "name": "Email Address Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.08,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "synonym-generator",
+      "name": "Synonym Generator",
+      "status": "PASSED",
+      "executionTime": 11.09,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "footnote-generator",
+      "name": "Footnote Generator",
+      "status": "PASSED",
+      "executionTime": 2.23,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "all-caps-generator",
+      "name": "ALL CAPS Generator",
+      "status": "PASSED",
+      "executionTime": 2.13,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "lowercase-generator",
+      "name": "Lowercase Generator",
+      "status": "PASSED",
+      "executionTime": 2.04,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "corporate-speak-generator",
+      "name": "Corporate Speak Generator",
+      "status": "PASSED",
+      "executionTime": 2.01,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "random-word-generator",
+      "name": "Random Word Generator",
+      "status": "PASSED",
+      "executionTime": 2.28,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "dialogue-tag-generator",
+      "name": "Dialogue Tag Generator",
+      "status": "PASSED",
+      "executionTime": 2.21,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "name-tag-generator",
+      "name": "Name Tag Generator",
+      "status": "PASSED",
+      "executionTime": 2.11,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "graffiti-text-generator",
+      "name": "Graffiti Text Generator",
+      "status": "PASSED",
+      "executionTime": 1.82,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "tag-cloud-generator",
+      "name": "Tag Cloud Generator",
+      "status": "PASSED",
+      "executionTime": 2.49,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "blog-tag-generator",
+      "name": "Blog Tag Generator",
+      "status": "PASSED",
+      "executionTime": 2.53,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "random-height-generator",
+      "name": "Random Height Generator",
+      "status": "PASSED",
+      "executionTime": 2.19,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "essay-title-generator",
+      "name": "Essay Title Generator",
+      "status": "PASSED",
+      "executionTime": 1.83,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "ao3-tag-generator",
+      "name": "AO3 Tag Generator",
+      "status": "PASSED",
+      "executionTime": 2.09,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "stable-diffusion-prompt-generator",
+      "name": "Stable Diffusion Prompt Generator",
+      "status": "PASSED",
+      "executionTime": 1.97,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "character-prompt-generator",
+      "name": "Character Prompt Generator",
+      "status": "PASSED",
+      "executionTime": 1.55,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "content-brief-generator",
+      "name": "Content Brief Generator",
+      "status": "PASSED",
+      "executionTime": 2.85,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "press-release-generator",
+      "name": "Press Release Generator",
+      "status": "PASSED",
+      "executionTime": 2.54,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "author-bio-generator",
+      "name": "Author Bio Generator",
+      "status": "PASSED",
+      "executionTime": 1.77,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "x-post-generator",
+      "name": "X/Twitter Post Generator",
+      "status": "PASSED",
+      "executionTime": 2.55,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "viral-hook-generator",
+      "name": "Viral Hook Generator",
+      "status": "PASSED",
+      "executionTime": 1.32,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "content-calendar-generator",
+      "name": "Content Calendar Generator",
+      "status": "PASSED",
+      "executionTime": 2.68,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "tagline-generator",
+      "name": "Tagline Generator",
+      "status": "PASSED",
+      "executionTime": 10.26,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "text-shadow-generator",
+      "name": "CSS Text Shadow Generator",
+      "status": "PASSED",
+      "executionTime": 2.29,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "css-grid-generator",
+      "name": "CSS Grid Generator",
+      "status": "PASSED",
+      "executionTime": 1.64,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "flexbox-generator",
+      "name": "CSS Flexbox Generator",
+      "status": "PASSED",
+      "executionTime": 2.06,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "html-table-generator",
+      "name": "HTML Table Generator",
+      "status": "PASSED",
+      "executionTime": 2.14,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "dummy-data-generator",
+      "name": "Dummy Data Generator",
+      "status": "PASSED",
+      "executionTime": 2.17,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "random-address-generator",
+      "name": "Random Address Generator",
+      "status": "PASSED",
+      "executionTime": 1.68,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "raffle-generator",
+      "name": "Raffle Generator",
+      "status": "PASSED",
+      "executionTime": 1.88,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "giveaway-generator",
+      "name": "Giveaway Winner Generator",
+      "status": "PASSED",
+      "executionTime": 2.1,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "character-backstory-generator",
+      "name": "Character Backstory Generator",
+      "status": "PASSED",
+      "executionTime": 2.49,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "worldbuilding-generator",
+      "name": "Worldbuilding Generator",
+      "status": "PASSED",
+      "executionTime": 1.75,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "roast-generator",
+      "name": "Roast Generator",
+      "status": "PASSED",
+      "executionTime": 2.04,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "quiz-generator",
+      "name": "Quiz Question Generator",
+      "status": "PASSED",
+      "executionTime": 1.96,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "thesis-statement-generator",
+      "name": "Thesis Statement Generator",
+      "status": "PASSED",
+      "executionTime": 1.61,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "landing-page-copy-generator",
+      "name": "Landing Page Copy Generator",
+      "status": "PASSED",
+      "executionTime": 2.18,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "json-schema-generator",
+      "name": "JSON Schema Generator",
+      "status": "PASSED",
+      "executionTime": 1.9,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "typescript-type-generator",
+      "name": "TypeScript Type Generator",
+      "status": "PASSED",
+      "executionTime": 2.22,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "sql-query-generator",
+      "name": "SQL Query Generator",
+      "status": "PASSED",
+      "executionTime": 2.21,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "htaccess-generator",
+      "name": ".htaccess Generator",
+      "status": "PASSED",
+      "executionTime": 1.58,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "pwa-manifest-generator",
+      "name": "PWA Manifest Generator",
+      "status": "PASSED",
+      "executionTime": 1.91,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "form-generator",
+      "name": "HTML Form Generator",
+      "status": "PASSED",
+      "executionTime": 2.1,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "jwt-generator",
+      "name": "JWT Token Generator",
+      "status": "PASSED",
+      "executionTime": 2.45,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "random-id-generator",
+      "name": "Random ID Generator",
+      "status": "PASSED",
+      "executionTime": 10.64,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "flashcard-generator",
+      "name": "Flashcard Generator",
+      "status": "PASSED",
+      "executionTime": 2.4,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "study-plan-generator",
+      "name": "Study Plan Generator",
+      "status": "PASSED",
+      "executionTime": 1.66,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "lesson-plan-generator",
+      "name": "Lesson Plan Generator",
+      "status": "PASSED",
+      "executionTime": 1.86,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "research-question-generator",
+      "name": "Research Question Generator",
+      "status": "PASSED",
+      "executionTime": 1.95,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "bibliography-generator",
+      "name": "Bibliography Generator",
+      "status": "PASSED",
+      "executionTime": 1.85,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "essay-topic-generator",
+      "name": "Essay Topic Generator",
+      "status": "PASSED",
+      "executionTime": 2.24,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "multiple-choice-generator",
+      "name": "Multiple Choice Question Generator",
+      "status": "PASSED",
+      "executionTime": 2.72,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "product-bullet-points-generator",
+      "name": "Product Bullet Points Generator",
+      "status": "PASSED",
+      "executionTime": 2.23,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "amazon-listing-generator",
+      "name": "Amazon Listing Generator",
+      "status": "PASSED",
+      "executionTime": 2.18,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "etsy-listing-generator",
+      "name": "Etsy Listing Generator",
+      "status": "PASSED",
+      "executionTime": 2.46,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "customer-persona-generator",
+      "name": "Customer Persona Generator",
+      "status": "PASSED",
+      "executionTime": 2.36,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "youtube-hook-generator",
+      "name": "Responsible YouTube Hook Generator",
+      "status": "PASSED",
+      "executionTime": 2.48,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "linkedin-summary-generator",
+      "name": "LinkedIn Summary Generator",
+      "status": "PASSED",
+      "executionTime": 2.41,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "sales-email-generator",
+      "name": "Sales Email Generator",
+      "status": "PASSED",
+      "executionTime": 2.03,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "follow-up-email-generator",
+      "name": "Follow-Up Email Generator",
+      "status": "PASSED",
+      "executionTime": 2.39,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "image-alt-text-generator",
+      "name": "Image Alt Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.48,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "video-prompt-generator",
+      "name": "Video Prompt Generator",
+      "status": "PASSED",
+      "executionTime": 1.99,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "productivity-prompt-generator",
+      "name": "Productivity Prompt Generator",
+      "status": "PASSED",
+      "executionTime": 2.39,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "brand-kit-generator",
+      "name": "Brand Kit Generator",
+      "status": "PASSED",
+      "executionTime": 2.64,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "random-list-generator",
+      "name": "Random List Generator",
+      "status": "PASSED",
+      "executionTime": 1.92,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "random-color-generator",
+      "name": "Random Color Generator",
+      "status": "PASSED",
+      "executionTime": 3.13,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "dnd-character-generator",
+      "name": "D&D Character Generator",
+      "status": "PASSED",
+      "executionTime": 10.58,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "dungeon-generator",
+      "name": "Dungeon Generator",
+      "status": "PASSED",
+      "executionTime": 2.04,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "worksheet-generator",
+      "name": "Worksheet Generator",
+      "status": "PASSED",
+      "executionTime": 2.03,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "rubric-generator",
+      "name": "Rubric Generator",
+      "status": "PASSED",
+      "executionTime": 1.42,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "assignment-generator",
+      "name": "Assignment Generator",
+      "status": "PASSED",
+      "executionTime": 2.82,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "graphql-query-generator",
+      "name": "GraphQL Query Generator",
+      "status": "PASSED",
+      "executionTime": 2.05,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "mock-api-generator",
+      "name": "Mock API Generator",
+      "status": "PASSED",
+      "executionTime": 2.48,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "wheel-spinner-generator",
+      "name": "Wheel Spinner Generator",
+      "status": "PASSED",
+      "executionTime": 2.47,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "product-benefits-generator",
+      "name": "Product Benefits Generator",
+      "status": "PASSED",
+      "executionTime": 1.61,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "pattern-generator",
+      "name": "CSS Pattern Generator",
+      "status": "PASSED",
+      "executionTime": 2.18,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "blob-generator",
+      "name": "CSS Blob Generator",
+      "status": "PASSED",
+      "executionTime": 1.68,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "wave-generator",
+      "name": "CSS Wave Generator",
+      "status": "PASSED",
+      "executionTime": 1.87,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "viking-name-generator",
+      "name": "Viking Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.32,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "wizard-name-generator",
+      "name": "Wizard Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.76,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "villain-name-generator",
+      "name": "Villain Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.94,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "werewolf-name-generator",
+      "name": "Werewolf Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.9,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "japanese-name-generator",
+      "name": "Japanese Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.62,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "korean-name-generator",
+      "name": "Korean Name Generator",
+      "status": "PASSED",
+      "executionTime": 27.27,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "city-name-generator",
+      "name": "City Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.48,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "restaurant-name-generator",
+      "name": "Restaurant Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.71,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "coffee-shop-name-generator",
+      "name": "Coffee Shop Name Generator",
+      "status": "PASSED",
+      "executionTime": 3.25,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "album-name-generator",
+      "name": "Album Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.59,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "book-name-generator",
+      "name": "Book Name Generator",
+      "status": "PASSED",
+      "executionTime": 22.28,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "movie-name-generator",
+      "name": "Movie Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.76,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "receipt-generator",
+      "name": "Receipt Generator",
+      "status": "PASSED",
+      "executionTime": 1.87,
+      "errors": [],
+      "warnings": [
+        "No download controls found for document template style generator"
+      ],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 7
+    },
+    {
+      "slug": "nda-generator",
+      "name": "NDA Generator",
+      "status": "PASSED",
+      "executionTime": 2.01,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "newsletter-name-generator",
+      "name": "Newsletter Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.92,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "price-tag-generator",
+      "name": "Price Tag Generator",
+      "status": "PASSED",
+      "executionTime": 10.03,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "product-tag-generator",
+      "name": "Product Tag Generator",
+      "status": "PASSED",
+      "executionTime": 2.94,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "clothing-tag-generator",
+      "name": "Clothing Tag Generator",
+      "status": "PASSED",
+      "executionTime": 2.25,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "minutes-of-meeting-generator",
+      "name": "Minutes Of Meeting Generator",
+      "status": "PASSED",
+      "executionTime": 1.72,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "event-name-generator",
+      "name": "Event Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.79,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "college-name-generator",
+      "name": "College Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.46,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "diner-name-generator",
+      "name": "Diner Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.11,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "flower-name-generator",
+      "name": "Flower Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.22,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "newspaper-name-generator",
+      "name": "Newspaper Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.67,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "plant-name-generator",
+      "name": "Plant Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.22,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "sibling-name-generator",
+      "name": "Sibling Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.77,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "pick-a-name-generator",
+      "name": "Pick A Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.64,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "name-generator-wheel",
+      "name": "Name Generator Wheel",
+      "status": "PASSED",
+      "executionTime": 2.5,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "cake-company-names-generator",
+      "name": "Cake Company Names Generator",
+      "status": "PASSED",
+      "executionTime": 2.13,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "car-name-generator",
+      "name": "Car Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.24,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "title-name-generator",
+      "name": "Title Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.05,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "geo-tag-generator",
+      "name": "Geo Tag Generator",
+      "status": "PASSED",
+      "executionTime": 2.03,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "pet-tag-generator",
+      "name": "Pet Tag Generator",
+      "status": "PASSED",
+      "executionTime": 10.99,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "dj-tag-generator",
+      "name": "DJ Tag Generator",
+      "status": "PASSED",
+      "executionTime": 1.97,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "clan-tag-generator",
+      "name": "Clan Tag Generator",
+      "status": "PASSED",
+      "executionTime": 1.42,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "hang-tag-generator",
+      "name": "Hang Tag Generator",
+      "status": "PASSED",
+      "executionTime": 2.33,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "art-tag-generator",
+      "name": "Art Tag Generator",
+      "status": "PASSED",
+      "executionTime": 1.88,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "email-tag-generator",
+      "name": "Email Tag Generator",
+      "status": "PASSED",
+      "executionTime": 1.32,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "tag-team-name-generator",
+      "name": "Tag Team Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.4,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "warrior-name-generator",
+      "name": "Warrior Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.04,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "secret-santa-name-generator",
+      "name": "Secret Santa Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.77,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "anagram-of-name-generator",
+      "name": "Anagram Of Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.9,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "cyberpunk-name-generator",
+      "name": "Cyberpunk Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.84,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "goth-name-generator",
+      "name": "Goth Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.77,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "project-name-generator-keywords",
+      "name": "Project Name Generator Keywords",
+      "status": "PASSED",
+      "executionTime": 2.03,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "scifi-name-generator",
+      "name": "Sci-Fi Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.66,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "last-name-and-first-name-generator",
+      "name": "First And Last Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.9,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "baby-name-generator-with-last-name",
+      "name": "Baby Name Generator With Last Name",
+      "status": "PASSED",
+      "executionTime": 2.04,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "nickname-generator-based-on-name",
+      "name": "Nickname Generator Based On Name",
+      "status": "PASSED",
+      "executionTime": 1.55,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "phonetic-spelling-of-name-generator",
+      "name": "Phonetic Spelling Generator",
+      "status": "PASSED",
+      "executionTime": 2.24,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "ipa-generator",
+      "name": "IPA Generator",
+      "status": "PASSED",
+      "executionTime": 2.65,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "name-combination-generator",
+      "name": "Name Combination Generator",
+      "status": "PASSED",
+      "executionTime": 1.89,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "performer-names-generator",
+      "name": "Performer Names Generator",
+      "status": "PASSED",
+      "executionTime": 1.92,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "disc-jockey-names-generator",
+      "name": "DJ Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.09,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "name-pronunciation-generator",
+      "name": "Name Pronunciation Generator",
+      "status": "PASSED",
+      "executionTime": 12.5,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "fantasy-language-generator",
+      "name": "Fantasy Language Generator",
+      "status": "PASSED",
+      "executionTime": 1.93,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "color-palette-generator-from-name",
+      "name": "Color Palette Generator From Name",
+      "status": "PASSED",
+      "executionTime": 2.18,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "mountain-name-generator",
+      "name": "Mountain Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.05,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "forest-name-generator",
+      "name": "Forest Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.13,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "team-name-generator-using-keywords",
+      "name": "Team Name Generator By Keyword",
+      "status": "PASSED",
+      "executionTime": 2.39,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "trademark-friendly-name-generator",
+      "name": "Trademark-Friendly Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.74,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "acceptable-use-policy-generator",
+      "name": "Acceptable Use Policy Generator",
+      "status": "PASSED",
+      "executionTime": 1.66,
+      "errors": [],
+      "warnings": [
+        "No download controls found for document template style generator"
+      ],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 7
+    },
+    {
+      "slug": "app-icon-generator",
+      "name": "App Icon Generator",
+      "status": "PASSED",
+      "executionTime": 2.17,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "app-name-generator",
+      "name": "App Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.51,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "bakery-name-generator",
+      "name": "Bakery Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.84,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "banner-generator",
+      "name": "Banner Generator",
+      "status": "PASSED",
+      "executionTime": 1.82,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "barbarian-name-generator",
+      "name": "Barbarian Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.35,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "big-text-generator",
+      "name": "Big Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.51,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "brat-text-generator",
+      "name": "Brat Text Generator",
+      "status": "PASSED",
+      "executionTime": 1.3,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "breadcrumb-generator",
+      "name": "Breadcrumb Generator",
+      "status": "PASSED",
+      "executionTime": 1.84,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "bubble-text-generator",
+      "name": "Bubble Text Generator",
+      "status": "PASSED",
+      "executionTime": 1.81,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "business-card-generator",
+      "name": "Business Card Generator",
+      "status": "PASSED",
+      "executionTime": 1.43,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "castle-name-generator",
+      "name": "Castle Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.79,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "channel-name-generator",
+      "name": "Channel Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.12,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "chatgpt-prompt-generator",
+      "name": "ChatGPT Prompt Generator",
+      "status": "PASSED",
+      "executionTime": 1.84,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "club-name-generator",
+      "name": "Club Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.91,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "cocktail-name-generator",
+      "name": "Cocktail Name Generator",
+      "status": "PASSED",
+      "executionTime": 12.19,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "contract-generator",
+      "name": "Contract Generator",
+      "status": "PASSED",
+      "executionTime": 2.65,
+      "errors": [],
+      "warnings": [
+        "No download controls found for document template style generator"
+      ],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 7
+    },
+    {
+      "slug": "cowboy-name-generator",
+      "name": "Cowboy Name Generator",
+      "status": "PASSED",
+      "executionTime": 3.39,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "css-code-generator",
+      "name": "CSS Code Generator",
+      "status": "PASSED",
+      "executionTime": 2.6,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "cursive-name-generator",
+      "name": "Cursive Name Generator",
+      "status": "PASSED",
+      "executionTime": 9.78,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "cute-text-generator",
+      "name": "Cute Text Generator",
+      "status": "PASSED",
+      "executionTime": 7,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "dalle-prompt-generator",
+      "name": "DALL-E Prompt Generator",
+      "status": "PASSED",
+      "executionTime": 2.6,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "dinosaur-name-generator",
+      "name": "Dinosaur Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.13,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "display-name-generator",
+      "name": "Display Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.98,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "dj-name-generator",
+      "name": "DJ Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.2,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "dmca-policy-generator",
+      "name": "DMCA Policy Generator",
+      "status": "PASSED",
+      "executionTime": 2.63,
+      "errors": [],
+      "warnings": [
+        "No download controls found for document template style generator"
+      ],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 7
+    },
+    {
+      "slug": "dog-name-generator",
+      "name": "Dog Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.88,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "estimate-generator",
+      "name": "Estimate Generator",
+      "status": "PASSED",
+      "executionTime": 2.37,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "fake-text-generator",
+      "name": "Sample Placeholder Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.16,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "farm-name-generator",
+      "name": "Farm Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.92,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "favicon-generator",
+      "name": "Favicon Generator",
+      "status": "PASSED",
+      "executionTime": 2.02,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "food-truck-name-generator",
+      "name": "Food Truck Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.94,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "funny-name-generator",
+      "name": "Funny Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.34,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "gnome-name-generator",
+      "name": "Gnome Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.33,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "hotel-name-generator",
+      "name": "Hotel Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.77,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "html-code-generator",
+      "name": "HTML Code Generator",
+      "status": "PASSED",
+      "executionTime": 1.93,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "invisible-text-generator",
+      "name": "Invisible Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.25,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "letterhead-generator",
+      "name": "Letterhead Generator",
+      "status": "PASSED",
+      "executionTime": 2.4,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "logo-generator",
+      "name": "Logo Generator",
+      "status": "PASSED",
+      "executionTime": 2.12,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "mermaid-name-generator",
+      "name": "Mermaid Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.51,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "meta-description-generator",
+      "name": "Meta Description Generator",
+      "status": "PASSED",
+      "executionTime": 2.05,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "monster-name-generator",
+      "name": "Monster Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.21,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "mood-board-generator",
+      "name": "Mood Board Generator",
+      "status": "PASSED",
+      "executionTime": 9.01,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "pen-name-generator",
+      "name": "Pen Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.23,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "pet-name-generator",
+      "name": "Pet Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.91,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "pixel-text-generator",
+      "name": "Pixel Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.2,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "playlist-name-generator",
+      "name": "Playlist Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.26,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "proposal-generator",
+      "name": "Proposal Generator",
+      "status": "PASSED",
+      "executionTime": 2.61,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "purchase-order-generator",
+      "name": "Purchase Order Generator",
+      "status": "PASSED",
+      "executionTime": 3.02,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "qr-code-generator",
+      "name": "QR Code Generator",
+      "status": "PASSED",
+      "executionTime": 2.3,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "quotation-generator",
+      "name": "Quotation Generator",
+      "status": "PASSED",
+      "executionTime": 2.18,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "ransom-note-text-generator",
+      "name": "Ransom Note Text Generator",
+      "status": "PASSED",
+      "executionTime": 1.93,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "retro-text-generator",
+      "name": "Retro Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.1,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "return-policy-generator",
+      "name": "Return Policy Generator",
+      "status": "PASSED",
+      "executionTime": 1.84,
+      "errors": [],
+      "warnings": [
+        "No download controls found for document template style generator"
+      ],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 7
+    },
+    {
+      "slug": "robot-name-generator",
+      "name": "Robot Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.58,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "salon-name-generator",
+      "name": "Salon Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.96,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "service-agreement-generator",
+      "name": "Service Agreement Generator",
+      "status": "PASSED",
+      "executionTime": 1.95,
+      "errors": [],
+      "warnings": [
+        "No download controls found for document template style generator"
+      ],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 7
+    },
+    {
+      "slug": "ship-name-generator",
+      "name": "Ship Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.89,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "shopify-product-description-generator",
+      "name": "Shopify Product Description Generator",
+      "status": "PASSED",
+      "executionTime": 1.89,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "short-code-generator",
+      "name": "Short Code Generator",
+      "status": "PASSED",
+      "executionTime": 2.07,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "sigil-generator",
+      "name": "Sigil Generator",
+      "status": "PASSED",
+      "executionTime": 1.92,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "sitemap-generator",
+      "name": "Sitemap Generator",
+      "status": "PASSED",
+      "executionTime": 2.34,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "spaceship-name-generator",
+      "name": "Spaceship Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.05,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "sports-team-name-generator",
+      "name": "Sports Team Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.81,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "tattoo-name-generator",
+      "name": "Tattoo Name Generator",
+      "status": "PASSED",
+      "executionTime": 9.75,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "token-generator",
+      "name": "Token Generator",
+      "status": "PASSED",
+      "executionTime": 2.54,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "typewriter-text-generator",
+      "name": "Typewriter Text Generator",
+      "status": "PASSED",
+      "executionTime": 2.52,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "ancient-greek-inspired-name-generator",
+      "name": "Ancient Greek-Inspired Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.9,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "roman-inspired-character-name-generator",
+      "name": "Roman-Inspired Character Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.98,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "ancient-egyptian-inspired-name-generator",
+      "name": "Ancient Egyptian-Inspired Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.92,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "iupac-name-generator",
+      "name": "IUPAC Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.7,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "victorian-name-generator",
+      "name": "Victorian Name Generator",
+      "status": "PASSED",
+      "executionTime": 2.09,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "racehorse-name-generator",
+      "name": "Racehorse Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.97,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "emo-name-generator",
+      "name": "Emo Name Generator",
+      "status": "PASSED",
+      "executionTime": 1.57,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "poster-generator",
+      "name": "Poster Generator",
+      "status": "PASSED",
+      "executionTime": 1.98,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "flyer-generator",
+      "name": "Flyer Generator",
+      "status": "PASSED",
+      "executionTime": 1.96,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "fantasy-map-generator",
+      "name": "Fantasy Map Generator",
+      "status": "PASSED",
+      "executionTime": 3.06,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [],
+      "score": 10
+    },
+    {
+      "slug": "papyrus-generator",
+      "name": "Papyrus Generator",
+      "status": "PASSED",
+      "executionTime": 1.92,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    },
+    {
+      "slug": "serif-generator",
+      "name": "Serif Generator",
+      "status": "PASSED",
+      "executionTime": 1.96,
+      "errors": [],
+      "warnings": [],
+      "missingSections": [
+        "Expected structured layout sections (intent-style-card, intent-idea-card, intent-section-card, etc.)"
+      ],
+      "score": 8
+    }
+  ]
+}

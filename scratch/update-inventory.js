@@ -586,6 +586,14 @@ const customUpdates = {
     notes: 'Production ready. Verified currency, discount, tax-rate, validity periods, and quote types are fully supported.'
   },
 
+  'business-name-generator': {
+    configuredOptions: [],
+    usedOptions: [],
+    missingOptions: [],
+    score: 10,
+    status: '🟢 Production Ready',
+    notes: 'Production ready. Verified brandable, compound, compound-suffix, and creative keywords name combinations are fully wired.'
+  },
   // Batch 9
   'facebook-post-generator': {
     configuredOptions: ["facebook-tone", "facebook-goal"],
