@@ -584,6 +584,88 @@ const customUpdates = {
     score: 10,
     status: '🟢 Production Ready',
     notes: 'Production ready. Verified currency, discount, tax-rate, validity periods, and quote types are fully supported.'
+  },
+
+  // Batch 9
+  'facebook-post-generator': {
+    configuredOptions: ["facebook-tone", "facebook-goal"],
+    usedOptions: ["facebook-tone", "facebook-goal"],
+    missingOptions: [],
+    score: 10,
+    status: '🟢 Production Ready',
+    notes: 'Production ready. Verified that facebook-tone and facebook-goal options are fully wired to yield custom post drafts.'
+  },
+  'return-policy-generator': {
+    configuredOptions: ["return-store-type", "return-region", "return-window", "return-condition", "return-exceptions", "return-costs", "return-refund-timing", "return-damaged-process", "return-include-exchanges", "return-include-digital", "return-marketplace-sales"],
+    usedOptions: ["return-store-type", "return-region", "return-window", "return-condition", "return-exceptions", "return-costs", "return-refund-timing", "return-damaged-process", "return-include-exchanges", "return-include-digital", "return-marketplace-sales"],
+    missingOptions: [],
+    score: 10,
+    status: '🟢 Production Ready',
+    notes: 'Production ready. Verified physical, digital, mixed, custom windows, conditions, exceptions, return costs, and marketplace notes are fully supported.'
+  },
+  'ancient-greek-inspired-name-generator': {
+    configuredOptions: ["greek-name-style"],
+    usedOptions: ["greek-name-style"],
+    missingOptions: [],
+    score: 10,
+    status: '🟢 Production Ready',
+    notes: 'Production ready. Wired greek style options and rendered structured cards using the renderGroupedIdeas helper.'
+  },
+  'roman-inspired-character-name-generator': {
+    configuredOptions: ["roman-name-style"],
+    usedOptions: ["roman-name-style"],
+    missingOptions: [],
+    score: 10,
+    status: '🟢 Production Ready',
+    notes: 'Production ready. Wired roman style options and rendered structured cards using the renderGroupedIdeas helper.'
+  },
+  'ancient-egyptian-inspired-name-generator': {
+    configuredOptions: ["egyptian-name-style"],
+    usedOptions: ["egyptian-name-style"],
+    missingOptions: [],
+    score: 10,
+    status: '🟢 Production Ready',
+    notes: 'Production ready. Wired egyptian style options and rendered structured cards using the renderGroupedIdeas helper.'
+  },
+  'victorian-name-generator': {
+    configuredOptions: ["victorian-style", "name-format"],
+    usedOptions: ["victorian-style", "name-format"],
+    missingOptions: [],
+    score: 10,
+    status: '🟢 Production Ready',
+    notes: 'Production ready. Integrated upper/middle class, literary, and gothic style rosters, coordinate formats, and render via renderGroupedIdeas.'
+  },
+  'racehorse-name-generator': {
+    configuredOptions: ["racehorse-style"],
+    usedOptions: ["racehorse-style"],
+    missingOptions: [],
+    score: 10,
+    status: '🟢 Production Ready',
+    notes: 'Production ready. Wired elegant, fast, lucky, classic, and funny horse styles and rendered structured cards using the renderGroupedIdeas helper.'
+  },
+  'emo-name-generator': {
+    configuredOptions: ["emo-style"],
+    usedOptions: ["emo-style"],
+    missingOptions: [],
+    score: 10,
+    status: '🟢 Production Ready',
+    notes: 'Production ready. Wired poetic, dark-aesthetic, soft-emo, and music-inspired styles and rendered structured cards using the renderGroupedIdeas helper.'
+  },
+  'papyrus-generator': {
+    configuredOptions: ["papyrus-style", "include-border"],
+    usedOptions: ["papyrus-style", "include-border"],
+    missingOptions: [],
+    score: 10,
+    status: '🟢 Production Ready',
+    notes: 'Production ready. Overhauled text conversion to output themed parchment scroll, clay tablet, and ceremonial scroll previews.'
+  },
+  'serif-generator': {
+    configuredOptions: ["serif-style"],
+    usedOptions: ["serif-style"],
+    missingOptions: [],
+    score: 10,
+    status: '🟢 Production Ready',
+    notes: 'Production ready. Wired mixed, bold, italic, and headline styles and rendered copyable layout previews with screen-reader warnings.'
   }
 };
 

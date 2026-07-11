@@ -8796,11 +8796,41 @@ async function generate() {
     case 'papyrus-generator': {
       if (!text) { result = 'Enter text above to turn it into a papyrus-style scroll.'; break; }
       const style = optionValue('papyrus-style', 'scroll');
-      const border = optionValue('include-border') === 'true';
+      const border = optionValue('include-border', 'true') === 'true';
       const title = style === 'tablet' ? 'CLAY TABLET RECORD' : style === 'ceremonial' ? 'CEREMONIAL SCROLL' : 'PAPYRUS SCROLL';
       const body = text.split(/[.!?]+/).map(line => line.trim()).filter(Boolean).map(line => ':: ' + line).join('\n');
       const frame = border ? 'o--o--o--o--o--o--o\n' : '';
       result = frame + title + '\n' + '-'.repeat(title.length) + '\n' + body + '\n' + (border ? 'o--o--o--o--o--o--o' : '');
+
+      let bgStyle = '';
+      let borderStyle = '';
+      let fontColor = '#3f2f1f';
+
+      if (style === 'tablet') {
+        bgStyle = 'background: #d2b48c; box-shadow: inset 0 0 10px rgba(0,0,0,0.3); border-radius: 8px; font-family: Courier, monospace;';
+        borderStyle = border ? 'border: 6px double #8b5a2b;' : '';
+        fontColor = '#5c3e21';
+      } else if (style === 'ceremonial') {
+        bgStyle = 'background: #f4ecd8; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-radius: 4px; font-family: Garamond, serif;';
+        borderStyle = border ? 'border: 4px solid #b8860b; outline: 1px solid #b8860b; outline-offset: 4px;' : '';
+        fontColor = '#1f1f1f';
+      } else {
+        bgStyle = 'background: #fdf5e6; box-shadow: inset 0 0 20px rgba(139,90,43,0.15); border-radius: 4px; font-family: Georgia, serif;';
+        borderStyle = border ? 'border: 3px dashed #8b5a2b; padding: 12px;' : '';
+        fontColor = '#4a3525';
+      }
+
+      const previewHtml = `<div style="padding: 24px; min-height: 180px; display: grid; place-items: center; background: #faf8f5;"><div style="width: 100%; max-width: 500px; padding: 20px; box-sizing: border-box; color: ${fontColor}; ${bgStyle} ${borderStyle}"><div style="text-align: center; font-weight: bold; font-size: 1.2rem; margin-bottom: 12px; letter-spacing: 2px;">${escapeHtml(title)}</div><div style="white-space: pre-wrap; line-height: 1.6; font-size: 1rem;">${escapeHtml(body)}</div></div></div>`;
+      
+      const sections = [
+        {
+          title: 'Transformed Text Output',
+          body: result,
+          note: `Style: ${titleCase(style)}. Border: ${border ? 'Yes' : 'No'}.`
+        }
+      ];
+
+      resultHtml = previewHtml + renderSectionSuite('Ancient Manuscript Preview', sections, 'Aesthetic scroll and tablet formatting helper. Use for creative writing, gaming props, classroom sheets, and fantasy notes.');
       break;
     }
     case 'serif-generator': {
@@ -8816,10 +8846,19 @@ async function generate() {
         if (code >= 97 && code <= 122) return String.fromCodePoint(map[1] + code - 97);
         return ch;
       }).join('');
-      if (style === 'bold') result = convert(text, maps.bold);
-      else if (style === 'italic') result = convert(text, maps.italic);
-      else if (style === 'headline') result = convert(text.toUpperCase(), maps.bold) + '\n' + text.split(/\s+/).map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-      else result = 'Bold Serif: ' + convert(text, maps.bold) + '\nItalic Serif: ' + convert(text, maps.italic) + '\nHeadline: ' + convert(text.toUpperCase(), maps.bold);
+
+      const boldVal = convert(text, maps.bold);
+      const italicVal = convert(text, maps.italic);
+      const headlineVal = convert(text.toUpperCase(), maps.bold);
+
+      const sections = [
+        ...(style === 'bold' || style === 'mixed' ? [{ title: 'Bold Serif', body: boldVal, note: 'Mathematical bold serif Unicode variants.' }] : []),
+        ...(style === 'italic' || style === 'mixed' ? [{ title: 'Italic Serif', body: italicVal, note: 'Mathematical italic serif Unicode variants.' }] : []),
+        ...(style === 'headline' || style === 'mixed' ? [{ title: 'Headline Serif', body: headlineVal, note: 'All-caps bold serif Unicode variant.' }] : [])
+      ];
+
+      result = sections.map(sec => sec.title + '\n' + sec.body).join('\n\n');
+      resultHtml = renderSectionSuite('Serif Font Variations', sections, 'Unicode styles use mathematical characters. Some platforms or screen readers may not read them correctly; check compatibility before using in critical copy.');
       break;
     }
     case 'plant-name-generator': {
@@ -9751,50 +9790,104 @@ async function generate() {
     }
     case 'ancient-greek-inspired-name-generator': {
       const style = optionValue('greek-name-style', 'classical');
-      const seed = text.trim().replace(/[^a-z\s'-]/gi, '').trim();
+      const seed = compactSeed(text, '');
       const banks: Record<string, string[]> = {
-        classical: ['Damon Lysandros', 'Helene Thaleia', 'Nikon Dorios', 'Callista Menon', 'Ione Theron'],
-        mythic: ['Asterion Vale', 'Melia Sunward', 'Orionis Thalos', 'Lyra Phaedon', 'Selene Kallias'],
-        scholarly: ['Theon Grammatikos', 'Eudora Philon', 'Dorian of the Archive', 'Mira Sophene', 'Kleon the Reader'],
-        'city-state': ['Alexis of Myra', 'Nerea of Ilyra', 'Demos of Asteron', 'Thalia of Nerikos', 'Phaon of Kydra']
+        classical: ['Damon Lysandros', 'Helene Thaleia', 'Nikon Dorios', 'Callista Menon', 'Ione Theron', 'Theron Kallias'],
+        mythic: ['Asterion Vale', 'Melia Sunward', 'Orionis Thalos', 'Lyra Phaedon', 'Selene Kallias', 'Nymera Helion'],
+        scholarly: ['Theon Grammatikos', 'Eudora Philon', 'Dorian of the Archive', 'Mira Sophene', 'Kleon the Reader', 'Sophon Melia'],
+        'city-state': ['Alexis of Myra', 'Nerea of Ilyra', 'Demos of Asteron', 'Thalia of Nerikos', 'Phaon of Kydra', 'Delion of the Agora']
       };
-      const pool = banks[style] || banks.classical;
-      result = generateMultiple(() => {
-        const name = randomFrom(pool);
-        return seed ? name + ' - inspired by ' + seed : name;
-      }, 10);
+      
+      const groups = Object.keys(banks).map(key => ({
+        title: titleCase(key),
+        note: `${titleCase(key)} ancient Greek-inspired fictional style.`,
+        items: banks[key].map(name => {
+          const formattedName = seed ? name + ' ' + seed : name;
+          const originInfo: Record<string, string> = {
+            classical: 'Traditional Greek naming structure combining first name and ancestral group.',
+            mythic: 'Inspirational name hinting at astronomical, stellar, or natural fantasy themes.',
+            scholarly: 'Philosophical or scholarly tone, ideal for academic or historical characters.',
+            'city-state': 'Linked to regional fictional geography or historic cities.'
+          };
+          return {
+            name: formattedName,
+            reason: originInfo[key] || 'Ancient-inspired historical fictional name.',
+            extra: `Style: ${titleCase(key)}`
+          };
+        })
+      }));
+
+      const visibleGroups = filterGroupsByOption(groups, style);
+      result = visibleGroups.map(group => group.title + '\n' + group.items.map(item => item.name).join('\n')).join('\n\n');
+      resultHtml = renderGroupedIdeas(visibleGroups, 'Respectful fictional inspiration only. These are not historically authoritative names, translations, or identity claims.');
       break;
     }
     case 'roman-inspired-character-name-generator': {
       const style = optionValue('roman-name-style', 'citizen');
-      const seed = text.trim().replace(/[^a-z\s'-]/gi, '').trim();
+      const seed = compactSeed(text, '');
       const banks: Record<string, string[]> = {
-        citizen: ['Marcus Virellus', 'Claudia Marena', 'Titus Aurelian', 'Livia Corvina', 'Gaius Severan'],
-        patrician: ['Aurelia Valeriana', 'Lucius Cassian Varro', 'Octavia Marcellina', 'Quintus Drusus Vale', 'Cornelia Sabina'],
-        legionary: ['Flavius Ironcrest', 'Tiberius Redshield', 'Cassia Fortis', 'Varro Stonehand', 'Marcellus of the Gate'],
-        'poet-scholar': ['Ovidian Lector', 'Sabina Quill', 'Felix Archivus', 'Marina Veritas', 'Julius Scriptor']
+        citizen: ['Marcus Virellus', 'Claudia Marena', 'Titus Aurelian', 'Livia Corvina', 'Gaius Severan', 'Julia Sabina'],
+        patrician: ['Aurelia Valeriana', 'Lucius Cassian Varro', 'Octavia Marcellina', 'Quintus Drusus Vale', 'Cornelia Sabina', 'Valerius Corvus'],
+        legionary: ['Flavius Ironcrest', 'Tiberius Redshield', 'Cassia Fortis', 'Varro Stonehand', 'Marcellus of the Gate', 'Decimus Secundus'],
+        'poet-scholar': ['Ovidian Lector', 'Sabina Quill', 'Felix Archivus', 'Marina Veritas', 'Julius Scriptor', 'Lucretia Sapiens']
       };
-      const pool = banks[style] || banks.citizen;
-      result = generateMultiple(() => {
-        const name = randomFrom(pool);
-        return seed ? name + ' - story cue: ' + seed : name;
-      }, 10);
+
+      const groups = Object.keys(banks).map(key => ({
+        title: titleCase(key === 'poet-scholar' ? 'Poet / Scholar' : key),
+        note: `${titleCase(key === 'poet-scholar' ? 'Poet / Scholar' : key)} Roman-inspired style.`,
+        items: banks[key].map(name => {
+          const formattedName = seed ? name + ' ' + seed : name;
+          const originInfo: Record<string, string> = {
+            citizen: 'Common Roman citizen style suitable for main characters, merchants, or historical cast.',
+            patrician: 'Noble Roman family names combining class markers and high-status titles.',
+            legionary: 'Martial or protective naming hints, great for guards, centurions, or commanders.',
+            'poet-scholar': 'Academic or poetic Roman persona, ideal for historians, writers, or advisors.'
+          };
+          return {
+            name: formattedName,
+            reason: originInfo[key] || 'Roman-inspired historical fictional name.',
+            extra: `Style: ${titleCase(key === 'poet-scholar' ? 'Poet / Scholar' : key)}`
+          };
+        })
+      }));
+
+      const visibleGroups = filterGroupsByOption(groups, style);
+      result = visibleGroups.map(group => group.title + '\n' + group.items.map(item => item.name).join('\n')).join('\n\n');
+      resultHtml = renderGroupedIdeas(visibleGroups, 'Respectful fictional inspiration only. These are not historically authoritative names, translations, or identity claims.');
       break;
     }
     case 'ancient-egyptian-inspired-name-generator': {
       const style = optionValue('egyptian-name-style', 'river-court');
-      const seed = text.trim().replace(/[^a-z\s'-]/gi, '').trim();
+      const seed = compactSeed(text, '');
       const banks: Record<string, string[]> = {
-        'river-court': ['Nehara of the River Court', 'Kamenet Reedborn', 'Satra of the Blue Hall', 'Menka Lotusward', 'Tiaresh Dawnwater'],
-        'scribe-scholar': ['Djehuti Scribehand', 'Merit of the Ink House', 'Paser Reedquill', 'Nefra Tabletkeeper', 'Hori of the Archive'],
-        'desert-guardian': ['Seten Sandwatch', 'Meryra Dune Guard', 'Khepri Stonepath', 'Ankhu of the West Gate', 'Tamit Sunveil'],
-        'mythic-royal': ['Neseret Goldcrown', 'Amunet Starhall', 'Khaem Sunthrone', 'Isetra Bright Lotus', 'Ramesu Falconcourt']
+        'river-court': ['Nehara of the River Court', 'Kamenet Reedborn', 'Satra of the Blue Hall', 'Menka Lotusward', 'Tiaresh Dawnwater', 'Merit Reedbloom'],
+        'scribe-scholar': ['Djehuti Scribehand', 'Merit of the Ink House', 'Paser Reedquill', 'Nefra Tabletkeeper', 'Hori of the Archive', 'Amenemhat Lector'],
+        'desert-guardian': ['Seten Sandwatch', 'Meryra Dune Guard', 'Khepri Stonepath', 'Ankhu of the West Gate', 'Tamit Sunveil', 'Nekht Shield'],
+        'mythic-royal': ['Neseret Goldcrown', 'Amunet Starhall', 'Khaem Sunthrone', 'Isetra Bright Lotus', 'Ramesu Falconcourt', 'Nefertari Sunborn']
       };
-      const pool = banks[style] || banks['river-court'];
-      result = generateMultiple(() => {
-        const name = randomFrom(pool);
-        return seed ? name + ' - setting note: ' + seed : name;
-      }, 10);
+
+      const groups = Object.keys(banks).map(key => ({
+        title: titleCase(key.replace(/-/g, ' ')),
+        note: `${titleCase(key.replace(/-/g, ' '))} Egyptian-inspired fictional style.`,
+        items: banks[key].map(name => {
+          const formattedName = seed ? name + ' ' + seed : name;
+          const originInfo: Record<string, string> = {
+            'river-court': 'Linked to river life, court customs, and Nile valley scenery.',
+            'scribe-scholar': 'Scholarly or historical theme, perfect for records keepers or wise advisors.',
+            'desert-guardian': 'Sturdy, protective name for military, scouts, border patrols, or guardians.',
+            'mythic-royal': 'Grand regal tone referencing gold, thrones, stars, and symbols of authority.'
+          };
+          return {
+            name: formattedName,
+            reason: originInfo[key] || 'Egyptian-inspired historical fictional name.',
+            extra: `Style: ${titleCase(key.replace(/-/g, ' '))}`
+          };
+        })
+      }));
+
+      const visibleGroups = filterGroupsByOption(groups, style);
+      result = visibleGroups.map(group => group.title + '\n' + group.items.map(item => item.name).join('\n')).join('\n\n');
+      resultHtml = renderGroupedIdeas(visibleGroups, 'Respectful fictional inspiration only. These are not historically authoritative names, translations, or identity claims.');
       break;
     }
     case 'iupac-name-generator': {
@@ -9830,62 +9923,131 @@ async function generate() {
     case 'victorian-name-generator': {
       const style = optionValue('victorian-style', 'middle-class');
       const format = optionValue('name-format', 'full-name');
-      const seed = text.trim().replace(/[^a-z\s'-]/gi, '').trim();
+      const seed = compactSeed(text, '');
+
       const firstNames: Record<string, string[]> = {
         'upper-class': ['Beatrice', 'Cecil', 'Arabella', 'Percival', 'Evangeline', 'Montague'],
         'middle-class': ['Clara', 'Arthur', 'Edith', 'Walter', 'Florence', 'Henry'],
         literary: ['Dorothea', 'Basil', 'Marian', 'Silas', 'Rosamund', 'Tobias'],
         gothic: ['Lenora', 'Edmund', 'Isolde', 'Ambrose', 'Viola', 'Lucian']
       };
+
       const lastNames: Record<string, string[]> = {
         'upper-class': ['Ashbourne', 'Fairfax', 'Blackwood', 'Harrington', 'Winthrop'],
         'middle-class': ['Whitmore', 'Bennett', 'Hawkins', 'Ellis', 'Pritchard'],
         literary: ['Marchmont', 'Rivers', 'Vale', 'Trelawney', 'Wickham'],
         gothic: ['Graves', 'Ravenscroft', 'Mourne', 'Holloway', 'Winterbourne']
       };
+
       const titles = ['Mr.', 'Mrs.', 'Miss', 'Dr.', 'Lady'];
-      const firstPool = firstNames[style] || firstNames['middle-class'];
-      const lastPool = lastNames[style] || lastNames['middle-class'];
-      result = generateMultiple(() => {
-        const first = randomFrom(firstPool);
-        const last = seed ? seed.split(/\s+/).slice(-1)[0] : randomFrom(lastPool);
-        if (format === 'with-title') return randomFrom(titles) + ' ' + first + ' ' + last;
-        if (format === 'initials') return first.charAt(0) + '. ' + last.charAt(0) + '. ' + last;
-        return first + ' ' + last;
-      }, 10);
+
+      const groups = Object.keys(firstNames).map(key => {
+        const firstPool = firstNames[key];
+        const lastPool = lastNames[key];
+        
+        return {
+          title: titleCase(key.replace(/-/g, ' ')),
+          note: `${titleCase(key.replace(/-/g, ' '))} Victorian style. Format: ${titleCase(format)}.`,
+          items: firstPool.map((first, index) => {
+            const last = seed ? titleCase(seed) : lastPool[index % lastPool.length];
+            let name = '';
+            if (format === 'with-title') {
+              name = titles[index % titles.length] + ' ' + first + ' ' + last;
+            } else if (format === 'initials') {
+              name = first.charAt(0) + '. ' + last.charAt(0) + '. ' + last;
+            } else {
+              name = first + ' ' + last;
+            }
+
+            const reasons: Record<string, string> = {
+              'upper-class': 'Gentry or aristocratic naming vibe, perfect for high-society characters.',
+              'middle-class': 'Authentic industrial-era common name suited for merchants or townspeople.',
+              literary: 'Romantic or dramatic Victorian tone, ideal for complex protagonists.',
+              gothic: 'Darker, atmospheric name inspired by Victorian gothic horror and ghost stories.'
+            };
+
+            return {
+              name,
+              reason: reasons[key] || 'Victorian period-inspired fictional name.',
+              extra: `Style: ${titleCase(key.replace(/-/g, ' '))}`
+            };
+          })
+        };
+      });
+
+      const visibleGroups = filterGroupsByOption(groups, style);
+      result = visibleGroups.map(group => group.title + '\n' + group.items.map(item => item.name).join('\n')).join('\n\n');
+      resultHtml = renderGroupedIdeas(visibleGroups, 'Fictional creative period name ideas. Check historical records to confirm local authenticity if writing period-accurate stories.');
       break;
     }
     case 'racehorse-name-generator': {
       const style = optionValue('racehorse-style', 'elegant');
-      const seed = text.trim().replace(/[^a-z\s'-]/gi, '').trim();
+      const seed = compactSeed(text, '');
       const banks: Record<string, string[]> = {
-        elegant: ['Silk Meridian', 'Velvet Promise', 'Silver Court', 'Royal Lantern', 'Pearl Tempo'],
-        fast: ['Rapid Horizon', 'Thunder Mile', 'Fleet Signal', 'Comet Sprint', 'Velocity Lane'],
-        lucky: ['Lucky Laurel', 'Golden Chance', 'Fortune Step', 'Clover Run', 'Bright Wager'],
-        classic: ['Morning Regent', 'Blue Saddle', 'Noble Circuit', 'County Fair', 'Heritage Lane'],
-        funny: ['Snack Break', 'Hoof Hearted', 'Nap Then Sprint', 'Carrot Invoice', 'Maybe Faster']
+        elegant: ['Silk Meridian', 'Velvet Promise', 'Silver Court', 'Royal Lantern', 'Pearl Tempo', 'Golden Sovereign'],
+        fast: ['Rapid Horizon', 'Thunder Mile', 'Fleet Signal', 'Comet Sprint', 'Velocity Lane', 'Aero Dash'],
+        lucky: ['Lucky Laurel', 'Golden Chance', 'Fortune Step', 'Clover Run', 'Bright Wager', 'Double Jackpot'],
+        classic: ['Morning Regent', 'Blue Saddle', 'Noble Circuit', 'County Fair', 'Heritage Lane', 'Grand Sovereign'],
+        funny: ['Snack Break', 'Hoof Hearted', 'Nap Then Sprint', 'Carrot Invoice', 'Maybe Faster', 'Hay Burner']
       };
-      const pool = banks[style] || banks.elegant;
-      result = generateMultiple(() => {
-        const name = randomFrom(pool);
-        return seed ? name + ' of ' + seed : name;
-      }, 10);
+
+      const groups = Object.keys(banks).map(key => ({
+        title: titleCase(key),
+        note: `${titleCase(key)} style racehorse name ideas.`,
+        items: banks[key].map(name => {
+          const formattedName = seed ? name + ' ' + seed : name;
+          const originInfo: Record<string, string> = {
+            elegant: 'Polished name hinting at high status, lineage, or graceful presentation.',
+            fast: 'Dynamic, movement-oriented name suggestion emphasizing quickness.',
+            lucky: 'Chance or fortune-based naming conventions common in racing culture.',
+            classic: 'Traditional, heritage-sounding name reminiscent of old-school champions.',
+            funny: 'Lighthearted wordplay or humorous phrase for a memorable horse identity.'
+          };
+          return {
+            name: formattedName,
+            reason: originInfo[key] || 'Racehorse-style naming idea.',
+            extra: `Style: ${titleCase(key)}`
+          };
+        })
+      }));
+
+      const visibleGroups = filterGroupsByOption(groups, style);
+      result = visibleGroups.map(group => group.title + '\n' + group.items.map(item => item.name).join('\n')).join('\n\n');
+      resultHtml = renderGroupedIdeas(visibleGroups, 'Generated names are original suggestions only. Check availability and avoid names that could be confused with real racehorses, stables, or racing brands.');
       break;
     }
     case 'emo-name-generator': {
       const style = optionValue('emo-style', 'poetic');
-      const seed = text.trim().replace(/[^a-z\s'-]/gi, '').trim();
+      const seed = compactSeed(text, '');
       const banks: Record<string, string[]> = {
-        poetic: ['Violet Static', 'Paper Moon', 'Rain Archive', 'Silver Letter', 'Velvet Echo'],
-        'dark-aesthetic': ['Midnight Velvet', 'Black Iris', 'Shadow Radio', 'Nocturne Lane', 'Raven Glass'],
-        'soft-emo': ['Soft Static', 'Sunday Ash', 'Cloud Diary', 'Blue Cardigan', 'Quiet Chorus'],
-        'music-inspired': ['Basement Anthem', 'Feedback Heart', 'Cassette Bloom', 'Minor Chord', 'Encore Rain']
+        poetic: ['Violet Static', 'Paper Moon', 'Rain Archive', 'Silver Letter', 'Velvet Echo', 'Pencil Sketch'],
+        'dark-aesthetic': ['Midnight Velvet', 'Black Iris', 'Shadow Radio', 'Nocturne Lane', 'Raven Glass', 'Onyx Petal'],
+        'soft-emo': ['Soft Static', 'Sunday Ash', 'Cloud Diary', 'Blue Cardigan', 'Quiet Chorus', 'Soft Echo'],
+        'music-inspired': ['Basement Anthem', 'Feedback Heart', 'Cassette Bloom', 'Minor Chord', 'Encore Rain', 'Vinyl Hiss']
       };
-      const pool = banks[style] || banks.poetic;
-      result = generateMultiple(() => {
-        const name = randomFrom(pool);
-        return seed ? name + ' - inspired by ' + seed : name;
-      }, 10);
+
+      const groups = Object.keys(banks).map(key => ({
+        title: titleCase(key.replace(/-/g, ' ')),
+        note: `${titleCase(key.replace(/-/g, ' '))} emo aesthetic naming ideas.`,
+        items: banks[key].map(name => {
+          const formattedName = seed ? name + ' ' + seed : name;
+          const originInfo: Record<string, string> = {
+            poetic: 'Soft, literary-focused combination with a nostalgic vibe.',
+            'dark-aesthetic': 'Deeper tones referencing night, shadows, obsidian, or vintage glass.',
+            'soft-emo': 'Cozy, quiet imagery centered on cards, rain, diaries, and calm static.',
+            'music-inspired': 'Indie-rock or cassette-era vocabulary matching instruments, chords, and tape hiss.'
+          };
+          return {
+            name: formattedName,
+            reason: originInfo[key] || 'Emo-style creative name.',
+            extra: `Style: ${titleCase(key.replace(/-/g, ' '))}`
+          };
+        })
+      }));
+
+      const visibleGroups = filterGroupsByOption(groups, style);
+      result = visibleGroups.map(group => group.title + '\n' + group.items.map(item => item.name).join('\n')).join('\n\n');
+      resultHtml = renderGroupedIdeas(visibleGroups, 'This generator is for safe aesthetic and creative naming only. It avoids unsafe, self-harm, and harmful stereotype language.');
       break;
     }
     case 'poster-generator': {
