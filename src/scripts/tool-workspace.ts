@@ -5804,13 +5804,24 @@ async function generate() {
     }
     case 'tag-cloud-generator': {
       if (!text) { result = 'Enter keywords separated by spaces above.'; break; }
-      const maxTags = Math.max(10, Math.min(Number(optionValue('cloud-max-tags', '25')) || 25, 60));
+      const maxTags = clampNumber(optionValue('cloud-max-tags', '20'), 20, 8, 40);
       const removeStopwords = optionValue('cloud-remove-stopwords', 'true') === 'true';
       const weighting = optionValue('cloud-weighting', 'frequency');
-      const stopwords = new Set(['the','and','for','with','from','this','that','into','your','you','are','was','were','has','have','will','not','but','all','can']);
+      const stopwords = new Set(['the','and','for','with','from','this','that','into','your','you','are','was','were','has','have','will','not','but','all','can','is','it','to','of','in','on','at','by','an','as']);
+      
       const words = text.split(/\s+/).map(word => word.toLowerCase().replace(/[^a-z0-9-]/g, '')).filter(word => word && (!removeStopwords || !stopwords.has(word)));
       const freq: Record<string, number> = {};
-      words.forEach(w => { freq[w] = (freq[w] || 0) + 1; });
+
+      if (weighting === 'phrases') {
+        const pairs: string[] = [];
+        for (let i = 0; i < words.length - 1; i++) {
+          pairs.push(`${words[i]} ${words[i+1]}`);
+        }
+        [...words, ...pairs].forEach(w => { freq[w] = (freq[w] || 0) + 1; });
+      } else {
+        words.forEach(w => { freq[w] = (freq[w] || 0) + 1; });
+      }
+
       const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, maxTags);
       const weighted = sorted.map(([word, count], index) => `${index + 1}. ${word} - weight ${weighting === 'balanced' ? Math.max(1, Math.ceil(count / 2)) : count}`);
       const sections = [
@@ -5869,20 +5880,38 @@ async function generate() {
     }
     case 'stable-diffusion-prompt-generator': {
       const subject = compactSeed(text, 'misty mountain village');
-      const style = optionValue('sd-style', 'all');
-      const aspect = optionValue('sd-aspect', 'portrait');
-      const quality = optionValue('sd-quality', 'balanced');
-      const lighting = optionValue('sd-lighting', 'soft');
-      const seedNote = optionValue('sd-seed-note', 'true') === 'true' ? '\nSeed note: use a fixed seed to compare changes; randomize only when exploring.' : '';
-      const groups = [
-        { title: 'Photoreal', text: `Positive prompt: ${subject}, realistic ${lighting} lighting, natural textures, clear subject focus, balanced composition, ${aspect} framing, ${quality} detail\nNegative prompt: blurry, low detail, unreadable text, watermark, distorted anatomy, extra limbs, harsh artifacts\nStyle tokens: documentary realism, natural color, clean lens\nSettings note: sampler-neutral; tune steps and CFG in your own UI.${seedNote}\nSafety note: keep people, logos, and text specific only when you have rights and consent.`, note: 'Model-safe realism starter.' },
-        { title: 'Illustration', text: `Positive prompt: ${subject}, original illustration, clean shapes, layered background, expressive ${lighting} lighting, cohesive color palette, ${aspect} framing, ${quality} detail\nNegative prompt: copied artist style, watermark, messy linework, low contrast, unreadable text\nStyle tokens: broad illustration direction, readable silhouette, balanced palette\nSettings note: sampler-neutral; test small batches before upscaling.${seedNote}\nSafety note: use broad style words instead of living artist names.`, note: 'No copyrighted artist imitation.' },
-        { title: 'Product Concept', text: `Positive prompt: ${subject}, polished product concept, ${lighting} studio lighting, simple background, sharp silhouette, premium material detail, ${aspect} framing, ${quality} detail\nNegative prompt: clutter, distorted logo, fake brand mark, watermark, warped geometry\nStyle tokens: commercial mockup, clean surface, controlled reflections\nSettings note: sampler-neutral; verify geometry before publishing.${seedNote}\nSafety note: do not imply real brand ownership or availability.`, note: 'Commercial-safe concept direction.' },
-        { title: 'Atmospheric Scene', text: `Positive prompt: ${subject}, atmospheric depth, ${lighting} light, foreground framing, environmental storytelling, cinematic composition, ${aspect} framing, ${quality} detail\nNegative prompt: oversaturated, noisy, muddy details, watermark, text artifacts\nStyle tokens: environmental mood, depth layers, readable focal point\nSettings note: sampler-neutral; adjust denoise only in your chosen workflow.${seedNote}\nSafety note: review generated output for artifacts and unsafe content.`, note: 'Mood-focused prompt.' },
-        { title: 'Character Design', text: `Positive prompt: ${subject}, original character design, clear silhouette, expressive face, practical costume details, neutral pose, ${lighting} lighting, ${aspect} framing, ${quality} detail\nNegative prompt: copied character, celebrity lookalike, distorted hands, unreadable symbols, watermark\nStyle tokens: original design sheet, readable costume, clean lighting\nSettings note: sampler-neutral; generate variants before selecting a direction.${seedNote}\nSafety note: avoid protected characters and real-person likenesses.`, note: 'Original character prompt.' }];
-      const visibleGroups = filterGroupsByOption(groups, style);
-      result = visibleGroups.map(group => `${group.title}\n${group.text}`).join('\n\n');
-      resultHtml = renderHeadlineGroups(visibleGroups, 'Original Stable Diffusion prompt drafts only. Avoid living-artist imitation, protected characters, unsafe requests, and fake brand claims; no model quality, safety, approval, commercial-use, or rendering guarantee.');
+      const purpose = optionValue('sd-purpose', 'concept-art');
+      const subjectType = optionValue('sd-subject-type', 'environment');
+      const style = optionValue('sd-style', 'illustrative-original');
+      const mood = optionValue('sd-mood', 'calm');
+      const lighting = optionValue('sd-lighting', 'soft-natural');
+      const composition = optionValue('sd-composition', 'layered-depth');
+      const aspect = optionValue('sd-aspect', 'landscape');
+      const detail = optionValue('sd-detail-level', 'balanced');
+      const format = optionValue('sd-output-format', 'positive-negative');
+      const safety = optionValue('sd-safety-level', 'commercial-review');
+      const includeNegative = optionValue('sd-negative', 'true') === 'true';
+      const seedNote = optionValue('sd-seed-note', 'true') === 'true';
+      const commercialCaution = optionValue('sd-commercial-caution', 'true') === 'true';
+
+      const cleanStyle = style.replace(/-/g, ' ');
+      const cleanLighting = lighting.replace(/-/g, ' ');
+      const cleanComposition = composition.replace(/-/g, ' ');
+      const cleanMood = mood.replace(/-/g, ' ');
+
+      const positivePrompt = `Positive Prompt: A high quality ${cleanStyle} of a ${subjectType} displaying ${subject}, ${cleanComposition}, ${cleanLighting} lighting, conveying a ${cleanMood} mood, ${detail} detail, aspect ratio ${aspect}`;
+      const negativePrompt = `Negative Prompt: blurry, low quality, distorted anatomy, extra limbs, watermark, bad text, fake signature, low contrast, oversaturated`;
+
+      const sections = [
+        { title: 'Stable Diffusion Positive Prompt', body: positivePrompt, note: `Aspect: ${aspect}. Style: ${cleanStyle}.` },
+        ...(includeNegative ? [{ title: 'Negative Prompt Parameters', body: negativePrompt, note: 'Exclude unwanted artifacts.' }] : []),
+        ...(seedNote ? [{ title: 'Seed & Configuration Guideline', body: 'Recommended Settings:\n- Steps: 20-30\n- CFG Scale: 7.0\n- Sampler: DPM++ 2M Karras or Euler a\n- Seed: [Randomized; keep fixed to iterate details]', note: 'Technical setup guidance' }] : []),
+        { title: 'Prompt Purpose Context', body: `Configured for ${purpose.replace(/-/g, ' ')}. Adjust terms to fit your specific generator checkpoint.`, note: 'Purpose orientation' },
+        ...(commercialCaution ? [{ title: 'Commercial Use Warning', body: `Safety Review Level: ${safety}.\n- Do not include trademarked names, logos, or characters.\n- Do not copy living artists. Use broad style words.\n- Outputs may not be copyrightable under current laws.`, note: 'Legal safety guidelines' }] : [])
+      ];
+
+      result = sections.map(sec => sec.title + '\n' + sec.body).join('\n\n');
+      resultHtml = renderSectionSuite('Stable Diffusion Prompt Package', sections, 'Original image-prompt drafts only. No Stable Diffusion affiliation, and no quality, safety, or commercial-use guarantee.');
       break;
     }
     case 'character-prompt-generator': {
@@ -6899,11 +6928,26 @@ async function generate() {
     }
     case 'random-list-generator': {
       if (!text) { result = 'Enter items separated by commas or new lines above.'; break; }
-      const items = text.split(/[\n]/).map(s => s.trim()).filter(Boolean);
-      const quantity = Math.max(1, Math.min(items.length, Number(optionValue('random-list-quantity', String(items.length))) || items.length));
+      const items = text.split(/[\n,]+/).map(s => s.trim()).filter(Boolean);
+      const quantity = Math.max(1, Math.min(items.length, Number(optionValue('random-list-quantity', '10')) || 10));
       const dedupe = optionValue('random-list-dedupe', 'true') === 'true';
       const pool = dedupe ? uniqueItems(items, items.length) : items;
-      const shuffled = [...pool].sort(() => Math.random() - 0.5);
+      
+      let shuffled = [...pool];
+      try {
+        const randomInt = (max: number) => {
+          const arr = new Uint32Array(1);
+          crypto.getRandomValues(arr);
+          return arr[0] % max;
+        };
+        for (let i = shuffled.length - 1; i > 0; i--) {
+          const j = randomInt(i + 1);
+          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+      } catch (e) {
+        shuffled.sort(() => Math.random() - 0.5);
+      }
+
       const selected = shuffled.slice(0, quantity);
       const sections = [
         { title: 'Randomized Order', body: selected.map((item, i) => `${i + 1}. ${item}`).join('\n'), note: `${selected.length} of ${pool.length} item(s)` },
@@ -7232,15 +7276,54 @@ async function generate() {
       break;
     }
     case 'villain-name-generator': {
+      const seed = compactSeed(text, 'Shadow');
       const style = optionValue('villain-style', 'dark-lord');
-      const banks: Record<string, string[]> = {
-        'dark-lord': ['Lord Veyran Blackspire', 'Mordain the Hollow', 'Kael Nocturne', 'Vesper Thorn', 'Darian Ashvale'],
-        mastermind: ['Silas Vale', 'Marcellus Vane', 'Irene Blackwell', 'Cassian Rook', 'Octavia Glass'],
-        'elegant-villainess': ['Lady Seraphine Voss', 'Evelina Graves', 'Marquise Adrienne Vale', 'Celeste Blackthorn', 'Isadora Nightwell'],
-        'rival-antagonist': ['Rowan Cross', 'Mira Vexley', 'Damon Strake', 'Clara Winters', 'Julian Wraith']
+      const banks: Record<string, { name: string, reason: string, extra: string }[]> = {
+        'dark-lord': [
+          { name: 'Lord Veyran Blackspire', reason: 'Arcane conqueror archetype.', extra: 'Best use: fantasy emperor.' },
+          { name: 'Mordain the Hollow', reason: 'Undead or void ruler.', extra: 'Best use: lich or necromancer.' },
+          { name: 'Kael Nocturne', reason: 'Dark sorcerer or eclipse lord.', extra: 'Best use: cult leader.' },
+          { name: 'Vesper Thorn', reason: 'Shadow-manipulating monarch.', extra: 'Best use: rebel warlord.' },
+          { name: 'Darian Ashvale', reason: 'Corrupted noble or knight.', extra: 'Best use: fallen protector.' }
+        ],
+        mastermind: [
+          { name: 'Silas Vale', reason: 'Industrialist or shadow broker.', extra: 'Best use: sci-fi corporate lead.' },
+          { name: 'Marcellus Vane', reason: 'Political schemer or strategist.', extra: 'Best use: royal advisor.' },
+          { name: 'Irene Blackwell', reason: 'Information dealer or spy master.', extra: 'Best use: syndicate head.' },
+          { name: 'Cassian Rook', reason: 'Brilliant rogue or cartel lead.', extra: 'Best use: heist antagonist.' },
+          { name: 'Octavia Glass', reason: 'Cold, calculative scientist.', extra: 'Best use: tech developer antagonist.' }
+        ],
+        'elegant-villainess': [
+          { name: 'Lady Seraphine Voss', reason: 'High-society vampire or aristocrat.', extra: 'Best use: gothic antagonist.' },
+          { name: 'Evelina Graves', reason: 'Noble host with dark secrets.', extra: 'Best use: manor host.' },
+          { name: 'Marquise Adrienne Vale', reason: 'Court diplomat or poisoner.', extra: 'Best use: court intriguer.' },
+          { name: 'Celeste Blackthorn', reason: 'Sorceress or dark priestess.', extra: 'Best use: coven leader.' },
+          { name: 'Isadora Nightwell', reason: 'Eldritch collector or witch.', extra: 'Best use: museum curator antagonist.' }
+        ],
+        'rival-antagonist': [
+          { name: 'Rowan Cross', reason: 'Mirror reflection rival.', extra: 'Best use: competitive colleague.' },
+          { name: 'Mira Vexley', reason: 'Academy challenger or trickster.', extra: 'Best use: school rival.' },
+          { name: 'Damon Strake', reason: 'Ruthless mercenary or hunter.', extra: 'Best use: active bounty hunter.' },
+          { name: 'Clara Winters', reason: 'Ex-partner or betrayed ally.', extra: 'Best use: personal emotional rival.' },
+          { name: 'Julian Wraith', reason: 'Vigilante with opposing methods.', extra: 'Best use: anti-hero antagonist.' }
+        ]
       };
-      const pool = banks[style] || banks['dark-lord'];
-      result = generateMultiple(() => randomFrom(pool), 10);
+
+      const items = banks[style] || banks['dark-lord'];
+      const groups = [
+        {
+          title: `Villain Names (${style.replace(/-/g, ' ').toUpperCase()})`,
+          note: 'Tailored character alias ideas.',
+          items: items.map(item => ({
+            name: item.name.includes(seed) ? item.name : `${item.name} (${seed})`,
+            reason: item.reason,
+            extra: item.extra
+          }))
+        }
+      ];
+
+      result = groups.map(group => group.title + '\n' + group.items.map(i => `${i.name} - ${i.reason}`).join('\n')).join('\n\n');
+      resultHtml = renderGroupedIdeas(groups, 'Check existing publications, games, and trademark registries before public character naming.');
       break;
     }
     case 'werewolf-name-generator': {
@@ -7342,25 +7425,56 @@ async function generate() {
       break;
     }
     case 'receipt-generator': {
-      {
-        const item = compactSeed(text, 'Service Or Product');
-        const businessType = optionValue('receipt-business-type', 'service');
-        const currency = optionValue('receipt-currency', 'usd') === 'eur' ? 'EUR' : optionValue('receipt-currency', 'usd') === 'gbp' ? 'GBP' : 'USD';
-        const itemCount = Math.max(1, Math.min(8, Number(optionValue('receipt-item-count', '3')) || 3));
-        const includePolicy = optionValue('receipt-include-policy', 'true') === 'true';
-        const rows = Array.from({ length: itemCount }, (_, i) => `Item ${i + 1}: ${i === 0 ? item : 'Optional user-fill item'} | Qty: Optional user-fill qty | Unit: Optional user-fill amount | Line total: Optional user-fill total`).join('\n');
-        const sections = [
-          { title: 'Receipt Draft Header', body: `Document type: Receipt draft\nBusiness: Optional user-fill business name\nCustomer: Optional user-fill customer name\nReceipt reference: Optional user-fill receipt number from your real system\nDate: Optional user-fill payment date\nBusiness type: ${titleCase(businessType)}\nCurrency: ${currency}`, note: 'No fake official numbering' },
-          { title: 'Itemized Rows', body: rows, note: `${itemCount} editable line items` },
-          { title: 'Payment Summary', body: `Subtotal: Optional user-fill subtotal\nTax/fees if applicable: Optional user-fill tax or fee amount\nDiscount: Optional user-fill discount\nTotal paid: Optional user-fill total\nPayment method: Optional user-fill payment method\nPayment status: Optional user-fill paid, partial, or refunded`, note: 'Verify totals before sending' },
-          { title: 'Customer Message', body: `Thank you for your purchase of ${item}. Please keep this receipt draft with your records after replacing every optional user-fill field with real transaction details.`, note: 'Customer copy' },
-          ...(includePolicy ? [{ title: 'Policy Placeholder', body: 'Optional user-fill refund or exchange policy placeholder: replace this with your real published policy before sharing with a customer.', note: 'Clearly labeled placeholder' }] : []),
-          { title: 'Verification Note', body: 'This is a receipt template draft, not proof of payment by itself. Verify payment, tax, refund, and business record details in your actual system.', note: 'No accounting claim' }
-        ];
-        result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
-        resultHtml = renderSectionSuite('Receipt Draft Template', sections, 'Template/draft style only. Do not use as fake official proof of payment.');
-        break;
-      }
+      const item = compactSeed(text, 'Service Or Product');
+      const businessType = optionValue('receipt-business-type', 'service');
+      const currencyCode = optionValue('receipt-currency', 'usd').toUpperCase();
+      const paymentMethod = optionValue('receipt-payment-method', 'card');
+      const itemCount = Math.max(1, Math.min(8, Number(optionValue('receipt-item-count', '3')) || 3));
+      const includePolicy = optionValue('receipt-include-policy', 'true') === 'true';
+      const includeVerification = optionValue('receipt-include-verification', 'true') === 'true';
+
+      const currencySymbols: Record<string, string> = {
+        USD: '$', EUR: '€', GBP: '£', CAD: 'CA$', AUD: 'A$'
+      };
+      const symbol = currencySymbols[currencyCode] || '$';
+
+      const rows = Array.from({ length: itemCount }, (_, i) => `Item ${i + 1}: ${i === 0 ? item : 'Optional user-fill item'} | Qty: 1 | Price: ${symbol}0.00 | Total: ${symbol}0.00`).join('\n');
+      
+      const sections = [
+        { title: 'Receipt Draft Header', body: `Document type: Receipt draft\nBusiness: [Your Business Name]\nCustomer: [Customer Name]\nReceipt Reference: REC-${Math.floor(Math.random() * 90000 + 10000)}\nDate: ${new Date().toLocaleDateString()}\nBusiness Type: ${titleCase(businessType)}\nCurrency: ${currencyCode}`, note: 'Replace brackets with real business records.' },
+        { title: 'Itemized Rows', body: rows, note: `${itemCount} editable line items` },
+        { title: 'Payment Summary', body: `Subtotal: ${symbol}0.00\nTax/Fees: ${symbol}0.00\nTotal Paid: ${symbol}0.00\nPayment Method: ${titleCase(paymentMethod.replace(/-/g, ' '))}\nPayment Status: Paid / Completed`, note: 'Verify payment details.' },
+        { title: 'Customer Message', body: `Thank you for your purchase of ${item}. Please keep this receipt draft with your records after replacing placeholders with real transaction details.`, note: 'Customer copy' },
+        ...(includePolicy ? [{ title: 'Policy Placeholder', body: 'Returns & Refunds: Optional user-fill refund or exchange policy placeholder. Replace with your actual policy.', note: 'Clearly labeled policy placeholder' }] : []),
+        ...(includeVerification ? [{ title: 'Verification Checklist', body: '- Verify payment is fully cleared in your payment gateway or processor.\n- Confirm item quantities and descriptions match the real sale.\n- Check tax calculation rules and compliance for your local jurisdiction.\n- Do not issue as fake proof of debt or for unverified funds.', note: 'Internal checklist' }] : []),
+        { title: 'Disclaimer & Safety', body: 'This is a receipt template draft, not proof of payment by itself. Verify payment, tax, refund, and business record details in your actual billing system.', note: 'No accounting claim' }
+      ];
+
+      result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
+      resultHtml = renderSectionSuite('Receipt Draft Template', sections, 'Template/draft style only. Do not use as fake official proof of payment.');
+      break;
+    }
+    case 'nda-generator': {
+      const topic = compactSeed(text, 'Project Alpha');
+      const style = optionValue('pass29-style', 'all');
+
+      const allSections = [
+        { title: 'NDA Overview & Parties', body: `This Non-Disclosure Agreement ("Agreement") outline is drafted for ${topic}.\n- Disclosing Party: [Company/Individual Name]\n- Receiving Party: [Company/Individual Name]\n- Purpose: Mutual evaluation or discussion regarding ${topic}.`, note: 'Draft identification details.' },
+        { title: 'Definition of Confidential Information', body: `Confidential Information includes all proprietary information, software, code, designs, business plans, trade secrets, and financial details related to ${topic} shared between the parties, whether written, oral, or electronic, and marked as confidential.`, note: 'Defines what must be protected.' },
+        { title: 'Scope of Obligations', body: 'The Receiving Party agrees:\n- To keep the information strictly confidential.\n- To use the information only for the specified purpose of evaluating or working on ' + topic + '.\n- Not to disclose the information to third parties without prior written consent.', note: 'Core confidentiality rules.' },
+        { title: 'Term & Termination Wording', body: `This Agreement and the Receiving Party's duty of confidentiality shall continue in force for a period of [e.g., 2 or 5 years] from the date of disclosure, or until Disclosing Party releases the obligation in writing.`, note: 'Duration guidelines.' },
+        { title: 'Review & Safety Checklist', body: '- Verify exact definitions of confidential scope and exclusions (e.g. public info).\n- Confirm governing law and dispute jurisdiction matching both parties.\n- Do not sign or execute this outline directly. Use a qualified attorney to review the final contract draft.', note: 'Risk warnings.' }
+      ];
+
+      let sections = allSections;
+      if (style === 'overview') sections = [allSections[0]];
+      else if (style === 'scope') sections = [allSections[1], allSections[2]];
+      else if (style === 'terms') sections = [allSections[3]];
+      else if (style === 'review-note' || style === 'safety-note') sections = [allSections[4]];
+
+      result = sections.map(sec => sec.title + '\n' + sec.body).join('\n\n');
+      resultHtml = renderSectionSuite('NDA Outline Draft Suite', sections, 'Informational draft outline only. Not legal advice. Have a qualified professional review the final draft for your jurisdiction.');
+      break;
     }
     case 'dog-name-generator': {
       const boyNames = ['Max','Buddy','Charlie','Cooper','Rocky','Bear','Duke','Tucker','Jack','Oliver','Leo','Milo','Finn','Zeus','Louie','Bentley','Teddy','Beau','Winston','Murphy'];
@@ -8495,15 +8609,40 @@ async function generate() {
     }
     case 'college-name-generator': {
       const type = optionValue('institution-type', 'university');
-      const prestige = optionValue('prestige-level', 'state-school');
-      const place = text || randomFrom(['Northbridge', 'Ashford', 'Cedar Valley', 'Lakeshore', 'Redwood']);
+      const prestige = optionValue('prestige-level', 'traditional');
+      const place = compactSeed(text, 'Ashford');
+
       const prefixes: Record<string, string[]> = {
-        'ivy-league': ['Royal', 'St. Edmund', 'Westhaven', 'Aurelian'],
-        'state-school': [place, place + ' State', 'Northern ' + place, 'Central ' + place],
-        'community-college': [place + ' Valley', place + ' County', 'Metro ' + place]
+        elite: ['Aurelian', 'Westhaven', 'St. Jude', 'Kingsley', 'Crown Point'],
+        traditional: [place, 'Old ' + place, 'East ' + place, 'West ' + place, 'Saint ' + place],
+        progressive: ['Apex', 'Horizon', 'Summit', 'Nexus', 'Pioneer'],
+        'public-land': [place + ' State', 'Northern ' + place, 'Central ' + place, place + ' Valley', 'Metro ' + place]
       };
-      const typeLabel: Record<string, string> = { university: 'University', college: 'College', institute: 'Institute', academy: 'Academy' };
-      result = generateMultiple(() => randomFrom(prefixes[prestige] || prefixes['state-school']) + ' ' + (typeLabel[type] || 'University'), 12);
+
+      const typeLabel: Record<string, string> = {
+        university: 'University',
+        college: 'College',
+        institute: 'Institute',
+        academy: 'Academy'
+      };
+
+      const typeWord = typeLabel[type] || 'University';
+      const pool = prefixes[prestige] || prefixes.traditional;
+
+      const groups = [
+        {
+          title: `College Names (${titleCase(prestige)} / ${titleCase(typeWord)})`,
+          note: 'Creative institutional identity drafts.',
+          items: pool.map((prefix, idx) => ({
+            name: `${prefix} ${typeWord}`,
+            reason: `Prestige style: ${prestige}.`,
+            extra: `Concept Option ${idx + 1}`
+          }))
+        }
+      ];
+
+      result = groups.map(group => group.title + '\n' + group.items.map(item => item.name).join('\n')).join('\n\n');
+      resultHtml = renderGroupedIdeas(groups, 'Safe naming note: institution names are creative drafts only. Check existing school registries and trademark databases before use.');
       break;
     }
     case 'diner-name-generator': {

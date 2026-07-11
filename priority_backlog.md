@@ -3,16 +3,6 @@
 | Slug | Status | Score | Issues / Notes | Priority | Effort | Impact |
 | :--- | :--- | :---: | :--- | :--- | :--- | :--- |
 | facebook-post-generator | 🟠 Partially Implemented | 4 | Returns a placeholder / static "coming soon" message. | High | Medium | High |
-| all-caps-generator | 🟡 Needs Polish | 7 | Ignores configured options: caps-preserve-lines, caps-normalize-spacing. | Low | Quick Win | Low |
-| tag-cloud-generator | 🟡 Needs Polish | 7 | Ignores configured options: cloud-max-tags, cloud-remove-stopwords, cloud-weighting. | Low | Quick Win | Low |
-| stable-diffusion-prompt-generator | 🟡 Needs Polish | 7 | Ignores configured options: sd-purpose, sd-subject-type, sd-mood, sd-composition, sd-detail-level, sd-output-format, sd-safety-level, sd-negative, sd-commercial-caution. | Low | Quick Win | Low |
-| x-post-generator | 🟡 Needs Polish | 7 | Ignores configured options: x-post-format, x-post-tone, x-post-audience, x-post-cta. | Low | Quick Win | Low |
-| random-list-generator | 🟡 Needs Polish | 7 | Ignores configured options: random-list-quantity, random-list-dedupe. | Low | Quick Win | Low |
-| wheel-spinner-generator | 🟡 Needs Polish | 7 | Ignores configured options: wheel-spin-count, wheel-remove-winner, wheel-unique. | Low | Quick Win | Low |
-| villain-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: villain-style. | Low | Quick Win | Low |
-| receipt-generator | 🟡 Needs Polish | 7 | Ignores configured options: receipt-payment-method, receipt-include-verification. | Low | Quick Win | Low |
-| nda-generator | 🟡 Needs Polish | 7 | Ignores configured options: pass29-style. | Low | Quick Win | Low |
-| college-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: institution-type, prestige-level. | Low | Quick Win | Low |
 | sibling-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: matching-style, target-gender. | Low | Quick Win | Low |
 | pick-a-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: animation. | Low | Quick Win | Low |
 | tag-team-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: tag-team-style. | Low | Quick Win | Low |

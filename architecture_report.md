@@ -2,8 +2,8 @@
 
 ## Repository Quality Metrics
 - Total Generators: 429
-- Production Ready: 389
-- Needs Polish: 39
+- Production Ready: 399
+- Needs Polish: 29
 - Partially Implemented: 1
 - Broken: 0
 

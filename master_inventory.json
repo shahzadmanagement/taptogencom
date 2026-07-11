@@ -7099,13 +7099,13 @@
       "caps-preserve-lines",
       "caps-normalize-spacing"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "caps-preserve-lines",
       "caps-normalize-spacing"
     ],
+    "missingOptions": [],
     "validation": true,
-    "errorHandling": false,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -7115,9 +7115,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: caps-preserve-lines, caps-normalize-spacing."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Verified that both line-preservation and space-normalization options are fully wired."
   },
   {
     "name": "Lowercase Generator",
@@ -7306,14 +7306,14 @@
       "cloud-remove-stopwords",
       "cloud-weighting"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "cloud-max-tags",
       "cloud-remove-stopwords",
       "cloud-weighting"
     ],
+    "missingOptions": [],
     "validation": true,
-    "errorHandling": false,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -7323,9 +7323,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: cloud-max-tags, cloud-remove-stopwords, cloud-weighting."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Implemented phrases mode with adjacent word-pair extraction and corrected tag limits."
   },
   {
     "name": "Blog Tag Generator",
@@ -7477,24 +7477,23 @@
       "sd-commercial-caution"
     ],
     "usedOptions": [
-      "sd-style",
-      "sd-lighting",
-      "sd-aspect",
-      "sd-seed-note"
-    ],
-    "missingOptions": [
       "sd-purpose",
       "sd-subject-type",
+      "sd-style",
       "sd-mood",
+      "sd-lighting",
       "sd-composition",
+      "sd-aspect",
       "sd-detail-level",
       "sd-output-format",
       "sd-safety-level",
       "sd-negative",
+      "sd-seed-note",
       "sd-commercial-caution"
     ],
-    "validation": false,
-    "errorHandling": false,
+    "missingOptions": [],
+    "validation": true,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -7504,9 +7503,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: sd-purpose, sd-subject-type, sd-mood, sd-composition, sd-detail-level, sd-output-format, sd-safety-level, sd-negative, sd-commercial-caution."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Wired all 12 options for purposes, styles, lighting, negative prompts, safety disclaimers, and seed configurations."
   },
   {
     "name": "Character Prompt Generator",
@@ -7676,15 +7675,15 @@
       "x-post-audience",
       "x-post-cta"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "x-post-format",
       "x-post-tone",
       "x-post-audience",
       "x-post-cta"
     ],
-    "validation": false,
-    "errorHandling": false,
+    "missingOptions": [],
+    "validation": true,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -7694,9 +7693,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: x-post-format, x-post-tone, x-post-audience, x-post-cta."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Verified all formats, tones, audiences, and calls to action are fully supported."
   },
   {
     "name": "Viral Hook Generator",
@@ -9298,13 +9297,13 @@
       "random-list-quantity",
       "random-list-dedupe"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "random-list-quantity",
       "random-list-dedupe"
     ],
+    "missingOptions": [],
     "validation": true,
-    "errorHandling": false,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -9314,9 +9313,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: random-list-quantity, random-list-dedupe."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Wired dynamic list counts, comma/newline split modes, and implemented secure WebCrypto-based shuffling."
   },
   {
     "name": "Random Color Generator",
@@ -9609,14 +9608,14 @@
       "wheel-remove-winner",
       "wheel-unique"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "wheel-spin-count",
       "wheel-remove-winner",
       "wheel-unique"
     ],
+    "missingOptions": [],
     "validation": true,
-    "errorHandling": false,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -9626,9 +9625,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: wheel-spin-count, wheel-remove-winner, wheel-unique."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Verified that spin count, winner deductions, unique filtering, and secure WebCrypto shuffling are fully wired."
   },
   {
     "name": "Product Benefits Generator",
@@ -9845,12 +9844,12 @@
     "configuredOptions": [
       "villain-style"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "villain-style"
     ],
-    "validation": false,
-    "errorHandling": false,
+    "missingOptions": [],
+    "validation": true,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -9860,9 +9859,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: villain-style."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Implemented villain style name banks and rendered output in structured card grids using renderGroupedIdeas."
   },
   {
     "name": "Werewolf Name Generator",
@@ -10157,15 +10156,14 @@
     "usedOptions": [
       "receipt-business-type",
       "receipt-currency",
-      "receipt-item-count",
-      "receipt-include-policy"
-    ],
-    "missingOptions": [
       "receipt-payment-method",
+      "receipt-item-count",
+      "receipt-include-policy",
       "receipt-include-verification"
     ],
-    "validation": false,
-    "errorHandling": false,
+    "missingOptions": [],
+    "validation": true,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -10175,9 +10173,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: receipt-payment-method, receipt-include-verification."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Wired payment methods, verification checklists, currency symbols, and dynamic line items."
   },
   {
     "name": "NDA Generator",
@@ -10192,12 +10190,12 @@
     "configuredOptions": [
       "pass29-style"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "pass29-style"
     ],
-    "validation": false,
-    "errorHandling": false,
+    "missingOptions": [],
+    "validation": true,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -10207,9 +10205,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: pass29-style."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Implemented case block and wired options for overview, scope, terms, and safety checklists in section suites."
   },
   {
     "name": "Newsletter Name Generator",
@@ -10443,13 +10441,13 @@
       "institution-type",
       "prestige-level"
     ],
-    "usedOptions": [],
-    "missingOptions": [
+    "usedOptions": [
       "institution-type",
       "prestige-level"
     ],
-    "validation": false,
-    "errorHandling": false,
+    "missingOptions": [],
+    "validation": true,
+    "errorHandling": true,
     "placeholderOutput": false,
     "staticOutput": false,
     "dynamicOutput": true,
@@ -10459,9 +10457,9 @@
     "seoQuality": 8,
     "uxQuality": 8,
     "accessibilityConcerns": "none",
-    "score": 7,
-    "status": "🟡 Needs Polish",
-    "notes": "Ignores configured options: institution-type, prestige-level."
+    "score": 10,
+    "status": "🟢 Production Ready",
+    "notes": "Production ready. Aligned prestige level naming lists and rendered output in structured cards using renderGroupedIdeas."
   },
   {
     "name": "Diner Name Generator",
