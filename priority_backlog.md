@@ -3,16 +3,6 @@
 | Slug | Status | Score | Issues / Notes | Priority | Effort | Impact |
 | :--- | :--- | :---: | :--- | :--- | :--- | :--- |
 | facebook-post-generator | 🟠 Partially Implemented | 4 | Returns a placeholder / static "coming soon" message. | High | Medium | High |
-| sibling-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: matching-style, target-gender. | Low | Quick Win | Low |
-| pick-a-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: animation. | Low | Quick Win | Low |
-| tag-team-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: tag-team-style. | Low | Quick Win | Low |
-| warrior-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: warrior-class. | Low | Quick Win | Low |
-| project-name-generator-keywords | 🟡 Needs Polish | 7 | Ignores configured options: project-style, name-format. | Low | Quick Win | Low |
-| last-name-and-first-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: name-style, name-format. | Low | Quick Win | Low |
-| baby-name-generator-with-last-name | 🟡 Needs Polish | 7 | Ignores configured options: baby-name-style, gender. | Low | Quick Win | Low |
-| nickname-generator-based-on-name | 🟡 Needs Polish | 7 | Ignores configured options: nickname-style. | Low | Quick Win | Low |
-| performer-names-generator | 🟡 Needs Polish | 7 | Ignores configured options: performer-name-style. | Low | Quick Win | Low |
-| disc-jockey-names-generator | 🟡 Needs Polish | 7 | Ignores configured options: dj-name-style, name-format. | Low | Quick Win | Low |
 | mountain-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: mountain-style, feature-type. | Low | Quick Win | Low |
 | forest-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: forest-style, forest-type. | Low | Quick Win | Low |
 | trademark-friendly-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: tm-industry, tm-style. | Low | Quick Win | Low |

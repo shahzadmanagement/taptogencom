@@ -7813,18 +7813,34 @@ async function generate() {
     }
     case 'warrior-name-generator': {
       const warriorClass = optionValue('warrior-class', 'knight-paladin');
-      const seed = text.trim();
-      const classes: Record<string, { first: string[]; titles: string[] }> = {
-        barbarian: { first: ['Kael', 'Runa', 'Thorek', 'Vara', 'Borin'], titles: ['Stonehowl', 'Ashbreaker', 'Wildshield', 'Ironhide', 'Stormborn'] },
-        'knight-paladin': { first: ['Alaric', 'Seren', 'Cedric', 'Elian', 'Mira'], titles: ['Dawnshield', 'Brightlance', 'Oathkeeper', 'Silverguard', 'Lightward'] },
-        gladiator: { first: ['Cassian', 'Lyra', 'Brutus', 'Vesta', 'Talon'], titles: ['Arena Flame', 'Bronze Fang', 'Crowdmark', 'Sand Victor', 'Red Laurels'] },
-        mercenary: { first: ['Draven', 'Nyx', 'Rook', 'Selka', 'Marek'], titles: ['Coinblade', 'Black Contract', 'Roadsteel', 'Free Pike', 'Grey Banner'] }
+      const seed = compactSeed(text, 'Valoria');
+      const classes: Record<string, { first: string[]; titles: string[]; role: string }> = {
+        barbarian: { first: ['Kael', 'Runa', 'Thorek', 'Vara', 'Borin'], titles: ['Stonehowl', 'Ashbreaker', 'Wildshield', 'Ironhide', 'Stormborn'], role: 'Frontline vanguard with tribal heritage.' },
+        'knight-paladin': { first: ['Alaric', 'Seren', 'Cedric', 'Elian', 'Mira'], titles: ['Dawnshield', 'Brightlance', 'Oathkeeper', 'Silverguard', 'Lightward'], role: 'Holy warrior sworn to protect.' },
+        gladiator: { first: ['Cassian', 'Lyra', 'Brutus', 'Vesta', 'Talon'], titles: ['Arena Flame', 'Bronze Fang', 'Crowdmark', 'Sand Victor', 'Red Laurels'], role: 'Arena champion of speed and theatrical combat.' },
+        mercenary: { first: ['Draven', 'Nyx', 'Rook', 'Selka', 'Marek'], titles: ['Coinblade', 'Black Contract', 'Roadsteel', 'Free Pike', 'Grey Banner'], role: 'Hired steel prioritizing contracts.' }
       };
+      
       const set = classes[warriorClass] || classes['knight-paladin'];
-      result = generateMultiple(() => {
-        const name = randomFrom(set.first) + ' ' + randomFrom(set.titles);
-        return seed ? name + ' of ' + seed : name;
-      }, 10);
+      const items = set.first.map((first, idx) => {
+        const title = set.titles[idx % set.titles.length];
+        return {
+          name: `${first} ${title} of ${seed}`,
+          reason: `Cohesive ${warriorClass} archetype.`,
+          extra: set.role
+        };
+      });
+
+      const groups = [
+        {
+          title: `Warrior Names (${titleCase(warriorClass.replace(/-/g, ' '))})`,
+          note: `Fictional warrior characters. Seed origin: ${seed}.`,
+          items
+        }
+      ];
+
+      result = groups.map(group => group.title + '\n' + group.items.map(item => item.name).join('\n')).join('\n\n');
+      resultHtml = renderGroupedIdeas(groups, 'Check trademark directories, fiction registries, and game lore before using character names in published work.');
       break;
     }
     case 'ship-name-generator': {
@@ -8734,41 +8750,115 @@ async function generate() {
     case 'sibling-name-generator': {
       const style = optionValue('matching-style', 'same-origin-vibe');
       const gender = optionValue('target-gender', 'mixed-neutral');
-      const boyNames = ['Miles', 'Theo', 'Jonah', 'Felix', 'Arthur', 'Caleb', 'Nolan', 'Elliot'];
-      const girlNames = ['Mia', 'Clara', 'Elise', 'Nora', 'Ivy', 'Hazel', 'Lena', 'Violet'];
-      const neutralNames = ['Rowan', 'Quinn', 'Avery', 'Riley', 'Morgan', 'Sage', 'Finley', 'Emery'];
+      const seed = text.trim() ? titleCase(text.trim()) : '';
+
+      const boyNames = ['Miles', 'Theo', 'Jonah', 'Felix', 'Arthur', 'Caleb', 'Nolan', 'Elliot', 'Lucas', 'Liam', 'Silas', 'Henry'];
+      const girlNames = ['Mia', 'Clara', 'Elise', 'Nora', 'Ivy', 'Hazel', 'Lena', 'Violet', 'Aria', 'Siena', 'Iris', 'Alice'];
+      const neutralNames = ['Rowan', 'Quinn', 'Avery', 'Riley', 'Morgan', 'Sage', 'Finley', 'Emery', 'Harper', 'Arden', 'Jordan', 'Robin'];
+
       const pool = gender === 'boys' ? boyNames : gender === 'girls' ? girlNames : neutralNames;
-      const formats: Record<string, () => string> = {
-        'same-starting-letter': () => {
-          const letter = randomFrom(['A', 'E', 'L', 'M', 'N', 'R']);
-          return [letter + randomFrom(['ria', 'den', 'ora', 'lias']), letter + randomFrom(['van', 'ila', 'ren', 'essa'])].join(' + ');
-        },
-        'same-origin-vibe': () => randomFrom(['Clara + Felix', 'Nora + Theo', 'Hazel + Arthur', 'Mia + Jonah', 'Rowan + Elise']),
-        rhyming: () => randomFrom(['Milo + Arlo', 'Lena + Mina', 'Nora + Cora', 'Evan + Devin', 'Riley + Kylie']),
-        classic: () => randomFrom(['Henry + Alice', 'James + Eleanor', 'Thomas + Clara', 'William + Rose', 'Arthur + Beatrice'])
+
+      const getPair = (first: string): string => {
+        if (style === 'same-starting-letter') {
+          const letter = first ? first.charAt(0).toUpperCase() : randomFrom(['A', 'E', 'L', 'M', 'N', 'R']);
+          const filtered = pool.filter(n => n.toUpperCase().startsWith(letter) && n.toUpperCase() !== first.toUpperCase());
+          const match = filtered.length ? randomFrom(filtered) : randomFrom(pool);
+          return first ? `${first} & ${match}` : `${match} & ${randomFrom(pool.filter(n => n !== match))}`;
+        }
+        if (style === 'rhyming') {
+          const suffix = first ? first.slice(-2).toLowerCase() : '';
+          const vowels = ['a','e','i','o','u','y'];
+          const filtered = pool.filter(n => {
+            if (n.toUpperCase() === first.toUpperCase()) return false;
+            if (!first) return false;
+            const nLast = n.slice(-2).toLowerCase();
+            return nLast.slice(-1) === suffix.slice(-1) || (vowels.includes(nLast.slice(-1)) && vowels.includes(suffix.slice(-1)));
+          });
+          const match = filtered.length ? randomFrom(filtered) : randomFrom(pool);
+          return first ? `${first} & ${match}` : `${randomFrom(pool)} & ${randomFrom(pool)}`;
+        }
+        if (style === 'classic') {
+          const classics = {
+            boys: ['Henry', 'James', 'Thomas', 'William', 'Arthur', 'Charles', 'George', 'Edward'],
+            girls: ['Alice', 'Eleanor', 'Clara', 'Rose', 'Beatrice', 'Charlotte', 'Jane', 'Margaret'],
+            'mixed-neutral': ['Francis', 'Robin', 'Morgan', 'Ellis', 'Evelyn', 'Christian', 'Julian', 'Sydney']
+          };
+          const subPool = classics[gender] || classics['mixed-neutral'];
+          const match = randomFrom(subPool.filter(n => n.toUpperCase() !== first.toUpperCase()));
+          return first ? `${first} & ${match}` : `${randomFrom(subPool)} & ${randomFrom(subPool)}`;
+        }
+        const vibes = {
+          boys: ['Miles', 'Theo', 'Jonah', 'Felix', 'Caleb', 'Nolan', 'Silas', 'Levi'],
+          girls: ['Mia', 'Clara', 'Elise', 'Nora', 'Ivy', 'Hazel', 'Lena', 'Iris'],
+          'mixed-neutral': ['Rowan', 'Quinn', 'Avery', 'Riley', 'Sage', 'Finley', 'Emery', 'Arden']
+        };
+        const subPool = vibes[gender] || vibes['mixed-neutral'];
+        const match = randomFrom(subPool.filter(n => n.toUpperCase() !== first.toUpperCase()));
+        return first ? `${first} & ${match}` : `${randomFrom(subPool)} & ${randomFrom(subPool)}`;
       };
-      const extra = text.trim() ? 'Matches with: ' + text.trim() + '\n\n' : '';
-      result = extra + generateMultiple(() => {
-        const pair = formats[style] ? formats[style]() : randomFrom(pool) + ' + ' + randomFrom(pool);
-        return pair + ' - ' + (style.replace(/-/g, ' ')) + ' pairing';
-      }, 8);
+
+      const pairsList: { name: string, reason: string, extra: string }[] = [];
+      for (let i = 0; i < 5; i++) {
+        let pairStr = '';
+        if (seed) {
+          pairStr = getPair(seed);
+        } else {
+          const first = randomFrom(pool);
+          pairStr = getPair(first);
+        }
+        pairsList.push({
+          name: pairStr,
+          reason: `Coordinated sibling matching style: ${style.replace(/-/g, ' ')}.`,
+          extra: `Target gender preference: ${gender}.`
+        });
+      }
+
+      const groups = [
+        {
+          title: `Sibling Name Pairings (${titleCase(style.replace(/-/g, ' '))})`,
+          note: seed ? `Matching partner name: ${seed}.` : 'Random matching pairs.',
+          items: pairsList
+        }
+      ];
+
+      result = groups.map(group => group.title + '\n' + group.items.map(item => item.name).join('\n')).join('\n\n');
+      resultHtml = renderGroupedIdeas(groups, 'Check cultural naming flow, spelling compatibility, initials (avoid unintended acronyms), and family preferences before choosing.');
       break;
     }
     case 'pick-a-name-generator': {
-      const entries = text.split(/[\n]+/).map(item => item.trim()).filter(Boolean);
+      const entries = text.split(/[\n,;]+/).map(item => item.trim()).filter(Boolean);
       const names = Array.from(new Set(entries.length ? entries : ['Avery', 'Jordan', 'Morgan', 'Taylor', 'Riley', 'Casey', 'Sam']));
       const mode = optionValue('picker-mode', 'simple');
       const backupCount = Math.max(0, Math.min(5, Number(optionValue('picker-backups', '2')) || 2));
-      const shuffled = [...names].sort(() => Math.random() - 0.5);
+      const animationEnabled = optionValue('animation', 'true') === 'true';
+      const showRemaining = optionValue('remove-selected', 'false') === 'true';
+
+      let shuffled = [...names];
+      try {
+        const randomInt = (max: number) => {
+          const arr = new Uint32Array(1);
+          crypto.getRandomValues(arr);
+          return arr[0] % max;
+        };
+        for (let i = shuffled.length - 1; i > 0; i--) {
+          const j = randomInt(i + 1);
+          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+      } catch (e) {
+        shuffled.sort(() => Math.random() - 0.5);
+      }
+
       const picked = shuffled[0];
       const backups = shuffled.slice(1, 1 + backupCount);
-      const showRemaining = optionValue('remove-selected', 'false') === 'true';
-      const announcement = `Mode: ${titleCase(mode)}\nSelected name: ${picked}\nBackup picks: ${backups.length ? backups.join(', ') : 'None'}\nEntry count: ${names.length}`;
+      const announcement = `Mode: ${titleCase(mode)}\nSelected Name: ${picked}\nBackup Picks: ${backups.length ? backups.join(', ') : 'None'}\nEntry Count: ${names.length}\nAnimation: ${animationEnabled ? 'Enabled' : 'Disabled'}`;
+
       const sections = [
         { title: 'Selected Name', body: picked, note: `${titleCase(mode)} picker result.` },
         { title: 'Backup Picks', body: backups.length ? backups.map((name, index) => `${index + 1}. ${name}`).join('\n') : 'No backup picks requested.', note: 'Use if the first pick is unavailable.' },
         { title: 'Copyable Result', body: announcement, note: 'Ready to paste into chat, class notes, or meeting notes.' },
-        ...(showRemaining ? [{ title: 'Remaining Names', body: names.filter(name => name !== picked).join('\n') || 'No remaining names.', note: 'Useful for repeat rounds.' }] : [])];
+        ...(showRemaining ? [{ title: 'Remaining Names', body: names.filter(name => name !== picked).join('\n') || 'No remaining names.', note: 'Useful for repeat rounds.' }] : [])
+      ];
+
       result = announcement;
       resultHtml = renderSectionSuite('Random Name Picker Result', sections, 'Browser-side informal random picker. Keep your own records for important draws.');
       break;
@@ -9089,16 +9179,36 @@ async function generate() {
         tech: ['Stack', 'Flow', 'Grid', 'Signal', 'Hub'],
         creative: ['Studio', 'Spark', 'Canvas', 'Workshop', 'Forge'],
         research: ['Study', 'Lab', 'Index', 'Pilot', 'Review'],
-        'internal-codename': ['Project', 'Atlas', 'Beacon', 'Harbor', 'Northstar']};
+        'internal-codename': ['Project', 'Atlas', 'Beacon', 'Harbor', 'Northstar']
+      };
+      
       const pool = banks[style] || banks.professional;
-      result = generateMultiple(() => {
-        const keyword = title(randomFrom(keywords));
-        const companion = randomFrom(pool);
-        if (format === 'compound') return keyword + companion;
-        if (format === 'prefix-keyword') return companion + ' ' + keyword;
-        if (format === 'codename') return 'Project ' + keyword + ' ' + companion;
-        return keyword + ' ' + companion;
-      }, 10);
+      const namesList: string[] = [];
+      for (let i = 0; i < 6; i++) {
+        const keyword = title(keywords[i % keywords.length]);
+        const companion = pool[i % pool.length];
+        let name = '';
+        if (format === 'compound') name = keyword + companion;
+        else if (format === 'prefix-keyword') name = companion + ' ' + keyword;
+        else if (format === 'codename') name = 'Project ' + keyword + ' ' + companion;
+        else name = keyword + ' ' + companion;
+        namesList.push(name);
+      }
+
+      const groups = [
+        {
+          title: `Project Names (${titleCase(style.replace(/-/g, ' '))})`,
+          note: `Format: ${format.replace(/-/g, ' ')}.`,
+          items: namesList.map((name, idx) => ({
+            name,
+            reason: `Keywords: ${keywords.join(', ')}.`,
+            extra: `Draft Option ${idx + 1}`
+          }))
+        }
+      ];
+
+      result = groups.map(group => group.title + '\n' + group.items.map(item => item.name).join('\n')).join('\n\n');
+      resultHtml = renderGroupedIdeas(groups, 'Check internal project registries, trademarks, and domain availability before public project launches.');
       break;
     }
     case 'scifi-name-generator': {
