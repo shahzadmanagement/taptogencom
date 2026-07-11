@@ -3683,16 +3683,68 @@ async function generate() {
     case 'email-subject-generator': {
       const topic = compactSeed(text, 'product launch');
       const emailType = optionValue('email-type', 'newsletter');
+      const tone = optionValue('subject-tone', 'balanced');
+
+      const templates = {
+        newsletter: {
+          short: [`${topic} newsletter`, `the ${topic} briefing`, `weekly ${topic}`],
+          balanced: [`This week in ${topic}`, `${topic} notes for your week`, `The latest updates on ${topic}`],
+          professional: [`Official Newsletter: ${titleCase(topic)} Updates`, `The ${titleCase(topic)} Executive Briefing`, `Weekly Summary of ${titleCase(topic)} Trends`]
+        },
+        sales: {
+          short: [`${topic} discount`, `${topic} offer`, `about ${topic}`],
+          balanced: [`A practical option for ${topic}`, `See how ${topic} can help`, `Special offer on ${topic}`],
+          professional: [`Enterprise Proposal: ${titleCase(topic)} Solutions`, `Introducing ${titleCase(topic)} Professional Services`, `${titleCase(topic)} Partnership Opportunities`]
+        },
+        'follow-up': {
+          short: [`following up`, `re: ${topic}`, `quick check`],
+          balanced: [`Following up on ${topic}`, `Quick note about ${topic}`, `Circling back with ${topic} details`],
+          professional: [`Following Up on Our Discussion Regarding ${titleCase(topic)}`, `Update: ${titleCase(topic)} Inquiry Follow-up`, `Next Steps: ${titleCase(topic)} Consultation`]
+        },
+        announcement: {
+          short: [`new ${topic}`, `${topic} is live`, `now launching`],
+          balanced: [`Announcing our new ${topic}`, `${topic} is now available`, `Introducing the ${topic} project`],
+          professional: [`Official Announcement: Launching ${titleCase(topic)}`, `Important Update: ${titleCase(topic)} System Launch`, `Notice: ${titleCase(topic)} Release Confirmation`]
+        }
+      };
+
+      const typeKey = (templates[emailType] ? emailType : 'newsletter') as keyof typeof templates;
+      const toneKey = (templates[typeKey][tone] ? tone : 'balanced') as keyof typeof templates['newsletter'];
+
+      const primarySubjects = templates[typeKey][toneKey];
+
+      const curiositySubjects = [
+        `A different way to think about ${topic}`,
+        `The ${topic} detail worth noticing`,
+        `What changed my mind about ${topic}`
+      ].map(s => tone === 'short' ? s.slice(0, 35) + '...' : s);
+
+      const directSubjects = [
+        `New update: ${topic}`,
+        `${topic} details inside`,
+        `Your guide to ${topic}`
+      ].map(s => tone === 'short' ? s.slice(0, 35) + '...' : s);
+
       const groups = [
-        { title: 'Curiosity', note: 'Intrigue without misleading readers.', items: [`A different way to think about ${topic}`, `The ${topic} detail worth noticing`, `What changed my mind about ${topic}`] },
-        { title: 'Direct', note: 'Clear and inbox-friendly.', items: [`New update: ${topic}`, `${topic} details inside`, `Your guide to ${topic}`] },
-        { title: 'Urgency', note: 'Use only when timing is real.', items: [`Last day to review ${topic}`, `${topic}: final reminder`, `Before the ${topic} window closes`] },
-        { title: 'Newsletter', note: 'Good for recurring sends.', items: [`This week in ${topic}`, `${topic} notes for your week`, `The ${topic} briefing`] },
-        { title: 'Sales', note: 'Offer-led without hype.', items: [`A practical option for ${topic}`, `See how ${topic} can help`, `${topic} offer details`] },
-        { title: 'Follow-Up', note: 'Polite continuation.', items: [`Following up on ${topic}`, `Quick note about ${topic}`, `Circling back with ${topic} details`] },
-        { title: 'Friendly/Professional', note: `Selected email type: ${emailType}.`, items: [`A quick ${topic} note`, `Thought this ${topic} update may help`, `Useful ${topic} resources`] }];
+        {
+          title: `Primary Subjects (${titleCase(typeKey)} / ${titleCase(toneKey)})`,
+          note: 'Tailored email subject line ideas.',
+          items: primarySubjects
+        },
+        {
+          title: 'Curiosity Hooks',
+          note: 'Inbox interest hooks without misleading clickbait.',
+          items: curiositySubjects
+        },
+        {
+          title: 'Direct/Informational',
+          note: 'No-hype descriptive subject lines.',
+          items: directSubjects
+        }
+      ];
+
       result = groups.map(group => group.title + '\n' + group.items.join('\n')).join('\n\n');
-      resultHtml = renderHeadlineGroups(groups, 'Spam-safety note: avoid fake RE/FWD prefixes, all-caps pressure, and claims your email cannot support.');
+      resultHtml = renderHeadlineGroups(groups, 'Spam-safety note: avoid fake RE/FWD prefixes, all-caps pressure, and promotional claims your email cannot support.');
       break;
     }
     case 'seo-title-generator': {
@@ -5113,8 +5165,38 @@ async function generate() {
       break;
     }
     case 'refund-policy-generator': {
-      const site = text || 'YourStore.com';
-      result = `REFUND & RETURN POLICY\nLast updated: ${new Date().toLocaleDateString()}\n\n${site} accepts returns within 30 days of purchase.\n\nELIGIBILITY:\n- Items must be unused and in original packaging\n- Proof of purchase is required\n- Sale items are final sale\n\nPROCESS:\n1. Contact us at returns@${site.toLowerCase()}\n2. Receive a Return Authorization number\n3. Ship the item back to us\n\nREFUND TIMELINE:\n- Refunds processed within 5-10 business days\n- Original payment method will be credited\n- Shipping costs are non-refundable\n\nEXCHANGES:\nWe offer free exchanges for defective items.`;
+      const site = compactSeed(text, 'YourStore.com');
+      const businessType = optionValue('refund-business-type', 'physical-goods');
+      const region = optionValue('refund-region', 'us');
+      const windowOpt = optionValue('refund-window', '30-days');
+      const remedy = optionValue('refund-remedy', 'original-payment');
+      const includesReturns = optionValue('refund-returns', 'true') === 'true';
+      const digitalException = optionValue('refund-digital-exception', 'false') === 'true';
+      const damagedItems = optionValue('refund-damaged-items', 'true') === 'true';
+
+      const contactDomain = site.toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/[^a-z0-9.-]/g, '');
+
+      const regionNotice: Record<string, string> = {
+        us: 'Complies with US federal and state commercial guidelines.',
+        'uk-eu': 'Includes notice of statutory 14-day cooling-off rights under EU/UK consumer laws.',
+        canada: 'Matches Canadian provincial consumer protection standards.',
+        australia: 'Conforms to Australian Consumer Law (ACL) statutory guarantee requirements.',
+        global: 'General multi-region consumer notification standards.'
+      };
+
+      const sections = [
+        { title: 'Important Disclaimer', body: 'This refund policy is a draft template only and is not legal advice. Have a qualified professional review it against your product characteristics and regional consumer protection laws.', note: 'Visible legal safety note.' },
+        { title: 'Overview & Scope', body: `This policy outlines the return, refund, and exchange guidelines for purchases made on ${site}. Built for business type: ${businessType.replace(/-/g, ' ')}. ${regionNotice[region] || regionNotice.us}`, note: 'Policy context.' },
+        { title: 'Refund Window & Eligibility', body: `To be eligible for a refund or return, requests must be initiated within the following window: ${windowOpt.replace(/-/g, ' ')}.\n- Items must be in their original condition and packaging.\n- Proof of purchase or receipt is required.`, note: 'Eligibility conditions.' },
+        { title: 'Primary Remedy', body: `Approved returns will be processed using the selected primary remedy: ${remedy.replace(/-/g, ' ')}. Processing times may vary depending on your bank or payment provider (typically 5-10 business days).`, note: 'Remedy parameters.' },
+        ...(includesReturns ? [{ title: 'Return Shipping Fees', body: 'Customers are responsible for paying their own return shipping costs. Shipping costs are non-refundable unless the return is due to our error.', note: 'Shipping clause enabled.' }] : []),
+        ...(digitalException ? [{ title: 'Digital Goods Policy', body: 'Please note that downloadable software, digital products, e-books, or gift cards are exempt from returns and are non-refundable once accessed or downloaded.', note: 'Digital products exception.' }] : []),
+        ...(damagedItems ? [{ title: 'Damaged or Defective Items', body: 'If you receive a damaged or defective item, please inspect it immediately and contact us with details and photos within 48 hours of delivery to arrange a replacement or priority refund.', note: 'Damaged workflow.' }] : []),
+        { title: 'Customer Support Contact', body: `For refund inquiries, please email returns@${contactDomain || 'example.com'} or submit a request on our support desk page.`, note: 'Real support contact.' }
+      ];
+
+      result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
+      resultHtml = renderSectionSuite('Refund Policy Draft Suite', sections, 'Informational template only. Update placeholders and verify with a qualified professional before publishing.');
       break;
     }
     case 'shipping-policy-generator': {
@@ -5124,36 +5206,100 @@ async function generate() {
       break;
     }
     case 'affiliate-disclosure-generator': {
-      const site = text || 'YourSite.com';
-      result = `AFFILIATE DISCLOSURE\n\n${site} is a participant in affiliate programs including the Amazon Services LLC Associates Program. This means we may earn commissions from qualifying purchases at no extra cost to you.\n\nWe only recommend products we genuinely believe in. Our editorial content is not influenced by affiliate partnerships.\n\nFTC Compliance: In accordance with FTC guidelines, we disclose that some links on this site are affiliate links.\n\nQuestions? Contact: affiliates@${site.toLowerCase()}`;
+      const site = compactSeed(text, 'YourSite.com');
+      const channel = optionValue('affiliate-channel', 'blog');
+      const region = optionValue('affiliate-region', 'us');
+      const relationship = optionValue('affiliate-relationship', 'commission');
+      const placement = optionValue('affiliate-placement', 'near-link');
+      const amazonNote = optionValue('affiliate-amazon-note', 'true') === 'true';
+      const reviewIntegrity = optionValue('affiliate-review-integrity', 'true') === 'true';
+
+      const contactDomain = site.toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/[^a-z0-9.-]/g, '');
+
+      const regionNotice: Record<string, string> = {
+        us: 'Complies with US Federal Trade Commission (FTC) guidelines for endorsements and testimonials.',
+        'uk-eu': 'Structured around UK Advertising Standards Authority (ASA) and EU consumer transparency laws.',
+        canada: 'Matches Canadian Competition Bureau guidelines on transparent disclosures.',
+        australia: 'Conforms to Australian Consumer Law (ACL) regulations on sponsored recommendations.',
+        global: 'General multi-region consumer disclosure standards.'
+      };
+
+      const relationshipText: Record<string, string> = {
+        commission: `we receive a small commission when you purchase products or services through our links, at no extra cost to you.`,
+        'free-products': `we occasionally receive free products, services, or samples to review, but all opinions remain our own.`,
+        sponsorship: `this content is sponsored or paid for by a third-party brand partner.`,
+        mixed: `we may receive commissions, free product samples, or sponsorship payments from the brand partners we mention.`
+      };
+
+      const sections = [
+        { title: 'Important Disclaimer', body: 'This affiliate disclosure is a template draft only and is not legal or advertising compliance advice. Have a qualified professional review it against your channels, placement, and commercial relationships.', note: 'Visible legal safety note.' },
+        { title: 'Disclosure Statement', body: `In compliance with transparency guidelines for our ${channel}, we disclose that ${relationshipText[relationship] || relationshipText.commission}`, note: 'Core disclosure wording.' },
+        { title: 'Placement & Prominence Note', body: `Recommended placement for this disclosure: ${placement.replace(/-/g, ' ')}. It should be placed clearly and conspicuously, prior to or near the affiliate links or brand endorsements.`, note: 'Visibility reminder.' },
+        { title: 'Regional Guidance', body: regionNotice[region] || regionNotice.us, note: 'Jurisdiction standard.' },
+        ...(amazonNote ? [{ title: 'Amazon Associates Disclosure', body: `${site} is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.`, note: 'Required Amazon affiliate clause.' }] : []),
+        ...(reviewIntegrity ? [{ title: 'Review Integrity & Honesty', body: 'We maintain strict editorial standards. Our reviews and recommendations are always based on honest evaluation and research, regardless of any affiliate commission or partnership.', note: 'User trust clause.' }] : []),
+        { title: 'Contact', body: `For inquiries regarding our affiliate partnerships, please contact affiliates@${contactDomain || 'example.com'}.`, note: 'Affiliate contact email.' }
+      ];
+
+      result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
+      resultHtml = renderSectionSuite('Affiliate Disclosure Draft Suite', sections, 'Informational template only. Update placeholders and verify with a qualified professional before publishing.');
       break;
     }
     case 'invoice-generator': {
       const company = compactSeed(text, 'Your Company');
+      const invoiceType = optionValue('invoice-type', 'service');
       const currencyCode = optionValue('invoice-currency', 'USD');
-      const currency = currencyCode === 'EUR' ? 'EUR' : currencyCode === 'GBP' ? 'GBP' : 'USD';
-      const symbol = currency === 'EUR' ? 'EUR ' : currency === 'GBP' ? 'GBP ' : '$';
       const taxRate = Math.max(0, Math.min(30, Number(optionValue('invoice-tax-rate', '10')) || 0));
+      const lineCount = Math.max(1, Math.min(8, Number(optionValue('invoice-line-count', '3')) || 3));
       const terms = optionValue('payment-terms', 'net-30');
-      const invNum = 'INV-' + Math.floor(Math.random() * 90000 + 10000);
-      const items = [
-        { name: 'Service or product A', qty: 1, rate: 500 },
-        { name: 'Service or product B', qty: 1, rate: 300 },
-        { name: 'Service or product C', qty: 1, rate: 200 }];
+      const includeTaxNote = optionValue('invoice-include-tax-note', 'true') === 'true';
+      const includeLateNote = optionValue('invoice-include-late-note', 'true') === 'true';
+
+      const currencySymbols: Record<string, string> = {
+        USD: '$', EUR: '€', GBP: '£', CAD: 'CA$', AUD: 'A$'
+      };
+      const symbol = currencySymbols[currencyCode] || '$';
+      const money = (amount: number) => `${symbol}${amount.toFixed(2)}`;
+
+      const items: { name: string, qty: number, rate: number }[] = [];
+      const itemNames: Record<string, string[]> = {
+        service: ['Consulting Hours', 'Project Planning', 'System Design', 'Code Audit', 'Integration Assistance', 'Maintenance Support', 'Training Session', 'Deployment support'],
+        freelance: ['Milestone 1: Design', 'Milestone 2: Prototype', 'Milestone 3: Final Handoff', 'Hourly Freelance Work', 'Asset creation', 'Editing retainer', 'Design revisions', 'Asset packaging'],
+        retail: ['Product Unit A', 'Product Unit B', 'Bulk Package C', 'Shipping Box D', 'Custom Hardware Unit', 'Unit Replacement', 'Component Upgrade', 'Fulfillment Fee'],
+        subscription: ['Monthly Platform Retainer', 'SaaS License Fee', 'API Access Retainer', 'Server Maintenance Pack', 'User seat licenses', 'Enterprise tier support', 'Storage overage fee', 'Bandwidth allocation'],
+        deposit: ['Initial Project Deposit', 'Milestone Pre-payment', 'Security Hold Retainer', 'Setup Deposit', 'Hardware Booking Fee', 'Travel expenses deposit', 'Pre-flight setup fee', 'Retainer Deposit']
+      };
+
+      const nameList = itemNames[invoiceType] || itemNames.service;
+      for (let i = 0; i < lineCount; i++) {
+        items.push({
+          name: nameList[i % nameList.length] + ` (Row ${i + 1})`,
+          qty: (invoiceType === 'retail' || invoiceType === 'subscription') ? (i + 1) : 1,
+          rate: (invoiceType === 'deposit') ? 1000 / (i + 1) : 250 - (i * 40)
+        });
+      }
+
       const subtotal = items.reduce((sum, item) => sum + item.qty * item.rate, 0);
       const tax = subtotal * (taxRate / 100);
       const total = subtotal + tax;
-      const money = (amount: number) => `${symbol}${amount.toFixed(2)}`;
-      const dueDays = terms === 'due-on-receipt' ? 0 : terms === 'net-15' ? 15 : 30;
+
+      const dueDays = terms === 'due-on-receipt' ? 0 : terms === 'net-15' ? 15 : terms === 'net-30' ? 30 : 45;
       const dueDate = new Date(Date.now() + dueDays * 86400000).toLocaleDateString();
-      const invoiceText = `INVOICE\n\nFrom: ${company}\nBusiness address: [Business address]\nEmail: billing@example.com\n\nBill To:\n[Client name]\n[Client company]\n[Client address]\n\nInvoice #: ${invNum}\nInvoice Date: ${new Date().toLocaleDateString()}\nDue Date: ${dueDays === 0 ? 'Due on receipt' : dueDate}\nCurrency: ${currency}\n\nLine Items:\n${items.map((item, index) => `${index + 1}. ${item.name} | Qty ${item.qty} | Rate ${money(item.rate)} | Amount ${money(item.qty * item.rate)}`).join('\n')}\n\nSubtotal: ${money(subtotal)}\nTax (${taxRate}%): ${money(tax)}\nTotal Due: ${money(total)}\n\nPayment Terms: ${terms.replace(/-/g, ' ').toUpperCase()}\nPayment Methods: [Bank transfer, card, PayPal, or other]\n\nNotes:\nThank you for your business. Replace placeholders with real invoice and tax details.`;
+
+      const invNum = 'INV-' + Math.floor(Math.random() * 90000 + 10000);
+
+      const invoiceText = `INVOICE (${invoiceType.toUpperCase()})\n\nFrom: ${company}\nBilling email: billing@example.com\n\nBill To:\n[Client name]\n[Client address]\n\nInvoice #: ${invNum}\nInvoice Date: ${new Date().toLocaleDateString()}\nDue Date: ${dueDays === 0 ? 'Due on receipt' : dueDate}\nCurrency: ${currencyCode}\n\nLine Items:\n${items.map((item, index) => `${index + 1}. ${item.name} | Qty ${item.qty} | Rate ${money(item.rate)} | Amount ${money(item.qty * item.rate)}`).join('\n')}\n\nSubtotal: ${money(subtotal)}\nTax (${taxRate}%): ${money(tax)}\nTotal Due: ${money(total)}\n\nPayment Terms: ${terms.replace(/-/g, ' ').toUpperCase()}`;
+
       const sections = [
-        { title: 'Invoice Text', body: invoiceText, note: 'Copy/export-friendly invoice draft.' },
-        { title: 'Line Item Summary', body: items.map(item => `${item.name}: ${item.qty} x ${money(item.rate)} = ${money(item.qty * item.rate)}`).join('\n'), note: 'Edit item rows before sending.' },
-        { title: 'Totals', body: `Subtotal: ${money(subtotal)}\nTax (${taxRate}%): ${money(tax)}\nTotal: ${money(total)}`, note: 'No tax or accounting claims.' },
-        { title: 'Payment Terms', body: `${terms.replace(/-/g, ' ').toUpperCase()}\nDue date: ${dueDays === 0 ? 'Due on receipt' : dueDate}\nNotes: Add accepted payment methods and late fee language only if it applies.`, note: 'Keep terms accurate.' }];
+        { title: 'Invoice Text', body: invoiceText, note: `Invoice Type: ${invoiceType}. Terms: ${terms}.` },
+        { title: 'Line Item Summary', body: items.map(item => `${item.name}: ${item.qty} x ${money(item.rate)} = ${money(item.qty * item.rate)}`).join('\n'), note: `${lineCount} items generated dynamically.` },
+        { title: 'Totals Breakdown', body: `Subtotal: ${money(subtotal)}\nTax (${taxRate}%): ${money(tax)}\nTotal: ${money(total)}`, note: `Calculated in currency: ${currencyCode}.` },
+        ...(includeTaxNote ? [{ title: 'Tax & Compliance Note', body: `The tax rate of ${taxRate}% is calculated for drafting purposes only. Real transactions must comply with local VAT, GST, sales tax registration, exemptions, or invoicing requirements. Consult an accountant to verify.`, note: 'Tax disclosure clause.' }] : []),
+        ...(includeLateNote ? [{ title: 'Late Payment Fee Wording', body: `Late Fee Wording: Payments not received by the due date (${dueDays === 0 ? 'Due on receipt' : dueDate}) may be subject to a 1.5% monthly interest charge or standard late fees as allowed by applicable local laws.`, note: 'Late fee terms clause.' }] : [])
+      ];
+
       result = invoiceText;
-      resultHtml = renderSectionSuite('Invoice Draft', sections, 'Template only. Verify tax, currency, payment, and invoice requirements with your accounting process before sending.');
+      resultHtml = renderSectionSuite('Invoice Draft Package', sections, 'Draft invoice template only. Verify tax, currency, and invoice requirements with a qualified professional before sending.');
       break;
     }
     case 'meeting-agenda-generator': {
@@ -5290,9 +5436,76 @@ async function generate() {
       break;
     }
     case 'meme-text-generator': {
-      const tops = ['WHEN YOU FINALLY','NOBODY:','ME WHEN','THAT FACE WHEN','WHEN YOUR BOSS','POV:','WHEN SOMEONE SAYS','MY BRAIN AT 3AM:'];
-      const bottoms = ['AND IT ACTUALLY WORKS','BUT IT WAS WORTH IT','*VISIBLE CONFUSION*','MISSION ACCOMPLISHED','THERE IS NO MEME','*PANICS INTERNALLY*','IMPROVISE. ADAPT. OVERCOME.','WHY THO'];
-      result = generateMultiple(() => `TOP: ${randomFrom(tops)}\nBOTTOM: ${randomFrom(bottoms)}`, 6);
+      const context = compactSeed(text, 'coding all night');
+      const style = optionValue('pass19-style', 'all');
+      const tone = optionValue('pass19-tone', 'wholesome');
+
+      const wholesomeMemes = [
+        { top: 'WHEN YOU TRY TO HELP A FRIEND', bottom: 'AND THEY ACTUALLY SUCCEED AND YOU ARE SO PROUD', note: 'Wholesome support' },
+        { top: 'MY COWORKER AFTER I SOLVE THE BUG', bottom: 'YOU DID IT. YOU CRAZY SON OF A BENCH, YOU DID IT', note: 'Team encouragement' },
+        { top: 'ME LOOKING AT MY OLD CODE', bottom: 'IT IS NOT MUCH, BUT IT IS HONEST WORK', note: 'Self-acceptance' }
+      ];
+
+      const sarcasticMemes = [
+        { top: 'OH, SO YOU SHUT DOWN WITHOUT SAVING?', bottom: 'PLEASE, TELL ME MORE ABOUT YOUR INCREDIBLE WORKFLOW', note: 'Sarcasm' },
+        { top: 'ANOTHER MEETING THAT COULD HAVE BEEN AN EMAIL', bottom: '*VISIBLE CONFUSION* AND INTERNAL SCREAMING', note: 'Meeting fatigue' },
+        { top: 'IT WORKS ON MY MACHINE', bottom: 'GUESS WE ARE SHIPPING YOUR LAPTOP TO PRODUCTION THEN', note: 'Developer sarcasm' }
+      ];
+
+      const workMemes = [
+        { top: 'ME ESTIMATING A TASK AS "SIMPLE"', bottom: 'AND SPENDING THE NEXT 3 DAYS REDESIGNING THE SYSTEM', note: 'Estimate panic' },
+        { top: 'BOSS: WE ARE GOING TO AGILE', bottom: 'ME: SO WE DO MORE MEETINGS NOW? BOSS: YES', note: 'Agile life' },
+        { top: 'ME LEAVING THE OFFICE AT 4:59 PM', bottom: 'FASTEST MAN ALIVE', note: 'Off-hours sprint' }
+      ];
+
+      const schoolMemes = [
+        { top: 'STUDYING 5 MINUTES BEFORE THE EXAM', bottom: 'IMPROVISE. ADAPT. OVERCOME.', note: 'Exam panic' },
+        { top: 'WHEN THE TEACHER ASKS A QUESTION', bottom: 'AVOIDS EYE CONTACT AT ALL COSTS', note: 'Classroom dynamic' },
+        { top: 'GROUP PROJECT TEAMMATES:', bottom: 'NOBODY DOES ANYTHING, STILL EXPECTS A+', note: 'Group work' }
+      ];
+
+      const reactionMemes = [
+        { top: `POV: YOU EXPLAIN ${context.toUpperCase()}`, bottom: 'AND THEY JUST STARE IN COMPASSIONATE SILENCE', note: 'Reaction' },
+        { top: 'MY BRAIN AT 3AM:', bottom: `LET'S THINK ABOUT THAT EMBARRASSING THING FROM 2018`, note: 'Insomnia reaction' },
+        { top: `WHEN THEY SAY ${context.toUpperCase()} IS EASY`, bottom: '*PANICS INTERNALLY IN 404 NOT FOUND*', note: 'Panic reaction' }
+      ];
+
+      const candidates: { top: string, bottom: string, note: string }[] = [];
+      
+      const addFrom = (list: typeof wholesomeMemes) => {
+        list.forEach(m => {
+          let cleanTop = m.top;
+          let cleanBottom = m.bottom;
+          if (tone === 'dry') {
+            cleanBottom = cleanBottom.toLowerCase() + '... ok.';
+          } else if (tone === 'light-sarcasm') {
+            cleanBottom = cleanBottom + ' (sure it is)';
+          } else if (tone === 'playful') {
+            cleanBottom = '✨ ' + cleanBottom + ' ✨';
+          }
+          candidates.push({ top: cleanTop, bottom: cleanBottom, note: m.note });
+        });
+      };
+
+      if (style === 'wholesome' || tone === 'wholesome') addFrom(wholesomeMemes);
+      if (style === 'sarcastic-light' || tone === 'light-sarcasm') addFrom(sarcasticMemes);
+      if (style === 'work') addFrom(workMemes);
+      if (style === 'school-social') addFrom(schoolMemes);
+      if (style === 'reaction-captions') addFrom(reactionMemes);
+
+      if (candidates.length === 0) {
+        addFrom(wholesomeMemes);
+        addFrom(sarcasticMemes);
+      }
+
+      const sections = candidates.slice(0, 6).map((c, idx) => ({
+        title: `Meme Template Option ${idx + 1}`,
+        body: `[Top Text]\n${c.top}\n\n[Bottom Text]\n${c.bottom}`,
+        note: `Vibe: ${c.note}. Style: ${style}.`
+      }));
+
+      result = sections.map(sec => sec.title + '\n' + sec.body).join('\n\n');
+      resultHtml = renderSectionSuite('Meme Caption Drawer', sections, 'Meme captions are for entertainment and creative drafts only. Avoid hate, harassment, threats, or targeted abuse.');
       break;
     }
     case 'startup-name-generator': {

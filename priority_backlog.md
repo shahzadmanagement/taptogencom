@@ -2,17 +2,7 @@
 
 | Slug | Status | Score | Issues / Notes | Priority | Effort | Impact |
 | :--- | :--- | :---: | :--- | :--- | :--- | :--- |
-| keyword-generator | 🟡 Needs Polish | 7 | Ignores configured options: keyword-local-modifier. | Low | Quick Win | Low |
-| barcode-generator | 🟡 Needs Polish | 7 | Ignores configured options: barcode-label. | Low | Quick Win | Low |
-| refund-policy-generator | 🟡 Needs Polish | 7 | Ignores configured options: refund-business-type, refund-region, refund-window, refund-remedy, refund-returns, refund-digital-exception, refund-damaged-items. | Low | Quick Win | Low |
-| shipping-policy-generator | 🟡 Needs Polish | 7 | Ignores configured options: policy-store-type, policy-region, shipping-zones, processing-time, shipping-costs, shipping-carrier-options, shipping-international, shipping-customs-taxes, shipping-delivery-estimate, shipping-issue-workflow, policy-include-damaged, policy-marketplace-sales. | Low | Quick Win | Low |
-| affiliate-disclosure-generator | 🟡 Needs Polish | 7 | Ignores configured options: affiliate-channel, affiliate-region, affiliate-relationship, affiliate-placement, affiliate-amazon-note, affiliate-review-integrity. | Low | Quick Win | Low |
-| invoice-generator | 🟡 Needs Polish | 7 | Ignores configured options: invoice-type, invoice-line-count, invoice-include-tax-note, invoice-include-late-note. | Low | Quick Win | Low |
 | facebook-post-generator | 🟠 Partially Implemented | 4 | Returns a placeholder / static "coming soon" message. | High | Medium | High |
-| meme-text-generator | 🟡 Needs Polish | 7 | Ignores configured options: pass19-style, pass19-tone. | Low | Quick Win | Low |
-| text-summary-generator | 🟡 Needs Polish | 7 | Ignores configured options: summary-format, summary-audience, summary-include-actions, summary-include-questions. | Low | Quick Win | Low |
-| typography-generator | 🟡 Needs Polish | 7 | Ignores configured options: type-base-size, type-ratio, type-prefix. | Low | Quick Win | Low |
-| email-subject-generator | 🟡 Needs Polish | 7 | Ignores configured options: subject-tone. | Low | Quick Win | Low |
 | all-caps-generator | 🟡 Needs Polish | 7 | Ignores configured options: caps-preserve-lines, caps-normalize-spacing. | Low | Quick Win | Low |
 | tag-cloud-generator | 🟡 Needs Polish | 7 | Ignores configured options: cloud-max-tags, cloud-remove-stopwords, cloud-weighting. | Low | Quick Win | Low |
 | stable-diffusion-prompt-generator | 🟡 Needs Polish | 7 | Ignores configured options: sd-purpose, sd-subject-type, sd-mood, sd-composition, sd-detail-level, sd-output-format, sd-safety-level, sd-negative, sd-commercial-caution. | Low | Quick Win | Low |
