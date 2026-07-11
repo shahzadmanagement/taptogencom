@@ -3900,15 +3900,58 @@ async function generate() {
     case 'slogan-generator': {
       const brand = compactSeed(text, 'your brand');
       const tone = optionValue('slogan-tone', 'balanced');
+      const useCase = optionValue('slogan-use', 'brand');
+
+      const allSlogans = {
+        balanced: {
+          brand: [`The ${brand} Way`, `${brand} made practical`, `Built around ${brand}`],
+          campaign: [`Make room for better ${brand}`, `Choose ${brand} today`, `Simply ${brand}`],
+          product: [`Refined for ${brand}`, `Less chaos, more ${brand}`, `${brand} made simple`]
+        },
+        premium: {
+          brand: [`${brand}, refined for what matters`, `${brand} with a sharper standard`, `The gold standard of ${brand}`],
+          campaign: [`Elevate the way you choose ${brand}`, `Pure performance, pure ${brand}`, `Experience ${brand}`],
+          product: [`Crafted for ${brand}`, `Designed around ${brand}`, `A smarter standard of ${brand}`]
+        },
+        playful: {
+          brand: [`${brand}: suspiciously useful`, `Your daily dose of ${brand}`, `Not your average ${brand}`],
+          campaign: [`Less talk, more ${brand}`, `Get hooked on ${brand}`, `Jump into ${brand} today`],
+          product: [`Happy ${brand}, happy life`, `Noodle around with ${brand}`, `${brand} without the headache`]
+        },
+        direct: {
+          brand: [`Simply ${brand}`, `${brand}, clearer`, `Better ${brand}`],
+          campaign: [`Start with ${brand}`, `Choose better ${brand}`, `Try ${brand} today`],
+          product: [`Get ${brand} done`, `Standard ${brand} utility`, `${brand} that works`]
+        }
+      };
+
+      const toneKey = (allSlogans[tone] ? tone : 'balanced') as 'balanced' | 'premium' | 'playful' | 'direct';
+      const useKey = (allSlogans[toneKey][useCase] ? useCase : 'brand') as 'brand' | 'campaign' | 'product';
+
+      const primaryItems = allSlogans[toneKey][useKey];
+      const genericItems = allSlogans.balanced.brand;
+      const ctaItems = allSlogans.direct.campaign;
+
       const groups = [
-        { title: 'Premium', note: 'Polished brand campaign lines.', items: [`${brand}, refined for what matters`, `Elevate the way you choose ${brand}`, `${brand} with a sharper standard`] },
-        { title: 'Funny', note: 'Light without sounding unserious.', items: [`${brand}: suspiciously useful`, `Less chaos, more ${brand}`, `${brand}, but make it easy`] },
-        { title: 'Emotional', note: 'For story-led campaigns.', items: [`Feel ready for ${brand}`, `${brand} that meets you where you are`, `Make room for better ${brand}`] },
-        { title: 'Short', note: 'Compact and memorable.', items: [`Simply ${brand}`, `${brand}, clearer`, `Better ${brand}`] },
-        { title: 'Brandable', note: `Tone selected: ${tone}.`, items: [`The ${brand} way`, `${brand} made practical`, `Built around ${brand}`] },
-        { title: 'CTA-Style', note: 'For buttons, ads, and landing pages.', items: [`Start with ${brand}`, `Choose better ${brand}`, `Try ${brand} today`] }];
+        {
+          title: `Primary Slogans (${titleCase(toneKey)} / ${titleCase(useKey)})`,
+          note: `Tailored slogan ideas matching your preferences.`,
+          items: primaryItems
+        },
+        {
+          title: 'Brand Taglines',
+          note: 'General brand positioning options.',
+          items: genericItems
+        },
+        {
+          title: 'Call-to-Action Lines',
+          note: 'Best for advertisement clicks or website buttons.',
+          items: ctaItems
+        }
+      ];
+
       result = groups.map(group => group.title + '\n' + group.items.join('\n')).join('\n\n');
-      resultHtml = renderHeadlineGroups(groups, 'Use slogans as creative drafts. Check originality before public campaigns.');
+      resultHtml = renderHeadlineGroups(groups, 'Use slogans as creative drafts. Check originality and trademark registers before public campaigns.');
       break;
     }
     case 'slogan-generator-legacy': {
@@ -4010,21 +4053,81 @@ async function generate() {
     }
     case 'midjourney-prompt-generator': {
       const subject = compactSeed(text, 'a modern cabin in a pine forest');
-      const style = optionValue('mj-style', 'all');
+      const purpose = optionValue('mj-purpose', 'concept-art');
+      const subjectType = optionValue('mj-subject-type', 'environment');
+      const style = optionValue('mj-style', 'cinematic-original');
+      const mood = optionValue('mj-mood', 'calm');
+      const lighting = optionValue('mj-lighting', 'soft-natural');
+      const composition = optionValue('mj-composition', 'rule-of-thirds');
       const aspect = optionValue('mj-aspect', '16:9');
-      const lighting = optionValue('mj-lighting', 'soft');
+      const detailLevel = optionValue('mj-detail-level', 'balanced');
+      const outputFormat = optionValue('mj-output-format', 'brief-plus-prompt');
+      const safetyLevel = optionValue('mj-safety-level', 'commercial-review');
       const includeNegative = optionValue('mj-negative', 'true') === 'true';
-      const negative = includeNegative ? `\nNegative prompt ideas: watermark, unreadable text, distorted anatomy, copied character, fake logo, harsh artifacts.` : '';
-      const groups = [
-        { title: 'Cinematic', text: `Subject: ${subject}\nPrompt: ${subject}, cinematic realism, ${lighting} lighting, wide establishing shot, foreground depth, balanced composition, natural color grade --ar ${aspect}\nParameter line: --ar ${aspect} --style raw\nComposition note: keep the main subject readable in the first third.${negative}`, note: 'Camera-aware and grounded.' },
-        { title: 'Product', text: `Subject: ${subject}\nPrompt: ${subject}, polished product-style visual, studio surface, clean background, crisp material detail, controlled ${lighting} lighting, usable negative space --ar ${aspect}\nParameter line: --ar ${aspect}\nComposition note: show the object clearly; avoid fake marks or brand claims.${negative}`, note: 'Commercial-safe concept prompt.' },
-        { title: 'Editorial', text: `Subject: ${subject}\nPrompt: ${subject}, editorial photography direction, clean environment, intentional negative space, diffused ${lighting} light, crisp details, publication-ready composition --ar ${aspect}\nParameter line: --ar ${aspect}\nComposition note: leave room for headline or caption overlay.${negative}`, note: 'Good for portfolio concepts.' },
-        { title: 'Concept Art', text: `Subject: ${subject}\nPrompt: ${subject}, original concept art direction, expressive shapes, layered environment detail, ${lighting} lighting, dynamic readable silhouette --ar ${aspect}\nParameter line: --ar ${aspect}\nComposition note: broad style language only, no living artist imitation.${negative}`, note: 'No copyrighted artist imitation.' },
-        { title: 'Minimalist', text: `Subject: ${subject}\nPrompt: ${subject}, minimalist visual design, simple geometry, restrained palette, centered composition, soft shadow detail --ar ${aspect}\nParameter line: --ar ${aspect}\nComposition note: reduce adjectives if the result gets cluttered.${negative}`, note: 'Clean prompt for icons and layouts.' },
-        { title: 'Social', text: `Subject: ${subject}\nPrompt: ${subject}, social-ready visual, clear focal point, high readability on mobile, bright but natural ${lighting} lighting, caption-safe negative space --ar ${aspect}\nParameter line: --ar ${aspect}\nComposition note: keep details legible at thumbnail size.${negative}`, note: 'Built for feed posts.' }];
-      const visibleGroups = filterGroupsByOption(groups, style);
-      result = visibleGroups.map(group => `${group.title}\n${group.text}`).join('\n\n');
-      resultHtml = renderHeadlineGroups(visibleGroups, 'Original image-prompt drafts only. No Midjourney affiliation, no copyrighted artist imitation, and no quality, approval, commercial-use, safety, or rendering guarantee.');
+      const commercialCaution = optionValue('mj-commercial-caution', 'true') === 'true';
+
+      const cleanMood = mood.replace(/-/g, ' ');
+      const cleanLighting = lighting.replace(/-/g, ' ');
+      const cleanComposition = composition.replace(/-/g, ' ');
+      const cleanStyle = style.replace(/-/g, ' ');
+      const cleanPurpose = purpose.replace(/-/g, ' ');
+
+      // Build prompt string
+      let promptText = `${subject}, ${cleanStyle} style, ${cleanMood} mood, ${cleanLighting} lighting, ${cleanComposition} composition`;
+      if (detailLevel === 'detailed') {
+        promptText += `, hyper-detailed textures, intricate rendering, volumetric depth`;
+      } else if (detailLevel === 'concise') {
+        promptText = `${subject}, ${cleanStyle}, ${cleanLighting}, --v 6.0`;
+      }
+
+      // Add aspect ratio
+      promptText += ` --ar ${aspect}`;
+
+      // Build output sections based on outputFormat
+      const sections = [];
+
+      if (outputFormat === 'copy-prompt' || outputFormat === 'brief-plus-prompt') {
+        sections.push({
+          title: 'Copyable Midjourney Prompt',
+          body: `/imagine prompt: ${promptText}`,
+          note: `Aspect ratio: ${aspect}. Mode: ${detailLevel}.`
+        });
+      }
+
+      if (outputFormat === 'brief-plus-prompt' || outputFormat === 'production-checklist') {
+        sections.push({
+          title: 'Creative Brief',
+          body: `Subject Type: ${subjectType}\nPurpose: ${cleanPurpose}\nComposition Goal: ${cleanComposition}\nLighting Style: ${cleanLighting}\nTarget Vibe: ${cleanMood}`,
+          note: 'Use these structural guides to adjust weights or prompts.'
+        });
+      }
+
+      if (outputFormat === 'production-checklist') {
+        sections.push({
+          title: 'Production Settings Check',
+          body: `Required flags: --ar ${aspect}\nRecommended model: Midjourney v6.0\nStyle tuning: --style raw\nNegative tokens to verify: ${includeNegative ? 'watermark, text, signature' : 'none'}`,
+          note: 'Recommended launch configurations.'
+        });
+      }
+
+      if (includeNegative) {
+        sections.push({
+          title: 'Negative Prompt Parameters',
+          body: '--no text watermark signature low quality blurry distorted digits draft',
+          note: 'Append this to minimize text and distortion issues.'
+        });
+      }
+
+      if (commercialCaution) {
+        sections.push({
+          title: 'Commercial Safety Notice',
+          body: `Safety Check Level: ${safetyLevel}\n- Do not include trademarked names, logos, or characters in prompts.\n- Do not copy living artists. Use generic style names like "${cleanStyle}".\n- AI outputs might not be copyrightable depending on jurisdiction.`,
+          note: 'Legal review recommendations.'
+        });
+      }
+
+      result = sections.map(sec => `${sec.title}\n${sec.body}`).join('\n\n');
+      resultHtml = renderSectionSuite('AI Art Prompt Brief', sections, 'Original image-prompt drafts only. No Midjourney affiliation, and no quality, policy, or commercial-use guarantee.');
       break;
     }
     case 'passphrase-generator': {
@@ -4060,20 +4163,38 @@ async function generate() {
     }
     case 'privacy-policy-generator': {
       const site = compactSeed(text, 'YourWebsite.com');
-      const mode = optionValue('policy-mode', 'website');
+      const businessType = optionValue('privacy-business-type', 'website');
+      const region = optionValue('privacy-region', 'us');
+      const dataScope = optionValue('privacy-data-scope', 'contact-only');
       const usesCookies = optionValue('policy-cookies', 'true') === 'true';
       const usesAnalytics = optionValue('policy-analytics', 'true') === 'true';
       const usesAds = optionValue('policy-ads', 'false') === 'true';
+      const childrenReview = optionValue('privacy-children', 'false') === 'true';
+
       const contactDomain = site.toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/[^a-z0-9.-]/g, '');
+
+      const regionTitles: Record<string, string> = {
+        us: 'United States (CCPA/CPRA, HIPAA notes where applicable)',
+        'uk-eu': 'United Kingdom / European Union (GDPR compliance)',
+        canada: 'Canada (PIPEDA notice standards)',
+        australia: 'Australia (Privacy Act compliance)',
+        global: 'Global / Multi-region context'
+      };
+
       const sections = [
         { title: 'Important Disclaimer', body: 'This privacy policy is a draft template only and is not legal advice. Have a qualified professional review it for your jurisdiction, business model, and actual data practices.', note: 'Visible legal safety note.' },
-        { title: 'Overview', body: `${site} operates this ${mode}. This draft explains what information may be collected, how it may be used, and how users can contact you about privacy questions.`, note: 'Opening section.' },
-        { title: 'Information We May Collect', body: 'Information users provide directly, such as contact form details, account information, order details, or support messages.\nTechnical information, such as browser type, device information, pages visited, and approximate usage activity.\nAny extra categories should match your real collection practices.', note: 'Replace with real data categories.' },
+        { title: 'Overview', body: `${site} operates this ${businessType.replace(/-/g, ' ')}. This draft explains what information may be collected, how it may be used, and how users can contact you about privacy questions. Built for compliance in ${regionTitles[region] || regionTitles.us}.`, note: 'Opening section.' },
+        { title: 'Data Scope and Collection', body: `We collect information relevant to our operations, specifically in the scope of: ${dataScope.replace(/-/g, ' ')}.\n- User-Provided Data: Information you enter into form fields, contact logs, or profiles.\n- Automatic technical records: browser, IP address, page views, and interactions.`, note: 'Matches data collection scope.' },
         { title: 'How Information May Be Used', body: 'To provide and improve the service.\nTo respond to messages and support requests.\nTo process orders, accounts, or requested features when applicable.\nTo monitor security, prevent abuse, and understand site performance.', note: 'Keep only uses that apply.' },
-        ...(usesCookies ? [{ title: 'Cookies and Tracking', body: `This ${mode} may use cookies or similar technologies for essential functionality${usesAnalytics ? ', analytics' : ''}${usesAds ? ', advertising' : ''}, and user preferences. Users can manage cookies through browser settings.`, note: 'Cookie wording enabled by option.' }] : []),
+        ...(usesCookies ? [{ title: 'Cookies and Tracking', body: `This ${businessType.replace(/-/g, ' ')} may use cookies or similar technologies for essential functionality${usesAnalytics ? ', analytics' : ''}${usesAds ? ', advertising and marketing' : ''}, and user preferences. Users can manage cookies through browser settings.`, note: 'Cookie wording enabled by option.' }] : []),
         { title: 'Third-Party Services', body: 'Third-party providers may process information on your behalf, such as hosting, analytics, payment, email, advertising, or customer support services. List the real providers you use.', note: 'Do not invent vendors.' },
-        { title: 'User Rights and Choices', body: 'Depending on location, users may have rights to access, correct, delete, restrict, or object to certain processing of personal information. Explain how users can submit requests.', note: 'Jurisdiction-specific review needed.' },
-        { title: 'Contact', body: `Privacy questions can be sent to privacy@${contactDomain || 'example.com'}. Replace this with your real privacy contact method.`, note: 'Use a real contact address.' }];
+        { title: 'User Rights and Choices', body: region === 'uk-eu'
+          ? 'Under the GDPR, EU/UK users have rights to access, rectification, erasure (the "right to be forgotten"), data portability, restriction of processing, and to object to processing. Contact us to execute these rights.'
+          : 'Users can contact us to request access, correction, or deletion of their personal data in accordance with local regulations.', note: 'Jurisdiction-specific review needed.' },
+        ...(childrenReview ? [{ title: 'Children & Minors Protection', body: `We do not knowingly collect personal data from children under the age of 13. If you believe we have collected such data, please contact us immediately to have it deleted.`, note: 'COPPA compliance note enabled.' }] : []),
+        { title: 'Contact', body: `Privacy questions can be sent to privacy@${contactDomain || 'example.com'}. Replace this with your real privacy contact method.`, note: 'Use a real contact address.' }
+      ];
+
       result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
       resultHtml = renderSectionSuite('Privacy Policy Draft', sections, 'Template only, not legal advice. Update every placeholder and verify with a qualified professional before publishing.');
       break;
@@ -4081,31 +4202,104 @@ async function generate() {
     case 'terms-generator': {
       const site = compactSeed(text, 'YourWebsite.com');
       const mode = optionValue('terms-mode', 'general');
-      const includesPayments = optionValue('terms-payments', 'false') === 'true';
+      const region = optionValue('terms-region', 'us');
+      const businessModel = optionValue('terms-business-model', 'informational');
       const includesAccounts = optionValue('terms-accounts', 'true') === 'true';
+      const includesPayments = optionValue('terms-payments', 'false') === 'true';
+      const includesUserContent = optionValue('terms-user-content', 'false') === 'true';
+      const includesAcceptableUse = optionValue('terms-acceptable-use', 'true') === 'true';
+
       const contactDomain = site.toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/[^a-z0-9.-]/g, '');
+
+      const regionJurisdiction: Record<string, string> = {
+        us: 'the State of Delaware, United States',
+        'uk-eu': 'the United Kingdom and the European Union consumer protection framework',
+        canada: 'the Province of Ontario, Canada',
+        australia: 'the State of New South Wales, Australia',
+        global: 'our main administrative jurisdiction'
+      };
+
       const sections = [
         { title: 'Important Disclaimer', body: 'These terms are a draft template only and are not legal advice. Have a qualified professional review them for your jurisdiction, products, services, and risk profile.', note: 'Visible legal safety note.' },
-        { title: 'Acceptance of Terms', body: `By accessing or using ${site}, users agree to follow these ${mode} terms. If users do not agree, they should not use the service.`, note: 'Opening terms section.' },
-        { title: 'Use of the Service', body: 'Users may use the service for lawful purposes only. Users should not misuse, disrupt, reverse engineer, scrape, or attempt unauthorized access to the service.', note: 'Acceptable use.' },
-        ...(includesAccounts ? [{ title: 'Accounts', body: 'Users are responsible for keeping account information accurate and login credentials secure. Users should notify you if they suspect unauthorized account access.', note: 'Account option enabled.' }] : []),
-        ...(includesPayments ? [{ title: 'Payments and Subscriptions', body: 'Prices, billing cycles, refunds, renewals, and cancellation rules should be clearly listed before purchase. Replace this section with your real payment terms.', note: 'Payment wording needs exact business rules.' }] : []),
+        { title: 'Acceptance of Terms', body: `By accessing or using ${site}, you agree to follow these ${mode} terms of service. If you do not agree to these terms, you should not access or use our services. Built for operation under the laws of ${regionJurisdiction[region] || regionJurisdiction.us}.`, note: 'Opening terms section.' },
+        { title: 'Business Model and Services', body: `Our service model is primarily structured around: ${businessModel.replace(/-/g, ' ')}. Any digital products, physical goods, or paid services are subject to billing terms defined at the time of transaction.`, note: 'Matches selected business model.' },
+        ...(includesAcceptableUse ? [{ title: 'Acceptable Use Policy', body: 'Users agree not to misuse, disrupt, reverse engineer, scrape, or attempt unauthorized access to the service. Any automated scraping or user-system abuse is strictly prohibited.', note: 'Acceptable use rules enabled.' }] : []),
+        ...(includesAccounts ? [{ title: 'User Accounts', body: 'Users are responsible for keeping account information accurate and login credentials secure. Users should notify us immediately if they suspect unauthorized account access. Accounts are for individual use only.', note: 'Account option enabled.' }] : []),
+        ...(includesUserContent ? [{ title: 'User-Generated Content License', body: 'Users retain ownership of content they submit, but grant us a worldwide, non-exclusive, royalty-free, transferable license to store, host, display, and distribute user content to operate our service.', note: 'User content licensing rules enabled.' }] : []),
+        ...(includesPayments ? [{ title: 'Payments, Subscriptions and Refunds', body: 'Prices, billing cycles, renewals, and cancellation rules are specified at checkout. Unless stated otherwise, all fees are non-refundable. We reserve the right to modify pricing with advance notice.', note: 'Payment terms enabled.' }] : []),
         { title: 'Content and Intellectual Property', body: `${site} and its owners retain rights to site content, branding, design, and software unless otherwise stated. Users retain rights to content they submit, subject to permissions needed to operate the service.`, note: 'Adapt for your real rights model.' },
         { title: 'Disclaimers and Limitation of Liability', body: 'The service is provided as available. To the fullest extent allowed by applicable law, disclaim warranties and limit liability in a way that is valid for your jurisdiction.', note: 'Requires legal review.' },
         { title: 'Termination', body: 'Access may be suspended or terminated for misuse, unlawful activity, or violation of these terms. Explain any appeal or data access process if applicable.', note: 'Policy process.' },
-        { title: 'Contact', body: `Questions about these terms can be sent to legal@${contactDomain || 'example.com'}. Replace this with your real legal contact method.`, note: 'Use a real contact address.' }];
+        { title: 'Contact Information', body: `Questions about these terms can be sent to legal@${contactDomain || 'example.com'}. Replace this with your real legal contact method.`, note: 'Use a real contact address.' }
+      ];
+
       result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
       resultHtml = renderSectionSuite('Terms Draft', sections, 'Template only, not legal advice. Replace placeholders and verify with a qualified professional before publishing.');
       break;
     }
     case 'cookie-policy-generator': {
-      const site = text || 'YourWebsite.com';
-      result = `COOKIE POLICY\nLast updated: ${new Date().toLocaleDateString()}\n\n${site} uses cookies to enhance your browsing experience.\n\nWHAT ARE COOKIES:\nCookies are small text files stored on your device when you visit a website.\n\nTYPES OF COOKIES WE USE:\n- Essential Cookies: Required for basic site functionality\n- Analytics Cookies: Help us understand how visitors use our site\n- Advertising Cookies: Used to deliver relevant advertisements\n\nMANAGING COOKIES:\nYou can control cookies through your browser settings. Note that disabling cookies may affect site functionality.\n\nTHIRD-PARTY COOKIES:\nSome cookies are placed by third-party services that appear on our pages.\n\nCONTACT:\nFor questions about our cookie policy, email privacy@${site.toLowerCase()}.`;
+      const site = compactSeed(text, 'YourWebsite.com');
+      const stack = optionValue('cookie-stack', 'analytics');
+      const region = optionValue('cookie-region', 'us');
+      const control = optionValue('cookie-control', 'cookie-banner');
+      const includesThirdParties = optionValue('cookie-third-parties', 'true') === 'true';
+      const includesConsentReview = optionValue('cookie-consent-review', 'true') === 'true';
+
+      const contactDomain = site.toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/[^a-z0-9.-]/g, '');
+
+      const regionNotice: Record<string, string> = {
+        us: 'Complies with US state disclosures regarding tracking technologies.',
+        'uk-eu': 'Structured around GDPR and ePrivacy Directive requirements (consent required before non-essential cookies).',
+        canada: 'Matches PIPEDA standards for digital tracking consent.',
+        australia: 'Conforms to Australian Privacy Act guidelines on tracking.',
+        global: 'Follows multi-jurisdiction disclosures for cookies.'
+      };
+
+      const sections = [
+        { title: 'Important Disclaimer', body: 'This cookie policy is an informational draft template only and is not legal advice. Have a qualified professional review it against your actual trackers and regional laws.', note: 'Visible legal safety note.' },
+        { title: 'Cookie Policy Overview', body: `${site} uses cookies and similar tracking technologies to improve user experience, analyze performance, and serve relevant content. Built for ${regionNotice[region] || regionNotice.us}`, note: 'Overview notice.' },
+        { title: 'Cookie Stack Configuration', body: `We employ the following category stack: ${stack.replace(/-/g, ' ')}.\n- Essential: Always active for site operations.\n- Non-essential: Analytics, marketing, or customization cookies depending on stack selection.`, note: 'Tailored stack disclosure.' },
+        { title: 'How We Manage Consent', body: `Users can control tracking preferences via: ${control.replace(/-/g, ' ')}. Please note that disabling cookies may affect certain features of the service.`, note: 'User controls method.' },
+        ...(includesThirdParties ? [{ title: 'Third-Party Trackers', body: 'Some cookies are placed by third-party services that appear on our pages. We do not control these third parties; please check their respective privacy policies for details.', note: 'Third-party warning.' }] : []),
+        ...(includesConsentReview ? [{ title: 'Consent Verification Guidelines', body: 'Confirm you have verified: actual cookie names, expiration times, specific vendors (e.g. Google Analytics), opt-out mechanisms, and your active consent banners.', note: 'Operational recommendation.' }] : []),
+        { title: 'Contact', body: `For any cookie or privacy inquiries, contact privacy@${contactDomain || 'example.com'}.`, note: 'Real email destination.' }
+      ];
+
+      result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
+      resultHtml = renderSectionSuite('Cookie Policy Draft Suite', sections, 'Informational template only. Adapt to your actual cookie audit and regional laws before publishing.');
       break;
     }
     case 'disclaimer-generator': {
-      const site = text || 'YourWebsite.com';
-      result = `DISCLAIMER\nLast updated: ${new Date().toLocaleDateString()}\n\nThe information provided by ${site} is for general informational purposes only. All information is provided in good faith.\n\nEXTERNAL LINKS:\nOur site may contain links to external websites. We are not responsible for their content or practices.\n\nPROFESSIONAL ADVICE:\nThe content on ${site} is not a substitute for professional advice. Always seek qualified professional guidance.\n\nAFFILIATE DISCLOSURE:\nSome links may be affiliate links. We may earn a commission at no extra cost to you.\n\nERRORS AND OMISSIONS:\nWe strive for accuracy but cannot guarantee all information is complete or current.\n\nCONTACT:\nFor concerns, email legal@${site.toLowerCase()}.`;
+      const site = compactSeed(text, 'YourWebsite.com');
+      const contentType = optionValue('disclaimer-content-type', 'general-site');
+      const region = optionValue('disclaimer-region', 'us');
+      const risk = optionValue('disclaimer-risk', 'medium');
+      const includesExternal = optionValue('disclaimer-external-links', 'true') === 'true';
+      const includesAffiliates = optionValue('disclaimer-affiliates', 'false') === 'true';
+      const noProfessionalAdvice = optionValue('disclaimer-no-professional-advice', 'true') === 'true';
+
+      const contactDomain = site.toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/[^a-z0-9.-]/g, '');
+
+      const regionJurisdiction: Record<string, string> = {
+        us: 'the laws of the United States',
+        'uk-eu': 'the consumer laws of the United Kingdom and the European Union',
+        canada: 'the laws of Canada',
+        australia: 'the laws of Australia',
+        global: 'international laws and regulations'
+      };
+
+      const sections = [
+        { title: 'Important Disclaimer', body: 'This disclaimer is a template draft only and is not professional or legal advice. Have a qualified professional review it for your specific content, products, and liabilities.', note: 'Visible legal safety note.' },
+        { title: 'General Information Disclaimer', body: `All information on ${site} is provided in good faith and for general informational purposes only. We make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the site.`, note: 'Basic disclaimer statement.' },
+        { title: 'Content Context', body: `This site publishes content of type: ${contentType.replace(/-/g, ' ')}. It operates under ${regionJurisdiction[region] || regionJurisdiction.us}. Target sensitivity level: ${risk}.`, note: 'Tailored content context.' },
+        ...(noProfessionalAdvice ? [{ title: 'No Professional Advice', body: `The site cannot and does not contain professional advice (including but not limited to medical, fitness, legal, financial, or tax matters). The use or reliance of any information contained on this site is solely at your own risk. Always consult with a qualified professional before taking action.`, note: 'Professional advice warning.' }] : []),
+        ...(includesExternal ? [{ title: 'External Links Disclaimer', body: 'The site may contain links to third-party websites or content. We do not warrant, endorse, guarantee, or assume responsibility for the accuracy or reliability of any information offered by third-party websites linked through the site.', note: 'External links protection.' }] : []),
+        ...(includesAffiliates ? [{ title: 'Affiliate & Sponsor Disclosure', body: 'The site may contain links to affiliate websites, and we may receive an affiliate commission for any purchases made by you on the affiliate website using such links. We are a participant in advertising programs designed to provide a means for us to earn advertising fees.', note: 'Affiliate disclosure note.' }] : []),
+        { title: 'Contact', body: `For questions about this disclaimer, contact legal@${contactDomain || 'example.com'}.`, note: 'Real legal contact.' }
+      ];
+
+      result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
+      resultHtml = renderSectionSuite('Disclaimer Draft Suite', sections, 'Informational template only. Update placeholders and verify with a qualified professional before publishing.');
       break;
     }
     case 'open-graph-generator': {
@@ -4639,11 +4833,26 @@ async function generate() {
     }
     case 'random-choice-generator': {
       if (!text) { result = 'Enter options separated by commas or new lines above.'; break; }
-      const options = text.split(/[\n]/).map(s => s.trim()).filter(Boolean);
-      if (options.length < 2) { result = 'Please enter at least 2 options separated by commas.'; break; }
+      const options = text.split(/[\n,]+/).map(s => s.trim()).filter(Boolean);
+      if (options.length < 2) { result = 'Please enter at least 2 options separated by commas or new lines.'; break; }
       const mode = optionValue('choice-mode', 'single');
       const includeAlternates = optionValue('choice-include-alternates', 'true') === 'true';
-      const shuffled = [...options].sort(() => Math.random() - 0.5);
+      
+      let shuffled = [...options];
+      try {
+        const randomInt = (max: number) => {
+          const arr = new Uint32Array(1);
+          crypto.getRandomValues(arr);
+          return arr[0] % max;
+        };
+        for (let i = shuffled.length - 1; i > 0; i--) {
+          const j = randomInt(i + 1);
+          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+      } catch (e) {
+        shuffled.sort(() => Math.random() - 0.5);
+      }
+
       const pickCount = mode === 'top-three' ? Math.min(3, shuffled.length) : 1;
       const winners = shuffled.slice(0, pickCount);
       const alternates = includeAlternates ? shuffled.slice(pickCount, pickCount + 3) : [];

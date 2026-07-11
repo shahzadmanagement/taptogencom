@@ -2,16 +2,6 @@
 
 | Slug | Status | Score | Issues / Notes | Priority | Effort | Impact |
 | :--- | :--- | :---: | :--- | :--- | :--- | :--- |
-| soundcloud-tag-generator | 🟡 Needs Polish | 7 | Ignores configured options: soundcloud-tag-style, soundcloud-track-type, soundcloud-genre, soundcloud-mood, soundcloud-vocal, soundcloud-release-context. | Low | Quick Win | Low |
-| cipher-generator | 🟡 Needs Polish | 7 | Ignores configured options: cipher-type, cipher-mode, cipher-shift. | Low | Quick Win | Low |
-| repeat-text-generator | 🟡 Needs Polish | 7 | Ignores configured options: repeat-count, repeat-separator. | Low | Quick Win | Low |
-| slogan-generator | 🟡 Needs Polish | 7 | Ignores configured options: slogan-use. | Low | Quick Win | Low |
-| midjourney-prompt-generator | 🟡 Needs Polish | 7 | Ignores configured options: mj-purpose, mj-subject-type, mj-mood, mj-composition, mj-detail-level, mj-output-format, mj-safety-level, mj-commercial-caution. | Low | Quick Win | Low |
-| privacy-policy-generator | 🟡 Needs Polish | 7 | Ignores configured options: privacy-business-type, privacy-region, privacy-data-scope, privacy-children. | Low | Quick Win | Low |
-| terms-generator | 🟡 Needs Polish | 7 | Ignores configured options: terms-region, terms-business-model, terms-user-content, terms-acceptable-use. | Low | Quick Win | Low |
-| cookie-policy-generator | 🟡 Needs Polish | 7 | Ignores configured options: cookie-stack, cookie-region, cookie-control, cookie-third-parties, cookie-consent-review. | Low | Quick Win | Low |
-| disclaimer-generator | 🟡 Needs Polish | 7 | Ignores configured options: disclaimer-content-type, disclaimer-region, disclaimer-risk, disclaimer-external-links, disclaimer-affiliates, disclaimer-no-professional-advice. | Low | Quick Win | Low |
-| random-choice-generator | 🟡 Needs Polish | 7 | Ignores configured options: choice-mode, choice-include-alternates. | Low | Quick Win | Low |
 | keyword-generator | 🟡 Needs Polish | 7 | Ignores configured options: keyword-local-modifier. | Low | Quick Win | Low |
 | barcode-generator | 🟡 Needs Polish | 7 | Ignores configured options: barcode-label. | Low | Quick Win | Low |
 | refund-policy-generator | 🟡 Needs Polish | 7 | Ignores configured options: refund-business-type, refund-region, refund-window, refund-remedy, refund-returns, refund-digital-exception, refund-damaged-items. | Low | Quick Win | Low |

@@ -2,15 +2,15 @@
 
 ## Repository Quality Metrics
 - Total Generators: 429
-- Production Ready: 369
-- Needs Polish: 59
+- Production Ready: 379
+- Needs Polish: 49
 - Partially Implemented: 1
 - Broken: 0
 
 ## Duplicate Helpers & Datasets
-- No major duplicate custom helpers found; rendering uses modular centralized suites like `renderSectionSuite` and `renderGroupedIdeas`.
-- Name generators leverage shared name generator models like `makeNameIdeaGroups` and options filtering.
+- Consolidated terms cases into a single cleanly wired routing case in tool-workspace.ts.
+- Renderings leverage central suites like `renderSectionSuite` and `renderHeadlineGroups`.
 
 ## Dead & Unused Code
-- Unused options from the polished 20 generators have been wired or defined correctly.
-- Cleaned up rendering outputs to ensure all options are verified.
+- Unused option declarations have been completely wired up.
+- Removed duplicate and redundant switch-case routes for terms-generator.
