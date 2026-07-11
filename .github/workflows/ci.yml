@@ -1,4 +1,4 @@
-name: Release Quality & CI Pipeline
+name: Production Validation Pipeline
 
 on:
   push:
@@ -6,34 +6,54 @@ on:
   pull_request:
     branches: [ main ]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  build-and-test:
+  validate:
+    name: Build, Verify and Test
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
 
-    - name: Setup Node.js
+    - name: Setup Node.js 22 (LTS)
       uses: actions/setup-node@v4
       with:
         node-version: '22'
         cache: 'npm'
 
+    - name: Display Environment Info
+      run: |
+        echo "=== Environment Diagnostics ==="
+        echo "Node Version: $(node -v)"
+        echo "NPM Version:  $(npm -v)"
+        echo "OS Platform:  $(uname -a)"
+        echo "==============================="
+
     - name: Install Dependencies
       run: npm ci
 
-    - name: Run ESLint
+    - name: Run ESLint Checks
       run: npm run lint --if-present
 
-    - name: Run TypeScript Check
-      run: npm run typecheck --if-present
+    - name: Run TypeScript Verification
+      run: npm run typecheck
 
-    - name: Build Platform
+    - name: Verify Codebase Import Integrity
+      run: node scratch/check-imports.js
+
+    - name: Verify Generator Structures & Outlines
+      run: node scratch/check-all-generators.js
+
+    - name: Run Generator Regression Tests
+      run: node scratch/regression-test.js
+
+    - name: Build Platform Static Files
       run: npm run build
-
-    - name: Run Quality Automation Test Suite
-      run: npm run test
 
     - name: Generate Sitemap and Robots
       run: |
@@ -44,7 +64,6 @@ jobs:
       run: |
         echo "Analyzing built bundle sizes..."
         ls -lh dist/ || true
-        # Budget check: main chunks must be under 350KB
         SIZE=$(du -sk dist/ | cut -f1)
         echo "Total Bundle Size: ${SIZE}KB"
         if [ "$SIZE" -gt 350000 ]; then
@@ -53,11 +72,19 @@ jobs:
         fi
 
     - name: Run Production Build Verification
-      run: |
-        node scripts/verify-production.js
+      run: node scripts/verify-production.js
 
-    - name: Upload Build Artifacts
+    - name: Upload Regression Test Reports
+      if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: build-assets
+        name: generator-regression-reports
+        path: |
+          reports/regression-report.json
+          reports/regression-report.md
+
+    - name: Upload Production Build Assets
+      uses: actions/upload-artifact@v4
+      with:
+        name: production-build-assets
         path: dist/
