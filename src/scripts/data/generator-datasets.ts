@@ -3184,20 +3184,20 @@ function buildXPostSuite(seed: string, getOption: OptionGetter) {
 function buildChatGptPromptSuite(seed: string, getOption: OptionGetter) {
   const topic = compactSeed(seed, 'general task');
   const lower = topic.toLowerCase();
-  const goal = getOption('chatgpt-prompt-type', 'research').replace(/-/g, ' ');
-  const detail = getOption('chatgpt-detail-level', 'balanced');
-  const format = getOption('chatgpt-output-format', 'checklist').replace(/-/g, ' ');
-  const risk = getOption('chatgpt-risk-level', 'public-content').replace(/-/g, ' ');
+  const goal = getOption('chatgpt-prompt-type', 'technical');
+  const detail = getOption('chatgpt-detail-level', 'standard');
+  const format = getOption('chatgpt-output-format', 'markdown');
+  const risk = getOption('chatgpt-risk-level', 'standard');
   const includeReview = getOption('chatgpt-include-review', 'true') === 'true';
   const roleByGoal: Record<string, string> = {
-    research: 'careful research assistant',
-    writing: 'clear editor and drafting partner',
-    coding: 'senior developer who explains assumptions',
-    planning: 'neutral planning assistant',
-    review: 'quality and safety reviewer',
-    learning: 'patient tutor'};
-  const role = roleByGoal[goal] || roleByGoal.research;
-  const detailInstruction = detail === 'concise' ? 'Keep the answer brief and prioritize the highest-impact points.' : detail === 'detailed' ? 'Include context, assumptions, tradeoffs, examples, and verification steps.' : 'Balance useful detail with concise wording.';
+    creative: 'creative writer and brainstorming partner',
+    technical: 'technical expert and solution architect',
+    analytical: 'critical analyst and data reviewer',
+    educational: 'patient tutor and clear explainer',
+    professional: 'professional communications advisor'
+  };
+  const role = roleByGoal[goal] || roleByGoal.technical;
+  const detailInstruction = detail === 'short' ? 'Keep the answer brief and prioritize the highest-impact points.' : detail === 'detailed' ? 'Include context, assumptions, tradeoffs, examples, and verification steps.' : 'Balance useful detail with concise wording.';
   const groups = [
     {
       title: 'Role / Task Prompt',

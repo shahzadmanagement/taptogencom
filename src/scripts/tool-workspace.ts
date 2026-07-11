@@ -726,10 +726,10 @@ async function generate() {
     const groups = buildPass29SecretGroups(toolSlug, text, style, count);
     result = groups.map(group => group.title + '\n' + group.items.map(item => item.name + ' - ' + (item.extra || item.reason)).join('\n')).join('\n\n');
     resultHtml = renderGroupedIdeas(groups, 'Browser-local/demo-safe generation only. No storage, no security guarantee, no audited cryptographic-safety claim, and the user is responsible for secure storage and use.');
-  } else if (['privacy-policy-generator','terms-generator','cookie-policy-generator','disclaimer-generator','refund-policy-generator','affiliate-disclosure-generator','nda-generator','service-agreement-generator','contract-generator','dmca-policy-generator'].includes(toolSlug)) {
+  } else if (['privacy-policy-generator','terms-generator','cookie-policy-generator','disclaimer-generator','refund-policy-generator','affiliate-disclosure-generator','nda-generator','service-agreement-generator','contract-generator','dmca-policy-generator','acceptable-use-policy-generator'].includes(toolSlug)) {
     const style = optionValue('pass29-style', optionValue('pass28-style', 'all'));
     const sections = buildPass29TemplateSections(toolSlug, text, style, {
-      region: optionValue('dmca-region', optionValue('privacy-region', optionValue('terms-region', optionValue('cookie-region', optionValue('disclaimer-region', optionValue('refund-region', optionValue('affiliate-region', 'global'))))))),
+      region: optionValue('aup-region', optionValue('dmca-region', optionValue('privacy-region', optionValue('terms-region', optionValue('cookie-region', optionValue('disclaimer-region', optionValue('refund-region', optionValue('affiliate-region', 'global')))))))),
       businessType: optionValue('privacy-business-type', optionValue('terms-business-model', optionValue('disclaimer-content-type', optionValue('refund-business-type', 'website')))),
       dataScope: optionValue('privacy-data-scope', 'contact-only'),
       usesCookies: Boolean((document.getElementById('policy-cookies') as HTMLInputElement | null)?.checked),
@@ -758,11 +758,16 @@ async function generate() {
       affiliatePlacement: optionValue('affiliate-placement', 'near-link'),
       affiliateAmazonNote: Boolean((document.getElementById('affiliate-amazon-note') as HTMLInputElement | null)?.checked),
       affiliateReviewIntegrity: Boolean((document.getElementById('affiliate-review-integrity') as HTMLInputElement | null)?.checked),
-      serviceType: optionValue('dmca-service-type', 'website'),
+      serviceType: optionValue('aup-service-type', optionValue('dmca-service-type', 'website')),
       intake: optionValue('dmca-intake', 'email-only'),
       processDepth: optionValue('dmca-process', 'takedown-review'),
-      includeCounterNotice: Boolean((document.getElementById('dmca-counter-notice') as HTMLInputElement | null)?.checked),
-      includeRepeatInfringer: Boolean((document.getElementById('dmca-repeat-infringer') as HTMLInputElement | null)?.checked)
+      includeCounterNotice: optionValue('dmca-counter-notice', 'true') === 'true',
+      includeRepeatInfringer: optionValue('dmca-repeat-infringer', 'true') === 'true',
+      riskLevel: optionValue('aup-risk-level', 'standard'),
+      enforcement: optionValue('aup-enforcement', 'standard'),
+      includeSecurity: optionValue('aup-security-clause', 'true') === 'true',
+      includeContent: optionValue('aup-content-clause', 'true') === 'true',
+      includeAutomation: optionValue('aup-api-automation-clause', 'true') === 'true'
     });
     result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
     resultHtml = renderSectionSuite('Informational Template Pack', sections, 'Informational templates only. Not legal or compliance advice. Review with a qualified professional before use; no official/legal validity or jurisdiction-specific claim is made.');
@@ -793,9 +798,9 @@ async function generate() {
     resultHtml = renderSectionSuite('Truthful Listing Draft Pack', sections, 'Truthful listing draft only. No fake reviews, fake rankings, prohibited product claims, platform affiliation, guaranteed performance, or sales guarantees.');
   } else switch (toolSlug) {
     case 'trademark-friendly-name-generator': {
-      const industry = (document.getElementById('tm-industry') as HTMLSelectElement)?.value || 'tech';
-      const style = (document.getElementById('tm-style') as HTMLSelectElement)?.value || 'portmanteau';
-      const baseWord = text.toLowerCase() || 'brand';
+      const industry = optionValue('tm-industry', 'tech');
+      const style = optionValue('tm-style', 'portmanteau');
+      const baseWord = compactSeed(text, 'brand').toLowerCase();
       const vowels = ['a','e','i','o','u'];
       const consonants = ['b','c','d','f','g','h','k','l','m','n','p','r','s','t','v','z'];
 
@@ -816,24 +821,44 @@ async function generate() {
         suffixes = [' Studio',' Design',' Creative',' Lab',' Works',' Agency',' Vision',' Collective',' Media',' Arts'];
       }
 
-      result = generateMultiple(() => {
+      const generatedNames: { name: string, reason: string, extra: string }[] = [];
+      for (let i = 0; i < 6; i++) {
+        let name = '';
         if (style === 'portmanteau') {
-          const p = randomFrom(prefixes).toLowerCase();
-          const s = randomFrom(suffixes).toLowerCase().trim();
-          const combo = (Math.random() > 0.5) ? (p.slice(0, Math.max(2, p.length - 1)) + baseWord.slice(1)) : (baseWord.slice(0, Math.max(2, baseWord.length - 1)) + s.slice(1));
-          return combo.charAt(0).toUpperCase() + combo.slice(1);
+          const p = prefixes[i % prefixes.length].toLowerCase();
+          const s = suffixes[i % suffixes.length].toLowerCase().trim();
+          const combo = (i % 2 === 0) ? (p.slice(0, Math.max(2, p.length - 1)) + baseWord.slice(1)) : (baseWord.slice(0, Math.max(2, baseWord.length - 1)) + s.slice(1));
+          name = combo.charAt(0).toUpperCase() + combo.slice(1);
         } else if (style === 'abstract') {
-          const len = 4 + Math.floor(Math.random() * 3);
           let word = '';
-          for(let i=0; i<len; i++) {
-            word += (i%2===0) ? randomFrom(consonants) : randomFrom(vowels);
+          const len = 5 + (i % 2);
+          for (let j = 0; j < len; j++) {
+            word += (j % 2 === 0) ? consonants[(i + j * 3) % consonants.length] : vowels[(i + j * 2) % vowels.length];
           }
-          if (Math.random() > 0.7) word += randomFrom(['x','z','q','v']);
-          return word.charAt(0).toUpperCase() + word.slice(1);
+          if (i % 3 === 0) word += 'x';
+          else if (i % 3 === 1) word += 'z';
+          name = word.charAt(0).toUpperCase() + word.slice(1);
         } else {
-          return randomFrom(prefixes) + ' ' + (text ? text.charAt(0).toUpperCase() + text.slice(1) : randomFrom(suffixes).trim());
+          name = prefixes[i % prefixes.length] + ' ' + (baseWord.charAt(0).toUpperCase() + baseWord.slice(1));
         }
-      }, 12);
+        
+        generatedNames.push({
+          name,
+          reason: `Industry sector: ${titleCase(industry)}. Style: ${titleCase(style)}.`,
+          extra: `Coined variant targeting descriptive safety.`
+        });
+      }
+
+      const groups = [
+        {
+          title: `Trademark-Friendly Names (${titleCase(industry)})`,
+          note: `Procedural suggestions using base keyword "${baseWord}".`,
+          items: generatedNames
+        }
+      ];
+
+      result = groups.map(group => group.title + '\n' + group.items.map(item => item.name).join('\n')).join('\n\n');
+      resultHtml = renderGroupedIdeas(groups, 'Safe branding note: trademark-friendly names are coined or abstract suggestions. You must perform local trademark checks, domain searches, and legal clearances before public business registration.');
       break;
     }
     case 'fancy-text-generator': {
@@ -8208,11 +8233,7 @@ async function generate() {
         break;
       }
     }
-    case 'acceptable-use-policy-generator': {
-      const site = text || 'YourService.com';
-      result = 'ACCEPTABLE USE POLICY\n\nLast Updated: ' + new Date().toLocaleDateString() + '\n\nThis Acceptable Use Policy governs your use of ' + site + '.\n\n1. PERMITTED USE\nYou may use our service for lawful purposes in accordance with these terms.\n\n2. PROHIBITED ACTIVITIES\nYou agree NOT to:\n- Upload malicious code or malware\n- Attempt unauthorized access to systems\n- Engage in spamming or phishing\n- Violate intellectual property rights\n- Harass, abuse, or harm others\n- Use the service for illegal activities\n- Distribute harmful or offensive content\n\n3. USER RESPONSIBILITIES\n- Maintain account security\n- Report violations promptly\n- Comply with all applicable laws\n\n4. ENFORCEMENT\nViolations may result in:\n- Warning notification\n- Temporary suspension\n- Permanent account termination\n- Legal action if necessary\n\n5. CONTACT\nReport violations to: abuse@' + site.toLowerCase() + '\n\n' + new Date().getFullYear() + ' ' + site;
-      break;
-    }
+
     case 'app-icon-generator': {
       const app = compactSeed(text, 'Focus Notes');
       const category = optionValue('app-icon-category', 'productivity');
@@ -8240,11 +8261,79 @@ async function generate() {
       break;
     }
     case 'dalle-prompt-generator': {
-      const subj = text || 'a landscape';
-      const styles = ['hyperrealistic photograph','digital painting','watercolor illustration','3D render','oil painting','concept art','anime style','pencil sketch','cinematic still','vintage photograph'];
-      const lights = ['golden hour lighting','dramatic chiaroscuro','soft diffused light','neon cyberpunk glow','ethereal moonlight','studio lighting'];
-      const moods = ['serene and peaceful','dark and mysterious','vibrant and energetic','whimsical and dreamy','epic and grandiose','intimate and cozy'];
-      result = generateMultiple(() => '"' + randomFrom(styles) + ' of ' + subj + ', ' + randomFrom(moods) + ' mood, ' + randomFrom(lights) + ', highly detailed, 8k resolution"', 5).split('\n').map((p,i) => 'Prompt ' + (i+1) + ':\n' + p).join('\n\n');
+      const subj = compactSeed(text, 'a futuristic city');
+      const purpose = optionValue('dalle-purpose', 'creative');
+      const subjectType = optionValue('dalle-subject-type', 'landscape');
+      const style = optionValue('dalle-style', 'photorealistic');
+      const mood = optionValue('dalle-mood', 'neutral');
+      const lighting = optionValue('dalle-lighting', 'natural-sunlight');
+      const composition = optionValue('dalle-composition', 'rule-of-thirds');
+      const aspect = optionValue('dalle-aspect', 'square-1-1');
+      const detail = optionValue('dalle-detail-level', 'standard');
+      const outputFormat = optionValue('dalle-output-format', 'prompt-with-tips');
+      const safetyLevel = optionValue('dalle-safety-level', 'standard');
+      const avoidList = optionValue('dalle-avoid-list', 'true') === 'true';
+      const commercialCaution = optionValue('dalle-commercial-caution', 'true') === 'true';
+
+      const styleMapping: Record<string, string> = {
+        photorealistic: 'photorealistic 8k DSLR camera photograph, highly detailed, realistic textures',
+        'oil-painting': 'expressive oil painting style, visible canvas texture, rich impasto brushstrokes',
+        'digital-art': 'sleek digital art, vibrant colors, clean vector lines, smooth gradients, modern concept art',
+        'vector-illustration': 'flat vector illustration, clean lines, minimalist shapes, corporate design style',
+        'vintage-photo': 'analog vintage photograph, 35mm film grain, faded colors, subtle vignette, nostalgic feel'
+      };
+
+      const aspectMapping: Record<string, string> = {
+        'square-1-1': 'aspect ratio 1:1',
+        'wide-16-9': 'aspect ratio 16:9',
+        'tall-9-16': 'aspect ratio 9:16'
+      };
+
+      const aspectLabel = aspectMapping[aspect] || 'aspect ratio 1:1';
+      const selectedStyle = styleMapping[style] || styleMapping.photorealistic;
+
+      const promptParts = [
+        `${titleCase(subjectType)} of ${subj}`,
+        selectedStyle,
+        `mood: ${mood.replace(/-/g, ' ')}`,
+        `lighting: ${lighting.replace(/-/g, ' ')}`,
+        `composition: ${composition.replace(/-/g, ' ')}`,
+        detail === 'highly-detailed' ? 'extremely high detail, intricate textures, sharp focus' : detail === 'simple' ? 'clean simple design, minimal details' : 'standard detailed texture'
+      ];
+      const mainPrompt = promptParts.join(', ');
+
+      const sections = [
+        {
+          title: 'Primary DALL-E Prompt',
+          body: `"${mainPrompt}"`,
+          note: `Purpose: ${titleCase(purpose)}. Aspect: ${aspectLabel}.`
+        },
+        ...(outputFormat !== 'prompt-only' ? [{
+          title: 'Prompt Tips & Modifiers',
+          body: `- Aspect modifier: DALL-E 3 handles layout natively. Set aspect in your UI or add: "${aspectLabel}".\n- Avoid quality buzzwords like "photorealistic" in DALL-E 3 unless specific camera gear is defined.\n- Keep descriptions descriptive rather than technical.`,
+          note: 'Best practices for DALL-E.'
+        }] : []),
+        ...(outputFormat === 'prompt-with-negative' ? [{
+          title: 'Negative / Avoid Guidance',
+          body: avoidList
+            ? 'Avoid/Negative cues to prevent common flaws:\n- Avoid text, letters, watermark, signature, labels.\n- Avoid duplicate faces, distorted limbs, blurry hands.\n- Avoid oversaturated highlights.'
+            : 'Custom avoid list not requested.',
+          note: 'Negative prompts guidance.'
+        }] : []),
+        ...(safetyLevel === 'strict' ? [{
+          title: 'Strict Safety Checklist',
+          body: '- Ensure prompt contains no real-world names, celebrities, trademarked logos, or brand marks.\n- Avoid terms related to violence, public figures, or sensitive political themes.\n- DALL-E has built-in content filters; using neutral synonyms prevents unnecessary prompt blocks.',
+          note: 'Content moderation safety.'
+        }] : []),
+        ...(commercialCaution ? [{
+          title: 'Commercial Verification',
+          body: 'Check the generated image for copyright, public domain compatibility, and trademark conflicts before commercial deployment. DALL-E images generally lack trademark protection.',
+          note: 'Intellectual property notice.'
+        }] : [])
+      ];
+
+      result = sections.map(sec => sec.title + '\n' + sec.body).join('\n\n');
+      resultHtml = renderSectionSuite('DALL-E Prompt Draft Suite', sections, 'Independent prompt drafts. Not affiliated with OpenAI or DALL-E; verify intellectual property policies and safety restrictions before public use.');
       break;
     }
     case 'app-icon-generator-legacy': {

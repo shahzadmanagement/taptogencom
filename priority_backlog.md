@@ -3,16 +3,6 @@
 | Slug | Status | Score | Issues / Notes | Priority | Effort | Impact |
 | :--- | :--- | :---: | :--- | :--- | :--- | :--- |
 | facebook-post-generator | 🟠 Partially Implemented | 4 | Returns a placeholder / static "coming soon" message. | High | Medium | High |
-| mountain-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: mountain-style, feature-type. | Low | Quick Win | Low |
-| forest-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: forest-style, forest-type. | Low | Quick Win | Low |
-| trademark-friendly-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: tm-industry, tm-style. | Low | Quick Win | Low |
-| acceptable-use-policy-generator | 🟡 Needs Polish | 7 | Ignores configured options: aup-service-type, aup-region, aup-risk-level, aup-enforcement, aup-security-clause, aup-content-clause, aup-api-automation-clause. | Low | Quick Win | Low |
-| chatgpt-prompt-generator | 🟡 Needs Polish | 7 | Ignores configured options: chatgpt-prompt-type, chatgpt-detail-level, chatgpt-output-format, chatgpt-risk-level, chatgpt-include-review. | Low | Quick Win | Low |
-| dalle-prompt-generator | 🟡 Needs Polish | 7 | Ignores configured options: dalle-purpose, dalle-subject-type, dalle-style, dalle-mood, dalle-lighting, dalle-composition, dalle-aspect, dalle-detail-level, dalle-output-format, dalle-safety-level, dalle-avoid-list, dalle-commercial-caution. | Low | Quick Win | Low |
-| dmca-policy-generator | 🟡 Needs Polish | 7 | Ignores configured options: dmca-service-type, dmca-intake, dmca-process, dmca-counter-notice, dmca-repeat-infringer. | Low | Quick Win | Low |
-| fake-text-generator | 🟡 Needs Polish | 7 | Ignores configured options: sample-text-type, sample-text-tone, sample-text-context, sample-text-length, sample-text-use-case. | Low | Quick Win | Low |
-| purchase-order-generator | 🟡 Needs Polish | 7 | Ignores configured options: po-currency, po-item-count, po-tax-rate, po-discount-rate, po-payment-terms, po-delivery-terms, po-include-approval. | Low | Quick Win | Low |
-| quotation-generator | 🟡 Needs Polish | 7 | Ignores configured options: quotation-currency, quotation-item-count, quotation-tax-rate, quotation-discount-rate, quotation-validity, quotation-type, quotation-include-tax. | Low | Quick Win | Low |
 | return-policy-generator | 🟡 Needs Polish | 7 | Ignores configured options: return-store-type, return-region, return-window, return-condition, return-exceptions, return-costs, return-refund-timing, return-damaged-process, return-include-exchanges, return-include-digital, return-marketplace-sales. | Low | Quick Win | Low |
 | ancient-greek-inspired-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: greek-name-style. | Low | Quick Win | Low |
 | roman-inspired-character-name-generator | 🟡 Needs Polish | 7 | Ignores configured options: roman-name-style. | Low | Quick Win | Low |
