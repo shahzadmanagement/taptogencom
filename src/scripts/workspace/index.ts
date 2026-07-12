@@ -11,6 +11,7 @@ import { runClientExperiments } from './experiments';
 import { productAnalytics } from '../../lib/product-analytics';
 import { errorMonitor } from '../../lib/error-monitor';
 import { performanceMonitor } from '../../lib/performance-monitor';
+import { searchUi } from '../search-ui';
 
 // Initialize global observability listeners immediately on import load
 errorReporter.init();
@@ -44,6 +45,9 @@ export const createWorkspace = wrapErrorBoundary(async function (
     const { injectFlagsTab } = await import('../../lib/feature-flags');
     injectFlagsTab();
   }
+
+  // Launch Search UI
+  searchUi.init();
 
   const flags = getFeatureFlags(activeConfig);
   const prefix = toolSlug.split('-')[0];

@@ -15,6 +15,7 @@ require('./analytics/product-analytics.test.cjs');
 require('./analytics/error-monitor.test.cjs');
 require('./analytics/performance-monitor.test.cjs');
 require('./search/search-engine.test.cjs');
+require('./search/search-ui.test.cjs');
 
 // Execute them
 runSuites();
