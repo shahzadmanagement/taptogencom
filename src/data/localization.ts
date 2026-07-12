@@ -436,12 +436,26 @@ export function getLocalizedPageCopy(localized: LocalizedToolContent): Localized
             : localized.language === 'pl'
               ? polishPolishText
               : (value: string) => value;
+
+  const polishedTitle = polish(localized.metaTitle);
+  let polishedDesc = polish(localized.metaDescription);
+  const kw = polish(localized.primaryKeyword);
+
+  if (polishedDesc && kw) {
+    const kwLower = kw.toLowerCase();
+    const descLower = polishedDesc.toLowerCase();
+    if (!descLower.includes(kwLower)) {
+      // Naturally prepend the localized keyword to guarantee uniqueness and keyword presence
+      polishedDesc = `${kw} - ${polishedDesc}`;
+    }
+  }
+
   return {
     ...localized,
-    primaryKeyword: polish(localized.primaryKeyword),
+    primaryKeyword: kw,
     h1: polish(localized.h1),
-    metaTitle: polish(localized.metaTitle),
-    metaDescription: polish(localized.metaDescription),
+    metaTitle: polishedTitle,
+    metaDescription: polishedDesc,
     intro: polish(localized.intro),
     faqTopics: localized.faqTopics.map(polish),
   };

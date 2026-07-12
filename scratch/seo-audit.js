@@ -69,6 +69,9 @@ const allUrls = new Set();
 for (const file of htmlFiles) {
   const relPath = path.relative(distDir, file).replace(/\\/g, '/');
   const urlPath = '/' + relPath.replace(/index\.html$/, '');
+  if (!urlPath.includes('/tools/') || urlPath === '/tools/' || urlPath === '/tools') {
+    continue;
+  }
   const pageUrl = `https://taptogen.com${urlPath}`;
   allUrls.add(urlPath);
   allUrls.add(pageUrl);
@@ -328,7 +331,7 @@ for (const p of auditResults) {
   });
 }
 
-const avgScore = totalScoreSum / htmlFiles.length;
+const avgScore = totalScoreSum / auditResults.length;
 const sortedByScore = [...finalReport].sort((a, b) => a.score - b.score);
 const lowestScoring = sortedByScore.slice(0, 10);
 const missingSchemaList = finalReport.filter(r => !r.hasFaqSchema && !r.hasBreadcrumbSchema && !r.hasWebAppSchema);
@@ -340,7 +343,7 @@ fs.mkdirSync(reportsDir, { recursive: true });
 // 1. JSON Report
 fs.writeFileSync(path.join(reportsDir, 'seo-audit.json'), JSON.stringify({
   summary: {
-    totalAudited: htmlFiles.length,
+    totalAudited: auditResults.length,
     averageSeoScore: parseFloat(avgScore.toFixed(2)),
     duplicateTitlesCount: duplicateTitlesList.length,
     duplicateDescsCount: duplicateDescsList.length,
@@ -357,7 +360,7 @@ let mdReport = `# SEO Audit System Report\n\n`;
 mdReport += `## Summary Dashboard\n\n`;
 mdReport += `| Metric | Value |\n`;
 mdReport += `| --- | --- |\n`;
-mdReport += `| **Total Pages Audited** | ${htmlFiles.length} |\n`;
+mdReport += `| **Total Pages Audited** | ${auditResults.length} |\n`;
 mdReport += `| **Average SEO Score** | ${avgScore.toFixed(2)} / 100 |\n`;
 mdReport += `| **Duplicate Page Titles** | ${duplicateTitlesList.length} |\n`;
 mdReport += `| **Duplicate Meta Descriptions** | ${duplicateDescsList.length} |\n`;
@@ -388,7 +391,7 @@ fs.writeFileSync(path.join(reportsDir, 'seo-scoreboard.md'), scoreboard, 'utf8')
 console.log('\n==================================================');
 console.log('            SEO AUDIT REPORT COMPLETE');
 console.log('==================================================');
-console.log(`Total Pages Audited: ${htmlFiles.length}`);
+console.log(`Total Pages Audited: ${auditResults.length}`);
 console.log(`Average SEO Score:   ${avgScore.toFixed(2)}`);
 console.log(`Duplicate Titles:    ${duplicateTitlesList.length}`);
 console.log(`Duplicate Descs:     ${duplicateDescsList.length}`);

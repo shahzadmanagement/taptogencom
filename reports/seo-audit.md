@@ -4,24 +4,24 @@
 
 | Metric | Value |
 | --- | --- |
-| **Total Pages Audited** | 6902 |
-| **Average SEO Score** | 91.55 / 100 |
-| **Duplicate Page Titles** | 1 |
-| **Duplicate Meta Descriptions** | 247 |
-| **Pages Excluded from Sitemap** | 52 |
-| **Pages Missing Structured Schema** | 10 |
+| **Total Pages Audited** | 6879 |
+| **Average SEO Score** | 99.94 / 100 |
+| **Duplicate Page Titles** | 0 |
+| **Duplicate Meta Descriptions** | 0 |
+| **Pages Excluded from Sitemap** | 51 |
+| **Pages Missing Structured Schema** | 0 |
 
 ## Lowest Scoring Pages
 
 | Slug | Path | Score | Key Issues |
 | --- | --- | --- | --- |
-| disclaimer | [/disclaimer/](file:///dist/disclaimer/index.html) | 65 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| privacy | [/privacy/](file:///dist/privacy/index.html) | 65 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| terms | [/terms/](file:///dist/terms/index.html) | 65 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| dist | [/404.html](file:///dist/404.htmlindex.html) | 70 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata; Page not in sitemap.xml |
-| about-us | [/about-us/](file:///dist/about-us/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| blog | [/blog/](file:///dist/blog/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| ai-writing-generators | [/categories/ai-writing-generators/](file:///dist/categories/ai-writing-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| bio-caption-generators | [/categories/bio-caption-generators/](file:///dist/categories/bio-caption-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| business-generators | [/categories/business-generators/](file:///dist/categories/business-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| creative-generators | [/categories/creative-generators/](file:///dist/categories/creative-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
+| business-generators | [/tools/business-generators/](file:///dist/tools/business-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
+| creative-generators | [/tools/creative-generators/](file:///dist/tools/creative-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
+| name-generators | [/tools/name-generators/](file:///dist/tools/name-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
+| seo-generators | [/tools/seo-generators/](file:///dist/tools/seo-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
+| text-generators | [/tools/text-generators/](file:///dist/tools/text-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
+| writing-generators | [/tools/writing-generators/](file:///dist/tools/writing-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
+| acceptable-use-policy-generator | [/tools/acceptable-use-policy-generator/](file:///dist/tools/acceptable-use-policy-generator/index.html) | 95 | Page not in sitemap.xml |
+| affiliate-disclosure-generator | [/tools/affiliate-disclosure-generator/](file:///dist/tools/affiliate-disclosure-generator/index.html) | 95 | Page not in sitemap.xml |
+| amazon-listing-generator | [/tools/amazon-listing-generator/](file:///dist/tools/amazon-listing-generator/index.html) | 95 | Page not in sitemap.xml |
+| ao3-tag-generator | [/tools/ao3-tag-generator/](file:///dist/tools/ao3-tag-generator/index.html) | 95 | Page not in sitemap.xml |
