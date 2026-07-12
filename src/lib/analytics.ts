@@ -57,9 +57,41 @@ export function trackOptionChange(slug: string, option: string, value?: string |
   }
 }
 
-export function trackExperimentExposure(experimentId: string, variant: string): void {
+export function trackExperimentExposure(experimentId: string, variant: string, toolSlug?: string): void {
   try {
-    sendEvent('experiment_exposure', { experiment_id: experimentId, variant_id: variant });
+    sendEvent('experiment_exposure', {
+      experiment_id: experimentId,
+      variant_id: variant,
+      tool_slug: toolSlug || 'global',
+      timestamp: new Date().toISOString()
+    });
+  } catch (e) {
+    // Graceful fallback
+  }
+}
+
+export function trackExperimentConversion(experimentId: string, variant: string, eventName: string, toolSlug?: string): void {
+  try {
+    sendEvent('experiment_conversion', {
+      experiment_id: experimentId,
+      variant_id: variant,
+      conversion_event: eventName,
+      tool_slug: toolSlug || 'global',
+      timestamp: new Date().toISOString()
+    });
+  } catch (e) {
+    // Graceful fallback
+  }
+}
+
+export function trackExperimentComplete(experimentId: string, variant: string, toolSlug?: string): void {
+  try {
+    sendEvent('experiment_complete', {
+      experiment_id: experimentId,
+      variant_id: variant,
+      tool_slug: toolSlug || 'global',
+      timestamp: new Date().toISOString()
+    });
   } catch (e) {
     // Graceful fallback
   }

@@ -53,3 +53,31 @@ To enable:
 import { injectDebugPanel } from '@/lib/ab-testing';
 injectDebugPanel();
 ```
+
+---
+
+## 4. Active Production Experiments
+
+The following experiments are active in production:
+
+1. **`hero_layout_experiment`**: Tests headline and subtitle formatting.
+   - `control` / `A`: Original static copywriting.
+   - `benefit_first` / `B`: Features benefit-first text structure.
+   - `outcome_proof` / `C`: Integrates visual creator trust badge proof.
+2. **`output_cards_experiment`**: Tests output grid actions layout.
+   - `control` / `A`: Standard hover actions block.
+   - `large_copy` / `B`: Enlarged copy button for easier taps.
+   - `always_visible` / `C`: Permanently locks copy and star actions.
+3. **`related_tools_experiment`**: Optimizes the placement of related categories.
+   - `control` / `A`: Positioned at the footer of the page.
+   - `below_output` / `B`: Placed immediately under the tool workspace.
+   - `sticky_sidebar` / `C`: Docked to a sticky right panel on desktop.
+4. **`examples_experiment`**: Tests onboarding example widgets.
+   - `control` / `A`: Collapsed under a drawer summary.
+   - `expanded` / `B`: Fully expanded.
+   - `interactive` / `C`: Activates direct hover effects and quick-fill inserts.
+5. **`cta_buttons_experiment`**: Verifies text variations for primary button.
+   - `control`: "Generate"
+   - `create`: "Create"
+   - `generate_now`: "Generate Now"
+   - `create_instantly`: "Create Instantly"

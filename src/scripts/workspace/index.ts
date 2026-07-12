@@ -7,6 +7,7 @@ import { errorReporter } from '../../platform/errorReporter';
 import { wrapErrorBoundary } from '../../platform/errorBoundary';
 import { observeBundlePerformance, initPerformanceObservers } from '../../platform/bundleAnalyzer';
 import { initResourcePrefetchRules } from '../../platform/resourceHints';
+import { runClientExperiments } from './experiments';
 
 // Initialize global observability listeners immediately on import load
 errorReporter.init();
@@ -27,6 +28,13 @@ export const createWorkspace = wrapErrorBoundary(async function (
     logger.error(`No configuration found for workspace "${toolSlug}"`);
     endMark('workspace-init');
     return;
+  }
+
+  // Launch A/B Experiments for the workspace
+  runClientExperiments(toolSlug);
+  if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
+    const { injectDebugPanel } = await import('../../lib/ab-testing');
+    injectDebugPanel();
   }
 
   const flags = getFeatureFlags(activeConfig);

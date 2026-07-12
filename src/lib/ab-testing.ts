@@ -18,32 +18,52 @@ export const EXPERIMENT_REGISTRY: Record<string, Experiment> = {
   'hero_layout_experiment': {
     id: 'hero_layout_experiment',
     name: 'Hero Layout Experiment',
-    description: 'Test compact vs spacious hero landing sections',
+    description: 'Test hero copy variations (A: control, B: benefit_first, C: outcome_proof)',
     status: 'active',
-    variants: ['control', 'compact_spacious'],
+    variants: ['control', 'benefit_first', 'outcome_proof'],
     trafficAllocation: 1.0,
-    startDate: '2026-07-01',
-    endDate: '2026-08-01'
+    startDate: '2026-07-12',
+    endDate: '2026-08-12'
   },
-  'cta_button_text_experiment': {
-    id: 'cta_button_text_experiment',
-    name: 'CTA Button Text Experiment',
-    description: 'Test alternative copy call-to-actions (Generate vs Create Now)',
+  'output_cards_experiment': {
+    id: 'output_cards_experiment',
+    name: 'Output Cards Experiment',
+    description: 'Test output card UI variations (A: control, B: large_copy, C: always_visible)',
     status: 'active',
-    variants: ['control', 'create_now', 'start_free'],
-    trafficAllocation: 0.5,
-    startDate: '2026-07-10',
-    endDate: '2026-08-10'
-  },
-  'faq_ordering_experiment': {
-    id: 'faq_ordering_experiment',
-    name: 'FAQ Ordering Experiment',
-    description: 'Re-prioritize accordion list based on search term popularity',
-    status: 'active',
-    variants: ['control', 'popular_first'],
+    variants: ['control', 'large_copy', 'always_visible'],
     trafficAllocation: 1.0,
-    startDate: '2026-07-11',
-    endDate: '2026-08-11'
+    startDate: '2026-07-12',
+    endDate: '2026-08-12'
+  },
+  'related_tools_experiment': {
+    id: 'related_tools_experiment',
+    name: 'Related Tools Placement Experiment',
+    description: 'Test related tool link layouts (A: control, B: below_output, C: sticky_sidebar)',
+    status: 'active',
+    variants: ['control', 'below_output', 'sticky_sidebar'],
+    trafficAllocation: 1.0,
+    startDate: '2026-07-12',
+    endDate: '2026-08-12'
+  },
+  'examples_experiment': {
+    id: 'examples_experiment',
+    name: 'Examples Display & Interaction Experiment',
+    description: 'Test examples widget designs (A: control, B: expanded, C: interactive)',
+    status: 'active',
+    variants: ['control', 'expanded', 'interactive'],
+    trafficAllocation: 1.0,
+    startDate: '2026-07-12',
+    endDate: '2026-08-12'
+  },
+  'cta_buttons_experiment': {
+    id: 'cta_buttons_experiment',
+    name: 'CTA Button Wording Experiment',
+    description: 'Test primary button texts (control: Generate, create: Create, generate_now: Generate Now, create_instantly: Create Instantly)',
+    status: 'active',
+    variants: ['control', 'create', 'generate_now', 'create_instantly'],
+    trafficAllocation: 1.0,
+    startDate: '2026-07-12',
+    endDate: '2026-08-12'
   }
 };
 
@@ -69,7 +89,7 @@ function hashString(str: string): number {
 }
 
 export function getUserId(): string {
-  if (typeof window === 'undefined') return 'server';
+  if (typeof window === 'undefined' || typeof localStorage === 'undefined') return 'server';
   let id = localStorage.getItem(USER_ID_KEY);
   if (!id) {
     id = generateUUID();
@@ -79,17 +99,17 @@ export function getUserId(): string {
 }
 
 export function isFrameworkEnabled(): boolean {
-  if (typeof window === 'undefined') return false;
+  if (typeof window === 'undefined' || typeof localStorage === 'undefined') return false;
   return localStorage.getItem(DISABLED_KEY) !== 'true';
 }
 
 export function setFrameworkEnabled(enabled: boolean): void {
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined' || typeof localStorage === 'undefined') return;
   localStorage.setItem(DISABLED_KEY, enabled ? 'false' : 'true');
 }
 
 export function getAssignmentsMap(): Record<string, string> {
-  if (typeof window === 'undefined') return {};
+  if (typeof window === 'undefined' || typeof localStorage === 'undefined') return {};
   try {
     return JSON.parse(localStorage.getItem(ASSIGNMENTS_KEY) || '{}');
   } catch {
@@ -98,7 +118,7 @@ export function getAssignmentsMap(): Record<string, string> {
 }
 
 export function saveAssignment(experimentId: string, variant: string): void {
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined' || typeof localStorage === 'undefined') return;
   const assignments = getAssignmentsMap();
   assignments[experimentId] = variant;
   localStorage.setItem(ASSIGNMENTS_KEY, JSON.stringify(assignments));
@@ -158,9 +178,9 @@ export function getVariant(experimentId: string): string {
 }
 
 // Track exposure
-export function triggerExposure(experimentId: string): string {
+export function triggerExposure(experimentId: string, toolSlug?: string): string {
   const variant = getVariant(experimentId);
-  trackExperimentExposure(experimentId, variant);
+  trackExperimentExposure(experimentId, variant, toolSlug);
   
   if (typeof window !== 'undefined' && (window as any).__ab_debug_log) {
     console.log(`[A/B Exposure]: Experiment: "${experimentId}" Assigned Variant: "${variant}"`);
