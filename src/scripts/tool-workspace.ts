@@ -1,3 +1,5 @@
+import { trackGeneratorOpen, trackGenerate, trackCopy, trackDownload, trackShare, trackOptionChange } from '../lib/analytics';
+
 // FAQ accordion
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -385,6 +387,7 @@ function updateUndoRedoButtons() {
 }
 
 async function generate() {
+  trackGenerate(toolSlug);
 
   const datasets = await import('./data/generator-datasets');
   const {
@@ -10173,18 +10176,27 @@ document.querySelectorAll('.example-chip').forEach(chip => {
     generate();
   });
 });
-copyBtn?.addEventListener('click', async () => copyText(output.dataset.copyText || output.textContent || '', copyBtn as HTMLElement));
+copyBtn?.addEventListener('click', async () => {
+  copyText(output.dataset.copyText || output.textContent || '', copyBtn as HTMLElement);
+  trackCopy(toolSlug);
+});
 output.addEventListener('click', async event => {
   const target = event.target as HTMLElement;
   const button = target.closest<HTMLElement>('[data-copy]');
   if (!button) return;
   await copyText(button.dataset.copy || '', button);
+  trackCopy(toolSlug);
 });
 regenBtn?.addEventListener('click', generate);
 
 // Auto-generate when options change
 document.querySelectorAll('.tool-select, .tool-number, .tool-checkbox').forEach(el => {
-  el.addEventListener('change', generate);
+  el.addEventListener('change', () => {
+    const inputEl = el as HTMLInputElement | HTMLSelectElement;
+    const value = inputEl.type === 'checkbox' ? (inputEl as HTMLInputElement).checked : inputEl.value;
+    trackOptionChange(toolSlug, inputEl.id, value);
+    generate();
+  });
 });
 
 // Undo, Redo and Share handlers
@@ -10248,6 +10260,7 @@ redoBtn?.addEventListener('click', () => {
 
 shareBtn?.addEventListener('click', async () => {
   try {
+    trackShare(toolSlug);
     await navigator.clipboard.writeText(window.location.href);
     const origText = shareBtn.innerHTML;
     shareBtn.innerHTML = '✅ Copied Link!';
@@ -10263,5 +10276,6 @@ shareBtn?.addEventListener('click', async () => {
 
 // Dynamic configuration-driven workspace extensions loader
 import { createWorkspace } from './workspace/index';
+trackGeneratorOpen(toolSlug);
 createWorkspace(toolSlug, input, output, generate);
 

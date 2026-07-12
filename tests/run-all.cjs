@@ -7,6 +7,7 @@ require('./inventory/inventory.test.cjs');
 require('./datasets/datasets.test.cjs');
 require('./integration/integration.test.cjs');
 require('./smoke/smoke.test.cjs');
+require('./analytics/analytics.test.cjs');
 
 // Execute them
 runSuites();

@@ -1,6 +1,11 @@
 import type { ToolConfig } from '../../config';
+import { trackDownload } from '../../lib/analytics';
 
 export function downloadFile(content: string, filename: string, mimeType: string) {
+  try {
+    const toolSlug = document.getElementById('tool-workspace')?.dataset.tool || 'generator';
+    trackDownload(toolSlug);
+  } catch (e) {}
   const blob = new Blob([content], { type: mimeType });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
