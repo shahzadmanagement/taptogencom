@@ -196,4 +196,103 @@ describe('A/B Testing Framework Verification', () => {
     assert.equal(events[1].data.tool_slug, 'fancy-text-generator');
     assert.ok(events[1].data.timestamp);
   });
+
+  it('Verify weighted allocation algorithm resolves correctly', () => {
+    store = {};
+    globalThis.localStorage = mockLocalStorage;
+    globalThis.window = { location: { search: '' } };
+
+    const abTesting = loadTS(abTestingPath);
+    // Custom test experiment with weights: [0.1, 0.9]
+    abTesting.EXPERIMENT_REGISTRY['weights_test_experiment'] = {
+      id: 'weights_test_experiment',
+      name: 'Weights Test',
+      description: 'Weights test',
+      status: 'active',
+      variants: ['control', 'variant_b'],
+      weights: [0.1, 0.9],
+      trafficAllocation: 1.0,
+      startDate: '2026-07-12',
+      endDate: '2026-08-12'
+    };
+
+    const allocations = { control: 0, variant_b: 0 };
+    for (let i = 0; i < 100; i++) {
+      delete store['taptogen-ab-assignments'];
+      store['taptogen-uuid'] = `user-index-${i}`;
+      const v = abTesting.getVariant('weights_test_experiment');
+      allocations[v]++;
+    }
+
+    // Since weights are 10% vs 90%, we expect significantly more variant_b assignments than control
+    assert.ok(allocations.variant_b > allocations.control, `Weighted distribution failed: ${JSON.stringify(allocations)}`);
+  });
+
+  it('Verify emergency kill switches bypass experiments and return control', () => {
+    store = {};
+    globalThis.localStorage = mockLocalStorage;
+    globalThis.window = { location: { search: '' } };
+
+    const abTesting = loadTS(abTestingPath);
+    
+    // 1. Verify standard resolution returns B or C for some seed
+    store['taptogen-uuid'] = 'user-seed-4';
+    const original = abTesting.getVariant('hero_layout_experiment');
+
+    // 2. Set emergency global kill switch
+    store['taptogen-ab-kill-global'] = 'true';
+    const postKill = abTesting.getVariant('hero_layout_experiment');
+    
+    assert.equal(postKill, 'control', 'Global kill switch failed to force control');
+    
+    // Clear global, test experiment level kill switch
+    delete store['taptogen-ab-kill-global'];
+    store['taptogen-ab-kill-experiment-hero_layout_experiment'] = 'true';
+    
+    const postExpKill = abTesting.getVariant('hero_layout_experiment');
+    assert.equal(postExpKill, 'control', 'Experiment-level kill switch failed to force control');
+  });
+
+  it('Verify validation engine and health checkers flag expired and malformed registries', () => {
+    const validator = loadTS(path.resolve(__dirname, '../../src/lib/ab-validator.ts'));
+    
+    // 1. Expired experiment check
+    const expiredExp = {
+      id: 'expired_test',
+      name: 'Expired Test',
+      description: 'Expired test description',
+      status: 'active',
+      variants: ['control', 'variant_b'],
+      trafficAllocation: 1.0,
+      startDate: '2026-06-01',
+      endDate: '2026-07-01' // in the past
+    };
+    
+    const warnings = validator.validateExperiment(expiredExp);
+    assert.ok(warnings.some(w => w.message.includes('expired')), 'Expired checker failed to flag past end date');
+
+    // 2. Invalid weights length check
+    const badWeightExp = {
+      id: 'bad_weights_test',
+      name: 'Bad Weights Test',
+      description: 'Bad weights',
+      status: 'active',
+      variants: ['control', 'variant_b'],
+      weights: [0.5, 0.3, 0.2], // 3 weights for 2 variants
+      trafficAllocation: 1.0,
+      startDate: '2026-07-12',
+      endDate: '2026-08-12'
+    };
+    const badWeightsWarnings = validator.validateExperiment(badWeightExp);
+    assert.ok(badWeightsWarnings.some(w => w.message.includes('Weights array length')), 'Validator failed to flag incorrect weights count');
+  });
+
+  it('Verify metric significance and lift computations', () => {
+    const validator = loadTS(path.resolve(__dirname, '../../src/lib/ab-validator.ts'));
+    const metrics = validator.computeSignificance(1000, 150, 1000, 100); // 15% vs 10% conversion rate
+    
+    assert.equal(metrics.rate, '15.00%');
+    assert.equal(metrics.lift, '+50.00%');
+    assert.equal(metrics.significant, true);
+  });
 });
