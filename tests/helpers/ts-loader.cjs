@@ -78,8 +78,19 @@ function loadTS(filePath) {
     format: 'cjs'
   });
   const m = { exports: {} };
+  
+  const customRequire = (id) => {
+    if (id.startsWith('.')) {
+      const resolved = path.resolve(path.dirname(absolutePath), id);
+      if (fs.existsSync(resolved + '.ts')) return loadTS(resolved + '.ts');
+      if (fs.existsSync(resolved + '.cjs')) return require(resolved + '.cjs');
+      if (fs.existsSync(resolved + '.js')) return require(resolved + '.js');
+    }
+    return require(id);
+  };
+
   const fn = new Function('module', 'exports', 'require', '__dirname', '__filename', result.code);
-  fn(m, m.exports, require, path.dirname(absolutePath), absolutePath);
+  fn(m, m.exports, customRequire, path.dirname(absolutePath), absolutePath);
   return m.exports;
 }
 

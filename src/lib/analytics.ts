@@ -57,6 +57,14 @@ export function trackOptionChange(slug: string, option: string, value?: string |
   }
 }
 
+export function trackExperimentExposure(experimentId: string, variant: string): void {
+  try {
+    sendEvent('experiment_exposure', { experiment_id: experimentId, variant_id: variant });
+  } catch (e) {
+    // Graceful fallback
+  }
+}
+
 function sendEvent(name: string, params: Record<string, any>): void {
   // 1. Google Analytics 4
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
