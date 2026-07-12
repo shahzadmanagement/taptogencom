@@ -2,6 +2,7 @@ import { searchIndex } from '../lib/search-engine';
 import { aiSearch } from '../lib/ai-search-assistant';
 import { eventBus } from '../lib/event-bus';
 import type { SearchResult } from '../lib/search-types';
+import { trackSearchEvent } from '../lib/search-analytics';
 
 const RECENT_KEY = 'taptogen-recent-searches';
 const MAX_RECENT = 10;
@@ -253,6 +254,18 @@ class SearchUi {
     if (query.length === 1) {
       this.searchStartTime = performance.now();
       eventBus.publish('search_started', { query }, 'medium');
+      trackSearchEvent({
+        eventType: 'Started',
+        query,
+        normalizedQuery: query.toLowerCase().trim(),
+        detectedIntent: 'General Search',
+        resultCount: 0,
+        searchLatency: 0,
+        confidenceScore: 0,
+        searchSource: 'spotlight',
+        locale: 'en',
+        deviceType: 'desktop'
+      });
     }
 
     this.debounceTimer = setTimeout(() => {
@@ -262,6 +275,19 @@ class SearchUi {
       this.activeIndex = -1;
 
       eventBus.publish('search_completed', { query, resultsCount: results.length, durationMs }, 'medium');
+
+      trackSearchEvent({
+        eventType: results.length === 0 ? 'ZeroResults' : 'Completed',
+        query,
+        normalizedQuery: query.toLowerCase().trim(),
+        detectedIntent,
+        resultCount: results.length,
+        searchLatency: durationMs,
+        confidenceScore: confidence,
+        searchSource: 'spotlight',
+        locale: 'en',
+        deviceType: 'desktop'
+      });
 
       if (results.length === 0) {
         eventBus.publish('zero_results', { query }, 'high');
@@ -303,10 +329,25 @@ class SearchUi {
     cards[this.activeIndex].scrollIntoView({ block: 'nearest' });
   }
 
-  private selectResult(res: SearchResult): void {
+  private selectResult(res: any): void {
     this.saveRecentSearch(res.document.title);
     eventBus.publish('result_clicked', { query: this.input?.value || '', toolSlug: res.document.id }, 'high');
     eventBus.flush();
+
+    trackSearchEvent({
+      eventType: 'ResultClicked',
+      query: this.input?.value || '',
+      normalizedQuery: (this.input?.value || '').toLowerCase().trim(),
+      detectedIntent: res.detectedIntent || 'General Search',
+      resultCount: this.currentResults.length,
+      clickedTool: res.document.id,
+      clickPosition: this.activeIndex >= 0 ? this.activeIndex : 0,
+      searchLatency: 0,
+      confidenceScore: res.confidence || 0,
+      searchSource: 'spotlight',
+      locale: 'en',
+      deviceType: 'desktop'
+    });
     
     // Redirect to tool url
     window.location.href = res.document.url;

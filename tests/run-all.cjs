@@ -20,6 +20,7 @@ require('./search/search-semantic.test.cjs');
 require('./search/search-ranking.test.cjs');
 require('./search/search-recommendations.test.cjs');
 require('./search/ai-search-assistant.test.cjs');
+require('./search/search-analytics.test.cjs');
 
 // Execute them
 runSuites();
