@@ -28,6 +28,38 @@ export function bindEvents(
     }
   };
 
+  if (config.slug === 'fancy-text-generator' && typeof document.createElement === 'function') {
+    const toolbar = document.createElement('div');
+    toolbar.className = 'quick-symbol-toolbar';
+    toolbar.style.cssText = 'display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; border-bottom: 1px solid var(--color-border); padding-bottom: 8px;';
+    
+    const symbols = [
+      '★', '♥', '✿', '⚡', '👑', '✈', '♫', '꧂', '꧁', '✨', '🎵', '💖',
+      '(✿◠‿◠)', '(づ｡◕‿‿◕｡)づ', '(●\'◡\'●)', '(ง\'̀-\'́)ง', '(ᵔᴥᵔ)'
+    ];
+
+    symbols.forEach(sym => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'btn btn-ghost';
+      btn.style.cssText = 'padding: 4px 8px; font-size: 0.8rem; min-height: 28px; border-radius: 4px; background: var(--color-bg-secondary); border: 1px solid var(--color-border); cursor: pointer; transition: all 0.2s;';
+      btn.textContent = sym;
+      btn.addEventListener('click', () => {
+        const start = input.selectionStart || 0;
+        const end = input.selectionEnd || 0;
+        const text = input.value;
+        input.value = text.substring(0, start) + sym + text.substring(end);
+        input.focus();
+        input.setSelectionRange(start + sym.length, start + sym.length);
+        generate();
+        updateCountersAndFeatures();
+      });
+      toolbar.appendChild(btn);
+    });
+
+    input.parentNode?.insertBefore(toolbar, input);
+  }
+
   input?.addEventListener('input', () => {
     generate();
     updateCountersAndFeatures();

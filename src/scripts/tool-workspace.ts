@@ -162,6 +162,17 @@ const doubleStruckUnicodeMap = {
   R: 'ℝ',
   Z: 'ℤ'
 };
+
+const parenthesizedMap: Record<string, string> = {};
+'abcdefghijklmnopqrstuvwxyz'.split('').forEach((c, i) => {
+  parenthesizedMap[c] = String.fromCodePoint(0x249C + i);
+  parenthesizedMap[c.toUpperCase()] = String.fromCodePoint(0x249C + i);
+});
+'123456789'.split('').forEach((c, i) => {
+  parenthesizedMap[c] = String.fromCodePoint(0x2474 + i);
+});
+
+const boldGothicUnicodeMap = unicodeMap(0x1D56C, 0x1D586);
 const smallCapsUnicodeMap: Record<string, string> = Object.fromEntries('abcdefghijklmnopqrstuvwxyz'.split('').map(char => [char, char.toUpperCase()]));
 const upsideDownMap: Record<string, string> = {
   a: '\u0250', b: 'q', c: '\u0254', d: 'p', e: '\u01dd', f: '\u025f', g: '\u0183', h: '\u0265', i: '\u1d09', j: '\u027e', k: '\u029e', l: 'l', m: '\u026f',
@@ -925,10 +936,12 @@ async function generate() {
         { name: 'Elegant Script', preview: toUnicode(text, cursiveMap), use: 'Instagram bios and names', note: 'Decorative cursive script letters.', category: 'fonts', isCompat: false },
         { name: 'Bold Script', preview: toUnicode(text, boldScriptMap), use: 'Readable cursive headers', note: 'Heavier script strokes for emphasis.', category: 'fonts', isCompat: false },
         { name: 'Gothic', preview: toUnicode(text, gothicUnicodeMap), use: 'Dramatic usernames and display names', note: 'Ornate medieval style.', category: 'fonts', isCompat: false },
+        { name: 'Bold Gothic', preview: toUnicode(text, boldGothicUnicodeMap), use: 'Medieval bold headers', note: 'Heavier blackletter typeface.', category: 'fonts', isCompat: false },
         { name: 'Monospace', preview: toUnicode(text, monospaceUnicodeMap), use: 'Tech-style handles and bios', note: 'Clean typewriter style.', category: 'fonts', isCompat: true },
         { name: 'Double-Struck', preview: toUnicode(text, doubleStruckUnicodeMap), use: 'Premium math-style display text', note: 'Classic double-lined letters.', category: 'fonts', isCompat: false },
         { name: 'Superscript (Tiny)', preview: transformSuperscript(text), use: 'Instagram bio highlights', note: 'Small letters stacked high.', category: 'fonts', isCompat: true },
         { name: 'Subscript (Tiny)', preview: transformSubscript(text), use: 'Scientific or aesthetic spacing', note: 'Small letters hanging low.', category: 'fonts', isCompat: true },
+        { name: 'Parenthesized', preview: toUnicode(text, parenthesizedMap), use: 'Numbered lists and custom labels', note: 'Letters surrounded by parentheses.', category: 'fonts', isCompat: true },
         { name: 'Bubble', preview: transformCircled(text), use: 'Playful comments and bios', note: 'Circled text, fun for handles.', category: 'decorations', isCompat: false },
         { name: 'Squared', preview: transformSquared(text), use: 'Blocky display labels', note: 'Squared uppercase letter format.', category: 'decorations', isCompat: false },
         { name: 'Small Caps', preview: transformSmallCaps(text), use: 'Clean aesthetic labels', note: 'Social-media friendly, high compatibility.', category: 'fonts', isCompat: true },
@@ -936,8 +949,15 @@ async function generate() {
         { name: 'Vaporwave (Fullwidth)', preview: transformFullwidth(text), use: 'Aesthetic spaced captions', note: 'Very visible spaced text.', category: 'decorations', isCompat: false },
         { name: 'Strikethrough', preview: text.split('').map(c => c + '\u0336').join(''), use: 'Edits, jokes, and stylized emphasis', note: 'Struck-out letters.', category: 'decorations', isCompat: true },
         { name: 'Underline', preview: text.split('').map(c => c + '\u0332').join(''), use: 'Underlined emphasis and headings', note: 'Clean combining underline.', category: 'decorations', isCompat: true },
+        { name: 'Double Underline', preview: text.split('').map(c => c + '\u0333').join(''), use: 'Double underlined labels', note: 'Uses combining double low lines.', category: 'decorations', isCompat: true },
         { name: 'Slash', preview: text.split('').map(c => c + '\u0338').join(''), use: 'Slashed text effects', note: 'Uses combining solidus overlays.', category: 'decorations', isCompat: true },
-        { name: 'Creepy (Zalgo)', preview: transformZalgo(text), use: 'Halloween posts and eerie bios', note: 'Light glitch style combining marks.', category: 'decorations', isCompat: false }
+        { name: 'Slash + Strike', preview: text.split('').map(c => c + '\u0338' + '\u0336').join(''), use: 'Glitchy crossed-out tag styles', note: 'Combines solidus and strikethrough overlays.', category: 'decorations', isCompat: true },
+        { name: 'Creepy (Zalgo)', preview: transformZalgo(text), use: 'Halloween posts and eerie bios', note: 'Light glitch style combining marks.', category: 'decorations', isCompat: false },
+        { name: 'Arrow Wrap', preview: '➔ ' + text + ' ➔', use: 'High visibility tags', note: 'Aesthetic pointing arrows.', category: 'decorations', isCompat: true },
+        { name: 'Sparkle Wrap', preview: '✨ ' + text + ' ✨', use: 'Aesthetic bio headings', note: 'Shining highlight borders.', category: 'decorations', isCompat: true },
+        { name: 'Crown Wrap', preview: '👑 ' + text + ' 👑', use: 'Gaming profiles and names', note: 'Royal theme border.', category: 'decorations', isCompat: true },
+        { name: 'Music Wrap', preview: '🎵 ' + text + ' 🎵', use: 'Song captions and lists', note: 'Musical theme border.', category: 'decorations', isCompat: true },
+        { name: 'Heart Wrap', preview: '💖 ' + text + ' 💖', use: 'Cute status updates', note: 'Sweet theme border.', category: 'decorations', isCompat: true }
       ];
 
       const styles = allStyles
