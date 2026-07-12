@@ -77,11 +77,26 @@ jobs:
     - name: Run Production SEO Audit
       run: npm run seo:audit
 
+    - name: Run Bundle Size Monitoring
+      run: npm run monitor:bundle
+
+    - name: Run Core Web Vitals Audit
+      run: npm run monitor:vitals
+
+    - name: Run Broken Link Checker
+      run: npm run monitor:links
+
+    - name: Run Image Optimization Audit
+      run: npm run monitor:images
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
     - name: Run E2E Browser Validation Tests
       run: npm run test:e2e
+
+    - name: Run Lighthouse CI Auditor
+      run: npx @lhci/cli@0.13.x autorun
 
     - name: Upload Regression Test Reports
       if: always()
@@ -101,6 +116,18 @@ jobs:
           reports/seo-audit.json
           reports/seo-audit.md
           reports/seo-scoreboard.md
+
+    - name: Upload Production Monitoring Reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: production-monitoring-reports
+        path: |
+          reports/bundle-size.json
+          reports/bundle-size.md
+          reports/web-vitals.md
+          reports/link-check.md
+          reports/image-audit.md
 
     - name: Upload E2E Test Reports
       if: always()

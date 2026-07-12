@@ -19,6 +19,10 @@
     "test:options": "node tests/run-options.cjs",
     "test:e2e": "playwright test",
     "seo:audit": "node scratch/seo-audit.js",
+    "monitor:bundle": "node scratch/bundle-size.js",
+    "monitor:vitals": "node scratch/web-vitals.js",
+    "monitor:links": "node scratch/link-checker.js",
+    "monitor:images": "node scratch/image-audit.js",
     "verify": "node tests/run-verify.cjs"
   },
   "dependencies": {
