@@ -19,6 +19,7 @@ require('./search/search-ui.test.cjs');
 require('./search/search-semantic.test.cjs');
 require('./search/search-ranking.test.cjs');
 require('./search/search-recommendations.test.cjs');
+require('./search/ai-search-assistant.test.cjs');
 
 // Execute them
 runSuites();

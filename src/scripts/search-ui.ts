@@ -1,5 +1,5 @@
 import { searchIndex } from '../lib/search-engine';
-import { semanticSearch } from '../lib/search-semantic';
+import { aiSearch } from '../lib/ai-search-assistant';
 import { eventBus } from '../lib/event-bus';
 import type { SearchResult } from '../lib/search-types';
 
@@ -256,7 +256,7 @@ class SearchUi {
     }
 
     this.debounceTimer = setTimeout(() => {
-      const results = semanticSearch(query, { limit: 8, fuzzy: true });
+      const { results, detectedIntent, confidence, suggestions } = aiSearch(query, { limit: 8, fuzzy: true });
       const durationMs = performance.now() - this.searchStartTime;
       this.currentResults = results;
       this.activeIndex = -1;
@@ -265,9 +265,9 @@ class SearchUi {
 
       if (results.length === 0) {
         eventBus.publish('zero_results', { query }, 'high');
-        this.renderZeroState(query);
+        this.renderZeroState(query, suggestions);
       } else {
-        this.renderResults(results, query);
+        this.renderResults(results, query, detectedIntent, confidence);
       }
     }, 150);
   }
@@ -321,10 +321,18 @@ class SearchUi {
     localStorage.setItem(RECENT_KEY, JSON.stringify(recents));
   }
 
-  private renderResults(results: SearchResult[], query: string): void {
+  private renderResults(results: any[], query: string, detectedIntent?: string, confidence?: number): void {
     if (!this.resultsContainer) return;
 
     let html = '';
+    if (detectedIntent && confidence) {
+      html += `
+        <div style="padding:8px 10px; margin-bottom:8px; background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.2); border-radius:6px; font-size:11px; color:#cbd5e1; display:flex; justify-content:space-between; align-items:center;">
+          <span>AI Intent: <strong>${detectedIntent}</strong></span>
+          <span style="color:#38bdf8;">Confidence: ${confidence}%</span>
+        </div>
+      `;
+    }
     results.forEach((res, i) => {
       const highlightedTitle = this.highlightMatches(res.document.title, query);
       const highlightedDesc = this.highlightMatches(res.document.description, query);
@@ -404,7 +412,7 @@ class SearchUi {
     };
   }
 
-  private renderZeroState(query: string): void {
+  private renderZeroState(query: string, suggestions: string[]): void {
     if (!this.resultsContainer) return;
 
     this.resultsContainer.innerHTML = `
@@ -412,7 +420,7 @@ class SearchUi {
         <p style="margin:0 0 12px 0;">No tools found matching "<strong>${query}</strong>"</p>
         <div style="font-size:10px; color:#94a3b8; font-weight:bold; text-transform:uppercase; margin-bottom:6px;">Try one of these suggestions:</div>
         <div class="taptogen-quick-tags">
-          ${SUGGESTED_SEARCHES.map(s => `<span class="taptogen-tag" onclick="window.__ab_search_trigger_tag('${s}')">${s}</span>`).join('')}
+          ${suggestions.map(s => `<span class="taptogen-tag" onclick="window.__ab_search_trigger_tag('${s}')">${s}</span>`).join('')}
         </div>
       </div>
     `;
