@@ -8,11 +8,17 @@ import { wrapErrorBoundary } from '../../platform/errorBoundary';
 import { observeBundlePerformance, initPerformanceObservers } from '../../platform/bundleAnalyzer';
 import { initResourcePrefetchRules } from '../../platform/resourceHints';
 import { runClientExperiments } from './experiments';
+import { productAnalytics } from '../../lib/product-analytics';
+import { errorMonitor } from '../../lib/error-monitor';
+import { performanceMonitor } from '../../lib/performance-monitor';
 
 // Initialize global observability listeners immediately on import load
 errorReporter.init();
 initPerformanceObservers();
 initResourcePrefetchRules();
+errorMonitor.init();
+performanceMonitor.init();
+productAnalytics.initSession();
 
 export const createWorkspace = wrapErrorBoundary(async function (
   toolSlug: string,

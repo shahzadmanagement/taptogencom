@@ -10,6 +10,10 @@ require('./smoke/smoke.test.cjs');
 require('./analytics/analytics.test.cjs');
 require('./analytics/ab-testing.test.cjs');
 require('./analytics/feature-flags.test.cjs');
+require('./analytics/event-bus.test.cjs');
+require('./analytics/product-analytics.test.cjs');
+require('./analytics/error-monitor.test.cjs');
+require('./analytics/performance-monitor.test.cjs');
 
 // Execute them
 runSuites();
