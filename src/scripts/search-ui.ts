@@ -1,4 +1,5 @@
-import { search, searchIndex } from '../lib/search-engine';
+import { searchIndex } from '../lib/search-engine';
+import { semanticSearch } from '../lib/search-semantic';
 import { eventBus } from '../lib/event-bus';
 import type { SearchResult } from '../lib/search-types';
 
@@ -255,7 +256,7 @@ class SearchUi {
     }
 
     this.debounceTimer = setTimeout(() => {
-      const results = search(query, { limit: 8, fuzzy: true });
+      const results = semanticSearch(query, { limit: 8, fuzzy: true });
       const durationMs = performance.now() - this.searchStartTime;
       this.currentResults = results;
       this.activeIndex = -1;
