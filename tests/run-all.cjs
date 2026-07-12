@@ -9,6 +9,7 @@ require('./integration/integration.test.cjs');
 require('./smoke/smoke.test.cjs');
 require('./analytics/analytics.test.cjs');
 require('./analytics/ab-testing.test.cjs');
+require('./analytics/feature-flags.test.cjs');
 
 // Execute them
 runSuites();

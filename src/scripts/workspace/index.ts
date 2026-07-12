@@ -35,6 +35,8 @@ export const createWorkspace = wrapErrorBoundary(async function (
   if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
     const { injectDebugPanel } = await import('../../lib/ab-testing');
     injectDebugPanel();
+    const { injectFlagsTab } = await import('../../lib/feature-flags');
+    injectFlagsTab();
   }
 
   const flags = getFeatureFlags(activeConfig);
