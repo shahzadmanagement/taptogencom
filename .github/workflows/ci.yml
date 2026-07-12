@@ -74,6 +74,9 @@ jobs:
     - name: Run Production Build Verification
       run: node scripts/verify-production.js
 
+    - name: Run Production SEO Audit
+      run: npm run seo:audit
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
@@ -88,6 +91,16 @@ jobs:
         path: |
           reports/regression-report.json
           reports/regression-report.md
+
+    - name: Upload SEO Audit Reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: generator-seo-reports
+        path: |
+          reports/seo-audit.json
+          reports/seo-audit.md
+          reports/seo-scoreboard.md
 
     - name: Upload E2E Test Reports
       if: always()

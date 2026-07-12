@@ -18,6 +18,7 @@
     "test:inventory": "node tests/run-inventory.cjs",
     "test:options": "node tests/run-options.cjs",
     "test:e2e": "playwright test",
+    "seo:audit": "node scratch/seo-audit.js",
     "verify": "node tests/run-verify.cjs"
   },
   "dependencies": {
