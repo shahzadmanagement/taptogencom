@@ -1,5 +1,6 @@
 import { searchIndex as defaultIndex } from './search-index';
 import type { SearchableDocument, SearchResult, SearchOptions } from './search-types';
+import { LruCache } from './search-cache';
 
 const STOP_WORDS = new Set([
   'a', 'about', 'above', 'after', 'again', 'against', 'all', 'am', 'an', 'and', 'any', 'are', 'arent',
@@ -19,8 +20,7 @@ const STOP_WORDS = new Set([
   'yourselves'
 ]);
 
-const searchCache = new Map<string, SearchResult[]>();
-const MAX_CACHE_SIZE = 500;
+export const searchLruCache = new LruCache<SearchResult[]>(500);
 
 export function normalizeQuery(query: string): string {
   if (!query) return '';
@@ -167,8 +167,9 @@ export function search(
 
   // Check query cache
   const cacheKey = `${normQuery}:${limit}:${fuzzy}:${threshold}:${customIndex ? 'custom' : 'default'}`;
-  if (searchCache.has(cacheKey)) {
-    return searchCache.get(cacheKey)!;
+  const cached = searchLruCache.get(cacheKey);
+  if (cached) {
+    return cached;
   }
 
   const index = customIndex ?? defaultIndex;
@@ -186,11 +187,7 @@ export function search(
 
   const sorted = rankResults(results).slice(0, limit);
 
-  // Maintain cache size limits
-  if (searchCache.size >= MAX_CACHE_SIZE) {
-    searchCache.clear();
-  }
-  searchCache.set(cacheKey, sorted);
+  searchLruCache.set(cacheKey, sorted);
 
   return sorted;
 }
@@ -205,5 +202,5 @@ export function searchSuggestions(
 }
 
 export function clearSearchCache(): void {
-  searchCache.clear();
+  searchLruCache.clear();
 }
