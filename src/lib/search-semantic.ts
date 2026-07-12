@@ -1,6 +1,7 @@
 import { search } from './search-engine';
 import { getSynonymsForTerm } from './search-synonyms';
 import type { SearchableDocument, SearchResult, SearchOptions } from './search-types';
+import { rankPersonalizedResults } from './search-ranking';
 
 export function semanticSearch(
   query: string,
@@ -45,16 +46,9 @@ export function semanticSearch(
   });
 
   const limit = options?.limit ?? 10;
-  const sorted = Array.from(mergedMap.values()).sort((a, b) => {
-    if (Math.abs(a.score - b.score) > 0.0001) {
-      return b.score - a.score;
-    }
-    const titleA = a.document.title.toLowerCase();
-    const titleB = b.document.title.toLowerCase();
-    if (titleA !== titleB) return titleA < titleB ? -1 : 1;
-    return a.document.id < b.document.id ? -1 : 1;
-  });
+  const merged = Array.from(mergedMap.values());
+  const ranked = rankPersonalizedResults(merged);
 
-  return sorted.slice(0, limit);
+  return ranked.slice(0, limit);
 }
 export default semanticSearch;
