@@ -373,16 +373,24 @@ const undoStack: string[] = [];
 const redoStack: string[] = [];
 let lastValue = '';
 
+// Cache critical UI elements at initialization to avoid redundant DOM queries
+let cachedUndoButton: HTMLButtonElement | null = null;
+let cachedRedoButton: HTMLButtonElement | null = null;
+
 function updateUndoRedoButtons() {
-  const undoBtn = document.getElementById('undo-btn') as HTMLButtonElement | null;
-  const redoBtn = document.getElementById('redo-btn') as HTMLButtonElement | null;
-  if (undoBtn) {
-    undoBtn.disabled = undoStack.length === 0;
-    undoBtn.style.opacity = undoStack.length === 0 ? '0.5' : '1';
+  if (!cachedUndoButton) {
+    cachedUndoButton = document.getElementById('undo-btn') as HTMLButtonElement | null;
   }
-  if (redoBtn) {
-    redoBtn.disabled = redoStack.length === 0;
-    redoBtn.style.opacity = redoStack.length === 0 ? '0.5' : '1';
+  if (!cachedRedoButton) {
+    cachedRedoButton = document.getElementById('redo-btn') as HTMLButtonElement | null;
+  }
+  if (cachedUndoButton) {
+    cachedUndoButton.disabled = undoStack.length === 0;
+    cachedUndoButton.style.opacity = undoStack.length === 0 ? '0.5' : '1';
+  }
+  if (cachedRedoButton) {
+    cachedRedoButton.disabled = redoStack.length === 0;
+    cachedRedoButton.style.opacity = redoStack.length === 0 ? '0.5' : '1';
   }
 }
 
@@ -421,11 +429,16 @@ async function generate() {
   const text = input.value.trim();
   let result = '';
   let resultHtml = '';
+  const optionElementsCache = new Map<string, HTMLElement | null>();
   const optionValue = (id: string, fallback = '') => {
-    const element = document.getElementById(id) as HTMLInputElement | HTMLSelectElement | null;
+    let element = optionElementsCache.get(id);
+    if (element === undefined) {
+      element = document.getElementById(id);
+      optionElementsCache.set(id, element);
+    }
     if (!element) return fallback;
     if (element instanceof HTMLInputElement && element.type === 'checkbox') return element.checked ? 'true' : 'false';
-    return element.value || fallback;
+    return (element as HTMLInputElement | HTMLSelectElement).value || fallback;
   };
   const clampNumber = (value: string, fallback: number, min: number, max: number) => Math.max(min, Math.min(max, Number(value) || fallback));
   const slugifyLocal = (value: string, fallback = 'item') => (value || fallback).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || fallback;

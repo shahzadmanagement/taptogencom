@@ -8,18 +8,18 @@
 | **Passed** | 430 🟢 |
 | **Failed** | 0 🔴 |
 | **Total Warnings** | 11 🟡 |
-| **Average Execution Time** | 3.30 ms |
-| **Total Suite Runtime** | 1.51 seconds |
+| **Average Execution Time** | 3.23 ms |
+| **Total Suite Runtime** | 1.48 seconds |
 
 ## Slowest Generators
 
 | Slug | Execution Time |
 | --- | --- |
-| [fancy-text-generator](file:///src/scripts/tool-workspace.ts) | 88.23 ms |
-| [discord-timestamp-generator](file:///src/scripts/tool-workspace.ts) | 28.51 ms |
-| [password-generator](file:///src/scripts/tool-workspace.ts) | 15.83 ms |
-| [image-alt-text-generator](file:///src/scripts/tool-workspace.ts) | 13.91 ms |
-| [terms-generator](file:///src/scripts/tool-workspace.ts) | 13.24 ms |
+| [fancy-text-generator](file:///src/scripts/tool-workspace.ts) | 88.43 ms |
+| [discord-timestamp-generator](file:///src/scripts/tool-workspace.ts) | 27.51 ms |
+| [password-generator](file:///src/scripts/tool-workspace.ts) | 20.58 ms |
+| [affiliate-disclosure-generator](file:///src/scripts/tool-workspace.ts) | 14.19 ms |
+| [pet-tag-generator](file:///src/scripts/tool-workspace.ts) | 13.13 ms |
 
 ## 🟢 All generators passed quality gates!
 
