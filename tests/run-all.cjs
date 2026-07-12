@@ -18,6 +18,7 @@ require('./search/search-engine.test.cjs');
 require('./search/search-ui.test.cjs');
 require('./search/search-semantic.test.cjs');
 require('./search/search-ranking.test.cjs');
+require('./search/search-recommendations.test.cjs');
 
 // Execute them
 runSuites();

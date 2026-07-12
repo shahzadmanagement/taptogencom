@@ -1,6 +1,7 @@
 ---
 import BaseLayout from 'theme/layouts/BaseLayout.astro';
 import { getRelatedTools, type Tool } from '@/data/tools';
+import { getRecommendations } from '@/lib/search-recommendations';
 import { noindexToolSlugs, pass20ControlMap } from '@/data/tool-page-data';
 import { toolHubs } from '@/data/hubs';
 import {
@@ -666,7 +667,10 @@ const text = ({
   activeLinks: 'These links lead to active, indexable tools.',
 };
 
-const related = getRelatedTools(slug, 8).filter((item) => !noindexToolSlugs.has(item.slug)).slice(0, 4);
+const recommendations = getRecommendations(slug);
+const related = recommendations.relatedTools.filter((item) => !noindexToolSlugs.has(item.slug));
+const youMayAlsoLike = recommendations.youMayAlsoLike.filter((item) => !noindexToolSlugs.has(item.slug));
+const frequentlyUsedTogether = recommendations.frequentlyUsedTogether.filter((item) => !noindexToolSlugs.has(item.slug));
 const matchingHub = toolHubs.find((hub) => hub.slug === tool.categorySlug || hub.categorySlugs.includes(tool.categorySlug));
 const nextStepHubs = toolHubs
   .filter((hub) => hub.slug !== matchingHub?.slug && (matchingHub?.relatedHubSlugs.includes(hub.slug) || hub.relatedHubSlugs.includes(matchingHub?.slug || '')))
@@ -915,6 +919,8 @@ const faqSchema = {
         <FaqSection faqTitle={text.faq} faqItems={faqItems.map(f => ({ question: f.q, answer: f.a }))} />
 
         <RelatedSection title={text.related} relatedTools={related} isSpanish={language === 'es'} />
+        <RelatedSection title="You May Also Like" relatedTools={youMayAlsoLike} isSpanish={language === 'es'} />
+        <RelatedSection title="Frequently Used Together" relatedTools={frequentlyUsedTogether} isSpanish={language === 'es'} />
 
         {(matchingHub || nextStepHubs.length > 0) && (
           <section class="content-card">
