@@ -14,6 +14,7 @@ require('./analytics/event-bus.test.cjs');
 require('./analytics/product-analytics.test.cjs');
 require('./analytics/error-monitor.test.cjs');
 require('./analytics/performance-monitor.test.cjs');
+require('./search/search-engine.test.cjs');
 
 // Execute them
 runSuites();
