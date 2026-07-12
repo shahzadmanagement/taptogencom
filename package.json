@@ -17,6 +17,7 @@
     "test:integration": "node tests/run-integration.cjs",
     "test:inventory": "node tests/run-inventory.cjs",
     "test:options": "node tests/run-options.cjs",
+    "test:e2e": "playwright test",
     "verify": "node tests/run-verify.cjs"
   },
   "dependencies": {
@@ -29,6 +30,8 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@playwright/test": "^1.49.0",
+    "axe-core": "^4.10.0",
     "typescript": "^6.0.3"
   }
 }

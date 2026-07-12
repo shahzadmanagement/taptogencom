@@ -74,6 +74,12 @@ jobs:
     - name: Run Production Build Verification
       run: node scripts/verify-production.js
 
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    - name: Run E2E Browser Validation Tests
+      run: npm run test:e2e
+
     - name: Upload Regression Test Reports
       if: always()
       uses: actions/upload-artifact@v4
@@ -82,6 +88,15 @@ jobs:
         path: |
           reports/regression-report.json
           reports/regression-report.md
+
+    - name: Upload E2E Test Reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: generator-e2e-reports
+        path: |
+          reports/e2e-report.json
+          reports/e2e-report.md
 
     - name: Upload Production Build Assets
       uses: actions/upload-artifact@v4
