@@ -2,6 +2,7 @@
 import { siteConfig } from '@/config/site';
 import { headerNav, footerNav } from '@/data/navigation';
 import { getSupportedLanguage } from '@/data/localization';
+import { resolveCanonicalUrl } from '@/lib/search-canonical';
 
 interface Props {
   title: string;
@@ -16,7 +17,7 @@ interface Props {
 }
 
 const { title, description, canonical, ogImage, schema = [], noindex = false, lang = 'en', dir = 'ltr', alternates = [] } = Astro.props;
-const canonicalUrl = canonical ? `${siteConfig.url}${canonical}` : `${siteConfig.url}${Astro.url.pathname}`;
+const canonicalUrl = resolveCanonicalUrl(canonical || Astro.url.pathname);
 const ogImg = ogImage || `${siteConfig.url}${siteConfig.defaultOgImage}`;
 
 const websiteSchema = {

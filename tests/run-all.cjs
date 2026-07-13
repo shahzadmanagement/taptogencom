@@ -25,6 +25,7 @@ require('./search/search-performance.test.cjs');
 require('./search/search-intelligence.test.cjs');
 require('./search/search-sitemap.test.cjs');
 require('./search/search-robots.test.cjs');
+require('./search/search-canonical.test.cjs');
 
 // Execute them
 runSuites();
