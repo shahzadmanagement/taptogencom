@@ -22,6 +22,7 @@ require('./search/search-recommendations.test.cjs');
 require('./search/ai-search-assistant.test.cjs');
 require('./search/search-analytics.test.cjs');
 require('./search/search-performance.test.cjs');
+require('./search/search-intelligence.test.cjs');
 
 // Execute them
 runSuites();
