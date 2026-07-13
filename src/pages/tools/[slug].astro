@@ -65,11 +65,30 @@ const pass20Controls = pass20ControlMap[slug];
 
 const noindexSafetyProfile = getNoindexSafetyProfile(slug);
 const effectiveDisclaimer = tool.disclaimer || noindexSafetyProfile?.disclaimer || '';
-const effectiveFaqItems = tool.faqItems.length > 0 ? tool.faqItems : noindexSafetyProfile ? [
+const baseFaqs = tool.faqItems.length > 0 ? [...tool.faqItems] : noindexSafetyProfile ? [
   { q: `What is ${tool.name} best used for?`, a: noindexSafetyProfile.use },
   { q: `What should I avoid with ${tool.name}?`, a: noindexSafetyProfile.disclaimer },
   { q: `Does ${tool.name} verify official status, availability, compliance, or results?`, a: noindexSafetyProfile.limits },
-  { q: `What should I check before using the output?`, a: noindexSafetyProfile.beforeUse }] : [];
+  { q: `What should I check before using the output?`, a: noindexSafetyProfile.beforeUse }
+] : [
+  { q: `What is ${tool.name}?`, a: tool.description || `A free browser utility tool to generate custom outputs instantly.` }
+];
+
+const extraFaqs = [
+  { q: `Is ${tool.name} completely free to use?`, a: `Yes, ${tool.name} is 100% free with no registration, subscriptions, or usage limits.` },
+  { q: `Is my input data secure with ${tool.name}?`, a: `Absolutely. All computations and formatting are run locally in your web browser. No input text, keywords, or results are sent to our servers or stored.` },
+  { q: `Can I use the output of ${tool.name} commercially?`, a: `Yes, you have full ownership of the generated output and can use it for personal, commercial, or professional projects.` },
+  { q: `Do I need to install any browser extensions or software?`, a: `No. ${tool.name} is a web-based tool that runs directly in any modern browser on desktop, tablet, and mobile devices.` },
+  { q: `How do I copy the generated results?`, a: `Simply click the Copy button next to any individual result card, or click Copy All at the top of the output panel to copy all results to your clipboard.` },
+  { q: `Are there limits to how many times I can generate?`, a: `No, you can generate as many times as you like. We encourage trying different keyword variations or settings to find the best output.` },
+  { q: `Do I need to sign up for an account?`, a: `No sign-up is required. You can start using the generator immediately without entering an email or creating a profile.` }
+];
+
+const effectiveFaqItems = [...baseFaqs];
+for (const faq of extraFaqs) {
+  if (effectiveFaqItems.length >= 10) break;
+  effectiveFaqItems.push(faq);
+}
 
 const faqSchema = effectiveFaqItems.length > 0 ? {
   "@context": "https://schema.org",
@@ -274,6 +293,30 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, 'en', tool.name);
         <IntroSection h1={tool.name} metaDescription={tool.tagline} intro={tool.description} whatIsText="What is" />
 
         <section class="content-card">
+          <h2>Why Use {tool.name}?</h2>
+          <p>Using {tool.name} saves you time and simplifies your creative or administrative workflow. Instead of manually formatting, brainstorming, or writing from scratch, this tool provides instant suggestions tailored to your user intent. Whether you are generating tags, formatting text, or developing name ideas, {tool.name} handles the heavy lifting in a fraction of a second.</p>
+        </section>
+
+        <section class="content-card">
+          <h2>Key Benefits</h2>
+          <ul>
+            <li><strong>100% Free</strong> - No subscriptions, no microtransactions, and no credit card required.</li>
+            <li><strong>Browser-Based Privacy</strong> - All processing occurs locally on your machine. Your data never leaves your browser.</li>
+            <li><strong>Instant Generation</strong> - Get a list of optimized suggestions in milliseconds.</li>
+            <li><strong>No Registration</strong> - Start using the utility immediately without creating an account or logging in.</li>
+          </ul>
+        </section>
+
+        <section class="content-card">
+          <h2>Features of {tool.name}</h2>
+          <ul>
+            <li><strong>Interactive Settings</strong> - Customize the tone, count, and style configuration directly from the control panel.</li>
+            <li><strong>One-Click Copying</strong> - Copy individual elements or copy all results instantly with built-in clipboard actions.</li>
+            <li><strong>Clean Formatting</strong> - Outputs copy-ready text without any markup, ready to be pasted anywhere.</li>
+          </ul>
+        </section>
+
+        <section class="content-card">
           <h2>How to Use {tool.name}</h2>
           {effectiveGuideCopy ? (
             <ol>
@@ -303,6 +346,28 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, 'en', tool.name);
               <li><strong>Copy selectively</strong> - use individual copy buttons when you only need one card or section.</li>
             </ul>
           )}
+        </section>
+
+        <section class="content-card">
+          <h2>Best Practices & Common Mistakes</h2>
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 12px; margin-bottom: 6px; color: var(--color-text-primary);">Best Practices</h3>
+          <ul>
+            <li><strong>Provide Clear Input</strong> - Give as much context as possible in the input box for highly relevant results.</li>
+            <li><strong>Explore Different Styles</strong> - Try changing options like tone or structure to find the perfect output.</li>
+            <li><strong>Review and Polish</strong> - Treat the generated output as a high-quality draft and review it for factual alignment before publishing.</li>
+          </ul>
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 16px; margin-bottom: 6px; color: var(--color-text-primary);">Common Mistakes to Avoid</h3>
+          <ul>
+            <li><strong>Vague Inputs</strong> - Entering single-word, generic inputs can result in less specialized suggestions.</li>
+            <li><strong>Skipping Review</strong> - Not verifying custom names, tags, or text before publishing can lead to policy or branding conflicts.</li>
+            <li><strong>Ignoring Settings</strong> - Forgetting to toggle tone or formatting options can cause output misalignment.</li>
+          </ul>
+        </section>
+
+        <section class="content-card" style="text-align: center; padding: 30px;">
+          <h2>Try {tool.name} Now!</h2>
+          <p style="margin-bottom: 16px;">Ready to optimize your workflow? Try {tool.name} now. Simply scroll back up to the interactive console, enter your details, and tap generate to get started immediately!</p>
+          <a href="#" class="btn btn-primary" style="display: inline-block; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; color: #fff; background: var(--color-primary);">Go to Generator</a>
         </section>
 
         <FaqSection faqTitle="Frequently Asked Questions" faqItems={effectiveFaqItems.map(f => ({ question: f.q, answer: f.a }))} />

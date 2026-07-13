@@ -33,6 +33,7 @@ require('./search/search-metadata.test.cjs');
 require('./search/search-internal-links.test.cjs');
 require('./search/search-image-seo.test.cjs');
 require('./performance/performance.test.cjs');
+require('./content/content-quality.test.cjs');
 
 // Execute them
 runSuites();
