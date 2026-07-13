@@ -2,6 +2,7 @@ import { siteConfig } from '../config/site';
 import { toolHubs } from '../data/hubs';
 import { categories } from '../data/categories';
 import { resolveCanonicalUrl } from './search-canonical';
+import { getBreadcrumbs } from './search-breadcrumb';
 
 export interface SchemaOptions {
   pathname: string;
@@ -152,54 +153,19 @@ export function buildSchemas(options: SchemaOptions): object[] {
   }
 
   // 2. BreadcrumbList
-  const breadcrumbItems: { name: string; item: string }[] = [
-    { name: lang === 'es' ? 'Inicio' : 'Home', item: resolveCanonicalUrl(isLocalized ? `/${lang}/` : '/') }
-  ];
-
-  if (isBlog) {
-    breadcrumbItems.push({ name: 'Blog', item: resolveCanonicalUrl('/blog/') });
-  } else if (isAbout) {
-    breadcrumbItems.push({ name: lang === 'es' ? 'Acerca de' : 'About Us', item: resolveCanonicalUrl('/about-us/') });
-  } else if (isContact) {
-    breadcrumbItems.push({ name: lang === 'es' ? 'Contacto' : 'Contact Us', item: resolveCanonicalUrl('/contact-us/') });
-  } else if (isPrivacy) {
-    breadcrumbItems.push({ name: lang === 'es' ? 'Privacidad' : 'Privacy Policy', item: resolveCanonicalUrl('/privacy/') });
-  } else if (isTerms) {
-    breadcrumbItems.push({ name: lang === 'es' ? 'Términos' : 'Terms of Service', item: resolveCanonicalUrl('/terms/') });
-  } else if (isDisclaimer) {
-    breadcrumbItems.push({ name: lang === 'es' ? 'Aviso legal' : 'Disclaimer', item: resolveCanonicalUrl('/disclaimer/') });
-  } else if (isCategoriesIndex) {
-    breadcrumbItems.push({ name: lang === 'es' ? 'Categorías' : 'Categories', item: resolveCanonicalUrl('/categories/') });
-  } else if (isCategoryDetail) {
-    breadcrumbItems.push({ name: lang === 'es' ? 'Categorías' : 'Categories', item: resolveCanonicalUrl('/categories/') });
-    const categorySlug = pathParts[pathParts.length - 1];
-    const category = categories.find(c => c.slug === categorySlug);
-    breadcrumbItems.push({ name: category ? category.name : categorySlug, item: canonicalUrl });
-  } else if (isToolsIndex) {
-    breadcrumbItems.push({ name: lang === 'es' ? 'Herramientas' : 'Tools', item: resolveCanonicalUrl('/tools/') });
-  } else if (isHub) {
-    breadcrumbItems.push({ name: lang === 'es' ? 'Herramientas' : 'Tools', item: resolveCanonicalUrl('/tools/') });
-    const hubSlug = pathParts[pathParts.length - 1];
-    const hub = toolHubs.find(h => h.slug === hubSlug);
-    breadcrumbItems.push({ name: hub ? hub.h1 : hubSlug, item: canonicalUrl });
-  } else if (isToolDetail) {
-    const toolsText = lang === 'es' ? 'Herramientas' : 'Tools';
-    breadcrumbItems.push({ name: toolsText, item: resolveCanonicalUrl(isLocalized ? `/${lang}/tools/` : '/tools/') });
-    breadcrumbItems.push({ name: cleanTitle, item: canonicalUrl });
-  }
-
+  const breadcrumbs = getBreadcrumbs(pathname, lang, cleanTitle);
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: breadcrumbItems.map((item, idx) => ({
+    itemListElement: breadcrumbs.map((item, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
       name: item.name,
-      item: item.item
+      item: item.url
     }))
   };
   
-  if (breadcrumbItems.length > 1) {
+  if (breadcrumbs.length > 1) {
     schemas.push(breadcrumbSchema);
   }
 

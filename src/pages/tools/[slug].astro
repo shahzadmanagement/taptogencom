@@ -1,5 +1,6 @@
 ---
 import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import { getBreadcrumbs } from '@/lib/search-breadcrumb';
 import { tools, getRelatedTools, type Tool } from '@/data/tools';
 import { getEffectiveGuideCopy, getNoindexSafetyProfile, noindexToolSlugs, pass20ControlMap } from '@/data/tool-page-data';
 import { toolHubs } from '@/data/hubs';
@@ -84,6 +85,7 @@ const schemas = [toolSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])
 const effectiveGuideCopy = getEffectiveGuideCopy(tool);
 const alternates = getToolLanguageAlternates(slug);
 const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => getLocalizedToolByCanonicalId(slug, language));
+const breadcrumbs = getBreadcrumbs(Astro.url.pathname, 'en', tool.name);
 ---
 <BaseLayout
   title={tool.metaTitle}
@@ -97,13 +99,18 @@ const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => ge
     <div class="container">
       <nav aria-label="Breadcrumb">
         <ol class="breadcrumb">
-          <li><a href="/">Home</a></li>
-          <li class="sep" aria-hidden="true">/</li>
-          <li><a href="/tools/">Tools</a></li>
-          <li class="sep" aria-hidden="true">/</li>
-          <li><a href={`/categories/${tool.categorySlug}/`}>{tool.category}</a></li>
-          <li class="sep" aria-hidden="true">/</li>
-          <li aria-current="page">{tool.name}</li>
+          {breadcrumbs.map((item, idx) => (
+            <>
+              {idx > 0 && <li class="sep" aria-hidden="true">/</li>}
+              <li>
+                {item.isActive ? (
+                  <span aria-current="page">{item.name}</span>
+                ) : (
+                  <a href={item.url}>{item.name}</a>
+                )}
+              </li>
+            </>
+          ))}
         </ol>
       </nav>
 

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import { getBreadcrumbs } from '@/lib/search-breadcrumb';
 import { getRelatedTools, type Tool } from '@/data/tools';
 import { getRecommendations } from '@/lib/search-recommendations';
 import { noindexToolSlugs, pass20ControlMap } from '@/data/tool-page-data';
@@ -719,6 +720,8 @@ const faqSchema = {
     acceptedAnswer: { '@type': 'Answer', text: f.a },
   })),
 };
+
+const breadcrumbs = getBreadcrumbs(Astro.url.pathname, language, copy.h1);
 ---
 <BaseLayout
   title={copy.metaTitle}
@@ -732,12 +735,22 @@ const faqSchema = {
 >
   <section class="tool-page">
     <div class="container">
-      <div class="breadcrumb">
-        <a href="/">{text.home}</a><span class="sep">/</span>
-        <a href="/tools/">{text.tools}</a><span class="sep">/</span>
-        <a href={`/tools/${tool.slug}/`}>{text.englishVersion}</a><span class="sep">/</span>
-        <span>{copy.h1}</span>
-      </div>
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          {breadcrumbs.map((item, idx) => (
+            <>
+              {idx > 0 && <span class="sep">/</span>}
+              <li>
+                {item.isActive ? (
+                  <span>{item.name}</span>
+                ) : (
+                  <a href={item.url}>{item.name}</a>
+                )}
+              </li>
+            </>
+          ))}
+        </ol>
+      </nav>
 
       <div class="tool-page-header premium-tool-header">
         <span class="section-badge tool-category-badge">{tool.icon} {getLocalizedUiLabel(tool.category, language)}</span>

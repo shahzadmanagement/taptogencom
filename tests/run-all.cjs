@@ -27,6 +27,7 @@ require('./search/search-sitemap.test.cjs');
 require('./search/search-robots.test.cjs');
 require('./search/search-canonical.test.cjs');
 require('./search/search-schema.test.cjs');
+require('./search/search-breadcrumb.test.cjs');
 
 // Execute them
 runSuites();
