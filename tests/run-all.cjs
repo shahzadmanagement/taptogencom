@@ -29,6 +29,7 @@ require('./search/search-canonical.test.cjs');
 require('./search/search-schema.test.cjs');
 require('./search/search-breadcrumb.test.cjs');
 require('./search/search-hreflang.test.cjs');
+require('./search/search-metadata.test.cjs');
 
 // Execute them
 runSuites();

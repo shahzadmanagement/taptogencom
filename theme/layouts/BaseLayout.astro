@@ -5,6 +5,7 @@ import { getSupportedLanguage } from '@/data/localization';
 import { resolveCanonicalUrl } from '@/lib/search-canonical';
 import { buildSchemas } from '@/lib/search-schema';
 import { getHreflangAlternates } from '@/lib/search-hreflang';
+import { buildMetadata } from '@/lib/search-metadata';
 
 interface Props {
   title: string;
@@ -22,11 +23,19 @@ const { title, description, canonical, ogImage, schema = [], noindex = false, la
 const canonicalUrl = resolveCanonicalUrl(canonical || Astro.url.pathname);
 const ogImg = ogImage || `${siteConfig.url}${siteConfig.defaultOgImage}`;
 
+const meta = buildMetadata({
+  pathname: Astro.url.pathname,
+  lang,
+  titleOverride: title,
+  descriptionOverride: description,
+  noindexOverride: noindex
+});
+
 const allSchemas = buildSchemas({
   pathname: Astro.url.pathname,
   lang,
-  title,
-  description,
+  title: meta.title,
+  description: meta.description,
   customSchemas: schema
 });
 const hreflangs = getHreflangAlternates(Astro.url.pathname);
@@ -66,23 +75,30 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  <link rel="canonical" href={canonicalUrl} />
+  <title>{meta.title}</title>
+  <meta name="description" content={meta.description} />
+  <link rel="canonical" href={meta.canonical} />
   {hreflangs.map((alternate) => (
     <link rel="alternate" hreflang={alternate.lang} href={alternate.href} />
   ))}
-  <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
-  <meta name="googlebot" content={noindex ? 'noindex, follow' : 'index, follow'} />
+  <meta name="robots" content={meta.robots} />
+  <meta name="googlebot" content={meta.robots} />
+  
+  <meta name="author" content={meta.author} />
+  <meta name="application-name" content={meta.applicationName} />
+  <meta name="generator" content={meta.generator} />
+  <meta name="creator" content={meta.creator} />
+  <meta name="publisher" content={meta.publisher} />
+
   <meta property="og:type" content="website" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:title" content={meta.title} />
+  <meta property="og:description" content={meta.description} />
+  <meta property="og:url" content={meta.canonical} />
   <meta property="og:site_name" content={siteConfig.name} />
   <meta property="og:image" content={ogImg} />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
+  <meta name="twitter:title" content={meta.title} />
+  <meta name="twitter:description" content={meta.description} />
   <meta name="twitter:image" content={ogImg} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="sitemap" href="/sitemap-index.xml" />
