@@ -24,6 +24,7 @@ require('./search/search-analytics.test.cjs');
 require('./search/search-performance.test.cjs');
 require('./search/search-intelligence.test.cjs');
 require('./search/search-sitemap.test.cjs');
+require('./search/search-robots.test.cjs');
 
 // Execute them
 runSuites();

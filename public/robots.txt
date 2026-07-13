@@ -1,8 +1,47 @@
-# http://www.robotstxt.org/
+# TapToGen Enterprise robots.txt
+# Environment: production
 
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /private/
+Disallow: /draft/
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /node_modules/
+Disallow: /admin/
+Crawl-delay: 2
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /private/
+Disallow: /draft/
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /node_modules/
 Disallow: /admin/
 
-Sitemap: https://taptogen.com/sitemap.xml
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /private/
+Disallow: /draft/
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /node_modules/
+Disallow: /admin/
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+Sitemap: https://taptogen.com/sitemap-index.xml
