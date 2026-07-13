@@ -6,6 +6,7 @@ import { resolveCanonicalUrl } from '@/lib/search-canonical';
 import { buildSchemas } from '@/lib/search-schema';
 import { getHreflangAlternates } from '@/lib/search-hreflang';
 import { buildMetadata } from '@/lib/search-metadata';
+import { getImageMetadata } from '@/lib/search-image-seo';
 
 interface Props {
   title: string;
@@ -31,12 +32,14 @@ const meta = buildMetadata({
   noindexOverride: noindex
 });
 
+const imageMeta = getImageMetadata(ogImage || siteConfig.defaultOgImage, 'general');
+
 const allSchemas = buildSchemas({
   pathname: Astro.url.pathname,
   lang,
   title: meta.title,
   description: meta.description,
-  customSchemas: schema
+  customSchemas: [...schema, imageMeta.schema]
 });
 const hreflangs = getHreflangAlternates(Astro.url.pathname);
 const currentPath = Astro.url.pathname;
@@ -95,11 +98,14 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
   <meta property="og:description" content={meta.description} />
   <meta property="og:url" content={meta.canonical} />
   <meta property="og:site_name" content={siteConfig.name} />
-  <meta property="og:image" content={ogImg} />
+  <meta property="og:image" content={imageMeta.url} />
+  <meta property="og:image:width" content={imageMeta.width.toString()} />
+  <meta property="og:image:height" content={imageMeta.height.toString()} />
+  <meta property="og:image:type" content={imageMeta.mimeType} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={meta.title} />
   <meta name="twitter:description" content={meta.description} />
-  <meta name="twitter:image" content={ogImg} />
+  <meta name="twitter:image" content={imageMeta.url} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="sitemap" href="/sitemap-index.xml" />
   {siteConfig.verification.google && <meta name="google-site-verification" content={siteConfig.verification.google} />}
