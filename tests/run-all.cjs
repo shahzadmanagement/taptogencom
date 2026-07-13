@@ -34,6 +34,7 @@ require('./search/search-internal-links.test.cjs');
 require('./search/search-image-seo.test.cjs');
 require('./performance/performance.test.cjs');
 require('./content/content-quality.test.cjs');
+require('./product/product-domination.test.cjs');
 
 // Execute them
 runSuites();
