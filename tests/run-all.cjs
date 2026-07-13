@@ -30,6 +30,7 @@ require('./search/search-schema.test.cjs');
 require('./search/search-breadcrumb.test.cjs');
 require('./search/search-hreflang.test.cjs');
 require('./search/search-metadata.test.cjs');
+require('./search/search-internal-links.test.cjs');
 
 // Execute them
 runSuites();

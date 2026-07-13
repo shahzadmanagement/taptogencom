@@ -16,6 +16,7 @@ import IntroSection from '@/components/IntroSection.astro';
 import ExamplesSection from '@/components/ExamplesSection.astro';
 import FaqSection from '@/components/FaqSection.astro';
 import RelatedSection from '@/components/RelatedSection.astro';
+import { getInternalLinks } from '@/lib/search-internal-links';
 
 export const prerender = true;
 
@@ -33,7 +34,7 @@ const { tool } = Astro.props;
 const slug = tool.slug;
 const toolConfig = toolConfigs[slug];
 
-const related = getRelatedTools(slug, 8).filter((item) => !noindexToolSlugs.has(item.slug)).slice(0, 4);
+const internalLinks = getInternalLinks(Astro.url.pathname, 'en');
 const matchingHub = toolHubs.find((hub) => hub.slug === tool.categorySlug || hub.categorySlugs.includes(tool.categorySlug));
 const nextStepHubs = toolHubs
   .filter((hub) => hub.slug !== matchingHub?.slug && (matchingHub?.relatedHubSlugs.includes(hub.slug) || hub.relatedHubSlugs.includes(matchingHub?.slug || '')))
@@ -306,7 +307,7 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, 'en', tool.name);
 
         <FaqSection faqTitle="Frequently Asked Questions" faqItems={effectiveFaqItems.map(f => ({ question: f.q, answer: f.a }))} />
 
-        <RelatedSection title="Related Tools" relatedTools={related} isSpanish={false} />
+        <RelatedSection title="Related Tools" links={internalLinks} />
 
         {(matchingHub || nextStepHubs.length > 0) && (
           <section class="content-card">

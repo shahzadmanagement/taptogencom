@@ -2,8 +2,8 @@
 import BaseLayout from 'theme/layouts/BaseLayout.astro';
 import { getBreadcrumbs } from '@/lib/search-breadcrumb';
 import { getRelatedTools, type Tool } from '@/data/tools';
-import { getRecommendations } from '@/lib/search-recommendations';
 import { noindexToolSlugs, pass20ControlMap } from '@/data/tool-page-data';
+import { getInternalLinks } from '@/lib/search-internal-links';
 import { toolHubs } from '@/data/hubs';
 import {
   createLocalizedFaqItems,
@@ -668,10 +668,7 @@ const text = ({
   activeLinks: 'These links lead to active, indexable tools.',
 };
 
-const recommendations = getRecommendations(slug);
-const related = recommendations.relatedTools.filter((item) => !noindexToolSlugs.has(item.slug));
-const youMayAlsoLike = recommendations.youMayAlsoLike.filter((item) => !noindexToolSlugs.has(item.slug));
-const frequentlyUsedTogether = recommendations.frequentlyUsedTogether.filter((item) => !noindexToolSlugs.has(item.slug));
+const internalLinks = getInternalLinks(Astro.url.pathname, language);
 const matchingHub = toolHubs.find((hub) => hub.slug === tool.categorySlug || hub.categorySlugs.includes(tool.categorySlug));
 const nextStepHubs = toolHubs
   .filter((hub) => hub.slug !== matchingHub?.slug && (matchingHub?.relatedHubSlugs.includes(hub.slug) || hub.relatedHubSlugs.includes(matchingHub?.slug || '')))
@@ -931,9 +928,10 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, language, copy.h1);
 
         <FaqSection faqTitle={text.faq} faqItems={faqItems.map(f => ({ question: f.q, answer: f.a }))} />
 
-        <RelatedSection title={text.related} relatedTools={related} isSpanish={language === 'es'} />
-        <RelatedSection title="You May Also Like" relatedTools={youMayAlsoLike} isSpanish={language === 'es'} />
-        <RelatedSection title="Frequently Used Together" relatedTools={frequentlyUsedTogether} isSpanish={language === 'es'} />
+        <RelatedSection title={text.related} links={internalLinks.slice(0, 4)} />
+        {internalLinks.length > 4 && (
+          <RelatedSection title="You May Also Like" links={internalLinks.slice(4, 8)} />
+        )}
 
         {(matchingHub || nextStepHubs.length > 0) && (
           <section class="content-card">
