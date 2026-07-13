@@ -1,17 +1,10 @@
-# Enterprise JSON-LD Structured Data Platform
+# Enterprise Structured Data Specifications
 
-This document describes the design specifications, configuration mappings, and Google Rich Results guidelines of the centralized Schema Platform.
-
----
-
-## 1. Deployed Schema Mappings
-- **Home**: Mapped with `WebSite` (incorporating `SearchAction`), `Organization`, and `WebPage`.
-- **Dynamic Tools**: Mapped with `WebApplication` (SoftwareApplication category) and dynamic `BreadcrumbList`.
-- **Categories / Hubs**: Mapped with `CollectionPage` and dynamic `BreadcrumbList`.
-- **FAQ Page**: Rendered dynamically if the template resolves custom FAQ questions.
-- **Static Pages**: Rendered as generic `WebPage` schemas with category breadcrumbs.
+This document defines schema context definitions, relationship trees, stable anchor @ids, and Google Rich Results rules.
 
 ---
 
-## 2. Dynamic Tag Sanitization
-- Auto-sanitizes raw HTML tag markups inside title or description fields to prevent JSON schema validator warnings.
+## 1. Quality & Schema Rules
+- **Relational Stability**: Interlinks schemas via stable @id strings (e.g. website, organization, and webpage references).
+- **Format Integrity**: Outputs minified JSON-LD script blocks without HTML entities corruption.
+- **Language Synchronization**: Syncs schema parameters with regional language indicators.

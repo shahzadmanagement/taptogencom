@@ -1,6 +1,5 @@
 import { siteConfig } from '../config/site';
 import { toolHubs } from '../data/hubs';
-import { categories } from '../data/categories';
 import { resolveCanonicalUrl } from './search-canonical';
 import { getBreadcrumbs } from './search-breadcrumb';
 
@@ -10,6 +9,8 @@ export interface SchemaOptions {
   title: string;
   description: string;
   faqItems?: { q: string; a: string }[];
+  howToSteps?: string[];
+  imageUrl?: string;
   customSchemas?: object[];
 }
 
@@ -23,7 +24,7 @@ function cleanHtml(text: string): string {
 }
 
 export function buildSchemas(options: SchemaOptions): object[] {
-  const { pathname, lang = 'en', title, description, faqItems = [], customSchemas = [] } = options;
+  const { pathname, lang = 'en', title, description, faqItems = [], howToSteps = [], imageUrl, customSchemas = [] } = options;
   const canonicalUrl = resolveCanonicalUrl(pathname);
   const cleanDescription = cleanHtml(description);
   const cleanTitle = cleanHtml(title);
@@ -103,7 +104,7 @@ export function buildSchemas(options: SchemaOptions): object[] {
 
   const schemas: object[] = [];
 
-  // 1. Homepage & General WebPage
+  // Defer general site configuration schemas on homepage
   if (isHome) {
     schemas.push(websiteSchema);
     schemas.push(organizationSchema);
@@ -117,32 +118,11 @@ export function buildSchemas(options: SchemaOptions): object[] {
       inLanguage: lang,
       isPartOf: { '@id': `${siteConfig.url}/#website` }
     });
-  } else if (isAbout) {
+  } else {
+    // General webpage schema for interior routes
     schemas.push({
       '@context': 'https://schema.org',
-      '@type': 'AboutPage',
-      '@id': `${canonicalUrl}#webpage`,
-      url: canonicalUrl,
-      name: cleanTitle,
-      description: cleanDescription,
-      inLanguage: lang,
-      isPartOf: { '@id': `${siteConfig.url}/#website` }
-    });
-  } else if (isContact) {
-    schemas.push({
-      '@context': 'https://schema.org',
-      '@type': 'ContactPage',
-      '@id': `${canonicalUrl}#webpage`,
-      url: canonicalUrl,
-      name: cleanTitle,
-      description: cleanDescription,
-      inLanguage: lang,
-      isPartOf: { '@id': `${siteConfig.url}/#website` }
-    });
-  } else if (isPrivacy || isTerms || isDisclaimer) {
-    schemas.push({
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
+      '@type': isAbout ? 'AboutPage' : isContact ? 'ContactPage' : 'WebPage',
       '@id': `${canonicalUrl}#webpage`,
       url: canonicalUrl,
       name: cleanTitle,
@@ -152,26 +132,39 @@ export function buildSchemas(options: SchemaOptions): object[] {
     });
   }
 
-  // 2. BreadcrumbList
-  const breadcrumbs = getBreadcrumbs(pathname, lang, cleanTitle);
-  const breadcrumbSchema = {
+  // WebSiteNavigationElement
+  const navigationSchema = {
     '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: breadcrumbs.map((item, idx) => ({
-      '@type': 'ListItem',
-      position: idx + 1,
-      name: item.name,
-      item: item.url
-    }))
+    '@type': 'WebSiteNavigationElement',
+    '@id': `${canonicalUrl}#navigation`,
+    name: ['Home', 'Tools', 'Categories', 'Blog'],
+    url: [
+      `${siteConfig.url}/`,
+      `${siteConfig.url}/tools/`,
+      `${siteConfig.url}/categories/`,
+      `${siteConfig.url}/blog/`
+    ]
   };
-  
+  schemas.push(navigationSchema);
+
+  // BreadcrumbList
+  const breadcrumbs = getBreadcrumbs(pathname, lang, cleanTitle);
   if (breadcrumbs.length > 1) {
-    schemas.push(breadcrumbSchema);
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((item, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        name: item.name,
+        item: item.url
+      }))
+    });
   }
 
-  // 3. WebApplication (for dynamic tool pages)
+  // WebApplication (for dynamic tool pages)
   if (isToolDetail) {
-    const webAppSchema = {
+    schemas.push({
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       '@id': `${canonicalUrl}#webapp`,
@@ -187,11 +180,10 @@ export function buildSchemas(options: SchemaOptions): object[] {
       },
       browserRequirements: 'Requires JavaScript',
       inLanguage: lang
-    };
-    schemas.push(webAppSchema);
+    });
   }
 
-  // 4. CollectionPage (Categories / Hubs)
+  // CollectionPage & ItemList (Categories / Hubs)
   if (isCategoryDetail || isHub || isCategoriesIndex || isToolsIndex) {
     schemas.push({
       '@context': 'https://schema.org',
@@ -202,11 +194,66 @@ export function buildSchemas(options: SchemaOptions): object[] {
       description: cleanDescription,
       inLanguage: lang
     });
+
+    // ItemList container for navigation list paths
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      '@id': `${canonicalUrl}#itemlist`,
+      name: cleanTitle,
+      url: canonicalUrl,
+      numberOfItems: 4
+    });
   }
 
-  // 5. FAQPage (if items are present)
+  // HowTo (if steps are provided)
+  if (howToSteps.length > 0) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      '@id': `${canonicalUrl}#howto`,
+      name: `How to use ${cleanTitle}`,
+      description: cleanDescription,
+      step: howToSteps.map((stepText, idx) => ({
+        '@type': 'HowToStep',
+        position: idx + 1,
+        text: cleanHtml(stepText)
+      }))
+    });
+  }
+
+  // ImageObject (if imageUrl is resolved)
+  if (imageUrl) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'ImageObject',
+      '@id': `${canonicalUrl}#image`,
+      url: imageUrl,
+      caption: cleanTitle
+    });
+  }
+
+  // BlogPosting / Article (for blog details)
+  if (isBlog && pathParts.length > (isLocalized ? 2 : 1)) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      '@id': `${canonicalUrl}#blogposting`,
+      headline: cleanTitle,
+      description: cleanDescription,
+      url: canonicalUrl,
+      inLanguage: lang,
+      publisher: { '@id': `${siteConfig.url}/#organization` },
+      author: {
+        '@type': 'Person',
+        name: 'TapToGen Editorial Team'
+      }
+    });
+  }
+
+  // FAQPage (if items are present)
   if (faqItems.length > 0) {
-    const faqSchema = {
+    schemas.push({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
       inLanguage: lang,
@@ -218,11 +265,11 @@ export function buildSchemas(options: SchemaOptions): object[] {
           text: cleanHtml(item.a)
         }
       }))
-    };
-    schemas.push(faqSchema);
+    });
   }
 
-  // Append any extra schemas
+  // Defer extension points hooks (VideoObject, Review, AggregateRating)
+  // These hooks can be injected using options.customSchemas
   schemas.push(...customSchemas);
 
   return schemas;

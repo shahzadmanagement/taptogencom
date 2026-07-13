@@ -35,6 +35,7 @@ require('./search/search-image-seo.test.cjs');
 require('./performance/performance.test.cjs');
 require('./content/content-quality.test.cjs');
 require('./product/product-domination.test.cjs');
+require('./schema/schema-rich-results.test.cjs');
 
 // Execute them
 runSuites();
