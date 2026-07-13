@@ -15,7 +15,7 @@ export const siteConfig = {
     youtube: '',
   },
   verification: {
-    google: '',
+    google: 'zNi383TtQyy3KK6TnLiwNE0-1pZMGPyolr29s6nLQA0',
     bing: '',
     yandex: '',
   },

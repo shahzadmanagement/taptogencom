@@ -104,6 +104,16 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
   <link rel="sitemap" href="/sitemap-index.xml" />
   {siteConfig.verification.google && <meta name="google-site-verification" content={siteConfig.verification.google} />}
   {siteConfig.verification.bing && <meta name="msvalidate.01" content={siteConfig.verification.bing} />}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRXK1L32WK"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RRXK1L32WK', {
+      anonymize_ip: true,
+      send_page_view: true
+    });
+  </script>
   {allSchemas.map(s => (
     <script type="application/ld+json" set:html={JSON.stringify(s)} />
   ))}
