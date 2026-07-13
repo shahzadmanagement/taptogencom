@@ -32,6 +32,7 @@ require('./search/search-hreflang.test.cjs');
 require('./search/search-metadata.test.cjs');
 require('./search/search-internal-links.test.cjs');
 require('./search/search-image-seo.test.cjs');
+require('./performance/performance.test.cjs');
 
 // Execute them
 runSuites();
