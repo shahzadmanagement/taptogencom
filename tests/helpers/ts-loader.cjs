@@ -80,6 +80,11 @@ function loadTS(filePath) {
   const m = { exports: {} };
   
   const customRequire = (id) => {
+    if (id.startsWith('@/')) {
+      const resolved = path.resolve(__dirname, '../../src/', id.slice(2));
+      if (fs.existsSync(resolved + '.ts')) return loadTS(resolved + '.ts');
+      if (fs.existsSync(resolved + '.js')) return require(resolved + '.js');
+    }
     if (id.startsWith('.')) {
       const resolved = path.resolve(path.dirname(absolutePath), id);
       if (fs.existsSync(resolved + '.ts')) return loadTS(resolved + '.ts');
