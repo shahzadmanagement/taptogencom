@@ -1,18 +1,9 @@
-# Sitemap Platform Architecture Report
+# XML Sitemap Platform Deployment Report
 
-This report confirms successful implementation of the enterprise dynamic sitemap platform.
+This report confirms implementation of the dynamic XML Sitemap engine across the project layout structures.
 
 ---
 
-## 1. Deployed Sitemap Index Hierarchy
-
-The dynamic compiler builds and updates the sitemap tree:
-- **Sitemap Index**: [`public/sitemap-index.xml`](file:///c:/Users/shahz/OneDrive/Documents/GitHub/taptogencom/public/sitemap-index.xml)
-- **Subfiles Written**:
-  - `sitemap-pages.xml`
-  - `sitemap-blog.xml`
-  - `sitemap-tools.xml`
-  - `sitemap-categories.xml`
-  - `sitemap-hubs.xml`
-  - `sitemap-locales.xml`
-- Legacy sitemap file `public/sitemap.xml` redirects search engines directly to the main index.
+## 1. Deployed Architecture
+- **Unified Engine**: [`src/lib/search-sitemap.ts`](file:///c:/Users/shahz/OneDrive/Documents/GitHub/taptogencom/src/lib/search-sitemap.ts)
+- **Deployment Strategy**: Configured to run during the build phase to generate sitemap XML assets in the public output directory.

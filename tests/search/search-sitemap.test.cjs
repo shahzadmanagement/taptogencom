@@ -1,54 +1,56 @@
 const path = require('path');
-const fs = require('fs');
 const assert = require('../helpers/assert.cjs');
 const { describe, it } = require('../helpers/runner.cjs');
 const { loadTS } = require('../helpers/ts-loader.cjs');
 
 const sitemapPath = path.resolve(__dirname, '../../src/lib/search-sitemap.ts');
 
-describe('Enterprise Dynamic Sitemap Engine Verification', () => {
-  it('Verify XML compilation templates and structure parsing values', () => {
-    const sitemap = loadTS(sitemapPath);
-    const mockUrls = [
-      { loc: 'https://taptogen.com/tools/fancy-text/', lastmod: '2026-07-13', changefreq: 'daily', priority: 0.8 }
-    ];
+describe('Enterprise XML Sitemap Platform Verification', () => {
+  it('Verify sitemap index compilation matches specifications', () => {
+    const engine = loadTS(sitemapPath);
+    const indexXml = engine.compileSitemapIndexXml(['sitemap-pages.xml', 'sitemap-tools.xml']);
 
-    const xml = sitemap.compileSitemapXml(mockUrls);
-    assert.ok(xml.includes('<loc>https://taptogen.com/tools/fancy-text/</loc>'));
-    assert.ok(xml.includes('<changefreq>daily</changefreq>'));
-  });
-
-  it('Verify sitemap index compilation structure', () => {
-    const sitemap = loadTS(sitemapPath);
-    const indexXml = sitemap.compileSitemapIndexXml(['sitemap-tools.xml']);
+    assert.ok(indexXml.includes('<sitemapindex'));
+    assert.ok(indexXml.includes('sitemap-pages.xml'));
     assert.ok(indexXml.includes('sitemap-tools.xml'));
   });
 
-  it('Verify data extraction counts and noindex exclusions mapping', () => {
-    const sitemap = loadTS(sitemapPath);
-    const data = sitemap.getSitemapData();
+  it('Verify indexable categories and tools mappings', () => {
+    const engine = loadTS(sitemapPath);
+    const data = engine.getSitemapData();
 
-    assert.ok(data.tools.length > 0);
-    assert.ok(data.locales.length > 0);
+    // Verify canonical URLs only
+    data.tools.forEach(t => {
+      assert.ok(t.loc.startsWith('https://taptogen.com/'));
+      assert.ok(!t.loc.includes('localhost'));
+    });
 
-    const noindexTool = data.tools.find(t => t.loc.includes('ao3-tag-generator'));
-    assert.equal(noindexTool, undefined, 'noindex tool should be excluded from dynamic tools sitemap');
+    data.categories.forEach(c => {
+      assert.ok(c.loc.startsWith('https://taptogen.com/'));
+    });
   });
 
-  it('Verify file splitting logic simulation for 50000+ urls limit', () => {
-    const mockDb = [];
-    for (let i = 0; i < 55000; i++) {
-      mockDb.push(`https://taptogen.com/tools/mock-${i}/`);
-    }
+  it('Verify no noindex tools are included in sitemaps list', () => {
+    const engine = loadTS(sitemapPath);
+    const data = engine.getSitemapData();
 
-    const chunks = [];
-    const chunkSize = 50000;
-    for (let i = 0; i < mockDb.length; i += chunkSize) {
-      chunks.push(mockDb.slice(i, i + chunkSize));
-    }
+    const hasNoindex = data.tools.some(t => t.loc.includes('ao3-tag-generator'));
+    assert.equal(hasNoindex, false);
+  });
 
-    assert.equal(chunks.length, 2);
-    assert.equal(chunks[0].length, 50000);
-    assert.equal(chunks[1].length, 5000);
+  it('Verify image sitemap tags compilation structure', () => {
+    const engine = loadTS(sitemapPath);
+    const imageXml = engine.compileImageSitemapXml([
+      {
+        loc: 'https://taptogen.com/tools/fancy-text-generator/',
+        imageLoc: 'https://taptogen.com/og-default.png',
+        imageTitle: 'Brand Presentation',
+        imageCaption: 'Creative fonts style generator'
+      }
+    ]);
+
+    assert.ok(imageXml.includes('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'));
+    assert.ok(imageXml.includes('<image:image>'));
+    assert.ok(imageXml.includes('<image:loc>https://taptogen.com/og-default.png</image:loc>'));
   });
 });

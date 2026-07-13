@@ -4,14 +4,23 @@ import { tools } from '../data/tools';
 import { categories } from '../data/categories';
 import { toolHubs } from '../data/hubs';
 import { noindexToolSlugs } from '../data/tool-page-data';
-import { localizedPilotTools, localizedPilotLanguages, getToolRoute } from '../data/localization';
+import { localizedPilotTools, getToolRoute } from '../data/localization';
 import { siteConfig } from '../config/site';
+import { getImageMetadata } from './search-image-seo';
+import { resolveCanonicalUrl } from './search-canonical';
 
 interface SitemapUrl {
   loc: string;
   lastmod: string;
   changefreq: string;
   priority: number;
+}
+
+interface SitemapImageUrl {
+  loc: string;
+  imageLoc: string;
+  imageTitle: string;
+  imageCaption: string;
 }
 
 export function compileSitemapXml(urls: SitemapUrl[]): string {
@@ -23,6 +32,24 @@ export function compileSitemapXml(urls: SitemapUrl[]): string {
     xml += `    <lastmod>${u.lastmod}</lastmod>\n`;
     xml += `    <changefreq>${u.changefreq}</changefreq>\n`;
     xml += `    <priority>${u.priority.toFixed(1)}</priority>\n`;
+    xml += '  </url>\n';
+  });
+  xml += '</urlset>';
+  return xml;
+}
+
+export function compileImageSitemapXml(urls: SitemapImageUrl[]): string {
+  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
+  xml += '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n';
+  urls.forEach(u => {
+    xml += '  <url>\n';
+    xml += `    <loc>${u.loc}</loc>\n`;
+    xml += '    <image:image>\n';
+    xml += `      <image:loc>${u.imageLoc}</image:loc>\n`;
+    xml += `      <image:title>${u.imageTitle}</image:title>\n`;
+    xml += `      <image:caption>${u.imageCaption}</image:caption>\n`;
+    xml += '    </image:image>\n';
     xml += '  </url>\n';
   });
   xml += '</urlset>';
@@ -49,25 +76,25 @@ export function getSitemapData() {
 
   // 1. Pages (Static)
   const pages: SitemapUrl[] = [
-    { loc: `${siteConfig.url}/`, lastmod, changefreq: 'daily', priority: 1.0 },
-    { loc: `${siteConfig.url}/about-us/`, lastmod, changefreq: 'monthly', priority: 0.5 },
-    { loc: `${siteConfig.url}/contact-us/`, lastmod, changefreq: 'monthly', priority: 0.5 },
-    { loc: `${siteConfig.url}/disclaimer/`, lastmod, changefreq: 'monthly', priority: 0.3 },
-    { loc: `${siteConfig.url}/privacy/`, lastmod, changefreq: 'monthly', priority: 0.3 },
-    { loc: `${siteConfig.url}/terms/`, lastmod, changefreq: 'monthly', priority: 0.3 },
-    { loc: `${siteConfig.url}/sitemap/`, lastmod, changefreq: 'weekly', priority: 0.4 }
+    { loc: resolveCanonicalUrl('/'), lastmod, changefreq: 'daily', priority: 1.0 },
+    { loc: resolveCanonicalUrl('/about-us/'), lastmod, changefreq: 'monthly', priority: 0.5 },
+    { loc: resolveCanonicalUrl('/contact-us/'), lastmod, changefreq: 'monthly', priority: 0.5 },
+    { loc: resolveCanonicalUrl('/disclaimer/'), lastmod, changefreq: 'monthly', priority: 0.3 },
+    { loc: resolveCanonicalUrl('/privacy/'), lastmod, changefreq: 'monthly', priority: 0.3 },
+    { loc: resolveCanonicalUrl('/terms/'), lastmod, changefreq: 'monthly', priority: 0.3 },
+    { loc: resolveCanonicalUrl('/sitemap/'), lastmod, changefreq: 'weekly', priority: 0.4 }
   ];
 
   // 2. Blog
   const blog: SitemapUrl[] = [
-    { loc: `${siteConfig.url}/blog/`, lastmod, changefreq: 'weekly', priority: 0.6 }
+    { loc: resolveCanonicalUrl('/blog/'), lastmod, changefreq: 'weekly', priority: 0.6 }
   ];
 
   // 3. Tools (English Indexable Only)
   const englishTools: SitemapUrl[] = tools
     .filter(t => !noindex.has(t.slug))
     .map(t => ({
-      loc: `${siteConfig.url}/tools/${t.slug}/`,
+      loc: resolveCanonicalUrl(`/tools/${t.slug}/`),
       lastmod,
       changefreq: 'daily',
       priority: 0.8
@@ -75,9 +102,9 @@ export function getSitemapData() {
 
   // 4. Categories (English Only)
   const categoryUrls: SitemapUrl[] = [
-    { loc: `${siteConfig.url}/categories/`, lastmod, changefreq: 'weekly', priority: 0.7 },
+    { loc: resolveCanonicalUrl('/categories/'), lastmod, changefreq: 'weekly', priority: 0.7 },
     ...categories.map(c => ({
-      loc: `${siteConfig.url}/categories/${c.slug}/`,
+      loc: resolveCanonicalUrl(`/categories/${c.slug}/`),
       lastmod,
       changefreq: 'weekly',
       priority: 0.6
@@ -86,9 +113,9 @@ export function getSitemapData() {
 
   // 5. Hubs (English Only)
   const hubUrls: SitemapUrl[] = [
-    { loc: `${siteConfig.url}/tools/`, lastmod, changefreq: 'weekly', priority: 0.7 },
+    { loc: resolveCanonicalUrl('/tools/'), lastmod, changefreq: 'weekly', priority: 0.7 },
     ...toolHubs.map(h => ({
-      loc: `${siteConfig.url}/tools/${h.slug}/`,
+      loc: resolveCanonicalUrl(`/tools/${h.slug}/`),
       lastmod,
       changefreq: 'weekly',
       priority: 0.7
@@ -101,12 +128,24 @@ export function getSitemapData() {
     .map(entry => {
       const route = getToolRoute(entry.canonicalToolId, entry.language);
       return {
-        loc: `${siteConfig.url}${route}`,
+        loc: resolveCanonicalUrl(route),
         lastmod,
         changefreq: 'daily',
         priority: 0.7
       };
     });
+
+  // 7. Images
+  const indexableTools = tools.filter(t => !noindex.has(t.slug));
+  const imageUrls: SitemapImageUrl[] = indexableTools.map(t => {
+    const imgMeta = getImageMetadata(siteConfig.defaultOgImage, 'general');
+    return {
+      loc: resolveCanonicalUrl(`/tools/${t.slug}/`),
+      imageLoc: imgMeta.url,
+      imageTitle: imgMeta.title,
+      imageCaption: imgMeta.caption
+    };
+  });
 
   return {
     pages,
@@ -114,7 +153,8 @@ export function getSitemapData() {
     tools: englishTools,
     categories: categoryUrls,
     hubs: hubUrls,
-    locales: localeUrls
+    locales: localeUrls,
+    images: imageUrls
   };
 }
 
@@ -132,6 +172,13 @@ export function generateSitemaps(publicDir: string): void {
   fs.writeFileSync(path.join(publicDir, 'sitemap-categories.xml'), compileSitemapXml(data.categories));
   fs.writeFileSync(path.join(publicDir, 'sitemap-hubs.xml'), compileSitemapXml(data.hubs));
   fs.writeFileSync(path.join(publicDir, 'sitemap-locales.xml'), compileSitemapXml(data.locales));
+  fs.writeFileSync(path.join(publicDir, 'sitemap-images.xml'), compileImageSitemapXml(data.images));
+
+  // Write Future-ready Video & News sitemaps (standard boilerplate namespaces)
+  const videoSkeleton = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n</urlset>';
+  const newsSkeleton = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n</urlset>';
+  fs.writeFileSync(path.join(publicDir, 'sitemap-videos.xml'), videoSkeleton);
+  fs.writeFileSync(path.join(publicDir, 'sitemap-news.xml'), newsSkeleton);
 
   // Write index sitemaps
   const sitemaps = [
@@ -140,10 +187,13 @@ export function generateSitemaps(publicDir: string): void {
     'sitemap-tools.xml',
     'sitemap-categories.xml',
     'sitemap-hubs.xml',
-    'sitemap-locales.xml'
+    'sitemap-locales.xml',
+    'sitemap-images.xml',
+    'sitemap-videos.xml',
+    'sitemap-news.xml'
   ];
 
   const indexXml = compileSitemapIndexXml(sitemaps);
   fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), indexXml);
-  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), indexXml); // Override legacy/default sitemap.xml
+  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), indexXml);
 }

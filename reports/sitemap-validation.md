@@ -1,18 +1,12 @@
-# Sitemap Validation Audits Report
+# XML Sitemap Validation Audits Report
 
-This report confirms compliance, deduplication, and exclusion criteria.
+This report confirms metadata compliance and regional alternate link checks.
 
 ---
 
 ## 1. Compliance Checklist
 
-- [x] Sitemap references standard index XML tags.
-- [x] Includes `<loc>`, `<lastmod>`, `<changefreq>`, and `<priority>` on all records.
-- [x] **noindex pages excluded**: All 52 `noindexToolSlugs` are omitted.
-- [x] **Deduplication**: Filters duplicate routes.
-- [x] **Alternate matching**: Matches active locales.
-
----
-
-## 2. Timing Benchmarks
-- Generation of the entire tree (~7,000 URLs) completes in **~5.5 ms** inside the Astro build pipeline, avoiding performance blockages.
+- [x] **Always canonical**: URLs standardizes HTTPS formats.
+- [x] **No draft/noindex tools**: Checked against `noindexToolSlugs`.
+- [x] **Structured images attributes**: Compiles image namespace details cleanly.
+- [x] **Index XML routing**: Links point to active split files correctly.
