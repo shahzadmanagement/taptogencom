@@ -3,6 +3,7 @@ import { siteConfig } from '@/config/site';
 import { headerNav, footerNav } from '@/data/navigation';
 import { getSupportedLanguage } from '@/data/localization';
 import { resolveCanonicalUrl } from '@/lib/search-canonical';
+import { buildSchemas } from '@/lib/search-schema';
 
 interface Props {
   title: string;
@@ -20,33 +21,13 @@ const { title, description, canonical, ogImage, schema = [], noindex = false, la
 const canonicalUrl = resolveCanonicalUrl(canonical || Astro.url.pathname);
 const ogImg = ogImage || `${siteConfig.url}${siteConfig.defaultOgImage}`;
 
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": siteConfig.name,
-  "url": siteConfig.url,
-  "description": siteConfig.description,
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": `${siteConfig.url}/tools/?q={search_term_string}`,
-    "query-input": "required name=search_term_string"
-  }
-};
-
-const orgSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": siteConfig.name,
-  "url": siteConfig.url,
-  "logo": `${siteConfig.url}/favicon.svg`,
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": siteConfig.contactEmail,
-    "contactType": "customer support"
-  }
-};
-
-const allSchemas = [websiteSchema, orgSchema, ...schema];
+const allSchemas = buildSchemas({
+  pathname: Astro.url.pathname,
+  lang,
+  title,
+  description,
+  customSchemas: schema
+});
 const currentPath = Astro.url.pathname;
 const isSpanish = lang === 'es';
 const navLabelMap: Record<string, string> = {
