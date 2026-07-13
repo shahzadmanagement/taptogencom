@@ -4,6 +4,7 @@ import { headerNav, footerNav } from '@/data/navigation';
 import { getSupportedLanguage } from '@/data/localization';
 import { resolveCanonicalUrl } from '@/lib/search-canonical';
 import { buildSchemas } from '@/lib/search-schema';
+import { getHreflangAlternates } from '@/lib/search-hreflang';
 
 interface Props {
   title: string;
@@ -28,6 +29,7 @@ const allSchemas = buildSchemas({
   description,
   customSchemas: schema
 });
+const hreflangs = getHreflangAlternates(Astro.url.pathname);
 const currentPath = Astro.url.pathname;
 const isSpanish = lang === 'es';
 const navLabelMap: Record<string, string> = {
@@ -67,7 +69,7 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalUrl} />
-  {alternates.map((alternate) => (
+  {hreflangs.map((alternate) => (
     <link rel="alternate" hreflang={alternate.lang} href={alternate.href} />
   ))}
   <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
