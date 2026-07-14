@@ -117,7 +117,13 @@ function renderResultCard(text: string, label: string): string {
     workspace.dataset.tool.includes('brand-kit') || 
     workspace.dataset.tool.includes('tagline') || 
     workspace.dataset.tool.includes('poster') || 
-    workspace.dataset.tool.includes('flyer')
+    workspace.dataset.tool.includes('flyer') ||
+    workspace.dataset.tool.includes('post-generator') ||
+    workspace.dataset.tool.includes('hook') ||
+    workspace.dataset.tool.includes('policy') ||
+    workspace.dataset.tool.includes('terms') ||
+    workspace.dataset.tool.includes('disclaimer') ||
+    workspace.dataset.tool.includes('disclosure')
   );
   
   const favBtn = showFav

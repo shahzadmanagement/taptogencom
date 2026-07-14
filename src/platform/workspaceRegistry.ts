@@ -96,3 +96,15 @@ tools.forEach(tool => {
     });
   }
 });
+
+// Register Legal & Compliance tools dynamically
+tools.forEach(tool => {
+  const isLegal = tool.slug.includes('policy') || tool.slug.includes('terms') || tool.slug.includes('disclaimer') || tool.slug.includes('disclosure');
+  if (isLegal) {
+    workspaceRegistry.register({
+      slug: tool.slug,
+      name: tool.name,
+      category: 'Legal & Compliance'
+    });
+  }
+});

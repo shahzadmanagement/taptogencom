@@ -33,11 +33,12 @@ export const createWorkspace = wrapErrorBoundary(async function (
   let activeConfig = toolConfigs[toolSlug];
   if (!activeConfig) {
     const isNameGen = toolSlug.includes('name-generator') || toolSlug.includes('names-generator') || toolSlug.includes('generator-name') || toolSlug.endsWith('-name') || toolSlug === 'cursive-name-generator';
-    const isWriting = toolSlug.includes('paragraph') || toolSlug.includes('sentence') || toolSlug.includes('story') || toolSlug.includes('article') || toolSlug.includes('essay') || toolSlug.includes('blog') || toolSlug.includes('description') || toolSlug.includes('bio') || toolSlug.includes('caption') || toolSlug.includes('review') || toolSlug.includes('headline') || toolSlug.includes('title') || toolSlug.includes('email') || toolSlug.includes('letter') || toolSlug.includes('summary') || toolSlug.includes('rewrite') || toolSlug.includes('writing') || toolSlug.includes('prompt');
+    const isWriting = toolSlug.includes('paragraph') || toolSlug.includes('sentence') || toolSlug.includes('story') || toolSlug.includes('article') || toolSlug.includes('essay') || toolSlug.includes('blog') || toolSlug.includes('description') || toolSlug.includes('bio') || toolSlug.includes('caption') || toolSlug.includes('review') || toolSlug.includes('headline') || toolSlug.includes('title') || toolSlug.includes('email') || toolSlug.includes('letter') || toolSlug.includes('summary') || toolSlug.includes('rewrite') || toolSlug.includes('writing') || toolSlug.includes('prompt') || toolSlug.includes('post-generator') || toolSlug.includes('hook');
     const isDevUtility = toolSlug.includes('meta-tag') || toolSlug.includes('robots') || toolSlug.includes('hreflang') || toolSlug.includes('schema') || toolSlug.includes('slug') || toolSlug.includes('hash') || toolSlug.includes('canonical') || toolSlug.includes('sitemap') || toolSlug.includes('redirect') || toolSlug.includes('tag-generator') || toolSlug.includes('tags-generator');
     const isBusiness = toolSlug.includes('business') || toolSlug.includes('domain') || toolSlug.includes('product') || toolSlug.includes('slogan') || toolSlug.includes('invoice') || toolSlug.includes('receipt') || toolSlug.includes('email-signature') || toolSlug.includes('sku') || toolSlug.includes('coupon') || toolSlug.includes('agenda') || toolSlug.includes('minutes') || toolSlug.includes('startup') || toolSlug.includes('brand-kit') || toolSlug.includes('tagline') || toolSlug.includes('poster') || toolSlug.includes('flyer');
+    const isLegal = toolSlug.includes('policy') || toolSlug.includes('terms') || toolSlug.includes('disclaimer') || toolSlug.includes('disclosure');
     
-    if (isNameGen || isWriting || isDevUtility || isBusiness) {
+    if (isNameGen || isWriting || isDevUtility || isBusiness || isLegal) {
       const { mergeConfig } = await import('../../config/base');
       activeConfig = mergeConfig(toolSlug, {
         counters: { chars: true, glyphs: false, words: true, lines: true },
@@ -46,7 +47,7 @@ export const createWorkspace = wrapErrorBoundary(async function (
         search: true,
         favorites: true,
         shortcuts: true,
-        exporters: (isNameGen || isDevUtility || isBusiness) ? ['txt', 'csv', 'html', 'json'] : ['txt', 'html', 'json', 'csv']
+        exporters: (isNameGen || isDevUtility || isBusiness || isLegal) ? ['txt', 'csv', 'html', 'json'] : ['txt', 'html', 'json', 'csv']
       });
     }
   }
