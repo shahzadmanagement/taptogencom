@@ -90,7 +90,18 @@ function renderResultCard(text: string, label: string): string {
     workspace.dataset.tool.includes('summary') || 
     workspace.dataset.tool.includes('rewrite') || 
     workspace.dataset.tool.includes('writing') || 
-    workspace.dataset.tool.includes('prompt')
+    workspace.dataset.tool.includes('prompt') ||
+    workspace.dataset.tool.includes('meta-tag') || 
+    workspace.dataset.tool.includes('robots') || 
+    workspace.dataset.tool.includes('hreflang') || 
+    workspace.dataset.tool.includes('schema') || 
+    workspace.dataset.tool.includes('slug') || 
+    workspace.dataset.tool.includes('hash') || 
+    workspace.dataset.tool.includes('canonical') || 
+    workspace.dataset.tool.includes('sitemap') || 
+    workspace.dataset.tool.includes('redirect') || 
+    workspace.dataset.tool.includes('tag-generator') || 
+    workspace.dataset.tool.includes('tags-generator')
   );
   
   const favBtn = showFav

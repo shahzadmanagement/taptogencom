@@ -34,8 +34,9 @@ export const createWorkspace = wrapErrorBoundary(async function (
   if (!activeConfig) {
     const isNameGen = toolSlug.includes('name-generator') || toolSlug.includes('names-generator') || toolSlug.includes('generator-name') || toolSlug.endsWith('-name') || toolSlug === 'cursive-name-generator';
     const isWriting = toolSlug.includes('paragraph') || toolSlug.includes('sentence') || toolSlug.includes('story') || toolSlug.includes('article') || toolSlug.includes('essay') || toolSlug.includes('blog') || toolSlug.includes('description') || toolSlug.includes('bio') || toolSlug.includes('caption') || toolSlug.includes('review') || toolSlug.includes('headline') || toolSlug.includes('title') || toolSlug.includes('email') || toolSlug.includes('letter') || toolSlug.includes('summary') || toolSlug.includes('rewrite') || toolSlug.includes('writing') || toolSlug.includes('prompt');
+    const isDevUtility = toolSlug.includes('meta-tag') || toolSlug.includes('robots') || toolSlug.includes('hreflang') || toolSlug.includes('schema') || toolSlug.includes('slug') || toolSlug.includes('hash') || toolSlug.includes('canonical') || toolSlug.includes('sitemap') || toolSlug.includes('redirect') || toolSlug.includes('tag-generator') || toolSlug.includes('tags-generator');
     
-    if (isNameGen || isWriting) {
+    if (isNameGen || isWriting || isDevUtility) {
       const { mergeConfig } = await import('../../config/base');
       activeConfig = mergeConfig(toolSlug, {
         counters: { chars: true, glyphs: false, words: true, lines: true },
@@ -44,7 +45,7 @@ export const createWorkspace = wrapErrorBoundary(async function (
         search: true,
         favorites: true,
         shortcuts: true,
-        exporters: isNameGen ? ['txt', 'csv'] : ['txt', 'html', 'json', 'csv']
+        exporters: (isNameGen || isDevUtility) ? ['txt', 'csv', 'html', 'json'] : ['txt', 'html', 'json', 'csv']
       });
     }
   }

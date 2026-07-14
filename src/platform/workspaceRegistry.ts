@@ -72,3 +72,15 @@ tools.forEach(tool => {
     });
   }
 });
+
+// Register Developer & SEO tools dynamically
+tools.forEach(tool => {
+  const isDevUtility = tool.slug.includes('meta-tag') || tool.slug.includes('robots') || tool.slug.includes('hreflang') || tool.slug.includes('schema') || tool.slug.includes('slug') || tool.slug.includes('hash') || tool.slug.includes('canonical') || tool.slug.includes('sitemap') || tool.slug.includes('redirect') || tool.slug.includes('tag-generator') || tool.slug.includes('tags-generator');
+  if (isDevUtility) {
+    workspaceRegistry.register({
+      slug: tool.slug,
+      name: tool.name,
+      category: 'Developer & SEO'
+    });
+  }
+});
