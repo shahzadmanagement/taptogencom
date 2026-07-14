@@ -62,7 +62,24 @@ function labelForItem(index: number): string {
 }
 
 function renderResultCard(text: string, label: string): string {
-  return '<article class="result-card"><div class="result-card-top"><span class="result-label">' + escapeHtml(label) + '</span><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(text) + '">Copy</button></div><div class="result-text">' + escapeHtml(text) + '</div></article>';
+  const safeText = escapeHtml(text);
+  const safeLabel = escapeHtml(label);
+  const showFav = workspace?.dataset.tool && (
+    workspace.dataset.tool.includes('name') || 
+    workspace.dataset.tool.includes('fancy') ||
+    workspace.dataset.tool.includes('bold') ||
+    workspace.dataset.tool.includes('cursive') ||
+    workspace.dataset.tool.includes('italic') ||
+    workspace.dataset.tool.includes('underline') ||
+    workspace.dataset.tool.includes('strikethrough') ||
+    workspace.dataset.tool.includes('vaporwave')
+  );
+  
+  const favBtn = showFav
+    ? '<button class="fav-btn" type="button" data-fav-style="' + safeText + '" aria-label="Favorite style">☆</button>'
+    : '';
+
+  return '<article class="result-card" data-style-name="' + safeText + '"><div class="result-card-top"><span class="result-label">' + safeLabel + '</span><div style="display: flex; align-items: center; gap: 6px;">' + favBtn + '<button class="copy-btn result-copy" type="button" data-copy="' + safeText + '">Copy</button></div></div><div class="result-text">' + safeText + '</div></article>';
 }
 
 function renderSections(raw: string): string {

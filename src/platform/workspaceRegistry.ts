@@ -30,6 +30,8 @@ class WorkspaceRegistry {
 export const workspaceRegistry = new WorkspaceRegistry();
 
 // Self-register known typography utilities on module load
+import { tools } from '../data/tools';
+
 const typographySlugs = [
   { slug: 'fancy-text-generator', name: 'Fancy Text Generator', category: 'Typography' },
   { slug: 'bold-text-generator', name: 'Bold Text Generator', category: 'Typography' },
@@ -44,5 +46,17 @@ const typographySlugs = [
 typographySlugs.forEach(item => {
   if (toolConfigs[item.slug]) {
     workspaceRegistry.register(item);
+  }
+});
+
+// Register name generators dynamically
+tools.forEach(tool => {
+  const isNameGen = tool.slug.includes('name-generator') || tool.slug.includes('names-generator') || tool.slug.includes('generator-name') || tool.slug.endsWith('-name') || tool.slug === 'cursive-name-generator';
+  if (isNameGen) {
+    workspaceRegistry.register({
+      slug: tool.slug,
+      name: tool.name,
+      category: 'Name Generators'
+    });
   }
 });

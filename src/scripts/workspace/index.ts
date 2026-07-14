@@ -30,7 +30,23 @@ export const createWorkspace = wrapErrorBoundary(async function (
   startMark('workspace-init');
   logger.info(`Initializing workspace for "${toolSlug}"`);
 
-  const activeConfig = toolConfigs[toolSlug];
+  let activeConfig = toolConfigs[toolSlug];
+  if (!activeConfig) {
+    const isNameGen = toolSlug.includes('name-generator') || toolSlug.includes('names-generator') || toolSlug.includes('generator-name') || toolSlug.endsWith('-name') || toolSlug === 'cursive-name-generator';
+    if (isNameGen) {
+      const { mergeConfig } = await import('../../config/base');
+      activeConfig = mergeConfig(toolSlug, {
+        counters: { chars: true, glyphs: false, words: true, lines: false },
+        previews: ['ig', 'tw'],
+        history: true,
+        search: true,
+        favorites: true,
+        shortcuts: true,
+        exporters: ['txt', 'csv']
+      });
+    }
+  }
+
   if (!activeConfig) {
     logger.error(`No configuration found for workspace "${toolSlug}"`);
     endMark('workspace-init');
