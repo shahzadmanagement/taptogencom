@@ -9608,16 +9608,62 @@ async function generate() {
       const detail = optionValue('detail-level', 'short');
       const raw = text.trim().replace(/[^a-z\s'-]/gi, '').trim() || 'Alexis Morgan';
       const parts = raw.split(/\s+/).filter(Boolean);
-      const syllables = parts.map((part) =>
-        part.replace(/([aeiouy]+)(?=[bcdfghjklmnpqrstvwxyz])/gi, '$1-').replace(/-$/g, '')
-      );
+      
+      // Advanced syllable division algorithm following VCV, VCCV, and VCCCV rules
+      const splitSyllables = (word: string): string => {
+        const vowels = /[aeiouy]/i;
+        if (word.length <= 3) return word;
+        let res = '';
+        let i = 0;
+        while (i < word.length) {
+          const char = word[i];
+          res += char;
+          const isVowel = vowels.test(char);
+          if (isVowel && i < word.length - 1) {
+            let nextVowelIdx = -1;
+            for (let j = i + 1; j < word.length; j++) {
+              if (vowels.test(word[j])) {
+                nextVowelIdx = j;
+                break;
+              }
+            }
+            if (nextVowelIdx !== -1) {
+              const consonantsBetween = nextVowelIdx - i - 1;
+              if (consonantsBetween === 1) {
+                res += '-';
+              } else if (consonantsBetween === 2) {
+                res += word[i + 1] + '-';
+                i += 1;
+              } else if (consonantsBetween >= 3) {
+                res += word[i + 1] + '-';
+                i += 1;
+              }
+            }
+          }
+          i++;
+        }
+        return res.replace(/-+/g, '-').replace(/-$/, '').replace(/^-/, '');
+      };
+
+      const syllables = parts.map(part => splitSyllables(part));
       const simple = syllables.join(' ').toUpperCase();
       const ipaStyle = syllables.join(' ').toLowerCase().replace(/-/g, '.');
+
+      const natoDict: Record<string, string> = {
+        A: 'Alfa', B: 'Bravo', C: 'Charlie', D: 'Delta', E: 'Echo', F: 'Foxtrot', G: 'Golf',
+        H: 'Hotel', I: 'India', J: 'Juliett', K: 'Kilo', L: 'Lima', M: 'Mike', N: 'November',
+        O: 'Oscar', P: 'Papa', Q: 'Quebec', R: 'Romeo', S: 'Sierra', T: 'Tango', U: 'Uniform',
+        V: 'Victor', W: 'Whiskey', X: 'X-ray', Y: 'Yankee', Z: 'Zulu'
+      };
+      const natoSpelling = [...raw.toUpperCase()].map(c => natoDict[c] || c).filter(c => c.trim()).join(' ');
+
       const sections = [
         { title: 'Simple English', body: simple, note: 'Plain-English pronunciation helper' },
         { title: 'Syllable Guide', body: syllables.map((part, index) => 'Part ' + (index + 1) + ': ' + part).join('\n'), note: `${syllables.length} part(s)` },
+        { title: 'NATO Spelling', body: natoSpelling, note: 'International radio phonetic alphabet' },
         { title: 'Stress Note', body: 'Suggested stress: emphasize the clearest first syllable unless the name owner says otherwise.\nPractice: ' + syllables.join(' ... ') + ' -> ' + raw, note: 'Confirm with the person whenever possible' },
         { title: 'IPA-Style Text', body: '/' + ipaStyle + '/\nNote: IPA-style helper only, not official transcription.', note: 'Not verified IPA' }];
+      
       const visible = format === 'all' ? sections : sections.filter(section => toSafeHandle(section.title, 'section') === format);
       result = visible.map(section => section.title + '\n' + section.body).join('\n\n') + (detail === 'detailed' ? '\n\nTip: Say each hyphenated part slowly first, then smooth the full name together.' : '');
       resultHtml = renderSectionSuite('Phonetic Spelling Guide', visible, 'Text pronunciation guidance only. No audio is generated, and formal linguistic accuracy is not guaranteed.');
