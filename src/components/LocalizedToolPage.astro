@@ -70,6 +70,18 @@ interface LocalizedUiText {
   related: string;
   explore: string;
   activeLinks: string;
+  benefitsTitle: string;
+  benefitsList: string[];
+  featuresTitle: string;
+  featuresList: string[];
+  bestPracticesTitle: string;
+  bestPracticesHeading: string;
+  bestPracticesList: string[];
+  commonMistakesHeading: string;
+  commonMistakesList: string[];
+  ctaTitle: string;
+  ctaBody: string;
+  ctaBtn: string;
 }
 
 const { tool, localized, language } = Astro.props;
@@ -116,6 +128,35 @@ const text = ({
     related: 'Ferramentas relacionadas',
     explore: 'Explore mais ferramentas TapToGen',
     activeLinks: 'Estes links levam a ferramentas ativas e indexáveis.',
+    benefitsTitle: 'Principais Benefícios',
+    benefitsList: [
+      '<strong>100% Gratuito</strong> - Sem assinaturas, sem microtransações e sem necessidade de cartão de crédito.',
+      '<strong>Privacidade no Navegador</strong> - Todo o processamento é feito localmente no seu computador. Seus dados nunca saem do navegador.',
+      '<strong>Geração Instantânea</strong> - Obtenha uma lista de sugestões otimizadas em milissegundos.',
+      '<strong>Sem Cadastro</strong> - Comece a usar a utilidade imediatamente sem criar conta ou iniciar sessão.'
+    ],
+    featuresTitle: 'Recursos do {name}',
+    featuresList: [
+      '<strong>Ajustes Interativos</strong> - Personalize as configurações de tom, quantidade e estilo diretamente do painel de controle.',
+      '<strong>Cópia num Clique</strong> - Copie elementos individuais ou todos os resultados instantaneamente com ações integradas.',
+      '<strong>Formatação Limpa</strong> - Produz texto pronto para cópia sem tags de marcação, preparado para colar em qualquer lugar.'
+    ],
+    bestPracticesTitle: 'Boas Práticas e Erros Comuns',
+    bestPracticesHeading: 'Boas Práticas',
+    bestPracticesList: [
+      '<strong>Forneça uma entrada clara</strong> - Introduza o máximo de contexto possível na caixa de entrada para obter resultados altamente relevantes.',
+      '<strong>Explore estilos diferentes</strong> - Tente alterar opções como tom ou estrutura para encontrar o resultado perfeito.',
+      '<strong>Revise e refine</strong> - Trate o resultado como um rascunho de alta qualidade e revise-o para alinhamento antes de publicar.'
+    ],
+    commonMistakesHeading: 'Erros comuns a evitar',
+    commonMistakesList: [
+      '<strong>Entradas vagas</strong> - Inserir termos de uma única palavra pode resultar em sugestões menos especializadas.',
+      '<strong>Ignorar a revisão</strong> - Não verificar nomes ou textos gerados antes de publicar pode causar conflitos de marca.',
+      '<strong>Ignorar as opções</strong> - Esquecer de ajustar as opções de tom ou formato pode desalinhar o resultado.'
+    ],
+    ctaTitle: 'Experimente o {name} agora!',
+    ctaBody: 'Pronto para otimizar seu fluxo de trabalho? Experimente o {name} agora. Suba até o console interativo, digite os detalhes e clique em gerar.',
+    ctaBtn: 'Ir para o Gerador'
   },
   it: {
     home: 'Home',
@@ -156,6 +197,35 @@ const text = ({
     related: 'Strumenti correlati',
     explore: 'Esplora altri strumenti TapToGen',
     activeLinks: 'Questi link portano a strumenti attivi e indicizzabili.',
+    benefitsTitle: 'Vantaggi Principali',
+    benefitsList: [
+      '<strong>100% Gratuito</strong> - Nessun abbonamento, microtransazione o carta di credito richiesti.',
+      '<strong>Privacy nel Browser</strong> - L\'elaborazione avviene localmente sul tuo dispositivo. I tuoi dati non lasciano mai il browser.',
+      '<strong>Risultati Istantanei</strong> - Ottieni suggerimenti ottimizzati in pochi millisecondi.',
+      '<strong>Senza Registrazione</strong> - Inizia a usare lo strumento subito senza creare account o effettuare l\'accesso.'
+    ],
+    featuresTitle: 'Caratteristiche di {name}',
+    featuresList: [
+      '<strong>Pannello Interattivo</strong> - Personalizza tono, quantità e stile direttamente dai controlli.',
+      '<strong>Copia Rapida</strong> - Copia singoli elementi o tutti i risultati con un solo clic.',
+      '<strong>Output Pulito</strong> - Testo pronto per l\'uso senza markup aggiuntivo, pronto per essere incollato.'
+    ],
+    bestPracticesTitle: 'Linee Guida e Errori Comuni',
+    bestPracticesHeading: 'Linee Guida',
+    bestPracticesList: [
+      '<strong>Fornisci input dettagliati</strong> - Inserisci contesto utile nella casella per ottenere risultati precisi.',
+      '<strong>Sperimenta con gli stili</strong> - Cambia opzioni come il tono per adattare i risultati.',
+      '<strong>Rivedi la bozza</strong> - Considera l\'output como una bozza di qualità da affinare prima di pubblicare.'
+    ],
+    commonMistakesHeading: 'Errori comuni da evitare',
+    commonMistakesList: [
+      '<strong>Richieste generiche</strong> - L\'uso di parole singole limita la qualità e la specializzazione delle risposte.',
+      '<strong>Saltare la verifica</strong> - Non controllare i marchi registrati prima dell\'uso commerciale.',
+      '<strong>Ignorare le regolazioni</strong> - Non usare i filtri di tono e quantità disponibili.'
+    ],
+    ctaTitle: 'Prova {name} ora!',
+    ctaBody: 'Pronto a velocizzare il tuo lavoro? Prova lo strumento subito compilando la console in alto.',
+    ctaBtn: 'Vai al Generatore'
   },
   pl: {
     home: 'Start',
@@ -196,6 +266,35 @@ const text = ({
     related: 'Powiązane narzędzia',
     explore: 'Odkryj więcej narzędzi TapToGen',
     activeLinks: 'Te linki prowadzą do aktywnych, indeksowalnych narzędzi.',
+    benefitsTitle: 'Główne Zalety',
+    benefitsList: [
+      '<strong>W 100% Darmowy</strong> - Brak subskrypcji, mikropłatności czy konieczności podawania karty.',
+      '<strong>Prywatność w Przeglądarce</strong> - Wszystkie procesy odbywają się lokalnie na Twoim urządzeniu.',
+      '<strong>Błyskawiczne Generowanie</strong> - Wyniki zoptymalizowane pod kątem intencji w kilka milisekund.',
+      '<strong>Bez Rejestracji</strong> - Korzystaj z narzędzia natychmiast bez logowania czy zakładania konta.'
+    ],
+    featuresTitle: 'Funkcje {name}',
+    featuresList: [
+      '<strong>Interaktywne Opcje</strong> - Dostosuj ton, ilość i styl bezpośrednio z panelu sterowania.',
+      '<strong>Kopiowanie jednym kliknięciem</strong> - Kopiuj poszczególne elementy lub cały wynik od razu.',
+      '<strong>Czysty Format</strong> - Zwraca gotowy tekst bez zbędnych kodów czy znaczników.'
+    ],
+    bestPracticesTitle: 'Najlepsze Praktyki i Typowe Błędy',
+    bestPracticesHeading: 'Najlepsze Praktyki',
+    bestPracticesList: [
+      '<strong>Podaj jasne instrukcje</strong> - Wpisz jak najwięcej szczegółów w polu wejściowym, aby uzyskać dopasowane rezultaty.',
+      '<strong>Testuj różne style</strong> - Zmieniaj ton i strukturę, aby dopasować charakter wyniku.',
+      '<strong>Przejrzyj wyniki</strong> - Potraktuj wygenerowany tekst jako szkic do dalszej edycji przed publikacją.'
+    ],
+    commonMistakesHeading: 'Typowe błędy do uniknięcia',
+    commonMistakesList: [
+      '<strong>Zbyt ogólne hasła</strong> - Pojedyncze słowa dają mało dopasowane rezultaty.',
+      '<strong>Pominięcie weryfikacji</strong> - Brak sprawdzenia dostępności nazw przed ich użyciem w projekcie.',
+      '<strong>Ignorowanie ustawień</strong> - Brak korzystania z dodatkowych filtrów personalizacji.'
+    ],
+    ctaTitle: 'Wypróbuj {name} teraz!',
+    ctaBody: 'Gotowy na ułatwienie sobie pracy? Skorzystaj z generatora powyżej i otrzymaj gotowe propozycje.',
+    ctaBtn: 'Przejdź do Generatora'
   },
   ru: {
     home: 'Главная',
@@ -236,6 +335,35 @@ const text = ({
     related: 'Похожие инструменты',
     explore: 'Больше инструментов TapToGen',
     activeLinks: 'Эти ссылки ведут на активные индексируемые инструменты.',
+    benefitsTitle: 'Основные Преимущества',
+    benefitsList: [
+      '<strong>100% Бесплатно</strong> - Без скрытых платежей, подписок и ввода банковских карт.',
+      '<strong>Конфиденциальность</strong> - Обработка данных происходит прямо в вашем браузере.',
+      '<strong>Быстрая Работа</strong> - Результаты генерируются за доли секунды.',
+      '<strong>Без Регистрации</strong> - Используйте инструмент мгновенно без создания учетной записи.'
+    ],
+    featuresTitle: 'Особенности {name}',
+    featuresList: [
+      '<strong>Удобные Настройки</strong> - Настраивайте тон, объем и стилистику на панели управления.',
+      '<strong>Копирование в Один Клик</strong> - Быстро копируйте отдельные идеи или весь список результатов.',
+      '<strong>Чистый Формат</strong> - Вывод текста без лишней разметки, готовый к публикации.'
+    ],
+    bestPracticesTitle: 'Лучшие практики и частые ошибки',
+    bestPracticesHeading: 'Лучшие Практики',
+    bestPracticesList: [
+      '<strong>Четкие запросы</strong> - Добавляйте контекст для получения точных результатов.',
+      '<strong>Пробуйте разные настройки</strong> - Меняйте тон и формат для разнообразия вывода.',
+      '<strong>Редактируйте итог</strong> - Используйте результат как основу и дорабатывайте под свои нужды.'
+    ],
+    commonMistakesHeading: 'Частые ошибки, которых стоит избегать',
+    commonMistakesList: [
+      '<strong>Короткие запросы</strong> - Односложные ключевые слова дают слишком общие результаты.',
+      '<strong>Отсутствие проверки</strong> - Использование названий без проверки товарных знаков.',
+      '<strong>Игнорирование фильтров</strong> - Неиспользование настроек тональности и количества.'
+    ],
+    ctaTitle: 'Попробуйте {name} прямо сейчас!',
+    ctaBody: 'Готовы ускорить свою работу? Введите данные в форму выше и нажмите кнопку генерации.',
+    ctaBtn: 'Перейти к генератору'
   },
   tr: {
     home: 'Ana sayfa',
@@ -276,6 +404,35 @@ const text = ({
     related: 'İlgili araçlar',
     explore: 'Diğer TapToGen araçlarını keşfedin',
     activeLinks: 'Bu bağlantılar aktif ve dizine eklenebilir araçlara gider.',
+    benefitsTitle: 'Temel Avantajlar',
+    benefitsList: [
+      '<strong>%100 Ücretsiz</strong> - Üyelik yok, abonelik ücreti yok, kredi kartı gerekmez.',
+      '<strong>Tarayıcı Tabanlı Gizlilik</strong> - İşlemler yerel olarak cihazınızda yapılır, verileriniz sunuculara gitmez.',
+      '<strong>Anında Sonuç</strong> - Saniyeler içinde optimize edilmiş öneriler listesi alın.',
+      '<strong>Kayıt Gerekmez</strong> - Hesap açmadan aracı hemen kullanmaya başlayın.'
+    ],
+    featuresTitle: '{name} Özellikleri',
+    featuresList: [
+      '<strong>Etkileşimli Ayarlar</strong> - Ton, sayı ve yapı ayarlarını doğrudan kontrol panelinden düzenleyin.',
+      '<strong>Tek Tıkla Kopyalama</strong> - Sonuçları tek tek veya toplu olarak hızlıca kopyalayın.',
+      '<strong>Temiz Format</strong> - İşaretleme dili içermeyen, doğrudan kullanıma hazır çıktılar.'
+    ],
+    bestPracticesTitle: 'En İyi Uygulamalar ve Sık Yapılan Hatalar',
+    bestPracticesHeading: 'En İyi Uygulamalar',
+    bestPracticesList: [
+      '<strong>Net bilgi girin</strong> - En uygun sonuçlar için açıklama kutusuna yeterli bağlam ekleyin.',
+      '<strong>Farklı stilleri deneyin</strong> - En iyi çıktıyı bulmak için ton ve yapı ayarlarını değiştirin.',
+      '<strong>Son kontrol yapın</strong> - Çıktıları doğrudan kullanmak yerine birer taslak olarak görüp düzenleyin.'
+    ],
+    commonMistakesHeading: 'Kaçınılması Gereken Sık Hatalar',
+    commonMistakesList: [
+      '<strong>Çok kısa girdiler</strong> - Tek kelimelik aramalar kısıtlı ve genel sonuçlar üretir.',
+      '<strong>İncelemeden kullanmak</strong> - Üretilen isimleri marka tescili açısından doğrulamadan yayına almak.',
+      '<strong>Ayarları değiştirmemek</strong> - İhtiyacınıza uygun ton ayarlarını seçmeyi unutmak.'
+    ],
+    ctaTitle: 'Şimdi {name} Deneyin!',
+    ctaBody: 'İş akışınızı optimize etmeye hazır mısınız? Yukarıdaki formu doldurup hemen üretmeye başlayın.',
+    ctaBtn: 'Jeneratöre Git'
   },
   id: {
     home: 'Beranda',
@@ -316,46 +473,104 @@ const text = ({
     related: 'Alat terkait',
     explore: 'Jelajahi alat TapToGen lainnya',
     activeLinks: 'Tautan ini menuju alat aktif yang dapat diindeks.',
+    benefitsTitle: 'Manfaat Utama',
+    benefitsList: [
+      '<strong>100% Gratis</strong> - Tanpa langganan atau kartu kredit.',
+      '<strong>Privasi Browser</strong> - Proses lokal di perangkat Anda.',
+      '<strong>Instan</strong> - Hasil dioptimalkan dalam milidetik.',
+      '<strong>Tanpa Daftar</strong> - Mulai pakai tanpa membuat akun.'
+    ],
+    featuresTitle: 'Fitur {name}',
+    featuresList: [
+      '<strong>Ajustemen Interaktif</strong> - Sesuaikan nada dan jumlah langsung.',
+      '<strong>Salin Cepat</strong> - Salin hasil sekali klik.',
+      '<strong>Format Bersih</strong> - Hasil berupa teks siap pakai tanpa markup.'
+    ],
+    bestPracticesTitle: 'Praktik Terbaik & Kesalahan Umum',
+    bestPracticesHeading: 'Praktik Terbaik',
+    bestPracticesList: [
+      '<strong>Masukkan Input Jelas</strong> - Berikan konteks lengkap.',
+      '<strong>Eksplorasi Gaya</strong> - Ganti nada untuk variasi.',
+      '<strong>Tinjau & Poles</strong> - Periksa draf sebelum dipublikasikan.'
+    ],
+    commonMistakesHeading: 'Kesalahan yang Harus Dihindari',
+    commonMistakesList: [
+      '<strong>Input Terlalu Singkat</strong> - Kata tunggal membatasi hasil.',
+      '<strong>Tanpa Pemeriksaan</strong> - Gunakan tescil merek jika diperlukan.',
+      '<strong>Abaikan Setelan</strong> - Lupa menyesuaikan opsi tersedia.'
+    ],
+    ctaTitle: 'Coba {name} Sekarang!',
+    ctaBody: 'Siap meningkatkan produktivitas Anda? Coba alat ini sekarang.',
+    ctaBtn: 'Ke Generator'
   },
   sv: {
     home: 'Hem',
     tools: 'Verktyg',
     englishVersion: 'Engelsk version',
-    languageSwitcher: 'Sprakvaljare',
-    benefitsLabel: 'Verktygsfordelar',
-    benefits: ['Gratis', 'Direkt', 'Ingen registrering', 'Privat i webblasaren'],
+    languageSwitcher: 'Språkväljare',
+    benefitsLabel: 'Verktygsfördelar',
+    benefits: ['Gratis', 'Direkt', 'Ingen registrering', 'Privat i webbläsaren'],
     inputKicker: 'Input',
     customize: 'Anpassa resultatet',
     enabled: 'Aktiverad',
     tone: 'Ton',
-    tones: ['Balanserad', 'Polerad', 'Kreativ', 'Vanlig'],
+    tones: ['Balanserad', 'Polerad', 'Kreativ', 'Vänlig'],
     count: 'Antal',
-    inputLabel: 'Prompt, sokord, text eller detaljer',
-    placeholder: 'Ange ett sokord, en prompt eller text for att anpassa generatorn...',
+    inputLabel: 'Prompt, sökord, text eller detaljer',
+    placeholder: 'Ange ett sökord, en prompt eller text för att anpassa generatorn...',
     examples: 'Exempel',
     generate: 'Generera',
-    example: 'Anvand exempel',
+    example: 'Använd exempel',
     reset: 'Rensa',
     regenerate: 'Generera igen',
     outputKicker: 'Resultat',
     outputTitle: 'Dina resultat',
     copyAll: 'Kopiera allt',
-    empty: 'Dina resultat visas har.',
+    empty: 'Dina resultat visas här.',
     note: 'Obs:',
-    whatIs: 'Vad ar',
-    howTo: 'Sa anvander du',
-    tips: 'Tips for battre resultat',
-    why: 'Varfor anvanda TapToGen?',
+    whatIs: 'Vad är',
+    howTo: 'Så använder du',
+    tips: 'Tips för bättre resultat',
+    why: 'Varför använda TapToGen?',
     whyItems: [
-      ['Direkta resultat', 'skapa ideer direkt i webblasaren.'],
+      ['Direkta resultat', 'skapa idéer direkt i webbläsaren.'],
       ['Gratis', 'utan registrering eller dolda kostnader.'],
-      ['Praktisk integritet', 'flodet fungerar pa sidan utan konto.'],
-      ['Latt att granska', 'kopiera, jamfor och anpassa fore anvandning.'],
+      ['Praktisk integritet', 'flödet fungerar på sidan utan konto.'],
+      ['Lätt att granska', 'kopiera, jämför och anpassa före användning.'],
     ],
-    faq: 'Vanliga fragor',
+    faq: 'Vanliga frågor',
     related: 'Relaterade verktyg',
     explore: 'Utforska fler TapToGen-verktyg',
-    activeLinks: 'Dessa lankar gar till aktiva och indexerbara verktyg.',
+    activeLinks: 'Dessa länkar går till aktiva och indexerbara verktyg.',
+    benefitsTitle: 'Huvudfördelar',
+    benefitsList: [
+      '<strong>100% Gratis</strong> - Inga prenumerationer eller dolda avgifter.',
+      '<strong>Lokal integritet</strong> - All bearbetning sker lokalt i din webbläsare.',
+      '<strong>Snabb generering</strong> - Få optimerade resultat på millisekunder.',
+      '<strong>Ingen registrering</strong> - Starta direkt utan att logga in.'
+    ],
+    featuresTitle: 'Funktioner i {name}',
+    featuresList: [
+      '<strong>Interaktiva inställningar</strong> - Anpassa tonfall och struktur enkelt.',
+      '<strong>Ett-klicks kopiering</strong> - Kopiera alla resultat omedelbart.',
+      '<strong>Rent format</strong> - Ger råtext redo att klistras in var som helst.'
+    ],
+    bestPracticesTitle: 'Bästa praxis och vanliga misstag',
+    bestPracticesHeading: 'Bästa praxis',
+    bestPracticesList: [
+      '<strong>Ge tydlig input</strong> - Ange så mycket sammanhang som möjligt.',
+      '<strong>Testa olika alternativ</strong> - Justera tonen för bättre resultat.',
+      '<strong>Granska utkastet</strong> - Anpassa texten innan den publiceras.'
+    ],
+    commonMistakesHeading: 'Vanliga misstag att undvika',
+    commonMistakesList: [
+      '<strong>För korta sökord</strong> - Enstaka ord ger mindre relevanta resultat.',
+      '<strong>Hoppa över granskning</strong> - Kontrollera varumärken före kommersiell användning.',
+      '<strong>Ignorera filter</strong> - Glöm inte bort att använda ton-inställningarna.'
+    ],
+    ctaTitle: 'Testa {name} nu!',
+    ctaBody: 'Redo att snabba upp ditt arbetsflöde? Fyll i fälten ovan och generera resultat.',
+    ctaBtn: 'Gå till generatorn'
   },
   ms: {
     home: 'Laman utama',
@@ -396,6 +611,35 @@ const text = ({
     related: 'Alat berkaitan',
     explore: 'Terokai lebih banyak alat TapToGen',
     activeLinks: 'Pautan ini menuju ke alat aktif yang boleh diindeks.',
+    benefitsTitle: 'Kelebihan Utama',
+    benefitsList: [
+      '<strong>100% Percuma</strong> - Tiada langganan atau yuran tersembunyi.',
+      '<strong>Privasi Pelayar</strong> - Pemprosesan secara tempatan di dalam pelayar anda.',
+      '<strong>Penjanaan Segera</strong> - Dapatkan hasil yang dioptimumkan dalam milisaat.',
+      '<strong>Tanpa Pendaftaran</strong> - Mula gunakan tanpa mendaftar akaun.'
+    ],
+    featuresTitle: 'Ciri-ciri {name}',
+    featuresList: [
+      '<strong>Tetapan Interaktif</strong> - Laraskan nada dan struktur dengan mudah.',
+      '<strong>Salin Satu Klik</strong> - Salin semua hasil dengan satu butang sahaja.',
+      '<strong>Format Bersih</strong> - Hasil teks sedia untuk ditampal di mana-mana.'
+    ],
+    bestPracticesTitle: 'Amalan Terbaik & Kesilapan Biasa',
+    bestPracticesHeading: 'Amalan Terbaik',
+    bestPracticesList: [
+      '<strong>Sediakan Input Jelas</strong> - Masukkan konteks yang mencukupi.',
+      '<strong>Cuba Pelbagai Pilihan</strong> - Tukar nada untuk hasil yang berbeza.',
+      '<strong>Semak Hasil</strong> - Sunting draf sebelum anda menerbitkannya.'
+    ],
+    commonMistakesHeading: 'Kesilapan Biasa untuk Dielakkan',
+    commonMistakesList: [
+      '<strong>Input Terlalu Ringkas</strong> - Satu perkataan memberikan hasil yang terhad.',
+      '<strong>Abai Semakan Merek</strong> - Semak hak cipta sebelum penggunaan komersial.',
+      '<strong>Tidak Tukar Tetapan</strong> - Lupa menggunakan tetapan nada yang disediakan.'
+    ],
+    ctaTitle: 'Cuba {name} Sekarang!',
+    ctaBody: 'Sedia untuk mempercepatkan kerja anda? Guna penjana di atas sekarang.',
+    ctaBtn: 'Pergi ke Penjana'
   },
   bg: {
     home: 'Начало',
@@ -436,6 +680,35 @@ const text = ({
     related: 'Свързани инструменти',
     explore: 'Разгледайте още инструменти TapToGen',
     activeLinks: 'Тези връзки водят към активни инструменти, които могат да се индексират.',
+    benefitsTitle: 'Основни Предимства',
+    benefitsList: [
+      '<strong>100% Безплатно</strong> - Без абонаменти и скрити такси.',
+      '<strong>Локална поверителност</strong> - Всичко се обработва във вашия браузър.',
+      '<strong>Моментално генериране</strong> - Получавате оптимизирани идеи веднага.',
+      '<strong>Без регистрация</strong> - Използвайте без създаване на профил.'
+    ],
+    featuresTitle: 'Функции на {name}',
+    featuresList: [
+      '<strong>Интерактивни настройки</strong> - Променяйте лесно тона и стила.',
+      '<strong>Копиране с един клик</strong> - Копирайте всички резултати наведнъж.',
+      '<strong>Изчистен формат</strong> - Готов текст без излишно форматиране.'
+    ],
+    bestPracticesTitle: 'Добри практики и чести грешки',
+    bestPracticesHeading: 'Добри практики',
+    bestPracticesList: [
+      '<strong>Давайте ясни инструкции</strong> - Въведете подробен контекст.',
+      '<strong>Опитайте различни настройки</strong> - Сменяйте тона за по-добър избор.',
+      '<strong>Проверявайте резултата</strong> - Редактирайте идеите преди публикуване.'
+    ],
+    commonMistakesHeading: 'Чести грешки за избягване',
+    commonMistakesList: [
+      '<strong>Твърде кратки фрази</strong> - Единични думи дават общи резултати.',
+      '<strong>Пропускане на проверка</strong> - Проверете за авторски права преди употреба.',
+      '<strong>Игнориране на филтри</strong> - Не забравяйте да използвате настройките на тона.'
+    ],
+    ctaTitle: 'Опитайте {name} сега!',
+    ctaBody: 'Готови ли сте да спестите време? Използвайте формата по-горе.',
+    ctaBtn: 'Към генератора'
   },
   hi: {
     home: 'होम',
@@ -475,6 +748,35 @@ const text = ({
     related: 'संबंधित टूल्स',
     explore: 'और TapToGen टूल्स देखें',
     activeLinks: 'ये लिंक सक्रिय, इंडेक्स होने योग्य टूल्स पर जाते हैं.',
+    benefitsTitle: 'मुख्य लाभ',
+    benefitsList: [
+      '<strong>100% मुफ्त</strong> - कोई सदस्यता या शुल्क नहीं.',
+      '<strong>ब्राउज़र गोपनीयता</strong> - सभी प्रोसेसिंग आपके डिवाइस पर होती है.',
+      '<strong>तुरंत परिणाम</strong> - मिलीसेकंड में परिणाम पाएं.',
+      '<strong>बिना पंजीकरण</strong> - बिना लॉगिन के तुरंत उपयोग करें.'
+    ],
+    featuresTitle: '{name} की विशेषताएं',
+    featuresList: [
+      '<strong>इंटरैक्टिव सेटिंग्स</strong> - आसानी से टोन और शैली बदलें.',
+      '<strong>वन-क्लिक कॉपी</strong> - एक क्लिक में पूरा परिणाम कॉपी करें.',
+      '<strong>साफ प्रारूप</strong> - बिना किसी अतिरिक्त कोड के सीधे उपयोग योग्य टेक्स्ट.'
+    ],
+    bestPracticesTitle: 'सर्वोत्तम अभ्यास और सामान्य गलतियाँ',
+    bestPracticesHeading: 'सर्वोत्तम अभ्यास',
+    bestPracticesList: [
+      '<strong>स्पष्ट इनपुट दें</strong> - बेहतर परिणाम के लिए आवश्यक संदर्भ दर्ज करें.',
+      '<strong>विभिन्न विकल्पों को आजमाएं</strong> - अलग-अलग टोन का परीक्षण करें.',
+      '<strong>समीक्षा करें</strong> - प्रकाशित करने से पहले टेक्स्ट को एडिट करें.'
+    ],
+    commonMistakesHeading: 'बचने योग्य सामान्य गलतियाँ',
+    commonMistakesList: [
+      '<strong>बहुत छोटा इनपुट</strong> - एक शब्द से कम विशिष्ट परिणाम मिलते हैं.',
+      '<strong>समीक्षा न करना</strong> - व्यावसायिक उपयोग से पहले ट्रेडमार्क जांचें.',
+      '<strong>सेटिंग्स को अनदेखा करना</strong> - टोन सेटिंग्स का उपयोग न करना.'
+    ],
+    ctaTitle: 'अभी {name} आजमाएं!',
+    ctaBody: 'अपना कार्य आसान बनाने के लिए तैयार हैं? ऊपर दिए गए जनरेटर का उपयोग करें.',
+    ctaBtn: 'जनरेटर पर जाएं'
   },
   bn: {
     home: 'হোম',
@@ -514,6 +816,35 @@ const text = ({
     related: 'সম্পর্কিত টুলস',
     explore: 'আরও TapToGen টুল দেখুন',
     activeLinks: 'এই লিংকগুলো সক্রিয়, ইনডেক্সযোগ্য টুলে যায়.',
+    benefitsTitle: 'প্রধান সুবিধা',
+    benefitsList: [
+      '<strong>১০০% ফ্রি</strong> - কোনো সাবস্ক্রিপশন বা চার্জ নেই.',
+      '<strong>ব্রাউজার গোপনীয়তা</strong> - সব প্রসেসিং আপনার ব্রাউজারেই হয়.',
+      '<strong>তাৎক্ষণিক জেনারেশন</strong> - মিলি সেকেন্ডের মধ্যে ফলাফল পান.',
+      '<strong>রেজিস্ট্রেশন ছাড়া</strong> - কোনো লগইন ছাড়াই সরাসরি ব্যবহার করুন.'
+    ],
+    featuresTitle: '{name} এর বৈশিষ্ট্য',
+    featuresList: [
+      '<strong>ইন্টারেক্টিভ সেটিংস</strong> - সহজেই টোন এবং স্টাইল পরিবর্তন করুন.',
+      '<strong>এক-ক্লিক কপি</strong> - এক ক্লিকে সব ফলাফল কপি করুন.',
+      '<strong>পরিষ্কার ফরম্যাট</strong> - সরাসরি ব্যবহারের উপযোগী টেক্সট.'
+    ],
+    bestPracticesTitle: 'সেরা অনুশীলন এবং সাধারণ ভুল',
+    bestPracticesHeading: 'সেরা অনুশীলন',
+    bestPracticesList: [
+      '<strong>স্পষ্ট ইনপুট দিন</strong> - প্রাসঙ্গিক তথ্যের জন্য সঠিক বিবরণ লিখুন.',
+      '<strong>বিভিন্ন স্টাইল চেষ্টা করুন</strong> - ভালো ফলাফলের জন্য টোন পরিবর্তন করুন.',
+      '<strong>পর্যালোচনা করুন</strong> - প্রকাশের আগে ফলাফল এডিট করুন.'
+    ],
+    commonMistakesHeading: 'সাধারণ ভুল যা এড়ানো উচিত',
+    commonMistakesList: [
+      '<strong>খুব ছোট ইনপুট</strong> - এক শব্দের ইনপুটে সাধারণ ফলাফল আসে.',
+      '<strong>যাচাই না করা</strong> - ব্যবহারের আগে ব্র্যান্ডের সাথে চেক করুন.',
+      '<strong>সেটিংস অবহেলা</strong> - টোন সেটিংস ব্যবহার না করা.'
+    ],
+    ctaTitle: 'এখনই {name} চেষ্টা করুন!',
+    ctaBody: 'আপনার কাজ সহজ করতে প্রস্তুত? উপরের জেনারেটরটি ব্যবহার করুন.',
+    ctaBtn: 'জেনারেটরে যান'
   },
   ja: {
     home: 'ホーム',
@@ -553,6 +884,35 @@ const text = ({
     related: '関連ツール',
     explore: 'TapToGenの他のツールを見る',
     activeLinks: 'これらのリンクは有効でインデックス可能なツールに移動します.',
+    benefitsTitle: '主なメリット',
+    benefitsList: [
+      '<strong>100%無料</strong> - 定期購読や追加料金、クレジットカードは不要です。',
+      '<strong>ブラウザ処理の安全性</strong> - すべての処理はブラウザ上で行われ、外部送信されません。',
+      '<strong>高速な自動作成</strong> - ミリ秒単位で最適化されたアイデアを出力します。',
+      '<strong>登録不要</strong> - アカウントを作成することなくすぐに使用可能です。'
+    ],
+    featuresTitle: '{name}の機能',
+    featuresList: [
+      '<strong>直感的な設定項目</strong> - コントロールパネルからトーンや数量を自由に調整できます。',
+      '<strong>1クリックコピー</strong> - 作成されたすべての結果をボタン1つで即座に保存できます。',
+      '<strong>そのまま使える形式</strong> - 余計なマークアップを含まないテキストのみを出力します。'
+    ],
+    bestPracticesTitle: 'おすすめの使い方とよくあるミス',
+    bestPracticesHeading: 'おすすめの使い方',
+    bestPracticesList: [
+      '<strong>詳細な状況の入力</strong> - 目的や相手を細かく記載すると、より適した結果が出ます。',
+      '<strong>別設定のテスト</strong> - トーンの設定を変えるだけで結果のバリエーションが広がります。',
+      '<strong>完成前の最終調整</strong> - 生成された結果は高品質な下書きとして見直し、調整してください。'
+    ],
+    commonMistakesHeading: '避けたいよくあるミス',
+    commonMistakesList: [
+      '<strong>入力文字の不足</strong> - 単一の単語だけでは、ありきたりな結果になりがちです。',
+      '<strong>商標チェックの省略</strong> - 商用利用の前に、生成された名前が既に使用されていないか確認してください。',
+      '<strong>調整項目の無視</strong> - トーンや数量などの便利な調整パネルを使わないこと。'
+    ],
+    ctaTitle: '今すぐ{name}を使ってみる！',
+    ctaBody: '作業時間を大幅に短縮できます。上記のフォームに詳細を入力して生成を始めましょう。',
+    ctaBtn: 'ジェネレーターへ移動'
   },
   ko: {
     home: '홈',
@@ -592,6 +952,35 @@ const text = ({
     related: '관련 도구',
     explore: '더 많은 TapToGen 도구 보기',
     activeLinks: '이 링크는 활성 상태이며 인덱싱 가능한 도구로 이동합니다.',
+    benefitsTitle: '주요 장점',
+    benefitsList: [
+      '<strong>100% 무료</strong> - 월 구독료나 결제 유도가 절대 없습니다.',
+      '<strong>안전한 로컬 처리</strong> - 입력한 모든 데이터는 외부 서버에 저장되지 않고 로컬로 처리됩니다.',
+      '<strong>즉각적인 속도</strong> - 클릭 한 번으로 수 밀리초 만에 정교한 결과를 생성합니다.',
+      '<strong>번거로운 회원가입 없음</strong> - 로그인이 필요 없어 즉시 도구를 이용할 수 있습니다.'
+    ],
+    featuresTitle: '{name}의 주요 기능',
+    featuresList: [
+      '<strong>세밀한 맞춤 조절</strong> - 입력창 및 조절 패널을 통해 톤이나 수량을 자유롭게 바꿉니다.',
+      '<strong>쉬운 클릭 복사</strong> - 생성된 모든 텍스트를 단 한 번의 클릭으로 클립보드에 담습니다.',
+      '<strong>깔끔한 서식 출력</strong> - 복사해 바로 붙여넣기 좋도록 깨끗한 일반 텍스트 포맷을 반환합니다.'
+    ],
+    bestPracticesTitle: '올바른 활용법 및 흔히 하는 실수',
+    bestPracticesHeading: '권장하는 방법',
+    bestPracticesList: [
+      '<strong>명확하고 자세한 입력</strong> - 단순한 키워드보다 대상과 목적을 상세히 설명해 주세요.',
+      '<strong>다양한 옵션 전환</strong> - 톤이나 수량 등의 조건을 변경하며 결과를 확인하세요.',
+      '<strong>최종 검토 및 교정</strong> - 생성된 문구는 좋은 초안이므로 최종 확인 후 필요에 맞게 수정하세요.'
+    ],
+    commonMistakesHeading: '주의해야 할 실수',
+    commonMistakesList: [
+      '<strong>불명확한 단어 입력</strong> - 한 단어짜리 짧은 내용만 적으면 평범한 결과가 나옵니다.',
+      '<strong>상표권 검토 생략</strong> - 상업용으로 이름이나 문구를 쓰기 전 등록 상표인지 꼭 확인하세요.',
+      '<strong>맞춤 옵션 미사용</strong> - 톤 조절이나 수량 설정 등을 조작하지 않고 기본값으로만 받는 경우.'
+    ],
+    ctaTitle: '지금 {name}을(를) 활용해 보세요!',
+    ctaBody: '작업 효율을 한층 끌어올릴 준비가 되셨나요? 위 입력 폼에 내용을 적고 문구를 생성해 보세요.',
+    ctaBtn: '생성기로 가기'
   },
   ar: {
     home: 'الرئيسية',
@@ -631,7 +1020,36 @@ const text = ({
     related: 'أدوات ذات صلة',
     explore: 'استكشف المزيد من أدوات TapToGen',
     activeLinks: 'تؤدي هذه الروابط إلى أدوات نشطة وقابلة للفهرسة.',
-  },
+    benefitsTitle: 'الفوائد الرئيسية',
+    benefitsList: [
+      '<strong>مجاني 100%</strong> - لا توجد اشتراكات أو رسوم إضافية مخفية ولا بطاقة ائتمان مطلوبة.',
+      '<strong>خصوصية المتصفح</strong> - تتم المعالجة محليًا بالكامل على جهازك دون إرسال البيانات للخارج.',
+      '<strong>إنشاء فوري</strong> - احصل على اقتراحات واضحة ومحسنة في أجزاء من الثانية.',
+      '<strong>بدون تسجيل</strong> - ابدأ استخدام الأداة فورًا دون الحاجة لإنشاء حساب أو تسجيل دخول.'
+    ],
+    featuresTitle: 'مميزات {name}',
+    featuresList: [
+      '<strong>خيارات تفاعلية</strong> - تحكم في النبرة والعدد والأسلوب بسهولة تامة.',
+      '<strong>نسخ بضغطة زر</strong> - انسخ جميع النتائج بضغطة واحدة لتوفير الوقت.',
+      '<strong>تنسيق نظيف</strong> - نصوص جاهزة تمامًا للاستخدام المباشر دون رموز أو ترميز إضافي.'
+    ],
+    bestPracticesTitle: 'أفضل الممارسات والأخطاء الشائعة',
+    bestPracticesHeading: 'أفضل الممارسات',
+    bestPracticesList: [
+      '<strong>إدخال واضح ودقيق</strong> - اكتب تفاصيل وسياق كاف للحصول على نتائج ملائمة.',
+      '<strong>اختبار خيارات مختلفة</strong> - غير في النبرة أو العدد لتوسيع قائمة الخيارات المتاحة.',
+      '<strong>المراجعة والتعديل</strong> - اعتبر النتيجة مسودة ممتازة للمراجعة وتطويعها لعلامتك قبل النشر.'
+    ],
+    commonMistakesHeading: 'أخطاء شائعة تجنب الوقوع فيها',
+    commonMistakesList: [
+      '<strong>إدخال كلمات عامة</strong> - كتابة كلمة واحدة يعطي نتائج مكررة وأقل تخصصًا.',
+      '<strong>إهمال التحقق والفلترة</strong> - تأكد من حقوق العلامة التجارية والملكية قبل استخدام الاسم تجاريًا.',
+      '<strong>تجاهل تعديل النبرة</strong> - استخدام الأداة بالوضع الافتراضي دون الاستفادة من فلاتر التخصيص.'
+    ],
+    ctaTitle: 'جرّب {name} الآن!',
+    ctaBody: 'هل أنت جاهز لتسريع مهام عملك؟ أدخل التفاصيل في النموذج أعلاه لبدء الإنشاء فورا.',
+    ctaBtn: 'اذهب إلى المولد'
+  }
 } as Record<string, LocalizedUiText>)[language] || {
   home: 'Home',
   tools: 'Tools',
@@ -666,6 +1084,35 @@ const text = ({
   related: 'Related tools',
   explore: 'Explore more TapToGen tools',
   activeLinks: 'These links lead to active, indexable tools.',
+  benefitsTitle: 'Key Benefits',
+  benefitsList: [
+    '<strong>100% Free</strong> - No subscriptions, no microtransactions, and no credit card required.',
+    '<strong>Browser-Based Privacy</strong> - All processing occurs locally on your machine. Your data never leaves your browser.',
+    '<strong>Instant Generation</strong> - Get a list of optimized suggestions in milliseconds.',
+    '<strong>No Registration</strong> - Start using the utility immediately without creating an account or logging in.'
+  ],
+  featuresTitle: 'Features of {name}',
+  featuresList: [
+    '<strong>Interactive Settings</strong> - Customize the tone, count, and style configuration directly from the control panel.',
+    '<strong>One-Click Copying</strong> - Copy individual elements or copy all results instantly with built-in clipboard actions.',
+    '<strong>Clean Formatting</strong> - Outputs copy-ready text without any markup, ready to be pasted anywhere.'
+  ],
+  bestPracticesTitle: 'Best Practices & Common Mistakes',
+  bestPracticesHeading: 'Best Practices',
+  bestPracticesList: [
+    '<strong>Provide Clear Input</strong> - Give as much context as possible in the input box for highly relevant results.',
+    '<strong>Explore Different Styles</strong> - Try changing options like tone or structure to find the perfect output.',
+    '<strong>Review and Polish</strong> - Treat the generated output as a high-quality draft and review it for factual alignment before publishing.'
+  ],
+  commonMistakesHeading: 'Common Mistakes to Avoid',
+  commonMistakesList: [
+    '<strong>Vague Inputs</strong> - Entering single-word, generic inputs can result in less specialized suggestions.',
+    '<strong>Skipping Review</strong> - Not verifying custom names, tags, or text before publishing can lead to policy or branding conflicts.',
+    '<strong>Ignoring Settings</strong> - Forgetting to toggle tone or formatting options can cause output misalignment.'
+  ],
+  ctaTitle: 'Try {name} Now!',
+  ctaBody: 'Ready to optimize your workflow? Try {name} now. Simply scroll back up to the interactive console, enter your details, and tap generate to get started immediately!',
+  ctaBtn: 'Go to Generator'
 };
 
 const internalLinks = getInternalLinks(Astro.url.pathname, language);
@@ -906,6 +1353,20 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, language, copy.h1);
         <IntroSection h1={copy.h1} metaDescription={copy.metaDescription} intro={copy.intro} whatIsText={text.whatIs} />
 
         <section class="content-card">
+          <h2>{text.benefitsTitle}</h2>
+          <ul>
+            {text.benefitsList.map((benefit) => <li set:html={benefit} />)}
+          </ul>
+        </section>
+
+        <section class="content-card">
+          <h2>{text.featuresTitle.replace('{name}', copy.h1)}</h2>
+          <ul>
+            {text.featuresList.map((feature) => <li set:html={feature} />)}
+          </ul>
+        </section>
+
+        <section class="content-card">
           <h2>{text.howTo} {copy.h1}</h2>
           <ol>
             {guideCopy.howTo.map((step) => <li>{step}</li>)}
@@ -920,6 +1381,24 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, language, copy.h1);
         </section>
 
         <section class="content-card">
+          <h2>{text.bestPracticesTitle}</h2>
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 12px; margin-bottom: 6px; color: var(--color-text-primary);">{text.bestPracticesHeading}</h3>
+          <ul>
+            {text.bestPracticesList.map((item) => <li set:html={item} />)}
+          </ul>
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 16px; margin-bottom: 6px; color: var(--color-text-primary);">{text.commonMistakesHeading}</h3>
+          <ul>
+            {text.commonMistakesList.map((item) => <li set:html={item} />)}
+          </ul>
+        </section>
+
+        <section class="content-card" style="text-align: center; padding: 30px;">
+          <h2>{text.ctaTitle.replace('{name}', copy.h1)}</h2>
+          <p style="margin-bottom: 16px;">{text.ctaBody.replace('{name}', copy.h1)}</p>
+          <a href="#" class="btn btn-primary" style="display: inline-block; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; color: #fff; background: var(--color-primary);">{text.ctaBtn}</a>
+        </section>
+
+        <section class="content-card">
           <h2>{text.why}</h2>
           <ul>
             {text.whyItems.map((item) => <li><strong>{item[0]}</strong> - {item[1]}</li>)}
@@ -927,35 +1406,35 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, language, copy.h1);
         </section>
 
         <FaqSection faqTitle={text.faq} faqItems={faqItems.map(f => ({ question: f.q, answer: f.a }))} />
-
-        <RelatedSection title={text.related} links={internalLinks.slice(0, 4)} />
-        {internalLinks.length > 4 && (
-          <RelatedSection title="You May Also Like" links={internalLinks.slice(4, 8)} />
-        )}
-
-        {(matchingHub || nextStepHubs.length > 0) && (
-          <section class="content-card">
-            <h2>{text.explore}</h2>
-            <p>{text.activeLinks}</p>
-            <div class="category-grid">
-              {matchingHub && (
-                <a href={`/tools/${matchingHub.slug}/`} class="category-card">
-                  <span class="cat-icon">#</span>
-                  <h3>{getLocalizedHubCopy(matchingHub.slug, matchingHub.h1, matchingHub.description, language).title}</h3>
-                  <p>{getLocalizedHubCopy(matchingHub.slug, matchingHub.h1, matchingHub.description, language).description}</p>
-                </a>
-              )}
-              {nextStepHubs.map((hub) => (
-                <a href={`/tools/${hub.slug}/`} class="category-card">
-                  <span class="cat-icon">#</span>
-                  <h3>{getLocalizedHubCopy(hub.slug, hub.h1, hub.description, language).title}</h3>
-                  <p>{getLocalizedHubCopy(hub.slug, hub.h1, hub.description, language).description}</p>
-                </a>
-              ))}
-            </div>
-          </section>
-        )}
       </div>
+      <RelatedSection title={text.related} links={internalLinks.slice(0, 4)} />
+      {internalLinks.length > 4 && (
+        <RelatedSection title="You May Also Like" links={internalLinks.slice(4, 8)} />
+      )}
+
+      {(matchingHub || nextStepHubs.length > 0) && (
+        <section class="content-card">
+          <h2>{text.explore}</h2>
+          <p>{text.activeLinks}</p>
+          <div class="category-grid">
+            {matchingHub && (
+              <a href={`/tools/${matchingHub.slug}/`} class="category-card">
+                <span class="cat-icon">#</span>
+                <h3>{getLocalizedHubCopy(matchingHub.slug, matchingHub.h1, matchingHub.description, language).title}</h3>
+                <p>{getLocalizedHubCopy(matchingHub.slug, matchingHub.h1, matchingHub.description, language).description}</p>
+              </a>
+            )}
+            {nextStepHubs.map((hub) => (
+              <a href={`/tools/${hub.slug}/`} class="category-card">
+                <span class="cat-icon">#</span>
+                <h3>{getLocalizedHubCopy(hub.slug, hub.h1, hub.description, language).title}</h3>
+                <p>{getLocalizedHubCopy(hub.slug, hub.h1, hub.description, language).description}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>      </div>
     </div>
   </section>
 

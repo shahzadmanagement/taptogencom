@@ -236,11 +236,68 @@ const pass20Controls = pass20ControlMap[slug];
         </div>
       )}
 
-      <div class="content-section premium-content-section">
+            <div class="content-section premium-content-section">
         <section class="content-card intro-card">
-          <h2>Was ist {copy.h1}?</h2>
+          <h2>${locale === 'es' ? '¿Qué es' : locale === 'pt' ? 'O que é' : locale === 'fr' ? 'Qu\'est-ce que' : locale === 'de' ? 'Was ist' : locale === 'it' ? 'Che cos\'è' : locale === 'pl' ? 'Co to jest' : locale === 'ru' ? 'Что такое' : 'Nedir'} {copy.h1}?</h2>
           <p>{copy.metaDescription}</p>
           <p>{copy.intro}</p>
+        </section>
+
+        <section class="content-card">
+          <h2>Hauptvorteile</h2>
+          <ul>
+            <li><strong>100% Kostenlos</strong> - Keine Abonnements, keine Zusatzkosten und keine Kreditkarte erforderlich.</li>
+            <li><strong>Lokale Privatsphäre</strong> - Die gesamte Verarbeitung erfolgt in Ihrem Browser. Ihre Daten sind sicher.</li>
+            <li><strong>Sofortige Ergebnisse</strong> - Erhalten Sie optimierte Vorschläge in wenigen Millisekunden.</li>
+            <li><strong>Ohne Registrierung</strong> - Nutzen Sie das Tool direkt ohne Anmeldung oder Benutzerkonto.</li>
+    </ul>
+        </section>
+
+        <section class="content-card">
+          <h2>Funktionen von {copy.h1}</h2>
+          <ul>
+            <li><strong>Interaktive Einstellungen</strong> - Passen Sie Ton, Anzahl und Struktur direkt über das Bedienfeld an.</li>
+            <li><strong>Ein-Klick-Kopieren</strong> - Kopieren Sie einzelne Zeilen oder alle Ergebnisse sofort in die Zwischenablage.</li>
+            <li><strong>Saubere Formatierung</strong> - Gibt gebrauchsfertigen Text ohne störende Formatierungen aus.</li>
+    </ul>
+        </section>
+
+        <section class="content-card">
+          <h2>${locale === 'es' ? 'Cómo usar' : locale === 'pt' ? 'Como usar' : locale === 'fr' ? 'Comment utiliser' : locale === 'de' ? 'Wie benutzt man' : locale === 'it' ? 'Come usare' : locale === 'pl' ? 'Jak używać' : locale === 'ru' ? 'Как использовать' : 'Nasıl Kullanılır'} {copy.h1}</h2>
+          <ol>
+            {guideCopy.howTo.map(step => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="content-card">
+          <h2>${locale === 'es' ? 'Consejos para mejores resultados' : locale === 'pt' ? 'Dicas para obter melhores resultados' : locale === 'fr' ? 'Conseils pour de meilleurs résultats' : locale === 'de' ? 'Tipps für bessere Ergebnisse' : locale === 'it' ? 'Suggerimenti per risultati migliori' : locale === 'pl' ? 'Wskazówki dotyczące lepszych wyników' : locale === 'ru' ? 'Советы для получения лучших результатов' : 'Daha İyi Sonuçlar İçin İpuçları'}</h2>
+          <ul>
+            {guideCopy.tips.map(tip => <li><strong>{tip.title}</strong> - {tip.body}</li>)}
+          </ul>
+        </section>
+
+        <section class="content-card">
+          <h2>Best Practices & häufige Fehler</h2>
+          
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 12px; margin-bottom: 6px; color: var(--color-text-primary);">Best Practices</h3>
+          <ul>
+            <li><strong>Konkrete Eingaben machen</strong> - Geben Sie im Textfeld ausreichend Kontext für passende Vorschläge ein.</li>
+            <li><strong>Optionen testen</strong> - Ändern Sie Tonfall und Einstellungen, um das beste Ergebnis zu finden.</li>
+            <li><strong>Entwurf prüfen</strong> - Passen Sie die generierten Texte vor der Veröffentlichung individuell an.</li>
+          </ul>
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 16px; margin-bottom: 6px; color: var(--color-text-primary);">Häufige Fehler</h3>
+          <ul>
+            <li><strong>Zu kurze Eingaben</strong> - Einzelne Wörter führen oft zu sehr allgemeinen Ergebnissen.</li>
+            <li><strong>Keine Endkontrolle</strong> - Namen oder Texte ungeprüft zu übernehmen kann Markenkonflikte verursachen.</li>
+            <li><strong>Einstellungen ignorieren</strong> - Das Tool ohne Anpassung der Optionen zu verwenden.</li>
+          </ul>
+    
+        </section>
+
+        <section class="content-card" style="text-align: center; padding: 30px;">
+          <h2>Probieren Sie {copy.h1} jetzt aus!</h2>
+          <p style="margin-bottom: 16px;">Bereit für einen schnelleren Workflow? Nutzen Sie das Tool direkt oben im interaktiven Bereich.</p>
+          <a href="#" class="btn btn-primary" style="display: inline-block; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; color: #fff; background: var(--color-primary);">Zum Generator</a>
         </section>
 
         <section class="content-card">

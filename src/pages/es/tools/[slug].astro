@@ -236,11 +236,68 @@ const pass20Controls = pass20ControlMap[slug];
         </div>
       )}
 
-      <div class="content-section premium-content-section">
+            <div class="content-section premium-content-section">
         <section class="content-card intro-card">
-          <h2>¿Qué es {copy.h1}?</h2>
+          <h2>${locale === 'es' ? '¿Qué es' : locale === 'pt' ? 'O que é' : locale === 'fr' ? 'Qu\'est-ce que' : locale === 'de' ? 'Was ist' : locale === 'it' ? 'Che cos\'è' : locale === 'pl' ? 'Co to jest' : locale === 'ru' ? 'Что такое' : 'Nedir'} {copy.h1}?</h2>
           <p>{copy.metaDescription}</p>
           <p>{copy.intro}</p>
+        </section>
+
+        <section class="content-card">
+          <h2>Ventajas principales</h2>
+          <ul>
+            <li><strong>100% Gratis</strong> - Sin suscripciones, sin microtransacciones y sin necesidad de tarjeta de crédito.</li>
+            <li><strong>Privacidad en el navegador</strong> - Todo el procesamiento se realiza localmente en tu ordenador. Tus datos nunca salen de tu navegador.</li>
+            <li><strong>Generación instantánea</strong> - Obtén una lista de sugerencias optimizadas en milisegundos.</li>
+            <li><strong>Sin registro</strong> - Empieza a usar la utilidad inmediatamente sin crear una cuenta ni iniciar sesión.</li>
+    </ul>
+        </section>
+
+        <section class="content-card">
+          <h2>Características de {copy.h1}</h2>
+          <ul>
+            <li><strong>Ajustes interactivos</strong> - Personaliza la configuración de tono, cantidad y estilo directamente desde el panel de control.</li>
+            <li><strong>Copia en un clic</strong> - Copia elementos individuales o copia todos los resultados al instante con acciones de portapapeles integradas.</li>
+            <li><strong>Formato limpio</strong> - Produce texto listo para copiar sin etiquetas de marcado, preparado para pegar en cualquier lugar.</li>
+    </ul>
+        </section>
+
+        <section class="content-card">
+          <h2>${locale === 'es' ? 'Cómo usar' : locale === 'pt' ? 'Como usar' : locale === 'fr' ? 'Comment utiliser' : locale === 'de' ? 'Wie benutzt man' : locale === 'it' ? 'Come usare' : locale === 'pl' ? 'Jak używać' : locale === 'ru' ? 'Как использовать' : 'Nasıl Kullanılır'} {copy.h1}</h2>
+          <ol>
+            {guideCopy.howTo.map(step => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="content-card">
+          <h2>${locale === 'es' ? 'Consejos para mejores resultados' : locale === 'pt' ? 'Dicas para obter melhores resultados' : locale === 'fr' ? 'Conseils pour de meilleurs résultats' : locale === 'de' ? 'Tipps für bessere Ergebnisse' : locale === 'it' ? 'Suggerimenti per risultati migliori' : locale === 'pl' ? 'Wskazówki dotyczące lepszych wyników' : locale === 'ru' ? 'Советы для получения лучших результатов' : 'Daha İyi Sonuçlar İçin İpuçları'}</h2>
+          <ul>
+            {guideCopy.tips.map(tip => <li><strong>{tip.title}</strong> - {tip.body}</li>)}
+          </ul>
+        </section>
+
+        <section class="content-card">
+          <h2>Buenas prácticas y errores comunes</h2>
+          
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 12px; margin-bottom: 6px; color: var(--color-text-primary);">Buenas prácticas</h3>
+          <ul>
+            <li><strong>Proporciona una entrada clara</strong> - Introduce tanto contexto como sea posible en el cuadro de entrada para obtener resultados muy relevantes.</li>
+            <li><strong>Explora diferentes estilos</strong> - Prueba a cambiar opciones como el tono o la estructura para encontrar la salida perfecta.</li>
+            <li><strong>Revisa y pule</strong> - Trata el resultado generado como un borrador de alta calidad y revísalo para alinearlo con tus objetivos antes de publicarlo.</li>
+          </ul>
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 16px; margin-bottom: 6px; color: var(--color-text-primary);">Errores comunes a evitar</h3>
+          <ul>
+            <li><strong>Entradas vagas</strong> - Introducir entradas genéricas de una sola palabra puede dar lugar a sugerencias menos especializadas.</li>
+            <li><strong>Omitir la revisión</strong> - No verificar los nombres, etiquetas o textos personalizados antes de publicarlos puede provocar conflictos de marca o políticas.</li>
+            <li><strong>Ignorar los ajustes</strong> - Olvidar alternar las opciones de tono o formato puede causar desalineación en el resultado.</li>
+          </ul>
+    
+        </section>
+
+        <section class="content-card" style="text-align: center; padding: 30px;">
+          <h2>¡Prueba {copy.h1} ahora!</h2>
+          <p style="margin-bottom: 16px;">¿Listo para optimizar tu flujo de trabajo? Prueba {copy.h1} ahora. Simplemente sube de nuevo a la consola interactiva, introduce tus detalles y toca generar para empezar de inmediato.</p>
+          <a href="#" class="btn btn-primary" style="display: inline-block; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; color: #fff; background: var(--color-primary);">Ir al generador</a>
         </section>
 
         <section class="content-card">
