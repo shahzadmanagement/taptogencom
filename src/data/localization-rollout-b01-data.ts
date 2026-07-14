@@ -155,7 +155,7 @@ export function safetyFor(tool: RolloutToolSpec, profile: LanguageProfile): stri
     tr: {
       seo: 'Trafik, siralama, indeksleme veya platform sonucu garanti edilmez.',
       developer: 'Teknik ciktilari kimlik bilgisi, guvenlik sirri veya uretim degisikligi olarak manuel kontrol olmadan kullanmayin.',
-      name: 'Halka acik kullanimdan once ozgunluk, hassasiyet, haklar ve uygunlugu kontrol edin.',
+      name: 'Halka acik kullanimdan once ozgunluk, hassasiyet, haklar ve uygunluğu kontrol edin.',
       text: 'Sekilli metni paylasmadan once okunabilirlik, erisilebilirlik ve platform uyumlulugunu kontrol edin.',
     },
     id: {

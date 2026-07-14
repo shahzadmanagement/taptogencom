@@ -137,11 +137,11 @@ const b07SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' |
   tr: {
     business: 'Yayinlamadan veya musterilere gondermeden once marka, alan adi, fiyat, izin ve verileri kontrol edin.',
     utility: 'Pratik destek olarak kullanin ve sonucu kendi kurallariniz ya da kaynaklarinizla dogrulayin.',
-    name: 'Halka acik kullanimdan once kulturel hassasiyet, telaffuz, haklar ve uygunlugu kontrol edin.',
+    name: 'Halka acik kullanimdan once kulturel hassasiyet, telaffuz, haklar ve uygunluğu kontrol edin.',
     fictional: 'Kendi dunyalariniz, oyunlar veya fikirler icin kullanin; marka ya da gercek kisileri kopyalamayin.',
     text: 'Dekoratif metni kullanmadan once okunabilirlik, erisilebilirlik ve uyumlulugu kontrol edin.',
     seo: 'Trafik, siralama, rich result veya arama motoru davranisi garanti etmez.',
-    social: 'Takipci, erisim, viral olma, satis veya platform uygunlugu vadetmez.',
+    social: 'Takipci, erisim, viral olma, satis veya platform uygunluğu vadetmez.',
     developer: 'Uretimden once kodu test edin; guvenlik, erisilebilirlik ve uyumlulugu kontrol edin.',
     writing: 'Taslagi insan degerlendirmesiyle duzenleyin; ozgunluk, izinler ve baglami kontrol edin.',
   },

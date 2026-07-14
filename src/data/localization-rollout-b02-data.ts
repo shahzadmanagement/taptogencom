@@ -102,7 +102,7 @@ const b02SafetyAddendum: Record<RolloutLanguage, Record<'utility' | 'social' | '
   },
   tr: {
     utility: 'Pratik destek olarak kullanin ve onemli kararlardan once sonucu kontrol edin.',
-    social: 'Erisim, takipci, ad uygunlugu veya platform performansi vadetmez.',
+    social: 'Erisim, takipci, ad uygunluğu veya platform performansi vadetmez.',
     business: 'Hukuki, finansal, marka veya ticari uygunluk incelemesinin yerine gecmez.',
     bio: 'Sahte kimlik, taklit veya hassas kisisel veriler icin kullanmayin.',
   },

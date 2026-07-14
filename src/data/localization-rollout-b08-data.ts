@@ -123,7 +123,7 @@ const b08SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' |
   tr: {
     business: 'Halka acik kullanimdan once marka, izinler, fiyatlar, veriler ve uyumu kontrol edin.',
     utility: 'Pratik destek olarak kullanin ve onemli kararlardan once sonucu kontrol edin.',
-    name: 'Halka acik kullanimdan once baglam, hassasiyet, haklar ve uygunlugu kontrol edin.',
+    name: 'Halka acik kullanimdan once baglam, hassasiyet, haklar ve uygunluğu kontrol edin.',
     fictional: 'Yaratici ilham olarak kullanin; marka, gercek kisi veya korunan evrenleri kopyalamayin.',
     text: 'Sekilli metni paylasmadan once okunabilirlik, erisilebilirlik ve platform uyumlulugunu kontrol edin.',
     seo: 'Trafik, siralama, indeksleme veya arama sonucu garanti etmez.',

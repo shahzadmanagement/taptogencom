@@ -102,7 +102,7 @@ const b06SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' |
   tr: {
     business: 'Halka acik kullanimdan once marka, alan adi, izinler, fiyatlar, gercek veriler ve uyumu kontrol edin.',
     utility: 'Pratik destek olarak kullanin; etiketleri, listeleri veya cekilisleri kendi kurallarinizla dogrulayin.',
-    name: 'Halka acik kullanimdan once kultur, baglam, telaffuz, haklar ve uygunlugu kontrol edin.',
+    name: 'Halka acik kullanimdan once kultur, baglam, telaffuz, haklar ve uygunluğu kontrol edin.',
     fictional: 'Yaratici ilham olarak kullanin; marka, gercek kisi veya korunan evrenleri kopyalamayin.',
   },
   id: {
