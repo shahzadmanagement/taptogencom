@@ -84,3 +84,15 @@ tools.forEach(tool => {
     });
   }
 });
+
+// Register Business & Brand tools dynamically
+tools.forEach(tool => {
+  const isBusiness = tool.slug.includes('business') || tool.slug.includes('domain') || tool.slug.includes('product') || tool.slug.includes('slogan') || tool.slug.includes('invoice') || tool.slug.includes('receipt') || tool.slug.includes('email-signature') || tool.slug.includes('sku') || tool.slug.includes('coupon') || tool.slug.includes('agenda') || tool.slug.includes('minutes') || tool.slug.includes('startup') || tool.slug.includes('brand-kit') || tool.slug.includes('tagline') || tool.slug.includes('poster') || tool.slug.includes('flyer');
+  if (isBusiness) {
+    workspaceRegistry.register({
+      slug: tool.slug,
+      name: tool.name,
+      category: 'Business & Brand'
+    });
+  }
+});

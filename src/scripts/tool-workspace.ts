@@ -101,7 +101,23 @@ function renderResultCard(text: string, label: string): string {
     workspace.dataset.tool.includes('sitemap') || 
     workspace.dataset.tool.includes('redirect') || 
     workspace.dataset.tool.includes('tag-generator') || 
-    workspace.dataset.tool.includes('tags-generator')
+    workspace.dataset.tool.includes('tags-generator') ||
+    workspace.dataset.tool.includes('business') || 
+    workspace.dataset.tool.includes('domain') || 
+    workspace.dataset.tool.includes('product') || 
+    workspace.dataset.tool.includes('slogan') || 
+    workspace.dataset.tool.includes('invoice') || 
+    workspace.dataset.tool.includes('receipt') || 
+    workspace.dataset.tool.includes('email-signature') || 
+    workspace.dataset.tool.includes('sku') || 
+    workspace.dataset.tool.includes('coupon') || 
+    workspace.dataset.tool.includes('agenda') || 
+    workspace.dataset.tool.includes('minutes') || 
+    workspace.dataset.tool.includes('startup') || 
+    workspace.dataset.tool.includes('brand-kit') || 
+    workspace.dataset.tool.includes('tagline') || 
+    workspace.dataset.tool.includes('poster') || 
+    workspace.dataset.tool.includes('flyer')
   );
   
   const favBtn = showFav
