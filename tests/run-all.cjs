@@ -36,6 +36,7 @@ require('./performance/performance.test.cjs');
 require('./content/content-quality.test.cjs');
 require('./product/product-domination.test.cjs');
 require('./schema/schema-rich-results.test.cjs');
+require('./ai/ai-engine.test.cjs');
 
 // Execute them
 runSuites();
