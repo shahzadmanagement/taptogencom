@@ -1,4 +1,4 @@
-# Feature Gap Audits Report
+# Competitor Feature Gap Analysis Report
 
 This report confirms compliance check outcomes against the Top 10 competitor layouts.
 

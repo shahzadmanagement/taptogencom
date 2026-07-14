@@ -40,6 +40,7 @@ require('./ai/ai-engine.test.cjs');
 require('./accessibility/accessibility.test.cjs');
 require('./monitoring/analytics.test.cjs');
 require('./production/launch.test.cjs');
+require('./product/tool-excellence.test.cjs');
 
 // Execute them
 runSuites();
