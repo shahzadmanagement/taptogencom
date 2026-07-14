@@ -69,7 +69,7 @@ const b08SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' |
   fr: {
     business: 'Verifiez marque, autorisations, prix, donnees et conformite avant usage public.',
     utility: 'Utilisez-le comme aide pratique et verifiez le resultat avant toute decision importante.',
-    name: 'Verifiez contexte, sensibilite, droits et disponibilite avant usage public.',
+    name: 'Verifiez contexte, sensibilite, droits et disponibilité avant usage public.',
     fictional: 'Gardez un usage creatif et evitez de copier marques, personnes reelles ou univers proteges.',
     text: 'Verifiez lisibilite, accessibilite et compatibilite avant de partager un texte stylise.',
     seo: 'Ne garantit pas trafic, classement, indexation ni resultats de recherche.',

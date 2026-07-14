@@ -30,12 +30,12 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "name-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de noms",
-    "localizedSlug": "generateur-de-noms",
+    "primaryKeyword": "générateur de noms",
+    "localizedSlug": "générateur-de-noms",
     "h1": "Generateur de noms",
     "metaTitle": "Generateur de noms gratuit",
-    "metaDescription": "Trouvez des idees de noms naturelles pour projets, personnages, marques ou listes personnelles.",
-    "intro": "Generez des noms en francais puis verifiez le sens, la disponibilite et le contexte avant usage.",
+    "metaDescription": "Trouvez des idées de noms naturelles pour projets, personnages, marques ou listes personnelles.",
+    "intro": "Generez des noms en français puis verifiez le sens, la disponibilité et le contexte avant usage.",
     "faqTopics": [
       "choisir un nom",
       "noms originaux",
@@ -47,8 +47,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "name-generator",
     "language": "de",
-    "primaryKeyword": "namensgenerator",
-    "localizedSlug": "namensgenerator",
+    "primaryKeyword": "Namensgenerator",
+    "localizedSlug": "Namensgenerator",
     "h1": "Namensgenerator",
     "metaTitle": "Namensgenerator kostenlos",
     "metaDescription": "Erstelle passende Namensideen fuer Projekte, Figuren, Marken oder persoenliche Listen.",
@@ -81,16 +81,16 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "username-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de pseudo",
-    "localizedSlug": "generateur-de-pseudo",
+    "primaryKeyword": "générateur de pseudo",
+    "localizedSlug": "générateur-de-pseudo",
     "h1": "Generateur de pseudo",
     "metaTitle": "Generateur de pseudo gratuit",
-    "metaDescription": "Creez des idees de pseudos pour comptes, jeux et profils avec une formulation simple a verifier.",
-    "intro": "Trouvez un pseudo naturel et controlez sa disponibilite sur le service ou vous voulez l'utiliser.",
+    "metaDescription": "Creez des idées de pseudos pour comptes, jeux et profils avec une formulation simple a verifier.",
+    "intro": "Trouvez un pseudo naturel et controlez sa disponibilité sur le service ou vous voulez l'utiliser.",
     "faqTopics": [
       "pseudo original",
       "pseudo court",
-      "disponibilite du pseudo"
+      "disponibilité du pseudo"
     ],
     "searchIntentNote": "French users commonly search pseudo rather than literal nom d'utilisateur.",
     "riskSafetyNote": "Avoid impersonation, platform-specific promises, or availability guarantees."
@@ -132,11 +132,11 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "business-name-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de nom d'entreprise",
-    "localizedSlug": "generateur-de-nom-dentreprise",
+    "primaryKeyword": "générateur de nom d'entreprise",
+    "localizedSlug": "générateur-de-nom-dentreprise",
     "h1": "Generateur de nom d'entreprise",
     "metaTitle": "Generateur de nom d'entreprise gratuit",
-    "metaDescription": "Trouvez des idees de noms pour une entreprise, une activite ou un service professionnel.",
+    "metaDescription": "Trouvez des idées de noms pour une entreprise, une activite ou un service professionnel.",
     "intro": "Generez des pistes de noms puis verifiez marque, domaine et contexte sectoriel.",
     "faqTopics": [
       "nom d'entreprise",
@@ -183,8 +183,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "fantasy-name-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de noms fantasy",
-    "localizedSlug": "generateur-de-noms-fantasy",
+    "primaryKeyword": "générateur de noms fantasy",
+    "localizedSlug": "générateur-de-noms-fantasy",
     "h1": "Generateur de noms fantasy",
     "metaTitle": "Generateur de noms fantasy gratuit",
     "metaDescription": "Creez des noms fantasy pour romans, jeux de role et univers imaginaires.",
@@ -200,8 +200,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "fantasy-name-generator",
     "language": "de",
-    "primaryKeyword": "fantasy namensgenerator",
-    "localizedSlug": "fantasy-namensgenerator",
+    "primaryKeyword": "fantasy Namensgenerator",
+    "localizedSlug": "fantasy-Namensgenerator",
     "h1": "Fantasy Namensgenerator",
     "metaTitle": "Fantasy Namensgenerator kostenlos",
     "metaDescription": "Erstelle Fantasy-Namen fuer Geschichten, Rollenspiele und eigene Welten.",
@@ -234,12 +234,12 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "character-name-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de noms de personnages",
-    "localizedSlug": "generateur-de-noms-de-personnages",
+    "primaryKeyword": "générateur de noms de personnages",
+    "localizedSlug": "générateur-de-noms-de-personnages",
     "h1": "Generateur de noms de personnages",
     "metaTitle": "Generateur de noms de personnages gratuit",
     "metaDescription": "Trouvez des noms pour personnages de romans, jeux, scenarios et projets creatifs.",
-    "intro": "Creez des idees de noms puis ajustez-les au genre, a l'epoque et au ton du recit.",
+    "intro": "Creez des idées de noms puis ajustez-les au genre, a l'epoque et au ton du recit.",
     "faqTopics": [
       "noms de personnages",
       "personnages roman",
@@ -251,8 +251,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "character-name-generator",
     "language": "de",
-    "primaryKeyword": "charakter namensgenerator",
-    "localizedSlug": "charakter-namensgenerator",
+    "primaryKeyword": "charakter Namensgenerator",
+    "localizedSlug": "charakter-Namensgenerator",
     "h1": "Charakter Namensgenerator",
     "metaTitle": "Charakter Namensgenerator kostenlos",
     "metaDescription": "Finde Namen fuer Figuren in Geschichten, Spielen, Drehbuechern und kreativen Projekten.",
@@ -285,11 +285,11 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "baby-name-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de prenoms",
-    "localizedSlug": "generateur-de-prenoms",
+    "primaryKeyword": "générateur de prenoms",
+    "localizedSlug": "générateur-de-prenoms",
     "h1": "Generateur de prenoms",
     "metaTitle": "Generateur de prenoms gratuit",
-    "metaDescription": "Explorez des idees de prenoms pour bebe avec des suggestions fáciles a comparer.",
+    "metaDescription": "Explorez des idées de prenoms pour bebe avec des suggestions fáciles a comparer.",
     "intro": "Generez des prenoms possibles et verifiez sens, prononciation et usage local.",
     "faqTopics": [
       "prenoms fille",
@@ -336,12 +336,12 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "last-name-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de noms de famille",
-    "localizedSlug": "generateur-de-noms-de-famille",
+    "primaryKeyword": "générateur de noms de famille",
+    "localizedSlug": "générateur-de-noms-de-famille",
     "h1": "Generateur de noms de famille",
     "metaTitle": "Generateur de noms de famille gratuit",
     "metaDescription": "Creez des noms de famille fictifs pour personnages, histoires et exemples.",
-    "intro": "Generez des idees de patronymes et relisez-les pour eviter les stereotypes ou confusions.",
+    "intro": "Generez des idées de patronymes et relisez-les pour eviter les stereotypes ou confusions.",
     "faqTopics": [
       "noms de famille fictifs",
       "patronymes",
@@ -387,11 +387,11 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "middle-name-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de deuxieme prenom",
-    "localizedSlug": "generateur-de-deuxieme-prenom",
+    "primaryKeyword": "générateur de deuxieme prenom",
+    "localizedSlug": "générateur-de-deuxieme-prenom",
     "h1": "Generateur de deuxieme prenom",
     "metaTitle": "Generateur de deuxieme prenom gratuit",
-    "metaDescription": "Trouvez des idees de deuxieme prenom pour combinaisons personnelles ou personnages.",
+    "metaDescription": "Trouvez des idées de deuxieme prenom pour combinaisons personnelles ou personnages.",
     "intro": "Comparez le rythme, le sens et la prononciation avant de retenir une option.",
     "faqTopics": [
       "deuxieme prenom",
@@ -438,8 +438,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "team-name-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de noms d'equipe",
-    "localizedSlug": "generateur-de-noms-dequipe",
+    "primaryKeyword": "générateur de noms d'equipe",
+    "localizedSlug": "générateur-de-noms-dequipe",
     "h1": "Generateur de noms d'equipe",
     "metaTitle": "Generateur de noms d'equipe gratuit",
     "metaDescription": "Creez des noms d'equipe pour projets, loisirs, classes ou groupes creatifs.",
@@ -489,12 +489,12 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "domain-name-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de nom de domaine",
-    "localizedSlug": "generateur-de-nom-de-domaine",
+    "primaryKeyword": "générateur de nom de domaine",
+    "localizedSlug": "générateur-de-nom-de-domaine",
     "h1": "Generateur de nom de domaine",
     "metaTitle": "Generateur de nom de domaine gratuit",
-    "metaDescription": "Trouvez des idees de noms de domaine pour sites, produits et entreprises.",
-    "intro": "Generez des pistes puis verifiez disponibilite, extension et marque avant achat.",
+    "metaDescription": "Trouvez des idées de noms de domaine pour sites, produits et entreprises.",
+    "intro": "Generez des pistes puis verifiez disponibilité, extension et marque avant achat.",
     "faqTopics": [
       "idee nom de domaine",
       "domaine site web",
@@ -540,11 +540,11 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "product-name-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de nom de produit",
-    "localizedSlug": "generateur-de-nom-de-produit",
+    "primaryKeyword": "générateur de nom de produit",
+    "localizedSlug": "générateur-de-nom-de-produit",
     "h1": "Generateur de nom de produit",
     "metaTitle": "Generateur de nom de produit gratuit",
-    "metaDescription": "Trouvez des idees de noms pour produits, collections, fonctionnalites ou lancements.",
+    "metaDescription": "Trouvez des idées de noms pour produits, collections, fonctionnalites ou lancements.",
     "intro": "Generez des pistes de naming produit et verifiez clarte, marque et positionnement.",
     "faqTopics": [
       "nom de produit",
@@ -591,11 +591,11 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "project-name-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de nom de projet",
-    "localizedSlug": "generateur-de-nom-de-projet",
+    "primaryKeyword": "générateur de nom de projet",
+    "localizedSlug": "générateur-de-nom-de-projet",
     "h1": "Generateur de nom de projet",
     "metaTitle": "Generateur de nom de projet gratuit",
-    "metaDescription": "Creez des idees de noms pour projets internes, creatifs, scolaires ou professionnels.",
+    "metaDescription": "Creez des idées de noms pour projets internes, creatifs, scolaires ou professionnels.",
     "intro": "Trouvez un nom de projet clair puis adaptez-le au public et au contexte.",
     "faqTopics": [
       "nom de projet",
@@ -642,11 +642,11 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "brand-kit-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de kit de marque",
-    "localizedSlug": "generateur-de-kit-de-marque",
+    "primaryKeyword": "générateur de kit de marque",
+    "localizedSlug": "générateur-de-kit-de-marque",
     "h1": "Generateur de kit de marque",
     "metaTitle": "Generateur de kit de marque gratuit",
-    "metaDescription": "Creez une base de marque avec idees de ton, messages, couleurs et elements initiaux.",
+    "metaDescription": "Creez une base de marque avec idées de ton, messages, couleurs et elements initiaux.",
     "intro": "Utilisez le kit comme brouillon et verifiez coherence, droits et usage reel.",
     "faqTopics": [
       "kit de marque",
@@ -693,8 +693,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "slogan-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de slogan",
-    "localizedSlug": "generateur-de-slogan",
+    "primaryKeyword": "générateur de slogan",
+    "localizedSlug": "générateur-de-slogan",
     "h1": "Generateur de slogan",
     "metaTitle": "Generateur de slogan gratuit",
     "metaDescription": "Trouvez des slogans courts pour marques, campagnes, produits ou projets.",
@@ -744,8 +744,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "tagline-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de baseline",
-    "localizedSlug": "generateur-de-baseline",
+    "primaryKeyword": "générateur de baseline",
+    "localizedSlug": "générateur-de-baseline",
     "h1": "Generateur de baseline",
     "metaTitle": "Generateur de baseline gratuit",
     "metaDescription": "Creez une baseline courte pour clarifier le positionnement d'une marque ou d'un produit.",
@@ -795,11 +795,11 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "blog-name-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de nom de blog",
-    "localizedSlug": "generateur-de-nom-de-blog",
+    "primaryKeyword": "générateur de nom de blog",
+    "localizedSlug": "générateur-de-nom-de-blog",
     "h1": "Generateur de nom de blog",
     "metaTitle": "Generateur de nom de blog gratuit",
-    "metaDescription": "Trouvez des idees de noms pour blogs, newsletters et projets editoriaux.",
+    "metaDescription": "Trouvez des idées de noms pour blogs, newsletters et projets editoriaux.",
     "intro": "Creez des pistes de nom et verifiez domaine, ton et coherence avec la niche.",
     "faqTopics": [
       "nom de blog",
@@ -846,11 +846,11 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "podcast-name-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de nom de podcast",
-    "localizedSlug": "generateur-de-nom-de-podcast",
+    "primaryKeyword": "générateur de nom de podcast",
+    "localizedSlug": "générateur-de-nom-de-podcast",
     "h1": "Generateur de nom de podcast",
     "metaTitle": "Generateur de nom de podcast gratuit",
-    "metaDescription": "Trouvez des idees de noms pour podcasts, emissions audio et series d'episodes.",
+    "metaDescription": "Trouvez des idées de noms pour podcasts, emissions audio et series d'episodes.",
     "intro": "Generez des pistes puis verifiez annuaires, domaine et marque avant lancement.",
     "faqTopics": [
       "nom de podcast",
@@ -897,16 +897,16 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "youtube-tag-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de tags video",
-    "localizedSlug": "generateur-de-tags-video",
+    "primaryKeyword": "générateur de tags video",
+    "localizedSlug": "générateur-de-tags-video",
     "h1": "Generateur de tags video",
     "metaTitle": "Generateur de tags video gratuit",
-    "metaDescription": "Creez des idees de tags pour decrire et organiser des videos en ligne.",
+    "metaDescription": "Creez des idées de tags pour decrire et organiser des videos en ligne.",
     "intro": "Choisissez des tags pertinents pour le sujet sans garantie de classement ou de vues.",
     "faqTopics": [
       "tags video",
       "mots cles video",
-      "idees de tags"
+      "idées de tags"
     ],
     "searchIntentNote": "French users use tags video; brand-neutral and same intent.",
     "riskSafetyNote": "Do not promise rankings or use platform-brand claims."
@@ -948,16 +948,16 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "hashtag-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de hashtags",
-    "localizedSlug": "generateur-de-hashtags",
+    "primaryKeyword": "générateur de hashtags",
+    "localizedSlug": "générateur-de-hashtags",
     "h1": "Generateur de hashtags",
     "metaTitle": "Generateur de hashtags gratuit",
-    "metaDescription": "Creez des hashtags pertinents pour publications, campagnes et idees de contenu.",
+    "metaDescription": "Creez des hashtags pertinents pour publications, campagnes et idées de contenu.",
     "intro": "Generez des suggestions puis verifiez contexte, ton et actualite avant publication.",
     "faqTopics": [
       "hashtags reseaux sociaux",
       "hashtags populaires",
-      "idees hashtags"
+      "idées hashtags"
     ],
     "searchIntentNote": "Direct French social intent.",
     "riskSafetyNote": "Avoid promising virality or trend accuracy."
@@ -999,15 +999,15 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "keyword-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de mots cles",
-    "localizedSlug": "generateur-de-mots-cles",
+    "primaryKeyword": "générateur de mots cles",
+    "localizedSlug": "générateur-de-mots-cles",
     "h1": "Generateur de mots cles",
     "metaTitle": "Generateur de mots cles gratuit",
-    "metaDescription": "Trouvez des idees de mots cles pour contenu, SEO, annonces ou recherche initiale.",
+    "metaDescription": "Trouvez des idées de mots cles pour contenu, SEO, annonces ou recherche initiale.",
     "intro": "Generez des pistes puis validez volume, concurrence et intention de recherche.",
     "faqTopics": [
       "mots cles SEO",
-      "idees keywords",
+      "idées keywords",
       "recherche de mots cles"
     ],
     "searchIntentNote": "Direct French SEO intent.",
@@ -1050,8 +1050,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "meta-tag-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de balises meta",
-    "localizedSlug": "generateur-de-balises-meta",
+    "primaryKeyword": "générateur de balises meta",
+    "localizedSlug": "générateur-de-balises-meta",
     "h1": "Generateur de balises meta",
     "metaTitle": "Generateur de balises meta gratuit",
     "metaDescription": "Creez des brouillons de balises meta pour pages web, SEO et apercus sociaux.",
@@ -1101,8 +1101,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "meta-description-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de meta description",
-    "localizedSlug": "generateur-de-meta-description",
+    "primaryKeyword": "générateur de meta description",
+    "localizedSlug": "générateur-de-meta-description",
     "h1": "Generateur de meta description",
     "metaTitle": "Generateur de meta description gratuit",
     "metaDescription": "Redigez des brouillons de meta descriptions pour pages, articles et fiches produit.",
@@ -1152,11 +1152,11 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "seo-title-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de titre SEO",
-    "localizedSlug": "generateur-de-titre-seo",
+    "primaryKeyword": "générateur de titre SEO",
+    "localizedSlug": "générateur-de-titre-seo",
     "h1": "Generateur de titre SEO",
     "metaTitle": "Generateur de titre SEO gratuit",
-    "metaDescription": "Creez des idees de titres SEO pour pages, articles, guides et fiches produit.",
+    "metaDescription": "Creez des idées de titres SEO pour pages, articles, guides et fiches produit.",
     "intro": "Generez plusieurs titres puis verifiez longueur, intention et exactitude.",
     "faqTopics": [
       "titre SEO",
@@ -1203,11 +1203,11 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "faq-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de FAQ",
-    "localizedSlug": "generateur-de-faq",
+    "primaryKeyword": "générateur de FAQ",
+    "localizedSlug": "générateur-de-faq",
     "h1": "Generateur de FAQ",
     "metaTitle": "Generateur de FAQ gratuit",
-    "metaDescription": "Creez des idees de questions frequentes pour pages, produits, services ou articles.",
+    "metaDescription": "Creez des idées de questions frequentes pour pages, produits, services ou articles.",
     "intro": "Generez une structure de FAQ puis verifiez les reponses et les limites du sujet.",
     "faqTopics": [
       "questions frequentes",
@@ -1254,8 +1254,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "canonical-tag-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de balise canonique",
-    "localizedSlug": "generateur-de-balise-canonique",
+    "primaryKeyword": "générateur de balise canonique",
+    "localizedSlug": "générateur-de-balise-canonique",
     "h1": "Generateur de balise canonique",
     "metaTitle": "Generateur de balise canonique gratuit",
     "metaDescription": "Creez une balise canonique pour signaler l'URL preferee d'une page.",
@@ -1305,8 +1305,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "robots-txt-generator",
     "language": "fr",
-    "primaryKeyword": "generateur robots.txt",
-    "localizedSlug": "generateur-robots-txt",
+    "primaryKeyword": "générateur robots.txt",
+    "localizedSlug": "générateur-robots-txt",
     "h1": "Generateur robots.txt",
     "metaTitle": "Generateur robots.txt gratuit",
     "metaDescription": "Creez un brouillon de fichier robots.txt pour des regles de crawl simples.",
@@ -1356,8 +1356,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "open-graph-generator",
     "language": "fr",
-    "primaryKeyword": "generateur Open Graph",
-    "localizedSlug": "generateur-open-graph",
+    "primaryKeyword": "générateur Open Graph",
+    "localizedSlug": "générateur-open-graph",
     "h1": "Generateur Open Graph",
     "metaTitle": "Generateur Open Graph gratuit",
     "metaDescription": "Creez des balises Open Graph pour ameliorer les apercus de liens partages.",
@@ -1407,8 +1407,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "fancy-text-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de texte stylise",
-    "localizedSlug": "generateur-de-texte-stylise",
+    "primaryKeyword": "générateur de texte stylise",
+    "localizedSlug": "générateur-de-texte-stylise",
     "h1": "Generateur de texte stylise",
     "metaTitle": "Generateur de texte stylise gratuit",
     "metaDescription": "Transformez du texte en styles decoratifs a copier pour profils et messages.",
@@ -1815,16 +1815,16 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "paragraph-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de paragraphes",
-    "localizedSlug": "generateur-de-paragraphes",
+    "primaryKeyword": "générateur de paragraphes",
+    "localizedSlug": "générateur-de-paragraphes",
     "h1": "Generateur de paragraphes",
     "metaTitle": "Generateur de paragraphes gratuit",
-    "metaDescription": "Creez des brouillons de paragraphes pour idees, articles, descriptions ou exercices.",
+    "metaDescription": "Creez des brouillons de paragraphes pour idées, articles, descriptions ou exercices.",
     "intro": "Generez une base de texte puis relisez faits, ton et originalite.",
     "faqTopics": [
       "ecrire un paragraphe",
       "paragraphe exemple",
-      "idees paragraphes"
+      "idées paragraphes"
     ],
     "searchIntentNote": "Direct French writing generator intent.",
     "riskSafetyNote": "Review factual claims and avoid submitting unedited work."
@@ -1866,8 +1866,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "sentence-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de phrases",
-    "localizedSlug": "generateur-de-phrases",
+    "primaryKeyword": "générateur de phrases",
+    "localizedSlug": "générateur-de-phrases",
     "h1": "Generateur de phrases",
     "metaTitle": "Generateur de phrases gratuit",
     "metaDescription": "Creez des phrases d'exemple pour ecriture, apprentissage, contenu ou ideation.",
@@ -1875,7 +1875,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "faqTopics": [
       "phrases exemple",
       "creer une phrase",
-      "idees de phrases"
+      "idées de phrases"
     ],
     "searchIntentNote": "Direct French sentence generation intent.",
     "riskSafetyNote": "Review grammar and factual context."
@@ -1917,15 +1917,15 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "writing-prompt-generator",
     "language": "fr",
-    "primaryKeyword": "generateur d'idees d'ecriture",
-    "localizedSlug": "generateur-didees-decriture",
-    "h1": "Generateur d'idees d'ecriture",
+    "primaryKeyword": "générateur d'idées d'ecriture",
+    "localizedSlug": "générateur-didées-decriture",
+    "h1": "Generateur d'idées d'ecriture",
     "metaTitle": "Idees d'ecriture gratuites",
-    "metaDescription": "Trouvez des idees et prompts pour histoires, scenes, journaux ou exercices creatifs.",
+    "metaDescription": "Trouvez des idées et prompts pour histoires, scenes, journaux ou exercices creatifs.",
     "intro": "Generez un point de depart puis adaptez-le a votre voix et a votre genre.",
     "faqTopics": [
       "prompts ecriture",
-      "idees histoire",
+      "idées histoire",
       "exercice ecriture"
     ],
     "searchIntentNote": "French phrase captures prompt intent naturally.",
@@ -1968,11 +1968,11 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "blog-outline-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de plan d'article",
-    "localizedSlug": "generateur-de-plan-darticle",
+    "primaryKeyword": "générateur de plan d'article",
+    "localizedSlug": "générateur-de-plan-darticle",
     "h1": "Generateur de plan d'article",
     "metaTitle": "Generateur de plan d'article gratuit",
-    "metaDescription": "Creez un plan d'article avec sections, sous-titres et idees principales.",
+    "metaDescription": "Creez un plan d'article avec sections, sous-titres et idées principales.",
     "intro": "Generez une structure puis adaptez-la a l'intention de recherche et a votre expertise.",
     "faqTopics": [
       "plan article blog",
@@ -2019,8 +2019,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "product-description-generator",
     "language": "fr",
-    "primaryKeyword": "generateur de description produit",
-    "localizedSlug": "generateur-de-description-produit",
+    "primaryKeyword": "générateur de description produit",
+    "localizedSlug": "générateur-de-description-produit",
     "h1": "Generateur de description produit",
     "metaTitle": "Generateur de description produit gratuit",
     "metaDescription": "Redigez des brouillons de descriptions pour produits, boutiques et fiches e-commerce.",
