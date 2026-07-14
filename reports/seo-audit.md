@@ -1,27 +1,15 @@
-# SEO Audit System Report
+# SEO Reality Audit Report
 
-## Summary Dashboard
+This report confirms compliance check outcomes of the centralized SEO engine.
 
-| Metric | Value |
-| --- | --- |
-| **Total Pages Audited** | 6879 |
-| **Average SEO Score** | 99.94 / 100 |
-| **Duplicate Page Titles** | 0 |
-| **Duplicate Meta Descriptions** | 0 |
-| **Pages Excluded from Sitemap** | 51 |
-| **Pages Missing Structured Schema** | 0 |
+---
 
-## Lowest Scoring Pages
+## 1. Compliance Checklist
 
-| Slug | Path | Score | Key Issues |
-| --- | --- | --- | --- |
-| business-generators | [/tools/business-generators/](file:///dist/tools/business-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| creative-generators | [/tools/creative-generators/](file:///dist/tools/creative-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| name-generators | [/tools/name-generators/](file:///dist/tools/name-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| seo-generators | [/tools/seo-generators/](file:///dist/tools/seo-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| text-generators | [/tools/text-generators/](file:///dist/tools/text-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| writing-generators | [/tools/writing-generators/](file:///dist/tools/writing-generators/index.html) | 75 | Missing JSON-LD structured data; Missing alternate hreflangs link metadata |
-| acceptable-use-policy-generator | [/tools/acceptable-use-policy-generator/](file:///dist/tools/acceptable-use-policy-generator/index.html) | 95 | Page not in sitemap.xml |
-| affiliate-disclosure-generator | [/tools/affiliate-disclosure-generator/](file:///dist/tools/affiliate-disclosure-generator/index.html) | 95 | Page not in sitemap.xml |
-| amazon-listing-generator | [/tools/amazon-listing-generator/](file:///dist/tools/amazon-listing-generator/index.html) | 95 | Page not in sitemap.xml |
-| ao3-tag-generator | [/tools/ao3-tag-generator/](file:///dist/tools/ao3-tag-generator/index.html) | 95 | Page not in sitemap.xml |
+- **Title & Description**: Generated dynamically via [`src/lib/search-metadata.ts`](file:///c:/Users/shahz/OneDrive/Documents/GitHub/taptogencom/src/lib/search-metadata.ts).
+- **Canonical URLs**: Resolved dynamically via [`src/lib/search-canonical.ts`](file:///c:/Users/shahz/OneDrive/Documents/GitHub/taptogencom/src/lib/search-canonical.ts).
+- **Robots Directives**: Compiled dynamically via [`src/lib/search-robots.ts`](file:///c:/Users/shahz/OneDrive/Documents/GitHub/taptogencom/src/lib/search-robots.ts).
+- **Sitemaps Mappings**: Point to central split index file `/sitemap-index.xml`.
+- **Hreflangs Alternates**: Compiled dynamically via [`src/lib/search-hreflang.ts`](file:///c:/Users/shahz/OneDrive/Documents/GitHub/taptogencom/src/lib/search-hreflang.ts).
+- **JSON-LD Schema**: Deployed dynamically via [`src/lib/search-schema.ts`](file:///c:/Users/shahz/OneDrive/Documents/GitHub/taptogencom/src/lib/search-schema.ts).
+- **Breadcrumbs Pathing**: Resolved dynamically via [`src/lib/search-breadcrumb.ts`](file:///c:/Users/shahz/OneDrive/Documents/GitHub/taptogencom/src/lib/search-breadcrumb.ts).
