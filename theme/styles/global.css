@@ -886,7 +886,7 @@ textarea.tool-input { min-height: 120px; resize: vertical; line-height: 1.6; }
 }
 .intent-preview-text {
   min-height: 48px;
-  font-size: clamp(1.1rem, 1.4vw, 1.45rem);
+  font-size: var(--intent-font-size, clamp(1.1rem, 1.4vw, 1.45rem));
   line-height: 1.5;
   color: var(--color-text-primary);
   overflow-wrap: anywhere;

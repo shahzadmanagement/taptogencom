@@ -5,6 +5,7 @@ import { config as bold } from './bold';
 import { config as cursive } from './cursive';
 import { config as italic } from './italic';
 import { config as underline } from './underline';
+import { config as strikethrough } from './strikethrough';
 import { config as vaporwave } from './vaporwave';
 import { config as unicode } from './unicode';
 
@@ -16,6 +17,7 @@ export const toolConfigs: Record<string, ToolConfig> = {
   'cursive-text-generator': cursive,
   'italic-text-generator': italic,
   'underline-text-generator': underline,
+  'strikethrough-text-generator': strikethrough,
   'vaporwave-text-generator': vaporwave,
   'unicode-text-generator': unicode
 };

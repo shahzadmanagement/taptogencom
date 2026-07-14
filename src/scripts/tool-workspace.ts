@@ -1873,20 +1873,60 @@ async function generate() {
       result = text.split('').map(c => italicMap[c] || c).join('');
       break;
     }
-    case 'strikethrough-text-generator':
-      result = text ? [...text].map(c => c + '\u0336').join('') : 'Please enter some text above.';
+    case 'strikethrough-text-generator': {
+      if (!text) { result = 'Please enter some text above.'; break; }
+      
+      const allStyles = [
+        { name: 'Standard Strikethrough', preview: text.split('').map(c => c + '\u0336').join(''), use: 'Common text crossing-out', note: 'Standard combining long strike overlay.', category: 'strikethrough', isCompat: true },
+        { name: 'Double Strikethrough', preview: text.split('').map(c => c + '\u0336' + '\u0336').join(''), use: 'Strong crossed-out style', note: 'Double combining overlay.', category: 'strikethrough', isCompat: true },
+        { name: 'Slashed Text', preview: text.split('').map(c => c + '\u0338').join(''), use: 'Slashed effect overlay', note: 'Uses combining solidus overlay.', category: 'strikethrough', isCompat: true },
+        { name: 'Slashed + Strikethrough', preview: text.split('').map(c => c + '\u0338' + '\u0336').join(''), use: 'Extreme crossed-out glitch style', note: 'Combines solidus and strikethrough overlays.', category: 'strikethrough', isCompat: true },
+        { name: 'Tilde Overlay', preview: text.split('').map(c => c + '\u0334').join(''), use: 'Stylized wavy crossing-out', note: 'Uses combining tilde overlays.', category: 'strikethrough', isCompat: true },
+        { name: 'Wavy Overline/Strike', preview: text.split('').map(c => c + '\u0334' + '\u0303').join(''), use: 'Double wavy decoration lines', note: 'Uses combining tilde and top tilde marks.', category: 'strikethrough', isCompat: false }
+      ];
+
+      result = allStyles.map(style => `${style.name}: ${style.preview}`).join('\n');
+      resultHtml = renderStyleMatrix(allStyles, 'Copy All includes every strikethrough variation. Render support depends on client browser.');
       break;
-    case 'underline-text-generator':
-      result = text ? [...text].map(c => c + '\u0332').join('') : 'Please enter some text above.';
+    }
+    case 'underline-text-generator': {
+      if (!text) { result = 'Please enter some text above.'; break; }
+      
+      const allStyles = [
+        { name: 'Standard Underline', preview: text.split('').map(c => c + '\u0332').join(''), use: 'Common underlined text emphasis', note: 'Uses standard combining low line overlay.', category: 'underline', isCompat: true },
+        { name: 'Double Underline', preview: text.split('').map(c => c + '\u0333').join(''), use: 'Strong double low line emphasis', note: 'Uses double combining low line overlay.', category: 'underline', isCompat: true },
+        { name: 'Standard Overline', preview: text.split('').map(c => c + '\u0305').join(''), use: 'Top line decoration', note: 'Uses standard combining overline.', category: 'underline', isCompat: true },
+        { name: 'Double Overline', preview: text.split('').map(c => c + '\u033f').join(''), use: 'Double top line decoration', note: 'Uses double combining overline.', category: 'underline', isCompat: true },
+        { name: 'Underline + Overline', preview: text.split('').map(c => c + '\u0332' + '\u0305').join(''), use: 'Border-like top and bottom lines', note: 'Combines low line and overline marks.', category: 'underline', isCompat: true },
+        { name: 'Underline + Strikethrough', preview: text.split('').map(c => c + '\u0332' + '\u0336').join(''), use: 'Stylized double strike-and-low-line', note: 'Combines low line and strikethrough overlays.', category: 'underline', isCompat: true }
+      ];
+
+      result = allStyles.map(style => `${style.name}: ${style.preview}`).join('\n');
+      resultHtml = renderStyleMatrix(allStyles, 'Copy All includes every underline variation. Render support depends on client browser.');
       break;
+    }
     case 'vaporwave-text-generator': {
       if (!text) { result = 'Please enter some text above.'; break; }
-      result = [...text].map(c => {
+      
+      const toFullwidth = (t: string) => [...t].map(c => {
         const code = c.charCodeAt(0);
         if (code >= 33 && code <= 126) return String.fromCodePoint(code + 0xFEE0);
         if (c === ' ') return '\u3000';
         return c;
       }).join('');
+
+      const toSpaced = (t: string) => t.split('').join(' ');
+
+      const allStyles = [
+        { name: 'Fullwidth (Aesthetic)', preview: toFullwidth(text), use: 'Classic fullwidth vaporwave captions', note: 'Converts letters to wide Unicode equivalents.', category: 'vaporwave', isCompat: true },
+        { name: 'S p a c e d (Classic)', preview: toSpaced(text), use: 'Aesthetic spaced headings', note: 'Standard text with space padding between characters.', category: 'vaporwave', isCompat: true },
+        { name: 'Fullwidth S p a c e d', preview: toSpaced(toFullwidth(text)), use: 'Maximum aesthetic spacing', note: 'Wide letters padded with double spacing.', category: 'vaporwave', isCompat: true },
+        { name: 'Bracketed Vaporwave', preview: `【　${toFullwidth(text)}　】`, use: 'Enclosed social header labels', note: 'Fullwidth text surrounded by Japanese bold brackets.', category: 'vaporwave', isCompat: true },
+        { name: 'Sparkly Vaporwave', preview: `✧*。${toFullwidth(text)} ✧*。`, use: 'Shining aesthetic captions', note: 'Fullwidth text wrapped with sparkly ornaments.', category: 'vaporwave', isCompat: true }
+      ];
+
+      result = allStyles.map(style => `${style.name}: ${style.preview}`).join('\n');
+      resultHtml = renderStyleMatrix(allStyles, 'Copy All includes every vaporwave variation. Render support depends on client browser.');
       break;
     }
     case 'reverse-text-generator': {

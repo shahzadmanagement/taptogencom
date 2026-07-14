@@ -94,6 +94,24 @@ export const createWorkspace = wrapErrorBoundary(async function (
     });
   }
 
+  // Font Size Slider initialization
+  const slider = document.getElementById('font-size-slider') as HTMLInputElement | null;
+  if (slider && output && output.style && typeof output.style.setProperty === 'function') {
+    const cachedSize = typeof localStorage !== 'undefined' ? localStorage.getItem('taptogen-font-size') : null;
+    if (cachedSize) {
+      slider.value = cachedSize;
+      output.style.setProperty('--intent-font-size', cachedSize + 'px');
+    } else {
+      output.style.setProperty('--intent-font-size', slider.value + 'px');
+    }
+    slider.addEventListener('input', () => {
+      output.style.setProperty('--intent-font-size', slider.value + 'px');
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('taptogen-font-size', slider.value);
+      }
+    });
+  }
+
   if (flags.enableHistory) {
     const { initHistory } = await import('./history');
     initHistory(activeConfig, output);

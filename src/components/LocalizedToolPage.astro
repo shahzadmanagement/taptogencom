@@ -1325,6 +1325,13 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, language, copy.h1);
                   {toolConfig.search && (
                     <input type="text" id={`${toolConfig.slug.split('-')[0]}-style-search`} placeholder={`Search ${toolConfig.slug === 'fancy-text-generator' ? '50+' : ''} styles...`} style="flex: 1; min-width: 200px; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--color-border); background: var(--color-bg-secondary); color: var(--color-text-primary); font-size: 0.85rem; outline: none; transition: var(--transition);" />
                   )}
+                  {toolConfig.search && (
+                    <div style="display: flex; align-items: center; gap: 8px; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 8px; padding: 4px 10px; height: 38px;">
+                      <span style="font-size: 0.7rem; color: var(--color-text-secondary); white-space: nowrap; user-select: none;">A-</span>
+                      <input type="range" id="font-size-slider" min="12" max="32" value="18" style="width: 75px; accent-color: var(--color-primary); cursor: pointer; height: 6px; background: var(--color-border); border-radius: 3px; outline: none;" aria-label="Adjust font size" />
+                      <span style="font-size: 0.85rem; color: var(--color-text-secondary); white-space: nowrap; user-select: none;">A+</span>
+                    </div>
+                  )}
                   {toolConfig.shuffle && (
                     <button type="button" class="btn btn-ghost" id="btn-shuffle-styles" style="padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; min-height: 35px; white-space: nowrap;">🔀 Shuffle</button>
                   )}
