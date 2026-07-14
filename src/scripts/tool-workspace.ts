@@ -5913,7 +5913,31 @@ async function generate() {
       break;
     }
     case 'lowercase-generator': {
-      result = text ? text.toLowerCase() : 'Enter text above to convert to lowercase.';
+      if (!text) {
+        result = 'Please enter some text above.';
+        break;
+      }
+      
+      const standard = text.toLowerCase();
+      
+      // Strips accents/diacritics and lowercases
+      const stripAccents = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+      
+      // Removes punctuation and lowercases
+      const cleanPunc = text.replace(/[.,\/#!$%\^&*\*;:{}=\-_\`~()?"']/g, '').replace(/\s{2,}/g, ' ').toLowerCase();
+      
+      // Lowercase first letter of each word (decapitalization)
+      const decapitalize = text.replace(/\b\w/g, c => c.toLowerCase());
+      
+      const sections = [
+        { title: 'Standard Lowercase', body: standard, note: 'All characters converted to lowercase.' },
+        { title: 'Accent-Free Lowercase', body: stripAccents, note: 'Diacritics and accents stripped before lowercase conversion.' },
+        { title: 'Punctuation-Free Lowercase', body: cleanPunc, note: 'Punctuation removed and text converted to lowercase.' },
+        { title: 'Decapitalized Words', body: decapitalize, note: 'Only the first letter of each word is converted to lowercase.' }
+      ];
+      
+      result = sections.map(sec => sec.title + '\n' + sec.body).join('\n\n');
+      resultHtml = renderSectionSuite('Lowercase Variations', sections, 'Choose the specific lowercase variation that fits your workflow.');
       break;
     }
     case 'corporate-speak-generator': {
