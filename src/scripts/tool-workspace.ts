@@ -72,7 +72,25 @@ function renderResultCard(text: string, label: string): string {
     workspace.dataset.tool.includes('italic') ||
     workspace.dataset.tool.includes('underline') ||
     workspace.dataset.tool.includes('strikethrough') ||
-    workspace.dataset.tool.includes('vaporwave')
+    workspace.dataset.tool.includes('vaporwave') ||
+    workspace.dataset.tool.includes('paragraph') || 
+    workspace.dataset.tool.includes('sentence') || 
+    workspace.dataset.tool.includes('story') || 
+    workspace.dataset.tool.includes('article') || 
+    workspace.dataset.tool.includes('essay') || 
+    workspace.dataset.tool.includes('blog') || 
+    workspace.dataset.tool.includes('description') || 
+    workspace.dataset.tool.includes('bio') || 
+    workspace.dataset.tool.includes('caption') || 
+    workspace.dataset.tool.includes('review') || 
+    workspace.dataset.tool.includes('headline') || 
+    workspace.dataset.tool.includes('title') || 
+    workspace.dataset.tool.includes('email') || 
+    workspace.dataset.tool.includes('letter') || 
+    workspace.dataset.tool.includes('summary') || 
+    workspace.dataset.tool.includes('rewrite') || 
+    workspace.dataset.tool.includes('writing') || 
+    workspace.dataset.tool.includes('prompt')
   );
   
   const favBtn = showFav
@@ -261,7 +279,11 @@ function renderBioVariations(groups: { title: string; text: string; note: string
 
 function renderSectionSuite(title: string, sections: { title: string; body: string; note?: string }[], footer = ''): string {
   const allText = title + '\n\n' + sections.map(section => section.title + '\n' + section.body).join('\n\n');
-  return '<div class="intent-section-suite"><div class="intent-suite-heading"><div><span class="result-label">' + escapeHtml(title) + '</span>' + (footer ? '<p class="intent-mini-note">' + escapeHtml(footer) + '</p>' : '') + '</div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(allText) + '">Copy All</button></div>' + sections.map(section => '<article class="intent-wide-card"><div class="result-card-top"><div><span class="result-label">' + escapeHtml(section.title) + '</span>' + (section.note ? '<p class="intent-mini-note">' + escapeHtml(section.note) + '</p>' : '') + '</div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(section.body) + '">Copy Section</button></div><pre class="intent-section-pre">' + escapeHtml(section.body) + '</pre></article>').join('') + '</div>';
+  return '<div class="intent-section-suite"><div class="intent-suite-heading"><div><span class="result-label">' + escapeHtml(title) + '</span>' + (footer ? '<p class="intent-mini-note">' + escapeHtml(footer) + '</p>' : '') + '</div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(allText) + '">Copy All</button></div>' + sections.map(section => {
+    const safeBody = escapeHtml(section.body);
+    const safeTitle = escapeHtml(section.title);
+    return '<article class="intent-wide-card" data-style-name="' + safeBody + '"><div class="result-card-top"><div><span class="result-label">' + safeTitle + '</span>' + (section.note ? '<p class="intent-mini-note">' + escapeHtml(section.note) + '</p>' : '') + '</div><div style="display: flex; align-items: center; gap: 6px;"><button class="fav-btn" type="button" data-fav-style="' + safeBody + '" aria-label="Favorite style">☆</button><button class="copy-btn result-copy" type="button" data-copy="' + safeBody + '">Copy Section</button></div></div><pre class="intent-section-pre">' + safeBody + '</pre></article>';
+  }).join('') + '</div>';
 }
 
 function renderHeadlineGroups(groups: { title: string; note: string; items?: string[]; text?: string }[], footer = ''): string {

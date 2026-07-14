@@ -33,16 +33,18 @@ export const createWorkspace = wrapErrorBoundary(async function (
   let activeConfig = toolConfigs[toolSlug];
   if (!activeConfig) {
     const isNameGen = toolSlug.includes('name-generator') || toolSlug.includes('names-generator') || toolSlug.includes('generator-name') || toolSlug.endsWith('-name') || toolSlug === 'cursive-name-generator';
-    if (isNameGen) {
+    const isWriting = toolSlug.includes('paragraph') || toolSlug.includes('sentence') || toolSlug.includes('story') || toolSlug.includes('article') || toolSlug.includes('essay') || toolSlug.includes('blog') || toolSlug.includes('description') || toolSlug.includes('bio') || toolSlug.includes('caption') || toolSlug.includes('review') || toolSlug.includes('headline') || toolSlug.includes('title') || toolSlug.includes('email') || toolSlug.includes('letter') || toolSlug.includes('summary') || toolSlug.includes('rewrite') || toolSlug.includes('writing') || toolSlug.includes('prompt');
+    
+    if (isNameGen || isWriting) {
       const { mergeConfig } = await import('../../config/base');
       activeConfig = mergeConfig(toolSlug, {
-        counters: { chars: true, glyphs: false, words: true, lines: false },
-        previews: ['ig', 'tw'],
+        counters: { chars: true, glyphs: false, words: true, lines: true },
+        previews: isNameGen ? ['ig', 'tw'] : ['ig', 'fb', 'tw', 'ds', 'wa', 'tt', 'tg', 'yt', 'tv', 'un'],
         history: true,
         search: true,
         favorites: true,
         shortcuts: true,
-        exporters: ['txt', 'csv']
+        exporters: isNameGen ? ['txt', 'csv'] : ['txt', 'html', 'json', 'csv']
       });
     }
   }

@@ -60,3 +60,15 @@ tools.forEach(tool => {
     });
   }
 });
+
+// Register AI writing tools dynamically
+tools.forEach(tool => {
+  const isWriting = tool.slug.includes('paragraph') || tool.slug.includes('sentence') || tool.slug.includes('story') || tool.slug.includes('article') || tool.slug.includes('essay') || tool.slug.includes('blog') || tool.slug.includes('description') || tool.slug.includes('bio') || tool.slug.includes('caption') || tool.slug.includes('review') || tool.slug.includes('headline') || tool.slug.includes('title') || tool.slug.includes('email') || tool.slug.includes('letter') || tool.slug.includes('summary') || tool.slug.includes('rewrite') || tool.slug.includes('writing') || tool.slug.includes('prompt');
+  if (isWriting) {
+    workspaceRegistry.register({
+      slug: tool.slug,
+      name: tool.name,
+      category: 'AI Writing'
+    });
+  }
+});
