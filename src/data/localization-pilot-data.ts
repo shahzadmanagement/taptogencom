@@ -17,8 +17,8 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "localizedSlug": "generador-de-nombres",
     "h1": "Generador de nombres",
     "metaTitle": "Generador de nombres gratis",
-    "metaDescription": "Crea ideas de nombres claras para proyectos, personajes, marcas o listas personales con resultados faciles de revisar.",
-    "intro": "Genera nombres en espanol con opciones amplias y revisa cada sugerencia antes de usarla en publico.",
+    "metaDescription": "Crea ideas de nombres claras para proyectos, personajes, marcas o listas personales con resultados fáciles de revisar.",
+    "intro": "Genera nombres en español con opciónes amplias y revisa cada sugerencia antes de usarla en publico.",
     "faqTopics": [
       "como elegir un nombre",
       "nombres originales",
@@ -289,7 +289,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "localizedSlug": "generateur-de-prenoms",
     "h1": "Generateur de prenoms",
     "metaTitle": "Generateur de prenoms gratuit",
-    "metaDescription": "Explorez des idees de prenoms pour bebe avec des suggestions faciles a comparer.",
+    "metaDescription": "Explorez des idees de prenoms pour bebe avec des suggestions fáciles a comparer.",
     "intro": "Generez des prenoms possibles et verifiez sens, prononciation et usage local.",
     "faqTopics": [
       "prenoms fille",
@@ -375,7 +375,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de segundo nombre",
     "metaTitle": "Generador de segundo nombre gratis",
     "metaDescription": "Encuentra ideas de segundo nombre para combinaciones personales, personajes o listas creativas.",
-    "intro": "Genera opciones que encajen con nombre y apellido, y revisa pronunciacion y contexto.",
+    "intro": "Genera opciónes que encajen con nombre y apellido, y revisa pronunciacion y contexto.",
     "faqTopics": [
       "segundo nombre ideas",
       "nombres compuestos",
@@ -426,7 +426,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de nombres de equipo",
     "metaTitle": "Generador de nombres de equipo gratis",
     "metaDescription": "Crea nombres para equipos de trabajo, deportes recreativos, clases o grupos creativos.",
-    "intro": "Obtén ideas de equipo faciles de recordar y revisa tono, inclusion y originalidad.",
+    "intro": "Obtén ideas de equipo fáciles de recordar y revisa tono, inclusion y originalidad.",
     "faqTopics": [
       "nombres para equipos",
       "nombres de grupos",
@@ -528,7 +528,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de nombres para productos",
     "metaTitle": "Nombres para productos gratis",
     "metaDescription": "Crea ideas de nombres para productos, colecciones, funciones o lanzamientos.",
-    "intro": "Genera opciones comerciales y revisa marca, claridad y encaje con el mercado.",
+    "intro": "Genera opciónes comerciales y revisa marca, claridad y encaje con el mercado.",
     "faqTopics": [
       "nombre de producto",
       "ideas de producto",
@@ -783,7 +783,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de nombres para blog",
     "metaTitle": "Nombres para blog gratis",
     "metaDescription": "Encuentra ideas de nombres para blogs personales, nichos, newsletters o proyectos de contenido.",
-    "intro": "Genera opciones memorables y revisa dominio, tono y tema antes de elegir.",
+    "intro": "Genera opciónes memorables y revisa dominio, tono y tema antes de elegir.",
     "faqTopics": [
       "nombre de blog",
       "ideas para blog",
@@ -834,7 +834,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de nombres para podcast",
     "metaTitle": "Nombres para podcast gratis",
     "metaDescription": "Crea ideas de nombres para podcasts, episodios seriados o canales de audio.",
-    "intro": "Genera opciones claras y revisa disponibilidad en directorios, dominio y marca.",
+    "intro": "Genera opciónes claras y revisa disponibilidad en directorios, dominio y marca.",
     "faqTopics": [
       "nombre de podcast",
       "ideas para podcast",
@@ -1140,7 +1140,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de titulos SEO",
     "metaTitle": "Generador de titulos SEO gratis",
     "metaDescription": "Crea ideas de titulos SEO para paginas, articulos, guias y fichas de producto.",
-    "intro": "Genera opciones de titulo y revisa longitud, intencion y exactitud antes de usarlas.",
+    "intro": "Genera opciónes de titulo y revisa longitud, intencion y exactitud antes de usarlas.",
     "faqTopics": [
       "titulo SEO",
       "title tag",

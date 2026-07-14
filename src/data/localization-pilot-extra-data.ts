@@ -43,7 +43,7 @@ const kindCopy = {
   pt: {
     name: {
       meta: 'Crie ideias de nomes claras para projetos, personagens, marcas ou listas pessoais.',
-      intro: 'Gere opcoes em portugues e revise significado, disponibilidade e contexto antes de usar.',
+      intro: 'Gere opções em português e revise significado, disponibilidade e contexto antes de usar.',
       intent: 'Direct Portuguese naming intent.',
     },
     business: {
@@ -57,7 +57,7 @@ const kindCopy = {
       intent: 'Portuguese SEO utility intent.',
     },
     text: {
-      meta: 'Transforme texto em formatos copiaveis para perfis, mensagens e conteudo rapido.',
+      meta: 'Transforme texto em formatos copiaveis para perfis, mensagens e conteudo rápido.',
       intro: 'Cole o texto, gere a variacao e confira legibilidade e compatibilidade na plataforma.',
       intent: 'Portuguese text utility intent.',
     },
