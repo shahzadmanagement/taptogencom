@@ -751,119 +751,148 @@ export function createLocalizedFaqItems(localized: LocalizedToolContent) {
   const copy = getLocalizedPageCopy(localized);
   const safetyNote = getLocalizedSafetyNote(localized);
   const keywordList = copy.faqTopics.join(', ');
+  
+  let baseFaqs: { q: string; a: string }[] = [];
   if (localized.language === 'fr') {
-    return [
+    baseFaqs = [
       { q: 'À quoi sert cet outil ?', a: `${copy.intro} Il aide à partir plus vite, à comparer plusieurs pistes et à garder une version que vous pouvez adapter à votre contexte.` },
       { q: 'Que faut-il écrire pour obtenir de meilleurs résultats ?', a: 'Ajoutez l’usage prévu, le public, le ton, les mots à conserver et les éléments à éviter. Un contexte précis rend les suggestions plus faciles à relire.' },
       { q: 'Puis-je utiliser le résultat tel quel ?', a: `Mieux vaut le relire. Vérifiez exactitude, originalité, lisibilité et règles de la plateforme ou du projet. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'de') {
-    return [
+  } else if (localized.language === 'de') {
+    baseFaqs = [
       { q: 'Wofür kann ich dieses Tool nutzen?', a: `${copy.intro} Das Tool hilft dir, schneller zu starten, Varianten zu vergleichen und einen Entwurf an deinen echten Einsatz anzupassen.` },
       { q: 'Was sollte ich eingeben, um bessere Ergebnisse zu bekommen?', a: 'Nenne Zweck, Zielgruppe, Ton, gewünschte Wörter und Dinge, die vermieden werden sollen. Je klarer der Kontext, desto leichter lassen sich die Vorschläge prüfen.' },
       { q: 'Kann ich das Ergebnis direkt verwenden?', a: `Nicht ungeprüft. Prüfe Genauigkeit, Originalität, Lesbarkeit und die Regeln deiner Plattform oder deines Projekts. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'pt') {
-    return [
+  } else if (localized.language === 'pt') {
+    baseFaqs = [
       { q: `Para que serve ${copy.h1}?`, a: `${copy.intro} Use para explorar ${copy.primaryKeyword} com contexto real, comparar variações e escolher uma opção que ainda possa ser revisada.` },
       { q: `Que detalhes melhoram os resultados de ${copy.primaryKeyword}?`, a: `Inclua público, tom, formato, palavras desejadas e limites do projeto. Termos próximos como ${keywordList} ajudam a manter a intenção correta.` },
       { q: 'Posso usar o resultado diretamente?', a: `Revise antes. Confira exatidão, originalidade, legibilidade e regras da plataforma ou do projeto. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'it') {
-    return [
+  } else if (localized.language === 'it') {
+    baseFaqs = [
       { q: `A cosa serve ${copy.h1}?`, a: `${copy.intro} Serve per esplorare ${copy.primaryKeyword} con un contesto concreto, confrontare varianti e scegliere una bozza da rifinire.` },
-      { q: `Quali dettagli migliorano ${copy.primaryKeyword}?`, a: `Aggiungi pubblico, tono, formato, parole da includere e limiti del progetto. Varianti come ${keywordList} aiutano a restare nello stesso intento.` },
-      { q: 'Posso usare il risultato direttamente?', a: `Meglio rivederlo prima. Controlla accuratezza, originalità, leggibilità e regole della piattaforma o del progetto. ${safetyNote}` },
+      { q: `Quali dettagli migliorano ${copy.primaryKeyword}?`, a: `Aggiungi pubblico, tono, formato, parole da includere e limiti del progetto. Varianti como ${keywordList} aiutano a restare nello stesso intento.` },
+      { q: 'Posso usar o risultato diretamente?', a: `Meglio rivederlo prima. Controlla accuratezza, originalità, leggibilità e regole della piattaforma o del progetto. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'pl') {
-    return [
+  } else if (localized.language === 'pl') {
+    baseFaqs = [
       { q: `Do czego służy ${copy.h1}?`, a: `${copy.intro} Pomaga przygotować ${copy.primaryKeyword}, porównać warianty i dopasować szkic do realnego zastosowania.` },
       { q: `Co wpisać, aby poprawić ${copy.primaryKeyword}?`, a: `Dodaj cel, odbiorców, ton, format, słowa do zachowania oraz ograniczenia projektu. Powiązane tematy, takie jak ${keywordList}, pomagają utrzymać właściwą intencję.` },
       { q: 'Czy mogę użyć wyniku od razu?', a: `Najpierw go sprawdź. Zweryfikuj dokładność, oryginalność, czytelność oraz zasady platformy lub projektu. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'ru') {
-    return [
+  } else if (localized.language === 'ru') {
+    baseFaqs = [
       { q: `Для чего нужен ${copy.h1}?`, a: `${copy.intro} Инструмент помогает подготовить ${copy.primaryKeyword}, сравнить варианты и адаптировать черновик под реальную задачу.` },
       { q: `Что ввести, чтобы улучшить ${copy.primaryKeyword}?`, a: `Добавьте цель, аудиторию, тон, формат, нужные слова и ограничения проекта. Близкие темы, например ${keywordList}, помогают сохранить правильный интент.` },
       { q: 'Можно ли использовать результат сразу?', a: `Сначала проверьте его. Оцените точность, оригинальность, читаемость и правила платформы или проекта. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'tr') {
-    return [
+  } else if (localized.language === 'tr') {
+    baseFaqs = [
       { q: `${copy.h1} ne işe yarar?`, a: `${copy.intro} ${copy.primaryKeyword} için bağlama uygun taslaklar hazırlamanıza, seçenekleri karşılaştırmanıza ve sonucu gerçek kullanıma uyarlamanıza yardım eder.` },
       { q: `${copy.primaryKeyword} için hangi bilgiler daha iyi sonuç verir?`, a: `Amaç, hedef kitle, ton, format, kullanılacak kelimeler ve kaçınılacak noktaları ekleyin. ${keywordList} gibi yakın konular doğru niyette kalmayı sağlar.` },
       { q: 'Sonucu doğrudan kullanabilir miyim?', a: `Önce gözden geçirin. Doğruluk, özgünlük, okunabilirlik ve platform ya da proje kurallarını kontrol edin. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'id') {
-    return [
+  } else if (localized.language === 'id') {
+    baseFaqs = [
       { q: `Untuk apa ${copy.h1}?`, a: `${copy.intro} Alat ini membantu menyiapkan ${copy.primaryKeyword}, membandingkan beberapa opsi, lalu menyesuaikan draf untuk kebutuhan nyata.` },
       { q: `Detail apa yang membuat ${copy.primaryKeyword} lebih baik?`, a: `Tambahkan tujuan, audiens, nada, format, kata yang harus dipakai, dan batasan proyek. Topik terkait seperti ${keywordList} membantu menjaga maksud yang sama.` },
       { q: 'Bolehkah hasilnya langsung dipakai?', a: `Sebaiknya ditinjau dulu. Periksa akurasi, orisinalitas, keterbacaan, serta aturan platform atau proyek. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'sv') {
-    return [
-      { q: `Vad anvands ${copy.h1} till?`, a: `${copy.intro} Verktyget hjalper dig att forbereda ${copy.primaryKeyword}, jamfora flera alternativ och anpassa ett utkast till verklig anvandning.` },
-      { q: `Vilka detaljer ger battre ${copy.primaryKeyword}?`, a: `Lagg till syfte, malgrupp, ton, format, ord som ska anvandas och begransningar. Naraliggande amnen som ${keywordList} hjalper till att halla samma sokavsikt.` },
-      { q: 'Kan jag anvanda resultatet direkt?', a: `Granska det forst. Kontrollera noggrannhet, originalitet, lasbarhet och regler for plattformen eller projektet. ${safetyNote}` },
+  } else if (localized.language === 'sv') {
+    baseFaqs = [
+      { q: `Vad används ${copy.h1} till?`, a: `${copy.intro} Verktyget hjälper dig att förbereda ${copy.primaryKeyword}, jämföra flera alternativ och anpassa ett utkast till verklig användning.` },
+      { q: `Vilka detaljer ger bättre ${copy.primaryKeyword}?`, a: `Lägg till syfte, målgrupp, ton, format, ord som ska användas och begränsningar. Näraliggande ämnen som ${keywordList} hjälper till att hålla samma sökavsikt.` },
+      { q: 'Kan jag använda resultatet direkt?', a: `Granska det först. Kontrollera noggrannhet, originalitet, läsbarhet och regler för plattformen eller projektet. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'ms') {
-    return [
+  } else if (localized.language === 'ms') {
+    baseFaqs = [
       { q: `Untuk apa ${copy.h1}?`, a: `${copy.intro} Alat ini membantu menyediakan ${copy.primaryKeyword}, membandingkan beberapa pilihan dan menyesuaikan draf untuk kegunaan sebenar.` },
       { q: `Butiran apa yang menambah baik ${copy.primaryKeyword}?`, a: `Tambah tujuan, audiens, nada, format, perkataan yang perlu digunakan dan had projek. Topik berkaitan seperti ${keywordList} membantu mengekalkan maksud yang sama.` },
       { q: 'Boleh guna hasil terus?', a: `Semak dahulu. Periksa ketepatan, keaslian, kebolehbacaan serta peraturan platform atau projek. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'bg') {
-    return [
+  } else if (localized.language === 'bg') {
+    baseFaqs = [
       { q: `За какво служи ${copy.h1}?`, a: `${copy.intro} Инструментът помага да подготвите ${copy.primaryKeyword}, да сравните варианти и да адаптирате чернова към реална употреба.` },
       { q: `Какви детайли подобряват ${copy.primaryKeyword}?`, a: `Добавете цел, аудитория, тон, формат, желани думи и ограничения на проекта. Близки теми като ${keywordList} помагат да се запази същият интент.` },
       { q: 'Мога ли да използвам резултата директно?', a: `Първо го прегледайте. Проверете точност, оригиналност, четимост и правилата на платформата или проекта. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'hi') {
-    return [
+  } else if (localized.language === 'hi') {
+    baseFaqs = [
       { q: `${copy.h1} किस काम आता है?`, a: `${copy.intro} यह ${copy.primaryKeyword} तैयार करने, विकल्पों की तुलना करने और मसौदे को वास्तविक उपयोग के लिए ढालने में मदद करता है.` },
       { q: `${copy.primaryKeyword} के लिए कौन सी जानकारी बेहतर है?`, a: `उद्देश्य, दर्शक, टोन, फॉर्मेट, जरूरी शब्द और सीमाएं जोड़ें. ${keywordList} जैसे जुड़े विषय सही इरादा बनाए रखते हैं.` },
       { q: 'क्या परिणाम सीधे इस्तेमाल कर सकता हूं?', a: `पहले समीक्षा करें. सटीकता, मौलिकता, पठनीयता और प्लेटफॉर्म या परियोजना नियम जांचें. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'bn') {
-    return [
+  } else if (localized.language === 'bn') {
+    baseFaqs = [
       { q: `${copy.h1} কী কাজে লাগে?`, a: `${copy.intro} এটি ${copy.primaryKeyword} প্রস্তুত করতে, বিকল্প তুলনা করতে এবং খসড়া বাস্তব ব্যবহারের জন্য মানাতে সাহায্য করে.` },
-      { q: `${copy.primaryKeyword} ভালো করতে কী তথ্য দেব?`, a: `উদ্দেশ্য, অডিয়েন্স, টোন, ফরম্যাট, দরকারি শব্দ ও সীমা যোগ করুন. ${keywordList} ধরনের সম্পর্কিত বিষয় একই উদ্দেশ্য ধরে রাখে.` },
+      { q: `${copy.primaryKeyword} ভালো করতে কী তথ্য দেব?`, a: `উদ্देश्य, অডিয়েন্স, টোন, ফরম্যাট, দরকারি শব্দ ও সীমা যোগ করুন. ${keywordList} ধরনের সম্পর্কিত বিষয় একই उद्देश्य ধরে রাখে.` },
       { q: 'ফলাফল সরাসরি ব্যবহার করা যাবে?', a: `আগে রিভিউ করুন. নির্ভুলতা, মৌলিকতা, পাঠযোগ্যতা এবং প্ল্যাটফর্ম বা প্রকল্পের নিয়ম যাচাই করুন. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'ja') {
-    return [
+  } else if (localized.language === 'ja') {
+    baseFaqs = [
       { q: `${copy.h1}は何に使えますか?`, a: `${copy.intro} ${copy.primaryKeyword}の下書きを作り、複数案を比較し、実際の用途に合わせて調整できます.` },
       { q: `${copy.primaryKeyword}を良くするには何を入力しますか?`, a: `目的、読者、トーン、形式、入れたい語句、避けたい条件を加えてください. ${keywordList}のような近いテーマは意図を保つ助けになります.` },
       { q: '結果をそのまま使えますか?', a: `まず確認してください. 正確性、独自性、読みやすさ、プラットフォームやプロジェクトのルールを確認します. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'ko') {
-    return [
+  } else if (localized.language === 'ko') {
+    baseFaqs = [
       { q: `${copy.h1}는 어디에 쓰나요?`, a: `${copy.intro} ${copy.primaryKeyword} 초안을 만들고 여러 옵션을 비교한 뒤 실제 용도에 맞게 조정할 수 있습니다.` },
       { q: `${copy.primaryKeyword} 결과를 좋게 하려면 무엇을 입력하나요?`, a: `목적, 대상, 어조, 형식, 포함할 단어와 제한 사항을 넣으세요. ${keywordList} 같은 관련 주제는 같은 의도를 유지하는 데 도움이 됩니다.` },
       { q: '결과를 바로 사용해도 되나요?', a: `먼저 검토하세요. 정확성, 독창성, 가독성, 플랫폼 또는 프로젝트 규칙을 확인하세요. ${safetyNote}` },
     ];
-  }
-  if (localized.language === 'ar') {
-    return [
+  } else if (localized.language === 'ar') {
+    baseFaqs = [
       { q: `ما فائدة ${copy.h1}?`, a: `${copy.intro} يساعدك على إعداد ${copy.primaryKeyword} ومقارنة الخيارات وتعديل المسودة لاستخدام حقيقي.` },
       { q: `ما التفاصيل التي تحسن ${copy.primaryKeyword}?`, a: `أضف الهدف والجمهور والنبرة والصيغة والكلمات المطلوبة والقيود. موضوعات قريبة مثل ${keywordList} تساعد على حفظ نفس القصد.` },
       { q: 'هل يمكن استخدام النتيجة مباشرة?', a: `راجعها أولا. تحقق من الدقة والأصالة والوضوح وقواعد المنصة أو المشروع. ${safetyNote}` },
     ];
+  } else {
+    baseFaqs = createSpanishFaqItems(localized);
   }
-  return createSpanishFaqItems(localized);
+
+  let extraFaqs: { q: string; a: string }[] = [];
+  const name = copy.h1;
+  if (localized.language === 'ja') {
+    extraFaqs = [
+      { q: `${name}は完全に無料で使用できますか？`, a: `はい、${name}は登録、サブスクリプション、使用制限なしで100%完全に無料です。` },
+      { q: `${name}を使用する際、入力データは安全ですか？`, a: `はい、完全に安全です。すべての計算とフォーマット処理はウェブブラウザ上でローカルに実行されます。入力テキスト、キーワード、または生成された結果がサーバーに送信されたり保存されたりすることはありません。` },
+      { q: `${name}で生成された結果を商用利用できますか？`, a: `はい、生成された結果の所有権はすべてお客様に帰属し、個人用、商用、またはプロフェッショナルなプロジェクトで自由に使用できます。` },
+      { q: `ブラウザ拡張機能やソフトウェアをインストールする必要はありますか？`, a: `いいえ、${name}はウェブベースのツールであり、デスクトップ、タブレット、モバイルデバイスのあらゆるモダンブラウザで直接動作します。` },
+      { q: `生成された結果をコピーするにはどうすればよいですか？`, a: `個々の結果カードの横にある「コピー」ボタンをクリックするか、出力パネルの上部にある「すべてコピー」をクリックして、すべての結果をクリップボードにコピーします。` },
+      { q: `生成回数に制限はありますか？`, a: `いいえ、何回でも生成できます。最適な結果を見つけるために、さまざまなキーワードや設定を試してみることをお勧めします。` },
+      { q: `アカウントの登録は必要ですか？`, a: `登録は一切不要です。メールアドレスの入力やプロファイルの作成をすることなく、すぐにジェネレーターを使用できます。` }
+    ];
+  } else if (localized.language === 'ko') {
+    extraFaqs = [
+      { q: `${name}은(는) 완전히 무료인가요?`, a: `네, ${name}은(는) 회원가입, 구독, 또는 사용 제한 없이 100% 완전히 무료입니다.` },
+      { q: `${name}을(는) 사용할 때 내 입력 데이터는 안전한가요?`, a: `네, 전적으로 안전합니다. 모든 연산과 서식 지정은 웹 브라우저 내에서 로컬로 진행됩니다. 입력한 텍스트, 키워드, 결과값은 당사 서버로 전송되거나 저장되지 않습니다.` },
+      { q: `${name}의 결과를 상업적으로 사용할 수 있나요?`, a: `네, 생성된 결과물에 대한 전체 소유권을 가지며 개인, 상업 또는 전문 프로젝트에 자유롭게 사용할 수 있습니다.` },
+      { q: `브라우저 확장 프로그램이나 소프트웨어를 설치해야 하나요?`, a: `아니요, ${name}은(는) 데스크톱, 태블릿, 모바일 기기의 모든 현대적인 브라우저에서 직접 실행되는 웹 기반 도구입니다.` },
+      { q: `생성된 결과를 어떻게 복사하나요?`, a: `개별 결과 카드 옆의 복사 버튼을 누르거나, 출력 패널 상단의 '전체 복사'를 클릭하여 클립보드에 복사할 수 있습니다.` },
+      { q: `생성 횟수에 제한이 있나요?`, a: `아니요, 횟수 제한 없이 생성 가능합니다. 최적의 결과물을 찾기 위해 다양한 키워드나 설정을 시도해 보시는 것을 권장합니다.` },
+      { q: `계정을 만들어야 하나요?`, a: `회원가입은 필요하지 않습니다. 이메일을 입력하거나 프로필을 만들지 않고도 바로 생성기를 사용할 수 있습니다.` }
+    ];
+  } else {
+    extraFaqs = [
+      { q: `¿Es ${name} completamente gratis?`, a: `Sí, ${name} es 100% gratis, sin registro, suscripciones ni límites de uso.` },
+      { q: `¿Están seguros mis datos de entrada en ${name}?`, a: `Totalmente. Todo el procesamiento se realiza de forma local en tu navegador. No guardamos ni enviamos ningún texto a servidores.` },
+      { q: `¿Puedo usar el resultado de ${name} comercialmente?`, a: `Sí, tienes todos los derechos sobre el resultado generado y puedes usarlo en proyectos comerciales o personales.` },
+      { q: `¿Necesito instalar algún software o extensión?`, a: `No. ${name} funciona directamente en cualquier navegador moderno en ordenadores, tablets y móviles.` },
+      { q: `¿Cómo posso copiar los resultados?`, a: `Haz clic en el botón Copiar al lado de cualquier resultado, o en Copiar Todo arriba del panel de salida.` },
+      { q: `¿Hay límites en la cantidad de generations?`, a: `No, puedes generar tantas veces como quieras sin restricciones.` },
+      { q: `¿Necesito crear una cuenta?`, a: `No se requiere registro. Puedes empezar a usar el generador inmediatamente.` }
+    ];
+  }
+
+  const effectiveFaqs = [...baseFaqs];
+  for (const faq of extraFaqs) {
+    if (effectiveFaqs.length >= 10) break;
+    effectiveFaqs.push(faq);
+  }
+  return effectiveFaqs;
 }
 
 export function createLocalizedGuide(tool: Tool, localized: LocalizedToolContent) {
