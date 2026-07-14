@@ -84,14 +84,14 @@ const b02SafetyAddendum: Record<RolloutLanguage, Record<'utility' | 'social' | '
   },
   it: {
     utility: 'Usalo come supporto pratico e verifica il risultato prima di decisioni importanti.',
-    social: 'Non promette copertura, follower, disponibilita di nomi o performance di piattaforma.',
-    business: 'Non sostituisce revisioni legali, finanziarie, di marchio o disponibilita commerciale.',
+    social: 'Non promette copertura, follower, disponibilità di nomi o performance di piattaforma.',
+    business: 'Non sostituisce revisioni legali, finanziarie, di marchio o disponibilità commerciale.',
     bio: 'Non usarlo per false identita, imitazione o dati personali sensibili.',
   },
   pl: {
-    utility: 'Traktuj to jako praktyczna pomoc i sprawdz wynik przed waznymi decyzjami.',
-    social: 'Nie obiecuje zasiegu, obserwujacych, dostepnosci nazw ani wynikow platformy.',
-    business: 'Nie zastepuje kontroli prawnej, finansowej, markowej ani dostepnosci handlowej.',
+    utility: 'Traktuj to jako praktyczna pomoc i sprawdź wynik przed waznymi decyzjami.',
+    social: 'Nie obiecuje zasiegu, obserwujacych, dostępnośći nazw ani wynikow platformy.',
+    business: 'Nie zastepuje kontroli prawnej, finansowej, markowej ani dostępnośći handlowej.',
     bio: 'Nie uzywaj do falszywej tozsamosci, podszywania sie ani wrazliwych danych osobowych.',
   },
   ru: {

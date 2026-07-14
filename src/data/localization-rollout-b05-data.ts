@@ -99,10 +99,10 @@ const b05SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'writing' |
   },
   pl: {
     business: 'Sprawdz dane, zgody, ceny, obietnice i ton marki przed publikacja.',
-    writing: 'Uzywaj jako wsparcia pisania; sprawdz zrodla, oryginalnosc oraz zasady akademickie lub redakcyjne.',
-    random: 'Traktuj jako inspiracje lub lekki wybor, nie jako tozsamosc, dokument ani oficjalna decyzje.',
-    developer: 'Testuj kod, waliduj dane wejsciowe i sprawdz bezpieczenstwo, dostepnosc oraz zgodnosc przed produkcja.',
-    seo: 'Nie obiecuje ruchu, pozycji, idealnej dostepnosci ani wynikow wyszukiwania.',
+    writing: 'Uzywaj jako wsparcia pisania; sprawdź zrodla, oryginalnosc oraz zasady akademickie lub redakcyjne.',
+    random: 'Traktuj jako inspiracje lub lekki wybór, nie jako tozsamosc, dokument ani oficjalna decyzje.',
+    developer: 'Testuj kod, waliduj dane wejsciowe i sprawdź bezpieczenstwo, dostępność oraz zgodnosc przed produkcja.',
+    seo: 'Nie obiecuje ruchu, pozycji, idealnej dostępnośći ani wynikow wyszukiwania.',
     fictional: 'Uzywaj do fikcji, gier lub wlasnych swiatow i nie kopiuj chronionych uniwersow.',
   },
   ru: {

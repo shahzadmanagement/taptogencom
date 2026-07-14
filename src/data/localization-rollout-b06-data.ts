@@ -84,13 +84,13 @@ const b06SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' |
   it: {
     business: 'Controlla marchio, dominio, permessi, prezzi, dati reali e conformita prima delluso pubblico.',
     utility: 'Usalo come supporto pratico; conferma etichette, liste o estrazioni con le tue regole.',
-    name: 'Controlla cultura, contesto, pronuncia, diritti e disponibilita prima delluso pubblico.',
+    name: 'Controlla cultura, contesto, pronuncia, diritti e disponibilità prima delluso pubblico.',
     fictional: 'Usalo come ispirazione creativa ed evita di copiare marchi, persone reali o universi protetti.',
   },
   pl: {
-    business: 'Sprawdz marke, domene, zgody, ceny, prawdziwe dane i zgodnosc przed publicznym uzyciem.',
+    business: 'Sprawdz marke, domene, zgody, ceny, prawdziwe dane i zgodnosc przed publicznym użyciem.',
     utility: 'Traktuj jako praktyczna pomoc; potwierdz etykiety, listy lub losowania wedlug wlasnych zasad.',
-    name: 'Sprawdz kulture, kontekst, wymowe, prawa i dostepnosc przed publicznym uzyciem.',
+    name: 'Sprawdz kulture, kontekst, wymowe, prawa i dostępność przed publicznym użyciem.',
     fictional: 'Uzywaj jako kreatywnej inspiracji i nie kopiuj marek, realnych osob ani chronionych swiatow.',
   },
   ru: {

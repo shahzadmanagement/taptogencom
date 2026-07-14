@@ -94,11 +94,11 @@ const b03SafetyAddendum: Record<RolloutLanguage, Record<'utility' | 'business' |
     developer: 'Controlla compatibilita, accessibilita e sicurezza prima delluso in produzione.',
   },
   pl: {
-    utility: 'Traktuj to jako praktyczna pomoc i sprawdz wynik przed waznymi decyzjami.',
-    business: 'Sprawdz fakty, zgody, marke, prywatnosc i zgodnosc przed publicznym uzyciem.',
+    utility: 'Traktuj to jako praktyczna pomoc i sprawdź wynik przed waznymi decyzjami.',
+    business: 'Sprawdz fakty, zgody, marke, prywatnosc i zgodnosc przed publicznym użyciem.',
     writing: 'Edytuj szkic z ludzka ocena i nie pokazuj go jako wyniku gwarantowanego lub oficjalnego.',
     random: 'Uzywaj do zabawy lub pomyslow; unikaj tozsamosci, dokumentow, nekania lub presji spolecznej.',
-    developer: 'Sprawdz zgodnosc, dostepnosc i bezpieczenstwo przed uzyciem produkcyjnym.',
+    developer: 'Sprawdz zgodnosc, dostępność i bezpieczenstwo przed użyciem produkcyjnym.',
   },
   ru: {
     utility: 'Ispolzuyte kak prakticheskuyu pomoshch i proveriaite rezultat pered vazhnymi resheniyami.',
