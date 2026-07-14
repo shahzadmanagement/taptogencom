@@ -1140,6 +1140,21 @@ export const tools: Tool[] = [
   {
     slug: 'color-palette-generator',
     name: 'Color Palette Generator',
+    toolOptions: [
+      {
+        type: 'select',
+        options: [
+          { value: 'analogous', label: 'Analogous Harmony' },
+          { value: 'complementary', label: 'Complementary Harmony' },
+          { value: 'triadic', label: 'Triadic Harmony' },
+          { value: 'split-complementary', label: 'Split-Complementary' },
+          { value: 'monochromatic', label: 'Monochromatic Harmony' }
+        ],
+        id: 'palette-harmony',
+        label: 'Harmony Rule',
+        default: 'analogous'
+      }
+    ],
     icon: '🎨',
     tagline: 'Generate beautiful color palettes for your designs',
     description: 'Create harmonious color palettes with complementary, analogous, triadic, and random color schemes. Get hex codes, RGB values, and preview your palette.',

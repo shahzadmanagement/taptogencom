@@ -2940,21 +2940,68 @@ async function generate() {
       const seed = text || 'premium palette';
       const seedScore = seed.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
       const baseHue = seedScore % 360;
+      
+      const harmony = optionValue('palette-harmony', 'analogous');
+      
+      let shifts = [0, 30, 60, -30, -60];
+      let lightness = [42, 58, 50, 92, 14];
+      let saturation = [68, 62, 74, 28, 18];
+
+      if (harmony === 'analogous') {
+        shifts = [0, 30, 60, -30, -60];
+        lightness = [50, 45, 55, 95, 15];
+        saturation = [70, 65, 75, 20, 15];
+      } else if (harmony === 'complementary') {
+        shifts = [0, 180, 0, 180, 180];
+        lightness = [50, 50, 75, 95, 12];
+        saturation = [70, 75, 50, 15, 25];
+      } else if (harmony === 'triadic') {
+        shifts = [0, 120, 240, 0, 120];
+        lightness = [50, 50, 50, 95, 15];
+        saturation = [70, 70, 70, 15, 20];
+      } else if (harmony === 'split-complementary') {
+        shifts = [0, 150, 210, 0, 150];
+        lightness = [50, 45, 55, 95, 15];
+        saturation = [70, 65, 75, 20, 15];
+      } else if (harmony === 'monochromatic') {
+        shifts = [0, 0, 0, 0, 0];
+        lightness = [20, 35, 50, 70, 90];
+        saturation = [65, 65, 65, 65, 65];
+      }
+
+      const getCmyk = (rgb: number[]): string => {
+        const r = rgb[0] / 255;
+        const g = rgb[1] / 255;
+        const b = rgb[2] / 255;
+        const k = 1 - Math.max(r, g, b);
+        if (k === 1) return 'CMYK 0%, 0%, 0%, 100%';
+        const c = Math.round(((1 - r - k) / (1 - k)) * 100);
+        const m = Math.round(((1 - g - k) / (1 - k)) * 100);
+        const y = Math.round(((1 - b - k) / (1 - k)) * 100);
+        return `CMYK ${c}%, ${m}%, ${y}%, ${Math.round(k * 100)}%`;
+      };
+
       const moods = ['Editorial Calm', 'Fresh Contrast', 'Modern Warmth', 'Clear Focus', 'Soft Launch'];
       const labels = ['Primary', 'Secondary', 'Accent', 'Surface', 'Text'];
-      const shifts = [0, 32, 164, 210, 0];
-      const lightness = [42, 58, 50, 92, 14];
-      const saturation = [68, 62, 74, 28, 18];
+      
       const colors = labels.map((label, i) => {
-        const h = (baseHue + shifts[i]) % 360;
+        const h = (baseHue + shifts[i] + 360) % 360;
         const rgb = hslToRgb(h, saturation[i], lightness[i]);
-        return { label, hex: rgbToHex(rgb), rgb, hsl: `HSL ${h}, ${saturation[i]}%, ${lightness[i]}%` };
+        return { label, hex: rgbToHex(rgb), rgb, hsl: `HSL ${h}, ${saturation[i]}%, ${lightness[i]}%`, cmyk: getCmyk(rgb) };
       });
+
       const ratio = contrastRatio(colors[3].rgb, colors[4].rgb);
+      const passAA = ratio >= 4.5 ? 'Pass (AA)' : 'Fail';
+      const passAAA = ratio >= 7.0 ? 'Pass (AAA)' : 'Fail';
+
       const paletteName = compactSeed(seed, 'Palette') + ' ' + randomFrom(moods);
-      const note = ratio >= 4.5 ? `Simple contrast note: ${colors[4].hex} on ${colors[3].hex} is likely readable for normal text (${ratio.toFixed(1)}:1).` : `Simple contrast note: ${colors[4].hex} on ${colors[3].hex} is low for normal text (${ratio.toFixed(1)}:1); use larger text or adjust contrast.`;
-      result = paletteName + '\n' + colors.map(color => `${color.label}: ${color.hex} | RGB ${color.rgb.join(', ')} | ${color.hsl}`).join('\n') + '\n' + note;
-      resultHtml = renderColorPalette(paletteName, 'Seeded from: ' + seed, colors, note);
+      
+      const note = `WCAG Contrast Analysis (Text on Surface): ${colors[4].hex} on ${colors[3].hex} is ${ratio.toFixed(1)}:1.`
+        + `\n- AA Normal Text (4.5:1 minimum): ${passAA}`
+        + `\n- AAA Normal Text (7.0:1 minimum): ${passAAA}`;
+      
+      result = paletteName + '\n' + colors.map(color => `${color.label}: ${color.hex} | RGB ${color.rgb.join(', ')} | ${color.hsl} | ${color.cmyk}`).join('\n') + '\n' + note;
+      resultHtml = renderColorPalette(paletteName, 'Seeded from: ' + seed + ` (${titleCase(harmony)})`, colors, note);
       break;
     }
     case 'town-name-generator':
