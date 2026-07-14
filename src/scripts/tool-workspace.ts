@@ -1779,23 +1779,110 @@ async function generate() {
       const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
       const paragraphs = text.split(/\n\s*\n/).filter(p => p.trim().length > 0);
       const lines = text.split(/\r?\n/).length;
+      
       const readingWpm = Math.max(100, Math.min(400, Number(optionValue('reading-wpm', '200')) || 200));
       const speakingWpm = Math.max(80, Math.min(220, Number(optionValue('speaking-wpm', '130')) || 130));
-      const readingTime = Math.max(1, Math.ceil(words.length / readingWpm));
-      const speakingTime = Math.max(1, Math.ceil(words.length / speakingWpm));
-      const freq = new Map<string, number>();
-      const stop = new Set(['the','a','an','and','or','but','to','of','in','on','for','with','is','are','was','were','be','by','it','this','that','as','at','from']);
-      words.map(word => word.toLowerCase().replace(/[^a-z0-9']/g, '')).filter(word => word.length > 2 && !stop.has(word)).forEach(word => freq.set(word, (freq.get(word) || 0) + 1));
+      
+      const readingSeconds = Math.round((words.length / readingWpm) * 60);
+      const speakingSeconds = Math.round((words.length / speakingWpm) * 60);
+      
+      const formatTime = (totalSec: number) => {
+        if (totalSec < 60) return `${totalSec} sec`;
+        const mins = Math.floor(totalSec / 60);
+        const secs = totalSec % 60;
+        return secs > 0 ? `${mins} min ${secs} sec` : `${mins} min`;
+      };
+
+      // Syllable count for Flesch Readability
+      const countWordSyllables = (w: string): number => {
+        const cleaned = w.toLowerCase().replace(/[^a-z]/g, '');
+        if (cleaned.length <= 3) return 1;
+        const matches = cleaned.match(/[aeiouy]{1,2}/g);
+        let count = matches ? matches.length : 1;
+        if (cleaned.endsWith('es') || cleaned.endsWith('ed')) count--;
+        if (cleaned.endsWith('e') && !cleaned.endsWith('le')) count--;
+        return Math.max(1, count);
+      };
+      
+      const totalSyllables = words.reduce((acc, w) => acc + countWordSyllables(w), 0);
+      const totalWordsVal = Math.max(1, words.length);
+      const totalSentencesVal = Math.max(1, sentences.length);
+      
+      // Flesch Reading Ease Formula
+      const fleschEase = 206.835 - 1.015 * (totalWordsVal / totalSentencesVal) - 84.6 * (totalSyllables / totalWordsVal);
+      const fleschLevel = Math.max(0, Math.min(100, fleschEase));
+      
+      // Flesch-Kincaid Grade Level Formula
+      const fkGrade = 0.39 * (totalWordsVal / totalSentencesVal) + 11.8 * (totalSyllables / totalWordsVal) - 15.59;
+      const gradeText = fkGrade < 0 ? 'Kindergarten' : fkGrade > 12 ? 'Professional' : `Grade ${Math.round(fkGrade)}`;
+
+      // Keyword Density (1-word and 2-word phrases)
       const includeDensity = optionValue('word-include-density', 'true') === 'true';
-      const topKeywords = includeDensity ? [...freq.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8) : [];
-      const summary = `Words: ${words.length}\nCharacters with spaces: ${text.length}\nCharacters without spaces: ${text.replace(/\s/g, '').length}\nSentences: ${sentences.length}\nParagraphs: ${paragraphs.length}\nLines: ${lines}\nReading time: about ${readingTime} min at ${readingWpm} wpm\nSpeaking time: about ${speakingTime} min at ${speakingWpm} wpm`;
-      const density = topKeywords.length ? topKeywords.map(([word, count]) => `${word}: ${count} (${((count / Math.max(words.length, 1)) * 100).toFixed(1)}%)`).join('\n') : 'No repeated keywords found.';
+      const stop = new Set(['the','a','an','and','or','but','to','of','in','on','for','with','is','are','was','were','be','by','it','this','that','as','at','from','i','you','he','she','they', 'we']);
+      const wordList = words.map(w => w.toLowerCase().replace(/[^a-z0-9]/g, '')).filter(w => w.length > 0);
+      
+      const singleFreq = new Map<string, number>();
+      wordList.filter(w => w.length > 2 && !stop.has(w)).forEach(w => singleFreq.set(w, (singleFreq.get(w) || 0) + 1));
+      const topSingle = includeDensity ? [...singleFreq.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5) : [];
+
+      const doubleFreq = new Map<string, number>();
+      for (let i = 0; i < wordList.length - 1; i++) {
+        const w1 = wordList[i];
+        const w2 = wordList[i + 1];
+        if (w1 && w2 && !stop.has(w1) && !stop.has(w2)) {
+          const phrase = `${w1} ${w2}`;
+          doubleFreq.set(phrase, (doubleFreq.get(phrase) || 0) + 1);
+        }
+      }
+      const topDouble = includeDensity ? [...doubleFreq.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5) : [];
+
+      // Advanced stats
+      const totalCharCount = text.length;
+      const charNoSpaces = text.replace(/\s/g, '').length;
+      const avgWordLength = totalWordsVal > 0 ? (words.reduce((acc, w) => acc + w.length, 0) / totalWordsVal).toFixed(1) : '0';
+      const avgSentenceLength = totalSentencesVal > 0 ? (totalWordsVal / totalSentencesVal).toFixed(1) : '0';
+      const uniqueWords = new Set(wordList).size;
+
+      const summary = `Words: ${totalWordsVal}\n`
+        + `Characters (with spaces): ${totalCharCount}\n`
+        + `Characters (no spaces): ${charNoSpaces}\n`
+        + `Sentences: ${totalSentencesVal}\n`
+        + `Paragraphs: ${paragraphs.length}\n`
+        + `Lines: ${lines}\n`
+        + `Unique Words: ${uniqueWords} (${((uniqueWords / totalWordsVal) * 100).toFixed(0)}%)\n`
+        + `Average Word Length: ${avgWordLength} chars\n`
+        + `Average Sentence Length: ${avgSentenceLength} words\n`
+        + `Reading Time: ${formatTime(readingSeconds)} (${readingWpm} WPM)\n`
+        + `Speaking Time: ${formatTime(speakingSeconds)} (${speakingWpm} WPM)`;
+
+      const readability = `Flesch Reading Ease: ${fleschLevel.toFixed(1)} / 100\n`
+        + `Flesch-Kincaid Grade Level: ${gradeText}\n`
+        + `Total Syllables: ${totalSyllables}\n\n`
+        + `Readability Reference:\n`
+        + `- 90-100: Very easy to read (approx 5th grade level)\n`
+        + `- 60-70: Standard English (approx 8th-9th grade level)\n`
+        + `- 0-30: Very difficult (college graduate level)`;
+
+      const singleDensity = topSingle.length ? topSingle.map(([word, count]) => `${word}: ${count} (${((count / totalWordsVal) * 100).toFixed(1)}%)`).join('\n') : 'No repeated keywords found.';
+      const doubleDensity = topDouble.length ? topDouble.map(([phrase, count]) => `"${phrase}": ${count} (${((count / totalWordsVal) * 100).toFixed(1)}%)`).join('\n') : 'No repeated double phrases found.';
+
+      const densityReport = `Top 1-Word Keywords:\n${singleDensity}\n\nTop 2-Word Phrases:\n${doubleDensity}`;
+
+      const platformCheck = `Google Title Limit (60 chars): ${totalCharCount <= 60 ? 'fits' : totalCharCount - 60 + ' over'}\n`
+        + `Google Meta Description (160 chars): ${totalCharCount <= 160 ? 'fits' : totalCharCount - 160 + ' over'}\n`
+        + `X/Twitter Post (280 chars): ${totalCharCount <= 280 ? 'fits' : totalCharCount - 280 + ' over'}\n`
+        + `LinkedIn Post (3000 chars): ${totalCharCount <= 3000 ? 'fits' : totalCharCount - 3000 + ' over'}\n`
+        + `Instagram Caption (2200 chars): ${totalCharCount <= 2200 ? 'fits' : totalCharCount - 2200 + ' over'}`;
+
       const sections = [
-        { title: 'Count Summary', body: summary, note: 'Core text metrics.' },
-        { title: 'Top Keyword Frequency', body: includeDensity ? density : 'Keyword frequency disabled by option.', note: 'Descriptive frequency only.' },
-        { title: 'Platform Length Snapshot', body: `X/Twitter 280 chars: ${text.length <= 280 ? 'fits' : text.length - 280 + ' over'}\nMeta description 155 chars: ${text.length <= 155 ? 'fits' : text.length - 155 + ' over'}\nSMS 160 chars: ${text.length <= 160 ? 'fits' : text.length - 160 + ' over'}`, note: 'Simple length checks.' }];
+        { title: 'Count Summary', body: summary, note: 'Core text metrics and time indicators.' },
+        { title: 'Readability Metrics', body: readability, note: 'Standard educational reading level estimation.' },
+        { title: 'Keyword & Phrase Density', body: densityReport, note: 'Top repeated terms and 2-word phrases.' },
+        { title: 'Platform Target Checks', body: platformCheck, note: 'Character limits verification.' }
+      ];
+
       result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
-      resultHtml = renderSectionSuite('Word Counter Report', sections, 'Keyword frequency is descriptive and does not guarantee SEO performance.');
+      resultHtml = renderSectionSuite('Word Counter Dominator Report', sections, 'All text analysis is executed client-side in your browser. Readability scores are mathematical estimates.');
       break;
     }
     case 'uuid-generator': {
