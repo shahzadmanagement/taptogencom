@@ -4900,6 +4900,24 @@ export const tools: Tool[] = [
   {
     slug: 'jwt-generator',
     name: 'JWT Token Generator',
+    toolOptions: [
+      {
+        type: 'select',
+        options: [
+          { value: 'HS256', label: 'HMAC-SHA256 (HS256)' },
+          { value: 'none', label: 'None (Unsigned)' }
+        ],
+        id: 'jwt-algorithm',
+        label: 'Signing Algorithm',
+        default: 'HS256'
+      },
+      {
+        type: 'text',
+        id: 'jwt-secret',
+        label: 'Secret Key (for HMAC)',
+        default: 'your-256-bit-secret'
+      }
+    ],
     icon: '🔐',
     tagline: 'Generate educational JWT-like samples',
     description: 'Create educational JWT-like structures with sample headers, payloads, and placeholder signatures. These are not signed production tokens and include no security guarantee.',
