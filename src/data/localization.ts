@@ -437,7 +437,9 @@ export function getLocalizedPageCopy(localized: LocalizedToolContent): Localized
               ? polishPolishText
               : localized.language === 'ru'
                 ? polishRussianText
-                : (value: string) => value;
+                : localized.language === 'tr'
+                  ? polishTurkishText
+                  : (value: string) => value;
 
   const polishedTitle = polish(localized.metaTitle);
   let polishedDesc = polish(localized.metaDescription);
@@ -795,6 +797,48 @@ export function polishRussianText(value: string): string {
     .replaceAll('Konverter', 'Конвертер')
     .replaceAll('Formatter', 'Форматировщик')
     .replaceAll('besplatno', 'бесплатно');
+}
+
+export function polishTurkishText(value: string): string {
+  return value
+    .replaceAll('Turkce net taslaklar olusturun ve kullanmadan once sonucu kontrol edin.', 'Türkçe net taslaklar oluşturun ve kullanmadan önce sonucu kontrol edin.')
+    .replaceAll('Yerel arama niyeti Ingilizce aracla ayni amaca hizmet eder.', 'Yerel arama niyeti İngilizce araçla aynı amaca hizmet eder.')
+    .replaceAll('Yayinlamadan once dogruluk, ozgunluk, uyumluluk ve proje kurallarini kontrol edin.', 'Yayınlamadan önce doğruluk, özgünlük, uyumluluk ve proje kurallarını kontrol edin.')
+    .replaceAll('yararli fikirler', 'yararlı fikirler')
+    .replaceAll('sonucu kopyalama', 'sonucu kopyalama')
+    .replaceAll('kullanmadan once kontrol', 'kullanmadan önce kontrol')
+    .replaceAll('Pratik destek olarak kullanin ve onemli kararlardan once sonucu kontrol edin.', 'Pratik destek olarak kullanın ve önemli kararlardan önce sonucu kontrol edin.')
+    .replaceAll('Erisim, takipci, ad uygunluğu veya platform performansi vadetmez.', 'Erişim, takipçi, ad uygunluğu veya platform performansı vadetmez.')
+    .replaceAll('Hukuki, finansal, marka veya ticari uygunluk incelemesinin yerine gecmez.', 'Hukuki, finansal, marka veya ticari uygunluk incelemesinin yerine geçmez.')
+    .replaceAll('Sahte kimlik, taklit veya hassas kisisel veriler icin kullanmayin.', 'Sahte kimlik, taklit veya hassas kişisel veriler için kullanmayın.')
+    .replaceAll('Halka acik kullanimdan once gercekleri, izinleri, markayi, gizliligi e uyumu kontrol edin.', 'Halka açık kullanımdan önce gerçekleri, izinleri, markayı, gizliliği  ve uyumu kontrol edin.')
+    .replaceAll('Halka acik kullanimdan once gercekleri, izinleri, markayi, gizliligi ve uyumu kontrol edin.', 'Halka açık kullanımdan önce gerçekleri, izinleri, markayı, gizliliği ve uyumu kontrol edin.')
+    .replaceAll('Taslagi insan degerlendirmesiyle duzenleyin ve garanti ya da resmi sonuc gibi sunmayin.', 'Taslağı insan değerlendirmesiyle düzenleyin ve garanti ya da resmi sonuç gibi sunmayın.')
+    .replaceAll('Oyun veya fikir uretimi icin kullanin; kimlik, belge, taciz veya sosya', 'Oyun veya fikir üretimi için kullanın; kimlik, belge, taciz veya sosya')
+    .replaceAll('Yayinlamadan once verileri, izinleri, fiyatlari, iddialari e marka tonunu kontrol edin.', 'Yayınlamadan önce verileri, izinleri, fiyatları, iddiaları ve marka tonunu kontrol edin.')
+    .replaceAll('Yayinlamadan once verileri, izinleri, fiyatlari, iddialari ve marka tonunu kontrol edin.', 'Yayınlamadan önce verileri, izinleri, fiyatları, iddiaları  ve marka tonunu kontrol edin.')
+    .replaceAll('Yazim destegi olarak kullanin; kaynaklari, ozgunlugu e akademik ya da editoryal kurallari inceleyin.', 'Yazım desteği olarak kullanın; kaynakları, özgünlüğü ve akademik ya da editoryal kuralları inceleyin.')
+    .replaceAll('Yazim destegi olarak kullanin; kaynaklari, ozgunlugu ve akademik ya da editoryal kurallari inceleyin.', 'Yazım desteği olarak kullanın; kaynakları, özgünlüğü  ve akademik ya da editoryal kuralları inceleyin.')
+    .replaceAll('Bunu ilham veya hafif secim olarak gorun, kimlik, belge ya da resmi karar olarak kullanmayin.', 'Bunu ilham veya hafif seçim olarak görün, kimlik, belge ya da resmi karar olarak kullanmayın.')
+    .replaceAll('Kodu test edin, girdileri dogrulayin', 'Kodu test edin, girdileri doğrulayın')
+    .replaceAll('Halka acik kullanimdan once marka, alan adi, izinler, fiyatlar, gercek veriler e uyumu kontrol edin.', 'Halka açık kullanımdan önce marka, alan adı, izinler, fiyatlar, gerçek veriler ve uyumu kontrol edin.')
+    .replaceAll('Halka acik kullanimdan once marka, alan adi, izinler, fiyatlar, gercek veriler ve uyumu kontrol edin.', 'Halka açık kullanımdan önce marka, alan adı, izinler, fiyatlar, gerçek veriler  ve uyumu kontrol edin.')
+    .replaceAll('Pratik destek olarak kullanin; etiketleri, listeleri veya cekilisleri kendi kurallarinizla dogrulayin.', 'Pratik destek olarak kullanın; etiketleri, listeleri veya çekilişleri kendi kurallarınızla doğrulayın.')
+    .replaceAll('Halka acik kullanimdan once kultur, baglam, telaffuz, haklar ve uygunluğu kontrol edin.', 'Halka açık kullanımdan önce kültür, bağlam, telaffuz, haklar  ve uygunluğu kontrol edin.')
+    .replaceAll('Yaratici ilham olarak kullanin', 'Yaratıcı ilham olarak kullanın')
+    .replaceAll('Yayinlamadan veya musterilere gondermeden once marka, alan adi, fiyat, izin e verileri kontrol edin.', 'Yayınlamadan veya müşterilere göndermeden önce marka, alan adı, fiyat, izin  ve verileri kontrol edin.')
+    .replaceAll('Yayinlamadan veya musterilere gondermeden once marka, alan adi, fiyat, izin ve verileri kontrol edin.', 'Yayınlamadan veya müşterilere göndermeden önce marka, alan adı, fiyat, izin ve verileri kontrol edin.')
+    .replaceAll('Pratik destek olarak kullanin ve sonucu kendi kurallariniz ya da kaynaklarinizla dogrulayin.', 'Pratik destek olarak kullanın  ve sonucu kendi kurallarınız ya da kaynaklarınızla doğrulayın.')
+    .replaceAll('Halka acik kullanimdan once kulturel hassasiyet, telaffuz, haklar ve uygunluğu kontrol edin.', 'Halka açık kullanımdan önce kültürel hassasiyet, telaffuz, haklar ve uygunluğu kontrol edin.')
+    .replaceAll('Kendi dunyalariniz, oyunlar veya fikirle', 'Kendi dünyalarınız, oyunlar veya fikirle')
+    .replaceAll('Halka acik kullanimdan once marka, izinler, fiyatlar, veriler e uyumu kontrol edin.', 'Halka açık kullanımdan önce marka, izinler, fiyatlar, veriler ve uyumu kontrol edin.')
+    .replaceAll('Halka acik kullanimdan once marka, izinler, fiyatlar, veriler ve uyumu kontrol edin.', 'Halka açık kullanımdan önce marka, izinler, fiyatlar, veriler ve uyumu kontrol edin.')
+    .replaceAll('Halka acik kullanimdan once baglam, hassasiyet, haklar ve uygunluğu kontrol edin.', 'Halka açık kullanımdan önce bağlam, hassasiyet, haklar ve uygunluğu kontrol edin.')
+    .replaceAll('Yaratici ilham olarak kullanin; marka, gercek kisi veya korunan evrenleri kopyalama', 'Yaratıcı ilham olarak kullanın; marka, gerçek kişi veya korunan evrenleri kopyalama')
+    .replaceAll('Olusturucu', 'Oluşturucu')
+    .replaceAll('Donusturucu', 'Dönüştürücü')
+    .replaceAll('Bicimlendirici', 'Biçimlendirici')
+    .replaceAll('ucretsiz', 'ücretsiz');
 }
 
 export function createLocalizedFaqItems(localized: LocalizedToolContent) {
