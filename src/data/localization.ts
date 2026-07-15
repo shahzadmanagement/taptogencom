@@ -439,7 +439,9 @@ export function getLocalizedPageCopy(localized: LocalizedToolContent): Localized
                 ? polishRussianText
                 : localized.language === 'tr'
                   ? polishTurkishText
-                  : (value: string) => value;
+                  : localized.language === 'sv'
+                    ? polishSwedishText
+                    : (value: string) => value;
 
   const polishedTitle = polish(localized.metaTitle);
   let polishedDesc = polish(localized.metaDescription);
@@ -839,6 +841,42 @@ export function polishTurkishText(value: string): string {
     .replaceAll('Donusturucu', 'Dönüştürücü')
     .replaceAll('Bicimlendirici', 'Biçimlendirici')
     .replaceAll('ucretsiz', 'ücretsiz');
+}
+
+export function polishSwedishText(value: string): string {
+  return value
+    .replaceAll('Skapa tydliga utkast pa svenska och granska resultatet innan du anvander det.', 'Skapa tydliga utkast på svenska och granska resultatet innan du använder det.')
+    .replaceAll('Lokal sokintention matchar det engelska verktygets syfte.', 'Lokal sökintention matchar det engelska verktygets syfte.')
+    .replaceAll('Kontrollera noggrannhet, originalitet, kompatibilitet och projektregler fore publicering.', 'Kontrollera noggrannhet, originalitet, kompatibilitet och projektregler före publicering.')
+    .replaceAll('anvandbara ideer', 'användbara idéer')
+    .replaceAll('kopiera resultat', 'kopiera resultat')
+    .replaceAll('granska fore anvandning', 'granska före användning')
+    .replaceAll('Anvand som praktiskt stod och kontrollera resultatet fore viktiga beslut.', 'Använd som praktiskt stöd och kontrollera resultatet före viktiga beslut.')
+    .replaceAll('Lovar inte rackvidd, foljare, namntillganglighet eller plattformsresultat.', 'Lovar inte räckvidd, följare, namntillgänglighet eller plattformsresultat.')
+    .replaceAll('Ersatter inte juridisk, finansiell, varumarkes- eller kommersiell kontroll.', 'Ersätter inte juridisk, finansiell, varumärkes- eller kommersiell kontroll.')
+    .replaceAll('Anvand inte for falsk identitet, imitation eller kansliga personuppgifter.', 'Använd inte för falsk identitet, imitation eller känsliga personuppgifter.')
+    .replaceAll('Kontrollera fakta, tillstand, varumarke, integritet och regelefterlevnad fore offentlig anvandning.', 'Kontrollera fakta, tillstånd, varumärke, integritet och regelefterlevnad före offentlig användning.')
+    .replaceAll('Redigera utkastet med manskligt omdome och presentera det inte som garanterat eller officiellt.', 'Redigera utkastet med mänskligt omdöme och presentera det inte som garanterat eller officiellt.')
+    .replaceAll('Anvand for lek eller ideer; undvik identitet, dokument, tr', 'Använd för lek eller idéer; undvik identitet, dokument, tr')
+    .replaceAll('Kontrollera data, tillstand, priser, pastaenden och varumarkeston fore publicering.', 'Kontrollera data, tillstånd, priser, påståenden och varumärkeston före publicering.')
+    .replaceAll('Anvand som skrivstod; kontrollera kallor, originalitet och akademiska eller redaktionella regler.', 'Använd som skrivstöd; kontrollera källor, originalitet och akademiska eller redaktionella regler.')
+    .replaceAll('Se det som inspiration eller enkelt val, inte identitet, dokument eller officiellt beslut.', 'Se det som inspiration eller enkelt val, inte identitet, dokument eller officiellt beslut.')
+    .replaceAll('Testa kod, validera indata och granska sakerhet', 'Testa kod, validera indata och granska säkerhet')
+    .replaceAll('Kontrollera varumarke, doman, tillstand, priser, riktiga data och regelefterlevnad fore offentlig anvandning.', 'Kontrollera varumärke, domän, tillstånd, priser, riktiga data och regelefterlevnad före offentlig användning.')
+    .replaceAll('Anvand som praktiskt stod; bekrafta etiketter, listor eller dragningar med egna regler.', 'Använd som praktiskt stöd; bekräfta etiketter, listor eller dragningar med egna regler.')
+    .replaceAll('Kontrollera kultur, sammanhang, uttal, rattigheter och tillganglighet fore offentlig anvandning.', 'Kontrollera kultur, sammanhang, uttal, rättigheter och tillgänglighet före offentlig användning.')
+    .replaceAll('Anvand som kreativ inspiration oc', 'Använd som kreativ inspiration oc')
+    .replaceAll('Kontrollera varumarke, doman, priser, tillstand och data fore publicering eller kundutskick.', 'Kontrollera varumärke, domän, priser, tillstånd och data före publicering eller kundutskick.')
+    .replaceAll('Anvand som praktiskt stod och bekrafta resultatet med egna regler eller kallor.', 'Använd som praktiskt stöd och bekräfta resultatet med egna regler eller källor.')
+    .replaceAll('Kontrollera kulturell kanslighet, uttal, rattigheter och tillganglighet fore offentlig anvandning.', 'Kontrollera kulturell känslighet, uttal, rättigheter och tillgänglighet före offentlig användning.')
+    .replaceAll('Anvand for egna varldar, spel eller kreativa ideer utan', 'Använd för egna världar, spel eller kreativa idéer utan')
+    .replaceAll('Kontrollera varumarke, tillstand, priser, data och regelefterlevnad fore offentlig anvandning.', 'Kontrollera varumärke, tillstånd, priser, data och regelefterlevnad före offentlig användning.')
+    .replaceAll('Kontrollera sammanhang, kanslighet, rattigheter och tillganglighet fore offentlig anvandning.', 'Kontrollera sammanhang, känslighet, rättigheter och tillgänglighet före offentlig användning.')
+    .replaceAll('Anvand som kreativ inspiration och kopiera inte varumarken, verkl', 'Använd som kreativ inspiration och kopiera inte varumärken, verkl')
+    .replaceAll('Generator for', 'Generator för')
+    .replaceAll('Konverter for', 'Konverterare för')
+    .replaceAll('Formatterare for', 'Formatterare för')
+    .replaceAll('gratis', 'gratis');
 }
 
 export function createLocalizedFaqItems(localized: LocalizedToolContent) {
