@@ -451,7 +451,9 @@ export function getLocalizedPageCopy(localized: LocalizedToolContent): Localized
                             ? polishJapaneseText
                             : localized.language === 'ko'
                               ? polishKoreanText
-                              : (value: string) => value;
+                              : localized.language === 'ar'
+                                ? polishArabicText
+                                : (value: string) => value;
 
   const polishedTitle = polish(localized.metaTitle);
   let polishedDesc = polish(localized.metaDescription);
@@ -1028,6 +1030,32 @@ export function polishKoreanText(value: string): string {
     .replaceAll('Public use jeone brand, permissions, prices, data, compliance reul hwaginhaseyo.', '공개 사용 전에 브랜드, 권한, 가격, 데이터, 규정 준수 여부를 확인하세요.')
     .replaceAll('Public use jeone context, sensitivity, rights, availability reul hwaginhaseyo.', '공개 사용 전에 맥락, 민감성, 권리, 사용 가능 여부를 확인하세요.')
     .replaceAll('Creative inspiration yongdo ro sayonghago brands, real people, protected worlds re', '창의적인 영감 용도로 사용하고 브랜드, 실제 인물, 보호된 저작물을 모방하지 마십시오.');
+}
+
+export function polishArabicText(value: string): string {
+  return value
+    .replaceAll('Istakhdimha kamusaadah amaliyah waraji alnatijah qabla ay qarar muhim.', 'استخدمها كمساعدة عملية وراجع النتيجة قبل أي قرار مهم.')
+    .replaceAll('La tadman alwusul aw almutabieen aw tawafur alasma aw ada almanassah.', 'لا تضمن الوصول أو المتابعين أو توفر الأسماء أو أداء المنصة.')
+    .replaceAll('La tastabdil murajaah qanuniyah aw maliyah aw tijariyah aw huquq alalama.', 'لا تستبدل مراجعة قانونية أو مالية أو تجارية أو حقوق العلامة.')
+    .replaceAll('La tastakhdimha lihawiyah zaifah aw intihal aw bayanat shakhsiya hassasah.', 'لا تستخدمها لهوية زائفة أو انتحال أو بيانات شخصية حاسة.')
+    .replaceAll('Raji alhaqaiq waladhun walalama walkhususiyah waltawafuq qabla alistikhdam alam.', 'راجع الحقائق والإذن والعلامة والخصوصية والتوافق قبل الاستخدام العام.')
+    .replaceAll('Harrir almusawadah bihukm bashari wala tuqaddimha kanatijah madmunah aw rasmiyah.', 'حرر المسودة بحكم بشري ولا تقدمها كنتيجة مضمونة أو رسمية.')
+    .replaceAll('Istakhdimha liltarfih aw alafkar watajanab alhawiyah walwathaiq waliza aw aldaght alijtimaei.', 'استخدمها للترفيه أو الأفكار وتجنب الهوية والوثائق والأذى أو الضغط الاجتماعي.')
+    .replaceAll('Raji albayanat waladhun walasear walidieaat wanaghamat alalama qabla alnashr.', 'راجع البيانات والإذن والأسعار والادعاءات ونبرة العلامة قبل النشر.')
+    .replaceAll('Istakhdimha kamusaadah lilkitabah waraji almasadir walasalah waqawaeid aldirasah aw altahrir.', 'استخدمها كمساعدة للكتابة وراجع المصادر والأصالة وقواعد الدراسة أو التحرير.')
+    .replaceAll('Itabirha ilhaman aw ikhtiyaran khafifan la hawiyah aw wathiqah aw qararan rasmiyan.', 'اعتبرها إلهامًا أو اختيارًا خفيفًا لا هوية أو وثيقة أو قرارًا رسميًا.')
+    .replaceAll('Ikhtabir alkod wathabbit almudkhalat waraji alaman waimkaniyat alwusul', 'اختبر الكود وثبّت المدخلات وراجع الأمان وإمكانية الوصول.')
+    .replaceAll('Raji alalama walnitaq waladhun walasear walbayanat alhaqiqiyah waltawafuq qabla alistikhdam alam.', 'راجع العلامة والنطاق والإذن والأسعار والبيانات الحقيقية والتوافق قبل الاستخدام العام.')
+    .replaceAll('Istakhdimha kamusaadah amaliyah waraji alwusum aw alqawaem aw alsahb biqawaeidik.', 'استخدمها كمساعدة عملية وراجع الوسوم أو القوائم أو السحب بقواعدك.')
+    .replaceAll('Raji althaqafah walsiyaq walnutq walhuquq waltawafur qabla alistikhdam alam.', 'راجع الثقافة والسياق والنطق والحقوق والتوفر قبل الاستخدام العام.')
+    .replaceAll('Ijaliha ilhaman ibdaian wala tansakh alamat aw ashkhas', 'اجعلها إلهامًا إبداعيًا ولا تنسخ علامات أو أشخاصًا.')
+    .replaceAll('Raji alalama walnitaq walasear waladhun walbayanat qabla alnashr aw irsalha lilumala.', 'راجع العلامة والنطاق والأسعار والإذن والبيانات قبل النشر أو إرسالها للعملاء.')
+    .replaceAll('Istakhdimha kamusaadah amaliyah waraji alnatijah biqawaeidik aw masadirik.', 'استخدمها كمساعدة عملية وراجع النتيجة بقواعدك أو مصادرك.')
+    .replaceAll('Raji alhusasiyah althaqafiyah walnutq walhuquq waltawafur qabla alistikhdam alam.', 'راجع الحساسية الثقافية والنطق والحقوق والتوفر قبل الاستخدام العام.')
+    .replaceAll('Istakhdimha liawalimak aw alalab aw alafkar almubdieah bidun naskh', 'استخدمها لعوالمك أو الألعاب أو الأفكار المبدعة بدون نسخ.')
+    .replaceAll('Raji alalama waladhun walasear walbayanat waltawafuq qabla alistikhdam alam.', 'راجع العلامة والإذن والأسعار والبيانات والتوافق قبل الاستخدام العام.')
+    .replaceAll('Raji alsiyaq walhusasiyah walhuquq waltawafur qabla alistikhdam alam.', 'راجع السياق والحساسية والحقوق والتوفر قبل الاستخدام العام.')
+    .replaceAll('Ijaliha ilhaman ibdaian wala tansakh alamat aw ashkhas haqiqiyin aw awalim mahmiyah.', 'اجعلها إلهامًا إبداعيًا ولا تنسخ علامات أو أشخاصًا حقيقيين أو عوالم محمية.');
 }
 
 export function createLocalizedFaqItems(localized: LocalizedToolContent) {
