@@ -443,7 +443,9 @@ export function getLocalizedPageCopy(localized: LocalizedToolContent): Localized
                     ? polishSwedishText
                     : localized.language === 'bg'
                       ? polishBulgarianText
-                      : (value: string) => value;
+                      : localized.language === 'hi'
+                        ? polishHindiText
+                        : (value: string) => value;
 
   const polishedTitle = polish(localized.metaTitle);
   let polishedDesc = polish(localized.metaDescription);
@@ -915,6 +917,32 @@ export function polishBulgarianText(value: string): string {
     .replaceAll('Konvertor za', 'Конвертор за')
     .replaceAll('Formatter za', 'Форматиращ инструмент за')
     .replaceAll('bezplatno', 'безплатно');
+}
+
+export function polishHindiText(value: string): string {
+  return value
+    .replaceAll('Isse practical madad ke roop me use karein aur important decision se pehle result check karein.', 'इसे व्यावहारिक मदद के रूप में उपयोग करें और महत्वपूर्ण निर्णयों से पहले परिणाम की जांच करें।')
+    .replaceAll('Reach, followers, name availability ya platform performance ki guarantee nahi hai.', 'पहुंच, फॉलोअर्स, नाम की उपलब्धता या प्लेटफॉर्म के प्रदर्शन की कोई गारंटी नहीं है।')
+    .replaceAll('Legal, financial, brand ya commercial availability review ka replacement nahi hai.', 'यह कानूनी, वित्तीय, ब्रांड या व्यावसायिक उपलब्धता समीक्षा का विकल्प नहीं है।')
+    .replaceAll('Fake identity, impersonation ya sensitive personal data ke liye use na', 'नकली पहचान, प्रतिरूपण या संवेदनशील व्यक्तिगत डेटा के लिए उपयोग न करें।')
+    .replaceAll('Public use se pehle facts, permissions, brand, privacy aur compliance check karein.', 'सार्वजनिक उपयोग से पहले तथ्यों, अनुमतियों, ब्रांड, गोपनीयता और अनुपालन की जांच करें।')
+    .replaceAll('Draft ko human judgement se edit karein aur guaranteed ya official result ki tarah na dikhayein.', 'ड्राफ्ट को मानवीय निर्णय से संपादित करें और इसे गारंटीकृत या आधिकारिक परिणाम के रूप में प्रस्तुत न करें।')
+    .replaceAll('Ise play ya brainstorming ke liye rakhein; identity', 'इसे खेल या विचार-मंथन के लिए रखें; पहचान, दस्तावेज के लिए नहीं।')
+    .replaceAll('Publish karne se pehle data, permissions, prices, claims aur brand tone check karein.', 'प्रकाशित करने से पहले डेटा, अनुमतियों, कीमतों, दावों और ब्रांड टोन की जांच करें।')
+    .replaceAll('Writing support ke roop me use karein; sources, originality aur academic ya editorial rules check karein.', 'लेखन सहायता के रूप में उपयोग करें; स्रोतों, मौलिकता और शैक्षणिक या संपादकीय नियमों की जांच करें।')
+    .replaceAll('Ise inspiration ya light choice samjhein, identity, document ya official decision nahi.', 'इसे प्रेरणा या हल्का विकल्प समझें, पहचान, दस्तावेज या आधिकारिक निर्णय नहीं।')
+    .replaceAll('Production se pehle code test karein, inputs v', 'उत्पादन से पहले कोड का परीक्षण करें, इनपुट को सत्यापित करें।')
+    .replaceAll('Public use se pehle brand, domain, permissions, prices, real data aur compliance check karein.', 'सार्वजनिक उपयोग से पहले ब्रांड, डोमेन, अनुमतियों, कीमतों, वास्तविक डेटा और अनुपालन की जांच करें।')
+    .replaceAll('Practical help ke roop me use karein; labels, lists ya draws ko apne rules se confirm karein.', 'व्यावहारिक सहायता के रूप में उपयोग करें; अपने नियमों के साथ लेबल, सूचियों या ड्रॉ की पुष्टि करें।')
+    .replaceAll('Public use se pehle culture, context, pronunciation, rights aur availability check karein.', 'सार्वजनिक उपयोग से पहले संस्कृति, संदर्भ, उच्चारण, अधिकार और उपलब्धता की जांच करें।')
+    .replaceAll('Creative inspiration ke liye rakhein aur brands', 'रचनात्मक प्रेरणा के लिए रखें और ब्रांडों, वास्तविक लोगों को कॉपी न करें।')
+    .replaceAll('Publish ya client ko bhejne se pehle brand, domain, prices, permissions aur data check karein.', 'प्रकाशित करने या ग्राहक को भेजने से पहले ब्रांड, डोमेन, कीमतों, अनुमतियों और डेटा की जांच करें।')
+    .replaceAll('Practical help ke roop me use karein aur result ko apne rules ya sources se confirm karein.', 'व्यावहारिक सहायता के रूप में उपयोग करें और अपने नियमों या स्रोतों के साथ परिणाम की पुष्टि करें।')
+    .replaceAll('Public use se pehle cultural sensitivity, pronunciation, rights aur availability check karein.', 'सार्वजनिक उपयोग से पहले सांस्कृतिक संवेदनशीलता, उच्चारण, अधिकार और उपलब्धता की जांच करें।')
+    .replaceAll('Apni worlds, games ya creative ideas ke liye u', 'अपनी दुनिया, खेल या रचनात्मक विचारों के लिए उपयोग करें।')
+    .replaceAll('Public use se pehle brand, permissions, prices, data aur compliance check karein.', 'सार्वजनिक उपयोग से पहले ब्रांड, अनुमतियों, कीमतों, डेटा और अनुपालन की जांच करें।')
+    .replaceAll('Public use se pehle context, sensitivity, rights aur availability check karein.', 'सार्वजनिक उपयोग से पहले संदर्भ, संवेदनशीलता, अधिकार और उपलब्धता की जांच करें।')
+    .replaceAll('Creative inspiration ke liye rakhein aur brands, real people ya protected wo', 'रचनात्मक प्रेरणा के लिए रखें और ब्रांडों, वास्तविक लोगों या संरक्षित दुनिया की नकल न करें।');
 }
 
 export function createLocalizedFaqItems(localized: LocalizedToolContent) {
