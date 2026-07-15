@@ -447,7 +447,9 @@ export function getLocalizedPageCopy(localized: LocalizedToolContent): Localized
                         ? polishHindiText
                         : localized.language === 'bn'
                           ? polishBengaliText
-                          : (value: string) => value;
+                          : localized.language === 'ja'
+                            ? polishJapaneseText
+                            : (value: string) => value;
 
   const polishedTitle = polish(localized.metaTitle);
   let polishedDesc = polish(localized.metaDescription);
@@ -971,6 +973,33 @@ export function polishBengaliText(value: string): string {
     .replaceAll('Public use er age brand, permissions, prices, data ebong compliance check korun.', 'জনসমক্ষে ব্যবহারের আগে ব্র্যান্ড, অনুমতি, মূল্য, ডেটা এবং সম্মতি যাচাই করুন।')
     .replaceAll('Public use er age context, sensitivity, rights ebong availability check korun.', 'জনসমক্ষে ব্যবহারের আগে প্রেক্ষাপট, সংবেদনশীলতা, অধিকার এবং প্রাপ্যতা যাচাই করুন।')
     .replaceAll('Creative inspiration hishebe rakhun ebong brands, real people ba protected worlds c', 'সৃজনশীল অনুপ্রেরণা হিসেবে রাখুন এবং ব্র্যান্ড, বাস্তব ব্যক্তি বা সুরক্ষিত জগতের অনুলিপি করবেন না।');
+}
+
+export function polishJapaneseText(value: string): string {
+  return value
+    .replaceAll('Jitsuyou no tasuke to shite tsukai, taisetsu na handan no mae ni kekka wo kakunin shite kudasai.', '実用的な補助として使用し、重要な判断の前に結果を確認してください。')
+    .replaceAll('Reach, followers, name availability, platform performance wa hoshou shimasen.', 'リーチ、フォロワー、名前の可用性、プラットフォームのパフォーマンスは保証しません。')
+    .replaceAll('Legal, financial, brand, commercial availability no kakunin no kakunin no kawari dewa arimasen.', '法律、財務、ブランド、または商業的可用性の確認に代わるものではありません。')
+    .replaceAll('Legal, financial, brand, commercial availability no kakunin no kawari dewa arimasen.', '法律、財務、ブランド、または商業的可用性の確認に代わるものではありません。')
+    .replaceAll('Fake identity, impersonation, sensitive personal data ni tsukawanai de k', '偽の身元、なりすまし、機密性の高い個人データには使用しないでください。')
+    .replaceAll('Public use no mae ni facts, permissions, brand, privacy, compliance wo kakunin shite kudasai.', '公開前に、事実、許可、ブランド、プライバシー、コンプライアンスを確認してください。')
+    .replaceAll('Draft wa ningen no handan de henshu shi, guaranteed ya official result to shite misenaide kudasai.', '下書きは人間の判断で編集し、保証された結果や公式な結果として提示しないでください。')
+    .replaceAll('Play ya brainstorming ni todome, ident', '遊びやブレインストーミングに留め、身元や公式な決定には使用しないでください。')
+    .replaceAll('Publish mae ni data, permissions, prices, claims, brand tone wo kakunin shite kudasai.', '公開前に、データ、許可、価格、主張、ブランドトーンを確認してください。')
+    .replaceAll('Writing support to shite tsukai, sources, originality, academic ya editorial rules wo kakunin shite kudasai.', '執筆支援として使用し、情報源、独創性、学術的または編集的ルールを確認してください。')
+    .replaceAll('Inspiration ya light choice to shite atsukai, identity, document, official decision ni shinai de kudasai.', 'インスピレーションや軽い選択肢として扱い、身元、文書、または公式な決定には使用しないでください。')
+    .replaceAll('Testa kod, validera indata och granska sakerhet', '本番公開前にコードをテストし、入力を検証してください。')
+    .replaceAll('Public use mae ni brand, domain, permissions, prices, real data, compliance wo kakunin shite kudasai.', '公開前に、ブランド、ドメイン、許可、価格、実際のデータ、コンプライアンスを確認してください。')
+    .replaceAll('Jitsuyou support to shite tsukai, labels, lists, draws wa jibun no rules de kakunin shite kudasai.', '実用的なサポートとして使用し、ラベル、リスト、抽選は独自のルールで確認してください。')
+    .replaceAll('Public use mae ni culture, context, pronunciation, rights, availability wo kakunin shite kudasai.', '公開前に、文化、文脈、発音、権利、可用性を確認してください。')
+    .replaceAll('Creative inspiration ni todom', '創造的なインスピレーションに留め、ブランドや実在の人物をコピーしないでください。')
+    .replaceAll('Publish ya client soufu mae ni brand, domain, prices, permissions, data wo kakunin shite kudasai.', '公開やクライアントへの送信前に、ブランド、ドメイン、価格、許可、データを確認してください。')
+    .replaceAll('Jitsuyou support to shite tsukai, kekka wa jibun no rules ya sources de kakunin shite kudasai.', '実用的なサポートとして使用し、結果は独自のルールや情報源で確認してください。')
+    .replaceAll('Public use mae ni cultural sensitivity, pronunciation, rights, availability wo kakunin shite kudasai.', '公開前に、文化的配慮、発音、権利、可用性を確認してください。')
+    .replaceAll('Jibun no worlds, games, creative', '自身の世界、ゲーム、または創造的なアイデアに使用してください。')
+    .replaceAll('Public use mae ni brand, permissions, prices, data, compliance wo kakunin shite kudasai.', '公開前に、ブランド、許可、価格、データ、コンプライアンスを確認してください。')
+    .replaceAll('Public use mae ni context, sensitivity, rights, availability wo kakunin shite kudasai.', '公開前に、文脈、感性、権利、可用性を確認してください。')
+    .replaceAll('Creative inspiration ni todome, brands, real people, prot', '創造的なインスピレーションに留め、ブランド、実在の人物、保護された作品をコピーしないでください。');
 }
 
 export function createLocalizedFaqItems(localized: LocalizedToolContent) {
