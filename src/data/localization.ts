@@ -435,7 +435,9 @@ export function getLocalizedPageCopy(localized: LocalizedToolContent): Localized
             ? polishItalianText
             : localized.language === 'pl'
               ? polishPolishText
-              : (value: string) => value;
+              : localized.language === 'ru'
+                ? polishRussianText
+                : (value: string) => value;
 
   const polishedTitle = polish(localized.metaTitle);
   let polishedDesc = polish(localized.metaDescription);
@@ -757,6 +759,42 @@ export function polishPolishText(value: string): string {
     .replaceAll('Latwe', 'Łatwe')
     .replaceAll('bezplatne', 'bezpłatne')
     .replaceAll('Bezplatne', 'Bezpłatne');
+}
+
+export function polishRussianText(value: string): string {
+  return value
+    .replaceAll('Sozdavaite ponyatnye chernoviki na russkom i proveriaite rezultat pered ispolzovaniem.', 'Создавайте понятные черновики на русском и проверяйте результат перед использованием.')
+    .replaceAll('Lokalnyi zapros sootvetstvuet anglijskoj stranitse instrumenta.', 'Локальный запрос соответствует английской странице инструмента.')
+    .replaceAll('Proverte tochnost, originalnost, sovmestimost i pravila proekta pered publikatsiei.', 'Проверяйте точность, оригинальность, совместимость и правила проекта перед публикацией.')
+    .replaceAll('poleznye idei', 'полезные идеи')
+    .replaceAll('skopirovat rezultat', 'скопировать результат')
+    .replaceAll('proverit pered ispolzovaniem', 'проверить перед использованием')
+    .replaceAll('Ispolzuyte kak prakticheskuyu pomoshch i proveriaite rezultat pered vazhnymi resheniyami.', 'Используйте как практическую помощь и проверяйте результат перед важными решениями.')
+    .replaceAll('Ne obeshchaet ohvat, podpischikov, dostupnost imen ili rezultaty platform.', 'Не гарантирует охват, подписчиков, доступность имен или результаты платформ.')
+    .replaceAll('Ne zamenyaet yuridicheskuyu, finansovuyu, brendovuyu proverku ili proverku dostupnosti.', 'Не заменяет юридическую, финансовую, брендовую проверку или проверку доступности.')
+    .replaceAll('Ne ispolzuyte dlya lozhnoi lichnosti, imitacii ili chuvstvitelnyh lichnyh dannyh.', 'Не используйте для ложных личностей, имитации или конфиденциальных персональных данных.')
+    .replaceAll('Proverte fakty, razresheniya, brend, privatnost i sootvetstvie pered publichnym ispolzovaniem.', 'Проверяйте факты, разрешения, бренд, конфиденциальность и соответствие перед публичным использованием.')
+    .replaceAll('Otraktiruite chernovik vruchnuyu i ne vydavaite ego za garantirovannyi ili ofitsialnyi rezultat.', 'Отредактируйте черновик вручную и не выдавайте его за гарантированный или официальный результат.')
+    .replaceAll('Ispolzuyte dlya igry ili idei; izbegajte lichnyh', 'Используйте для игры или идей; избегайте личных')
+    .replaceAll('Proverte dannye, razresheniya, ceny, zayavleniya i ton brenda pered publikatsiei.', 'Проверяйте данные, разрешения, цены, заявления и тон бренда перед публикацией.')
+    .replaceAll('Ispolzuyte kak pomoshch v tekste; proveriaite istochniki, originalnost i uchebnye ili redaktsionnye pravila.', 'Используйте как помощь в тексте; проверяйте источники, оригинальность и учебные или редакционные правила.')
+    .replaceAll('Schitaite eto vdohnoveniem ili legkim vyborom, a ne lichnostyu, dokumentom ili ofitsialnym resheniem.', 'Считайте это вдохновением или легким выбором, а не личностью, документом или официальным решением.')
+    .replaceAll('Testiruite kod, proveriaite vvody', 'Тестируйте код, проверяйте вводы')
+    .replaceAll('Proverte brend, domen, razresheniya, ceny, realnye dannye i sootvetstvie pered publichnym ispolzovaniem.', 'Проверяйте бренд, домен, разрешения, цены, реальные данные и соответствие перед публичным использованием.')
+    .replaceAll('Ispolzuyte kak prakticheskuyu pomoshch; proveriaite etiketki, spiski ili zhrebii po svoim pravilam.', 'Используйте как практическую помощь; проверяйте этикетки, списки или жребии по своим правилам.')
+    .replaceAll('Proverte kulturu, kontekst, proiznoshenie, prava i dostupnost pered publichnym ispolzovaniem.', 'Проверяйте культуру, контекст, произношение, права и доступность перед публичным использованием.')
+    .replaceAll('Ispolzuyte kak tvorcheskoe vdohnovenie', 'Используйте как творческое вдохновение')
+    .replaceAll('Proverte brend, domen, ceny, razresheniya i dannye pered publikatsiei ili otpravkoi klientam.', 'Проверяйте бренд, домен, цены, разрешения и данные перед публикацией или отправкой клиентам.')
+    .replaceAll('Ispolzuyte kak prakticheskuyu pomoshch i proveriaite rezultat po svoim pravilam ili istochnikam.', 'Используйте как практическую помощь и проверяйте результат по своим правилам или источникам.')
+    .replaceAll('Proverte kulturnuyu delikatnost, proiznoshenie, prava i dostupnost pered publichnym ispolzovaniem.', 'Проверяйте культурную деликатность, произношение, права и доступность перед публичным использованием.')
+    .replaceAll('Ispolzuyte dlya svoih mirov, igr ili i', 'Используйте для своих миров, игр или и')
+    .replaceAll('Proverte brend, razresheniya, ceny, dannye i sootvetstvie pered publichnym ispolzovaniem.', 'Проверяйте бренд, разрешения, цены, данные и соответствие перед публичным использованием.')
+    .replaceAll('Proverte kontekst, delikatnost, prava i dostupnost pered publichnym ispolzovaniem.', 'Проверяйте контекст, деликатность, права и доступность перед публичным использованием.')
+    .replaceAll('Ispolzuyte kak tvorcheskoe vdohnovenie i ne kopiruite brendy, rea', 'Используйте как творческое вдохновение и не копируйте бренды, реа')
+    .replaceAll('Generator', 'Генератор')
+    .replaceAll('Konverter', 'Конвертер')
+    .replaceAll('Formatter', 'Форматировщик')
+    .replaceAll('besplatno', 'бесплатно');
 }
 
 export function createLocalizedFaqItems(localized: LocalizedToolContent) {
