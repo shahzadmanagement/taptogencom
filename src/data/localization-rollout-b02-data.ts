@@ -65,7 +65,7 @@ const b02SafetyAddendum: Record<RolloutLanguage, Record<'utility' | 'social' | '
     bio: 'No lo uses para identidad falsa, suplantacion ni datos personales sensibles.',
   },
   fr: {
-    utility: 'Utilisez-le comme aide pratique et verifiez le resultat avant toute decision importante.',
+    utility: 'Utilisez-le comme aide pratique et vérifiez le resultat avant toute decision importante.',
     social: 'Aucune portee, abonnes, disponibilité de noms ni performance de plateforme ne sont promis.',
     business: 'Ne remplace pas une revue juridique, financiere, de marque ou de disponibilité commerciale.',
     bio: 'Ne lutilisez pas pour une fausse identite, une usurpation ou des donnees personnelles sensibles.',

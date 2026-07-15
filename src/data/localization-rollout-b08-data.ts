@@ -67,13 +67,13 @@ const b08SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' |
     developer: 'Prueba el codigo y revisa seguridad, accesibilidad y compatibilidad antes de produccion.',
   },
   fr: {
-    business: 'Verifiez marque, autorisations, prix, donnees et conformite avant usage public.',
-    utility: 'Utilisez-le comme aide pratique et verifiez le resultat avant toute decision importante.',
-    name: 'Verifiez contexte, sensibilite, droits et disponibilité avant usage public.',
+    business: 'Vérifiez marque, autorisations, prix, donnees et conformite avant usage public.',
+    utility: 'Utilisez-le comme aide pratique et vérifiez le resultat avant toute decision importante.',
+    name: 'Vérifiez contexte, sensibilite, droits et disponibilité avant usage public.',
     fictional: 'Gardez un usage creatif et evitez de copier marques, personnes reelles ou univers proteges.',
-    text: 'Verifiez lisibilite, accessibilite et compatibilite avant de partager un texte stylise.',
+    text: 'Vérifiez lisibilite, accessibilite et compatibilite avant de partager un texte stylise.',
     seo: 'Ne garantit pas trafic, classement, indexation ni resultats de recherche.',
-    developer: 'Testez le code et verifiez securite, accessibilite et compatibilite avant production.',
+    developer: 'Testez le code et vérifiez securite, accessibilite et compatibilite avant production.',
   },
   de: {
     business: 'Pruefe Marke, Freigaben, Preise, Daten und Compliance vor oeffentlicher Nutzung.',

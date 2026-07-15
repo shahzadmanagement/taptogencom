@@ -66,11 +66,11 @@ const b03SafetyAddendum: Record<RolloutLanguage, Record<'utility' | 'business' |
     developer: 'Revisa compatibilidad, accesibilidad y seguridad antes de usar el resultado en produccion.',
   },
   fr: {
-    utility: 'Utilisez-le comme aide pratique et verifiez le resultat avant toute decision importante.',
-    business: 'Verifiez faits, autorisations, marque, confidentialite et conformite avant usage public.',
+    utility: 'Utilisez-le comme aide pratique et vérifiez le resultat avant toute decision importante.',
+    business: 'Vérifiez faits, autorisations, marque, confidentialite et conformite avant usage public.',
     writing: 'Revisez le brouillon humainement et ne le presentez pas comme resultat garanti ou officiel.',
     random: 'Gardez un usage ludique ou ideation; evitez identite, documents, harcelement ou pression sociale.',
-    developer: 'Verifiez compatibilite, accessibilite et securite avant tout usage en production.',
+    developer: 'Vérifiez compatibilite, accessibilite et securite avant tout usage en production.',
   },
   de: {
     utility: 'Nutze es als praktische Hilfe und pruefe das Ergebnis vor wichtigen Entscheidungen.',

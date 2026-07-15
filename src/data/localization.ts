@@ -529,13 +529,13 @@ export function polishSpanishText(value: string): string {
 
 export function polishFrenchText(value: string): string {
   return value
-    .replaceAll('generateur', 'générateur')
-    .replaceAll('Generateur', 'Générateur')
+    .replaceAll('générateur', 'générateur')
+    .replaceAll('Générateur', 'Générateur')
     .replaceAll('idees', 'idées')
     .replaceAll('Idees', 'Idées')
     .replaceAll('Creez', 'Créez')
-    .replaceAll('Generez', 'Générez')
-    .replaceAll('verifiez', 'vérifiez')
+    .replaceAll('Générez', 'Générez')
+    .replaceAll('vérifiez', 'vérifiez')
     .replaceAll('disponibilite', 'disponibilité')
     .replaceAll('ecriture', 'écriture')
     .replaceAll('prenom', 'prénom')

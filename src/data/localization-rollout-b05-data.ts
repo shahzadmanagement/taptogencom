@@ -66,10 +66,10 @@ const b05SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'writing' |
     fictional: 'Mantenlo para ficcion, juegos o mundos propios y evita copiar universos protegidos.',
   },
   fr: {
-    business: 'Verifiez donnees, autorisations, prix, promesses et ton de marque avant publication.',
-    writing: 'Utilisez-le comme aide de redaction; verifiez sources, originalite et regles academiques ou editoriales.',
+    business: 'Vérifiez donnees, autorisations, prix, promesses et ton de marque avant publication.',
+    writing: 'Utilisez-le comme aide de redaction; vérifiez sources, originalite et regles academiques ou editoriales.',
     random: 'Gardez-le comme inspiration ou choix leger, pas comme identite, document ni decision officielle.',
-    developer: 'Testez le code, validez les entrees et verifiez securite, accessibilite et compatibilite avant production.',
+    developer: 'Testez le code, validez les entrees et vérifiez securite, accessibilite et compatibilite avant production.',
     seo: 'Ne promet pas trafic, classement, accessibilite parfaite ni resultats de recherche.',
     fictional: 'Reserve a la fiction, aux jeux ou mondes personnels, sans copier dunivers proteges.',
   },

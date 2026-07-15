@@ -64,9 +64,9 @@ const b06SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' |
     fictional: 'Mantenlo como inspiracion creativa y evita copiar marcas, personas reales o universos protegidos.',
   },
   fr: {
-    business: 'Verifiez marque, domaine, autorisations, prix, donnees reelles et conformite avant usage public.',
+    business: 'Vérifiez marque, domaine, autorisations, prix, donnees reelles et conformite avant usage public.',
     utility: 'Utilisez-le comme aide pratique; confirmez etiquettes, listes ou tirages avec vos propres regles.',
-    name: 'Verifiez culture, contexte, prononciation, droits et disponibilité avant usage public.',
+    name: 'Vérifiez culture, contexte, prononciation, droits et disponibilité avant usage public.',
     fictional: 'Gardez un usage creatif et evitez de copier marques, personnes reelles ou univers proteges.',
   },
   de: {
