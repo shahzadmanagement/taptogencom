@@ -684,7 +684,10 @@ export function polishItalianText(value: string): string {
     .replaceAll('ne costi', 'né costi')
     .replaceAll('Quantita', 'Quantità')
     .replaceAll('cos e', "cos'è")
-    .replaceAll('Perche', 'Perché');
+    .replaceAll('Perche', 'Perché')
+    .replaceAll('perche', 'perché')
+    .replaceAll('delluso', "dell'uso")
+    .replaceAll('alluso', "all'uso");
 }
 
 export function polishPolishText(value: string): string {
