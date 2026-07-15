@@ -663,7 +663,12 @@ export function polishPortugueseText(value: string): string {
     .replaceAll('varias', 'várias')
     .replaceAll('intencao', 'intenção')
     .replaceAll('funcoes', 'funções')
-    .replaceAll('nao', 'não');
+    .replaceAll('nao', 'não')
+    .replaceAll('Nao', 'Não')
+    .replaceAll('precos', 'preços')
+    .replaceAll('permissoes', 'permissões')
+    .replaceAll('revisao', 'revisão')
+    .replaceAll('copiaveis', 'copiáveis');
 }
 
 export function polishItalianText(value: string): string {
