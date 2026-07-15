@@ -4965,6 +4965,40 @@ export const tools: Tool[] = [
   {
     slug: 'random-id-generator',
     name: 'Random ID Generator',
+    toolOptions: [
+      {
+        type: 'select',
+        options: [
+          { value: 'nanoid', label: 'NanoID (Compact Alphanumeric)' },
+          { value: 'snowflake', label: 'Snowflake ID (Time-ordered 64-bit)' },
+          { value: 'hex', label: 'Hexadecimal Token' },
+          { value: 'numeric', label: 'Numeric Identifier' },
+          { value: 'pattern', label: 'Custom Pattern (xxxx-xxxx)' }
+        ],
+        id: 'id-type',
+        label: 'ID Format',
+        default: 'nanoid'
+      },
+      {
+        type: 'select',
+        options: [
+          { value: '8', label: '8 characters' },
+          { value: '12', label: '12 characters' },
+          { value: '16', label: '16 characters' },
+          { value: '21', label: '21 characters (NanoID Default)' },
+          { value: '32', label: '32 characters' }
+        ],
+        id: 'id-length',
+        label: 'ID Length (NanoID & Hex)',
+        default: '21'
+      },
+      {
+        type: 'text',
+        id: 'id-pattern',
+        label: 'Custom Pattern (use x for random char)',
+        default: 'id_xxxx-xxxx-xxxx'
+      }
+    ],
     icon: '🆔',
     tagline: 'Random ID Generator with focused options and review notes',
     description: 'Use Random ID Generator to create focused draft options with your topic and constraints. Review, edit, and adapt results before use.',

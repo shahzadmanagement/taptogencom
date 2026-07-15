@@ -7051,10 +7051,61 @@ ${part3}`.replace(/\n/g, ''); // avoid line wrap issue
       break;
     }
     case 'random-id-generator': {
-      const hex = () => Math.random().toString(16).substring(2,10);
-      const alnum = () => Math.random().toString(36).substring(2,14);
-      const num = () => String(Math.floor(Math.random()*9000000000)+1000000000);
-      result = `Numeric IDs:\n${num()}\n${num()}\n${num()}\n\nAlphanumeric IDs:\n${alnum()}\n${alnum()}\n${alnum()}\n\nHex IDs:\n${hex()}${hex()}\n${hex()}${hex()}\n${hex()}${hex()}\n\nShort IDs:\n${alnum().substring(0,6)}\n${alnum().substring(0,6)}\n${alnum().substring(0,6)}`;
+      const type = optionValue('id-type', 'nanoid');
+      const length = Math.max(8, Math.min(128, Number(optionValue('id-length', '21')) || 21));
+      const pattern = optionValue('id-pattern', 'id_xxxx-xxxx-xxxx');
+
+      const getSecureBytes = (len: number): Uint8Array => {
+        const arr = new Uint8Array(len);
+        crypto.getRandomValues(arr);
+        return arr;
+      };
+
+      const generateNanoId = (len: number): string => {
+        const alphabet = 'usecomplete_2456789-QWERTASDFGXCVB_YZabcdefghijkmnopqrstwxyz';
+        const bytes = getSecureBytes(len);
+        return Array.from(bytes).map(b => alphabet[b % alphabet.length]).join('');
+      };
+
+      const generateSnowflake = (): string => {
+        const EPOCH = 1420070400000;
+        const time = BigInt(Date.now() - EPOCH);
+        const workerId = BigInt(1);
+        const datacenterId = BigInt(1);
+        const sequence = BigInt(Math.floor(Math.random() * 4096));
+        const id = (time << 22n) | (datacenterId << 17n) | (workerId << 12n) | sequence;
+        return id.toString();
+      };
+
+      const generateHex = (len: number): string => {
+        const bytes = getSecureBytes(Math.ceil(len / 2));
+        return Array.from(bytes).map(b => b.toString(16).padStart(2, '0')).join('').slice(0, len);
+      };
+
+      const generateNumeric = (len: number): string => {
+        const bytes = getSecureBytes(len);
+        return Array.from(bytes).map(b => (b % 10).toString()).join('');
+      };
+
+      const generatePattern = (pat: string): string => {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        return pat.replace(/x/g, () => {
+          const bytes = getSecureBytes(1);
+          return chars[bytes[0] % chars.length];
+        });
+      };
+
+      const count = 5;
+      const ids = Array.from({ length: count }, () => {
+        if (type === 'snowflake') return generateSnowflake();
+        if (type === 'hex') return generateHex(length);
+        if (type === 'numeric') return generateNumeric(length);
+        if (type === 'pattern') return generatePattern(pattern);
+        return generateNanoId(length);
+      });
+
+      result = ids.join('\n');
+      resultHtml = renderHeadlineGroups([{ title: 'Generated Random IDs', note: `Cryptographically secure ${type} format.`, items: ids }], 'Security tip: random IDs are highly suitable for primary keys, database records, session tokens, and file names.');
       break;
     }
     case 'flashcard-generator': {
