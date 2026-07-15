@@ -6692,22 +6692,76 @@ async function generate() {
       break;
     }
     case 'typescript-type-generator': {
-      const root = toPascal(optionValue('ts-root-name', text || 'UserProfile'), 'GeneratedItem');
-      const fields = parseFieldList(text, ['id', 'name', 'email', 'active', 'created_at']);
+      if (!text) { result = 'Please enter a field list or paste a JSON object above.'; break; }
+      
+      const root = toPascal(optionValue('ts-root-name', 'GeneratedItem'), 'GeneratedItem');
       const style = optionValue('ts-style', 'interface');
       const optional = optionValue('ts-optional-fields', 'false') === 'true';
       const readonly = optionValue('ts-readonly', 'false') === 'true' ? 'readonly ' : '';
-      const infer = (field: string) => field.includes('id') ? 'number' : field.includes('active') || field.includes('enabled') ? 'boolean' : field.includes('at') || field.includes('date') ? 'string' : 'string';
-      const lines = fields.map(field => `  ${readonly}${field}${optional ? '?' : ''}: ${infer(field)};`).join('\n');
-      const ts = style === 'type' ? `export type ${root} = {\n${lines}\n};` : `export interface ${root} {\n${lines}\n}`;
-      const sample = JSON.stringify(Object.fromEntries(fields.map(field => [field, infer(field) === 'number' ? 1 : infer(field) === 'boolean' ? true : field.includes('email') ? 'user@example.test' : `sample ${field}`])), null, 2);
-      const table = fields.map(field => `${field} | ${infer(field)} | ${optional ? 'optional' : 'required'}`).join('\n');
-      result = `Generated TypeScript\n${ts}\n\nInferred Field Table\n${table}\n\nSample Object\n${sample}\n\nUsage Snippet\nconst item: ${root} = ${sample};`;
-      resultHtml = renderSectionSuite('TypeScript Type Draft', [
-        { title: 'Generated TypeScript', body: ts, note: `${style} draft` },
-        { title: 'Inferred Field Table', body: table, note: 'Review inference decisions' },
-        { title: 'Sample Object', body: sample, note: 'Aligned sample data' },
-        { title: 'Usage Snippet', body: `const item: ${root} = ${sample};`, note: 'Copy into a test file' }], 'Review generated types before using them as production API contracts.');
+      
+      let tsOutput = '';
+      let isJson = false;
+
+      // Try to parse input as JSON first
+      try {
+        const parsed = JSON.parse(text.trim());
+        isJson = true;
+
+        const generated = new Map<string, string>();
+        
+        const inferJsonType = (val: unknown, currentName: string): string => {
+          if (val === null) return 'null';
+          if (typeof val === 'string') return 'string';
+          if (typeof val === 'number') return 'number';
+          if (typeof val === 'boolean') return 'boolean';
+          if (Array.isArray(val)) {
+            if (val.length === 0) return 'any[]';
+            const childTypes = [...new Set(val.map(item => inferJsonType(item, currentName + 'Item')))];
+            if (childTypes.length === 1) {
+              return childTypes[0].includes(' ') ? `(${childTypes[0]})[]` : `${childTypes[0]}[]`;
+            }
+            return `(${childTypes.join(' | ')})[]`;
+          }
+          if (typeof val === 'object' && val !== null) {
+            const obj = val as Record<string, unknown>;
+            const subFields: string[] = [];
+            Object.entries(obj).forEach(([k, v]) => {
+              const safeKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(k) ? k : `"${k}"`;
+              const camelKey = k.replace(/[^a-zA-Z0-9_$]/g, '');
+              const typeSubName = toPascal(camelKey || 'SubItem', 'SubItem');
+              const typeStr = inferJsonType(v, currentName + typeSubName);
+              subFields.push(`  ${readonly}${safeKey}${optional ? '?' : ''}: ${typeStr};`);
+            });
+            const typeDef = style === 'type'
+              ? `export type ${currentName} = {\n${subFields.join('\n')}\n};`
+              : `export interface ${currentName} {\n${subFields.join('\n')}\n}`;
+            generated.set(currentName, typeDef);
+            return currentName;
+          }
+          return 'any';
+        };
+
+        inferJsonType(parsed, root);
+        tsOutput = [...generated.values()].reverse().join('\n\n');
+
+      } catch (err) {
+        // Fallback to plain field names split parsing
+        isJson = false;
+        const fields = parseFieldList(text, ['id', 'name', 'email', 'active', 'created_at']);
+        const infer = (field: string) => field.includes('id') ? 'number' : field.includes('active') || field.includes('enabled') ? 'boolean' : field.includes('at') || field.includes('date') ? 'string' : 'string';
+        const lines = fields.map(field => `  ${readonly}${field}${optional ? '?' : ''}: ${infer(field)};`).join('\n');
+        tsOutput = style === 'type'
+          ? `export type ${root} = {\n${lines}\n};`
+          : `export interface ${root} {\n${lines}\n}`;
+      }
+
+      const sections = [
+        { title: 'Generated TypeScript', body: tsOutput, note: `${style} draft generated from ${isJson ? 'JSON object' : 'field name list'}.` },
+        { title: 'Configured Rules', body: `Root name: ${root}\nOutput style: ${style}\nReadonly fields: ${readonly ? 'yes' : 'no'}\nOptional fields: ${optional ? 'yes' : 'no'}`, note: 'Generator parameters.' }
+      ];
+
+      result = tsOutput;
+      resultHtml = renderSectionSuite('TypeScript Type Package', sections, 'Privacy note: type mapping is completed in the browser. Double check union types and nullable types before checking in.');
       break;
     }
     case 'sql-query-generator': {
