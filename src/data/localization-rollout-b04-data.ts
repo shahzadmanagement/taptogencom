@@ -59,7 +59,7 @@ export const rolloutB04ToolIds = tools.map((tool) => tool.canonicalToolId);
 const b04SafetyAddendum: Record<RolloutLanguage, Record<'utility' | 'business' | 'writing' | 'random' | 'developer' | 'social' | 'bio', string>> = {
   es: {
     utility: 'Usalo como ayuda practica y confirma el resultado antes de decisiones importantes.',
-    business: 'Revisa hechos, permisos, marca, privacidad y cumplimiento antes de usarlo en publico.',
+    business: 'Revisa hechos, permisos, marca, privacidad y cumplimiento antes de usarlo en público.',
     writing: 'Edita el borrador con criterio humano y no lo presentes como resultado garantizado u oficial.',
     random: 'Mantenlo como juego o lluvia de ideas; evita identidad, documentos, acoso o presion social.',
     developer: 'Revisa compatibilidad, accesibilidad y seguridad antes de usar el resultado en produccion.',
@@ -86,7 +86,7 @@ const b04SafetyAddendum: Record<RolloutLanguage, Record<'utility' | 'business' |
   },
   pt: {
     utility: 'Use como apoio pratico e confirme o resultado antes de decisoes importantes.',
-    business: 'Revise fatos, permissoes, marca, privacidade e conformidade antes do uso publico.',
+    business: 'Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público.',
     writing: 'Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial.',
     random: 'Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social.',
     developer: 'Revise compatibilidade, acessibilidade e seguranca antes de usar em producao.',

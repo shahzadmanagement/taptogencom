@@ -26,7 +26,7 @@ export interface LanguageProfile {
 export const languages: RolloutLanguage[] = ['es', 'fr', 'de', 'pt', 'it', 'pl', 'ru', 'tr', 'id', 'sv', 'ms', 'bg', 'hi', 'bn', 'ja', 'ko', 'ar'];
 
 export const profiles: Record<RolloutLanguage, LanguageProfile> = {
-  es: { generator: 'Generador de', converter: 'Convertidor de', formatter: 'Formateador de', free: 'gratis', slugPrefix: 'generador', joiner: 'de', intro: 'Crea borradores claros en español y revisa cada resultado antes de usarlo.', intent: 'Consulta local de utilidad con la misma intencion que la herramienta en ingles.', review: 'Revisa exactitud, originalidad, compatibilidad y reglas del proyecto antes de publicar.', faqTopics: ['ideas utiles', 'copiar resultado', 'revisar antes de usar'] },
+  es: { generator: 'Generador de', converter: 'Convertidor de', formatter: 'Formateador de', free: 'gratis', slugPrefix: 'generador', joiner: 'de', intro: 'Crea borradores claros en español y revisa cada resultado antes de usarlo.', intent: 'Consulta local de utilidad con la misma intención que la herramienta en ingles.', review: 'Revisa exactitud, originalidad, compatibilidad y reglas del proyecto antes de publicar.', faqTopics: ['ideas utiles', 'copiar resultado', 'revisar antes de usar'] },
   fr: { generator: 'Generateur de', converter: 'Convertisseur de', formatter: 'Formateur de', free: 'gratuit', slugPrefix: 'générateur', joiner: 'de', intro: 'Creez des brouillons clairs en français et verifiez chaque resultat avant usage.', intent: 'Intention locale alignee avec la page anglaise.', review: 'Verifiez exactitude, originalite, compatibilite et regles du projet avant publication.', faqTopics: ['idées utiles', 'copier le resultat', 'verifier avant usage'] },
   de: { generator: 'Generator fuer', converter: 'Konverter fuer', formatter: 'Formatter fuer', free: 'kostenlos', slugPrefix: 'generator', joiner: 'fuer', intro: 'Erstelle klare Entwuerfe auf Deutsch und pruefe jedes Ergebnis vor der Nutzung.', intent: 'Lokale Suchabsicht entspricht der englischen Werkzeugseite.', review: 'Pruefe Genauigkeit, Originalitaet, Kompatibilitaet und Projektregeln vor der Veroeffentlichung.', faqTopics: ['nuetzliche ideen', 'ergebnis kopieren', 'vor nutzung pruefen'] },
   pt: { generator: 'Gerador de', converter: 'Conversor de', formatter: 'Formatador de', free: 'gratis', slugPrefix: 'gerador', joiner: 'de', intro: 'Crie rascunhos claros em português e revise cada resultado antes de usar.', intent: 'Intencao local alinhada com a ferramenta em ingles.', review: 'Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar.', faqTopics: ['ideias uteis', 'copiar resultado', 'revisar antes de usar'] },
@@ -493,7 +493,7 @@ export function safetyFor(tool: RolloutToolSpec, profile: LanguageProfile): stri
     es: {
       seo: 'No garantiza trafico, rankings, indexacion ni resultados de plataforma.',
       developer: 'No uses salidas tecnicas como credenciales, secretos de seguridad ni cambios de produccion sin revision manual.',
-      name: 'Comprueba originalidad, sensibilidad, derechos y disponibilidad antes de usarlo en publico.',
+      name: 'Comprueba originalidad, sensibilidad, derechos y disponibilidad antes de usarlo en público.',
       text: 'Comprueba legibilidad, accesibilidad y compatibilidad de plataforma antes de compartir texto estilizado.',
     },
     fr: {
@@ -511,7 +511,7 @@ export function safetyFor(tool: RolloutToolSpec, profile: LanguageProfile): stri
     pt: {
       seo: 'Nao ha garantia de trafego, rankings, indexacao ou resultados em plataformas.',
       developer: 'Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual.',
-      name: 'Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso publico.',
+      name: 'Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público.',
       text: 'Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado.',
     },
     it: {

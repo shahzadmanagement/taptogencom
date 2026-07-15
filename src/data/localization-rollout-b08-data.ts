@@ -58,9 +58,9 @@ export const rolloutB08ToolIds = tools.map((tool) => tool.canonicalToolId);
 
 const b08SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' | 'name' | 'fictional' | 'text' | 'seo' | 'developer', string>> = {
   es: {
-    business: 'Revisa marca, permisos, precios, datos y cumplimiento antes de usarlo en publico.',
+    business: 'Revisa marca, permisos, precios, datos y cumplimiento antes de usarlo en público.',
     utility: 'Usalo como ayuda practica y confirma el resultado antes de decisiones importantes.',
-    name: 'Comprueba contexto, sensibilidad, derechos y disponibilidad antes del uso publico.',
+    name: 'Comprueba contexto, sensibilidad, derechos y disponibilidad antes del uso público.',
     fictional: 'Mantenlo como inspiracion creativa y evita copiar marcas, personas reales o universos protegidos.',
     text: 'Comprueba legibilidad, accesibilidad y compatibilidad antes de compartir texto estilizado.',
     seo: 'No garantiza trafico, rankings, indexacion ni resultados de buscadores.',
@@ -85,9 +85,9 @@ const b08SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' |
     developer: 'Teste Code und pruefe Sicherheit, Barrierefreiheit und Kompatibilitaet vor Produktion.',
   },
   pt: {
-    business: 'Revise marca, permissoes, precos, dados e conformidade antes do uso publico.',
+    business: 'Revise marca, permissoes, precos, dados e conformidade antes do uso público.',
     utility: 'Use como apoio pratico e confirme o resultado antes de decisoes importantes.',
-    name: 'Verifique contexto, sensibilidade, direitos e disponibilidade antes do uso publico.',
+    name: 'Verifique contexto, sensibilidade, direitos e disponibilidade antes do uso público.',
     fictional: 'Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos.',
     text: 'Verifique legibilidade, acessibilidade e compatibilidade antes de compartilhar texto estilizado.',
     seo: 'Nao garante trafego, rankings, indexacao ou resultados de busca.',

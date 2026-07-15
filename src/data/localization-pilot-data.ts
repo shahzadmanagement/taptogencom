@@ -18,7 +18,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de nombres",
     "metaTitle": "Generador de nombres gratis",
     "metaDescription": "Crea ideas de nombres claras para proyectos, personajes, marcas o listas personales con resultados fáciles de revisar.",
-    "intro": "Genera nombres en español con opciónes amplias y revisa cada sugerencia antes de usarla en publico.",
+    "intro": "Genera nombres en español con opciones amplias y revisa cada sugerencia antes de usarla en público.",
     "faqTopics": [
       "como elegir un nombre",
       "nombres originales",
@@ -273,7 +273,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de nombres de bebe",
     "metaTitle": "Nombres de bebe e ideas gratis",
     "metaDescription": "Explora ideas de nombres de bebe con un enfoque inspiracional, no medico ni legal.",
-    "intro": "Encuentra nombres para considerar en familia y verifica significado, pronunciacion y registro local.",
+    "intro": "Encuentra nombres para considerar en familia y verifica significado, pronunciación y registro local.",
     "faqTopics": [
       "nombres de nina",
       "nombres de nino",
@@ -375,7 +375,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de segundo nombre",
     "metaTitle": "Generador de segundo nombre gratis",
     "metaDescription": "Encuentra ideas de segundo nombre para combinaciones personales, personajes o listas creativas.",
-    "intro": "Genera opciónes que encajen con nombre y apellido, y revisa pronunciacion y contexto.",
+    "intro": "Genera opciones que encajen con nombre y apellido, y revisa pronunciación y contexto.",
     "faqTopics": [
       "segundo nombre ideas",
       "nombres compuestos",
@@ -528,7 +528,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de nombres para productos",
     "metaTitle": "Nombres para productos gratis",
     "metaDescription": "Crea ideas de nombres para productos, colecciones, funciones o lanzamientos.",
-    "intro": "Genera opciónes comerciales y revisa marca, claridad y encaje con el mercado.",
+    "intro": "Genera opciones comerciales y revisa marca, claridad y encaje con el mercado.",
     "faqTopics": [
       "nombre de producto",
       "ideas de producto",
@@ -579,7 +579,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de nombres para proyectos",
     "metaTitle": "Nombres para proyectos gratis",
     "metaDescription": "Encuentra nombres para proyectos internos, creativos, escolares o profesionales.",
-    "intro": "Genera ideas memorables y ajustalas al tono, publico y alcance del proyecto.",
+    "intro": "Genera ideas memorables y ajustalas al tono, público y alcance del proyecto.",
     "faqTopics": [
       "nombre de proyecto",
       "ideas para proyectos",
@@ -783,7 +783,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de nombres para blog",
     "metaTitle": "Nombres para blog gratis",
     "metaDescription": "Encuentra ideas de nombres para blogs personales, nichos, newsletters o proyectos de contenido.",
-    "intro": "Genera opciónes memorables y revisa dominio, tono y tema antes de elegir.",
+    "intro": "Genera opciones memorables y revisa dominio, tono y tema antes de elegir.",
     "faqTopics": [
       "nombre de blog",
       "ideas para blog",
@@ -834,7 +834,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de nombres para podcast",
     "metaTitle": "Nombres para podcast gratis",
     "metaDescription": "Crea ideas de nombres para podcasts, episodios seriados o canales de audio.",
-    "intro": "Genera opciónes claras y revisa disponibilidad en directorios, dominio y marca.",
+    "intro": "Genera opciones claras y revisa disponibilidad en directorios, dominio y marca.",
     "faqTopics": [
       "nombre de podcast",
       "ideas para podcast",
@@ -987,7 +987,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de palabras clave",
     "metaTitle": "Generador de palabras clave gratis",
     "metaDescription": "Encuentra ideas de palabras clave para contenido, SEO, anuncios o investigacion inicial.",
-    "intro": "Genera temas y terminos relacionados, luego valida volumen, competencia e intencion.",
+    "intro": "Genera temas y terminos relacionados, luego valida volumen, competencia e intención.",
     "faqTopics": [
       "palabras clave SEO",
       "ideas de keywords",
@@ -1135,12 +1135,12 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "seo-title-generator",
     "language": "es",
-    "primaryKeyword": "generador de titulos SEO",
+    "primaryKeyword": "generador de títulos SEO",
     "localizedSlug": "generador-de-titulos-seo",
-    "h1": "Generador de titulos SEO",
-    "metaTitle": "Generador de titulos SEO gratis",
-    "metaDescription": "Crea ideas de titulos SEO para paginas, articulos, guias y fichas de producto.",
-    "intro": "Genera opciónes de titulo y revisa longitud, intencion y exactitud antes de usarlas.",
+    "h1": "Generador de títulos SEO",
+    "metaTitle": "Generador de títulos SEO gratis",
+    "metaDescription": "Crea ideas de títulos SEO para paginas, articulos, guias y fichas de producto.",
+    "intro": "Genera opciones de título y revisa longitud, intención y exactitud antes de usarlas.",
     "faqTopics": [
       "titulo SEO",
       "title tag",
@@ -1956,7 +1956,7 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "h1": "Generador de esquema para blog",
     "metaTitle": "Esquema para blog gratis",
     "metaDescription": "Crea estructuras de articulos con secciones, subtitulos e ideas principales.",
-    "intro": "Genera un esquema inicial y ajustalo segun intencion de busqueda y experiencia real.",
+    "intro": "Genera un esquema inicial y ajustalo segun intención de busqueda y experiencia real.",
     "faqTopics": [
       "estructura de blog",
       "outline de articulo",

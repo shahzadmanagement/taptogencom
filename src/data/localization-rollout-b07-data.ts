@@ -60,7 +60,7 @@ const b07SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' |
   es: {
     business: 'Revisa marca, dominio, precios, permisos y datos antes de publicarlo o enviarlo a clientes.',
     utility: 'Usalo como ayuda practica y confirma el resultado con tus propias reglas o fuentes.',
-    name: 'Comprueba sensibilidad cultural, pronunciacion, derechos y disponibilidad antes del uso publico.',
+    name: 'Comprueba sensibilidad cultural, pronunciación, derechos y disponibilidad antes del uso público.',
     fictional: 'Usalo para mundos propios, juegos o ideas creativas sin copiar marcas ni personas reales.',
     text: 'Comprueba legibilidad, accesibilidad y compatibilidad antes de usar texto decorativo.',
     seo: 'No garantiza trafico, rankings, rich results ni comportamiento de buscadores.',
@@ -93,7 +93,7 @@ const b07SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' |
   pt: {
     business: 'Revise marca, dominio, precos, permissoes e dados antes de publicar ou enviar a clientes.',
     utility: 'Use como apoio pratico e confirme o resultado com suas proprias regras ou fontes.',
-    name: 'Verifique sensibilidade cultural, pronuncia, direitos e disponibilidade antes do uso publico.',
+    name: 'Verifique sensibilidade cultural, pronuncia, direitos e disponibilidade antes do uso público.',
     fictional: 'Use para mundos proprios, jogos ou ideias criativas sem copiar marcas nem pessoas reais.',
     text: 'Verifique legibilidade, acessibilidade e compatibilidade antes de usar texto decorativo.',
     seo: 'Nao garante trafego, rankings, rich results ou comportamento de buscadores.',

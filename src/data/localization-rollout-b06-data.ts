@@ -58,9 +58,9 @@ export const rolloutB06ToolIds = tools.map((tool) => tool.canonicalToolId);
 
 const b06SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' | 'name' | 'fictional', string>> = {
   es: {
-    business: 'Revisa marca, dominio, permisos, precios, datos reales y cumplimiento antes del uso publico.',
+    business: 'Revisa marca, dominio, permisos, precios, datos reales y cumplimiento antes del uso público.',
     utility: 'Usalo como ayuda practica; confirma etiquetas, listas o sorteos con tus propias reglas.',
-    name: 'Comprueba cultura, contexto, pronunciacion, derechos y disponibilidad antes de usarlo en publico.',
+    name: 'Comprueba cultura, contexto, pronunciación, derechos y disponibilidad antes de usarlo en público.',
     fictional: 'Mantenlo como inspiracion creativa y evita copiar marcas, personas reales o universos protegidos.',
   },
   fr: {
@@ -76,9 +76,9 @@ const b06SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' |
     fictional: 'Nutze es als kreative Inspiration und kopiere keine Marken, realen Personen oder geschuetzten Welten.',
   },
   pt: {
-    business: 'Revise marca, dominio, permissoes, precos, dados reais e conformidade antes do uso publico.',
+    business: 'Revise marca, dominio, permissoes, precos, dados reais e conformidade antes do uso público.',
     utility: 'Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras.',
-    name: 'Verifique cultura, contexto, pronuncia, direitos e disponibilidade antes do uso publico.',
+    name: 'Verifique cultura, contexto, pronuncia, direitos e disponibilidade antes do uso público.',
     fictional: 'Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos.',
   },
   it: {
