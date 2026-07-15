@@ -2737,6 +2737,36 @@ export const tools: Tool[] = [
   {
     slug: 'api-key-generator',
     name: 'API Key Generator',
+    toolOptions: [
+      {
+        type: 'text',
+        id: 'api-key-prefix',
+        label: 'Key Prefix (optional)',
+        default: 'sk_live'
+      },
+      {
+        type: 'select',
+        options: [
+          { value: '32', label: '32 characters' },
+          { value: '48', label: '48 characters' },
+          { value: '64', label: '64 characters' }
+        ],
+        id: 'api-key-length',
+        label: 'Key Length',
+        default: '32'
+      },
+      {
+        type: 'select',
+        options: [
+          { value: 'base62', label: 'Alphanumeric (Base62)' },
+          { value: 'hex', label: 'Hexadecimal' },
+          { value: 'base64url', label: 'Base64URL' }
+        ],
+        id: 'api-key-encoding',
+        label: 'Encoding Scheme',
+        default: 'base62'
+      }
+    ],
     icon: '🔐',
     tagline: 'Generate sample API key placeholders',
     description: 'Create clearly labeled sample API key and token-like placeholders for demos, documentation, and formatting tests. These are not real secrets and include no security guarantee.',

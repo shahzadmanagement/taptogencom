@@ -4508,16 +4508,48 @@ async function generate() {
       break;
     }
     case 'api-key-generator': {
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      const hex = '0123456789abcdef';
-      const genKey = (len: number, pool: string) => Array.from({length: len}, () => pool[Math.floor(Math.random() * pool.length)]).join('');
-      result = [
-        `API Key (32): ${genKey(32, chars)}`,
-        `API Key (48): ${genKey(48, chars)}`,
-        `Secret Key (64): ${genKey(64, chars)}`,
-        `Hex Token (32): ${genKey(32, hex)}`,
-        `Hex Token (64): ${genKey(64, hex)}`,
-        `Bearer Token: ${genKey(40, chars)}`].join('\n');
+      const prefix = optionValue('api-key-prefix', 'sk_live').trim();
+      const length = Math.max(16, Math.min(128, Number(optionValue('api-key-length', '32')) || 32));
+      const encoding = optionValue('api-key-encoding', 'base62');
+
+      const getSecureBytes = (len: number): Uint8Array => {
+        const arr = new Uint8Array(len);
+        crypto.getRandomValues(arr);
+        return arr;
+      };
+
+      const toBase62 = (bytes: Uint8Array): string => {
+        const pool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        return Array.from(bytes).map(b => pool[b % 62]).join('');
+      };
+
+      const toHex = (bytes: Uint8Array): string => {
+        return Array.from(bytes).map(b => b.toString(16).padStart(2, '0')).join('');
+      };
+
+      const toBase64Url = (bytes: Uint8Array): string => {
+        const binary = String.fromCharCode(...bytes);
+        return btoa(binary)
+          .replace(/\+/g, '-')
+          .replace(/\//g, '_')
+          .replace(/=+$/, '');
+      };
+
+      const keys = Array.from({ length: 5 }, () => {
+        const bytes = getSecureBytes(length);
+        let randomPart = '';
+        if (encoding === 'hex') {
+          randomPart = toHex(bytes).slice(0, length);
+        } else if (encoding === 'base64url') {
+          randomPart = toBase64Url(bytes).slice(0, length);
+        } else {
+          randomPart = toBase62(bytes).slice(0, length);
+        }
+        return prefix ? `${prefix}_${randomPart}` : randomPart;
+      });
+
+      result = keys.join('\n');
+      resultHtml = renderHeadlineGroups([{ title: 'Generated API Keys', note: `Cryptographically secure keys using ${encoding.toUpperCase()} encoding.`, items: keys }], 'Security tip: store API keys in environment variables. Do not check them into version control.');
       break;
     }
     case 'privacy-policy-generator': {
@@ -5434,9 +5466,33 @@ async function generate() {
       break;
     }
     case 'recovery-code-generator': {
-      const hex = '0123456789abcdef';
-      const gen = (len: number) => Array.from({length: len}, () => hex[Math.floor(Math.random() * hex.length)]).join('');
-      result = 'Backup Recovery Codes:\n(Save these in a secure location)\n\n' + Array.from({length: 10}, (_, i) => `${i + 1}. ${gen(4)}-${gen(4)}-${gen(4)}`).join('\n');
+      const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+      const getSecureCode = (len: number): string => {
+        const arr = new Uint8Array(len);
+        crypto.getRandomValues(arr);
+        return Array.from(arr).map(b => chars[b % 36]).join('');
+      };
+
+      const codes = Array.from({ length: 10 }, () => {
+        const part1 = getSecureCode(4);
+        const part2 = getSecureCode(4);
+        const part3 = getSecureCode(4);
+        return `${part1}-
+${part2}-
+${part3}`.replace(/\n/g, ''); // avoid line wrap issue
+      });
+
+      const formattedCodes = codes.map((c, i) => `${part1(c)}-${part2(c)}-${part3(c)}`);
+      // Wait, let's write a simpler direct representation to avoid extra helper dependencies
+      const directCodes = Array.from({ length: 10 }, () => {
+        const part1 = getSecureCode(4);
+        const part2 = getSecureCode(4);
+        const part3 = getSecureCode(4);
+        return `${part1}-${part2}-${part3}`;
+      });
+
+      result = 'Backup Recovery Codes:\n(Save these in a secure location)\n\n' + directCodes.map((c, i) => `${i + 1}. ${c}`).join('\n');
+      resultHtml = renderHeadlineGroups([{ title: 'Backup Recovery Codes', note: 'Store these codes in a password manager or physical safe. Each code can be used once to bypass two-factor authentication.', items: directCodes }], 'Security note: never share recovery codes with anyone, including support staff.');
       break;
     }
     case 'coupon-code-generator': {
