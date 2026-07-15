@@ -449,7 +449,9 @@ export function getLocalizedPageCopy(localized: LocalizedToolContent): Localized
                           ? polishBengaliText
                           : localized.language === 'ja'
                             ? polishJapaneseText
-                            : (value: string) => value;
+                            : localized.language === 'ko'
+                              ? polishKoreanText
+                              : (value: string) => value;
 
   const polishedTitle = polish(localized.metaTitle);
   let polishedDesc = polish(localized.metaDescription);
@@ -1000,6 +1002,32 @@ export function polishJapaneseText(value: string): string {
     .replaceAll('Public use mae ni brand, permissions, prices, data, compliance wo kakunin shite kudasai.', '公開前に、ブランド、許可、価格、データ、コンプライアンスを確認してください。')
     .replaceAll('Public use mae ni context, sensitivity, rights, availability wo kakunin shite kudasai.', '公開前に、文脈、感性、権利、可用性を確認してください。')
     .replaceAll('Creative inspiration ni todome, brands, real people, prot', '創造的なインスピレーションに留め、ブランド、実在の人物、保護された作品をコピーしないでください。');
+}
+
+export function polishKoreanText(value: string): string {
+  return value
+    .replaceAll('Practical help ro sayonghago jungyohan gyeoljeong jeone gyeolgwareul hwaginhaseyo.', '실용적인 도움으로 사용하고 중요한 결정 전에 결과를 확인하세요.')
+    .replaceAll('Reach, followers, name availability, platform performance neun bojanghaji anhseumnida.', '도달 범위, 팔로워, 이름 사용 가능 여부, 플랫폼 성능은 보장하지 않습니다.')
+    .replaceAll('Legal, financial, brand, commercial availability geomto reul daesin haji anhseumnida.', '법률, 재무, 브랜드, 상업적 사용 가능성 검토를 대신하지 않습니다.')
+    .replaceAll('Fake identity, impersonation, sensitive personal data yongdo ro sayonghaji m', '허위 신원, 사칭, 민감한 개인 정보 용도로 사용하지 마십시오.')
+    .replaceAll('Public use jeone facts, permissions, brand, privacy, compliance reul hwaginhaseyo.', '공개 사용 전에 사실 관계, 권한, 브랜드, 개인 정보 보호, 규정 준수 여부를 확인하세요.')
+    .replaceAll('Draft neun human judgement ro pyeonjiphago guaranteed na official result cheoreom boiji maseyo.', '초안은 인간의 판단으로 편집하고 보장되거나 공식적인 결과처럼 보이지 마세요.')
+    .replaceAll('Play na brainstorming yongdo ro sayonghago identity, documents, ha', '놀이나 브레인스토밍 용도로 사용하고 신원, 문서에는 사용하지 마십시오.')
+    .replaceAll('Publish jeone data, permissions, prices, claims, brand tone reul hwaginhaseyo.', '게시 전에 데이터, 권한, 가격, 주장, 브랜드 톤을 확인하세요.')
+    .replaceAll('Writing support ro sayonghago sources, originality, academic na editorial rules reul hwaginhaseyo.', '작성 지원으로 사용하고 출처, 독창성, 학술 또는 편집 규칙을 확인하세요.')
+    .replaceAll('Inspiration na light choice ro bogoseo identity, document, official decision e sayonghaji maseyo.', '영감이나 가벼운 선택으로 보고 신원, 문서, 공식 결정에 사용하지 마세요.')
+    .replaceAll('Production jeone code test, input validation, secu', '프로덕션 전에 코드를 테스트하고 입력을 검증하십시오.')
+    .replaceAll('Public use jeone brand, domain, permissions, prices, real data, compliance reul hwaginhaseyo.', '공개 사용 전에 브랜드, 도메인, 권한, 가격, 실제 데이터, 규정 준수 여부를 확인하세요.')
+    .replaceAll('Practical support ro sayonghago labels, lists, draws neun jasinui rules ro hwaginhaseyo.', '실용적인 지원으로 사용하고 라벨, 목록, 추첨은 자신만의 규칙으로 확인하세요.')
+    .replaceAll('Public use jeone culture, context, pronunciation, rights, availability reul hwaginhaseyo.', '공개 사용 전에 문화, 맥락, 발음, 권리, 사용 가능 여부를 확인하세요.')
+    .replaceAll('Creative inspiration yongdo ro sayonghago brands, real ', '창의적인 영감 용도로 사용하고 브랜드나 실제 인물을 모방하지 마십시오.')
+    .replaceAll('Publish na client jeonsong jeone brand, domain, prices, permissions, data reul hwaginhaseyo.', '게시나 클라이언트 전송 전에 브랜드, 도메인, 가격, 권한, 데이터를 확인하세요.')
+    .replaceAll('Practical support ro sayonghago gyeolgwa neun jasinui rules na sources ro hwaginhaseyo.', '실용적인 지원으로 사용하고 결과는 자신만의 규칙이나 출처로 확인하세요.')
+    .replaceAll('Public use jeone cultural sensitivity, pronunciation, rights, availability reul hwaginhaseyo.', '공개 사용 전에 문화적 민감성, 발음, 권리, 사용 가능 여부를 확인하세요.')
+    .replaceAll('Jasinui worlds, games, creative ideas yongdo ro sayon', '자신만의 세계, 게임, 창의적인 아이디어 용도로 사용하십시오.')
+    .replaceAll('Public use jeone brand, permissions, prices, data, compliance reul hwaginhaseyo.', '공개 사용 전에 브랜드, 권한, 가격, 데이터, 규정 준수 여부를 확인하세요.')
+    .replaceAll('Public use jeone context, sensitivity, rights, availability reul hwaginhaseyo.', '공개 사용 전에 맥락, 민감성, 권리, 사용 가능 여부를 확인하세요.')
+    .replaceAll('Creative inspiration yongdo ro sayonghago brands, real people, protected worlds re', '창의적인 영감 용도로 사용하고 브랜드, 실제 인물, 보호된 저작물을 모방하지 마십시오.');
 }
 
 export function createLocalizedFaqItems(localized: LocalizedToolContent) {
