@@ -445,7 +445,9 @@ export function getLocalizedPageCopy(localized: LocalizedToolContent): Localized
                       ? polishBulgarianText
                       : localized.language === 'hi'
                         ? polishHindiText
-                        : (value: string) => value;
+                        : localized.language === 'bn'
+                          ? polishBengaliText
+                          : (value: string) => value;
 
   const polishedTitle = polish(localized.metaTitle);
   let polishedDesc = polish(localized.metaDescription);
@@ -943,6 +945,32 @@ export function polishHindiText(value: string): string {
     .replaceAll('Public use se pehle brand, permissions, prices, data aur compliance check karein.', 'सार्वजनिक उपयोग से पहले ब्रांड, अनुमतियों, कीमतों, डेटा और अनुपालन की जांच करें।')
     .replaceAll('Public use se pehle context, sensitivity, rights aur availability check karein.', 'सार्वजनिक उपयोग से पहले संदर्भ, संवेदनशीलता, अधिकार और उपलब्धता की जांच करें।')
     .replaceAll('Creative inspiration ke liye rakhein aur brands, real people ya protected wo', 'रचनात्मक प्रेरणा के लिए रखें और ब्रांडों, वास्तविक लोगों या संरक्षित दुनिया की नकल न करें।');
+}
+
+export function polishBengaliText(value: string): string {
+  return value
+    .replaceAll('Practical sahajyo hishebe use korun ebong important decision er age result check korun.', 'ব্যবহারিক সাহায্য হিসেবে ব্যবহার করুন এবং গুরুত্বপূর্ণ সিদ্ধান্তের আগে ফলাফল পরীক্ষা করুন।')
+    .replaceAll('Reach, follower, name availability ba platform performance er guarantee nei.', 'পৌঁছানো, ফলোয়ার, নামের প্রাপ্যতা বা প্ল্যাটফর্মের পারফরম্যান্সের কোনো গ্যারান্টি নেই।')
+    .replaceAll('Legal, financial, brand ba commercial availability review er bodol noy.', 'এটি আইনি, আর্থিক, ব্র্যান্ড বা বাণিজ্যিক প্রাপ্যতা পর্যালোচনার বিকল্প নয়।')
+    .replaceAll('Fake identity, impersonation ba sensitive personal data er jonno use korben na.', 'নকল পরিচয়, ছদ্মবেশ ধারণ বা সংবেদনশীল ব্যক্তিগত ডেটার জন্য এটি ব্যবহার করবেন না।')
+    .replaceAll('Public use er age facts, permissions, brand, privacy ebong compliance check korun.', 'জনসমক্ষে ব্যবহারের আগে তথ্য, অনুমতি, ব্র্যান্ড, গোপনীয়তা এবং সম্মতি যাচাই করুন।')
+    .replaceAll('Draft ke human judgement diye edit korun ebong guaranteed ba official result hishebe dekhaben na.', 'খসড়াটি মানুষের বিচার দিয়ে সম্পাদনা করুন এবং গ্যারান্টিযুক্ত বা অফিসিয়াল ফলাফল হিসেবে দেখাবেন না।')
+    .replaceAll('Play ba brainstorming er jonno use korun; identity, documen', 'খেলা বা বুদ্ধিদীপ্ত আলোচনার জন্য ব্যবহার করুন; পরিচয় বা নথির জন্য নয়।')
+    .replaceAll('Publish korar age data, permissions, prices, claims ebong brand tone check korun.', 'প্রকাশের আগে ডেটা, অনুমতি, মূল্য, দাবি এবং ব্র্যান্ডের সুর যাচাই করুন।')
+    .replaceAll('Writing support hishebe use korun; sources, originality ebong academic ba editorial rules check korun.', 'লেখা সহায়িকা হিসেবে ব্যবহার করুন; উৎস, মৌলিকতা এবং একাডেমিক বা সম্পাদকীয় নিয়ম যাচাই করুন।')
+    .replaceAll('Eta inspiration ba light choice, identity, document ba official decision noy.', 'এটি অনুপ্রেরণা বা হালকা পছন্দ মাত্র, কোনো পরিচয়, নথি বা অফিসিয়াল সিদ্ধান্ত নয়।')
+    .replaceAll('Production er age code test, input validate, security, accessib', 'প্রোডাকশনের আগে কোড পরীক্ষা, ইনপুট যাচাই এবং নিরাপত্তা পরীক্ষা করুন।')
+    .replaceAll('Public use er age brand, domain, permissions, prices, real data ebong compliance check korun.', 'জনসমক্ষে ব্যবহারের আগে ব্র্যান্ড, ডোমেন, অনুমতি, মূল্য, বাস্তব ডেটা এবং সম্মতি যাচাই করুন।')
+    .replaceAll('Practical help hishebe use korun; labels, lists ba draws nijer rules diye confirm korun.', 'ব্যবহারিক সাহায্য হিসেবে ব্যবহার করুন; নিজের নিয়ম দিয়ে লেবেল, তালিকা বা ড্র নিশ্চিত করুন।')
+    .replaceAll('Public use er age culture, context, pronunciation, rights ebong availability check korun.', 'জনসমক্ষে ব্যবহারের আগে সংস্কৃতি, প্রেক্ষাপট, উচ্চারণ, অধিকার এবং প্রাপ্যতা যাচাই করুন।')
+    .replaceAll('Creative inspiration hishebe rakhun ebong brands, real ', 'সৃজনশীল অনুপ্রেরণা হিসেবে রাখুন এবং ব্র্যান্ড, বাস্তব মানুষের অনুলিপি করবেন না।')
+    .replaceAll('Publish ba client ke pathanor age brand, domain, prices, permissions ebong data check korun.', 'প্রকাশ করার বা ক্লায়েন্টকে পাঠানোর আগে ব্র্যান্ড, ডোমেন, মূল্য, অনুমতি এবং ডেটা যাচাই করুন।')
+    .replaceAll('Practical help hishebe use korun ebong result nijer rules ba sources diye confirm korun.', 'ব্যবহারিক সাহায্য হিসেবে ব্যবহার করুন এবং নিজের নিয়ম বা উৎস দিয়ে ফলাফল নিশ্চিত করুন।')
+    .replaceAll('Public use er age cultural sensitivity, pronunciation, rights ebong availability check korun.', 'জনসমক্ষে ব্যবহারের আগে সাংস্কৃতিক সংবেদনশীলতা, উচ্চারণ, অধিকার এবং প্রাপ্যতা যাচাই করুন।')
+    .replaceAll('Nijer worlds, games ba creative ideas er jonno use k', 'নিজের জগত, গেম বা সৃজনশীল ধারণার জন্য এটি ব্যবহার করুন।')
+    .replaceAll('Public use er age brand, permissions, prices, data ebong compliance check korun.', 'জনসমক্ষে ব্যবহারের আগে ব্র্যান্ড, অনুমতি, মূল্য, ডেটা এবং সম্মতি যাচাই করুন।')
+    .replaceAll('Public use er age context, sensitivity, rights ebong availability check korun.', 'জনসমক্ষে ব্যবহারের আগে প্রেক্ষাপট, সংবেদনশীলতা, অধিকার এবং প্রাপ্যতা যাচাই করুন।')
+    .replaceAll('Creative inspiration hishebe rakhun ebong brands, real people ba protected worlds c', 'সৃজনশীল অনুপ্রেরণা হিসেবে রাখুন এবং ব্র্যান্ড, বাস্তব ব্যক্তি বা সুরক্ষিত জগতের অনুলিপি করবেন না।');
 }
 
 export function createLocalizedFaqItems(localized: LocalizedToolContent) {
