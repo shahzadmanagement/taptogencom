@@ -752,7 +752,11 @@ export function polishPolishText(value: string): string {
     .replaceAll('maly', 'mały')
     .replaceAll('male', 'małe')
     .replaceAll('ladnego', 'ładnego')
-    .replaceAll('imie', 'imię');
+    .replaceAll('imie', 'imię')
+    .replaceAll('latwe', 'łatwe')
+    .replaceAll('Latwe', 'Łatwe')
+    .replaceAll('bezplatne', 'bezpłatne')
+    .replaceAll('Bezplatne', 'Bezpłatne');
 }
 
 export function createLocalizedFaqItems(localized: LocalizedToolContent) {
