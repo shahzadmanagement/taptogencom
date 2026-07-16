@@ -1,0 +1,835 @@
+url,msg_type,text
+"https://taptogen.vercel.app/tools/story-plot-generator/","error","[2026-07-16T21:12:31.377Z] [ERROR]: No configuration found for workspace ""story-plot-generator"""
+"https://taptogen.vercel.app/tools/character-name-generator/","error","[2026-07-16T21:12:32.807Z] [ERROR]: No configuration found for workspace ""character-name-generator"""
+"https://taptogen.vercel.app/tools/art-tag-generator/","error","[2026-07-16T21:12:34.335Z] [ERROR]: No configuration found for workspace ""art-tag-generator"""
+"https://taptogen.vercel.app/tools/cipher-generator/","error","[2026-07-16T21:12:37.370Z] [ERROR]: No configuration found for workspace ""cipher-generator"""
+"https://taptogen.vercel.app/tools/art-tag-generator/","error","[2026-07-16T21:12:38.402Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass24UtilitySections is not defined ReferenceError: buildPass24UtilitySections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:317:335)"
+"https://taptogen.vercel.app/tools/art-tag-generator/","exception","ReferenceError: buildPass24UtilitySections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:317:335)"
+"https://taptogen.vercel.app/tools/character-name-generator/","error","[2026-07-16T21:12:38.534Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/character-name-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/character-name-generator/","error","[2026-07-16T21:12:39.113Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/character-name-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/art-tag-generator/","error","[2026-07-16T21:12:39.114Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/art-tag-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/art-tag-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/character-name-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/story-plot-generator/","error","[2026-07-16T21:12:39.836Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/story-plot-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/story-plot-generator/","error","[2026-07-16T21:12:42.287Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/story-plot-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/cipher-generator/","error","[2026-07-16T21:12:42.357Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/cipher-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/story-plot-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/bio-generator/","error","[2026-07-16T21:12:43.540Z] [ERROR]: No configuration found for workspace ""bio-generator"""
+"https://taptogen.vercel.app/tools/bio-generator/","error","[2026-07-16T21:12:46.924Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/bio-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/cipher-generator/","error","[2026-07-16T21:12:47.565Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/cipher-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/email-tag-generator/","error","[2026-07-16T21:12:48.151Z] [ERROR]: No configuration found for workspace ""email-tag-generator"""
+"https://taptogen.vercel.app/tools/fantasy-language-generator/","error","[2026-07-16T21:12:48.187Z] [ERROR]: No configuration found for workspace ""fantasy-language-generator"""
+"https://taptogen.vercel.app/tools/cipher-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/bio-generator/","error","[2026-07-16T21:12:48.644Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/bio-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/bio-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/club-name-generator/","error","[2026-07-16T21:12:49.173Z] [ERROR]: No configuration found for workspace ""club-name-generator"""
+"https://taptogen.vercel.app/tools/fantasy-language-generator/","error","[2026-07-16T21:12:52.021Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass24FantasyLanguageSections is not defined ReferenceError: buildPass24FantasyLanguageSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:324:89)"
+"https://taptogen.vercel.app/tools/fantasy-language-generator/","exception","ReferenceError: buildPass24FantasyLanguageSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:324:89)"
+"https://taptogen.vercel.app/tools/email-tag-generator/","error","[2026-07-16T21:12:52.412Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass24UtilitySections is not defined ReferenceError: buildPass24UtilitySections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:317:335)"
+"https://taptogen.vercel.app/tools/email-tag-generator/","exception","ReferenceError: buildPass24UtilitySections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:317:335)"
+"https://taptogen.vercel.app/tools/email-tag-generator/","error","[2026-07-16T21:12:53.085Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/email-tag-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/fantasy-language-generator/","error","[2026-07-16T21:12:53.099Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/fantasy-language-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/email-tag-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/fantasy-language-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/club-name-generator/","error","[2026-07-16T21:12:53.335Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/tools/club-name-generator/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/tools/club-name-generator/","error","[2026-07-16T21:12:54.350Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/club-name-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/disc-jockey-names-generator/","error","[2026-07-16T21:12:54.576Z] [ERROR]: No configuration found for workspace ""disc-jockey-names-generator"""
+"https://taptogen.vercel.app/tools/club-name-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/invisible-text-generator/","error","[2026-07-16T21:12:56.351Z] [ERROR]: No configuration found for workspace ""invisible-text-generator"""
+"https://taptogen.vercel.app/tools/disc-jockey-names-generator/","error","[2026-07-16T21:13:00.325Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/tools/disc-jockey-names-generator/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/tools/flower-name-generator/","error","[2026-07-16T21:13:00.633Z] [ERROR]: No configuration found for workspace ""flower-name-generator"""
+"https://taptogen.vercel.app/tools/flashcard-generator/","error","[2026-07-16T21:13:00.825Z] [ERROR]: No configuration found for workspace ""flashcard-generator"""
+"https://taptogen.vercel.app/tools/invisible-text-generator/","error","[2026-07-16T21:13:00.976Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass25TextSections is not defined ReferenceError: buildPass25TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:327:393)"
+"https://taptogen.vercel.app/tools/invisible-text-generator/","exception","ReferenceError: buildPass25TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:327:393)"
+"https://taptogen.vercel.app/tools/college-name-generator/","error","[2026-07-16T21:13:01.546Z] [ERROR]: No configuration found for workspace ""college-name-generator"""
+"https://taptogen.vercel.app/tools/invisible-text-generator/","error","[2026-07-16T21:13:01.635Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/invisible-text-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/disc-jockey-names-generator/","error","[2026-07-16T21:13:01.753Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/disc-jockey-names-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/invisible-text-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/disc-jockey-names-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/flower-name-generator/","error","[2026-07-16T21:13:04.361Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/flower-name-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/flower-name-generator/","error","[2026-07-16T21:13:04.960Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/flower-name-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/flashcard-generator/","error","[2026-07-16T21:13:05.236Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/flashcard-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/flower-name-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/flashcard-generator/","error","[2026-07-16T21:13:05.733Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/flashcard-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/flashcard-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/college-name-generator/","error","[2026-07-16T21:13:07.578Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/tools/college-name-generator/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/tools/college-name-generator/","error","[2026-07-16T21:13:08.257Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/college-name-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/college-name-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/big-text-generator/","error","[2026-07-16T21:13:09.404Z] [ERROR]: No configuration found for workspace ""big-text-generator"""
+"https://taptogen.vercel.app/tools/css-grid-generator/","error","[2026-07-16T21:13:10.175Z] [ERROR]: No configuration found for workspace ""css-grid-generator"""
+"https://taptogen.vercel.app/tools/album-name-generator/","error","[2026-07-16T21:13:14.193Z] [ERROR]: No configuration found for workspace ""album-name-generator"""
+"https://taptogen.vercel.app/tools/hang-tag-generator/","error","[2026-07-16T21:13:14.497Z] [ERROR]: No configuration found for workspace ""hang-tag-generator"""
+"https://taptogen.vercel.app/tools/rubric-generator/","error","[2026-07-16T21:13:14.771Z] [ERROR]: No configuration found for workspace ""rubric-generator"""
+"https://taptogen.vercel.app/tools/big-text-generator/","error","[2026-07-16T21:13:15.363Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass22TextSections is not defined ReferenceError: buildPass22TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:287:350)"
+"https://taptogen.vercel.app/tools/big-text-generator/","exception","ReferenceError: buildPass22TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:287:350)"
+"https://taptogen.vercel.app/tools/big-text-generator/","error","[2026-07-16T21:13:15.781Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/big-text-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/big-text-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/album-name-generator/","error","[2026-07-16T21:13:17.563Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/album-name-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/album-name-generator/","error","[2026-07-16T21:13:18.153Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/album-name-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/css-grid-generator/","error","[2026-07-16T21:13:18.244Z] [ERROR]: [ErrorReporter] Captured Exception: renderPreviewCodeSuite is not defined ReferenceError: renderPreviewCodeSuite is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:2165:70)"
+"https://taptogen.vercel.app/tools/css-grid-generator/","exception","ReferenceError: renderPreviewCodeSuite is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:2165:70)"
+"https://taptogen.vercel.app/tools/album-name-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/hang-tag-generator/","error","[2026-07-16T21:13:18.702Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/hang-tag-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/rubric-generator/","error","[2026-07-16T21:13:18.930Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/rubric-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/rubric-generator/","error","[2026-07-16T21:13:19.562Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/rubric-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/rubric-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/hang-tag-generator/","error","[2026-07-16T21:13:20.752Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/hang-tag-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/css-grid-generator/","error","[2026-07-16T21:13:21.301Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/css-grid-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/css-grid-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/hang-tag-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/css-button-generator/","error","[2026-07-16T21:13:22.477Z] [ERROR]: No configuration found for workspace ""css-button-generator"""
+"https://taptogen.vercel.app/tools/hash-generator/","error","[2026-07-16T21:13:26.345Z] [ERROR]: No configuration found for workspace ""hash-generator"""
+"https://taptogen.vercel.app/tools/css-button-generator/","error","[2026-07-16T21:13:27.186Z] [ERROR]: [ErrorReporter] Captured Exception: renderCssButtonOutput is not defined ReferenceError: renderCssButtonOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:1116:5)"
+"https://taptogen.vercel.app/tools/css-button-generator/","exception","ReferenceError: renderCssButtonOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:1116:5)"
+"https://taptogen.vercel.app/tools/pet-name-generator/","error","[2026-07-16T21:13:27.688Z] [ERROR]: No configuration found for workspace ""pet-name-generator"""
+"https://taptogen.vercel.app/tools/css-button-generator/","error","[2026-07-16T21:13:28.191Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/css-button-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/old-english-text-generator/","error","[2026-07-16T21:13:28.365Z] [ERROR]: No configuration found for workspace ""old-english-text-generator"""
+"https://taptogen.vercel.app/tools/css-button-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/geo-tag-generator/","error","[2026-07-16T21:13:30.649Z] [ERROR]: No configuration found for workspace ""geo-tag-generator"""
+"https://taptogen.vercel.app/tools/pet-name-generator/","error","[2026-07-16T21:13:31.402Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/tools/pet-name-generator/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/tools/hash-generator/","error","[2026-07-16T21:13:31.513Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/hash-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/pet-name-generator/","error","[2026-07-16T21:13:32.081Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/pet-name-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/hash-generator/","error","[2026-07-16T21:13:32.084Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/hash-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/pet-name-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/hash-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/old-english-text-generator/","error","[2026-07-16T21:13:32.771Z] [ERROR]: [ErrorReporter] Captured Exception: buildOldEnglishStyles is not defined ReferenceError: buildOldEnglishStyles is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:276:204)"
+"https://taptogen.vercel.app/tools/old-english-text-generator/","exception","ReferenceError: buildOldEnglishStyles is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:276:204)"
+"https://taptogen.vercel.app/tools/old-english-text-generator/","error","[2026-07-16T21:13:33.476Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/old-english-text-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/old-english-text-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/geo-tag-generator/","error","[2026-07-16T21:13:36.171Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass24UtilitySections is not defined ReferenceError: buildPass24UtilitySections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:317:335)"
+"https://taptogen.vercel.app/tools/geo-tag-generator/","exception","ReferenceError: buildPass24UtilitySections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:317:335)"
+"https://taptogen.vercel.app/tools/geo-tag-generator/","error","[2026-07-16T21:13:37.246Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/geo-tag-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/geo-tag-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/dummy-data-generator/","error","[2026-07-16T21:13:38.000Z] [ERROR]: No configuration found for workspace ""dummy-data-generator"""
+"https://taptogen.vercel.app/tools/clan-tag-generator/","error","[2026-07-16T21:13:39.443Z] [ERROR]: No configuration found for workspace ""clan-tag-generator"""
+"https://taptogen.vercel.app/tools/emo-name-generator/","error","[2026-07-16T21:13:41.688Z] [ERROR]: No configuration found for workspace ""emo-name-generator"""
+"https://taptogen.vercel.app/tools/dummy-data-generator/","error","[2026-07-16T21:13:43.344Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/dummy-data-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/dummy-data-generator/","error","[2026-07-16T21:13:43.726Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/dummy-data-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/dummy-data-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/phonetic-spelling-of-name-generator/","error","[2026-07-16T21:13:44.059Z] [ERROR]: No configuration found for workspace ""phonetic-spelling-of-name-generator"""
+"https://taptogen.vercel.app/tools/clan-tag-generator/","error","[2026-07-16T21:13:44.554Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass23UtilityGroups is not defined ReferenceError: buildPass23UtilityGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:307:301)"
+"https://taptogen.vercel.app/tools/clan-tag-generator/","exception","ReferenceError: buildPass23UtilityGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:307:301)"
+"https://taptogen.vercel.app/tools/clan-tag-generator/","error","[2026-07-16T21:13:45.638Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/clan-tag-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/clan-tag-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/emo-name-generator/","error","[2026-07-16T21:13:48.028Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/tools/emo-name-generator/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/tools/phonetic-spelling-of-name-generator/","error","[2026-07-16T21:13:50.093Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass23UtilityGroups is not defined ReferenceError: buildPass23UtilityGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:307:301)"
+"https://taptogen.vercel.app/tools/phonetic-spelling-of-name-generator/","exception","ReferenceError: buildPass23UtilityGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:307:301)"
+"https://taptogen.vercel.app/tools/pick-a-name-generator/","error","[2026-07-16T21:13:50.202Z] [ERROR]: No configuration found for workspace ""pick-a-name-generator"""
+"https://taptogen.vercel.app/tools/name-pronunciation-generator/","error","[2026-07-16T21:13:50.472Z] [ERROR]: No configuration found for workspace ""name-pronunciation-generator"""
+"https://taptogen.vercel.app/tools/emo-name-generator/","error","[2026-07-16T21:13:50.985Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/emo-name-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/phonetic-spelling-of-name-generator/","error","[2026-07-16T21:13:51.322Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/phonetic-spelling-of-name-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/phonetic-spelling-of-name-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/brat-text-generator/","error","[2026-07-16T21:13:52.639Z] [ERROR]: No configuration found for workspace ""brat-text-generator"""
+"https://taptogen.vercel.app/tools/emo-name-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/name-pronunciation-generator/","error","[2026-07-16T21:13:53.715Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass23UtilityGroups is not defined ReferenceError: buildPass23UtilityGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:307:301)"
+"https://taptogen.vercel.app/tools/name-pronunciation-generator/","exception","ReferenceError: buildPass23UtilityGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:307:301)"
+"https://taptogen.vercel.app/tools/name-pronunciation-generator/","error","[2026-07-16T21:13:54.289Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/name-pronunciation-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/pick-a-name-generator/","error","[2026-07-16T21:13:54.592Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/pick-a-name-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/name-pronunciation-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/pick-a-name-generator/","error","[2026-07-16T21:13:55.118Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/pick-a-name-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/pick-a-name-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/brat-text-generator/","error","[2026-07-16T21:13:57.766Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass25TextSections is not defined ReferenceError: buildPass25TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:327:393)"
+"https://taptogen.vercel.app/tools/brat-text-generator/","exception","ReferenceError: buildPass25TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:327:393)"
+"https://taptogen.vercel.app/tools/brat-text-generator/","error","[2026-07-16T21:13:58.076Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/brat-text-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/brat-text-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/hashtag-generator/","error","[2026-07-16T21:13:58.448Z] [ERROR]: No configuration found for workspace ""hashtag-generator"""
+"https://taptogen.vercel.app/tools/car-name-generator/","error","[2026-07-16T21:13:59.555Z] [ERROR]: No configuration found for workspace ""car-name-generator"""
+"https://taptogen.vercel.app/tools/pet-tag-generator/","error","[2026-07-16T21:14:03.455Z] [ERROR]: No configuration found for workspace ""pet-tag-generator"""
+"https://taptogen.vercel.app/tools/hashtag-generator/","error","[2026-07-16T21:14:03.737Z] [ERROR]: [ErrorReporter] Captured Exception: renderHashtagGroups is not defined ReferenceError: renderHashtagGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:706:5)"
+"https://taptogen.vercel.app/tools/hashtag-generator/","exception","ReferenceError: renderHashtagGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:706:5)"
+"https://taptogen.vercel.app/tools/car-name-generator/","error","[2026-07-16T21:14:03.798Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/car-name-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/poster-generator/","error","[2026-07-16T21:14:03.883Z] [ERROR]: No configuration found for workspace ""poster-generator"""
+"https://taptogen.vercel.app/tools/mock-api-generator/","error","[2026-07-16T21:14:04.143Z] [ERROR]: No configuration found for workspace ""mock-api-generator"""
+"https://taptogen.vercel.app/tools/car-name-generator/","error","[2026-07-16T21:14:04.207Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/car-name-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/car-name-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/hashtag-generator/","error","[2026-07-16T21:14:05.507Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/hashtag-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/hashtag-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/poster-generator/","error","[2026-07-16T21:14:07.413Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/poster-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/pet-tag-generator/","error","[2026-07-16T21:14:07.771Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass23UtilityGroups is not defined ReferenceError: buildPass23UtilityGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:307:301)"
+"https://taptogen.vercel.app/tools/pet-tag-generator/","exception","ReferenceError: buildPass23UtilityGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:307:301)"
+"https://taptogen.vercel.app/tools/poster-generator/","error","[2026-07-16T21:14:07.967Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/poster-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/pet-tag-generator/","error","[2026-07-16T21:14:08.039Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/pet-tag-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/pet-tag-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/mock-api-generator/","error","[2026-07-16T21:14:08.377Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/mock-api-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/poster-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/mock-api-generator/","error","[2026-07-16T21:14:09.023Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/mock-api-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/mock-api-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/pirate-name-generator/","error","[2026-07-16T21:14:13.916Z] [ERROR]: No configuration found for workspace ""pirate-name-generator"""
+"https://taptogen.vercel.app/tools/pwa-manifest-generator/","error","[2026-07-16T21:14:14.192Z] [ERROR]: No configuration found for workspace ""pwa-manifest-generator"""
+"https://taptogen.vercel.app/tools/random-question-generator/","error","[2026-07-16T21:14:16.111Z] [ERROR]: No configuration found for workspace ""random-question-generator"""
+"https://taptogen.vercel.app/tools/pirate-name-generator/","error","[2026-07-16T21:14:17.245Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/tools/pirate-name-generator/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/tools/random-phrase-generator/","error","[2026-07-16T21:14:17.876Z] [ERROR]: No configuration found for workspace ""random-phrase-generator"""
+"https://taptogen.vercel.app/tools/podcast-name-generator/","error","[2026-07-16T21:14:17.893Z] [ERROR]: No configuration found for workspace ""podcast-name-generator"""
+"https://taptogen.vercel.app/tools/pirate-name-generator/","error","[2026-07-16T21:14:18.261Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/pirate-name-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/pwa-manifest-generator/","error","[2026-07-16T21:14:18.505Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/pwa-manifest-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/pirate-name-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/pwa-manifest-generator/","error","[2026-07-16T21:14:19.177Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/pwa-manifest-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/pwa-manifest-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/random-question-generator/","error","[2026-07-16T21:14:20.581Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass23RandomGroups is not defined ReferenceError: buildPass23RandomGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:300:429)"
+"https://taptogen.vercel.app/tools/random-question-generator/","exception","ReferenceError: buildPass23RandomGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:300:429)"
+"https://taptogen.vercel.app/tools/random-question-generator/","error","[2026-07-16T21:14:21.421Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/random-question-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/random-phrase-generator/","error","[2026-07-16T21:14:21.527Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass23RandomGroups is not defined ReferenceError: buildPass23RandomGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:300:429)"
+"https://taptogen.vercel.app/tools/random-phrase-generator/","exception","ReferenceError: buildPass23RandomGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:300:429)"
+"https://taptogen.vercel.app/tools/random-question-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/random-phrase-generator/","error","[2026-07-16T21:14:22.168Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/random-phrase-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/random-phrase-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/podcast-name-generator/","error","[2026-07-16T21:14:23.189Z] [ERROR]: [ErrorReporter] Captured Exception: makeNameIdeaGroups is not defined ReferenceError: makeNameIdeaGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:691:205)"
+"https://taptogen.vercel.app/tools/podcast-name-generator/","exception","ReferenceError: makeNameIdeaGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:691:205)"
+"https://taptogen.vercel.app/tools/podcast-name-generator/","error","[2026-07-16T21:14:24.274Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/podcast-name-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/podcast-name-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/meta-description-generator/","error","[2026-07-16T21:14:26.183Z] [ERROR]: No configuration found for workspace ""meta-description-generator"""
+"https://taptogen.vercel.app/tools/proposal-generator/","error","[2026-07-16T21:14:27.629Z] [ERROR]: No configuration found for workspace ""proposal-generator"""
+"https://taptogen.vercel.app/tools/passphrase-generator/","error","[2026-07-16T21:14:31.235Z] [ERROR]: No configuration found for workspace ""passphrase-generator"""
+"https://taptogen.vercel.app/tools/meta-description-generator/","error","[2026-07-16T21:14:31.822Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/tools/meta-description-generator/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/pl/tools/generator-old-english-text/","error","[2026-07-16T21:14:32.099Z] [ERROR]: No configuration found for workspace ""old-english-text-generator"""
+"https://taptogen.vercel.app/id/tools/generator-superhero-name/","error","[2026-07-16T21:14:32.159Z] [ERROR]: No configuration found for workspace ""superhero-name-generator"""
+"https://taptogen.vercel.app/tools/meta-description-generator/","error","[2026-07-16T21:14:32.340Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/meta-description-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/proposal-generator/","error","[2026-07-16T21:14:32.355Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass22ProposalSections is not defined ReferenceError: buildPass22ProposalSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:293:218)"
+"https://taptogen.vercel.app/tools/proposal-generator/","exception","ReferenceError: buildPass22ProposalSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:293:218)"
+"https://taptogen.vercel.app/tools/proposal-generator/","error","[2026-07-16T21:14:32.854Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/proposal-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/proposal-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/meta-description-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/tools/passphrase-generator/","error","[2026-07-16T21:14:34.839Z] [ERROR]: [ErrorReporter] Captured Exception: buildPremiumPassphrase is not defined ReferenceError: buildPremiumPassphrase is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:257:225)"
+"https://taptogen.vercel.app/tools/passphrase-generator/","exception","ReferenceError: buildPremiumPassphrase is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:257:225)"
+"https://taptogen.vercel.app/tools/passphrase-generator/","error","[2026-07-16T21:14:35.236Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/passphrase-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/tools/passphrase-generator/","error","Failed to copy link:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+"https://taptogen.vercel.app/id/tools/generator-superhero-name/","error","[2026-07-16T21:14:37.017Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/id/tools/generator-superhero-name/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/pl/tools/generator-old-english-text/","error","[2026-07-16T21:14:38.595Z] [ERROR]: [ErrorReporter] Captured Exception: buildOldEnglishStyles is not defined ReferenceError: buildOldEnglishStyles is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:276:204)"
+"https://taptogen.vercel.app/pl/tools/generator-old-english-text/","exception","ReferenceError: buildOldEnglishStyles is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:276:204)"
+"https://taptogen.vercel.app/id/tools/generator-superhero-name/","error","[2026-07-16T21:14:38.821Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/id/tools/generator-superhero-name/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/pl/tools/generator-old-english-text/","error","[2026-07-16T21:14:39.406Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/pl/tools/generator-old-english-text/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/id/tools/generator-art-tag/","error","[2026-07-16T21:14:40.774Z] [ERROR]: No configuration found for workspace ""art-tag-generator"""
+"https://taptogen.vercel.app/it/tools/generatore-gnome-name/","error","[2026-07-16T21:14:40.778Z] [ERROR]: No configuration found for workspace ""gnome-name-generator"""
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-first-and-last-name/","error","[2026-07-16T21:14:42.844Z] [ERROR]: No configuration found for workspace ""last-name-and-first-name-generator"""
+"https://taptogen.vercel.app/bn/tools/generator-graffiti-text/","error","[2026-07-16T21:14:46.959Z] [ERROR]: No configuration found for workspace ""graffiti-text-generator"""
+"https://taptogen.vercel.app/bg/tools/generator-cipher/","error","[2026-07-16T21:14:46.962Z] [ERROR]: No configuration found for workspace ""cipher-generator"""
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-first-and-last-name/","error","[2026-07-16T21:14:47.378Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-first-and-last-name/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/id/tools/generator-art-tag/","error","[2026-07-16T21:14:47.635Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass24UtilitySections is not defined ReferenceError: buildPass24UtilitySections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:317:335)"
+"https://taptogen.vercel.app/id/tools/generator-art-tag/","exception","ReferenceError: buildPass24UtilitySections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:317:335)"
+"https://taptogen.vercel.app/it/tools/generatore-gnome-name/","error","[2026-07-16T21:14:47.660Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass25CreatureGroups is not defined ReferenceError: buildPass25CreatureGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:330:488)"
+"https://taptogen.vercel.app/it/tools/generatore-gnome-name/","exception","ReferenceError: buildPass25CreatureGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:330:488)"
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-first-and-last-name/","error","[2026-07-16T21:14:47.984Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-first-and-last-name/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/it/tools/generatore-gnome-name/","error","[2026-07-16T21:14:48.128Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/it/tools/generatore-gnome-name/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/id/tools/generator-art-tag/","error","[2026-07-16T21:14:48.174Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/id/tools/generator-art-tag/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bg/tools/generator-cipher/","error","[2026-07-16T21:14:50.368Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/bg/tools/generator-cipher/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/bn/tools/generator-graffiti-text/","error","[2026-07-16T21:14:50.999Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass24TextSections is not defined ReferenceError: buildPass24TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/bn/tools/generator-graffiti-text/","exception","ReferenceError: buildPass24TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/bg/tools/generator-cipher/","error","[2026-07-16T21:14:51.159Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bg/tools/generator-cipher/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-graffiti-text/","error","[2026-07-16T21:14:51.687Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-graffiti-text/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-app-icon/","error","[2026-07-16T21:14:56.842Z] [ERROR]: No configuration found for workspace ""app-icon-generator"""
+"https://taptogen.vercel.app/de/tools/generator-content-calendar/","error","[2026-07-16T21:14:57.198Z] [ERROR]: No configuration found for workspace ""content-calendar-generator"""
+"https://taptogen.vercel.app/de/tools/generator-cowboy-name/","error","[2026-07-16T21:14:57.386Z] [ERROR]: No configuration found for workspace ""cowboy-name-generator"""
+"https://taptogen.vercel.app/bn/tools/generator-plant-name/","error","[2026-07-16T21:15:01.887Z] [ERROR]: No configuration found for workspace ""plant-name-generator"""
+"https://taptogen.vercel.app/es/tools/generador-random-text/","error","[2026-07-16T21:15:01.903Z] [ERROR]: No configuration found for workspace ""random-text-generator"""
+"https://taptogen.vercel.app/de/tools/generator-content-calendar/","error","[2026-07-16T21:15:02.787Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass23TemplateSections is not defined ReferenceError: buildPass23TemplateSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:304:229)"
+"https://taptogen.vercel.app/de/tools/generator-content-calendar/","exception","ReferenceError: buildPass23TemplateSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:304:229)"
+"https://taptogen.vercel.app/de/tools/generator-content-calendar/","error","[2026-07-16T21:15:03.468Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-content-calendar/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-cowboy-name/","error","[2026-07-16T21:15:03.765Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/de/tools/generator-cowboy-name/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-app-icon/","error","[2026-07-16T21:15:03.831Z] [ERROR]: [ErrorReporter] Captured Exception: seedNumber is not defined ReferenceError: seedNumber is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:3569:296)"
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-app-icon/","exception","ReferenceError: seedNumber is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:3569:296)"
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-app-icon/","error","[2026-07-16T21:15:04.574Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-app-icon/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-cowboy-name/","error","[2026-07-16T21:15:04.684Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-cowboy-name/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-random-text/","error","[2026-07-16T21:15:04.837Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass23RandomGroups is not defined ReferenceError: buildPass23RandomGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:300:429)"
+"https://taptogen.vercel.app/es/tools/generador-random-text/","exception","ReferenceError: buildPass23RandomGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:300:429)"
+"https://taptogen.vercel.app/es/tools/generador-random-text/","error","[2026-07-16T21:15:05.669Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-random-text/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-plant-name/","error","[2026-07-16T21:15:05.962Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/bn/tools/generator-plant-name/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/bn/tools/generator-plant-name/","error","[2026-07-16T21:15:06.741Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-plant-name/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-raffle/","error","[2026-07-16T21:15:12.089Z] [ERROR]: No configuration found for workspace ""raffle-generator"""
+"https://taptogen.vercel.app/de/tools/generator-book-club-name/","error","[2026-07-16T21:15:14.891Z] [ERROR]: No configuration found for workspace ""book-club-name-generator"""
+"https://taptogen.vercel.app/es/tools/generador-utm-link/","error","[2026-07-16T21:15:15.413Z] [ERROR]: No configuration found for workspace ""utm-generator"""
+"https://taptogen.vercel.app/bn/tools/shishur-nam-generator/","error","[2026-07-16T21:15:15.765Z] [ERROR]: No configuration found for workspace ""baby-name-generator"""
+"https://taptogen.vercel.app/es/tools/generador-nickname/","error","[2026-07-16T21:15:16.552Z] [ERROR]: No configuration found for workspace ""nickname-generator"""
+"https://taptogen.vercel.app/bn/tools/generator-raffle/","error","[2026-07-16T21:15:17.584Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/bn/tools/generator-raffle/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/bn/tools/generator-raffle/","error","[2026-07-16T21:15:18.199Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-raffle/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/shishur-nam-generator/","error","[2026-07-16T21:15:19.334Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/bn/tools/shishur-nam-generator/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/es/tools/generador-utm-link/","error","[2026-07-16T21:15:19.565Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/es/tools/generador-utm-link/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/bn/tools/shishur-nam-generator/","error","[2026-07-16T21:15:19.867Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/shishur-nam-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-book-club-name/","error","[2026-07-16T21:15:20.021Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/de/tools/generator-book-club-name/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/es/tools/generador-utm-link/","error","[2026-07-16T21:15:20.210Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-utm-link/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-book-club-name/","error","[2026-07-16T21:15:20.635Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-book-club-name/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-nickname/","error","[2026-07-16T21:15:21.633Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/es/tools/generador-nickname/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/es/tools/generador-nickname/","error","[2026-07-16T21:15:22.870Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-nickname/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-retro-text/","error","[2026-07-16T21:15:24.899Z] [ERROR]: No configuration found for workspace ""retro-text-generator"""
+"https://taptogen.vercel.app/bn/tools/generator-css-blob/","error","[2026-07-16T21:15:27.117Z] [ERROR]: No configuration found for workspace ""blob-generator"""
+"https://taptogen.vercel.app/bn/tools/generator-dj-name/","error","[2026-07-16T21:15:29.943Z] [ERROR]: No configuration found for workspace ""dj-name-generator"""
+"https://taptogen.vercel.app/de/tools/generator-call-to-action/","error","[2026-07-16T21:15:31.655Z] [ERROR]: No configuration found for workspace ""call-to-action-generator"""
+"https://taptogen.vercel.app/es/tools/generador-retro-text/","error","[2026-07-16T21:15:31.695Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass22TextSections is not defined ReferenceError: buildPass22TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:287:350)"
+"https://taptogen.vercel.app/es/tools/generador-retro-text/","exception","ReferenceError: buildPass22TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:287:350)"
+"https://taptogen.vercel.app/es/tools/generador-retro-text/","error","[2026-07-16T21:15:32.220Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-retro-text/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-css-blob/","error","[2026-07-16T21:15:33.919Z] [ERROR]: [ErrorReporter] Captured Exception: seedNumber is not defined ReferenceError: seedNumber is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:3126:366)"
+"https://taptogen.vercel.app/bn/tools/generator-css-blob/","exception","ReferenceError: seedNumber is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:3126:366)"
+"https://taptogen.vercel.app/es/tools/texto-italica/","error","[2026-07-16T21:15:33.928Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass24TextSections is not defined ReferenceError: buildPass24TextSections is not defined
+    at De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/es/tools/texto-italica/","exception","ReferenceError: buildPass24TextSections is not defined
+    at De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/bn/tools/generator-dj-name/","error","[2026-07-16T21:15:34.844Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/bn/tools/generator-dj-name/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/bn/tools/generator-dj-name/","error","[2026-07-16T21:15:35.433Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-dj-name/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/texto-italica/","error","[2026-07-16T21:15:35.838Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass24TextSections is not defined ReferenceError: buildPass24TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/es/tools/texto-italica/","exception","ReferenceError: buildPass24TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/de/tools/generator-call-to-action/","error","[2026-07-16T21:15:38.275Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/de/tools/generator-call-to-action/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/es/tools/generador-strikethrough-text/","error","[2026-07-16T21:15:38.590Z] [ERROR]: No configuration found for workspace ""strikethrough-text-generator"""
+"https://taptogen.vercel.app/bn/tools/generator-css-blob/","error","[2026-07-16T21:15:40.031Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-css-blob/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-call-to-action/","error","[2026-07-16T21:15:41.417Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-call-to-action/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-strikethrough-text/","error","[2026-07-16T21:15:43.768Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass24TextSections is not defined ReferenceError: buildPass24TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/es/tools/generador-strikethrough-text/","exception","ReferenceError: buildPass24TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/id/tools/generator-strikethrough-text/","error","[2026-07-16T21:15:44.277Z] [ERROR]: No configuration found for workspace ""strikethrough-text-generator"""
+"https://taptogen.vercel.app/es/tools/generador-strikethrough-text/","error","[2026-07-16T21:15:44.355Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-strikethrough-text/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/it/tools/generatore-dice-roller/","error","[2026-07-16T21:15:44.565Z] [ERROR]: No configuration found for workspace ""dice-roller"""
+"https://taptogen.vercel.app/bn/tools/generator-qr-code-text/","error","[2026-07-16T21:15:48.557Z] [ERROR]: No configuration found for workspace ""qr-code-text-generator"""
+"https://taptogen.vercel.app/bn/tools/generator-orc-name/","error","[2026-07-16T21:15:49.947Z] [ERROR]: No configuration found for workspace ""orc-name-generator"""
+"https://taptogen.vercel.app/it/tools/generatore-dice-roller/","error","[2026-07-16T21:15:51.527Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass26RandomGroups is not defined ReferenceError: buildPass26RandomGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:337:561)"
+"https://taptogen.vercel.app/it/tools/generatore-dice-roller/","exception","ReferenceError: buildPass26RandomGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:337:561)"
+"https://taptogen.vercel.app/id/tools/generator-strikethrough-text/","error","[2026-07-16T21:15:51.718Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass24TextSections is not defined ReferenceError: buildPass24TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/id/tools/generator-strikethrough-text/","exception","ReferenceError: buildPass24TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/it/tools/generatore-dice-roller/","error","[2026-07-16T21:15:52.045Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/it/tools/generatore-dice-roller/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-bakery-name/","error","[2026-07-16T21:15:52.071Z] [ERROR]: No configuration found for workspace ""bakery-name-generator"""
+"https://taptogen.vercel.app/id/tools/generator-strikethrough-text/","error","[2026-07-16T21:15:52.119Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/id/tools/generator-strikethrough-text/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-orc-name/","error","[2026-07-16T21:15:53.465Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass25CreatureGroups is not defined ReferenceError: buildPass25CreatureGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:330:488)"
+"https://taptogen.vercel.app/bn/tools/generator-orc-name/","exception","ReferenceError: buildPass25CreatureGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:330:488)"
+"https://taptogen.vercel.app/bn/tools/generator-orc-name/","error","[2026-07-16T21:15:54.053Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-orc-name/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-qr-code-text/","error","[2026-07-16T21:15:54.131Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/bn/tools/generator-qr-code-text/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/bn/tools/generator-qr-code-text/","error","[2026-07-16T21:15:54.865Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-qr-code-text/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-bakery-name/","error","[2026-07-16T21:15:56.878Z] [ERROR]: [ErrorReporter] Captured Exception: makeNameIdeaGroups is not defined ReferenceError: makeNameIdeaGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:3220:3924)"
+"https://taptogen.vercel.app/de/tools/generator-bakery-name/","exception","ReferenceError: makeNameIdeaGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:3220:3924)"
+"https://taptogen.vercel.app/de/tools/generator-bakery-name/","error","[2026-07-16T21:15:58.595Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-bakery-name/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/hi/tools/generator-lowercase/","error","[2026-07-16T21:15:58.996Z] [ERROR]: No configuration found for workspace ""lowercase-generator"""
+"https://taptogen.vercel.app/hi/tools/generator-multiple-choice-question/","error","[2026-07-16T21:16:01.225Z] [ERROR]: No configuration found for workspace ""multiple-choice-generator"""
+"https://taptogen.vercel.app/es/tools/generador-papyrus-text/","error","[2026-07-16T21:16:03.681Z] [ERROR]: No configuration found for workspace ""papyrus-generator"""
+"https://taptogen.vercel.app/es/tools/generador-avatar-name/","error","[2026-07-16T21:16:04.116Z] [ERROR]: No configuration found for workspace ""avatar-name-generator"""
+"https://taptogen.vercel.app/hi/tools/generator-marketplace-tag/","error","[2026-07-16T21:16:06.650Z] [ERROR]: No configuration found for workspace ""etsy-tag-generator"""
+"https://taptogen.vercel.app/hi/tools/generator-lowercase/","error","[2026-07-16T21:16:06.863Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass24TextSections is not defined ReferenceError: buildPass24TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/hi/tools/generator-lowercase/","exception","ReferenceError: buildPass24TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/hi/tools/generator-lowercase/","error","[2026-07-16T21:16:07.239Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/hi/tools/generator-lowercase/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-papyrus-text/","error","[2026-07-16T21:16:07.583Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass24TextSections is not defined ReferenceError: buildPass24TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/es/tools/generador-papyrus-text/","exception","ReferenceError: buildPass24TextSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:314:447)"
+"https://taptogen.vercel.app/es/tools/generador-avatar-name/","error","[2026-07-16T21:16:07.584Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/es/tools/generador-avatar-name/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/hi/tools/generator-multiple-choice-question/","error","[2026-07-16T21:16:07.615Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/hi/tools/generator-multiple-choice-question/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/es/tools/generador-avatar-name/","error","[2026-07-16T21:16:08.199Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-avatar-name/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-papyrus-text/","error","[2026-07-16T21:16:08.375Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-papyrus-text/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/hi/tools/generator-multiple-choice-question/","error","[2026-07-16T21:16:08.501Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/hi/tools/generator-multiple-choice-question/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/hi/tools/generator-marketplace-tag/","error","[2026-07-16T21:16:14.606Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass29MarketplaceSections is not defined ReferenceError: buildPass29MarketplaceSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:370:360)"
+"https://taptogen.vercel.app/hi/tools/generator-marketplace-tag/","exception","ReferenceError: buildPass29MarketplaceSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:370:360)"
+"https://taptogen.vercel.app/hi/tools/generator-marketplace-tag/","error","[2026-07-16T21:16:16.080Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/hi/tools/generator-marketplace-tag/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-graphql-query/","error","[2026-07-16T21:16:18.335Z] [ERROR]: No configuration found for workspace ""graphql-query-generator"""
+"https://taptogen.vercel.app/es/tools/generador-random-color/","error","[2026-07-16T21:16:18.750Z] [ERROR]: No configuration found for workspace ""random-color-generator"""
+"https://taptogen.vercel.app/hi/tools/generator-product-title/","error","[2026-07-16T21:16:18.895Z] [ERROR]: No configuration found for workspace ""product-title-generator"""
+"https://taptogen.vercel.app/es/tools/generador-cover-letter/","error","[2026-07-16T21:16:19.902Z] [ERROR]: No configuration found for workspace ""cover-letter-generator"""
+"https://taptogen.vercel.app/hi/tools/generator-product-title/","error","[2026-07-16T21:16:22.478Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/hi/tools/generator-product-title/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/bn/tools/generator-sku/","error","[2026-07-16T21:16:22.646Z] [ERROR]: No configuration found for workspace ""sku-generator"""
+"https://taptogen.vercel.app/hi/tools/generator-product-title/","error","[2026-07-16T21:16:23.026Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/hi/tools/generator-product-title/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-graphql-query/","error","[2026-07-16T21:16:23.700Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/de/tools/generator-graphql-query/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/es/tools/generador-random-color/","error","[2026-07-16T21:16:24.091Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass26RandomGroups is not defined ReferenceError: buildPass26RandomGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:337:561)"
+"https://taptogen.vercel.app/es/tools/generador-random-color/","exception","ReferenceError: buildPass26RandomGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:337:561)"
+"https://taptogen.vercel.app/de/tools/generator-graphql-query/","error","[2026-07-16T21:16:24.506Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-graphql-query/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-cover-letter/","error","[2026-07-16T21:16:25.555Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/es/tools/generador-cover-letter/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/es/tools/generador-cover-letter/","error","[2026-07-16T21:16:26.051Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-cover-letter/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-random-color/","error","[2026-07-16T21:16:26.129Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-random-color/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-sku/","error","[2026-07-16T21:16:28.066Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/bn/tools/generator-sku/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/bn/tools/generator-sku/","error","[2026-07-16T21:16:29.774Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-sku/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/hi/tools/slogan-generator-hi/","error","[2026-07-16T21:16:30.813Z] [ERROR]: No configuration found for workspace ""slogan-generator"""
+"https://taptogen.vercel.app/bn/tools/team-nam-generator/","error","[2026-07-16T21:16:32.393Z] [ERROR]: No configuration found for workspace ""team-name-generator"""
+"https://taptogen.vercel.app/bn/tools/generator-estimate/","error","[2026-07-16T21:16:35.796Z] [ERROR]: No configuration found for workspace ""estimate-generator"""
+"https://taptogen.vercel.app/es/tools/generador-css-button/","error","[2026-07-16T21:16:36.029Z] [ERROR]: No configuration found for workspace ""css-button-generator"""
+"https://taptogen.vercel.app/hi/tools/slogan-generator-hi/","error","[2026-07-16T21:16:37.164Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/hi/tools/slogan-generator-hi/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/hi/tools/slogan-generator-hi/","error","[2026-07-16T21:16:37.958Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/hi/tools/slogan-generator-hi/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/team-nam-generator/","error","[2026-07-16T21:16:39.260Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass19NameGroups is not defined ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/bn/tools/team-nam-generator/","exception","ReferenceError: buildPass19NameGroups is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:246:3088)"
+"https://taptogen.vercel.app/bn/tools/team-nam-generator/","error","[2026-07-16T21:16:39.776Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/team-nam-generator/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-estimate/","error","[2026-07-16T21:16:39.975Z] [ERROR]: [ErrorReporter] Captured Exception: buildPass22EstimateSections is not defined ReferenceError: buildPass22EstimateSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:290:233)"
+"https://taptogen.vercel.app/bn/tools/generator-estimate/","exception","ReferenceError: buildPass22EstimateSections is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:290:233)"
+"https://taptogen.vercel.app/es/tools/generador-css-button/","error","[2026-07-16T21:16:39.984Z] [ERROR]: [ErrorReporter] Captured Exception: renderCssButtonOutput is not defined ReferenceError: renderCssButtonOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:1116:5)"
+"https://taptogen.vercel.app/es/tools/generador-css-button/","exception","ReferenceError: renderCssButtonOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:1116:5)"
+"https://taptogen.vercel.app/de/tools/generator-citation/","error","[2026-07-16T21:16:40.086Z] [ERROR]: No configuration found for workspace ""citation-generator"""
+"https://taptogen.vercel.app/es/tools/generador-css-button/","error","[2026-07-16T21:16:40.689Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/es/tools/generador-css-button/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-estimate/","error","[2026-07-16T21:16:40.690Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/bn/tools/generator-estimate/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-citation/","error","[2026-07-16T21:16:44.009Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/de/tools/generator-citation/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/it/tools/generatore-book-name/","error","[2026-07-16T21:16:44.960Z] [ERROR]: No configuration found for workspace ""book-name-generator"""
+"https://taptogen.vercel.app/de/tools/generator-citation/","error","[2026-07-16T21:16:45.196Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/de/tools/generator-citation/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-album-name/","error","[2026-07-16T21:16:47.652Z] [ERROR]: No configuration found for workspace ""album-name-generator"""
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-album-name/","error","[2026-07-16T21:16:51.388Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-album-name/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/it/tools/generatore-book-name/","error","[2026-07-16T21:16:51.423Z] [ERROR]: [ErrorReporter] Captured Exception: renderPremiumOutput is not defined ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/it/tools/generatore-book-name/","exception","ReferenceError: renderPremiumOutput is not defined
+    at HTMLButtonElement.De (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:453)"
+"https://taptogen.vercel.app/it/tools/generatore-book-name/","error","[2026-07-16T21:16:51.797Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-album-name/","error","[2026-07-16T21:16:51.797Z] [ERROR]: [ErrorReporter] Captured Exception: copyText is not defined ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/it/tools/generatore-book-name/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"
+"https://taptogen.vercel.app/fr/tools/g-n-rateur-album-name/","exception","ReferenceError: copyText is not defined
+    at HTMLButtonElement.<anonymous> (https://taptogen.vercel.app/_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.BNqrhmGs.js:4124:1292)"

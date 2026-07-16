@@ -1,0 +1,1274 @@
+{
+  "https://taptogen.vercel.app/disclaimer/": {
+    "performance": 87,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1308,
+      "largestContentfulPaintMs": 1308,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 46
+    }
+  },
+  "https://taptogen.vercel.app/": {
+    "performance": 87,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1304,
+      "largestContentfulPaintMs": 1304,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 86
+    }
+  },
+  "https://taptogen.vercel.app/categories/random-generators/": {
+    "performance": 78,
+    "accessibility": 100,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 2236,
+      "largestContentfulPaintMs": 2236,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 11
+    }
+  },
+  "https://taptogen.vercel.app/categories/gaming-generators/": {
+    "performance": 84,
+    "accessibility": 100,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1616,
+      "largestContentfulPaintMs": 1616,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 30
+    }
+  },
+  "https://taptogen.vercel.app/categories/creative-generators/": {
+    "performance": 83,
+    "accessibility": 100,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1688,
+      "largestContentfulPaintMs": 1688,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 63
+    }
+  },
+  "https://taptogen.vercel.app/about-us/": {
+    "performance": 87,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1256,
+      "largestContentfulPaintMs": 1256,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 67
+    }
+  },
+  "https://taptogen.vercel.app/blog/": {
+    "performance": 85,
+    "accessibility": 100,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1460,
+      "largestContentfulPaintMs": 1460,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 20
+    }
+  },
+  "https://taptogen.vercel.app/privacy/": {
+    "performance": 86,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1380,
+      "largestContentfulPaintMs": 1380,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 40
+    }
+  },
+  "https://taptogen.vercel.app/categories/name-generators/": {
+    "performance": 83,
+    "accessibility": 100,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1720,
+      "largestContentfulPaintMs": 1720,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 72
+    }
+  },
+  "https://taptogen.vercel.app/categories/business-generators/": {
+    "performance": 78,
+    "accessibility": 100,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 2236,
+      "largestContentfulPaintMs": 2236,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 36
+    }
+  },
+  "https://taptogen.vercel.app/categories/ai-writing-generators/": {
+    "performance": 82,
+    "accessibility": 100,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1812,
+      "largestContentfulPaintMs": 1812,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 80
+    }
+  },
+  "https://taptogen.vercel.app/categories/": {
+    "performance": 82,
+    "accessibility": 100,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1804,
+      "largestContentfulPaintMs": 1804,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 21
+    }
+  },
+  "https://taptogen.vercel.app/categories/developer-generators/": {
+    "performance": 85,
+    "accessibility": 100,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1520,
+      "largestContentfulPaintMs": 1520,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 42
+    }
+  },
+  "https://taptogen.vercel.app/categories/seo-generators/": {
+    "performance": 82,
+    "accessibility": 100,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1828,
+      "largestContentfulPaintMs": 1828,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 27
+    }
+  },
+  "https://taptogen.vercel.app/categories/bio-caption-generators/": {
+    "performance": 84,
+    "accessibility": 100,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1628,
+      "largestContentfulPaintMs": 1628,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 53
+    }
+  },
+  "https://taptogen.vercel.app/sitemap/": {
+    "performance": 82,
+    "accessibility": 100,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1828,
+      "largestContentfulPaintMs": 1828,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 20
+    }
+  },
+  "https://taptogen.vercel.app/tools/business-generators/": {
+    "performance": 85,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1452,
+      "largestContentfulPaintMs": 1452,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 64
+    }
+  },
+  "https://taptogen.vercel.app/tools/story-plot-generator/": {
+    "performance": 79,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2068,
+      "largestContentfulPaintMs": 2068,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 69
+    }
+  },
+  "https://taptogen.vercel.app/tools/character-name-generator/": {
+    "performance": 78,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2236,
+      "largestContentfulPaintMs": 2236,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 40
+    }
+  },
+  "https://taptogen.vercel.app/tools/art-tag-generator/": {
+    "performance": 81,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1856,
+      "largestContentfulPaintMs": 1856,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 16
+    }
+  },
+  "https://taptogen.vercel.app/tools/cipher-generator/": {
+    "performance": 82,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1780,
+      "largestContentfulPaintMs": 1780,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 85
+    }
+  },
+  "https://taptogen.vercel.app/tools/bio-generator/": {
+    "performance": 80,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2008,
+      "largestContentfulPaintMs": 2008,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 97
+    }
+  },
+  "https://taptogen.vercel.app/tools/fantasy-language-generator/": {
+    "performance": 76,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2440,
+      "largestContentfulPaintMs": 2440,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 88
+    }
+  },
+  "https://taptogen.vercel.app/tools/email-tag-generator/": {
+    "performance": 76,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2424,
+      "largestContentfulPaintMs": 2424,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 11
+    }
+  },
+  "https://taptogen.vercel.app/tools/club-name-generator/": {
+    "performance": 81,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1940,
+      "largestContentfulPaintMs": 1940,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 99
+    }
+  },
+  "https://taptogen.vercel.app/tools/disc-jockey-names-generator/": {
+    "performance": 77,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2288,
+      "largestContentfulPaintMs": 2288,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 94
+    }
+  },
+  "https://taptogen.vercel.app/tools/invisible-text-generator/": {
+    "performance": 81,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1904,
+      "largestContentfulPaintMs": 1904,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 94
+    }
+  },
+  "https://taptogen.vercel.app/tools/flashcard-generator/": {
+    "performance": 74,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2572,
+      "largestContentfulPaintMs": 2572,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 35
+    }
+  },
+  "https://taptogen.vercel.app/tools/flower-name-generator/": {
+    "performance": 70,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2988,
+      "largestContentfulPaintMs": 2988,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 40
+    }
+  },
+  "https://taptogen.vercel.app/tools/college-name-generator/": {
+    "performance": 78,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2212,
+      "largestContentfulPaintMs": 2212,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 95
+    }
+  },
+  "https://taptogen.vercel.app/tools/css-grid-generator/": {
+    "performance": 80,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2040,
+      "largestContentfulPaintMs": 2040,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 79
+    }
+  },
+  "https://taptogen.vercel.app/tools/big-text-generator/": {
+    "performance": 79,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2124,
+      "largestContentfulPaintMs": 2124,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 37
+    }
+  },
+  "https://taptogen.vercel.app/tools/album-name-generator/": {
+    "performance": 83,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1704,
+      "largestContentfulPaintMs": 1704,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 94
+    }
+  },
+  "https://taptogen.vercel.app/tools/hang-tag-generator/": {
+    "performance": 83,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1680,
+      "largestContentfulPaintMs": 1680,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 1
+    }
+  },
+  "https://taptogen.vercel.app/tools/rubric-generator/": {
+    "performance": 82,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1772,
+      "largestContentfulPaintMs": 1772,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 11
+    }
+  },
+  "https://taptogen.vercel.app/tools/css-button-generator/": {
+    "performance": 80,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2048,
+      "largestContentfulPaintMs": 2048,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 85
+    }
+  },
+  "https://taptogen.vercel.app/tools/hash-generator/": {
+    "performance": 72,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2768,
+      "largestContentfulPaintMs": 2768,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 45
+    }
+  },
+  "https://taptogen.vercel.app/tools/pet-name-generator/": {
+    "performance": 77,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2268,
+      "largestContentfulPaintMs": 2268,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 67
+    }
+  },
+  "https://taptogen.vercel.app/tools/old-english-text-generator/": {
+    "performance": 76,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2432,
+      "largestContentfulPaintMs": 2432,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 92
+    }
+  },
+  "https://taptogen.vercel.app/tools/geo-tag-generator/": {
+    "performance": 82,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1800,
+      "largestContentfulPaintMs": 1800,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 79
+    }
+  },
+  "https://taptogen.vercel.app/tools/dummy-data-generator/": {
+    "performance": 79,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2104,
+      "largestContentfulPaintMs": 2104,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 12
+    }
+  },
+  "https://taptogen.vercel.app/tools/clan-tag-generator/": {
+    "performance": 80,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2040,
+      "largestContentfulPaintMs": 2040,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 62
+    }
+  },
+  "https://taptogen.vercel.app/tools/name-generators/": {
+    "performance": 86,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 1444,
+      "largestContentfulPaintMs": 1444,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 97
+    }
+  },
+  "https://taptogen.vercel.app/tools/emo-name-generator/": {
+    "performance": 82,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1756,
+      "largestContentfulPaintMs": 1756,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 88
+    }
+  },
+  "https://taptogen.vercel.app/tools/phonetic-spelling-of-name-generator/": {
+    "performance": 79,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2136,
+      "largestContentfulPaintMs": 2136,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 16
+    }
+  },
+  "https://taptogen.vercel.app/tools/pick-a-name-generator/": {
+    "performance": 81,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1912,
+      "largestContentfulPaintMs": 1912,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 2
+    }
+  },
+  "https://taptogen.vercel.app/tools/name-pronunciation-generator/": {
+    "performance": 80,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2036,
+      "largestContentfulPaintMs": 2036,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 81
+    }
+  },
+  "https://taptogen.vercel.app/tools/brat-text-generator/": {
+    "performance": 82,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1792,
+      "largestContentfulPaintMs": 1792,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 28
+    }
+  },
+  "https://taptogen.vercel.app/tools/hashtag-generator/": {
+    "performance": 81,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1892,
+      "largestContentfulPaintMs": 1892,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 81
+    }
+  },
+  "https://taptogen.vercel.app/tools/car-name-generator/": {
+    "performance": 78,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2152,
+      "largestContentfulPaintMs": 2152,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 51
+    }
+  },
+  "https://taptogen.vercel.app/tools/pet-tag-generator/": {
+    "performance": 74,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2640,
+      "largestContentfulPaintMs": 2640,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 67
+    }
+  },
+  "https://taptogen.vercel.app/tools/poster-generator/": {
+    "performance": 67,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 3292,
+      "largestContentfulPaintMs": 3292,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 71
+    }
+  },
+  "https://taptogen.vercel.app/tools/mock-api-generator/": {
+    "performance": 77,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2332,
+      "largestContentfulPaintMs": 2332,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 41
+    }
+  },
+  "https://taptogen.vercel.app/tools/pirate-name-generator/": {
+    "performance": 78,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2212,
+      "largestContentfulPaintMs": 2212,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 68
+    }
+  },
+  "https://taptogen.vercel.app/tools/pwa-manifest-generator/": {
+    "performance": 75,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2480,
+      "largestContentfulPaintMs": 2480,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 0
+    }
+  },
+  "https://taptogen.vercel.app/tools/random-question-generator/": {
+    "performance": 75,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2508,
+      "largestContentfulPaintMs": 2508,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 54
+    }
+  },
+  "https://taptogen.vercel.app/tools/random-phrase-generator/": {
+    "performance": 78,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2164,
+      "largestContentfulPaintMs": 2164,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 60
+    }
+  },
+  "https://taptogen.vercel.app/tools/podcast-name-generator/": {
+    "performance": 78,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2164,
+      "largestContentfulPaintMs": 2164,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 19
+    }
+  },
+  "https://taptogen.vercel.app/tools/proposal-generator/": {
+    "performance": 80,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1960,
+      "largestContentfulPaintMs": 1960,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 46
+    }
+  },
+  "https://taptogen.vercel.app/tools/meta-description-generator/": {
+    "performance": 74,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2608,
+      "largestContentfulPaintMs": 2608,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 20
+    }
+  },
+  "https://taptogen.vercel.app/tools/passphrase-generator/": {
+    "performance": 72,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2832,
+      "largestContentfulPaintMs": 2832,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 64
+    }
+  },
+  "https://taptogen.vercel.app/id/tools/generator-superhero-name/": {
+    "performance": 75,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2468,
+      "largestContentfulPaintMs": 2468,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 55
+    }
+  },
+  "https://taptogen.vercel.app/pl/tools/generator-old-english-text/": {
+    "performance": 75,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2464,
+      "largestContentfulPaintMs": 2464,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 30
+    }
+  },
+  "https://taptogen.vercel.app/id/tools/generator-art-tag/": {
+    "performance": 78,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2244,
+      "largestContentfulPaintMs": 2244,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 48
+    }
+  },
+  "https://taptogen.vercel.app/it/tools/generatore-gnome-name/": {
+    "performance": 77,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2328,
+      "largestContentfulPaintMs": 2328,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 78
+    }
+  },
+  "https://taptogen.vercel.app/fr/tools/g-n-rateur-first-and-last-name/": {
+    "performance": 78,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2200,
+      "largestContentfulPaintMs": 2200,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 99
+    }
+  },
+  "https://taptogen.vercel.app/bg/tools/generator-cipher/": {
+    "performance": 78,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2200,
+      "largestContentfulPaintMs": 2200,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 14
+    }
+  },
+  "https://taptogen.vercel.app/bn/tools/generator-graffiti-text/": {
+    "performance": 78,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2216,
+      "largestContentfulPaintMs": 2216,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 16
+    }
+  },
+  "https://taptogen.vercel.app/de/tools/generator-cowboy-name/": {
+    "performance": 76,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2440,
+      "largestContentfulPaintMs": 2440,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 2
+    }
+  },
+  "https://taptogen.vercel.app/de/tools/generator-content-calendar/": {
+    "performance": 76,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2388,
+      "largestContentfulPaintMs": 2388,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 30
+    }
+  },
+  "https://taptogen.vercel.app/fr/tools/g-n-rateur-app-icon/": {
+    "performance": 78,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2164,
+      "largestContentfulPaintMs": 2164,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 79
+    }
+  },
+  "https://taptogen.vercel.app/es/tools/generador-random-text/": {
+    "performance": 78,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2220,
+      "largestContentfulPaintMs": 2220,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 57
+    }
+  },
+  "https://taptogen.vercel.app/bn/tools/generator-plant-name/": {
+    "performance": 72,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2848,
+      "largestContentfulPaintMs": 2848,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 64
+    }
+  },
+  "https://taptogen.vercel.app/bn/tools/generator-raffle/": {
+    "performance": 62,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 3812,
+      "largestContentfulPaintMs": 3812,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 2
+    }
+  },
+  "https://taptogen.vercel.app/es/tools/generador-utm-link/": {
+    "performance": 78,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2248,
+      "largestContentfulPaintMs": 2248,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 51
+    }
+  },
+  "https://taptogen.vercel.app/de/tools/generator-book-club-name/": {
+    "performance": 77,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2328,
+      "largestContentfulPaintMs": 2328,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 41
+    }
+  },
+  "https://taptogen.vercel.app/bn/tools/shishur-nam-generator/": {
+    "performance": 67,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 3292,
+      "largestContentfulPaintMs": 3292,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 63
+    }
+  },
+  "https://taptogen.vercel.app/es/tools/generador-nickname/": {
+    "performance": 75,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2464,
+      "largestContentfulPaintMs": 2464,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 41
+    }
+  },
+  "https://taptogen.vercel.app/es/tools/generador-retro-text/": {
+    "performance": 72,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2808,
+      "largestContentfulPaintMs": 2808,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 68
+    }
+  },
+  "https://taptogen.vercel.app/bn/tools/generator-css-blob/": {
+    "performance": 67,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 3324,
+      "largestContentfulPaintMs": 3324,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 16
+    }
+  },
+  "https://taptogen.vercel.app/es/tools/texto-italica/": {
+    "performance": 75,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 100,
+    "metrics": {
+      "firstContentfulPaintMs": 2544,
+      "largestContentfulPaintMs": 2544,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 85
+    }
+  },
+  "https://taptogen.vercel.app/bn/tools/generator-dj-name/": {
+    "performance": 69,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 3068,
+      "largestContentfulPaintMs": 3068,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 18
+    }
+  },
+  "https://taptogen.vercel.app/de/tools/generator-call-to-action/": {
+    "performance": 74,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2576,
+      "largestContentfulPaintMs": 2576,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 3
+    }
+  },
+  "https://taptogen.vercel.app/es/tools/generador-strikethrough-text/": {
+    "performance": 79,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2080,
+      "largestContentfulPaintMs": 2080,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 9
+    }
+  },
+  "https://taptogen.vercel.app/id/tools/generator-strikethrough-text/": {
+    "performance": 76,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2352,
+      "largestContentfulPaintMs": 2352,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 15
+    }
+  },
+  "https://taptogen.vercel.app/it/tools/generatore-dice-roller/": {
+    "performance": 73,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2692,
+      "largestContentfulPaintMs": 2692,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 49
+    }
+  },
+  "https://taptogen.vercel.app/bn/tools/generator-qr-code-text/": {
+    "performance": 74,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2604,
+      "largestContentfulPaintMs": 2604,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 19
+    }
+  },
+  "https://taptogen.vercel.app/bn/tools/generator-orc-name/": {
+    "performance": 73,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2748,
+      "largestContentfulPaintMs": 2748,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 86
+    }
+  },
+  "https://taptogen.vercel.app/de/tools/generator-bakery-name/": {
+    "performance": 79,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2068,
+      "largestContentfulPaintMs": 2068,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 30
+    }
+  },
+  "https://taptogen.vercel.app/hi/tools/generator-lowercase/": {
+    "performance": 72,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2812,
+      "largestContentfulPaintMs": 2812,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 72
+    }
+  },
+  "https://taptogen.vercel.app/hi/tools/generator-multiple-choice-question/": {
+    "performance": 64,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 3588,
+      "largestContentfulPaintMs": 3588,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 21
+    }
+  },
+  "https://taptogen.vercel.app/es/tools/generador-avatar-name/": {
+    "performance": 79,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2084,
+      "largestContentfulPaintMs": 2084,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 20
+    }
+  },
+  "https://taptogen.vercel.app/es/tools/generador-papyrus-text/": {
+    "performance": 78,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2240,
+      "largestContentfulPaintMs": 2240,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 98
+    }
+  },
+  "https://taptogen.vercel.app/hi/tools/generator-marketplace-tag/": {
+    "performance": 74,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2556,
+      "largestContentfulPaintMs": 2556,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 78
+    }
+  },
+  "https://taptogen.vercel.app/de/tools/generator-graphql-query/": {
+    "performance": 82,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 1772,
+      "largestContentfulPaintMs": 1772,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 100
+    }
+  },
+  "https://taptogen.vercel.app/hi/tools/generator-product-title/": {
+    "performance": 73,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2692,
+      "largestContentfulPaintMs": 2692,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 83
+    }
+  },
+  "https://taptogen.vercel.app/es/tools/generador-random-color/": {
+    "performance": 74,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2588,
+      "largestContentfulPaintMs": 2588,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 67
+    }
+  },
+  "https://taptogen.vercel.app/es/tools/generador-cover-letter/": {
+    "performance": 55,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 4540,
+      "largestContentfulPaintMs": 4540,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 54
+    }
+  },
+  "https://taptogen.vercel.app/bn/tools/generator-sku/": {
+    "performance": 74,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2592,
+      "largestContentfulPaintMs": 2592,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 57
+    }
+  },
+  "https://taptogen.vercel.app/hi/tools/slogan-generator-hi/": {
+    "performance": 66,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 3428,
+      "largestContentfulPaintMs": 3428,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 55
+    }
+  },
+  "https://taptogen.vercel.app/bn/tools/team-nam-generator/": {
+    "performance": 70,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 3012,
+      "largestContentfulPaintMs": 3012,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 29
+    }
+  },
+  "https://taptogen.vercel.app/es/tools/generador-css-button/": {
+    "performance": 71,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2864,
+      "largestContentfulPaintMs": 2864,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 18
+    }
+  },
+  "https://taptogen.vercel.app/bn/tools/generator-estimate/": {
+    "performance": 75,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2476,
+      "largestContentfulPaintMs": 2476,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 84
+    }
+  },
+  "https://taptogen.vercel.app/de/tools/generator-citation/": {
+    "performance": 70,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 3028,
+      "largestContentfulPaintMs": 3028,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 7
+    }
+  },
+  "https://taptogen.vercel.app/it/tools/generatore-book-name/": {
+    "performance": 72,
+    "accessibility": 84,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 2776,
+      "largestContentfulPaintMs": 2776,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 94
+    }
+  },
+  "https://taptogen.vercel.app/fr/tools/g-n-rateur-album-name/": {
+    "performance": 69,
+    "accessibility": 92,
+    "seo": 100,
+    "bestPractices": 95,
+    "metrics": {
+      "firstContentfulPaintMs": 3052,
+      "largestContentfulPaintMs": 3052,
+      "cumulativeLayoutShift": 0,
+      "totalBlockingTimeMs": 85
+    }
+  }
+}

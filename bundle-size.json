@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-07-12T20:11:40.037Z",
+  "sizes": {
+    "js": 874,
+    "css": 39,
+    "html": 146086,
+    "images": 1,
+    "fonts": 0,
+    "other": 501,
+    "total": 147502
+  },
+  "top10Largest": [
+    {
+      "relPath": "_astro/LocalizedToolPage.astro_astro_type_script_index_0_lang.Bbp5Wm8A.js",
+      "size": 894426
+    },
+    {
+      "relPath": "sitemap-0.xml",
+      "size": 509906
+    },
+    {
+      "relPath": "tools/index.html",
+      "size": 149013
+    },
+    {
+      "relPath": "sitemap/index.html",
+      "size": 51089
+    },
+    {
+      "relPath": "_astro/BaseLayout.BPzyYUxb.css",
+      "size": 39947
+    },
+    {
+      "relPath": "bn/tools/generator-stable-diffusion-prompt/index.html",
+      "size": 31363
+    },
+    {
+      "relPath": "bn/tools/generator-ai-image-prompt/index.html",
+      "size": 30914
+    },
+    {
+      "relPath": "hi/tools/generator-stable-diffusion-prompt/index.html",
+      "size": 30886
+    },
+    {
+      "relPath": "bn/tools/generator-midjourney-prompt/index.html",
+      "size": 30669
+    },
+    {
+      "relPath": "hi/tools/generator-ai-image-prompt/index.html",
+      "size": 30425
+    }
+  ]
+}
