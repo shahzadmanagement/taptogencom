@@ -1,0 +1,13 @@
+- [x] Audit/Verify `nda-generator` (Fully implemented)
+- [x] Audit/Verify `ai-prompt-generator` (Fully implemented)
+- [x] Audit/Verify `anime-name-generator` (Fully implemented - dead case cleaned up)
+- [x] Audit/Verify `snapchat-name-generator` (Fully implemented)
+- [x] Audit/Verify `roast-generator` (Fully implemented)
+- [x] Audit/Verify `comeback-generator` (Fully implemented)
+- [x] Audit/Verify `shakespeare-insult-generator` (Fully implemented)
+- [x] Polish social media post and caption generators (`instagram-caption-generator`, `facebook-post-generator`)
+- [x] Secure token and drawing generator logic (`token-generator`, `secret-santa-name-generator`)
+- [x] Audit/Verify `fancy-text-generator` (Fully implemented)
+- [x] Fix CI pipeline Node.js version, circular dependency warnings, duplicate key warnings, and local verification rules
+- [x] Commit, push, and monitor CI pipeline status (All green)
+- [x] Write `walkthrough.md` report
