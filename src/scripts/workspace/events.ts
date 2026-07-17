@@ -60,12 +60,33 @@ export function bindEvents(
     input.parentNode?.insertBefore(toolbar, input);
   }
 
+  const workspaceEl = document.getElementById('tool-workspace');
+  const isTextTransform = workspaceEl?.dataset.type === 'text-transform';
+
   input?.addEventListener('input', () => {
-    generate();
+    if (isTextTransform) {
+      generate();
+    }
     updateCountersAndFeatures();
   });
 
-  const observer = new MutationObserver(updateCountersAndFeatures);
+  const observer = new MutationObserver((mutations) => {
+    const hasRealMutation = mutations.some(m => {
+      const target = m.target as HTMLElement;
+      if (target.classList?.contains('fav-btn') || target.parentElement?.classList?.contains('fav-btn')) {
+        return false;
+      }
+      return true;
+    });
+
+    if (hasRealMutation) {
+      observer.disconnect();
+      updateCountersAndFeatures();
+      if (output) {
+        observer.observe(output, { childList: true, subtree: true });
+      }
+    }
+  });
   if (output) {
     observer.observe(output, { childList: true, subtree: true });
   }

@@ -1,4 +1,3 @@
-import { searchIndex } from '../lib/search-engine';
 import { aiSearch } from '../lib/ai-search-assistant';
 import { eventBus } from '../lib/event-bus';
 import type { SearchResult } from '../lib/search-types';

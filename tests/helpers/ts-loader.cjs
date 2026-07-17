@@ -9,10 +9,75 @@ const tempCombinedPath = path.join(repoRoot, 'src/scripts/temp-workspace-combine
 
 let compiledCode = '';
 
+class MockHtmlElement {
+  constructor() {
+    this.classList = { add: () => {}, remove: () => {} };
+    this.style = {};
+    this.innerHTML = '';
+    this.dataset = {};
+  }
+  addEventListener() {}
+  cloneNode() {
+    return new MockHtmlElement();
+  }
+}
+
+globalThis.HTMLElement = MockHtmlElement;
+globalThis.HTMLInputElement = MockHtmlElement;
+globalThis.HTMLTextAreaElement = MockHtmlElement;
+globalThis.document = {
+  querySelectorAll: () => [],
+  querySelector: () => null,
+  addEventListener: () => {},
+  removeEventListener: () => {},
+  getElementById: (id) => {
+    if (id === 'tool-workspace') {
+      return {
+        dataset: { tool: 'slogan-generator', type: 'utility', format: 'text' },
+        addEventListener: () => {}
+      };
+    }
+    return new MockHtmlElement();
+  },
+};
+globalThis.window = globalThis;
+globalThis.addEventListener = () => {};
+globalThis.removeEventListener = () => {};
+globalThis.navigator = {
+  clipboard: {
+    writeText: async () => {},
+    readText: async () => ''
+  }
+};
+
+globalThis.customDynamicImport = async (id) => {
+  if (typeof id === 'string') {
+    let resolvedPath = '';
+    if (id.startsWith('../../config/')) {
+      const baseName = id.replace('../../config/', '');
+      resolvedPath = path.resolve(__dirname, '../../src/config', baseName + '.ts');
+    } else if (id.startsWith('../../lib/')) {
+      const libName = id.replace('../../lib/', '');
+      resolvedPath = path.resolve(__dirname, '../../src/lib', libName + '.ts');
+    } else if (id.startsWith('./') || id.startsWith('../')) {
+      resolvedPath = path.resolve(__dirname, '../../src/scripts/workspace', id + '.ts');
+    }
+    
+    if (resolvedPath && fs.existsSync(resolvedPath)) {
+      return loadTS(resolvedPath);
+    }
+  }
+  return import(id);
+};
+
+function rewriteDynamicImports(code) {
+  return code.replace(/\bimport\(([^)]+)\)/g, 'globalThis.customDynamicImport($1)');
+}
+
 function ensureCompiled() {
   if (compiledCode) return;
   
-  const dsCode = fs.readFileSync(dsPath, 'utf8');
+  const dsCode = fs.readFileSync(dsPath, 'utf8').replace(/import\s*\{\s*[\s\S]*?\}\s*from\s*['"]\.\.\/tool-workspace['"];/g, '');
   let wsCode = fs.readFileSync(wsPath, 'utf8');
 
   const exposeBlock = `
@@ -49,7 +114,7 @@ function ensureCompiled() {
       platform: 'node',
       external: ['astro']
     });
-    compiledCode = buildResult.outputFiles[0].text;
+    compiledCode = rewriteDynamicImports(buildResult.outputFiles[0].text);
   } finally {
     if (fs.existsSync(tempCombinedPath)) {
       fs.unlinkSync(tempCombinedPath);
@@ -57,17 +122,34 @@ function ensureCompiled() {
   }
 }
 
-class MockHtmlElement {
-  constructor() {
-    this.classList = { add: () => {}, remove: () => {} };
-    this.style = {};
-    this.innerHTML = '';
-    this.dataset = {};
+
+function resolveModulePath(basePath, id) {
+  let resolved = '';
+  if (id.startsWith('@/')) {
+    resolved = path.resolve(__dirname, '../../src/', id.slice(2));
+  } else if (id.startsWith('.')) {
+    resolved = path.resolve(basePath, id);
+  } else {
+    return null;
   }
-  addEventListener() {}
-  cloneNode() {
-    return new MockHtmlElement();
-  }
+
+  if (fs.existsSync(resolved + '.ts')) return { type: 'ts', path: resolved + '.ts' };
+  if (fs.existsSync(resolved + '.js')) return { type: 'js', path: resolved + '.js' };
+  if (fs.existsSync(resolved + '.cjs')) return { type: 'js', path: resolved + '.cjs' };
+
+  try {
+    const stat = fs.statSync(resolved);
+    if (stat.isDirectory()) {
+      const indexTs = path.join(resolved, 'index.ts');
+      const indexJs = path.join(resolved, 'index.js');
+      const indexCjs = path.join(resolved, 'index.cjs');
+      if (fs.existsSync(indexTs)) return { type: 'ts', path: indexTs };
+      if (fs.existsSync(indexJs)) return { type: 'js', path: indexJs };
+      if (fs.existsSync(indexCjs)) return { type: 'js', path: indexCjs };
+    }
+  } catch (e) {}
+
+  return null;
 }
 
 function loadTS(filePath) {
@@ -80,21 +162,16 @@ function loadTS(filePath) {
   const m = { exports: {} };
   
   const customRequire = (id) => {
-    if (id.startsWith('@/')) {
-      const resolved = path.resolve(__dirname, '../../src/', id.slice(2));
-      if (fs.existsSync(resolved + '.ts')) return loadTS(resolved + '.ts');
-      if (fs.existsSync(resolved + '.js')) return require(resolved + '.js');
-    }
-    if (id.startsWith('.')) {
-      const resolved = path.resolve(path.dirname(absolutePath), id);
-      if (fs.existsSync(resolved + '.ts')) return loadTS(resolved + '.ts');
-      if (fs.existsSync(resolved + '.cjs')) return require(resolved + '.cjs');
-      if (fs.existsSync(resolved + '.js')) return require(resolved + '.js');
+    const resolvedInfo = resolveModulePath(path.dirname(absolutePath), id);
+    if (resolvedInfo) {
+      if (resolvedInfo.type === 'ts') return loadTS(resolvedInfo.path);
+      if (resolvedInfo.type === 'js') return require(resolvedInfo.path);
     }
     return require(id);
   };
 
-  const fn = new Function('module', 'exports', 'require', '__dirname', '__filename', result.code);
+  const cleanCode = rewriteDynamicImports(result.code);
+  const fn = new Function('module', 'exports', 'require', '__dirname', '__filename', cleanCode);
   fn(m, m.exports, customRequire, path.dirname(absolutePath), absolutePath);
   return m.exports;
 }

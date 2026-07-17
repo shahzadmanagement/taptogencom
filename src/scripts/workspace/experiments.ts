@@ -183,6 +183,8 @@ export function runClientExperiments(toolSlug: string) {
     document.head.appendChild(style);
 
     const observer = new MutationObserver(() => {
+      observer.disconnect();
+
       const cards = output.querySelectorAll('.intent-style-card, .result-card');
       cards.forEach(card => {
         const copyBtn = card.querySelector('.copy-btn');
@@ -206,6 +208,8 @@ export function runClientExperiments(toolSlug: string) {
           trackExperimentComplete('output_cards_experiment', variant, toolSlug);
         }, { once: true });
       });
+
+      observer.observe(output, { childList: true, subtree: true });
     });
 
     observer.observe(output, { childList: true, subtree: true });

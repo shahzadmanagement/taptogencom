@@ -2660,17 +2660,6 @@ const premiumGuideCopy: Record<string, { howTo: string[]; tips: { title: string;
       { title: "Keep it usable", body: "Favor clear wording that can be adapted without extra cleanup." },
       { title: "Compare before choosing", body: "Generate multiple drafts, then combine the strongest parts instead of accepting the first result." },
       { title: "Review the details", body: "Check accuracy, originality, tone, and any rules that apply to short text, profile lines, captions, labels." }]},
-  'fancy-text-generator': {
-    howTo: [
-      "Enter the fancy text details you need, including text, destination app, readability need, style.",
-      "Generate a few options and compare which one best fits short text, profile lines, captions, labels.",
-      "Regenerate with narrower constraints if the first pass feels generic, too long, or off-tone.",
-      "Review names, facts, originality, and audience fit before publishing or reusing the result."],
-    tips: [
-      { title: "Use real context", body: "Mention the audience, purpose, and practical constraints so the fancy text output matches the situation." },
-      { title: "Keep it usable", body: "Favor clear wording that can be adapted without extra cleanup." },
-      { title: "Compare before choosing", body: "Generate multiple drafts, then combine the strongest parts instead of accepting the first result." },
-      { title: "Review the details", body: "Check accuracy, originality, tone, and any rules that apply to short text, profile lines, captions, labels." }]},
   'call-to-action-generator': {
     howTo: [
       "Enter the call to action details you need, including audience, purpose, tone, format.",

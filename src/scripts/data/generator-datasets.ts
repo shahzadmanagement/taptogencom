@@ -1,3 +1,22 @@
+import {
+  slugWords,
+  titleCase,
+  compactSeed,
+  toSafeHandle,
+  unicodeMap,
+  toUnicode,
+  monospaceUnicodeMap,
+  italicUnicodeMap,
+  transformFullwidth,
+  boldMap,
+  boldItalicUnicodeMap,
+  transformSquared,
+  escapeHtml,
+  randomFrom,
+  filterGroupsByOption,
+  renderSectionSuite
+} from '../tool-workspace';
+
 export type Pass19NameGroup = {
   title: string;
   note: string;
@@ -1382,7 +1401,7 @@ function createPass19NameText(group: Pass19NameGroup, config: Pass19NameConfig, 
   return forms[index % forms.length];
 }
 
-function buildPass19NameGroups(slug: string, seed: string, selectedStyle: string, tone: string, count: number) {
+export function buildPass19NameGroups(slug: string, seed: string, selectedStyle: string, tone: string, count: number) {
   const config = pass19NameConfigs[slug];
   const orderedGroups = [...config.groups].sort((a, b) => {
     if (!selectedStyle || selectedStyle === 'all') return 0;
@@ -1405,7 +1424,7 @@ function buildPass19NameGroups(slug: string, seed: string, selectedStyle: string
   }).filter(group => group.items.length > 0);
 }
 
-function buildPass19Testimonials(topic: string, mode: string, tone: string) {
+export function buildPass19Testimonials(topic: string, mode: string, tone: string) {
   const subject = topic || 'your product or service';
   const modes = [
     { title: 'Short Customer Quote', note: 'Brief website snippet.', body: `"I appreciated how [specific part of ${subject}] made [specific outcome] easier. The experience felt ${tone.replace('-', ' ')} and useful from start to finish."\n\nUse note: Replace bracketed placeholders with a real customer's words or approved feedback.` },
@@ -1418,7 +1437,7 @@ function buildPass19Testimonials(topic: string, mode: string, tone: string) {
   return selected.length > 1 ? selected : modes;
 }
 
-function buildPass19Memes(topic: string, mode: string, tone: string) {
+export function buildPass19Memes(topic: string, mode: string, tone: string) {
   const subject = topic || 'the situation';
   const groups = [
     { title: 'Top/Bottom Captions', note: 'Classic two-line meme layout.', items: [`TOP: WHEN ${subject.toUpperCase()} FINALLY MAKES SENSE\nBOTTOM: AND NOW I HAVE QUESTIONS`, `TOP: ME TRYING TO EXPLAIN ${subject.toUpperCase()}\nBOTTOM: WITH ONE TAB OPEN AND TOO MUCH CONFIDENCE`, `TOP: NOBODY:\nBOTTOM: ME ORGANIZING ${subject.toUpperCase()} AT MIDNIGHT`, `TOP: WHEN THE PLAN FOR ${subject.toUpperCase()} WORKS\nBOTTOM: SUSPICIOUS BUT GRATEFUL`] },
@@ -1431,7 +1450,7 @@ function buildPass19Memes(topic: string, mode: string, tone: string) {
   return ordered.map(group => ({ ...group, note: `${group.note} Tone: ${tone.replace('-', ' ')}.` }));
 }
 
-function buildPremiumPassphrase(seed: string, style: string, wordCount: number) {
+export function buildPremiumPassphrase(seed: string, style: string, wordCount: number) {
   const cleanSeed = compactSeed(seed, 'secure phrase').toLowerCase();
   const banks: Record<string, string[]> = {
     readable: ['maple','river','canvas','silver','meadow','harbor','copper','lantern','violet','summit','garden','orbit'],
@@ -1447,7 +1466,7 @@ function buildPremiumPassphrase(seed: string, style: string, wordCount: number) 
     { title: 'Copy-Safe Checklist', body: 'Use a unique passphrase per account.\nLonger is better than clever.\nStore it in a reputable password manager.\nDo not reuse sample phrases from public pages for high-value accounts.', note: 'Security guidance.' }];
 }
 
-function buildPremiumRandomIds(seed: string, format: string, count: number) {
+export function buildPremiumRandomIds(seed: string, format: string, count: number) {
   const prefix = toSafeHandle(seed || 'item', 'item').toUpperCase().slice(0, 8);
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
   const rand = (len: number) => Array.from({ length: len }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
@@ -1464,7 +1483,7 @@ function buildPremiumRandomIds(seed: string, format: string, count: number) {
     { title: 'Validation Notes', body: 'IDs are random labels for testing, mockups, tickets, or internal references.\nThey are not cryptographic secrets, license keys, official identifiers, or guaranteed globally unique records.', note: 'Safe use.' }];
 }
 
-function buildPremiumNameTags(seed: string, style: string) {
+export function buildPremiumNameTags(seed: string, style: string) {
   const name = compactSeed(seed, 'Alex Morgan');
   const first = name.split(/\s+/)[0] || 'Alex';
   const role = style === 'event' ? 'Guest' : style === 'school' ? 'Student' : style === 'staff' ? 'Team Member' : 'Attendee';
@@ -1476,7 +1495,7 @@ function buildPremiumNameTags(seed: string, style: string) {
     { title: 'Print Checklist', body: 'Use high-contrast text.\nKeep names large enough to read at a distance.\nReplace all bracketed placeholders before printing.\nDo not include private details unless required and approved.', note: 'Badge safety.' }];
 }
 
-function buildPremiumBreadcrumbs(seed: string, format: string) {
+export function buildPremiumBreadcrumbs(seed: string, format: string) {
   const topic = compactSeed(seed, 'Product Guide');
   const slug = slugWords(topic).join('-') || 'product-guide';
   const html = `<nav aria-label="Breadcrumb">\n  <ol class="breadcrumb">\n    <li><a href="/">Home</a></li>\n    <li><a href="/guides/">Guides</a></li>\n    <li aria-current="page">${topic}</li>\n  </ol>\n</nav>`;
@@ -1490,7 +1509,7 @@ function buildPremiumBreadcrumbs(seed: string, format: string) {
   return format === 'html' ? [sections[0], sections[3]] : format === 'schema' ? [sections[1], sections[3]] : format === 'css' ? [sections[2], sections[3]] : sections;
 }
 
-function buildSpecialCharacterGroups(style: string) {
+export function buildSpecialCharacterGroups(style: string) {
   const groups = [
     { title: 'Symbols', note: 'General decorative symbols.', items: ['â˜… â˜† âœ¦ âœ§ âœ¨', 'â—† â—‡ â— â—‹ â—Œ', 'â˜€ â˜¾ â™¡ â™¢ â™§', 'â€» â‚ â‘ â—ˆ â—Ž'] },
     { title: 'Separators', note: 'Copyable dividers for bios and headings.', items: ['â”â”â”', 'â€¢ â€¢ â€¢', 'â”€â”€ âœ¦ â”€â”€', 'â‹†ï½¡Â°âœ©Â°ï½¡â‹†'] },
@@ -1501,7 +1520,7 @@ function buildSpecialCharacterGroups(style: string) {
   return visible.length ? visible : groups;
 }
 
-function buildAsciiSections(textValue: string, style: string) {
+export function buildAsciiSections(textValue: string, style: string) {
   const label = (textValue || 'HELLO').toUpperCase().replace(/[^A-Z0-9 ]/g, '').slice(0, 16) || 'HELLO';
   const simple = `+${'-'.repeat(label.length + 2)}+\n| ${label} |\n+${'-'.repeat(label.length + 2)}+`;
   const banner = `==== ${label} ====\n     ${label.split('').join(' ')}\n==== ${'='.repeat(label.length)} ====`;
@@ -1516,7 +1535,7 @@ function buildAsciiSections(textValue: string, style: string) {
   return style === 'all' ? sections : sections.filter(section => slugWords(section.title).join('-').includes(style)).concat(sections.slice(4));
 }
 
-function buildOldEnglishStyles(textValue: string, style: string) {
+export function buildOldEnglishStyles(textValue: string, style: string) {
   const source = textValue || 'Old English Text';
   const gothicMap = unicodeMap(0x1D504, 0x1D51E);
   const boldGothicMap = unicodeMap(0x1D56C, 0x1D586);
@@ -1531,7 +1550,7 @@ function buildOldEnglishStyles(textValue: string, style: string) {
   return visible.length ? visible : groups;
 }
 
-function buildAo3TagGroups(topic: string, style: string) {
+export function buildAo3TagGroups(topic: string, style: string) {
   const subject = compactSeed(topic, 'Original Fandom Idea').toLowerCase();
   const groups = [
     { title: 'Genre', note: 'Fandom-safe genre brainstorming; no popularity claim.', items: [`${subject} adventure`, `${subject} mystery`, `${subject} slice of life`, `${subject} character study`] },
@@ -1544,7 +1563,7 @@ function buildAo3TagGroups(topic: string, style: string) {
   return visible.length > 1 ? visible : groups;
 }
 
-function buildSerifSections(topic: string, style: string) {
+export function buildSerifSections(topic: string, style: string) {
   const subject = compactSeed(topic, 'Editorial Project');
   const sections = [
     { title: 'Font Pairings', body: `Classic editorial: Georgia + Inter\nElegant brand: Playfair Display + Source Sans 3\nReadable longform: Merriweather + system sans\nBookish portfolio: Libre Baskerville + IBM Plex Sans`, note: 'Serif pairing ideas.' },
@@ -1554,7 +1573,7 @@ function buildSerifSections(topic: string, style: string) {
   return style === 'all' ? sections : sections.filter(section => slugWords(section.title).join('-').includes(style)).concat(sections.slice(3));
 }
 
-function buildPass22TextSections(slug: string, value: string, style: string) {
+export function buildPass22TextSections(slug: string, value: string, style: string) {
   const label = compactSeed(value, slug.includes('name') ? 'Avery Vale' : 'Hello World').slice(0, 32);
   const upper = label.toUpperCase();
   const scriptMap = unicodeMap(0x1D49C, 0x1D4B6);
@@ -1597,7 +1616,7 @@ function buildPass22TextSections(slug: string, value: string, style: string) {
   return selected.length ? selected : sections;
 }
 
-function buildPass22EstimateSections(seed: string, mode: string) {
+export function buildPass22EstimateSections(seed: string, mode: string) {
   const project = compactSeed(seed, 'Website Refresh');
   const sections = [
     { title: 'Client Summary', body: `Estimate for: ${project}\nPrepared for: [user-fill client name]\nPrepared by: [user-fill business name]\nEstimate date: ${new Date().toLocaleDateString()}`, note: 'Replace bracketed fields with real details.' },
@@ -1609,7 +1628,7 @@ function buildPass22EstimateSections(seed: string, mode: string) {
   return sections;
 }
 
-function buildPass22ProposalSections(seed: string, mode: string) {
+export function buildPass22ProposalSections(seed: string, mode: string) {
   const project = compactSeed(seed, 'Website Redesign');
   const sections = [
     { title: 'Executive Summary', body: `This proposal outlines a practical plan for ${project}. The goal is to clarify the problem, define the scope, and give the client a clean path to approval.`, note: 'Opening section.' },
@@ -1622,7 +1641,7 @@ function buildPass22ProposalSections(seed: string, mode: string) {
   return sections;
 }
 
-function buildPass22ShortCodeGroups(seed: string, mode: string) {
+export function buildPass22ShortCodeGroups(seed: string, mode: string) {
   const base = slugWords(seed || 'launch code').join('').toUpperCase().slice(0, 8) || 'LAUNCH';
   const groups = [
     { title: 'Promo', note: 'Readable promo-style short codes; no official validation claim.', items: [`${base}10`, `${base}SAVE`, `TRY${base}`, `${base}NOW`] },
@@ -1642,7 +1661,7 @@ function filterHeadlineByStyle(groups: { title: string; note: string; items: str
   return merged.length ? merged : groups;
 }
 
-function buildPass23RandomGroups(slug: string, seedValue: string, style: string) {
+export function buildPass23RandomGroups(slug: string, seedValue: string, style: string) {
   const topic = compactSeed(seedValue, 'daily spark').toLowerCase();
   const numberSeed = topic.length || 7;
   const library: Record<string, { title: string; note: string; items: string[] }[]> = {
@@ -1699,7 +1718,7 @@ function buildPass23RandomGroups(slug: string, seedValue: string, style: string)
   return filterHeadlineByStyle(library[slug] ?? [], style);
 }
 
-function buildPass23TemplateSections(slug: string, seed: string, mode: string) {
+export function buildPass23TemplateSections(slug: string, seed: string, mode: string) {
   const topic = compactSeed(seed, slug === 'shipping-policy-generator' ? 'Example Store' : slug === 'content-calendar-generator' ? 'Product Launch' : slug === 'random-address-generator' ? 'Sample Contact' : 'Placeholder Profile');
   const templates: Record<string, { title: string; body: string; note?: string }[]> = {
     'shipping-policy-generator': [
@@ -1733,7 +1752,7 @@ function rotateText(value: string, amount: number) {
   return chars.slice(shift).concat(chars.slice(0, shift)).join('');
 }
 
-function buildPass23UtilityGroups(slug: string, seed: string, style: string) {
+export function buildPass23UtilityGroups(slug: string, seed: string, style: string) {
   const base = compactSeed(seed, slug.includes('name') ? 'Avery Morgan' : 'Nova');
   const first = base.split(/\s+/)[0] || 'Avery';
   const parts = base.split(/[\s,&+]+/).filter(Boolean);
@@ -1782,7 +1801,7 @@ function buildPass23UtilityGroups(slug: string, seed: string, style: string) {
   return filterHeadlineByStyle(library[slug] ?? [], style);
 }
 
-function buildPass23SectionSuite(slug: string, seed: string, style: string) {
+export function buildPass23SectionSuite(slug: string, seed: string, style: string) {
   const label = compactSeed(seed, slug === 'iupac-name-generator' ? 'ethanol' : 'Hello World');
   const mono = toUnicode(label, monospaceUnicodeMap);
   const suites: Record<string, { title: string; body: string; note?: string }[]> = {
@@ -1854,7 +1873,7 @@ function pass24UpsideDown(value: string) {
   return value.toLowerCase().split('').reverse().map(char => flip[char] || char).join('');
 }
 
-function buildPass24TextSections(slug: string, value: string, style: string) {
+export function buildPass24TextSections(slug: string, value: string, style: string) {
   const source = (value || '').trim();
   if (!source) return [];
   const upper = source.toUpperCase();
@@ -1942,7 +1961,7 @@ function pass25SoftUwu(value: string) {
     .replace(/ove/gi, 'uv');
 }
 
-function buildPass25TextSections(slug: string, value: string, style: string) {
+export function buildPass25TextSections(slug: string, value: string, style: string) {
   const source = (value || '').trim();
   if (!source && slug !== 'invisible-text-generator') return [];
   const label = source || 'Sample text';
@@ -1992,7 +2011,7 @@ function buildPass25TextSections(slug: string, value: string, style: string) {
   return filterGroupsByOption(libraries[slug] ?? [], style);
 }
 
-function buildPass25CreatureGroups(slug: string, seed: string, style: string) {
+export function buildPass25CreatureGroups(slug: string, seed: string, style: string) {
   const input = compactSeed(seed, 'Astra');
   const core = titleCase((slugWords(input)[0] || 'astra').slice(0, 16));
   const creatureLabel = titleCase(slug.replace('-name-generator', '').replace(/-/g, ' '));
@@ -2104,7 +2123,7 @@ function buildPass26SocialGroups(slug: string, seed: string, style: string) {
   return filterGroupsByOption(libraries[slug] ?? [], style);
 }
 
-function buildImagePromptSections(slug: string, seed: string, style: string, context: Record<string, string | boolean> = {}) {
+export function buildImagePromptSections(slug: string, seed: string, style: string, context: Record<string, string | boolean> = {}) {
   const subject = compactSeed(seed, slug === 'stable-diffusion-prompt-generator' ? 'mystical forest clearing' : slug === 'dalle-prompt-generator' ? 'friendly product photo concept' : 'cinematic city at dusk');
   const provider = slug === 'midjourney-prompt-generator' ? 'Midjourney' : slug === 'stable-diffusion-prompt-generator' ? 'Stable Diffusion' : 'DALL-E';
   const affiliation = slug === 'dalle-prompt-generator' ? 'OpenAI or DALL-E' : provider;
@@ -2149,7 +2168,7 @@ function buildImagePromptSections(slug: string, seed: string, style: string, con
   return filterGroupsByOption(sections, style);
 }
 
-function buildPass26RandomGroups(slug: string, seed: string, style: string, count: number) {
+export function buildPass26RandomGroups(slug: string, seed: string, style: string, count: number) {
   const inputItems = seed.split(/[\n]+/).map(item => item.trim()).filter(Boolean);
   const safeCount = Math.max(1, Math.min(40, count || 8));
   const roll = (sides: number) => 1 + Math.floor(Math.random() * sides);
@@ -2221,7 +2240,7 @@ function buildPass26RandomGroups(slug: string, seed: string, style: string, coun
   return filterGroupsByOption(baseGroups[slug] ?? [], style);
 }
 
-function buildPass26UtilityGroups(slug: string, seed: string, style: string, count: number) {
+export function buildPass26UtilityGroups(slug: string, seed: string, style: string, count: number) {
   const topic = compactSeed(seed, slug === 'wifi-name-generator' ? 'Home Network' : slug === 'sigil-generator' ? 'strength' : slug === 'ransom-note-text-generator' ? 'you are invited' : 'team update');
   const core = titleCase((slugWords(topic)[0] || 'nova').slice(0, 18));
   const safeCount = Math.max(1, Math.min(20, count || 6));
@@ -2273,7 +2292,7 @@ function pass27SampleChunk(length: number) {
   return Array.from({ length }, () => alphabet[Math.floor(Math.random() * alphabet.length)]).join('');
 }
 
-function buildPass27PlatformGroups(slug: string, seed: string, style: string, context: Record<string, string | boolean> = {}) {
+export function buildPass27PlatformGroups(slug: string, seed: string, style: string, context: Record<string, string | boolean> = {}) {
   const topic = compactSeed(seed, slug.includes('linkedin') ? 'software engineer' : slug.includes('youtube') ? 'cooking tutorial' : slug.includes('tiktok') ? 'comedy creator' : 'tech founder');
   const core = titleCase((slugWords(topic)[0] || 'creator').slice(0, 18));
   const handle = toSafeHandle(topic, 'creator');
@@ -2357,7 +2376,7 @@ function buildPass27PlatformGroups(slug: string, seed: string, style: string, co
     items: group.items.map(item => ({ name: item, reason: group.note, extra: isHookTool ? 'Drafting only; verify accuracy, audience fit, title/thumbnail alignment, sources, disclosures, and platform rules. No views, retention, ranking, engagement, monetization, approval, or platform result is guaranteed.' : 'Drafting only; no spam, impersonation, fake metrics, or platform affiliation.' }))})), style);
 }
 
-function buildPass27DeveloperSections(slug: string, seed: string, style: string, count: number) {
+export function buildPass27DeveloperSections(slug: string, seed: string, style: string, count: number) {
   const prefix = toSafeHandle(seed || slug.replace('-generator', ''), 'demo').toUpperCase().replace(/-/g, '_').slice(0, 12);
   const amount = Math.max(1, Math.min(12, count || 4));
   const samples = Array.from({ length: amount }, () => `${prefix}_${pass27SampleChunk(8)}_${pass27SampleChunk(12)}`);
@@ -2390,7 +2409,7 @@ function buildPass27DeveloperSections(slug: string, seed: string, style: string,
   return filterGroupsByOption(libraries[slug] ?? [], style);
 }
 
-function buildPass27BusinessSections(slug: string, seed: string, style: string, context: Record<string, string | boolean | number> = {}) {
+export function buildPass27BusinessSections(slug: string, seed: string, style: string, context: Record<string, string | boolean | number> = {}) {
   const topic = compactSeed(seed, slug.includes('meeting') ? 'weekly standup' : slug.includes('amazon') ? 'stainless steel water bottle' : slug.includes('etsy') ? 'handmade ceramic mug' : 'consulting services');
   const currency = String(context.currency || 'USD').toUpperCase();
   const lineCount = Math.max(1, Math.min(8, Number(context.lineCount || 3)));
@@ -2577,7 +2596,7 @@ function pass29Tag(value: string) {
   return '#' + slugWords(value).slice(0, 4).join('').slice(0, 28);
 }
 
-function buildPass29SocialGroups(slug: string, seed: string, style: string) {
+export function buildPass29SocialGroups(slug: string, seed: string, style: string) {
   const topic = compactSeed(seed, slug === 'twitter-card-generator' ? 'new product guide' : 'small business tips');
   const platform = slug.includes('youtube') ? 'YouTube' : slug.includes('instagram') ? 'Instagram' : slug.includes('tiktok') ? 'TikTok' : slug.includes('facebook') ? 'Facebook' : slug.includes('pinterest') ? 'Pinterest' : slug.includes('soundcloud') ? 'SoundCloud' : slug.includes('twitter') ? 'Twitter/X' : 'platform';
   const isCard = slug === 'twitter-card-generator';
@@ -2614,7 +2633,7 @@ function pass29RandomChars(chars: string, length: number) {
   return Array.from(values, value => chars[value % chars.length]).join('');
 }
 
-function buildPass29SecretGroups(slug: string, seed: string, style: string, count: number) {
+export function buildPass29SecretGroups(slug: string, seed: string, style: string, count: number) {
   const amount = Math.max(1, Math.min(12, count || 5));
   const label = toSafeHandle(seed || slug.replace('-generator', ''), 'sample').toUpperCase().replace(/-/g, '_').slice(0, 14);
   const lower = 'abcdefghijklmnopqrstuvwxyz';
@@ -2645,7 +2664,7 @@ function buildPass29SecretGroups(slug: string, seed: string, style: string, coun
     items: group.items.map(item => ({ name: item, reason: group.note, extra: 'Copyable result; store and use securely at your own responsibility.' }))})), style);
 }
 
-function buildPass29TemplateSections(slug: string, seed: string, style: string, context: Record<string, string | boolean> = {}) {
+export function buildPass29TemplateSections(slug: string, seed: string, style: string, context: Record<string, string | boolean> = {}) {
   const topic = compactSeed(seed, slug.includes('nda') ? 'confidential project' : slug.includes('service') ? 'consulting services' : slug.includes('cookie') ? 'website cookies' : 'online service');
   const region = String(context.region || 'global').toUpperCase().replace(/-/g, ' / ');
   const businessType = titleCase(String(context.businessType || 'website').replace(/-/g, ' '));
@@ -2717,7 +2736,7 @@ function buildPass29TemplateSections(slug: string, seed: string, style: string, 
   return filterGroupsByOption(libraries[slug] ?? [], style);
 }
 
-function buildPass29HumorGroups(slug: string, seed: string, style: string, context: Record<string, string | boolean | number> = {}) {
+export function buildPass29HumorGroups(slug: string, seed: string, style: string, context: Record<string, string | boolean | number> = {}) {
   const topic = compactSeed(seed, slug === 'comeback-generator' ? 'a mild joke about being late' : slug === 'roast-generator' ? 'a friend who overplans snacks' : 'a fictional court jester');
   const subject = titleCase(topic);
   const count = Math.max(2, Math.min(8, Number(context.count) || 4));
@@ -2891,7 +2910,7 @@ function buildPass29HumorGroups(slug: string, seed: string, style: string, conte
   return filterGroupsByOption(groups, style);
 }
 
-function buildPass29MarketplaceSections(slug: string, seed: string, style: string) {
+export function buildPass29MarketplaceSections(slug: string, seed: string, style: string) {
   const topic = compactSeed(seed, slug === 'etsy-tag-generator' ? 'handmade ceramic mug' : 'linen tote bag');
   const tags = slugWords(topic).slice(0, 4);
   const tagLines = [
@@ -2914,7 +2933,7 @@ function buildPass29MarketplaceSections(slug: string, seed: string, style: strin
   return filterGroupsByOption(sections, style);
 }
 
-function buildPass24UtilitySections(slug: string, seed: string, style: string) {
+export function buildPass24UtilitySections(slug: string, seed: string, style: string) {
   const subject = compactSeed(seed, slug === 'fake-name-generator' ? 'Avery Morgan' : slug === 'geo-tag-generator' ? 'Austin TX' : slug === 'email-tag-generator' ? 'name@example.com' : 'Creative Project');
   const safeHandle = toSafeHandle(subject, 'sample');
   const first = subject.split(/\s+/)[0] || 'Avery';
@@ -2956,7 +2975,7 @@ function buildPass24UtilitySections(slug: string, seed: string, style: string) {
   return filterGroupsByOption(sections, style);
 }
 
-function buildPass24NameGroups(slug: string, seed: string, style: string) {
+export function buildPass24NameGroups(slug: string, seed: string, style: string) {
   const topic = compactSeed(seed, slug === 'secret-santa-name-generator' ? 'Holiday Team' : slug === 'team-name-generator-using-keywords' ? 'Falcon' : 'Nova Stream');
   const core = topic.split(/\s+/)[0] || 'Nova';
   const handle = toSafeHandle(topic, 'nova');
@@ -2980,7 +2999,7 @@ function buildPass24NameGroups(slug: string, seed: string, style: string) {
   return filterGroupsByOption(groups, style);
 }
 
-function buildPass24FantasyLanguageSections(seed: string, style: string) {
+export function buildPass24FantasyLanguageSections(seed: string, style: string) {
   const theme = compactSeed(seed, 'River Kingdom');
   const roots = ['lae', 'mira', 'salo', 'ven', 'arun', 'thea', 'kor', 'nira'];
   const makeWord = (index: number) => titleCase(roots[index % roots.length] + roots[(index + 2) % roots.length]);
@@ -2992,11 +3011,11 @@ function buildPass24FantasyLanguageSections(seed: string, style: string) {
   return filterGroupsByOption(sections, style);
 }
 
-function renderCssButtonOutput(label: string, css: string, htmlSnippet: string, variants: { name: string; cssClass: string; note: string }[], previewStyle: string): string {
+export function renderCssButtonOutput(label: string, css: string, htmlSnippet: string, variants: { name: string; cssClass: string; note: string }[], previewStyle: string): string {
   return '<div class="css-button-premium-output"><div class="css-button-preview-panel"><button class="generated-button-preview" style="' + escapeHtml(previewStyle) + '">' + escapeHtml(label) + '</button><p class="intent-mini-note">Live preview uses inline styles; copy the CSS below for production.</p></div><div class="css-code-grid"><article class="intent-wide-card"><div class="result-card-top"><span class="result-label">CSS</span><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(css) + '">Copy CSS</button></div><pre class="intent-section-pre">' + escapeHtml(css) + '</pre></article><article class="intent-wide-card"><div class="result-card-top"><span class="result-label">HTML</span><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(htmlSnippet) + '">Copy HTML</button></div><pre class="intent-section-pre">' + escapeHtml(htmlSnippet) + '</pre></article></div><div class="intent-idea-grid">' + variants.map(variant => '<article class="intent-idea-card"><div class="intent-idea-name">' + escapeHtml(variant.name) + '</div><p>' + escapeHtml(variant.note) + '</p><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(variant.cssClass) + '">Copy Variant</button></article>').join('') + '</div><p class="intent-output-note">Accessibility note: verify final color contrast and focus visibility in your real layout.</p></div>';
 }
 
-function renderHashtagGroups(groups: { title: string; note: string; tags: string[] }[], platform: string): string {
+export function renderHashtagGroups(groups: { title: string; note: string; tags: string[] }[], platform: string): string {
   return '<div class="intent-grouped-output">' + groups.map(group => {
     const groupText = group.tags.join(' ');
     return '<section class="intent-result-group"><div class="result-card-top"><div><span class="result-label">' + escapeHtml(group.title) + '</span><p class="intent-mini-note">' + escapeHtml(group.note) + '</p></div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(groupText) + '">Copy Group</button></div><div class="tag-chip-list">' + group.tags.map(tag => '<button class="tag-chip result-copy" type="button" data-copy="' + escapeHtml(tag) + '">' + escapeHtml(tag) + '</button>').join('') + '</div></section>';
@@ -3006,14 +3025,14 @@ function renderHashtagGroups(groups: { title: string; note: string; tags: string
 type ReasonedTagGroup = { title: string; note: string; items: { tag: string; reason: string }[] };
 type OptionGetter = (id: string, fallback?: string) => string;
 
-function renderReasonedTagGroups(groups: ReasonedTagGroup[], footer: string): string {
+export function renderReasonedTagGroups(groups: ReasonedTagGroup[], footer: string): string {
   return '<div class="intent-grouped-output">' + groups.map(group => {
     const groupText = group.items.map(item => item.tag).join(', ');
     return '<section class="intent-result-group"><div class="result-card-top"><div><span class="result-label">' + escapeHtml(group.title) + '</span><p class="intent-mini-note">' + escapeHtml(group.note) + '</p></div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(groupText) + '">Copy Group</button></div><div class="tag-chip-list">' + group.items.map(item => '<button class="tag-chip result-copy" type="button" data-copy="' + escapeHtml(item.tag) + '">' + escapeHtml(item.tag) + '</button>').join('') + '</div><ul class="intent-output-list">' + group.items.map(item => '<li><strong>' + escapeHtml(item.tag) + ':</strong> ' + escapeHtml(item.reason) + '</li>').join('') + '</ul></section>';
   }).join('') + '<p class="intent-output-note">' + escapeHtml(footer) + '</p></div>';
 }
 
-function uniqueItems(items: string[], limit: number): string[] {
+export function uniqueItems(items: string[], limit: number): string[] {
   const seen = new Set<string>();
   return items.map(item => item.trim()).filter(item => {
     const key = item.toLowerCase();
@@ -3023,7 +3042,7 @@ function uniqueItems(items: string[], limit: number): string[] {
   }).slice(0, limit);
 }
 
-function makeDiscoveryTagGroups(topic: string, config: { platform: string; hashtag?: boolean; count?: number; contentType?: string; strategy?: string }): { groups: { title: string; note: string; tags: string[] }[]; text: string } {
+export function makeDiscoveryTagGroups(topic: string, config: { platform: string; hashtag?: boolean; count?: number; contentType?: string; strategy?: string }): { groups: { title: string; note: string; tags: string[] }[]; text: string } {
   const cleanTopic = compactSeed(topic, 'creative content');
   const words = slugWords(cleanTopic).slice(0, 5);
   const joined = words.join('');
@@ -3081,7 +3100,7 @@ function reasonedTags(items: { tag: string; reason: string }[], limit: number, m
   }).slice(0, limit);
 }
 
-function reasonedText(groups: ReasonedTagGroup[]) {
+export function reasonedText(groups: ReasonedTagGroup[]) {
   return groups.map(group => group.title + '\n' + group.items.map(item => `${item.tag} - ${item.reason}`).join('\n')).join('\n\n');
 }
 
@@ -3144,7 +3163,7 @@ function ctaLine(cta: string, topic: string) {
   return `CTA: ask one specific question about ${topic.toLowerCase()} that people can answer honestly.`;
 }
 
-function buildXPostSuite(seed: string, getOption: OptionGetter) {
+export function buildXPostSuite(seed: string, getOption: OptionGetter) {
   const topic = compactSeed(seed, 'Creative Work');
   const lower = topic.toLowerCase();
   const tone = getOption('x-post-tone', 'practical').replace(/-/g, ' ');
@@ -3181,7 +3200,7 @@ function buildXPostSuite(seed: string, getOption: OptionGetter) {
   return filterGroupsByOption(groups, getOption('x-post-format', 'all'));
 }
 
-function buildChatGptPromptSuite(seed: string, getOption: OptionGetter) {
+export function buildChatGptPromptSuite(seed: string, getOption: OptionGetter) {
   const topic = compactSeed(seed, 'general task');
   const lower = topic.toLowerCase();
   const goal = getOption('chatgpt-prompt-type', 'technical');
@@ -3222,7 +3241,7 @@ function buildChatGptPromptSuite(seed: string, getOption: OptionGetter) {
   return groups;
 }
 
-function buildSamplePlaceholderSuite(seed: string, getOption: OptionGetter) {
+export function buildSamplePlaceholderSuite(seed: string, getOption: OptionGetter) {
   const subject = compactSeed(seed, 'Sample App Screen');
   const sampleType = getOption('sample-text-type', 'ui-mockup').replace(/-/g, ' ');
   const tone = getOption('sample-text-tone', 'neutral');
@@ -3259,7 +3278,7 @@ function buildSamplePlaceholderSuite(seed: string, getOption: OptionGetter) {
       note: 'Check before sharing outside a mockup.'}];
 }
 
-function buildStorePolicySuite(kind: 'shipping' | 'return', seed: string, getOption: OptionGetter) {
+export function buildStorePolicySuite(kind: 'shipping' | 'return', seed: string, getOption: OptionGetter) {
   const store = compactSeed(seed, 'Your Store');
   const isShipping = kind === 'shipping';
   const storeType = getOption(isShipping ? 'policy-store-type' : 'return-store-type', 'physical-goods').replace(/-/g, ' ');
@@ -3305,7 +3324,7 @@ function buildStorePolicySuite(kind: 'shipping' | 'return', seed: string, getOpt
     { title: 'Draft-Only Safety Reminder', body: 'This is a draft-only ecommerce return policy helper. It is not legal, tax, consumer-protection, payment-processor, marketplace, platform, or compliance advice. It does not guarantee enforceability, compliance, dispute outcomes, refund acceptance, payment-processor approval, marketplace approval, or customer acceptance. Review against actual practices and qualified guidance before publishing.', note: 'No compliance guarantee.' }];
 }
 
-function buildBusinessDocumentSuite(kind: 'purchase-order' | 'quotation', seed: string, getOption: OptionGetter) {
+export function buildBusinessDocumentSuite(kind: 'purchase-order' | 'quotation', seed: string, getOption: OptionGetter) {
   const subject = compactSeed(seed, kind === 'purchase-order' ? 'Office Supplies' : 'Website Redesign Services');
   const currency = getOption(kind === 'purchase-order' ? 'po-currency' : 'quotation-currency', 'usd').toUpperCase();
   const itemCount = Math.max(1, Math.min(kind === 'purchase-order' ? 10 : 8, Number(getOption(kind === 'purchase-order' ? 'po-item-count' : 'quotation-item-count', kind === 'purchase-order' ? '4' : '3')) || (kind === 'purchase-order' ? 4 : 3)));
@@ -3393,7 +3412,7 @@ export function buildYouTubeTagSuite(seed: string, getOption: OptionGetter) {
     { title: 'Avoid / Review Notes', note: 'Remove these patterns before publishing.', items: avoid }];
 }
 
-function buildPinterestKeywordSuite(seed: string, getOption: OptionGetter) {
+export function buildPinterestKeywordSuite(seed: string, getOption: OptionGetter) {
   const topic = compactSeed(seed, 'small balcony garden ideas');
   const words = slugWords(topic).slice(0, 5);
   const phrase = words.join(' ') || 'pin idea';
@@ -3437,7 +3456,7 @@ function buildPinterestKeywordSuite(seed: string, getOption: OptionGetter) {
     { title: 'Avoid / Review Notes', note: 'Remove keyword patterns that create spam or mismatch risk.', items: avoid }];
 }
 
-function buildSoundCloudTagSuite(seed: string, getOption: OptionGetter) {
+export function buildSoundCloudTagSuite(seed: string, getOption: OptionGetter) {
   const topic = compactSeed(seed, 'lofi piano beat');
   const words = slugWords(topic).slice(0, 5);
   const phrase = words.join(' ') || 'music track';
@@ -3497,7 +3516,7 @@ function buildSoundCloudTagSuite(seed: string, getOption: OptionGetter) {
     { title: 'Avoid / Review Notes', note: 'Remove misleading, infringing, or unsupported tags.', items: avoid }], style);
 }
 
-function makeNameIdeaGroups(seed: string, config: { kind: string; style?: string; creator?: boolean; local?: boolean; includeTaglines?: boolean }): { groups: { title: string; note: string; items: { name: string; reason: string; extra?: string }[] }[]; text: string } {
+export function makeNameIdeaGroups(seed: string, config: { kind: string; style?: string; creator?: boolean; local?: boolean; includeTaglines?: boolean }): { groups: { title: string; note: string; items: { name: string; reason: string; extra?: string }[] }[]; text: string } {
   const base = compactSeed(seed, config.kind).replace(/\s+/g, ' ');
   const cap = titleCase(base);
   const core = cap.split(' ')[0] || titleCase(config.kind);
@@ -3594,7 +3613,7 @@ function makeNameIdeaGroups(seed: string, config: { kind: string; style?: string
   return { groups, text: groups.map(group => `${group.title}\n${group.items.map(item => `${item.name} - ${item.extra || item.reason}`).join('\n')}`).join('\n\n') };
 }
 
-function hslToRgb(h: number, s: number, l: number): [number, number, number] {
+export function hslToRgb(h: number, s: number, l: number): [number, number, number] {
   s /= 100;
   l /= 100;
   const c = (1 - Math.abs(2 * l - 1)) * s;
@@ -3610,16 +3629,16 @@ function hslToRgb(h: number, s: number, l: number): [number, number, number] {
   return [Math.round((r + m) * 255), Math.round((g + m) * 255), Math.round((b + m) * 255)];
 }
 
-function rgbToHex([r, g, b]: [number, number, number]): string {
+export function rgbToHex([r, g, b]: [number, number, number]): string {
   return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('').toUpperCase();
 }
 
-function seedNumber(value: string, fallback = 'design'): number {
+export function seedNumber(value: string, fallback = 'design'): number {
   const source = (value || fallback).trim() || fallback;
   return source.split('').reduce((sum, char, index) => sum + char.charCodeAt(0) * (index + 17), 0);
 }
 
-function makeHslColor(label: string, h: number, s: number, l: number): { label: string; hex: string; rgb: [number, number, number]; hsl: string } {
+export function makeHslColor(label: string, h: number, s: number, l: number): { label: string; hex: string; rgb: [number, number, number]; hsl: string } {
   const hue = ((Math.round(h) % 360) + 360) % 360;
   const sat = Math.max(0, Math.min(100, Math.round(s)));
   const light = Math.max(0, Math.min(100, Math.round(l)));
@@ -3627,12 +3646,12 @@ function makeHslColor(label: string, h: number, s: number, l: number): { label: 
   return { label, hex: rgbToHex(rgb), rgb, hsl: `hsl(${hue}, ${sat}%, ${light}%)` };
 }
 
-function hexToRgb(hex: string): [number, number, number] {
+export function hexToRgb(hex: string): [number, number, number] {
   const clean = hex.replace('#', '');
   return [parseInt(clean.slice(0, 2), 16), parseInt(clean.slice(2, 4), 16), parseInt(clean.slice(4, 6), 16)];
 }
 
-function contrastRatio(a: [number, number, number], b: [number, number, number]): number {
+export function contrastRatio(a: [number, number, number], b: [number, number, number]): number {
   const lum = ([r, g, b]: [number, number, number]) => {
     const vals = [r, g, b].map(v => {
       const c = v / 255;
@@ -3645,65 +3664,23 @@ function contrastRatio(a: [number, number, number], b: [number, number, number])
   return (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
 }
 
-function renderColorPalette(name: string, mood: string, colors: { label: string; hex: string; rgb: [number, number, number]; hsl: string }[], note: string): string {
+export function renderColorPalette(name: string, mood: string, colors: { label: string; hex: string; rgb: [number, number, number]; hsl: string }[], note: string): string {
   return '<div class="palette-premium-output"><div class="palette-summary"><span class="result-label">' + escapeHtml(name) + '</span><p>' + escapeHtml(mood) + '</p><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(colors.map(c => c.hex).join(' ')) + '">Copy Palette</button></div><div class="palette-swatch-row">' + colors.map(color => '<article class="palette-swatch-card"><div class="palette-swatch" style="background:' + escapeHtml(color.hex) + '"></div><div><strong>' + escapeHtml(color.label) + '</strong><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(color.hex) + '">Copy Hex</button><p>' + escapeHtml(color.hex) + '</p><p>RGB ' + color.rgb.join(', ') + '</p><p>' + escapeHtml(color.hsl) + '</p></div></article>').join('') + '</div><p class="intent-output-note">' + escapeHtml(note) + '</p></div>';
 }
 
-function renderPreviewCodeSuite(title: string, previewHtml: string, sections: { title: string; body: string; note?: string }[], footer = ''): string {
+export function renderPreviewCodeSuite(title: string, previewHtml: string, sections: { title: string; body: string; note?: string }[], footer = ''): string {
   return '<div class="pass13-preview-suite"><div class="pass13-preview-panel" style="padding:20px;border:1px solid #e5e7eb;border-radius:12px;background:#f8fafc;overflow:hidden;">' + previewHtml + '</div></div>' + renderSectionSuite(title, sections, footer);
 }
 
-function renderPickerWheel(title: string, winner: string, entries: string[], history: string[], note: string, theme = 'bright'): string {
+export function renderPickerWheel(title: string, winner: string, entries: string[], history: string[], note: string, theme = 'bright'): string {
   const copyText = title + '\nSelected: ' + winner + '\nEntries: ' + entries.join(', ') + (history.length ? '\nHistory: ' + history.join(', ') : '');
   const segments = entries.slice(0, 12).map((entry, index) => '<span class="picker-wheel-segment picker-wheel-segment-' + (index % 6) + '">' + escapeHtml(entry) + '</span>').join('');
   return '<div class="picker-premium-output picker-theme-' + escapeHtml(theme) + '"><div class="picker-wheel-panel"><div class="picker-wheel-visual" aria-label="Wheel entries">' + segments + '<div class="picker-wheel-center">Pick</div></div><div class="picker-result-panel"><span class="result-label">' + escapeHtml(title) + '</span><div class="picker-winner">' + escapeHtml(winner) + '</div><p class="intent-mini-note">' + escapeHtml(note) + '</p><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(copyText) + '">Copy Result</button></div></div><div class="intent-idea-grid">' + history.map((item, index) => '<article class="intent-idea-card"><div class="intent-idea-name">' + escapeHtml(item) + '</div><p>Result history ' + (index + 1) + '</p><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(item) + '">Copy</button></article>').join('') + '</div></div>';
 }
 
-function renderPriceTags(title: string, tags: { label: string; price: string; original: string; layout: string; note: string }[], copyText: string): string {
+export function renderPriceTags(title: string, tags: { label: string; price: string; original: string; layout: string; note: string }[], copyText: string): string {
   return '<div class="price-tag-output"><div class="price-tag-summary"><span class="result-label">' + escapeHtml(title) + '</span><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(copyText) + '">Copy Structured Text</button></div><div class="price-tag-grid">' + tags.map(tag => '<article class="print-price-tag price-layout-' + escapeHtml(tag.layout) + '"><div class="price-tag-hole"></div><span class="price-tag-label">' + escapeHtml(tag.label) + '</span><div class="price-tag-price">' + escapeHtml(tag.price) + '</div>' + (tag.original ? '<div class="price-tag-original">' + escapeHtml(tag.original) + '</div>' : '') + '<p>' + escapeHtml(tag.note) + '</p><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(tag.label + '\n' + tag.price + (tag.original ? '\nOriginal: ' + tag.original : '') + '\n' + tag.note) + '">Copy Tag</button></article>').join('') + '</div><p class="intent-output-note">No barcode is included. Add a real SKU or barcode separately if your checkout system requires one.</p></div>';
 }
 
-function renderPremiumOutput(raw: string, html = ''): void {
-  const safeRaw = raw.trim();
-  output.dataset.copyText = safeRaw;
-  if (!safeRaw && !html) {
-    output.innerHTML = '<div class="empty-output">Your generated results will appear here.</div>';
-    output.classList.add('empty');
-    return;
-  }
 
-  let rendered = '';
-  if (html || outputFormat === 'image' || outputFormat === 'html') {
-    rendered = '<div class="visual-result-panel">' + html + '</div>';
-  } else if (toolSlug.includes('business') || toolSlug.includes('brand') || toolSlug.includes('domain')) {
-    rendered = renderBusinessCards(safeRaw);
-  } else if (toolSlug.includes('tag') || toolSlug.includes('hashtag')) {
-    rendered = renderGroupedTags(safeRaw);
-  } else if (toolType === 'random-combo' || toolSlug.includes('name-generator')) {
-    rendered = renderList(safeRaw);
-  } else if (toolType === 'text-transform') {
-    rendered = renderCards(safeRaw);
-  } else if (toolType === 'template') {
-    rendered = renderSections(safeRaw);
-  } else if (toolType === 'visual') {
-    rendered = renderSections(safeRaw);
-  } else {
-    rendered = renderSections(safeRaw);
-  }
-
-  output.innerHTML = rendered || renderRaw(safeRaw);
-  output.classList.remove('empty');
-}
-
-async function copyText(value: string, trigger?: HTMLElement | null): Promise<void> {
-  await navigator.clipboard.writeText(value);
-  if (!trigger) return;
-  const original = trigger.textContent || 'Copy';
-  trigger.textContent = 'Copied!';
-  trigger.classList.add('copied');
-  setTimeout(() => {
-    trigger.textContent = original;
-    trigger.classList.remove('copied');
-  }, 1600);
-}
 

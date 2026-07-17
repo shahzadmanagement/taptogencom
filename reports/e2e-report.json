@@ -1,0 +1,260 @@
+{
+  "summary": {
+    "totalTested": 25,
+    "passed": 25,
+    "failed": 0,
+    "averageRenderTimeMs": 6195
+  },
+  "results": [
+    {
+      "slug": "acceptable-use-policy-generator",
+      "status": "PASSED",
+      "renderTime": 7255,
+      "fcp": 1320,
+      "lcp": 1320,
+      "tti": 4527,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "ad-copy-generator",
+      "status": "PASSED",
+      "renderTime": 7449,
+      "fcp": 1448,
+      "lcp": 1448,
+      "tti": 5355,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "affiliate-disclosure-generator",
+      "status": "PASSED",
+      "renderTime": 7132,
+      "fcp": 1608,
+      "lcp": 1608,
+      "tti": 4854,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "ai-prompt-generator",
+      "status": "PASSED",
+      "renderTime": 6427,
+      "fcp": 1524,
+      "lcp": 1524,
+      "tti": 4324,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "album-name-generator",
+      "status": "PASSED",
+      "renderTime": 5934,
+      "fcp": 1328,
+      "lcp": 1328,
+      "tti": 3934,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "alien-name-generator",
+      "status": "PASSED",
+      "renderTime": 6992,
+      "fcp": 1552,
+      "lcp": 1552,
+      "tti": 4689,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "all-caps-generator",
+      "status": "PASSED",
+      "renderTime": 7030,
+      "fcp": 1904,
+      "lcp": 1904,
+      "tti": 5111,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "amazon-listing-generator",
+      "status": "PASSED",
+      "renderTime": 5983,
+      "fcp": 1208,
+      "lcp": 1208,
+      "tti": 3726,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "anagram-of-name-generator",
+      "status": "PASSED",
+      "renderTime": 6161,
+      "fcp": 1404,
+      "lcp": 1404,
+      "tti": 4334,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "ancient-egyptian-inspired-name-generator",
+      "status": "PASSED",
+      "renderTime": 5221,
+      "fcp": 1444,
+      "lcp": 1444,
+      "tti": 3885,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "ancient-greek-inspired-name-generator",
+      "status": "PASSED",
+      "renderTime": 5712,
+      "fcp": 1348,
+      "lcp": 1348,
+      "tti": 4333,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "angel-name-generator",
+      "status": "PASSED",
+      "renderTime": 6600,
+      "fcp": 1800,
+      "lcp": 1800,
+      "tti": 5095,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "anime-name-generator",
+      "status": "PASSED",
+      "renderTime": 5758,
+      "fcp": 1444,
+      "lcp": 1444,
+      "tti": 4363,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "ao3-tag-generator",
+      "status": "PASSED",
+      "renderTime": 5454,
+      "fcp": 1404,
+      "lcp": 1404,
+      "tti": 3815,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "api-key-generator",
+      "status": "PASSED",
+      "renderTime": 7012,
+      "fcp": 1996,
+      "lcp": 1996,
+      "tti": 4857,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "app-icon-generator",
+      "status": "PASSED",
+      "renderTime": 6015,
+      "fcp": 1392,
+      "lcp": 1392,
+      "tti": 4540,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "app-name-generator",
+      "status": "PASSED",
+      "renderTime": 7898,
+      "fcp": 1740,
+      "lcp": 1740,
+      "tti": 4523,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "art-name-generator",
+      "status": "PASSED",
+      "renderTime": 5546,
+      "fcp": 1384,
+      "lcp": 1384,
+      "tti": 4014,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "art-tag-generator",
+      "status": "PASSED",
+      "renderTime": 5786,
+      "fcp": 1724,
+      "lcp": 1724,
+      "tti": 4527,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "ascii-text-generator",
+      "status": "PASSED",
+      "renderTime": 5614,
+      "fcp": 1348,
+      "lcp": 1348,
+      "tti": 4233,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "assignment-generator",
+      "status": "PASSED",
+      "renderTime": 7228,
+      "fcp": 1820,
+      "lcp": 1820,
+      "tti": 4592,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "author-bio-generator",
+      "status": "PASSED",
+      "renderTime": 5404,
+      "fcp": 1348,
+      "lcp": 1348,
+      "tti": 3960,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "avatar-name-generator",
+      "status": "PASSED",
+      "renderTime": 6003,
+      "fcp": 1204,
+      "lcp": 1204,
+      "tti": 3968,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "baby-name-generator",
+      "status": "PASSED",
+      "renderTime": 5251,
+      "fcp": 1412,
+      "lcp": 1412,
+      "tti": 3770,
+      "accessibilityViolations": 0,
+      "errors": []
+    },
+    {
+      "slug": "baby-name-generator-with-last-name",
+      "status": "PASSED",
+      "renderTime": 4012,
+      "fcp": 1060,
+      "lcp": 1060,
+      "tti": 3073,
+      "accessibilityViolations": 0,
+      "errors": []
+    }
+  ]
+}

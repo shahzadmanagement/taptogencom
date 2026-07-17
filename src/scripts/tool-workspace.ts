@@ -25,7 +25,7 @@ const copyBtn = document.getElementById('copy-btn');
 const regenBtn = document.getElementById('regenerate-btn');
 
 // Unicode font maps for text transform tools
-const boldMap: Record<string, string> = {};
+export const boldMap: Record<string, string> = {};
 const cursiveMap: Record<string, string> = {};
 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.split('').forEach((c, i) => {
   if (i < 26) { boldMap[c] = String.fromCodePoint(0x1D400 + i); cursiveMap[c] = String.fromCodePoint(0x1D49C + i); }
@@ -33,14 +33,14 @@ const cursiveMap: Record<string, string> = {};
   else { boldMap[c] = String.fromCodePoint(0x1D7CE + (i - 52)); }
 });
 
-function toUnicode(text: string, map: Record<string, string>): string {
+export function toUnicode(text: string, map: Record<string, string>): string {
   return text.split('').map(c => map[c] || c).join('');
 }
 
 // Name banks
-function randomFrom<T>(arr: T[]): T { return arr[Math.floor(Math.random() * arr.length)]; }
+export function randomFrom<T>(arr: T[]): T { return arr[Math.floor(Math.random() * arr.length)]; }
 function generateMultiple(fn: () => string, count: number): string { return Array.from({ length: count }, fn).join('\n'); }
-function escapeHtml(value: string): string {
+export function escapeHtml(value: string): string {
   return value.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char] || char));
 }
 const superscriptLetters = ['\u1d43','\u1d47','\u1d9c','\u1d48','\u1d49','\u1da0','\u1d4d','\u02b0','\u2071','\u02b2','\u1d4f','\u02e1','\u1d50','\u207f','\u1d52','\u1d56','q','\u02b3','\u02e2','\u1d57','\u1d58','\u1d5b','\u02b7','\u02e3','\u02b8','\u1dbb'];
@@ -183,25 +183,25 @@ function renderRaw(raw: string): string {
   return '<div class="raw-result"><pre>' + escapeHtml(raw) + '</pre><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(raw) + '">Copy Result</button></div>';
 }
 
-function slugWords(value: string): string[] {
+export function slugWords(value: string): string[] {
   return value.toLowerCase().replace(/[^a-z0-9\s-]/g, ' ').split(/\s+/).filter(Boolean);
 }
 
-function titleCase(value: string): string {
+export function titleCase(value: string): string {
   return value.split(/\s+/).filter(Boolean).map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
 }
 
-function compactSeed(value: string, fallback = 'Nova'): string {
+export function compactSeed(value: string, fallback = 'Nova'): string {
   const words = slugWords(value || fallback);
   const seed = words.length ? words.join(' ') : fallback;
   return titleCase(seed);
 }
 
-function toSafeHandle(value: string, fallback = 'player'): string {
+export function toSafeHandle(value: string, fallback = 'player'): string {
   return (slugWords(value || fallback).join('') || fallback).slice(0, 22);
 }
 
-function unicodeMap(upperStart: number, lowerStart: number, digitStart?: number): Record<string, string> {
+export function unicodeMap(upperStart: number, lowerStart: number, digitStart?: number): Record<string, string> {
   const map: Record<string, string> = {};
   'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach((c, i) => { map[c] = String.fromCodePoint(upperStart + i); });
   'abcdefghijklmnopqrstuvwxyz'.split('').forEach((c, i) => { map[c] = String.fromCodePoint(lowerStart + i); });
@@ -209,8 +209,8 @@ function unicodeMap(upperStart: number, lowerStart: number, digitStart?: number)
   return map;
 }
 
-const italicUnicodeMap = unicodeMap(0x1D434, 0x1D44E);
-const boldItalicUnicodeMap = unicodeMap(0x1D468, 0x1D482);
+export const italicUnicodeMap = unicodeMap(0x1D434, 0x1D44E);
+export const boldItalicUnicodeMap = unicodeMap(0x1D468, 0x1D482);
 const gothicUnicodeMap = {
   ...unicodeMap(0x1D504, 0x1D51E),
   C: 'ℭ',
@@ -219,7 +219,7 @@ const gothicUnicodeMap = {
   R: 'ℜ',
   Z: 'ℨ'
 };
-const monospaceUnicodeMap = unicodeMap(0x1D670, 0x1D68A, 0x1D7F6);
+export const monospaceUnicodeMap = unicodeMap(0x1D670, 0x1D68A, 0x1D7F6);
 const doubleStruckUnicodeMap = {
   ...unicodeMap(0x1D538, 0x1D552, 0x1D7D8),
   C: 'ℂ',
@@ -266,7 +266,7 @@ function transformCircled(value: string): string {
   }).join('');
 }
 
-function transformSquared(value: string): string {
+export function transformSquared(value: string): string {
   return [...value.toUpperCase()].map(c => {
     const code = c.charCodeAt(0);
     if (code >= 65 && code <= 90) return String.fromCodePoint(0x1F130 + code - 65);
@@ -278,7 +278,7 @@ function transformUpsideDown(value: string): string {
   return [...value].reverse().map(c => upsideDownMap[c] || c).join('');
 }
 
-function transformFullwidth(value: string): string {
+export function transformFullwidth(value: string): string {
   return [...value].map(c => {
     const code = c.charCodeAt(0);
     if (code >= 33 && code <= 126) return String.fromCodePoint(code + 0xFEE0);
@@ -310,7 +310,7 @@ function renderBioVariations(groups: { title: string; text: string; note: string
   return '<div class="intent-card-list">' + groups.map(group => '<article class="intent-wide-card"><div class="result-card-top"><div><span class="result-label">' + escapeHtml(group.title) + '</span><p class="intent-mini-note">' + escapeHtml(group.note) + '</p></div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(group.text) + '">Copy</button></div><div class="result-text">' + escapeHtml(group.text) + '</div><p class="result-note">' + group.text.length + ' characters</p></article>').join('') + '</div>';
 }
 
-function renderSectionSuite(title: string, sections: { title: string; body: string; note?: string }[], footer = ''): string {
+export function renderSectionSuite(title: string, sections: { title: string; body: string; note?: string }[], footer = ''): string {
   const allText = title + '\n\n' + sections.map(section => section.title + '\n' + section.body).join('\n\n');
   return '<div class="intent-section-suite"><div class="intent-suite-heading"><div><span class="result-label">' + escapeHtml(title) + '</span>' + (footer ? '<p class="intent-mini-note">' + escapeHtml(footer) + '</p>' : '') + '</div><button class="copy-btn result-copy" type="button" data-copy="' + escapeHtml(allText) + '">Copy All</button></div>' + sections.map(section => {
     const safeBody = escapeHtml(section.body);
@@ -328,7 +328,7 @@ function renderHeadlineGroups(groups: { title: string; note: string; items?: str
   }).join('') + '</div>';
 }
 
-function filterGroupsByOption<T extends { title: string }>(groups: T[], selected: string): T[] {
+export function filterGroupsByOption<T extends { title: string }>(groups: T[], selected: string): T[] {
   if (!selected || selected === 'all') return groups;
   const wanted = selected.toLowerCase();
   const filtered = groups.filter(group => slugWords(group.title).join('-') === wanted || slugWords(group.title).join('-').includes(wanted));
@@ -477,6 +477,50 @@ function updateUndoRedoButtons() {
   }
 }
 
+async function copyText(value: string, trigger?: HTMLElement | null): Promise<void> {
+  await navigator.clipboard.writeText(value);
+  if (!trigger) return;
+  const original = trigger.textContent || 'Copy';
+  trigger.textContent = 'Copied!';
+  trigger.classList.add('copied');
+  setTimeout(() => {
+    trigger.textContent = original;
+    trigger.classList.remove('copied');
+  }, 1600);
+}
+
+function renderPremiumOutput(raw: string, html = ''): void {
+  const safeRaw = raw.trim();
+  output.dataset.copyText = safeRaw;
+  if (!safeRaw && !html) {
+    output.innerHTML = '<div class="empty-output">Your generated results will appear here.</div>';
+    output.classList.add('empty');
+    return;
+  }
+
+  let rendered = '';
+  if (html || outputFormat === 'image' || outputFormat === 'html') {
+    rendered = '<div class="visual-result-panel">' + html + '</div>';
+  } else if (toolSlug.includes('business') || toolSlug.includes('brand') || toolSlug.includes('domain')) {
+    rendered = renderBusinessCards(safeRaw);
+  } else if (toolSlug.includes('tag') || toolSlug.includes('hashtag')) {
+    rendered = renderGroupedTags(safeRaw);
+  } else if (toolType === 'random-combo' || toolSlug.includes('name-generator')) {
+    rendered = renderList(safeRaw);
+  } else if (toolType === 'text-transform') {
+    rendered = renderCards(safeRaw);
+  } else if (toolType === 'template') {
+    rendered = renderSections(safeRaw);
+  } else if (toolType === 'visual') {
+    rendered = renderSections(safeRaw);
+  } else {
+    rendered = renderSections(safeRaw);
+  }
+
+  output.innerHTML = rendered || renderRaw(safeRaw);
+  output.classList.remove('empty');
+}
+
 async function generate() {
   trackGenerate(toolSlug);
 
@@ -492,7 +536,26 @@ async function generate() {
     randomPhrases, guildAdj, guildNouns, planetPrefixes, planetSuffixes, islandPrefixes, islandSuffixes,
     wrestleAdj, wrestleNouns, leetMap, dwarfFirst, dwarfLast, dwarfClan, tiefFirst, hpFirst, hpLast,
     pokePrefixes, pokeSuffixes, schoolNames, schoolTypes, streetNames, streetTypes, pass19NameConfigs,
-    morseMap, buildYouTubeTagSuite
+    morseMap, buildYouTubeTagSuite,
+    seedNumber, makeHslColor, renderColorPalette, renderCssButtonOutput, hexToRgb,
+    renderPreviewCodeSuite, renderPickerWheel, buildStorePolicySuite, makeDiscoveryTagGroups,
+    renderHashtagGroups, buildXPostSuite, hslToRgb, rgbToHex, uniqueItems,
+    makeNameIdeaGroups, buildChatGptPromptSuite, buildSamplePlaceholderSuite,
+    buildBusinessDocumentSuite, renderPriceTags,
+    buildAo3TagGroups, buildAsciiSections, buildImagePromptSections, buildOldEnglishStyles,
+    buildPass19Memes, buildPass19NameGroups, buildPass19Testimonials, buildPass22EstimateSections,
+    buildPass22ProposalSections, buildPass22ShortCodeGroups, buildPass22TextSections,
+    buildPass23RandomGroups, buildPass23SectionSuite, buildPass23TemplateSections,
+    buildPass23UtilityGroups, buildPass24FantasyLanguageSections, buildPass24NameGroups,
+    buildPass24TextSections, buildPass24UtilitySections, buildPass25CreatureGroups,
+    buildPass25TextSections, buildPass26RandomGroups, buildPass26UtilityGroups,
+    buildPass27BusinessSections, buildPass27DeveloperSections, buildPass27PlatformGroups,
+    buildPass29HumorGroups, buildPass29MarketplaceSections, buildPass29SecretGroups,
+    buildPass29SocialGroups, buildPass29TemplateSections, buildPinterestKeywordSuite,
+    buildPremiumBreadcrumbs, buildPremiumNameTags, buildPremiumPassphrase,
+    buildPremiumRandomIds, buildSerifSections, buildSoundCloudTagSuite,
+    buildSpecialCharacterGroups, contrastRatio, gibConsonants, gibVowels,
+    reasonedText, renderReasonedTagGroups
   } = datasets;
 
   if (output) {
@@ -5473,17 +5536,7 @@ async function generate() {
         return Array.from(arr).map(b => chars[b % 36]).join('');
       };
 
-      const codes = Array.from({ length: 10 }, () => {
-        const part1 = getSecureCode(4);
-        const part2 = getSecureCode(4);
-        const part3 = getSecureCode(4);
-        return `${part1}-
-${part2}-
-${part3}`.replace(/\n/g, ''); // avoid line wrap issue
-      });
-
-      const formattedCodes = codes.map((c, i) => `${part1(c)}-${part2(c)}-${part3(c)}`);
-      // Wait, let's write a simpler direct representation to avoid extra helper dependencies
+       // Wait, let's write a simpler direct representation to avoid extra helper dependencies
       const directCodes = Array.from({ length: 10 }, () => {
         const part1 = getSecureCode(4);
         const part2 = getSecureCode(4);

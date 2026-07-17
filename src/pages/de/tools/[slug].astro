@@ -42,6 +42,7 @@ interface Props {
 
 const { tool, localized } = Astro.props;
 const slug = tool.slug;
+const locale: string = 'de';
 
 const resolvedLocalization = getLocalizedToolBySlug(Astro.params.slug || '', 'de');
 if (!resolvedLocalization || resolvedLocalization.canonicalToolId !== slug) {

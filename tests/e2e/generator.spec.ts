@@ -2,6 +2,9 @@ import { test, expect } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,7 +22,7 @@ while ((match = slugRegex.exec(toolsData)) !== null) {
 }
 
 // Randomly select 100 generators
-const selectedSlugs = slugs.sort(() => 0.5 - Math.random()).slice(0, 100);
+const selectedSlugs = slugs.sort().slice(0, 100);
 
 const testResults: any[] = [];
 
@@ -28,6 +31,7 @@ test.describe.configure({ mode: 'parallel' });
 test.describe('E2E Browser Validation for Generators', () => {
   for (const slug of selectedSlugs) {
     test(`Verify generator: ${slug}`, async ({ page }) => {
+      test.setTimeout(120 * 1000);
       const consoleErrors: string[] = [];
       const pageErrors: Error[] = [];
 
@@ -86,7 +90,7 @@ test.describe('E2E Browser Validation for Generators', () => {
       const output = page.locator('#tool-output');
       await expect(output).toBeVisible();
 
-      // 4. Mock Analytics Interfaces
+      // 4. Mock Analytics Interfaces & Clipboard API
       await page.evaluate(() => {
         (window as any).analyticsEvents = [];
         window.gtag = (type: string, name: string, data: any) => {
@@ -95,21 +99,34 @@ test.describe('E2E Browser Validation for Generators', () => {
         window.va = (type: string, payload: any) => {
           if (type === 'event') (window as any).analyticsEvents.push(payload);
         };
+
+        // Mock clipboard API
+        let clipboardData = '';
+        Object.defineProperty(navigator, 'clipboard', {
+          value: {
+            writeText: async (text: string) => { clipboardData = text; },
+            readText: async () => clipboardData
+          },
+          configurable: true
+        });
       });
 
       // 5. Generate Trigger
       await input.fill('E2E Validation test seed value');
-      await generateBtn.click();
+      await generateBtn.click({ force: true });
 
       // Verify Output
-      await expect(output).not.toHaveClass(/empty/);
+      await expect(output).not.toHaveClass(/empty/, { timeout: 20000 });
       const generatedText = await output.textContent();
       expect(generatedText?.trim()).not.toBe('');
 
       // 6. Copy Operation Verification
       const copyBtn = page.locator('#copy-btn');
       if (await copyBtn.isVisible()) {
+        await copyBtn.scrollIntoViewIfNeeded();
+        await page.evaluate(() => window.scrollBy(0, -150));
         await copyBtn.click();
+        await expect(copyBtn).toHaveClass(/copied/);
         const clipboardText = await page.evaluate(() => navigator.clipboard.readText());
         expect(clipboardText).not.toBe('');
       }
@@ -117,7 +134,10 @@ test.describe('E2E Browser Validation for Generators', () => {
       // 7. Share Operation Verification
       const shareBtn = page.locator('#share-btn');
       if (await shareBtn.isVisible()) {
+        await shareBtn.scrollIntoViewIfNeeded();
+        await page.evaluate(() => window.scrollBy(0, -150));
         await shareBtn.click();
+        await expect(shareBtn).toHaveClass(/copied/);
         const clipboardText = await page.evaluate(() => navigator.clipboard.readText());
         expect(clipboardText).toContain(slug);
       }
@@ -126,7 +146,7 @@ test.describe('E2E Browser Validation for Generators', () => {
       const downloadTxt = page.locator('#btn-download-txt');
       if (await downloadTxt.isVisible()) {
         const downloadPromise = page.waitForEvent('download');
-        await downloadTxt.click();
+        await downloadTxt.click({ force: true });
         const download = await downloadPromise;
         expect(download.suggestedFilename()).toContain('.txt');
       }

@@ -38,18 +38,16 @@ export const createWorkspace = wrapErrorBoundary(async function (
     const isBusiness = toolSlug.includes('business') || toolSlug.includes('domain') || toolSlug.includes('product') || toolSlug.includes('slogan') || toolSlug.includes('invoice') || toolSlug.includes('receipt') || toolSlug.includes('email-signature') || toolSlug.includes('sku') || toolSlug.includes('coupon') || toolSlug.includes('agenda') || toolSlug.includes('minutes') || toolSlug.includes('startup') || toolSlug.includes('brand-kit') || toolSlug.includes('tagline') || toolSlug.includes('poster') || toolSlug.includes('flyer');
     const isLegal = toolSlug.includes('policy') || toolSlug.includes('terms') || toolSlug.includes('disclaimer') || toolSlug.includes('disclosure');
     
-    if (isNameGen || isWriting || isDevUtility || isBusiness || isLegal) {
-      const { mergeConfig } = await import('../../config/base');
-      activeConfig = mergeConfig(toolSlug, {
-        counters: { chars: true, glyphs: false, words: true, lines: true },
-        previews: (isNameGen || isBusiness) ? ['ig', 'tw'] : ['ig', 'fb', 'tw', 'ds', 'wa', 'tt', 'tg', 'yt', 'tv', 'un'],
-        history: true,
-        search: true,
-        favorites: true,
-        shortcuts: true,
-        exporters: (isNameGen || isDevUtility || isBusiness || isLegal) ? ['txt', 'csv', 'html', 'json'] : ['txt', 'html', 'json', 'csv']
-      });
-    }
+    const { mergeConfig } = await import('../../config/base');
+    activeConfig = mergeConfig(toolSlug, {
+      counters: { chars: true, glyphs: false, words: true, lines: true },
+      previews: (isNameGen || isBusiness) ? ['ig', 'tw'] : ['ig', 'fb', 'tw', 'ds', 'wa', 'tt', 'tg', 'yt', 'tv', 'un'],
+      history: true,
+      search: true,
+      favorites: true,
+      shortcuts: true,
+      exporters: (isNameGen || isDevUtility || isBusiness || isLegal) ? ['txt', 'csv', 'html', 'json'] : ['txt', 'html', 'json', 'csv']
+    });
   }
 
   if (!activeConfig) {
@@ -139,19 +137,21 @@ export const createWorkspace = wrapErrorBoundary(async function (
   }
 
   const copyBtnAll = document.getElementById('copy-btn');
-  if (copyBtnAll) {
+  const workspaceEl = document.getElementById('tool-workspace');
+  const isTextTransform = workspaceEl?.dataset.type === 'text-transform';
+  if (copyBtnAll && isTextTransform) {
     const newCopyBtn = copyBtnAll.cloneNode(true) as HTMLElement;
     copyBtnAll.parentNode?.replaceChild(newCopyBtn, copyBtnAll);
     
     newCopyBtn.addEventListener('click', async () => {
-      const visibleCards = Array.from(document.querySelectorAll('.intent-style-card'))
+      const visibleCards = Array.from(document.querySelectorAll('.intent-style-card, .intent-wide-card, .result-card'))
         .filter(card => (card as HTMLElement).style.display !== 'none');
       
       const copyTextList = visibleCards.map(card => {
         const name = card.querySelector('.result-label')?.textContent?.trim() || '';
-        const preview = card.querySelector('.intent-preview-text')?.textContent || '';
-        return `${name}: ${preview}`;
-      }).join('\n');
+        const preview = card.querySelector('.intent-preview-text, .intent-section-pre, .result-text')?.textContent || '';
+        return name ? `${name}: ${preview}` : preview;
+      }).filter(Boolean).join('\n');
       
       if (copyTextList) {
         const { ClipboardHelper } = await import('./clipboard');
