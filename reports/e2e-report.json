@@ -3,7 +3,7 @@
     "totalTested": 100,
     "passed": 100,
     "failed": 0,
-    "averageRenderTimeMs": 5997
+    "averageRenderTimeMs": 6046
   },
   "results": [
     {
@@ -427,10 +427,10 @@
     {
       "slug": "book-club-name-generator",
       "status": "PASSED",
-      "renderTime": 6579,
-      "fcp": 1532,
-      "lcp": 1532,
-      "tti": 5319,
+      "renderTime": 7679,
+      "fcp": 4092,
+      "lcp": 4092,
+      "tti": 6342,
       "accessibilityViolations": 0,
       "errors": [],
       "cached": true
@@ -735,10 +735,10 @@
     {
       "slug": "club-name-generator",
       "status": "PASSED",
-      "renderTime": 7168,
-      "fcp": 1796,
-      "lcp": 1796,
-      "tti": 4946,
+      "renderTime": 7770,
+      "fcp": 1436,
+      "lcp": 1436,
+      "tti": 5126,
       "accessibilityViolations": 0,
       "errors": [],
       "cached": true
@@ -834,13 +834,12 @@
     {
       "slug": "comeback-generator",
       "status": "PASSED",
-      "renderTime": 8461,
-      "fcp": 1392,
-      "lcp": 1392,
-      "tti": 5122,
+      "renderTime": 10752,
+      "fcp": 4412,
+      "lcp": 4412,
+      "tti": 7279,
       "accessibilityViolations": 0,
-      "errors": [],
-      "cached": true
+      "errors": []
     },
     {
       "slug": "compliment-generator",
@@ -850,7 +849,8 @@
       "lcp": 3272,
       "tti": 6491,
       "accessibilityViolations": 0,
-      "errors": []
+      "errors": [],
+      "cached": true
     },
     {
       "slug": "content-brief-generator",
@@ -877,10 +877,10 @@
     {
       "slug": "contract-generator",
       "status": "PASSED",
-      "renderTime": 5145,
-      "fcp": 1096,
-      "lcp": 1096,
-      "tti": 3538,
+      "renderTime": 6036,
+      "fcp": 1016,
+      "lcp": 1016,
+      "tti": 4140,
       "accessibilityViolations": 0,
       "errors": []
     },

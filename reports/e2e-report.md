@@ -7,7 +7,7 @@
 | **Total Generators Tested** | 100 |
 | **Passed** | 100 🟢 |
 | **Failed** | 0 🔴 |
-| **Average Render Time** | 5997 ms |
+| **Average Render Time** | 6046 ms |
 
 ## Performance Profiles
 
@@ -51,7 +51,7 @@
 | blog-outline-generator | 6542 | 1428 | 1428 | 4866 | 0 |
 | blog-tag-generator | 8163 | 2604 | 2604 | 6703 | 0 |
 | bold-text-generator | 7948 | 1564 | 1564 | 6237 | 0 |
-| book-club-name-generator | 6579 | 1532 | 1532 | 5319 | 0 |
+| book-club-name-generator | 7679 | 4092 | 4092 | 6342 | 0 |
 | book-name-generator | 6084 | 1640 | 1640 | 4610 | 0 |
 | border-radius-generator | 5860 | 1700 | 1700 | 4206 | 0 |
 | box-shadow-generator | 5930 | 1456 | 1456 | 4332 | 0 |
@@ -79,7 +79,7 @@
 | clan-name-generator | 7609 | 1460 | 1460 | 5024 | 0 |
 | clan-tag-generator | 7661 | 1468 | 1468 | 5086 | 0 |
 | clothing-tag-generator | 6401 | 1528 | 1528 | 4375 | 0 |
-| club-name-generator | 7168 | 1796 | 1796 | 4946 | 0 |
+| club-name-generator | 7770 | 1436 | 1436 | 5126 | 0 |
 | cocktail-name-generator | 7078 | 1452 | 1452 | 4211 | 0 |
 | coffee-shop-name-generator | 5927 | 1636 | 1636 | 4577 | 0 |
 | coin-flip | 5754 | 1560 | 1560 | 4134 | 0 |
@@ -88,11 +88,11 @@
 | color-name-generator | 4673 | 1040 | 1040 | 3276 | 0 |
 | color-palette-generator | 5329 | 1220 | 1220 | 4007 | 0 |
 | color-palette-generator-from-name | 5071 | 1716 | 1716 | 3909 | 0 |
-| comeback-generator | 8461 | 1392 | 1392 | 5122 | 0 |
+| comeback-generator | 10752 | 4412 | 4412 | 7279 | 0 |
 | compliment-generator | 8654 | 3272 | 3272 | 6491 | 0 |
 | content-brief-generator | 5076 | 1236 | 1236 | 3874 | 0 |
 | content-calendar-generator | 5470 | 1168 | 1168 | 3590 | 0 |
-| contract-generator | 5145 | 1096 | 1096 | 3538 | 0 |
+| contract-generator | 6036 | 1016 | 1016 | 4140 | 0 |
 | cookie-policy-generator | 3299 | 764 | 764 | 2375 | 0 |
 | cool-text-generator | 4015 | 840 | 840 | 2778 | 0 |
 | corporate-speak-generator | 3846 | 980 | 980 | 2669 | 0 |
