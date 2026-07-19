@@ -29,6 +29,12 @@ export function buildSchemas(options: SchemaOptions): object[] {
   const cleanDescription = cleanHtml(description);
   const cleanTitle = cleanHtml(title);
 
+  const customTypes = new Set(
+    customSchemas
+      .map(s => s && (s as any)['@type'])
+      .filter(Boolean)
+  );
+
   // Common objects
   const organizationSchema = {
     '@context': 'https://schema.org',
@@ -149,7 +155,7 @@ export function buildSchemas(options: SchemaOptions): object[] {
 
   // BreadcrumbList
   const breadcrumbs = getBreadcrumbs(pathname, lang, cleanTitle);
-  if (breadcrumbs.length > 1) {
+  if (breadcrumbs.length > 1 && !customTypes.has('BreadcrumbList')) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
@@ -163,7 +169,7 @@ export function buildSchemas(options: SchemaOptions): object[] {
   }
 
   // WebApplication (for dynamic tool pages)
-  if (isToolDetail) {
+  if (isToolDetail && !customTypes.has('WebApplication')) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
@@ -185,29 +191,33 @@ export function buildSchemas(options: SchemaOptions): object[] {
 
   // CollectionPage & ItemList (Categories / Hubs)
   if (isCategoryDetail || isHub || isCategoriesIndex || isToolsIndex) {
-    schemas.push({
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      '@id': `${canonicalUrl}#collection`,
-      url: canonicalUrl,
-      name: cleanTitle,
-      description: cleanDescription,
-      inLanguage: lang
-    });
+    if (!customTypes.has('CollectionPage')) {
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': `${canonicalUrl}#collection`,
+        url: canonicalUrl,
+        name: cleanTitle,
+        description: cleanDescription,
+        inLanguage: lang
+      });
+    }
 
     // ItemList container for navigation list paths
-    schemas.push({
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      '@id': `${canonicalUrl}#itemlist`,
-      name: cleanTitle,
-      url: canonicalUrl,
-      numberOfItems: 4
-    });
+    if (!customTypes.has('ItemList')) {
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        '@id': `${canonicalUrl}#itemlist`,
+        name: cleanTitle,
+        url: canonicalUrl,
+        numberOfItems: 4
+      });
+    }
   }
 
   // HowTo (if steps are provided)
-  if (howToSteps.length > 0) {
+  if (howToSteps.length > 0 && !customTypes.has('HowTo')) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'HowTo',
@@ -223,7 +233,7 @@ export function buildSchemas(options: SchemaOptions): object[] {
   }
 
   // ImageObject (if imageUrl is resolved)
-  if (imageUrl) {
+  if (imageUrl && !customTypes.has('ImageObject')) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'ImageObject',
@@ -234,7 +244,7 @@ export function buildSchemas(options: SchemaOptions): object[] {
   }
 
   // BlogPosting / Article (for blog details)
-  if (isBlog && pathParts.length > (isLocalized ? 2 : 1)) {
+  if (isBlog && pathParts.length > (isLocalized ? 2 : 1) && !customTypes.has('BlogPosting')) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',
@@ -252,7 +262,7 @@ export function buildSchemas(options: SchemaOptions): object[] {
   }
 
   // FAQPage (if items are present)
-  if (faqItems.length > 0) {
+  if (faqItems.length > 0 && !customTypes.has('FAQPage')) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',

@@ -167,6 +167,7 @@ export const createWorkspace = wrapErrorBoundary(async function (
 
   const duration = endMark('workspace-init');
   logger.info(`Workspace for "${toolSlug}" successfully initialized in ${duration.toFixed(2)}ms`);
+  document.getElementById('tool-workspace')?.setAttribute('data-hydrated', 'true');
 
   setTimeout(() => {
     observeBundlePerformance();

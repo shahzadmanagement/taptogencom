@@ -17,6 +17,7 @@ class MockHtmlElement {
     this.dataset = {};
   }
   addEventListener() {}
+  setAttribute() {}
   cloneNode() {
     return new MockHtmlElement();
   }
@@ -34,7 +35,8 @@ globalThis.document = {
     if (id === 'tool-workspace') {
       return {
         dataset: { tool: 'slogan-generator', type: 'utility', format: 'text' },
-        addEventListener: () => {}
+        addEventListener: () => {},
+        setAttribute: () => {}
       };
     }
     return new MockHtmlElement();
@@ -202,7 +204,8 @@ async function runGenerator(slug, inputVal = 'test seed', optionVals = {}) {
       if (id === 'tool-workspace') {
         return {
           dataset: { tool: slug, type: 'utility', format: 'text' },
-          addEventListener: () => {}
+          addEventListener: () => {},
+          setAttribute: () => {}
         };
       }
       if (id === 'tool-input') return mockInput;

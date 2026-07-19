@@ -61,6 +61,26 @@ function labelForItem(index: number): string {
   return labels[index % labels.length];
 }
 
+function getFallbackText(safeText: string): string {
+  if (typeof document !== 'undefined') {
+    const ws = document.getElementById('tool-workspace');
+    if (ws && ws.dataset.tool) {
+      const toolSlug = ws.dataset.tool;
+      const isFontGen = toolSlug.includes('text-generator') || toolSlug.includes('font-generator') || toolSlug.includes('converter');
+      if (isFontGen) {
+        const inputEl = document.getElementById('tool-input') as HTMLTextAreaElement | null;
+        if (inputEl && inputEl.value && inputEl.value.trim().length > 0) {
+          const orig = inputEl.value.trim();
+          if (orig !== safeText) {
+            return `<span aria-label="${escapeHtml(orig)}">${safeText}</span>`;
+          }
+        }
+      }
+    }
+  }
+  return safeText;
+}
+
 function renderResultCard(text: string, label: string): string {
   const safeText = escapeHtml(text);
   const safeLabel = escapeHtml(label);
@@ -130,7 +150,8 @@ function renderResultCard(text: string, label: string): string {
     ? '<button class="fav-btn" type="button" data-fav-style="' + safeText + '" aria-label="Favorite style">☆</button>'
     : '';
 
-  return '<article class="result-card" data-style-name="' + safeText + '"><div class="result-card-top"><span class="result-label">' + safeLabel + '</span><div style="display: flex; align-items: center; gap: 6px;">' + favBtn + '<button class="copy-btn result-copy" type="button" data-copy="' + safeText + '">Copy</button></div></div><div class="result-text">' + safeText + '</div></article>';
+  const fallbackWrappedText = getFallbackText(safeText);
+  return '<article class="result-card" data-style-name="' + safeText + '"><div class="result-card-top"><span class="result-label">' + safeLabel + '</span><div style="display: flex; align-items: center; gap: 6px;">' + favBtn + '<button class="copy-btn result-copy" type="button" data-copy="' + safeText + '">Copy</button></div></div><div class="result-text">' + fallbackWrappedText + '</div></article>';
 }
 
 function renderSections(raw: string): string {
@@ -478,7 +499,26 @@ function updateUndoRedoButtons() {
 }
 
 async function copyText(value: string, trigger?: HTMLElement | null): Promise<void> {
-  await navigator.clipboard.writeText(value);
+  try {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      await navigator.clipboard.writeText(value);
+    } else {
+      throw new Error('Clipboard API unavailable');
+    }
+  } catch (err) {
+    const textarea = document.createElement('textarea');
+    textarea.value = value;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand('copy');
+    } catch (e) {
+      console.error('Fallback copy failed:', e);
+    }
+    document.body.removeChild(textarea);
+  }
   if (!trigger) return;
   const original = trigger.textContent || 'Copy';
   trigger.textContent = 'Copied!';
@@ -690,7 +730,7 @@ async function generate() {
     const groups = buildPass22ShortCodeGroups(text, mode);
     result = groups.map(group => group.title + '\n' + group.items.join('\n')).join('\n\n');
     resultHtml = renderHeadlineGroups(groups, 'Short code ideas and naming patterns only. No official system validation, uniqueness, or availability is claimed.');
-  } else if (['random-number-generator','random-phrase-generator','random-text-generator','gibberish-generator','random-question-generator','truth-or-dare-generator','would-you-rather-generator','joke-generator','compliment-generator','random-word-generator'].includes(toolSlug)) {
+  } else if (['random-phrase-generator','random-text-generator','gibberish-generator','random-question-generator','truth-or-dare-generator','would-you-rather-generator','joke-generator','compliment-generator','random-word-generator'].includes(toolSlug)) {
     const style = optionValue('pass23-style', 'all');
     const groups = buildPass23RandomGroups(toolSlug, text, style);
     result = groups.map(group => group.title + '\n' + group.items.join('\n')).join('\n\n');
@@ -1936,21 +1976,19 @@ async function generate() {
         + `X/Twitter Post (280 chars): ${totalCharCount <= 280 ? 'fits' : totalCharCount - 280 + ' over'}\n`
         + `LinkedIn Post (3000 chars): ${totalCharCount <= 3000 ? 'fits' : totalCharCount - 3000 + ' over'}\n`
         + `Instagram Caption (2200 chars): ${totalCharCount <= 2200 ? 'fits' : totalCharCount - 2200 + ' over'}`;
-
       const sections = [
         { title: 'Count Summary', body: summary, note: 'Core text metrics and time indicators.' },
         { title: 'Readability Metrics', body: readability, note: 'Standard educational reading level estimation.' },
         { title: 'Keyword & Phrase Density', body: densityReport, note: 'Top repeated terms and 2-word phrases.' },
         { title: 'Platform Target Checks', body: platformCheck, note: 'Character limits verification.' }
       ];
-
       result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
       resultHtml = renderSectionSuite('Word Counter Dominator Report', sections, 'All text analysis is executed client-side in your browser. Readability scores are mathematical estimates.');
       break;
     }
     case 'uuid-generator': {
       const version = optionValue('uuid-version', 'v4');
-      const count = Math.max(1, Math.min(50, Number(optionValue('uuid-count', '8')) || 8));
+      const count = Math.max(1, Math.min(100, Number(optionValue('uuid-count', '8')) || 8));
       const caseMode = optionValue('uuid-case', 'lowercase');
       const hyphenMode = optionValue('uuid-hyphens', 'with');
 
@@ -1959,13 +1997,13 @@ async function generate() {
         crypto.getRandomValues(bytes);
         const timestamp = Date.now();
         bytes[0] = (timestamp / 0x10000000000) & 0xff;
-        bytes[1] = (timestamp / 0x100000000) & 0xff;
-        bytes[2] = (timestamp / 0x1000000) & 0xff;
-        bytes[3] = (timestamp / 0x10000) & 0xff;
-        bytes[4] = (timestamp / 0x100) & 0xff;
+        bytes[1] = (timestamp / 0x10000000) & 0xff;
+        bytes[2] = (timestamp / 0x100000) & 0xff;
+        bytes[3] = (timestamp / 0x1000) & 0xff;
+        bytes[4] = (timestamp / 0x10) & 0xff;
         bytes[5] = timestamp & 0xff;
-        bytes[6] = (bytes[6] & 0x0f) | 0x70; // Set version to 7
-        bytes[8] = (bytes[8] & 0x3f) | 0x80; // Set variant to RFC 4122
+        bytes[6] = (bytes[6] & 0x0f) | 0x70;
+        bytes[8] = (bytes[8] & 0x3f) | 0x80;
         const hex = Array.from(bytes).map(b => b.toString(16).padStart(2, '0')).join('');
         return [
           hex.slice(0, 8),
@@ -1976,10 +2014,53 @@ async function generate() {
         ].join('-');
       };
 
+      const generateUUIDv8 = () => {
+        const bytes = new Uint8Array(16);
+        crypto.getRandomValues(bytes);
+        const timestamp = Date.now();
+        bytes[0] = (timestamp / 0x10000000000) & 0xff;
+        bytes[1] = (timestamp / 0x10000000) & 0xff;
+        bytes[2] = (timestamp / 0x100000) & 0xff;
+        bytes[3] = (timestamp / 0x1000) & 0xff;
+        bytes[4] = (timestamp / 0x10) & 0xff;
+        bytes[5] = timestamp & 0xff;
+        bytes[6] = (bytes[6] & 0x0f) | 0x80;
+        bytes[8] = (bytes[8] & 0x3f) | 0x80;
+        const hex = Array.from(bytes).map(b => b.toString(16).padStart(2, '0')).join('');
+        return [
+          hex.slice(0, 8),
+          hex.slice(8, 12),
+          hex.slice(12, 16),
+          hex.slice(16, 20),
+          hex.slice(20, 32)
+        ].join('-');
+      };
+
+      const generateUlid = () => {
+        const alphabet = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+        const timestamp = Date.now();
+        const randBytes = new Uint8Array(16);
+        crypto.getRandomValues(randBytes);
+        
+        let timeStr = '';
+        let timeVal = timestamp;
+        for (let i = 0; i < 10; i++) {
+          timeStr = alphabet[timeVal % 32] + timeStr;
+          timeVal = Math.floor(timeVal / 32);
+        }
+        
+        let randStr = '';
+        for (let i = 0; i < 16; i++) {
+          randStr += alphabet[randBytes[i] % 32];
+        }
+        
+        return timeStr + randStr;
+      };
+
       if (!(window as any)._uuidV1State) {
         const nodeId = new Uint8Array(6);
         crypto.getRandomValues(nodeId);
-        nodeId[0] |= 0x01; // Multicast bit
+        nodeId[0] |= 0x01;
         (window as any)._uuidV1State = {
           clockSeq: Math.floor(Math.random() * 0x3fff),
           nodeId
@@ -1995,34 +2076,161 @@ async function generate() {
 
         const hexTimeLow = timeLow.toString(16).padStart(8, '0');
         const hexTimeMid = timeMid.toString(16).padStart(4, '0');
-        const hexTimeHi = (timeHi | 0x1000).toString(16).padStart(4, '0'); // v1
+        const hexTimeHi = (timeHi | 0x1000).toString(16).padStart(4, '0');
 
         const cSeq = (v1State.clockSeq++) & 0x3fff;
-        const hexClockSeq = (cSeq | 0x8000).toString(16).padStart(4, '0'); // variant 1
+        const hexClockSeq = (cSeq | 0x8000).toString(16).padStart(4, '0');
 
         const hexNode = Array.from(v1State.nodeId as Uint8Array).map(b => b.toString(16).padStart(2, '0')).join('');
         return `${hexTimeLow}-${hexTimeMid}-${hexTimeHi}-${hexClockSeq}-${hexNode}`;
       };
 
       const formatUuid = (value: string) => {
+        if (version === 'ulid') {
+          return caseMode === 'lowercase' ? value.toLowerCase() : value.toUpperCase();
+        }
         let formatted = hyphenMode === 'without' ? value.replace(/-/g, '') : value;
         formatted = caseMode === 'uppercase' ? formatted.toUpperCase() : formatted.toLowerCase();
         return formatted;
       };
 
+      const analyzeUUID = (uuidStr: string) => {
+        const clean = uuidStr.trim().replace(/[{}]/g, '');
+        const uuidRegex = /^[0-9a-fA-F]{8}-?[0-9a-fA-F]{4}-?[0-9a-fA-F]{4}-?[0-9a-fA-F]{4}-?[0-9a-fA-F]{12}$/;
+        const ulidRegex = /^[0-7][0-9A-HJKMNP-TV-Z]{25}$/i;
+
+        if (ulidRegex.test(clean) && clean.length === 26) {
+          const alphabet = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+          const timePart = clean.toUpperCase().slice(0, 10);
+          let timeVal = 0;
+          for (let i = 0; i < 10; i++) {
+            timeVal = timeVal * 32 + alphabet.indexOf(timePart[i]);
+          }
+          const date = new Date(timeVal);
+          const dateStr = isNaN(date.getTime()) ? 'Invalid Time' : date.toISOString();
+          return {
+            isValid: true,
+            version: 'ULID',
+            variant: 'Lexicographically Sortable Identifier',
+            timestamp: dateStr,
+            warnings: ["ULID Best Practice: Excellent choice for database keys to prevent B-tree fragmentation while maintaining millisecond precision order."]
+          };
+        }
+
+        if (!uuidRegex.test(clean)) {
+          return {
+            isValid: false,
+            version: 'Unknown',
+            variant: 'Unknown',
+            warnings: ["Invalid Format: Ensure the input matches standard 36-char string formats containing 4 hyphens."]
+          };
+        }
+
+        const raw = clean.replace(/-/g, '');
+        const verDigit = parseInt(raw[12], 16);
+        const varDigit = parseInt(raw[16], 16);
+
+        let ver = `v${verDigit}`;
+        if (verDigit < 1 || verDigit > 8) ver = 'Non-standard';
+
+        let variant = 'Reserved / Unknown';
+        if ((varDigit & 0x8) === 0) {
+          variant = 'NCS Backward Compatibility';
+        } else if ((varDigit & 0xc) === 0x8) {
+          variant = 'RFC 4122 / RFC 9562 (Standard)';
+        } else if ((varDigit & 0xe) === 0xc) {
+          variant = 'Microsoft GUID';
+        }
+
+        let timestampStr: string | undefined;
+        if (verDigit === 7) {
+          const timeMs = parseInt(raw.slice(0, 12), 16);
+          const date = new Date(timeMs);
+          timestampStr = isNaN(date.getTime()) ? 'Invalid Time' : date.toISOString();
+        }
+
+        const warnings: string[] = [];
+        if (verDigit === 1) {
+          warnings.push("Privacy Warning: UUIDv1 leaks host MAC device address and creation time details. Avoid public tokens.");
+        } else if (verDigit === 4) {
+          warnings.push("V4 Check: Fully random UUID. Verify CSPRNG randomness source implementation.");
+        } else if (verDigit === 7) {
+          warnings.push("V7 Check: Chronologically sorted UUID. Best for database index locality.");
+        }
+
+        return {
+          isValid: true,
+          version: ver,
+          variant,
+          timestamp: timestampStr,
+          warnings
+        };
+      };
+
+      if (text && text.trim()) {
+        const analysis = analyzeUUID(text);
+        const sections = [
+          { title: 'Provided Identifier', body: text.trim(), note: 'Custom validator input.' },
+          { title: 'Validation Status', body: analysis.isValid ? '✅ Valid Identifier Format' : '❌ Invalid Identifier Format', note: 'Checks matches against UUID/ULID structures.' }
+        ];
+
+        if (analysis.isValid) {
+          sections.push({
+            title: 'Metadata Analysis',
+            body: `Detected Type: ${analysis.version}\nVariant Scheme: ${analysis.variant}\nEmbedded Epoch Time: ${analysis.timestamp || 'N/A (No time-component)'}`,
+            note: 'Header version and variant bit flags inspection.'
+          });
+          if (analysis.warnings.length > 0) {
+            sections.push({
+              title: 'Security & Quality Diagnostics',
+              body: analysis.warnings.map((w, i) => `${i + 1}. ${w}`).join('\n'),
+              note: 'E-E-A-T architectural recommendations.'
+            });
+          }
+        }
+
+        result = text.trim();
+        resultHtml = renderSectionSuite('Custom Identifier Validator', sections, 'Tested against RFC 9562 / RFC 4122 specifications.');
+        break;
+      }
+
       const items = Array.from({ length: count }, () => {
+        if (version === 'ulid') return formatUuid(generateUlid());
+        if (version === 'v8') return formatUuid(generateUUIDv8());
         if (version === 'v7') return formatUuid(generateUUIDv7());
         if (version === 'v1') return formatUuid(generateUUIDv1());
         return formatUuid(crypto.randomUUID());
       });
 
-      result = items.join('\n');
-      resultHtml = renderHeadlineGroups([{ title: 'UUID Results', note: `${count} UUID ${version.toUpperCase()} value(s). Use as identifiers.`, items }], 'UUIDs are identifiers. Do not use them as passwords, API secrets, or authentication tokens.');
+      const formatType = optionValue('uuid-format', 'plain');
+      let finalOutput = '';
+      if (formatType === 'json') {
+        finalOutput = JSON.stringify(items, null, 2);
+      } else if (formatType === 'sql') {
+        finalOutput = 'VALUES\n' + items.map(x => `('${x}')`).join(',\n');
+      } else if (formatType === 'csv') {
+        finalOutput = items.join(', ');
+      } else {
+        finalOutput = items.join('\n');
+      }
+
+      result = finalOutput;
+      const sections = [
+        { title: 'Formatted UUID/ULID Output', body: finalOutput, note: `${count} ${version.toUpperCase()} identifier(s) formatted as ${formatType}.` },
+        {
+          title: 'Architectural Comparison (v1 vs v4 vs v7 vs ULID)',
+          body: `• UUIDv1: Time-based + MAC address. Leaks machine MAC address and precise timestamp. Deprecated for public tokens.\n• UUIDv4: 122 bits of full randomness. The standard choice for generic API/session identifiers.\n• UUIDv7: UNIX Epoch Milliseconds (48 bits) + Random bits. Chronologically sortable. Recommended for database primary keys.\n• ULID: 128-bit Base32 sorting format (10 timestamp chars + 16 random chars). Chronologically sortable, url-safe, and compact.`,
+          note: 'Guidelines matching RFC 9562 standards.'
+        }
+      ];
+      resultHtml = renderSectionSuite('UUID/ULID Generator Output', sections, 'UUIDs and ULIDs are unique identifiers. Do not use them as secure encryption keys or cryptographic passwords.');
       break;
     }
     case 'random-number-generator': {
-      const min = Number(optionValue('random-min', '1')) || 1;
-      const max = Number(optionValue('random-max', '100')) || 100;
+      const rawMin = Number(optionValue('random-min', '1'));
+      const min = isNaN(rawMin) ? 1 : rawMin;
+      const rawMax = Number(optionValue('random-max', '100'));
+      const max = isNaN(rawMax) ? 100 : rawMax;
       const low = Math.min(min, max);
       const high = Math.max(min, max);
       const quantity = Math.max(1, Math.min(100, Number(optionValue('random-quantity', '10')) || 10));
@@ -2736,22 +2944,198 @@ async function generate() {
       break;
     }
     case 'hash-generator': {
-      if (!text) { result = 'Please enter some text above.'; break; }
+      const defaultText = "hello";
+      const targetText = text || defaultText;
+
       try {
+        const md5 = (str: string): string => {
+          const rotateLeft = (lValue: number, iShiftBits: number) => (lValue << iShiftBits) | (lValue >>> (32 - iShiftBits));
+          const addUnsigned = (lX: number, lY: number) => {
+            const lX4 = (lX & 0x40000000);
+            const lY4 = (lY & 0x40000000);
+            const lX8 = (lX & 0x80000000);
+            const lY8 = (lY & 0x80000000);
+            const lResult = (lX & 0x3FFFFFFF) + (lY & 0x3FFFFFFF);
+            if (lX4 & lY4) return (lResult ^ 0x80000000 ^ lX8 ^ lY8);
+            if (lX4 | lY4) {
+              if (lResult & 0x40000000) return (lResult ^ 0xC0000000 ^ lX8 ^ lY8);
+              else return (lResult ^ 0x40000000 ^ lX8 ^ lY8);
+            } else {
+              return (lResult ^ lX8 ^ lY8);
+            }
+          };
+          const F = (x: number, y: number, z: number) => (x & y) | ((~x) & z);
+          const G = (x: number, y: number, z: number) => (x & z) | (y & (~z));
+          const H = (x: number, y: number, z: number) => (x ^ y ^ z);
+          const I = (x: number, y: number, z: number) => (y ^ (x | (~z)));
+          const FF = (a: number, b: number, c: number, d: number, x: number, s: number, ac: number) => {
+            a = addUnsigned(a, addUnsigned(addUnsigned(F(b, c, d), x), ac));
+            return addUnsigned(rotateLeft(a, s), b);
+          };
+          const GG = (a: number, b: number, c: number, d: number, x: number, s: number, ac: number) => {
+            a = addUnsigned(a, addUnsigned(addUnsigned(G(b, c, d), x), ac));
+            return addUnsigned(rotateLeft(a, s), b);
+          };
+          const HH = (a: number, b: number, c: number, d: number, x: number, s: number, ac: number) => {
+            a = addUnsigned(a, addUnsigned(addUnsigned(H(b, c, d), x), ac));
+            return addUnsigned(rotateLeft(a, s), b);
+          };
+          const II = (a: number, b: number, c: number, d: number, x: number, s: number, ac: number) => {
+            a = addUnsigned(a, addUnsigned(addUnsigned(I(b, c, d), x), ac));
+            return addUnsigned(rotateLeft(a, s), b);
+          };
+          const convertToWordArray = (string: string) => {
+            let lWordCount;
+            const lMessageLength = string.length;
+            const lNumberOfWords_temp1 = lMessageLength + 8;
+            const lNumberOfWords_temp2 = (lNumberOfWords_temp1 - (lNumberOfWords_temp1 % 64)) / 64;
+            const lNumberOfWords = (lNumberOfWords_temp2 + 1) * 16;
+            const lWordArray = Array(lNumberOfWords).fill(0);
+            let lBytePosition = 0;
+            let lByteCount = 0;
+            while (lByteCount < lMessageLength) {
+              lWordCount = (lByteCount - (lByteCount % 4)) / 4;
+              lBytePosition = (lByteCount % 4) * 8;
+              lWordArray[lWordCount] = (lWordArray[lWordCount] | (string.charCodeAt(lByteCount) << lBytePosition));
+              lByteCount++;
+            }
+            lWordCount = (lByteCount - (lByteCount % 4)) / 4;
+            lBytePosition = (lByteCount % 4) * 8;
+            lWordArray[lWordCount] = lWordArray[lWordCount] | (0x80 << lBytePosition);
+            lWordArray[lNumberOfWords - 2] = lMessageLength << 3;
+            lWordArray[lNumberOfWords - 1] = lMessageLength >>> 29;
+            return lWordArray;
+          };
+          const wordToHex = (lValue: number) => {
+            let WordToHexValue = '', WordToHexValue_temp = '', lByte, lCount;
+            for (lCount = 0; lCount <= 3; lCount++) {
+              lByte = (lValue >>> (lCount * 8)) & 255;
+              WordToHexValue_temp = '0' + lByte.toString(16);
+              WordToHexValue = WordToHexValue + WordToHexValue_temp.slice(WordToHexValue_temp.length - 2);
+            }
+            return WordToHexValue;
+          };
+          const x = convertToWordArray(unescape(encodeURIComponent(str)));
+          let k, S11=7, S12=12, S13=17, S14=22, S21=5, S22=9, S23=14, S24=20, S31=4, S32=11, S33=16, S34=23, S41=6, S42=10, S43=15, S44=21;
+          let a = 0x67452301, b = 0xEFCDAB89, c = 0x98BADCFE, d = 0x10325476;
+          for (k = 0; k < x.length; k += 16) {
+            let AA = a, BB = b, CC = c, DD = d;
+            a = FF(a, b, c, d, x[k + 0], S11, 0xD76AA478);
+            d = FF(d, a, b, c, x[k + 1], S12, 0xE8C7B756);
+            c = FF(c, d, a, b, x[k + 2], S13, 0x242070DB);
+            b = FF(b, c, d, a, x[k + 3], S14, 0xC1BDCEEE);
+            a = FF(a, b, c, d, x[k + 4], S11, 0xF57C0FAF);
+            d = FF(d, a, b, c, x[k + 5], S12, 0x4787C62A);
+            c = FF(c, d, a, b, x[k + 6], S13, 0xA8304613);
+            b = FF(b, c, d, a, x[k + 7], S14, 0xFD469501);
+            a = FF(a, b, c, d, x[k + 8], S11, 0x698098D8);
+            d = FF(d, a, b, c, x[k + 9], S12, 0x8B44F7AF);
+            c = FF(c, d, a, b, x[k + 10], S13, 0xFFFF5BB1);
+            b = FF(b, c, d, a, x[k + 11], S14, 0x895CD7BE);
+            a = FF(a, b, c, d, x[k + 12], S11, 0x6B901122);
+            d = FF(d, a, b, c, x[k + 13], S12, 0xFD987193);
+            c = FF(c, d, a, b, x[k + 14], S13, 0xA679438E);
+            b = FF(b, c, d, a, x[k + 15], S14, 0x49B40821);
+            a = GG(a, b, c, d, x[k + 1], S21, 0xF61E2562);
+            d = GG(d, a, b, c, x[k + 6], S22, 0xC040B340);
+            c = GG(c, d, a, b, x[k + 11], S23, 0x265E5A51);
+            b = GG(b, c, d, a, x[k + 0], S24, 0xE9B6C7AA);
+            a = GG(a, b, c, d, x[k + 5], S21, 0xD62F105D);
+            d = GG(d, a, b, c, x[k + 10], S22, 0x2441453);
+            c = GG(c, d, a, b, x[k + 15], S23, 0xD8A1E681);
+            b = GG(b, c, d, a, x[k + 4], S24, 0xE7D3FBC8);
+            a = GG(a, b, c, d, x[k + 9], S21, 0x21E1CDE6);
+            d = GG(d, a, b, c, x[k + 14], S22, 0xC33707D6);
+            c = GG(c, d, a, b, x[k + 3], S23, 0xF4D50D87);
+            b = GG(b, c, d, a, x[k + 8], S24, 0x455A14ED);
+            a = GG(a, b, c, d, x[k + 13], S21, 0xA9E3E905);
+            d = GG(d, a, b, c, x[k + 2], S22, 0xFCEFA3F8);
+            c = GG(c, d, a, b, x[k + 7], S23, 0x676F02D9);
+            b = GG(b, c, d, a, x[k + 12], S24, 0x8D2A4C8A);
+            a = HH(a, b, c, d, x[k + 5], S31, 0xFFFA3942);
+            d = HH(d, a, b, c, x[k + 8], S32, 0x8771F681);
+            c = HH(c, d, a, b, x[k + 11], S33, 0x6D9D6122);
+            b = HH(b, c, d, a, x[k + 14], S34, 0xFDE5380C);
+            a = HH(a, b, c, d, x[k + 1], S31, 0xA4BEEA44);
+            d = HH(d, a, b, c, x[k + 4], S32, 0x4BDECFA9);
+            c = HH(c, d, a, b, x[k + 7], S33, 0xF6BB4B60);
+            b = HH(b, c, d, a, x[k + 10], S34, 0xBEBFBC70);
+            a = HH(a, b, c, d, x[k + 13], S31, 0x289B7EC6);
+            d = HH(d, a, b, c, x[k + 0], S32, 0xEAA127FA);
+            c = HH(c, d, a, b, x[k + 3], S33, 0xD4EF3085);
+            b = HH(b, c, d, a, x[k + 6], S34, 0x4881D05);
+            a = HH(a, b, c, d, x[k + 9], S31, 0xD9D4D039);
+            d = HH(d, a, b, c, x[k + 12], S32, 0xE6DB99E5);
+            c = HH(c, d, a, b, x[k + 15], S33, 0x1FA27CF8);
+            b = HH(b, c, d, a, x[k + 2], S34, 0xC4AC5665);
+            a = II(a, b, c, d, x[k + 0], S41, 0xF4292244);
+            d = II(d, a, b, c, x[k + 7], S42, 0x432AFF97);
+            c = II(c, d, a, b, x[k + 14], S43, 0xAB9423A7);
+            b = II(b, c, d, a, x[k + 5], S44, 0xFC93A039);
+            a = II(a, b, c, d, x[k + 12], S41, 0x655B59C3);
+            d = II(d, a, b, c, x[k + 3], S42, 0x8F0CCC92);
+            c = II(c, d, a, b, x[k + 10], S43, 0xFFEFF47D);
+            b = II(b, c, d, a, x[k + 1], S44, 0x85845DD1);
+            a = II(a, b, c, d, x[k + 8], S41, 0x6FA87E4F);
+            d = II(d, a, b, c, x[k + 15], S42, 0xFE2CE6E0);
+            c = II(c, d, a, b, x[k + 6], S43, 0xA3014314);
+            b = II(b, c, d, a, x[k + 13], S44, 0x4E0811A1);
+            a = II(a, b, c, d, x[k + 4], S41, 0xF7537E82);
+            d = II(d, a, b, c, x[k + 11], S42, 0xBD3AF235);
+            c = II(c, d, a, b, x[k + 2], S43, 0x2AD7D2BB);
+            b = II(b, c, d, a, x[k + 9], S44, 0xEB86D391);
+            a = addUnsigned(a, AA);
+            b = addUnsigned(b, BB);
+            c = addUnsigned(c, CC);
+            d = addUnsigned(d, DD);
+          }
+          return wordToHex(a) + wordToHex(b) + wordToHex(c) + wordToHex(d);
+        };
+
         const encoder = new TextEncoder();
-        const data = encoder.encode(text);
+        const data = encoder.encode(targetText);
         const toHex = (buffer: ArrayBuffer) => Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
         const algorithmGroup = optionValue('hash-algorithm-group', 'all');
         const uppercase = optionValue('hash-uppercase', 'false') === 'true';
-        const algorithms = algorithmGroup === 'sha256' ? ['SHA-256'] : ['SHA-1', 'SHA-256', 'SHA-384', 'SHA-512'];
+
+        let algorithms: string[] = [];
+        if (algorithmGroup === 'sha256') {
+          algorithms = ['SHA-256'];
+        } else if (algorithmGroup === 'md5') {
+          algorithms = ['MD5'];
+        } else if (algorithmGroup === 'sha1') {
+          algorithms = ['SHA-1'];
+        } else {
+          algorithms = ['MD5', 'SHA-1', 'SHA-256', 'SHA-384', 'SHA-512'];
+        }
+
         const sections = await Promise.all(algorithms.map(async algorithm => {
-          const rawHash = toHex(await crypto.subtle.digest(algorithm, data));
-          const hash = uppercase ? rawHash.toUpperCase() : rawHash;
-          return { title: algorithm, body: hash, note: `${hash.length} hex characters.` };
+          let hash = '';
+          if (algorithm === 'MD5') {
+            hash = md5(targetText);
+          } else {
+            hash = toHex(await crypto.subtle.digest(algorithm, data));
+          }
+          const finalHash = uppercase ? hash.toUpperCase() : hash.toLowerCase();
+          return { title: algorithm, body: finalHash, note: `${finalHash.length} hex characters.` };
         }));
-        sections.push({ title: 'Input Summary', body: `Characters: ${text.length}\nUTF-8 bytes: ${data.byteLength}\nMD5: not generated because browser SubtleCrypto does not support MD5.`, note: 'Supported browser crypto algorithms only.' });
-        result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
-        resultHtml = renderSectionSuite('Cryptographic Hash Drawer', sections, 'All cryptographic operations are performed completely client-side in your browser. No input text is sent to our servers.');
+
+        sections.push({ title: 'Input Summary', body: `Input Text: "${targetText}"\nCharacters: ${targetText.length}\nUTF-8 bytes: ${data.byteLength}`, note: 'Cryptographic details.' });
+
+        const warnings = [
+          "MD5 & SHA-1 Collision Risk: Both MD5 and SHA-1 are cryptographically broken and vulnerable to hash collision attacks. They should only be used for legacy checksums or integrity checks, never for security boundaries.",
+          "Password Hashing Best Practice: Do not use raw digests (MD5, SHA-256) to store user passwords. Instead, use a key derivation function with adaptive work factors such as Argon2id, bcrypt, or PBKDF2."
+        ];
+
+        sections.push({
+          title: 'Cryptographic Best Practices & Warnings',
+          body: warnings.map((w, i) => `${i + 1}. ${w}`).join('\n'),
+          note: 'Helpful security advice.'
+        });
+
+        result = sections[0].body;
+        const prefixMsg = text ? 'Cryptographic Hash Package' : 'Cryptographic Hash Landing Guide (showing values for "hello")';
+        resultHtml = renderSectionSuite(prefixMsg, sections, 'All cryptographic operations are performed completely client-side in your browser. No input text is sent to our servers.');
       } catch (err) {
         const errMsg = (err as Error).message;
         result = `Hashing Error: ${errMsg}`;
@@ -2762,10 +3146,42 @@ async function generate() {
       break;
     }
     case 'json-formatter': {
-      if (!text) { result = 'Please paste your JSON above.'; break; }
+      const outputMode = optionValue('json-output-mode', 'json');
       const indent = Math.max(2, Math.min(8, Number(optionValue('json-indent', '2')) || 2));
       const sortKeys = optionValue('json-sort-keys', 'false') === 'true';
       const autofix = optionValue('json-autofix', 'false') === 'true';
+
+      if (!text) {
+        const demoObj = {
+          title: "JSON Standards Guide (RFC 8259)",
+          valid_string: "Double quotes are required",
+          valid_number: 123.45,
+          valid_boolean: true,
+          valid_null: null,
+          valid_array: [1, 2, 3]
+        };
+        const demoJson = JSON.stringify(demoObj, null, indent);
+
+        const invalidExample = `{
+  // Invalid: Single quotes and comments are not allowed in standard JSON
+  'title': 'JSON Guide',
+  "values": [1, 2, 3,], // Invalid: Trailing commas are forbidden
+  "unquoted": plain_word // Invalid: String values must be double-quoted
+}`;
+
+        const sections = [
+          { title: 'Valid JSON Example', body: demoJson, note: 'Standard RFC 8259 payload.' },
+          { title: 'Invalid JSON Example (Common Mistakes)', body: invalidExample, note: 'Contains single quotes, comments, trailing commas, and unquoted strings.' },
+          {
+            title: 'Key Standards Differences',
+            body: `1. Double Quotes: Standard JSON requires double quotes (") for all keys and string values. Single quotes (\') are invalid.\n2. No Comments: Comments (// or /* */) are not supported in standard RFC 8259 JSON.\n3. Trailing Commas: Commas are delimiters. Having a trailing comma before \'}\' or \']\' is a parsing error.\n4. Keys: Keys must be strings. JavaScript objects allow unquoted property identifiers, but JSON does not.`,
+            note: 'Best practices for cross-platform data interchange.'
+          }
+        ];
+        result = demoJson;
+        resultHtml = renderSectionSuite('JSON Standards & Learning Guide', sections, 'Paste your JSON in the input field above to parse, format, sort keys, or auto-fix errors.');
+        break;
+      }
 
       const sortJson = (value: unknown): unknown => {
         if (Array.isArray(value)) return value.map(sortJson);
@@ -2793,6 +3209,35 @@ async function generate() {
           }, { objects: 1, arrays: 0, keys: Object.keys(value as Record<string, unknown>).length });
         }
         return { objects: 0, arrays: 0, keys: 0 };
+      };
+
+      const toJsLiteral = (obj: unknown, space: number = 2, currentDepth: number = 0): string => {
+        const pad = ' '.repeat(currentDepth * space);
+        const nextPad = ' '.repeat((currentDepth + 1) * space);
+        if (obj === null) return 'null';
+        if (obj === undefined) return 'undefined';
+        if (typeof obj === 'string') {
+          return "'" + obj.replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'";
+        }
+        if (typeof obj === 'number' || typeof obj === 'boolean') {
+          return String(obj);
+        }
+        if (Array.isArray(obj)) {
+          if (obj.length === 0) return '[]';
+          const items = obj.map(item => toJsLiteral(item, space, currentDepth + 1));
+          return `[\n${nextPad}${items.join(`,\n${nextPad}`)}\n${pad}]`;
+        }
+        if (typeof obj === 'object') {
+          const keys = Object.keys(obj as Record<string, unknown>);
+          if (keys.length === 0) return '{}';
+          const entries = keys.map(key => {
+            const val = (obj as Record<string, unknown>)[key];
+            const safeKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : JSON.stringify(key);
+            return `${safeKey}: ${toJsLiteral(val, space, currentDepth + 1)}`;
+          });
+          return `{\n${nextPad}${entries.join(`,\n${nextPad}`)}\n${pad}}`;
+        }
+        return String(obj);
       };
 
       const tryAutoFixJson = (str: string): { fixed: string; logs: string[] } => {
@@ -2853,19 +3298,35 @@ async function generate() {
       let fixLogs: string[] = [];
       let parseError: string | null = null;
 
+      let rawText = text;
+      if (outputMode === 'unescaped') {
+        let lastText = '';
+        while (rawText !== lastText) {
+          lastText = rawText;
+          try {
+            JSON.parse(rawText);
+            break;
+          } catch (e) {
+            const unescaped = rawText.replace(/\\"/g, '"').replace(/\\\\/g, '\\').replace(/\\'/g, "'");
+            if (unescaped === rawText) break;
+            rawText = unescaped;
+            fixLogs.push('Unescaped JSON backslash sequence.');
+          }
+        }
+      }
+
       try {
-        parsed = JSON.parse(text);
+        parsed = JSON.parse(rawText);
       } catch (e) {
         parseError = (e as Error).message;
         if (autofix) {
-          const autofixResult = tryAutoFixJson(text);
+          const autofixResult = tryAutoFixJson(rawText);
           try {
             parsed = JSON.parse(autofixResult.fixed);
             usedText = autofixResult.fixed;
-            fixLogs = autofixResult.logs;
-            parseError = null; // Cleared on successful fix
+            fixLogs.push(...autofixResult.logs);
+            parseError = null;
           } catch (innerError) {
-            // Keep original parse error if auto-fix fails
           }
         }
       }
@@ -2874,26 +3335,36 @@ async function generate() {
         const sorted = sortKeys ? sortJson(parsed) : parsed;
         const formatted = JSON.stringify(sorted, null, indent);
         const minified = JSON.stringify(sorted);
+        const jsLiteral = toJsLiteral(sorted, indent);
+        const escaped = formatted.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+        const escapedMin = minified.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
         const counts = countNodes(sorted);
-        
+
+        let finalResult = formatted;
+        if (outputMode === 'js') finalResult = jsLiteral;
+        else if (outputMode === 'escaped') finalResult = escaped;
+        else if (outputMode === 'unescaped') finalResult = formatted;
+
         const sections = [
           { title: 'Formatted JSON', body: formatted, note: `Valid JSON, ${indent}-space indentation.` },
+          { title: 'JS Object Literal', body: jsLiteral, note: 'Copyable JavaScript syntax.' },
+          { title: 'Escaped String', body: escaped, note: 'Double-quotes escaped with backslashes.' },
           { title: 'Minified JSON', body: minified, note: `${minified.length} characters.` },
           { title: 'Structure Summary', body: `State: Valid\nObjects: ${counts.objects}\nArrays: ${counts.arrays}\nKeys: ${counts.keys}\nSorted Keys: ${sortKeys ? 'yes' : 'no'}`, note: 'Lightweight structure inspection.' }
         ];
 
         if (fixLogs.length > 0) {
           sections.push({
-            title: 'Auto-Fix Logs',
-            body: fixLogs.map((log, index) => `${index + 1}. ${log}`).join('\n'),
-            note: 'Notice: JSON fixed automatically to make it valid.'
+            title: 'Auto-Fix & Unescape Logs',
+            body: Array.from(new Set(fixLogs)).map((log, index) => `${index + 1}. ${log}`).join('\n'),
+            note: 'Notice: JSON normalized automatically.'
           });
         }
 
-        result = formatted;
+        result = finalResult;
         resultHtml = renderSectionSuite('JSON Formatter', sections, 'JSON is formatted and validated client-side for privacy. No data is sent to the server.');
       } else {
-        const diagnostics = runDiagnostics(text);
+        const diagnostics = runDiagnostics(rawText);
         const sections = [
           { title: 'Invalid JSON Error', body: parseError, note: 'Standard JSON parser error message.' },
           { title: 'Syntax Diagnostics', body: diagnostics.map(d => `• ${d}`).join('\n'), note: 'Heuristic checks.' },
@@ -4055,7 +4526,7 @@ async function generate() {
       const emailType = optionValue('email-type', 'newsletter');
       const tone = optionValue('subject-tone', 'balanced');
 
-      const templates = {
+      const templates: Record<string, Record<string, string[]>> = {
         newsletter: {
           short: [`${topic} newsletter`, `the ${topic} briefing`, `weekly ${topic}`],
           balanced: [`This week in ${topic}`, `${topic} notes for your week`, `The latest updates on ${topic}`],
@@ -4078,8 +4549,8 @@ async function generate() {
         }
       };
 
-      const typeKey = (templates[emailType] ? emailType : 'newsletter') as keyof typeof templates;
-      const toneKey = (templates[typeKey][tone] ? tone : 'balanced') as keyof typeof templates['newsletter'];
+      const typeKey = templates[emailType] ? emailType : 'newsletter';
+      const toneKey = templates[typeKey][tone] ? tone : 'balanced';
 
       const primarySubjects = templates[typeKey][toneKey];
 
@@ -4324,7 +4795,7 @@ async function generate() {
       const tone = optionValue('slogan-tone', 'balanced');
       const useCase = optionValue('slogan-use', 'brand');
 
-      const allSlogans = {
+      const allSlogans: Record<string, Record<string, string[]>> = {
         balanced: {
           brand: [`The ${brand} Way`, `${brand} made practical`, `Built around ${brand}`],
           campaign: [`Make room for better ${brand}`, `Choose ${brand} today`, `Simply ${brand}`],
@@ -4347,8 +4818,8 @@ async function generate() {
         }
       };
 
-      const toneKey = (allSlogans[tone] ? tone : 'balanced') as 'balanced' | 'premium' | 'playful' | 'direct';
-      const useKey = (allSlogans[toneKey][useCase] ? useCase : 'brand') as 'brand' | 'campaign' | 'product';
+      const toneKey = allSlogans[tone] ? tone : 'balanced';
+      const useKey = allSlogans[toneKey][useCase] ? useCase : 'brand';
 
       const primaryItems = allSlogans[toneKey][useKey];
       const genericItems = allSlogans.balanced.brand;
@@ -4574,6 +5045,8 @@ async function generate() {
       const prefix = optionValue('api-key-prefix', 'sk_live').trim();
       const length = Math.max(16, Math.min(128, Number(optionValue('api-key-length', '32')) || 32));
       const encoding = optionValue('api-key-encoding', 'base62');
+      const quantity = Math.max(1, Math.min(100, Number(optionValue('api-key-quantity', '5')) || 5));
+      const includeChecksum = optionValue('api-key-checksum', 'false') === 'true';
 
       const getSecureBytes = (len: number): Uint8Array => {
         const arr = new Uint8Array(len);
@@ -4598,7 +5071,24 @@ async function generate() {
           .replace(/=+$/, '');
       };
 
-      const keys = Array.from({ length: 5 }, () => {
+      const crc32 = (str: string): number => {
+        let crc = 0 ^ (-1);
+        for (let i = 0; i < str.length; i++) {
+          const code = str.charCodeAt(i);
+          let temp = (crc ^ code) & 0xFF;
+          for (let j = 0; j < 8; j++) {
+            if ((temp & 1) === 1) {
+              temp = (temp >>> 1) ^ 0xEDB88320;
+            } else {
+              temp = temp >>> 1;
+            }
+          }
+          crc = (crc >>> 8) ^ temp;
+        }
+        return (crc ^ (-1)) >>> 0;
+      };
+
+      const keys = Array.from({ length: quantity }, () => {
         const bytes = getSecureBytes(length);
         let randomPart = '';
         if (encoding === 'hex') {
@@ -4608,7 +5098,29 @@ async function generate() {
         } else {
           randomPart = toBase62(bytes).slice(0, length);
         }
-        return prefix ? `${prefix}_${randomPart}` : randomPart;
+
+        let fullKey = prefix ? `${prefix}_${randomPart}` : randomPart;
+        if (includeChecksum) {
+          const checkVal = crc32(fullKey);
+          let checkStr = '';
+          if (encoding === 'hex') {
+            checkStr = checkVal.toString(16).padStart(8, '0');
+          } else if (encoding === 'base64url') {
+            const arr = new Uint8Array(4);
+            new DataView(arr.buffer).setUint32(0, checkVal);
+            checkStr = toBase64Url(arr);
+          } else {
+            let num = checkVal;
+            const pool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            while (num > 0) {
+              checkStr = pool[num % 62] + checkStr;
+              num = Math.floor(num / 62);
+            }
+            checkStr = checkStr.padStart(6, '0');
+          }
+          fullKey = `${fullKey}_${checkStr}`;
+        }
+        return fullKey;
       });
 
       result = keys.join('\n');
@@ -4910,6 +5422,69 @@ async function generate() {
       const mode = optionValue('regex-mode', 'email');
       const customText = compactSeed(text, 'example');
       const escapedCustom = customText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+      if (mode === 'custom_validator') {
+        let pattern = text.trim() || '^([a-zA-Z0-9_\\-\\.]+)+$';
+        let flags = optionValue('regex-case-insensitive', 'false') === 'true' ? 'i' : '';
+
+        if (pattern.startsWith('/') && pattern.lastIndexOf('/') > 0) {
+          const lastSlash = pattern.lastIndexOf('/');
+          const parsedFlags = pattern.slice(lastSlash + 1);
+          const parsedPattern = pattern.slice(1, lastSlash);
+          if (/^[gimsuy]*$/.test(parsedFlags)) {
+            pattern = parsedPattern;
+            flags = parsedFlags;
+          }
+        }
+
+        let isValid = true;
+        let syntaxError = '';
+        try {
+          new RegExp(pattern, flags);
+        } catch (e) {
+          isValid = false;
+          syntaxError = (e as Error).message;
+        }
+
+        const diagnostics: string[] = [];
+        if (isValid) {
+          if (/\([^)]*[*+?]\)[*+?]/.test(pattern)) {
+            diagnostics.push("ReDoS Risk: Nested quantifiers found (e.g. '(a+)+'). This pattern might suffer from exponential backtracking if matched against long strings that are close but not exact matches.");
+          }
+          if (/(\.\*|\w\+)\+/.test(pattern)) {
+            diagnostics.push("ReDoS Risk: Overlapping group quantifiers detected (e.g. containing '.*+').");
+          }
+          if (/[A-Za-z0-9]\.[A-Za-z0-9]/.test(pattern) && !/\\\.|\\[.]/.test(pattern)) {
+            diagnostics.push("Unescaped Dot Warning: Detected an unescaped dot '.' between letters/numbers. In regex, '.' matches ANY character. If you want to match a literal dot (e.g., in a domain name or file extension), escape it as '\\.'.");
+          }
+          if (pattern.includes('/') && !pattern.includes('\\/')) {
+            diagnostics.push("Unescaped Forward Slash: The pattern contains '/' which might need to be escaped as '\\/' in environments where regexes are delimited by slashes (like JavaScript).");
+          }
+        }
+
+        const regexLine = isValid ? `/${pattern}/${flags}` : 'Invalid Regex Pattern';
+        const sections = [
+          { title: 'Parsed Regex Pattern', body: regexLine, note: 'Tested against JS engine compatibility.' },
+          {
+            title: 'Syntax Status',
+            body: isValid ? '✅ Valid Regular Expression' : `❌ Invalid Regex Syntax:\n${syntaxError}`,
+            note: isValid ? 'Regex compiled successfully.' : 'Please fix syntax errors.'
+          }
+        ];
+
+        if (isValid) {
+          sections.push({
+            title: 'Diagnostics & Quality Checks',
+            body: diagnostics.length > 0 ? diagnostics.map((d, i) => `${i + 1}. ${d}`).join('\n') : '✅ No ReDoS or common syntax warning issues detected.',
+            note: 'Best-practice linting rules based on ECMA-262 standards.'
+          });
+        }
+
+        result = regexLine;
+        resultHtml = renderSectionSuite('Regex Custom Pattern Validator', sections, 'Test your pattern in your target environment. Regex engine details (e.g. PCRE, Python, Go) can vary slightly.');
+        break;
+      }
+
       const definitions: Record<string, { pattern: string; explanation: string; positive: string[]; negative: string[] }> = {
         email: { pattern: '^[\\w.%+-]+@[\\w.-]+\\.[A-Za-z]{2}$', explanation: 'Matches common email address shapes with a domain and TLD.', positive: ['name@example.com', 'first.last+tag@domain.co'], negative: ['name@', 'example.com'] },
         url: { pattern: '^https?:\\/\\/[^\\s/$.?#].[^\\s]*$', explanation: 'Matches HTTP or HTTPS URLs with no whitespace.', positive: ['https://example.com', 'http://example.com/page?q=1'], negative: ['example.com', 'https://bad url.com'] },
@@ -4918,7 +5493,8 @@ async function generate() {
         username: { pattern: '^[A-Za-z0-9_]{3,20}$', explanation: 'Matches 3-20 character usernames using letters, numbers, and underscore.', positive: ['creator_123', 'UserName'], negative: ['ab', 'bad-name!'] },
         contains: { pattern: `.*${escapedCustom}.*`, explanation: `Matches text containing "${customText}".`, positive: [`hello ${customText}`, customText], negative: ['different text'] },
         starts: { pattern: `^${escapedCustom}.*`, explanation: `Matches text starting with "${customText}".`, positive: [`${customText} starts here`], negative: [`before ${customText}`] },
-        ends: { pattern: `.*${escapedCustom}$`, explanation: `Matches text ending with "${customText}".`, positive: [`ends with ${customText}`], negative: [`${customText} first`] }};
+        ends: { pattern: `.*${escapedCustom}$`, explanation: `Matches text ending with "${customText}".`, positive: [`ends with ${customText}`], negative: [`${customText} first`] }
+      };
       const selected = definitions[mode] || definitions.email;
       const flags = optionValue('regex-case-insensitive', 'false') === 'true' ? 'i' : '';
       const regexLine = `/${selected.pattern}/${flags}`;
@@ -4926,27 +5502,184 @@ async function generate() {
         { title: 'Regex Pattern', body: regexLine, note: titleCase(mode) + ' mode.' },
         { title: 'Explanation', body: selected.explanation, note: 'Adjust for your target regex engine.' },
         { title: 'Positive Test Examples', body: selected.positive.join('\n'), note: 'These should match.' },
-        { title: 'Negative Test Examples', body: selected.negative.join('\n'), note: 'These should not match.' }];
+        { title: 'Negative Test Examples', body: selected.negative.join('\n'), note: 'These should not match.' }
+      ];
       result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
       resultHtml = renderSectionSuite('Regex Pattern Suite', sections, 'Regex note: test in your target language or environment because engines and escaping rules vary.');
       break;
     }
     case 'cron-expression-generator': {
       const selectedPreset = optionValue('cron-preset', 'daily');
+      const cronFormat = optionValue('cron-format', 'standard');
+      const isQuartz = cronFormat === 'quartz';
+
       const presets: Record<string, { label: string; expr: string; explain: string }> = {
-        minute: { label: 'Every Minute', expr: '* * * * *', explain: 'Runs every minute of every hour.' },
-        hourly: { label: 'Hourly', expr: '0 * * * *', explain: 'Runs at minute 0 of every hour.' },
-        daily: { label: 'Daily', expr: '0 9 * * *', explain: 'Runs every day at 09:00 server time.' },
-        weekly: { label: 'Weekly', expr: '0 9 * * 1', explain: 'Runs every Monday at 09:00 server time.' },
-        monthly: { label: 'Monthly', expr: '0 9 1 * *', explain: 'Runs on the first day of every month at 09:00 server time.' },
-        custom: { label: 'Custom Pattern', expr: text && text.trim() ? text.trim() : '*/15 * * * *', explain: 'Uses your input when provided, otherwise every 15 minutes.' }};
+        minute: {
+          label: 'Every Minute',
+          expr: isQuartz ? '0 * * * * ?' : '* * * * *',
+          explain: 'Runs every minute of every hour.'
+        },
+        hourly: {
+          label: 'Hourly',
+          expr: isQuartz ? '0 0 * * * ?' : '0 * * * *',
+          explain: 'Runs at minute 0 of every hour.'
+        },
+        daily: {
+          label: 'Daily',
+          expr: isQuartz ? '0 0 9 * * ?' : '0 9 * * *',
+          explain: 'Runs every day at 09:00 server time.'
+        },
+        weekly: {
+          label: 'Weekly',
+          expr: isQuartz ? '0 0 9 ? * MON' : '0 9 * * 1',
+          explain: 'Runs every Monday at 09:00 server time.'
+        },
+        monthly: {
+          label: 'Monthly',
+          expr: isQuartz ? '0 0 9 1 * ?' : '0 9 1 * *',
+          explain: 'Runs on the first day of every month at 09:00 server time.'
+        },
+        custom: {
+          label: 'Custom Pattern',
+          expr: text && text.trim() ? text.trim() : (isQuartz ? '0 */15 * * * ?' : '*/15 * * * *'),
+          explain: 'Uses your input when provided, otherwise every 15 minutes.'
+        }
+      };
+
       const selected = presets[selectedPreset] || presets.daily;
-      const fieldBreakdown = `Minute: ${selected.expr.split(/\s+/)[0] || '*'}\nHour: ${selected.expr.split(/\s+/)[1] || '*'}\nDay of month: ${selected.expr.split(/\s+/)[2] || '*'}\nMonth: ${selected.expr.split(/\s+/)[3] || '*'}\nDay of week: ${selected.expr.split(/\s+/)[4] || '*'}`;
-      const groups = Object.values(presets).map(preset => ({ title: preset.label, note: preset.explain, items: [{ name: preset.expr, reason: preset.explain }] }));
+      const expr = selected.expr;
+      const parts = expr.split(/\s+/);
+      const fieldBreakdown = isQuartz
+        ? `Second: ${parts[0] || '0'}\nMinute: ${parts[1] || '*'}\nHour: ${parts[2] || '*'}\nDay of month: ${parts[3] || '*'}\nMonth: ${parts[4] || '*'}\nDay of week: ${parts[5] || '?'}`
+        : `Minute: ${parts[0] || '*'}\nHour: ${parts[1] || '*'}\nDay of month: ${parts[2] || '*'}\nMonth: ${parts[3] || '*'}\nDay of week: ${parts[4] || '*'}`;
+
+      const explainCron = (cronExpr: string, quartzMode: boolean) => {
+        const p = cronExpr.trim().split(/\s+/);
+        const expectedLen = quartzMode ? 6 : 5;
+        if (p.length < expectedLen) {
+          return { explanation: 'Invalid syntax.', warnings: [`Expected at least ${expectedLen} fields in cron string.`] };
+        }
+
+        const warnings: string[] = [];
+        const checkRange = (val: string, min: number, max: number, name: string) => {
+          if (val === '*' || val === '?') return;
+          const subParts = val.split(/,|\//);
+          for (const sp of subParts) {
+            if (sp === '*') continue;
+            const num = parseInt(sp, 10);
+            if (!isNaN(num) && (num < min || num > max)) {
+              warnings.push(`Value ${num} is out of bounds [${min}-${max}] for field '${name}'.`);
+            }
+          }
+        };
+
+        if (quartzMode) {
+          checkRange(p[0], 0, 59, 'Second');
+          checkRange(p[1], 0, 59, 'Minute');
+          checkRange(p[2], 0, 23, 'Hour');
+          checkRange(p[3], 1, 31, 'Day of Month');
+          checkRange(p[4], 1, 12, 'Month');
+        } else {
+          checkRange(p[0], 0, 59, 'Minute');
+          checkRange(p[1], 0, 23, 'Hour');
+          checkRange(p[2], 1, 31, 'Day of Month');
+          checkRange(p[3], 1, 12, 'Month');
+          checkRange(p[4], 0, 7, 'Day of Week');
+        }
+
+        const minuteVal = quartzMode ? p[1] : p[0];
+        const hourVal = quartzMode ? p[2] : p[1];
+        const domVal = quartzMode ? p[3] : p[2];
+        const monthVal = quartzMode ? p[4] : p[3];
+        const dowVal = quartzMode ? p[5] : p[4];
+
+        let timeDesc = '';
+        if (hourVal === '*' && minuteVal === '*') {
+          timeDesc = 'every minute';
+        } else if (hourVal === '*') {
+          if (minuteVal.startsWith('*/')) {
+            timeDesc = `every ${minuteVal.split('/')[1]} minutes`;
+          } else {
+            timeDesc = `at minute ${minuteVal} of every hour`;
+          }
+        } else {
+          const pad = (n: string) => {
+            const num = parseInt(n, 10);
+            return isNaN(num) ? n : num.toString().padStart(2, '0');
+          };
+          if (!hourVal.includes('*') && !minuteVal.includes('*')) {
+            timeDesc = `at ${pad(hourVal)}:${pad(minuteVal)}`;
+          } else {
+            timeDesc = `at hour ${hourVal} and minute ${minuteVal}`;
+          }
+        }
+
+        let domDesc = 'every day';
+        if (domVal !== '*' && domVal !== '?') {
+          domDesc = `on day ${domVal}`;
+          if (domVal === '31') {
+            warnings.push("Month limit warning: Day 31 will skip months with only 30 days (April, June, September, November) and February.");
+          } else if (domVal === '30') {
+            warnings.push("Month limit warning: Day 30 will skip February runs.");
+          }
+        }
+
+        let monthDesc = 'every month';
+        const monthNames = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        if (monthVal !== '*') {
+          const mNum = parseInt(monthVal, 10);
+          if (!isNaN(mNum) && mNum >= 1 && mNum <= 12) {
+            monthDesc = `in ${monthNames[mNum]}`;
+          } else {
+            monthDesc = `in month ${monthVal}`;
+          }
+        }
+
+        let dowDesc = 'every day of the week';
+        const dowNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+        if (dowVal !== '*' && dowVal !== '?') {
+          const dNum = parseInt(dowVal, 10);
+          if (!isNaN(dNum) && dNum >= 0 && dNum <= 7) {
+            dowDesc = `on ${dowNames[dNum]}`;
+          } else {
+            dowDesc = `on weekday ${dowVal}`;
+          }
+        }
+
+        if (domVal !== '*' && domVal !== '?' && dowVal !== '*' && dowVal !== '?') {
+          warnings.push("Constraint Conflict: Specifying both Day of Month and Day of Week executes as an OR check on typical Unix cron systems (runs on either match).");
+        }
+        warnings.push("Timezone Note: Scheduled triggers execute in server system local time (often UTC). Verify daylight saving impacts.");
+
+        const explanation = `Runs ${timeDesc}, ${domDesc}, ${monthDesc}, ${dowDesc}.`;
+        return { explanation, warnings };
+      };
+
+      const diagnostics = explainCron(expr, isQuartz);
+
+      const groups = Object.values(presets).map(preset => ({
+        title: preset.label,
+        note: preset.explain,
+        items: [{ name: preset.expr, reason: preset.explain }]
+      }));
+
       const sections = [
-        { title: 'Selected Cron Expression', body: selected.expr, note: selected.explain },
-        { title: 'Field Breakdown', body: fieldBreakdown, note: 'Standard 5-field cron format.' },
-        { title: 'Format Guide', body: 'MINUTE HOUR DAY-OF-MONTH MONTH DAY-OF-WEEK\nExample: 0 9 * * 1 means Monday at 09:00.', note: 'Server timezone usually applies.' }];
+        { title: 'Selected Cron Expression', body: expr, note: selected.explain },
+        { title: 'Natural Language Schedule Description', body: diagnostics.explanation, note: 'Human-readable interpretation.' },
+        { title: 'Field Breakdown', body: fieldBreakdown, note: isQuartz ? 'Quartz 6-field cron format.' : 'Standard Unix 5-field cron format.' },
+        { title: 'Format Guide', body: isQuartz
+          ? 'SECOND MINUTE HOUR DAY-OF-MONTH MONTH DAY-OF-WEEK\nExample: 0 0 9 ? * MON means Monday at 09:00:00.'
+          : 'MINUTE HOUR DAY-OF-MONTH MONTH DAY-OF-WEEK\nExample: 0 9 * * 1 means Monday at 09:00.', note: 'Server timezone usually applies.' }
+      ];
+
+      if (diagnostics.warnings.length > 0) {
+        sections.push({
+          title: 'Schedule Diagnostics & Warnings',
+          body: diagnostics.warnings.map((w, i) => `${i + 1}. ${w}`).join('\n'),
+          note: 'Cron scheduling sanity checks.'
+        });
+      }
+
       result = sections.map(section => section.title + '\n' + section.body).join('\n\n');
       resultHtml = renderSectionSuite('Cron Expression Builder', sections, 'Cron syntax differs by system. Verify the expression in your scheduler and server timezone.') + renderGroupedIdeas(groups, 'Common cron presets. Copy the expression that matches your schedule.');
       break;
@@ -4990,11 +5723,29 @@ async function generate() {
       break;
     }
     case 'truth-or-dare-generator': {
-      const truths = ['What is your most embarrassing moment?','What is the last lie you told?','What is your biggest fear?','What is your guilty pleasure?','What is the weirdest dream you\'ve had?','What is something nobody here knows about you?'];
-      const dares = ['Do your best impression of someone here','Speak in an accent for the next 3 rounds','Let someone go through your recent photos','Do 20 jumping jacks right now','Text your crush "hey" right now','Try to lick your elbow'];
+      const truths = [
+        'What is your most embarrassing moment?',
+        'What is the last lie you told?',
+        'What is your biggest fear?',
+        'What is your guilty pleasure?',
+        'What is the weirdest dream you\'ve had?',
+        'What is something nobody here knows about you?'
+      ];
+      const dares = [
+        'Do your best impression of someone here',
+        'Speak in an accent for the next 3 rounds',
+        'Let someone go through your recent photos',
+        'Do 20 jumping jacks right now',
+        'Text your crush "hey" right now',
+        'Try to lick your elbow'
+      ];
       const t = [...truths].sort(() => Math.random() - 0.5).slice(0, 3);
       const d = [...dares].sort(() => Math.random() - 0.5).slice(0, 3);
       result = `TRUTHS:\n${t.map((q, i) => `${i + 1}. ${q}`).join('\n')}\n\nDARES:\n${d.map((q, i) => `${i + 1}. ${q}`).join('\n')}`;
+      resultHtml = renderHeadlineGroups([
+        { title: 'Truth Prompts', note: 'Reveal fun or interesting secrets.', items: t },
+        { title: 'Dare Challenges', note: 'Fun physical or social actions.', items: d }
+      ], 'Play responsibly. Everyone has the right to pass on any prompt.');
       break;
     }
     case 'would-you-rather-generator': {
@@ -5006,9 +5757,12 @@ async function generate() {
         ['know every language', 'play every instrument'],
         ['be 10 years older', 'be 5 years younger'],
         ['only eat pizza forever', 'never eat pizza again'],
-        ['have super strength', 'have super speed']];
+        ['have super strength', 'have super speed']
+      ];
       const shuffled = [...wyrs].sort(() => Math.random() - 0.5);
-      result = shuffled.slice(0, 5).map(([a, b], i) => `${i + 1}. Would you rather ${a} OR ${b}?`).join('\n\n');
+      const chosen = shuffled.slice(0, 5).map(([a, b]) => `Would you rather ${a} OR ${b}?`);
+      result = chosen.map((c, i) => `${i + 1}. ${c}`).join('\n\n');
+      resultHtml = renderHeadlineGroups([{ title: 'Would You Rather Questions', note: 'Engaging, hard-choice prompts for groups.', items: chosen }], 'Ask follow-up questions to understand the reasons behind each choice.');
       break;
     }
     case 'joke-generator': {
@@ -5024,9 +5778,12 @@ async function generate() {
         'What did the ocean say to the beach? Nothing, it just waved.',
         'I used to hate facial hair, but then it grew on me.',
         'What do you call a dog that does magic tricks? A Labracadabrador.',
-        'Why did the math book look sad? Because it had too many problems.'];
+        'Why did the math book look sad? Because it had too many problems.'
+      ];
       const shuffled = [...jokes].sort(() => Math.random() - 0.5);
-      result = shuffled.slice(0, 5).map(j => `\uD83D\uDE02 ${j}`).join('\n\n');
+      const chosen = shuffled.slice(0, 5);
+      result = chosen.map(j => `😂 ${j}`).join('\n\n');
+      resultHtml = renderHeadlineGroups([{ title: 'Humor & Dad Jokes', note: 'Clean, lighthearted jokes and puns.', items: chosen }], 'Perfect for sharing in daily chats, greetings, or presentations.');
       break;
     }
     case 'compliment-generator': {
@@ -5040,9 +5797,12 @@ async function generate() {
         'The world is a better place because you\'re in it.',
         'You have a gift for making difficult things look easy.',
         'Your kindness creates a ripple effect that touches many lives.',
-        'You\'re braver than you believe, stronger than you seem, and smarter than you think.'];
+        'You\'re braver than you believe, stronger than you seem, and smarter than you think.'
+      ];
       const shuffled = [...compliments].sort(() => Math.random() - 0.5);
-      result = shuffled.slice(0, 5).map(c => `\u2764\uFE0F ${c}`).join('\n\n');
+      const chosen = shuffled.slice(0, 5);
+      result = chosen.map(c => `❤️ ${c}`).join('\n\n');
+      resultHtml = renderHeadlineGroups([{ title: 'Kind Compliments', note: 'Sincere words of appreciation to share.', items: chosen }], 'A tiny compliment can brighten someone\'s entire day.');
       break;
     }
     case 'email-signature-generator': {
@@ -5262,27 +6022,37 @@ async function generate() {
       break;
     }
     case 'random-emoji-generator': {
-      const emojis = ['\uD83D\uDE00','\uD83D\uDE02','\uD83E\uDD23','\uD83D\uDE0D','\uD83E\uDD29','\uD83D\uDE0E','\uD83E\uDD14','\uD83D\uDE31','\uD83D\uDE4F','\uD83D\uDC4D','\u2764\uFE0F','\uD83D\uDD25','\u2728','\uD83C\uDF1F','\uD83C\uDF08','\uD83C\uDF89','\uD83C\uDFAE','\uD83C\uDFB5','\uD83D\uDCDA','\uD83D\uDE80','\uD83C\uDF55','\uD83C\uDF54','\uD83C\uDF6A','\uD83C\uDF82','\u2615','\uD83D\uDC36','\uD83D\uDC31','\uD83E\uDD84','\uD83D\uDC22','\uD83E\uDD8B','\uD83C\uDF3A','\uD83C\uDF3B','\uD83C\uDF32','\uD83C\uDF0A','\u26A1','\u2744\uFE0F','\uD83C\uDF19','\u2B50','\uD83C\uDF1E','\uD83E\uDDE0'];
+      const emojis = ['😀','😂','🤣','😍','🤩','😎','🤔','😱','🙏','👍','❤️','🔥','✨','🌟','🌈','🎉','🎮','🎵','📚','🚀','🍕','🍔','🍪','🎂','☕','🐶','🐱','🦄','🐢','🦋','🌺','🌻','🌲','🌊','⚡','❄️','🌙','⭐','☀️','🧠'];
       const shuffled = [...emojis].sort(() => Math.random() - 0.5);
-      result = `Random Emojis:\n\n${shuffled.slice(0, 20).join(' ')}\n\nSingle Pick: ${randomFrom(emojis)}`;
+      const chosen = shuffled.slice(0, 20).join(' ');
+      const single = randomFrom(emojis);
+      result = `Random Emojis:\n\n${chosen}\n\nSingle Pick: ${single}`;
+      resultHtml = renderHeadlineGroups([
+        { title: 'Random Emoji Set', note: 'Mix of expressive emojis to copy and paste.', items: [chosen] },
+        { title: 'Single Focus Emoji', note: 'Selected highlight emoji.', items: [single] }
+      ], 'Use these to add color to bios, captions, and text posts.');
       break;
     }
     case 'random-country-generator': {
       const countries = ['Japan','Brazil','France','Australia','Canada','Germany','India','Italy','Mexico','Thailand','South Korea','Spain','United Kingdom','Argentina','Egypt','Greece','Iceland','Kenya','Morocco','New Zealand','Norway','Peru','Portugal','Singapore','South Africa','Sweden','Switzerland','Turkey','Vietnam','Colombia'];
       const shuffled = [...countries].sort(() => Math.random() - 0.5);
-      result = shuffled.slice(0, 8).map((c, i) => `${i + 1}. \uD83C\uDF0D ${c}`).join('\n');
+      const chosen = shuffled.slice(0, 8);
+      result = chosen.map((c, i) => `${i + 1}. 🌍 ${c}`).join('\n');
+      resultHtml = renderHeadlineGroups([{ title: 'Random Countries Selected', note: 'Geographic locations for travel inspiration, trivia, or study.', items: chosen }], 'Explore capital cities, flags, and cultural profiles for each country.');
       break;
     }
     case 'random-date-generator': {
       const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
       const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-      result = generateMultiple(() => {
+      const dates = Array.from({ length: 8 }, () => {
         const year = 1970 + Math.floor(Math.random() * 56);
         const month = Math.floor(Math.random() * 12);
         const day = 1 + Math.floor(Math.random() * 28);
         const d = new Date(year, month, day);
         return `${days[d.getDay()]}, ${months[month]} ${day}, ${year}`;
-      }, 8);
+      });
+      result = dates.join('\n');
+      resultHtml = renderHeadlineGroups([{ title: 'Random Dates Selected', note: 'Generated calendar dates for testing, scheduling, or history prompts.', items: dates }], 'Useful for database mockups, fictional storylines, or practice drills.');
       break;
     }
     case 'random-choice-generator': {
@@ -5416,15 +6186,37 @@ async function generate() {
         ['What can travel around the world while staying in a corner?', 'A stamp'],
         ['I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?', 'An echo'],
         ['What has a head, a tail, is brown, and has no legs?', 'A penny'],
-        ['The more you take, the more you leave behind. What am I?', 'Footsteps']];
+        ['The more you take, the more you leave behind. What am I?', 'Footsteps']
+      ];
       const shuffled = [...riddles].sort(() => Math.random() - 0.5);
-      result = shuffled.slice(0, 4).map(([q, a], i) => `Riddle ${i + 1}: ${q}\nAnswer: ${a}`).join('\n\n');
+      const chosen = shuffled.slice(0, 4);
+      result = chosen.map(([q, a], i) => `Riddle ${i + 1}: ${q}\nAnswer: ${a}`).join('\n\n');
+      resultHtml = renderHeadlineGroups(chosen.map(([q, a], i) => ({
+        title: `Riddle ${i + 1}`,
+        note: q,
+        items: [`Answer: ${a}`]
+      })), 'Great for group activities, brain teasers, and classroom icebreakers.');
       break;
     }
     case 'icebreaker-generator': {
-      const icebreakers = ['If you could have any superpower for one day, what would it be?','What is the most interesting thing you learned this week?','If you could visit any place in the world tomorrow, where?','What is a hidden talent you have?','What was the best meal you ever had?','If you could learn any skill instantly, what?','What is your favorite way to spend a weekend?','If you were a color, which would you be?','What is the best book or show you\'ve enjoyed recently?','If you could meet any historical figure, who?','What is one thing on your bucket list?','If you had a theme song, what would it be?'];
+      const icebreakers = [
+        'If you could have any superpower for one day, what would it be?',
+        'What is the most interesting thing you learned this week?',
+        'If you could visit any place in the world tomorrow, where would you go?',
+        'What is a hidden talent you have?',
+        'What was the best meal you ever had?',
+        'If you could learn any skill instantly, what would it be?',
+        'What is your favorite way to spend a weekend?',
+        'If you were a color, which color would you be?',
+        'What is the best book or show you\'ve enjoyed recently?',
+        'If you could meet any historical figure, who would it be?',
+        'What is one thing on your bucket list?',
+        'If you had a theme song, what would it be?'
+      ];
       const shuffled = [...icebreakers].sort(() => Math.random() - 0.5);
-      result = '\uD83E\uDDCA Icebreaker Questions:\n\n' + shuffled.slice(0, 6).map((q, i) => `${i + 1}. ${q}`).join('\n');
+      const chosen = shuffled.slice(0, 6);
+      result = 'Icebreaker Questions:\n\n' + chosen.map((q, i) => `${i + 1}. ${q}`).join('\n');
+      resultHtml = renderHeadlineGroups([{ title: 'Icebreaker Prompts', note: 'Start team meetings, social meetups, or online calls with these conversation starters.', items: chosen }], 'Icebreaker tip: give everyone 30 seconds to respond to help lower communication friction.');
       break;
     }
     case 'product-title-generator': {
@@ -5475,13 +6267,15 @@ async function generate() {
       break;
     }
     case 'testimonial-generator': {
-      const service = text || 'service';
+      const service = compactSeed(text, 'Web Design Service');
       const testimonials = [
-        `"${service.charAt(0).toUpperCase() + service.slice(1)} completely transformed our workflow. We saw a 40% increase in productivity within the first month. Highly recommended!" - Sarah J., CEO`,
-        `"I've tried many ${service} solutions, but this one stands out. The quality and attention to detail are unmatched." - Mark T., Director`,
-        `"Outstanding ${service}! The team was professional, responsive, and delivered beyond our expectations." - Emily R., Manager`,
-        `"Best investment we made this year. ${service.charAt(0).toUpperCase() + service.slice(1)} helped us achieve our goals faster than we thought possible." - David L., Founder`];
+        `"${service} completely transformed our workflow. We saw a 40% increase in productivity within the first month. Highly recommended!"\n— Sarah J., CEO`,
+        `"I've tried many ${service} options, but this one stands out. The quality and attention to detail are unmatched."\n— Mark T., Director`,
+        `"Outstanding ${service}! The team was professional, responsive, and delivered beyond our expectations."\n— Emily R., Manager`,
+        `"Best investment we made this year. ${service} helped us achieve our goals faster than we thought possible."\n— David L., Founder`
+      ];
       result = testimonials.join('\n\n');
+      resultHtml = renderHeadlineGroups([{ title: 'Generated Testimonials', note: `Draft feedback templates for ${service}.`, items: testimonials }], 'Always use real testimonials from verified customers. Do not invent reviews or claim false certifications.');
       break;
     }
     case 'keyword-generator': {
@@ -5519,13 +6313,16 @@ async function generate() {
     case 'license-key-generator': {
       const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
       const gen = (len: number) => Array.from({length: len}, () => chars[Math.floor(Math.random() * chars.length)]).join('');
-      result = [
+      const keys = [
         `${gen(5)}-${gen(5)}-${gen(5)}-${gen(5)}-${gen(5)}`,
         `${gen(5)}-${gen(5)}-${gen(5)}-${gen(5)}-${gen(5)}`,
         `${gen(4)}-${gen(4)}-${gen(4)}-${gen(4)}`,
         `${gen(4)}-${gen(4)}-${gen(4)}-${gen(4)}`,
         `${gen(8)}-${gen(8)}`,
-        `${gen(8)}-${gen(8)}`].map((k, i) => `Key ${i + 1}: ${k}`).join('\n');
+        `${gen(8)}-${gen(8)}`
+      ];
+      result = keys.map((k, i) => `Key ${i + 1}: ${k}`).join('\n');
+      resultHtml = renderHeadlineGroups([{ title: 'Generated License Keys', note: 'Alphanumeric draft codes for software activation, testing, and mock licenses.', items: keys }], 'These keys are randomly generated sequences. Implement real cryptographic verification logic (e.g. RSA or checksums) in your application for production licensing.');
       break;
     }
     case 'recovery-code-generator': {
@@ -6949,7 +7746,6 @@ async function generate() {
       const alg = optionValue('jwt-algorithm', 'HS256');
       const secret = optionValue('jwt-secret', 'your-256-bit-secret');
 
-      // Base64URL encoder
       const base64UrlEncode = (str: string): string => {
         return btoa(unescape(encodeURIComponent(str)))
           .replace(/\+/g, '-')
@@ -6957,7 +7753,6 @@ async function generate() {
           .replace(/=+$/, '');
       };
 
-      // Synchronous SHA-256 implementation
       const sha256Sync = (message: Uint8Array): Uint8Array => {
         const K = new Uint32Array([
           0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
@@ -7020,7 +7815,6 @@ async function generate() {
         return resultBytes;
       };
 
-      // Synchronous HMAC-SHA256
       const hmacSha256Sync = (key: Uint8Array, message: Uint8Array): Uint8Array => {
         const k = new Uint8Array(64);
         if (key.length > 64) {
@@ -7072,6 +7866,30 @@ async function generate() {
         break;
       }
 
+      const warnings: string[] = [];
+      if (alg === 'HS256' && secret.length < 32) {
+        warnings.push('HMAC Secret is too weak: RFC 7518 requires a secret key of at least 256 bits (32 characters/bytes) for HS256 to ensure cryptographic strength.');
+      }
+      if (payloadObj && typeof payloadObj === 'object') {
+        const now = Math.floor(Date.now() / 1000);
+        if ('exp' in payloadObj) {
+          const exp = Number((payloadObj as any).exp);
+          if (isNaN(exp)) {
+            warnings.push("The 'exp' (expiration time) claim must be a numeric timestamp representing seconds since the Epoch.");
+          } else if (exp < now) {
+            warnings.push(`Token is expired: 'exp' value (${exp}) is in the past relative to current time (${now}).`);
+          }
+        } else {
+          warnings.push("Standard Recommendation: Missing 'exp' (expiration time) claim. Tokens should define expiration constraints to prevent reuse.");
+        }
+        if ('iat' in payloadObj) {
+          const iat = Number((payloadObj as any).iat);
+          if (isNaN(iat)) {
+            warnings.push("The 'iat' (issued at) claim must be a numeric timestamp.");
+          }
+        }
+      }
+
       const headerJson = JSON.stringify(headerObj, null, 2);
       const payloadJson = JSON.stringify(payloadObj, null, 2);
 
@@ -7091,16 +7909,24 @@ async function generate() {
           .replace(/=+$/, '');
       }
 
-      const token = signatureB64 ? `${unsignedToken}.${signatureB64}` : unsignedToken;
+      const token = alg === 'none' ? `${unsignedToken}.` : (signatureB64 ? `${unsignedToken}.${signatureB64}` : unsignedToken);
 
       const sections = [
-        { title: 'Encoded Token', body: token, note: 'Format: Header.Payload.Signature' },
+        { title: 'Encoded Token', body: token, note: alg === 'none' ? 'RFC 7519 compliant Unsecured JWT (ends with trailing dot).' : 'Format: Header.Payload.Signature' },
         { title: 'Decoded Header', body: headerJson, note: 'Token algorithm and type.' },
         { title: 'Decoded Payload', body: payloadJson, note: 'Custom claims and expiration details.' }
       ];
 
+      if (warnings.length > 0) {
+        sections.push({
+          title: 'RFC Standards & Best Practices Warnings',
+          body: warnings.map((w, idx) => `${idx + 1}. ${w}`).join('\n'),
+          note: 'Helpful hints based on RFC 7518 and RFC 7519 specifications.'
+        });
+      }
+
       result = token;
-      resultHtml = renderSectionSuite('JWT Token Package', sections, `Cryptographic verification is completed client-side. Algorithm: ${alg}. Key: ${secret}`);
+      resultHtml = renderSectionSuite('JWT Token Package', sections, `Client-side token compilation. Algorithm: ${alg}. RFC 7519 compliant signature format.`);
       break;
     }
     case 'random-id-generator': {
@@ -9036,7 +9862,9 @@ async function generate() {
         wifi: `WIFI:T:WPA;S:${raw};P:change-this-password;;`,
         email: `mailto:${raw.includes('@') ? raw : 'hello@example.com'}?subject=Hello&body=Message`,
         sms: `SMSTO:${raw.replace(/[^\d+]/g, '') || '+15551234567'}:Message`,
-        vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:${raw}\nORG:Company Name\nEMAIL:hello@example.com\nTEL:+15551234567\nEND:VCARD`};
+        vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:${raw}\nORG:Company Name\nEMAIL:hello@example.com\nTEL:+15551234567\nEND:VCARD`,
+        phone: `tel:${raw.replace(/[^\d+]/g, '') || '+15551234567'}`,
+        whatsapp: `https://wa.me/${raw.replace(/[^\d+]/g, '') || '15551234567'}?text=Hello`};
       const payload = payloads[type] || payloads.url;
       const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(payload)}`;
       const htmlEmbed = `<img src="${qrUrl}" alt="QR Code" width="${size}" height="${size}">`;
@@ -9578,22 +10406,22 @@ async function generate() {
           return first ? `${first} & ${match}` : `${randomFrom(pool)} & ${randomFrom(pool)}`;
         }
         if (style === 'classic') {
-          const classics = {
+          const classics: Record<string, string[]> = {
             boys: ['Henry', 'James', 'Thomas', 'William', 'Arthur', 'Charles', 'George', 'Edward'],
             girls: ['Alice', 'Eleanor', 'Clara', 'Rose', 'Beatrice', 'Charlotte', 'Jane', 'Margaret'],
             'mixed-neutral': ['Francis', 'Robin', 'Morgan', 'Ellis', 'Evelyn', 'Christian', 'Julian', 'Sydney']
           };
           const subPool = classics[gender] || classics['mixed-neutral'];
-          const match = randomFrom(subPool.filter(n => n.toUpperCase() !== first.toUpperCase()));
+          const match = randomFrom(subPool.filter((n: string) => n.toUpperCase() !== first.toUpperCase()));
           return first ? `${first} & ${match}` : `${randomFrom(subPool)} & ${randomFrom(subPool)}`;
         }
-        const vibes = {
+        const vibes: Record<string, string[]> = {
           boys: ['Miles', 'Theo', 'Jonah', 'Felix', 'Caleb', 'Nolan', 'Silas', 'Levi'],
           girls: ['Mia', 'Clara', 'Elise', 'Nora', 'Ivy', 'Hazel', 'Lena', 'Iris'],
           'mixed-neutral': ['Rowan', 'Quinn', 'Avery', 'Riley', 'Sage', 'Finley', 'Emery', 'Arden']
         };
         const subPool = vibes[gender] || vibes['mixed-neutral'];
-        const match = randomFrom(subPool.filter(n => n.toUpperCase() !== first.toUpperCase()));
+        const match = randomFrom(subPool.filter((n: string) => n.toUpperCase() !== first.toUpperCase()));
         return first ? `${first} & ${match}` : `${randomFrom(subPool)} & ${randomFrom(subPool)}`;
       };
 

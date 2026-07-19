@@ -100,7 +100,51 @@ const faqSchema = effectiveFaqItems.length > 0 ? {
   }))
 } : null;
 
-const schemas = [toolSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": `How to use the ${tool.name}`,
+  "description": `Step-by-step instructions on how to use ${tool.name} to generate custom outputs.`,
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Adjust inputs and settings",
+      "text": `Adjust options, enter custom input text, or select the desired parameters in the generator configuration panel.`
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Click Generate",
+      "text": "Click the generate or randomize button to run the local browser compilation engine and create instant outputs."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Review and Copy",
+      "text": "Review the generated output lines in the results list, and click the copy buttons to store them directly to your clipboard."
+    }
+  ]
+};
+
+const itemListSchema = tool.relatedSlugs && tool.relatedSlugs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": `Related tools to ${tool.name}`,
+  "itemListElement": tool.relatedSlugs.map((rSlug, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "url": `https://taptogen.com/tools/${rSlug}/`
+  }))
+} : null;
+
+const schemas = [
+  toolSchema,
+  breadcrumbSchema,
+  howToSchema,
+  ...(faqSchema ? [faqSchema] : []),
+  ...(itemListSchema ? [itemListSchema] : [])
+];
 
 const effectiveGuideCopy = getEffectiveGuideCopy(tool);
 const alternates = getToolLanguageAlternates(slug);
@@ -172,6 +216,9 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, 'en', tool.name);
                     )}
                     {opt.type === 'number' && (
                       <input type="number" id={opt.id} class="tool-number" value={typeof opt.default === 'number' || typeof opt.default === 'string' ? opt.default : undefined} min={opt.min} max={opt.max} />
+                    )}
+                    {opt.type === 'text' && (
+                      <input type="text" id={opt.id} class="tool-text" value={typeof opt.default === 'string' ? opt.default : undefined} />
                     )}
                     {opt.type === 'checkbox' && (
                       <div class="checkbox-option">

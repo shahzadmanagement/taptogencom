@@ -668,7 +668,8 @@ textarea.tool-input { min-height: 120px; resize: vertical; line-height: 1.6; }
   font-weight: 700;
 }
 .tool-select,
-.tool-number {
+.tool-number,
+.tool-text {
   width: 100%;
   padding: 11px 12px;
   border-radius: 8px;
@@ -679,7 +680,8 @@ textarea.tool-input { min-height: 120px; resize: vertical; line-height: 1.6; }
   transition: var(--transition);
 }
 .tool-select:focus,
-.tool-number:focus {
+.tool-number:focus,
+.tool-text:focus {
   border-color: var(--color-accent-1);
   box-shadow: 0 0 0 3px rgba(108,92,231,0.15);
 }

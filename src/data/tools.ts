@@ -1,7 +1,7 @@
 export interface ToolOption {
   id: string;
   label: string;
-  type: 'select' | 'checkbox' | 'radio' | 'number';
+  type: 'select' | 'checkbox' | 'radio' | 'number' | 'text';
   options?: { value: string; label: string }[];
   default?: string | boolean | number;
   min?: number;
@@ -243,7 +243,7 @@ export const tools: Tool[] = [
         id: 'bold-filter',
         label: 'Style Category',
         type: 'select',
-        defaultValue: 'all',
+        default: 'all',
         options: [
           { value: 'all', label: 'All Bold Styles' },
           { value: 'standard', label: 'Standard Bold (Serif & Sans)' },
@@ -255,7 +255,7 @@ export const tools: Tool[] = [
         id: 'bold-decor',
         label: 'Decor Wrap',
         type: 'select',
-        defaultValue: 'none',
+        default: 'none',
         options: [
           { value: 'none', label: 'None' },
           { value: 'stars', label: 'Stars (★彡)' },
@@ -467,7 +467,7 @@ export const tools: Tool[] = [
     metaDescription: "Create uuid ideas for developer notes, test data, config examples. Add context, compare options, and refine the best draft before using it.",
     userIntent: 'User wants to generate UUIDs.',
     generatorType: 'utility',
-    toolOptions: [{"type":"select","options":[{"value":"v4","label":"UUID v4 (Random)"},{"value":"v7","label":"UUID v7 (Timestamp-ordered)"},{"value":"v1","label":"UUID v1 (Timestamp-based)"}],"id":"uuid-version","label":"Version","default":"v4"},{"type":"number","id":"uuid-count","label":"Quantity","default":8,"min":1,"max":50},{"type":"select","options":[{"value":"lowercase","label":"Lowercase"},{"value":"uppercase","label":"Uppercase"}],"id":"uuid-case","label":"Case","default":"lowercase"},{"type":"select","options":[{"value":"with","label":"With Hyphens"},{"value":"without","label":"Without Hyphens"}],"id":"uuid-hyphens","label":"Hyphens","default":"with"}],
+    toolOptions: [{"type":"select","options":[{"value":"v4","label":"UUID v4 (Random)"},{"value":"v7","label":"UUID v7 (Timestamp-ordered)"},{"value":"v1","label":"UUID v1 (Timestamp-based)"},{"value":"v8","label":"UUID v8 (Custom/Experimental)"},{"value":"ulid","label":"ULID (Crockford Base32)"}],"id":"uuid-version","label":"Version","default":"v4"},{"type":"number","id":"uuid-count","label":"Quantity","default":8,"min":1,"max":100},{"type":"select","options":[{"value":"lowercase","label":"Lowercase"},{"value":"uppercase","label":"Uppercase"}],"id":"uuid-case","label":"Case","default":"lowercase"},{"type":"select","options":[{"value":"with","label":"With Hyphens"},{"value":"without","label":"Without Hyphens"}],"id":"uuid-hyphens","label":"Hyphens","default":"with"},{"type":"select","options":[{"value":"plain","label":"Plain List (Line-by-line)"},{"value":"json","label":"JSON Array"},{"value":"sql","label":"SQL Values Array"},{"value":"csv","label":"CSV List"}],"id":"uuid-format","label":"Output Format","default":"plain"}],
     faqItems: [{"q":"What should I include for better uuid results?","a":"Add input format, target environment, rules, examples. Specific context helps the tool create options that fit the real use case."},{"q":"Who is this UUID Generator for?","a":"It is useful for developers, students, and QA testers working on developer notes, test data, config examples, API drafts."},{"q":"Can I use the output immediately?","a":"Review syntax, privacy, and project requirements before using the result in a real system."},{"q":"How do I choose the best option?","a":"Pick the version that is clear, appropriate for the audience, easy to adapt, and accurate for the real situation."}],
     relatedSlugs: ["hash-generator", "random-number-generator", "json-formatter", "mock-api-generator"],
   },
@@ -1079,7 +1079,7 @@ export const tools: Tool[] = [
     metaDescription: 'Use Hash Generator to create focused draft options with your topic and constraints. Review, edit, and adapt results before use.',
     userIntent: 'User wants to generate hash values.',
     generatorType: 'utility',
-    toolOptions: [{"type":"select","options":[{"value":"all","label":"All Supported"},{"value":"sha256","label":"SHA-256 Focus"}],"id":"hash-algorithm-group","label":"Algorithm Group","default":"all"},{"type":"checkbox","default":false,"id":"hash-uppercase","label":"Uppercase Output"}],
+    toolOptions: [{"type":"select","options":[{"value":"all","label":"All Supported"},{"value":"sha256","label":"SHA-256 Only"},{"value":"md5","label":"MD5 Only"},{"value":"sha1","label":"SHA-1 Only"}],"id":"hash-algorithm-group","label":"Algorithm Group","default":"all"},{"type":"checkbox","default":false,"id":"hash-uppercase","label":"Uppercase Output"}],
     faqItems: [{"q":"What should I enter in Hash Generator?","a":"Add the topic, audience, tone, format, and limits the result should follow."},{"q":"How do I improve Hash Generator results?","a":"Use examples or constraints, compare outputs, and keep the clearest editable draft."},{"q":"Can I publish Hash Generator output as-is?","a":"Review accuracy, originality, readability, and project rules before publishing."}],
     relatedSlugs: ["uuid-generator","random-id-generator","slug-generator","json-formatter"],
   },
@@ -1097,7 +1097,7 @@ export const tools: Tool[] = [
     metaDescription: 'Use JSON Formatter to create focused draft options with your topic and constraints. Review, edit, and adapt results before use.',
     userIntent: 'User wants to format/validate JSON.',
     generatorType: 'utility',
-    toolOptions: [{"type":"number","id":"json-indent","label":"Indent Spaces","default":2,"min":2,"max":8},{"type":"checkbox","default":false,"id":"json-sort-keys","label":"Sort Keys"},{"type":"checkbox","default":false,"id":"json-autofix","label":"Auto-Fix Syntax Errors (Single quotes, trailing commas, unquoted keys)"}],
+    toolOptions: [{"type":"select","options":[{"value":"json","label":"Standard JSON"},{"value":"js","label":"JS Object Literal"},{"value":"escaped","label":"Escaped JSON String"},{"value":"unescaped","label":"Unescaped JSON String"}],"id":"json-output-mode","label":"Output Format","default":"json"},{"type":"select","options":[{"value":"2","label":"2 Spaces"},{"value":"4","label":"4 Spaces"},{"value":"8","label":"8 Spaces"}],"id":"json-indent","label":"Indentation","default":"2"},{"type":"checkbox","default":false,"id":"json-sort-keys","label":"Sort Keys"},{"type":"checkbox","default":false,"id":"json-autofix","label":"Auto-Fix Syntax"}],
     faqItems: [{"q":"What should I enter in JSON Formatter?","a":"Add the topic, audience, tone, format, and limits the result should follow."},{"q":"How do I improve JSON Formatter results?","a":"Use examples or constraints, compare outputs, and keep the clearest editable draft."},{"q":"Can I publish JSON Formatter output as-is?","a":"Review accuracy, originality, readability, and project rules before publishing."}],
     relatedSlugs: ["json-schema-generator","typescript-type-generator","graphql-query-generator","mock-api-generator"],
   },
@@ -2731,7 +2731,11 @@ export const tools: Tool[] = [
     metaDescription: 'Generate sample PIN-style placeholders for demos and UI testing. Not production security advice.',
     userIntent: 'User wants random PIN codes.',
     generatorType: 'utility',
-    faqItems: [],
+    faqItems: [
+      { q: "Can I use these PINs for production systems?", a: "No. These PINs are sample values generated in the browser for testing and mockup designs. Do not use them for real debit cards, bank accounts, or security systems." },
+      { q: "How are the PINs generated?", a: "They are generated locally in your web browser using a secure pseudorandom algorithm. No numbers are sent to any server or recorded." },
+      { q: "Does this tool support 4-digit and 6-digit PIN formats?", a: "Yes, you can customize the length and output count using the generator options to fit your interface or prototype design." }
+    ],
     relatedSlugs: ['password-generator', 'random-number-generator', 'passphrase-generator'],
   },
   {
@@ -2749,7 +2753,8 @@ export const tools: Tool[] = [
         options: [
           { value: '32', label: '32 characters' },
           { value: '48', label: '48 characters' },
-          { value: '64', label: '64 characters' }
+          { value: '64', label: '64 characters' },
+          { value: '128', label: '128 characters' }
         ],
         id: 'api-key-length',
         label: 'Key Length',
@@ -2765,6 +2770,20 @@ export const tools: Tool[] = [
         id: 'api-key-encoding',
         label: 'Encoding Scheme',
         default: 'base62'
+      },
+      {
+        type: 'number',
+        id: 'api-key-quantity',
+        label: 'Quantity',
+        default: 5,
+        min: 1,
+        max: 100
+      },
+      {
+        type: 'checkbox',
+        id: 'api-key-checksum',
+        label: 'Include Checksum Suffix',
+        default: false
       }
     ],
     icon: '🔐',
@@ -2778,7 +2797,11 @@ export const tools: Tool[] = [
     metaDescription: 'Generate sample API key placeholders for demos and formatting tests - free & instant.',
     userIntent: 'User wants sample API key placeholders.',
     generatorType: 'utility',
-    faqItems: [],
+    faqItems: [
+      { q: "Are these real, usable API keys?", a: "No. These are sample key strings generated locally for documentation examples, user interface mockups, and layout formatting. They are not active credentials." },
+      { q: "Is the generation secure?", a: "The values are calculated locally in your browser and are never transmitted over the network or stored. However, because they are intended as placeholders and not mathematically audited for high-entropy secrets, do not use them for production systems." },
+      { q: "Can I configure prefixes for the API keys?", a: "Yes, the prefix option allows adding custom tags like 'sk_live' or 'pk_test' to format the output to match your API documentation schema." }
+    ],
     relatedSlugs: ['password-generator', 'uuid-generator', 'hash-generator'],
   },
   {
@@ -2952,7 +2975,11 @@ export const tools: Tool[] = [
     userIntent: 'User wants TikTok caption ideas.',
     generatorType: 'template',
     toolOptions: [{"type":"select","options":[{"value":"educational","label":"Educational"},{"value":"funny","label":"Funny"},{"value":"product","label":"Product"},{"value":"creator","label":"Creator"}],"id":"tiktok-video-type","label":"Video Type","default":"educational"},{"type":"select","options":[{"value":"soft","label":"Soft CTA"},{"value":"direct","label":"Direct CTA"},{"value":"save","label":"Save CTA"}],"id":"tiktok-cta","label":"CTA Style","default":"save"}],
-    faqItems: [],
+    faqItems: [
+      { q: "Can this caption generator guarantee viral reach?", a: "No. It drafts caption ideas based on video styles and call-to-actions, but rankings and virality depend entirely on content quality and platform algorithms." },
+      { q: "How do I choose the best caption format?", a: "Select a video style that fits your content (e.g., educational, product, funny) and pick a CTA style to prompt viewers to like, save, or share." },
+      { q: "Is this tool affiliated with TikTok?", a: "No, this is an independent text helper and has no affiliation with or endorsement from ByteDance or TikTok." }
+    ],
     relatedSlugs: ['instagram-caption-generator', 'tiktok-bio-generator', 'hashtag-generator'],
   },
   {
@@ -3023,7 +3050,7 @@ export const tools: Tool[] = [
     metaDescription: "Draft regex patterns for common validation and matching tasks. Add examples, compare options, and test the pattern in your own environment.",
     userIntent: 'User wants regex patterns.',
     generatorType: 'utility',
-    toolOptions: [{"type":"select","options":[{"value":"email","label":"Email"},{"value":"url","label":"URL"},{"value":"phone","label":"Phone"},{"value":"numbers","label":"Numbers"},{"value":"username","label":"Username"},{"value":"contains","label":"Contains Text"},{"value":"starts","label":"Starts With"},{"value":"ends","label":"Ends With"}],"id":"regex-mode","label":"Pattern Mode","default":"email"},{"type":"checkbox","default":false,"id":"regex-case-insensitive","label":"Case Insensitive"}],
+    toolOptions: [{"type":"select","options":[{"value":"email","label":"Email"},{"value":"url","label":"URL"},{"value":"phone","label":"Phone"},{"value":"numbers","label":"Numbers"},{"value":"username","label":"Username"},{"value":"contains","label":"Contains Text"},{"value":"starts","label":"Starts With"},{"value":"ends","label":"Ends With"},{"value":"custom_validator","label":"Custom Pattern Validator"}],"id":"regex-mode","label":"Pattern Mode","default":"email"},{"type":"checkbox","default":false,"id":"regex-case-insensitive","label":"Case Insensitive"}],
     faqItems: [{"q":"What should I include for better regex results?","a":"Add the target language or tool, examples that should match, examples that should fail, case-sensitivity rules, and whether partial matches are acceptable."},{"q":"Can I use the regex pattern immediately?","a":"Treat it as a draft. Test it against real sample data and edge cases before using it in validation, search, routing, or production code."},{"q":"Does the tool guarantee a perfect regex?","a":"No. Regex behavior can vary by engine and flags, so review syntax and performance in your own environment."},{"q":"How do I choose the best pattern?","a":"Prefer the simplest pattern that matches your valid examples, rejects your invalid examples, and is readable enough for future maintenance."}],
     relatedSlugs: ["json-formatter", "slug-generator", "hash-generator", "uuid-generator"],
   },
@@ -3041,7 +3068,7 @@ export const tools: Tool[] = [
     metaDescription: "Brainstorm cron schedule expressions with context-aware options, practical notes, and review reminders before use.",
     userIntent: "User wants cron schedule expressions for developers, operations notes, and scheduled jobs, with editable options and practical review notes before publishing or using the result.",
     generatorType: 'utility',
-    toolOptions: [{"type":"select","options":[{"value":"minute","label":"Every Minute"},{"value":"hourly","label":"Hourly"},{"value":"daily","label":"Daily"},{"value":"weekly","label":"Weekly"},{"value":"monthly","label":"Monthly"},{"value":"custom","label":"Custom Input"}],"id":"cron-preset","label":"Preset","default":"daily"}],
+    toolOptions: [{"type":"select","options":[{"value":"minute","label":"Every Minute"},{"value":"hourly","label":"Hourly"},{"value":"daily","label":"Daily"},{"value":"weekly","label":"Weekly"},{"value":"monthly","label":"Monthly"},{"value":"custom","label":"Custom Input"}],"id":"cron-preset","label":"Preset","default":"daily"},{"type":"select","options":[{"value":"standard","label":"Standard Cron (5 fields)"},{"value":"quartz","label":"Quartz Cron (6 fields)"}],"id":"cron-format","label":"Cron Format","default":"standard"}],
     faqItems: [{"q":"What should I enter in the Cron Expression Generator?","a":"Add the topic, audience, style, tone, and any words or constraints that should shape the cron schedule expressions. Specific context usually creates more useful options."},{"q":"Who is this cron expression generator for?","a":"It is useful for developers, operations notes, and scheduled jobs when you need quick draft options, naming angles, copy ideas, or structured starting points to review."},{"q":"Can I use the results as-is?","a":"Use the output as an editable starting point. Check spelling, originality, context, and any platform or project rules before publishing."},{"q":"How do I choose the best result?","a":"Pick the option that is clear, relevant to developers, operations notes, and scheduled jobs, easy to adapt, and consistent with the tone or format you need."}],
     relatedSlugs: ["regex-generator","json-formatter","uuid-generator"],
   },
@@ -7608,7 +7635,7 @@ export const tools: Tool[] = [
     metaDescription:"Generate qr code planning drafts and snippets for websites, content, and product work. Use clear prompts, compare options, and edit the best result before publishing",
     userIntent: 'User wants to use QR Code Generator',
     generatorType: 'utility',
-    toolOptions: [{"type":"select","options":[{"value":"url","label":"URL"},{"value":"text","label":"Text"},{"value":"wifi","label":"WiFi"},{"value":"email","label":"Email"},{"value":"sms","label":"SMS"},{"value":"vcard","label":"vCard"}],"id":"qr-content-type","label":"Content Type","default":"url"},{"type":"select","options":[{"value":"200","label":"200 px"},{"value":"300","label":"300 px"},{"value":"400","label":"400 px"}],"id":"qr-size","label":"QR Size","default":"200"}],
+    toolOptions: [{"type":"select","options":[{"value":"url","label":"URL"},{"value":"text","label":"Text"},{"value":"wifi","label":"WiFi"},{"value":"email","label":"Email"},{"value":"sms","label":"SMS"},{"value":"vcard","label":"vCard"},{"value":"phone","label":"Phone Call"},{"value":"whatsapp","label":"WhatsApp Link"}],"id":"qr-content-type","label":"Content Type","default":"url"},{"type":"select","options":[{"value":"200","label":"200 px"},{"value":"300","label":"300 px"},{"value":"400","label":"400 px"}],"id":"qr-size","label":"QR Size","default":"200"}],
     faqItems: [{ q:"What should I enter in QR Code Generator?", a:"Enter the page type, format, audience, required details, and any constraints so the draft matches your real use case." }, { q:"Is QR Code Generator a final technical validator?", a:"No. Treat the output as a planning draft and review syntax, accessibility, policies, and project requirements before using it." }, { q:"How do I improve the generated result?", a:"Add specific labels, target pages, examples, and anything that should be included or avoided." }],
     relatedSlugs: ["qr-code-text-generator","short-code-generator","lorem-ipsum-generator"]},
   {
@@ -7644,7 +7671,11 @@ export const tools: Tool[] = [
     metaDescription: 'Create decorative mixed-font cutout text for fictional or design use. No threats or intimidation.',
     userIntent: 'User wants to use Ransom Note Text Generator',
     generatorType: 'utility',
-    faqItems: [],
+    faqItems: [
+      { q: "What is a ransom note text style?", a: "It is a decorative, cutout-style graphic layout where letters appear in different sizes, weights, and blackletter/cursive fonts, mimicking physical newspaper clip-outs." },
+      { q: "Where is this decorative text useful?", a: "It is perfect for artistic designs, game props, scrapbooks, and creative storytelling layouts where you want a chaotic, retro-cutout visual vibe." },
+      { q: "Can I copy the styled text?", a: "Yes, the cutout text uses Unicode characters that copy directly to your clipboard, though final rendering depends on font support in destination apps." }
+    ],
     relatedSlugs: []
   },
   {
@@ -7926,7 +7957,11 @@ export const tools: Tool[] = [
         max: 128
       }
     ],
-    faqItems: [],
+    faqItems: [
+      { q: "Are these tokens cryptographically secure for production?", a: "No. These are browser-local mock token outputs for interface demos and test inputs. Do not use them as production authorization headers or session tokens." },
+      { q: "What formats does the generator support?", a: "You can generate tokens in HEX, Base64URL, Alphanumeric, and UUID formats to match your system's data contract requirements." },
+      { q: "Are my tokens stored?", a: "No. All tokens are computed strictly within your browser sandbox. None of your inputs or outputs are transmitted or stored on any server." }
+    ],
     relatedSlugs: []
   },
   {

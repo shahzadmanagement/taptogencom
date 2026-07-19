@@ -1237,6 +1237,9 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, language, copy.h1);
                     {opt.type === 'number' && (
                       <input type="number" id={opt.id} class="tool-number" value={typeof opt.default === 'number' || typeof opt.default === 'string' ? opt.default : undefined} min={opt.min} max={opt.max} />
                     )}
+                    {opt.type === 'text' && (
+                      <input type="text" id={opt.id} class="tool-text" value={typeof opt.default === 'string' ? opt.default : undefined} />
+                    )}
                     {opt.type === 'checkbox' && (
                       <div class="checkbox-option">
                         <input type="checkbox" id={opt.id} class="tool-checkbox" checked={!!opt.default} />

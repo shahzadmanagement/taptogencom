@@ -93,7 +93,7 @@ export function getInternalLinks(pathname: string, lang: string = 'en'): Interna
 
       const hub = toolHubs.find(h => h.slug === currentTool.categorySlug);
       if (hub) {
-        addLink(`/tools/${hub.slug}/`, `${hub.name} Hub`, hub.icon);
+        addLink(`/tools/${hub.slug}/`, `${hub.h1} Hub`, '🗂️');
       }
     }
   }
@@ -115,7 +115,7 @@ export function getInternalLinks(pathname: string, lang: string = 'en'): Interna
 
       const hub = toolHubs.find(h => h.slug === categorySlug);
       if (hub) {
-        addLink(`/tools/${hub.slug}/`, `${hub.name} Hub`, hub.icon);
+        addLink(`/tools/${hub.slug}/`, `${hub.h1} Hub`, '🗂️');
       }
     }
   }

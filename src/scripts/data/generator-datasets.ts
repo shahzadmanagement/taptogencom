@@ -2732,6 +2732,24 @@ export function buildPass29TemplateSections(slug: string, seed: string, style: s
       { title: 'Scope', body: `Deliverables: [user-fill deliverables]\nTimeline: [user-fill timeline]\nResponsibilities: [user-fill responsibilities]\nOut of scope: [user-fill exclusions]\nAcceptance process: [user-fill review process]`, note: 'User-fill service scope.' },
       { title: 'Terms', body: `Business terms:\nFees: [user-fill amount]\nPayment schedule: [user-fill]\nChanges: [user-fill change process]\nConfidentiality/IP/data: [user-fill for review]\nTermination/contact: [user-fill]`, note: 'Agreement section scaffold.' },
       { title: 'Review Note', body: 'Review with qualified counsel or an appropriate professional before sending, signing, or relying on the agreement.', note: 'Professional review reminder.' },
+      { title: 'Safety Note', body: commonSafety, note: 'Required safe framing.' }],
+    'contract-generator': [
+      { title: 'Overview', body: `CONTRACT AGREEMENT - INFORMATIONAL OUTLINE\nProject/Topic: ${titleCase(topic)}\nParty A: [user-fill Party A]\nParty B: [user-fill Party B]\nDate: [user-fill date]`, note: 'Informational draft outline.' },
+      { title: 'Scope of Work', body: `Deliverables: [user-fill precise deliverable list]\nTimeline/Milestones: [user-fill dates/milestones]\nPerformance Standards: [user-fill standards]`, note: 'User-fill contract scope.' },
+      { title: 'Financial Terms', body: `Fees: [user-fill payment amount]\nSchedule: [user-fill payment terms]\nExpenses: [user-fill reimbursement terms]`, note: 'Payment terms outline.' },
+      { title: 'Review Note', body: 'Review with qualified legal counsel before signing. Do not assume completeness or local jurisdiction fit.', note: 'Professional review reminder.' },
+      { title: 'Safety Note', body: commonSafety, note: 'Required safe framing.' }],
+    'dmca-policy-generator': [
+      { title: 'Overview', body: `DMCA NOTICE POLICY - INFORMATIONAL DRAFT\nWebsite/App: ${titleCase(topic)}\nDesignated Agent: [user-fill Agent Name]\nAddress: [user-fill Physical Address]\nEmail: [user-fill DMCA Email]`, note: 'Informational draft only.' },
+      { title: 'Notice Requirements', body: 'A valid DMCA notice must include:\n1. Signature of copyright owner or authorized representative\n2. Identification of the copyrighted work claimed to be infringed\n3. Identification of the infringing material to be removed\n4. Contact information of the complaining party\n5. Statement of good faith belief\n6. Statement under penalty of perjury', note: 'Notice checklist.' },
+      { title: 'Counter Notice & Repeat Infringers', body: `Counter notice info: [user-fill counter notice process]\nRepeat infringer policy: ${context.includeRepeatInfringer ? '[user-fill repeat infringer policy terms]' : '[omitted by option]'}`, note: 'Counter notice and enforcement terms.' },
+      { title: 'Review Note', body: 'Review with qualified counsel. Verify designated agent registration with the US Copyright Office when applicable.', note: 'Professional review reminder.' },
+      { title: 'Safety Note', body: commonSafety, note: 'Required safe framing.' }],
+    'acceptable-use-policy-generator': [
+      { title: 'Overview', body: `ACCEPTABLE USE POLICY - INFORMATIONAL DRAFT\nSystem/Service: ${titleCase(topic)}\nApplicable to: [user-fill users/customers]\nEffective date: [user-fill date]`, note: 'Informational draft only.' },
+      { title: 'Prohibited Conduct', body: `Prohibited actions include:\n1. Illegal activity: ${context.includeContent ? '[user-fill details]' : '[omitted]'}\n2. Security evasion: ${context.includeSecurity ? '[user-fill details]' : '[omitted]'}\n3. Automation & Scraping: ${context.includeAutomation ? '[user-fill details]' : '[omitted]'}\n4. Deceptive practices/spam`, note: 'Restrictions list.' },
+      { title: 'Enforcement & Remedies', body: `Investigation: [user-fill investigation procedures]\nRemedies: suspension, termination, legal cooperation\nReport abuse: [user-fill report path/contact]`, note: 'Enforcement terms.' },
+      { title: 'Review Note', body: 'Verify AUP restrictions match actual technical capabilities and business requirements before publishing.', note: 'Professional review reminder.' },
       { title: 'Safety Note', body: commonSafety, note: 'Required safe framing.' }]};
   return filterGroupsByOption(libraries[slug] ?? [], style);
 }

@@ -16,7 +16,7 @@ interface ProductFeatureRegistry {
 export function getProductDominationRegistry(): ProductFeatureRegistry[] {
   return tools.map(t => {
     // Determine feature support based on tool data and settings
-    const hasPresets = Array.isArray(t.options) && t.options.length > 0;
+    const hasPresets = Array.isArray(t.toolOptions) && t.toolOptions.length > 0;
     
     // We guarantee that all indexable tools inherit these dominant features:
     return {
