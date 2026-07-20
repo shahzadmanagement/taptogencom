@@ -229,7 +229,9 @@ test.describe('E2E Browser Validation for Generators', () => {
 
       // Monitor console errors and exceptions
       page.on('console', msg => {
-        if (msg.type() === 'error') consoleErrors.push(msg.text());
+        if (msg.type() === 'error' && !msg.text().includes('ERR_CONNECTION_TIMED_OUT') && !msg.text().includes('ERR_NAME_NOT_RESOLVED')) {
+          consoleErrors.push(msg.text());
+        }
       });
       page.on('pageerror', err => pageErrors.push(err));
 

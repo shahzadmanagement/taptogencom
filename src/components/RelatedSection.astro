@@ -1,5 +1,6 @@
 ---
 import type { Tool } from '../data/tools';
+import { getToolRoute } from '../data/localization';
 
 interface Props {
   title: string;
@@ -11,7 +12,7 @@ interface Props {
 const { title, relatedTools = [], links, isSpanish = false } = Astro.props;
 
 const resolvedLinks = links || relatedTools.map(item => ({
-  url: isSpanish ? `/es/tools/${item.slug}/` : `/tools/${item.slug}/`,
+  url: getToolRoute(item.slug, isSpanish ? 'es' : 'en'),
   anchor: item.name,
   icon: item.icon
 }));

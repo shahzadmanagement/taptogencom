@@ -1,4 +1,5 @@
 import type { LocalizedToolContent } from './localization';
+import { spanishLocalizedToolData } from './localization-spanish-data';
 import { additionalLocalizedPilotToolData } from './localization-pilot-extra-data';
 import { rolloutB01LocalizedToolData } from './localization-rollout-b01-data';
 import { rolloutB02LocalizedToolData } from './localization-rollout-b02-data';
@@ -8,8 +9,9 @@ import { rolloutB05LocalizedToolData } from './localization-rollout-b05-data';
 import { rolloutB06LocalizedToolData } from './localization-rollout-b06-data';
 import { rolloutB07LocalizedToolData } from './localization-rollout-b07-data';
 import { rolloutB08LocalizedToolData } from './localization-rollout-b08-data';
+import { rolloutB09LocalizedToolData } from './localization-rollout-b09-data';
 
-export const localizedPilotToolData: LocalizedToolContent[] = [
+const rawPilotToolData: LocalizedToolContent[] = [
   {
     "canonicalToolId": "name-generator",
     "language": "es",
@@ -2050,6 +2052,10 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
     "searchIntentNote": "Natural German compound for ecommerce copy.",
     "riskSafetyNote": "Must verify factual claims, pricing, compliance, and policies."
   },
+];
+
+const nonSpanishPilotAndRolloutData = [
+  ...rawPilotToolData,
   ...additionalLocalizedPilotToolData,
   ...rolloutB01LocalizedToolData,
   ...rolloutB02LocalizedToolData,
@@ -2059,4 +2065,10 @@ export const localizedPilotToolData: LocalizedToolContent[] = [
   ...rolloutB06LocalizedToolData,
   ...rolloutB07LocalizedToolData,
   ...rolloutB08LocalizedToolData,
+  ...rolloutB09LocalizedToolData,
+].filter((entry) => entry.language !== 'es');
+
+export const localizedPilotToolData: LocalizedToolContent[] = [
+  ...spanishLocalizedToolData,
+  ...nonSpanishPilotAndRolloutData,
 ];
