@@ -70,25 +70,27 @@ export function bindEvents(
     updateCountersAndFeatures();
   });
 
-  const observer = new MutationObserver((mutations) => {
-    const hasRealMutation = mutations.some(m => {
-      const target = m.target as HTMLElement;
-      if (target.classList?.contains('fav-btn') || target.parentElement?.classList?.contains('fav-btn')) {
-        return false;
-      }
-      return true;
-    });
+  if (typeof MutationObserver !== 'undefined') {
+    const observer = new MutationObserver((mutations) => {
+      const hasRealMutation = mutations.some(m => {
+        const target = m.target as HTMLElement;
+        if (target.classList?.contains('fav-btn') || target.parentElement?.classList?.contains('fav-btn')) {
+          return false;
+        }
+        return true;
+      });
 
-    if (hasRealMutation) {
-      observer.disconnect();
-      updateCountersAndFeatures();
-      if (output) {
-        observer.observe(output, { childList: true, subtree: true });
+      if (hasRealMutation) {
+        observer.disconnect();
+        updateCountersAndFeatures();
+        if (output) {
+          observer.observe(output, { childList: true, subtree: true });
+        }
       }
+    });
+    if (output) {
+      observer.observe(output, { childList: true, subtree: true });
     }
-  });
-  if (output) {
-    observer.observe(output, { childList: true, subtree: true });
   }
 
   document.getElementById('btn-case-lower')?.addEventListener('click', () => {

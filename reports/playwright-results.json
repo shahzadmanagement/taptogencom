@@ -124,27 +124,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 9095,
+                      "status": "skipped",
+                      "duration": 1697,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:01:50.406Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:11.610Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-9b24cf88451e7d1258f2",
@@ -158,27 +178,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5918,
+                      "status": "skipped",
+                      "duration": 439,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:01:59.829Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:13.607Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-091a49befcf397ca455a",
@@ -192,27 +232,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5809,
+                      "status": "skipped",
+                      "duration": 513,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:05.778Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:14.078Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-45fc040ec23a66677a16",
@@ -226,27 +286,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5430,
+                      "status": "skipped",
+                      "duration": 464,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:11.617Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:14.635Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-7c7ad729a916e42a950f",
@@ -260,27 +340,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5128,
+                      "status": "skipped",
+                      "duration": 537,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:17.082Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:15.137Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-477c7e83f5a811fc16c7",
@@ -294,27 +394,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5356,
+                      "status": "skipped",
+                      "duration": 493,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:22.249Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:15.707Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-4ddf6eac4ad332afadbb",
@@ -328,27 +448,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5541,
+                      "status": "skipped",
+                      "duration": 510,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:27.649Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:16.230Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-075b523ff6af68b8e75d",
@@ -362,27 +502,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4968,
+                      "status": "skipped",
+                      "duration": 601,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:33.217Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:16.770Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-cd92ec98e6d958263864",
@@ -396,27 +556,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4973,
+                      "status": "skipped",
+                      "duration": 500,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:38.212Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:17.402Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-1f6b667675776782e065",
@@ -430,27 +610,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5329,
+                      "status": "skipped",
+                      "duration": 540,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:43.208Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:17.937Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-5670c2ab882f1d58550b",
@@ -464,27 +664,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5465,
+                      "status": "skipped",
+                      "duration": 603,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:48.561Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:18.504Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-e5e0ca21ac3d4290cecf",
@@ -498,27 +718,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5000,
+                      "status": "skipped",
+                      "duration": 523,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:54.055Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:19.163Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-bbdeab3583fd9026764f",
@@ -532,27 +772,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5246,
+                      "status": "skipped",
+                      "duration": 581,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:59.081Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:19.716Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-2aa9c0a15cc44adedd45",
@@ -566,27 +826,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5203,
+                      "status": "skipped",
+                      "duration": 542,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:04.357Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:20.325Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-291379ad45bf62199779",
@@ -600,27 +880,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4915,
+                      "status": "skipped",
+                      "duration": 610,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:09.587Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:20.896Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-6d6297287f222a49698d",
@@ -634,27 +934,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5238,
+                      "status": "skipped",
+                      "duration": 594,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:14.529Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:21.541Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-4ae2318c77579ee2f367",
@@ -668,27 +988,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5213,
+                      "status": "skipped",
+                      "duration": 781,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:19.794Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:22.170Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-d98ff95718a71f154325",
@@ -702,27 +1042,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4655,
+                      "status": "skipped",
+                      "duration": 661,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:25.032Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:23.027Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-7b4ae37a920ce8c5e317",
@@ -736,27 +1096,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4826,
+                      "status": "skipped",
+                      "duration": 788,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:29.714Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:23.734Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-dc04abfa52c5de974f62",
@@ -770,27 +1150,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5569,
+                      "status": "skipped",
+                      "duration": 546,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:34.573Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:24.557Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-418f4681be4e6a78b0c7",
@@ -804,27 +1204,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5045,
+                      "status": "skipped",
+                      "duration": 440,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:40.170Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:25.141Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-a901249200f2e38fcd6e",
@@ -838,27 +1258,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3966,
+                      "status": "skipped",
+                      "duration": 449,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:45.243Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:25.621Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-1ebe15fc26e9048506ca",
@@ -872,27 +1312,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4073,
+                      "status": "skipped",
+                      "duration": 430,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:49.234Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:26.095Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-8f4edf54aa5fcb2e03ba",
@@ -906,27 +1366,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4160,
+                      "status": "skipped",
+                      "duration": 412,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:53.328Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:26.551Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-7e853e313961454afdf1",
@@ -940,27 +1420,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4524,
+                      "status": "skipped",
+                      "duration": 363,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:57.509Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:26.985Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-274b5c646c7b0ad98ec4",
@@ -974,27 +1474,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4036,
+                      "status": "skipped",
+                      "duration": 409,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:02.054Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:27.367Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-69c70117edc1616dd658",
@@ -1008,27 +1528,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4148,
+                      "status": "skipped",
+                      "duration": 421,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:06.114Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:27.795Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-c9b7a45ea264393c2cf4",
@@ -1042,27 +1582,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4133,
+                      "status": "skipped",
+                      "duration": 470,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:10.285Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:28.238Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-935eba1a619c65e3c645",
@@ -1076,27 +1636,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3998,
+                      "status": "skipped",
+                      "duration": 437,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:14.492Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:28.729Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-6f330d072add88b918d7",
@@ -1110,27 +1690,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4080,
+                      "status": "skipped",
+                      "duration": 423,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:18.513Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:29.191Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-1aad623f18f8e1388e2e",
@@ -1144,27 +1744,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4200,
+                      "status": "skipped",
+                      "duration": 395,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:22.616Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:29.635Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-3e60b2f6f53916a2f337",
@@ -1178,27 +1798,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4349,
+                      "status": "skipped",
+                      "duration": 415,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:26.845Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:30.050Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-09a63625f68dfe77da26",
@@ -1212,27 +1852,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4271,
+                      "status": "skipped",
+                      "duration": 427,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:31.226Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:30.493Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-403b1d1457d29d5884ce",
@@ -1246,27 +1906,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3991,
+                      "status": "skipped",
+                      "duration": 429,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:35.521Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:30.939Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-da45c3ce318e960fe96f",
@@ -1280,27 +1960,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4172,
+                      "status": "skipped",
+                      "duration": 475,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:39.537Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:31.393Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-50fe97215fbe1ccdb7e7",
@@ -1314,27 +2014,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4108,
+                      "status": "skipped",
+                      "duration": 464,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:43.728Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:31.893Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-ea5d8fc369d5e22a2bf2",
@@ -1348,27 +2068,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3990,
+                      "status": "skipped",
+                      "duration": 464,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:47.858Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:32.384Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-fc6c4e750b6decfafba6",
@@ -1382,27 +2122,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4331,
+                      "status": "skipped",
+                      "duration": 456,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:51.875Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:32.872Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-ec25a0b09546dbfdfce5",
@@ -1416,27 +2176,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4044,
+                      "status": "skipped",
+                      "duration": 522,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:04:56.233Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:33.350Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-d4eb719cfa2dba5c966a",
@@ -1450,27 +2230,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4158,
+                      "status": "skipped",
+                      "duration": 471,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:05:00.316Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:33.897Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-4a4f46e5157bfd5c932e",
@@ -1484,27 +2284,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4107,
+                      "status": "skipped",
+                      "duration": 439,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:05:04.511Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:34.391Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-1d423b4450b1fb22b846",
@@ -1518,27 +2338,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4089,
+                      "status": "skipped",
+                      "duration": 449,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:05:08.656Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:34.854Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-0f2bcc941772b91a502a",
@@ -1552,27 +2392,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4081,
+                      "status": "skipped",
+                      "duration": 414,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:05:12.767Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:35.326Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-66873112bcf91bd33ba5",
@@ -1586,27 +2446,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4316,
+                      "status": "skipped",
+                      "duration": 454,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:05:16.872Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:35.764Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-abdde20e38404ed63119",
@@ -1620,27 +2500,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4039,
+                      "status": "skipped",
+                      "duration": 489,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:05:21.210Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:36.243Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-e6a8ec5b5546acb9d77b",
@@ -1654,27 +2554,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4330,
+                      "status": "skipped",
+                      "duration": 447,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:05:25.274Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:36.754Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-67fa0e38786c762b9144",
@@ -1688,27 +2608,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4081,
+                      "status": "skipped",
+                      "duration": 408,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:05:29.624Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:37.223Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-3e69bc97aae1e85b97d3",
@@ -1722,27 +2662,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4472,
+                      "status": "skipped",
+                      "duration": 469,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:05:33.726Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:37.657Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-eadf905d08594c8f16de",
@@ -1756,27 +2716,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3932,
+                      "status": "skipped",
+                      "duration": 490,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:05:38.220Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:38.153Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-86add1ba6d53239ac01f",
@@ -1790,27 +2770,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4133,
+                      "status": "skipped",
+                      "duration": 498,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:05:42.177Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:38.668Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-18d08f6910cd390fb169",
@@ -1824,27 +2824,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 9672,
+                      "status": "skipped",
+                      "duration": 1597,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:01:50.448Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:11.635Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-8f6fba5ee87bc1c19157",
@@ -1878,12 +2898,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 525,
+                      "duration": 566,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:00.451Z",
+                      "startTime": "2026-07-21T21:59:13.561Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1932,12 +2952,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 504,
+                      "duration": 419,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:01.024Z",
+                      "startTime": "2026-07-21T21:59:14.175Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1986,12 +3006,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 587,
+                      "duration": 484,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:01.558Z",
+                      "startTime": "2026-07-21T21:59:14.628Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2040,12 +3060,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 464,
+                      "duration": 575,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:02.173Z",
+                      "startTime": "2026-07-21T21:59:15.151Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2094,12 +3114,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 436,
+                      "duration": 540,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:02.669Z",
+                      "startTime": "2026-07-21T21:59:15.763Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2128,27 +3148,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5857,
+                      "status": "skipped",
+                      "duration": 506,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:03.136Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:16.337Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-28eafcbf1673ed6496c1",
@@ -2162,27 +3202,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5701,
+                      "status": "skipped",
+                      "duration": 609,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:09.022Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:16.879Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-8b521c1036c0e10cc598",
@@ -2196,27 +3256,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5289,
+                      "status": "skipped",
+                      "duration": 512,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:14.751Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:17.523Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-038bb462fb356edb746c",
@@ -2250,12 +3330,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 554,
+                      "duration": 493,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:20.067Z",
+                      "startTime": "2026-07-21T21:59:18.066Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2304,12 +3384,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 511,
+                      "duration": 597,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:20.647Z",
+                      "startTime": "2026-07-21T21:59:18.592Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2338,27 +3418,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 4633,
+                      "status": "skipped",
+                      "duration": 543,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:21.195Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:19.260Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-431f783dabafab3cb2bf",
@@ -2392,12 +3492,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 558,
+                      "duration": 623,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:25.852Z",
+                      "startTime": "2026-07-21T21:59:19.841Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2446,12 +3546,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 440,
+                      "duration": 567,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:26.437Z",
+                      "startTime": "2026-07-21T21:59:20.508Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2500,12 +3600,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 406,
+                      "duration": 583,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:26.901Z",
+                      "startTime": "2026-07-21T21:59:21.112Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2554,12 +3654,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 510,
+                      "duration": 843,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:27.329Z",
+                      "startTime": "2026-07-21T21:59:21.733Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2608,12 +3708,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 420,
+                      "duration": 688,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:27.863Z",
+                      "startTime": "2026-07-21T21:59:22.676Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2662,12 +3762,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 456,
+                      "duration": 638,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:28.307Z",
+                      "startTime": "2026-07-21T21:59:23.409Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2716,12 +3816,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 502,
+                      "duration": 643,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:28.790Z",
+                      "startTime": "2026-07-21T21:59:24.089Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2770,12 +3870,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 373,
+                      "duration": 505,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:29.320Z",
+                      "startTime": "2026-07-21T21:59:24.774Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2804,27 +3904,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5178,
+                      "status": "skipped",
+                      "duration": 430,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:29.720Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:25.330Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-70605344f0460f968b2c",
@@ -2858,12 +3978,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 499,
+                      "duration": 447,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:34.922Z",
+                      "startTime": "2026-07-21T21:59:25.789Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2892,27 +4012,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5202,
+                      "status": "skipped",
+                      "duration": 421,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:35.449Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:26.261Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-9c7a92d6041ea0c91f8a",
@@ -2926,27 +4066,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5284,
+                      "status": "skipped",
+                      "duration": 427,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:40.678Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:26.702Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-69facbf447f62069bbc9",
@@ -2960,27 +4120,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5130,
+                      "status": "skipped",
+                      "duration": 405,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:45.988Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:27.149Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-cac40c83f5e7d0081efc",
@@ -3014,12 +4194,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 382,
+                      "duration": 433,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:51.145Z",
+                      "startTime": "2026-07-21T21:59:27.578Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -3048,27 +4228,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5172,
+                      "status": "skipped",
+                      "duration": 421,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:51.553Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:28.034Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-8d527260419715fa0c23",
@@ -3082,27 +4282,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5047,
+                      "status": "skipped",
+                      "duration": 479,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:02:56.752Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:28.477Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-5e481af7372eec50bd59",
@@ -3116,27 +4336,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5173,
+                      "status": "skipped",
+                      "duration": 427,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:01.823Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:28.977Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-f3f7e0d3b39df86fffe5",
@@ -3170,12 +4410,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 389,
+                      "duration": 411,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:07.019Z",
+                      "startTime": "2026-07-21T21:59:29.423Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -3224,12 +4464,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 508,
+                      "duration": 401,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:07.434Z",
+                      "startTime": "2026-07-21T21:59:29.857Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -3278,12 +4518,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 440,
+                      "duration": 429,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:07.966Z",
+                      "startTime": "2026-07-21T21:59:30.275Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -3332,12 +4572,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 461,
+                      "duration": 447,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:08.430Z",
+                      "startTime": "2026-07-21T21:59:30.724Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -3386,12 +4626,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 443,
+                      "duration": 460,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:08.910Z",
+                      "startTime": "2026-07-21T21:59:31.193Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -3420,27 +4660,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 4895,
+                      "status": "skipped",
+                      "duration": 474,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:09.372Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:31.677Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-06fa1f44cdfd39205964",
@@ -3454,27 +4714,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 4760,
+                      "status": "skipped",
+                      "duration": 467,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:14.293Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:32.176Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-68c35efb5f3241f3f71d",
@@ -3508,12 +4788,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 443,
+                      "duration": 423,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:19.081Z",
+                      "startTime": "2026-07-21T21:59:32.671Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -3562,12 +4842,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 516,
+                      "duration": 491,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:19.551Z",
+                      "startTime": "2026-07-21T21:59:33.118Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -3596,27 +4876,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5163,
+                      "status": "skipped",
+                      "duration": 426,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:20.090Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:33.634Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-0b83abe89d55a2ab76c2",
@@ -3630,27 +4930,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5162,
+                      "status": "skipped",
+                      "duration": 481,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:25.277Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:34.087Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-ef2bbe13bea48eabd9c5",
@@ -3684,12 +5004,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 596,
+                      "duration": 453,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:30.466Z",
+                      "startTime": "2026-07-21T21:59:34.591Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -3738,12 +5058,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 423,
+                      "duration": 402,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:31.089Z",
+                      "startTime": "2026-07-21T21:59:35.067Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -3792,12 +5112,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 505,
+                      "duration": 444,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:31.537Z",
+                      "startTime": "2026-07-21T21:59:35.491Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -3846,12 +5166,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 364,
+                      "duration": 438,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:32.064Z",
+                      "startTime": "2026-07-21T21:59:35.957Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -3880,27 +5200,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 4985,
+                      "status": "skipped",
+                      "duration": 457,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:32.453Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:36.418Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-8af2f02d6acbace6225a",
@@ -3934,12 +5274,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 343,
+                      "duration": 462,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:37.466Z",
+                      "startTime": "2026-07-21T21:59:36.903Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -3988,12 +5328,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 508,
+                      "duration": 486,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:37.833Z",
+                      "startTime": "2026-07-21T21:59:37.391Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -4022,27 +5362,47 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Cached pass (no code changes detected)",
+                      "location": {
+                        "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                        "line": 222,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 5216,
+                      "status": "skipped",
+                      "duration": 441,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:38.365Z",
-                      "annotations": [],
+                      "startTime": "2026-07-21T21:59:37.900Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Cached pass (no code changes detected)",
+                          "location": {
+                            "file": "C:\\Users\\shahz\\OneDrive\\Documents\\GitHub\\taptogencom\\tests\\e2e\\generator.spec.ts",
+                            "line": 222,
+                            "column": 14
+                          }
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "01994010d58c326edd72-54fa20b0afb9edf187a0",
@@ -4076,12 +5436,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 482,
+                      "duration": 512,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:43.610Z",
+                      "startTime": "2026-07-21T21:59:38.364Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -4130,12 +5490,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 529,
+                      "duration": 463,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-20T23:03:44.120Z",
+                      "startTime": "2026-07-21T21:59:38.900Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -4165,10 +5525,10 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-07-20T23:01:41.530Z",
-    "duration": 246075.049,
-    "expected": 68,
-    "skipped": 32,
+    "startTime": "2026-07-21T21:59:04.534Z",
+    "duration": 36071.144,
+    "expected": 0,
+    "skipped": 100,
     "unexpected": 0,
     "flaky": 0
   }
