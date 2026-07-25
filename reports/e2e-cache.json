@@ -2,18 +2,19 @@
   "globalHashes": {
     "astro.config.mjs": "a545d661107febd758273f818126c2d638fe7fde892cd9aa6d982711b23a3dba",
     "package.json": "d9b6734bc84f1873b8a3ef62414a025b6f33e105e8fafc034c8008a18b12d54b",
-    "src/components/DownloadToolbar.astro": "6be41b89ba9243fe07cd8a2ae0dc5b80d5b4cba27a9e5caa71ecc3e23623dc74",
+    "src/components/DownloadToolbar.astro": "dd439c0e9f0a20b27808f1e9bab994d419e1a198408ab3a8e3c0fe463125fe78",
     "src/components/ExamplesSection.astro": "9172c469137245a2cbd9327a464a7068d6aa23c4b465d21f8c9dbec41314a1aa",
     "src/components/FaqSection.astro": "686cff5bcd8c6b6e4bd722f7f2191487b1887fde0d0669869f212ba2d38aa6b0",
     "src/components/FavoritesPanel.astro": "985d6fad1d55abce312f5ac47dece1fdbf205961017b4aab5cdeeee508dd5c32",
     "src/components/HistoryPanel.astro": "9fd08a048a6490e0ab8d31334c4193b1942717cb303a5eceda97827101d2d3a6",
     "src/components/HubPage.astro": "6c021cfe773bb3cd3a895cef9f0a42515ea8f4f7c25aa5e06c90fd27b63510ab",
     "src/components/IntroSection.astro": "4abc9baedd9d516fd9bfcc051849229a840ed0fbdb05b98e737e661f6f8dbafa",
-    "src/components/KeyboardShortcuts.astro": "409ec8e54a396706b5965682f191fc3d4ddc3e91792ee3cff3ee7567ebbd450a",
-    "src/components/LocalizedToolPage.astro": "337a86b8bc269f8cb136fcdcf150be7f1c2ce52ece5da9032f235248b8b53ca5",
-    "src/components/MetricsPanel.astro": "27ed5e23fead1cbc2fd60f1066f89312dd474236200d55f99e99ad24c8e66eeb",
+    "src/components/KeyboardShortcuts.astro": "89ee32120a18fa6136fd87cc6a380c246de5d0f5a2c514d63baf062a89312417",
+    "src/components/LocalizedToolPage.astro": "9e0743bb4a4eac1d659a2fac00d81f3c0ea66c117a382a87dd0f934b924b3842",
+    "src/components/MetricsPanel.astro": "46284d273909aa6a1d571501e00ef184d9c5e364f56872dee0b1f171e4c8f369",
+    "src/components/MobileActionBar.astro": "fa511d32e8a68e3b6bf72cd10be469aa1eb6b559248788235cbd1a4895dd7e32",
     "src/components/PreviewTabs.astro": "65778ba845a6dc183f7b13632a2dee81a4bc2d1a4712714ff8bd4516621c5331",
-    "src/components/RelatedSection.astro": "0ab6624c56e6fa50abf5cf24f783a9087000283c4daecb5561fd915f96087736",
+    "src/components/RelatedSection.astro": "78558c88ed3c4922704bfe684b277aa66378d71043ef8c86f64c903680db197d",
     "src/components/SchemaMarkup.astro": "05d88eb5051dbb05ddc6b31382c0bd3bdff4825b3420a0512380c71c0632f6dc",
     "src/components/StyleCard.astro": "7e367c65bf1165c1bf8a6f157d49da61e55c89b406e7df1aeedbee8f378b08b2",
     "src/config/base.ts": "f6a07817f2019a8785cc9c43b19c411fe10f266511b8d1b8b5be720d192fdb5e",
@@ -31,7 +32,9 @@
     "src/data/content-registry.ts": "ba2ce5b3b53b0d88903764f35535e5d8d1bcc54a526686026897940af8b6edf4",
     "src/data/examples-registry.ts": "88d34fb351143776ea138f85cff73c5090076cb92038494a2a15f687431cc3c6",
     "src/data/hubs.ts": "57c2608659d1090196bb2b4c151e34dd012b454ca181549e4ce3839da9c1e644",
-    "src/data/localization-pilot-data.ts": "2a2e704c57ff51a0b790b5254024ce03bcf36d72bc410870bfccd5bbfb6f9ba2",
+    "src/data/localization-french-data.ts": "320afd4cf1f1c0b3731d1cbd22964b1e886dbb35d6012a3b2671a3e2157a4287",
+    "src/data/localization-german-data.ts": "fd008ff2f957858bae7e63f3d9c45f046b607cb44552570e16536fcc3fba3514",
+    "src/data/localization-pilot-data.ts": "fd16df0aa3b85c17d91ba83531cb5c19ef294e9ae90081e66f9a164bd12fb51e",
     "src/data/localization-pilot-extra-data.ts": "497ac023d2225220d4c3f39bce0cf435f94b38081b2245055f5f6376ec8565e1",
     "src/data/localization-rollout-b01-data.ts": "9479cd835c40d1fcba22bd1428ec13bbc7adb30c99a042dce58b04acb9a6266e",
     "src/data/localization-rollout-b02-data.ts": "31711167a139673cfdcb5b02ca1e8d5d434dee91b37b07444507e18f0eb6d883",
@@ -43,7 +46,7 @@
     "src/data/localization-rollout-b08-data.ts": "1bcf5d0ee6ba17f0e6312cc4104c59ceba84ec25ea23bd2019ed6dc54a488576",
     "src/data/localization-rollout-b09-data.ts": "a57915839de3cbe2b5f639b5ff7f5ffc7fd6b8f280d4ade2e450d58934e6c087",
     "src/data/localization-spanish-data.ts": "1589e30ce7be898672b9fd32461d703dc79ff89fe709926ba7b4affcbb30c921",
-    "src/data/localization.ts": "a4be18646ab0317aae99f1b93126faf74748392ba1356eff91042ccf6da15768",
+    "src/data/localization.ts": "a58f45a0622ddc337396973fca18f98d0172874aa2da78665b7b06db61cd9e3b",
     "src/data/navigation.ts": "889872975e6be6e990acc71fe7c6e15754c3726a9e8d7109df2cea403721f368",
     "src/data/search-index.ts": "5aaac9c166ca7a9c66f69ffebbc81e088757a968ac80a9c238d3fdd72bfc6b27",
     "src/data/sitemap-exclusions.mjs": "5e09e0f8f8d15015d282a21b0602e447914a6559191b935a739ca2ac74f43301",
@@ -110,10 +113,10 @@
     "src/pages/categories/[slug].astro": "7c4b600df42eb023f768cabafe6c1cbc92e6e1fe36e26d7a757ff5b2fb38bfb7",
     "src/pages/categories/index.astro": "0bd271d36d3ee7f77f9fbbcd258dbd43e71bcdd8a13a3c0d40b875bd49d78c90",
     "src/pages/contact-us/index.astro": "fb0df7b4ef0f753b5856b31bdcf184f0b7d3a6fd0335d75e70c568c6f9cfab2a",
-    "src/pages/de/tools/[slug].astro": "8e1810cce44ec5f5c20e880d78e0ba51c501c3addb7edc7e0d3875e8dafe8a98",
+    "src/pages/de/tools/[slug].astro": "a754d354aef5e08958624a431d068a69fba0c5d3b58286ada652b2d2e6d9c2b8",
     "src/pages/disclaimer/index.astro": "d06289ca6a53b714c3e36a2f12309f0ddfcc5a7640045163813fcafb7ead6c7b",
     "src/pages/es/tools/[slug].astro": "3194b56cd0c216f4cd1d9c8496dc35c0806b1e7697d726054043528c56abd081",
-    "src/pages/fr/tools/[slug].astro": "99a06efcae62129319008892eef222528b718a7c48f57037aaeb9709d2df7db7",
+    "src/pages/fr/tools/[slug].astro": "777d860fb91ae75da3f262d357c240c1a6e47876464a90acbf98c8fcf97cf651",
     "src/pages/hi/tools/[slug].astro": "92092b22f5790ce817eb9772de57886e767cd67ab2314dc6fa8b980e28ebef34",
     "src/pages/id/tools/[slug].astro": "2b891ada311b124ab6497d15e62d465616d0a034d4cc160febbbefc1c660b08c",
     "src/pages/index.astro": "c0f707735367c17a141e49f33404120ed2d033632637d652f6adb034c6d072c9",
@@ -158,20 +161,32 @@
     "src/scripts/data/generator-datasets.ts": "e043169f88bf68b046701dd14dd3b5542304f6a376b7772cba6f9291cf755377",
     "src/scripts/qrcodegen.ts": "9e882083251fe3679f1b9d627daca11e3b4c007da122fa5a186ef1896926c0e2",
     "src/scripts/search-ui.ts": "802f8f2a6a3e340ea2e82af98fb559d3451daedcd7e72fcb367af4488a094e9a",
-    "src/scripts/tool-workspace.ts": "b85ad6dab5d4e561129110ac6ee71e7deb894a0cd2e9f6dc0e4a1192dc4e22a1",
-    "src/scripts/workspace/clipboard.ts": "3837453e78ce9795bed2fd8c371fc8f93dcf7272d0f3b6e60f8cb9135763a0a5",
-    "src/scripts/workspace/downloads.ts": "c6fda7eabfeaad3bf074e24071e34ad436034cdb1230919eedf664564d303aee",
-    "src/scripts/workspace/events.ts": "782ba67b07b8e9446a552cc1f1478ee5133f546edab8b4c23127fe6ef5d4b12a",
+    "src/scripts/tool-workspace.ts": "114e247fabeaae2fcdcc1421cddae120856b62e340b55847f9eb64e242ea699c",
+    "src/scripts/workspace/category-engines/codeEngine.ts": "b7d5421cacbc8388fe937f77ccf4701af05dc3d1455be28a45a6b2eca52ea2da",
+    "src/scripts/workspace/category-engines/invoiceEngine.ts": "d0fee5c295535c6f3f5f60823129dcb3fe75bb7bb82ea36edef582b89ba08f96",
+    "src/scripts/workspace/category-engines/jsonEngine.ts": "021660965dc4f957b598dd18b2f673ec0dc9896d6fe9b692cf9bd46c094541cd",
+    "src/scripts/workspace/category-engines/marketingEngine.ts": "98310b07630a159f577ed4dc2b6d9e34c9b742c01f9c8a348d0da7a7b933b6cc",
+    "src/scripts/workspace/category-engines/nameEngine.ts": "10b8ce302a7a7a9824021bc37dd1adc670d6d9ea74a1145f34b8d8b9642be024",
+    "src/scripts/workspace/category-engines/passwordEngine.ts": "65a0eecf4c7e2287e08b7b4d073fc54ef4371b02b02633077dc9d863e3b95611",
+    "src/scripts/workspace/category-engines/qrEngine.ts": "0bd8e9e8f629c0a7ee52c20a0c94e9cf55ab2c4e33b0ffa54d08d112c89cd447",
+    "src/scripts/workspace/category-engines/textEngine.ts": "910573ea7f18140dfe0b3f4b0906aa3a02994c7cc657e8efe548dbddb396c7b8",
+    "src/scripts/workspace/category-engines/urlEngine.ts": "5c91b098cba96b76920eb9d01689647d7ae04f14d4beae2d267c7dda28c2218b",
+    "src/scripts/workspace/clipboard.ts": "3cb077d85e6e99519a6b4001a98a4b36110c8d30befcbb0e78091e1546b5cdf0",
+    "src/scripts/workspace/downloads.ts": "41baa58a3eed95051e3356f3b5a4718712a8e6262161d00aefc589fd10c7b82d",
+    "src/scripts/workspace/events.ts": "c144d1414918e00b78aae1d03d6977fdfc82343287a027958fc66d0b88d8b939",
     "src/scripts/workspace/experiments.ts": "f1508af35b8c655f2f6a81bebf171c00b8287680c036820f4e5febd9694afa5f",
     "src/scripts/workspace/favorites.ts": "9a702de9e5833d36eafe12e07e854b64063a7d112ad79ceb580756576f4b99e8",
     "src/scripts/workspace/history.ts": "1f958e56f5a1e57ae02c2aee253ce8639c1323853d416171a1287a90e426a8da",
     "src/scripts/workspace/index.ts": "f52c4c75dbe56374a151d25e3ebc48578d3d0d535c57da96520a59baed7c82eb",
-    "src/scripts/workspace/metrics.ts": "d676c7797c719241b7cb793e8bee95e10a88f74f75806c8e664a7b1b05725913",
+    "src/scripts/workspace/metrics.ts": "63d47761fad09565c2fd7446513f66d4ca80fc9651cf6328c971a5eebdb1e689",
+    "src/scripts/workspace/presets.ts": "2e5297a2e1a08f1dcbdaf5b0b8cce0c9cf4997da193fd7b0f0dedb16387fad82",
     "src/scripts/workspace/previews.ts": "0217cef8407caf751645b3e776ff193eadb8e2d8cb314d79b695ff9c9749a41b",
     "src/scripts/workspace/render.ts": "a6a2e5b3f8b90f276f1b2572821d2764d3f17e7cfad8e863dfcc26880d00d316",
     "src/scripts/workspace/search.ts": "9bdf069b0a03f9cde3de875dbf1dbae851671e6ecd8680bd6930f9be9ec5f18b",
-    "src/scripts/workspace/shortcuts.ts": "ca3fe97f83d3d4839ea8d4fed34da8038669bb8cdb63e6f700efc54f8d6dbbf2",
+    "src/scripts/workspace/shortcuts.ts": "3522a82d147737b1c7e8dc803c85cfd1df6ff811e058e1488f4fbcbe08eaded8",
     "src/scripts/workspace/shuffle.ts": "f48638065309ff771addb017c0d4355fb1a105c07b1ffd0f3f42269618d03098",
+    "src/scripts/workspace/ui-enhancements.ts": "0face7ade301df044b0842550634806cbd78da393a495a11441cd6b3a57e9b95",
+    "src/scripts/workspace/validation.ts": "2417f67efc71a38688b03312d4f0349410ccfb00a5b8e0bb3c8319d47d501259",
     "tests/e2e/generator.spec.ts": "f628e5c7fc1ac8066cf9d73f7b1188ca64aa150f5c8d5158b7316a09639a142f",
     "theme/layouts/BaseLayout.astro": "0700a5c06a67a47a0b63fbbabc361854369feea7ba991a6fdcf7cae643701a41",
     "theme/styles/global.css": "45c97f7fc2c56153f11a3996a96a741c540a2e45253da7b16f377b2e401882c3",
@@ -181,7 +196,7 @@
   "results": {
     "call-to-action-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 5774,
       "fcp": 1480,
       "lcp": 1480,
@@ -190,7 +205,7 @@
     },
     "canonical-tag-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 5116,
       "fcp": 1344,
       "lcp": 1344,
@@ -199,7 +214,7 @@
     },
     "car-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4384,
       "fcp": 944,
       "lcp": 944,
@@ -208,7 +223,7 @@
     },
     "castle-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4833,
       "fcp": 1000,
       "lcp": 1000,
@@ -217,7 +232,7 @@
     },
     "cat-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 5425,
       "fcp": 1188,
       "lcp": 1188,
@@ -226,7 +241,7 @@
     },
     "channel-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4127,
       "fcp": 1012,
       "lcp": 1012,
@@ -235,7 +250,7 @@
     },
     "character-backstory-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4652,
       "fcp": 1024,
       "lcp": 1024,
@@ -244,7 +259,7 @@
     },
     "character-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 5338,
       "fcp": 1372,
       "lcp": 1372,
@@ -253,7 +268,7 @@
     },
     "character-prompt-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5840,
       "fcp": 1400,
       "lcp": 1400,
@@ -262,7 +277,7 @@
     },
     "chatgpt-prompt-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4087,
       "fcp": 928,
       "lcp": 928,
@@ -271,7 +286,7 @@
     },
     "cipher-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5078,
       "fcp": 1008,
       "lcp": 1008,
@@ -280,7 +295,7 @@
     },
     "citation-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5184,
       "fcp": 1152,
       "lcp": 1152,
@@ -289,7 +304,7 @@
     },
     "city-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5191,
       "fcp": 1400,
       "lcp": 1400,
@@ -298,7 +313,7 @@
     },
     "clan-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4625,
       "fcp": 960,
       "lcp": 960,
@@ -307,7 +322,7 @@
     },
     "clan-tag-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4657,
       "fcp": 1056,
       "lcp": 1056,
@@ -316,7 +331,7 @@
     },
     "clothing-tag-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 6264,
       "fcp": 1236,
       "lcp": 1236,
@@ -325,7 +340,7 @@
     },
     "club-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4491,
       "fcp": 1244,
       "lcp": 1244,
@@ -334,7 +349,7 @@
     },
     "cocktail-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4675,
       "fcp": 1264,
       "lcp": 1264,
@@ -343,7 +358,7 @@
     },
     "coffee-shop-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4844,
       "fcp": 1112,
       "lcp": 1112,
@@ -352,7 +367,7 @@
     },
     "coin-flip": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5177,
       "fcp": 1192,
       "lcp": 1192,
@@ -361,7 +376,7 @@
     },
     "cold-email-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4372,
       "fcp": 948,
       "lcp": 948,
@@ -370,7 +385,7 @@
     },
     "college-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4899,
       "fcp": 1072,
       "lcp": 1072,
@@ -379,7 +394,7 @@
     },
     "color-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5268,
       "fcp": 1168,
       "lcp": 1168,
@@ -388,7 +403,7 @@
     },
     "color-palette-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4926,
       "fcp": 1308,
       "lcp": 1308,
@@ -397,7 +412,7 @@
     },
     "color-palette-generator-from-name": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4148,
       "fcp": 984,
       "lcp": 984,
@@ -406,7 +421,7 @@
     },
     "comeback-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5338,
       "fcp": 916,
       "lcp": 916,
@@ -415,7 +430,7 @@
     },
     "compliment-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5217,
       "fcp": 1192,
       "lcp": 1192,
@@ -424,7 +439,7 @@
     },
     "content-brief-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4147,
       "fcp": 880,
       "lcp": 880,
@@ -433,7 +448,7 @@
     },
     "content-calendar-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4516,
       "fcp": 972,
       "lcp": 972,
@@ -442,7 +457,7 @@
     },
     "contract-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4473,
       "fcp": 1068,
       "lcp": 1068,
@@ -451,7 +466,7 @@
     },
     "cookie-policy-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5315,
       "fcp": 1252,
       "lcp": 1252,
@@ -460,7 +475,7 @@
     },
     "cool-text-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4453,
       "fcp": 1276,
       "lcp": 1276,
@@ -469,7 +484,7 @@
     },
     "corporate-speak-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4823,
       "fcp": 1036,
       "lcp": 1036,
@@ -478,7 +493,7 @@
     },
     "couple-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4919,
       "fcp": 1120,
       "lcp": 1120,
@@ -487,7 +502,7 @@
     },
     "coupon-code-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5015,
       "fcp": 1628,
       "lcp": 1628,
@@ -496,7 +511,7 @@
     },
     "cover-letter-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4207,
       "fcp": 1068,
       "lcp": 1068,
@@ -505,7 +520,7 @@
     },
     "cowboy-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4456,
       "fcp": 1072,
       "lcp": 1072,
@@ -514,7 +529,7 @@
     },
     "creepy-text-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5559,
       "fcp": 1204,
       "lcp": 1204,
@@ -523,7 +538,7 @@
     },
     "cron-expression-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4735,
       "fcp": 1308,
       "lcp": 1308,
@@ -532,7 +547,7 @@
     },
     "css-button-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4456,
       "fcp": 964,
       "lcp": 964,
@@ -541,7 +556,7 @@
     },
     "css-code-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5100,
       "fcp": 1428,
       "lcp": 1428,
@@ -550,7 +565,7 @@
     },
     "css-grid-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5446,
       "fcp": 1224,
       "lcp": 1224,
@@ -559,7 +574,7 @@
     },
     "cursive-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4371,
       "fcp": 960,
       "lcp": 960,
@@ -568,7 +583,7 @@
     },
     "cursive-text-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4813,
       "fcp": 1024,
       "lcp": 1024,
@@ -577,7 +592,7 @@
     },
     "customer-persona-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4847,
       "fcp": 1284,
       "lcp": 1284,
@@ -586,7 +601,7 @@
     },
     "cute-text-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4170,
       "fcp": 1044,
       "lcp": 1044,
@@ -595,7 +610,7 @@
     },
     "cyberpunk-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4616,
       "fcp": 1020,
       "lcp": 1020,
@@ -604,7 +619,7 @@
     },
     "dalle-prompt-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 5483,
       "fcp": 1200,
       "lcp": 1200,
@@ -613,7 +628,7 @@
     },
     "demon-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4286,
       "fcp": 1308,
       "lcp": 1308,
@@ -622,7 +637,7 @@
     },
     "dialogue-tag-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995361,
       "renderTime": 4228,
       "fcp": 1060,
       "lcp": 1060,
@@ -631,7 +646,7 @@
     },
     "acceptable-use-policy-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 7673,
       "fcp": 3680,
       "lcp": 3680,
@@ -640,16 +655,16 @@
     },
     "ad-copy-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
-      "renderTime": 4976,
-      "fcp": 1152,
-      "lcp": 1152,
-      "tti": 3518,
+      "timestamp": 1784758995360,
+      "renderTime": 7394,
+      "fcp": 4120,
+      "lcp": 4120,
+      "tti": 6078,
       "accessibilityViolations": 0
     },
     "affiliate-disclosure-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4775,
       "fcp": 984,
       "lcp": 984,
@@ -658,7 +673,7 @@
     },
     "ai-prompt-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4358,
       "fcp": 1036,
       "lcp": 1036,
@@ -667,7 +682,7 @@
     },
     "album-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4236,
       "fcp": 1060,
       "lcp": 1060,
@@ -676,7 +691,7 @@
     },
     "alien-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4378,
       "fcp": 1244,
       "lcp": 1244,
@@ -685,7 +700,7 @@
     },
     "all-caps-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4546,
       "fcp": 1000,
       "lcp": 1000,
@@ -694,7 +709,7 @@
     },
     "amazon-listing-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4133,
       "fcp": 880,
       "lcp": 880,
@@ -703,7 +718,7 @@
     },
     "anagram-of-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4176,
       "fcp": 1104,
       "lcp": 1104,
@@ -712,7 +727,7 @@
     },
     "ancient-egyptian-inspired-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4320,
       "fcp": 1020,
       "lcp": 1020,
@@ -721,7 +736,7 @@
     },
     "ancient-greek-inspired-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4443,
       "fcp": 1064,
       "lcp": 1064,
@@ -730,7 +745,7 @@
     },
     "angel-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4156,
       "fcp": 916,
       "lcp": 916,
@@ -739,7 +754,7 @@
     },
     "anime-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4158,
       "fcp": 1028,
       "lcp": 1028,
@@ -748,7 +763,7 @@
     },
     "ao3-tag-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4355,
       "fcp": 1148,
       "lcp": 1148,
@@ -757,7 +772,7 @@
     },
     "api-key-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4119,
       "fcp": 900,
       "lcp": 900,
@@ -766,7 +781,7 @@
     },
     "app-icon-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4217,
       "fcp": 1000,
       "lcp": 1000,
@@ -775,7 +790,7 @@
     },
     "app-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4111,
       "fcp": 880,
       "lcp": 880,
@@ -784,7 +799,7 @@
     },
     "art-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3914,
       "fcp": 944,
       "lcp": 944,
@@ -793,7 +808,7 @@
     },
     "art-tag-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3979,
       "fcp": 980,
       "lcp": 980,
@@ -802,7 +817,7 @@
     },
     "ascii-text-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4443,
       "fcp": 1260,
       "lcp": 1260,
@@ -811,7 +826,7 @@
     },
     "assignment-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 4220,
       "fcp": 888,
       "lcp": 888,
@@ -820,7 +835,7 @@
     },
     "author-bio-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3346,
       "fcp": 880,
       "lcp": 880,
@@ -829,7 +844,7 @@
     },
     "avatar-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3444,
       "fcp": 856,
       "lcp": 856,
@@ -838,16 +853,16 @@
     },
     "baby-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
-      "renderTime": 3467,
-      "fcp": 860,
-      "lcp": 860,
-      "tti": 2474,
+      "timestamp": 1784758995360,
+      "renderTime": 4086,
+      "fcp": 1164,
+      "lcp": 1164,
+      "tti": 3042,
       "accessibilityViolations": 0
     },
     "baby-name-generator-with-last-name": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3846,
       "fcp": 940,
       "lcp": 940,
@@ -856,7 +871,7 @@
     },
     "bakery-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3478,
       "fcp": 996,
       "lcp": 996,
@@ -865,7 +880,7 @@
     },
     "band-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3453,
       "fcp": 884,
       "lcp": 884,
@@ -874,7 +889,7 @@
     },
     "banner-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3346,
       "fcp": 828,
       "lcp": 828,
@@ -883,7 +898,7 @@
     },
     "barbarian-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3399,
       "fcp": 900,
       "lcp": 900,
@@ -892,7 +907,7 @@
     },
     "barcode-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3426,
       "fcp": 840,
       "lcp": 840,
@@ -901,7 +916,7 @@
     },
     "bibliography-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3471,
       "fcp": 968,
       "lcp": 968,
@@ -910,7 +925,7 @@
     },
     "big-text-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3721,
       "fcp": 872,
       "lcp": 872,
@@ -919,16 +934,16 @@
     },
     "bio-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
-      "renderTime": 3696,
-      "fcp": 944,
-      "lcp": 944,
-      "tti": 2598,
+      "timestamp": 1784758995360,
+      "renderTime": 3927,
+      "fcp": 976,
+      "lcp": 976,
+      "tti": 2842,
       "accessibilityViolations": 0
     },
     "blob-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3393,
       "fcp": 848,
       "lcp": 848,
@@ -937,25 +952,25 @@
     },
     "blog-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
-      "renderTime": 3515,
-      "fcp": 848,
-      "lcp": 848,
-      "tti": 2483,
+      "timestamp": 1784758995360,
+      "renderTime": 4249,
+      "fcp": 1180,
+      "lcp": 1180,
+      "tti": 3241,
       "accessibilityViolations": 0
     },
     "blog-outline-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
-      "renderTime": 3429,
-      "fcp": 848,
-      "lcp": 848,
-      "tti": 2510,
+      "timestamp": 1784758995360,
+      "renderTime": 3824,
+      "fcp": 1272,
+      "lcp": 1272,
+      "tti": 2931,
       "accessibilityViolations": 0
     },
     "blog-tag-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3354,
       "fcp": 832,
       "lcp": 832,
@@ -964,16 +979,16 @@
     },
     "bold-text-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
-      "renderTime": 3610,
-      "fcp": 876,
-      "lcp": 876,
-      "tti": 2687,
+      "timestamp": 1784758995360,
+      "renderTime": 3671,
+      "fcp": 1132,
+      "lcp": 1132,
+      "tti": 2708,
       "accessibilityViolations": 0
     },
     "book-club-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3395,
       "fcp": 856,
       "lcp": 856,
@@ -982,7 +997,7 @@
     },
     "book-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3451,
       "fcp": 892,
       "lcp": 892,
@@ -991,7 +1006,7 @@
     },
     "border-radius-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3482,
       "fcp": 836,
       "lcp": 836,
@@ -1000,7 +1015,7 @@
     },
     "box-shadow-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3460,
       "fcp": 836,
       "lcp": 836,
@@ -1009,16 +1024,16 @@
     },
     "brand-kit-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
-      "renderTime": 3400,
-      "fcp": 848,
-      "lcp": 848,
-      "tti": 2419,
+      "timestamp": 1784758995360,
+      "renderTime": 3209,
+      "fcp": 804,
+      "lcp": 804,
+      "tti": 2335,
       "accessibilityViolations": 0
     },
     "brat-text-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3599,
       "fcp": 840,
       "lcp": 840,
@@ -1027,7 +1042,7 @@
     },
     "breadcrumb-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3344,
       "fcp": 848,
       "lcp": 848,
@@ -1036,7 +1051,7 @@
     },
     "bubble-text-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3681,
       "fcp": 1100,
       "lcp": 1100,
@@ -1045,7 +1060,7 @@
     },
     "business-card-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3471,
       "fcp": 828,
       "lcp": 828,
@@ -1054,16 +1069,16 @@
     },
     "business-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
-      "renderTime": 3788,
-      "fcp": 1084,
-      "lcp": 1084,
-      "tti": 2665,
+      "timestamp": 1784758995360,
+      "renderTime": 3277,
+      "fcp": 824,
+      "lcp": 824,
+      "tti": 2470,
       "accessibilityViolations": 0
     },
     "cafe-name-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3452,
       "fcp": 892,
       "lcp": 892,
@@ -1072,7 +1087,7 @@
     },
     "cake-company-names-generator": {
       "status": "PASSED",
-      "timestamp": 1784671179403,
+      "timestamp": 1784758995360,
       "renderTime": 3470,
       "fcp": 816,
       "lcp": 816,

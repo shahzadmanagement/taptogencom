@@ -1,5 +1,14 @@
 import { trackGeneratorOpen, trackGenerate, trackCopy, trackDownload, trackShare, trackOptionChange } from '../lib/analytics';
 import qrcode from './qrcodegen';
+import { analyzePassword, generateDicewarePassphrase, removeAmbiguousChars } from './workspace/category-engines/passwordEngine';
+import { calculateInvoiceTotals, renderInvoiceA4HTML } from './workspace/category-engines/invoiceEngine';
+import { analyzeTextStatistics, formatStatisticsSummary } from './workspace/category-engines/textEngine';
+import { validateJson, formatPrettyJson, renderJsonWithLineNumbers } from './workspace/category-engines/jsonEngine';
+import { parseAndAnalyzeUrl, buildUtmUrl } from './workspace/category-engines/urlEngine';
+import { generateQrSvg, drawQrToCanvas } from './workspace/category-engines/qrEngine';
+import { formatCodeBlock } from './workspace/category-engines/codeEngine';
+import { filterAndSortNames, exportNamesToCsv } from './workspace/category-engines/nameEngine';
+import { analyzeMarketingSeo, renderGoogleSearchSnippetPreview } from './workspace/category-engines/marketingEngine';
 
 
 // FAQ accordion
@@ -1850,7 +1859,7 @@ async function generate() {
       const delayLine = crawlDelay !== 'none' ? '\nCrawl-delay: ' + crawlDelay : '';
 
       // Check if custom disallow inputs are supplied in text
-      let customDisallows = [];
+      let customDisallows: string[] = [];
       if (text && text.trim() && text.includes('/')) {
         customDisallows = text.trim().split('\n')
           .map(l => l.trim().replace(/^Disallow:\s*/i, ''))
@@ -1864,7 +1873,7 @@ async function generate() {
         staging: 'User-agent: *\nDisallow: /\n\n# Staging mode blocks all crawling. Do not use this on a live public site unless you intentionally want noindex-style crawl blocking.'
       };
 
-      let robots = templates[mode] || templates.standard;
+      let robots = (templates as Record<string, string>)[mode] || templates.standard;
 
       // Append custom disallows if any
       if (customDisallows.length > 0) {
@@ -1882,8 +1891,8 @@ async function generate() {
       const body = robots + (includeSitemap ? '\n\nSitemap: https://' + domain + '/sitemap.xml' : '');
 
       // Parse rules for path matcher simulator
-      const disallowRules = [];
-      const allowRules = [];
+      const disallowRules: string[] = [];
+      const allowRules: string[] = [];
       body.split('\n').forEach(line => {
         const lowerLine = line.trim().toLowerCase();
         if (lowerLine.startsWith('disallow:')) {
@@ -1897,7 +1906,7 @@ async function generate() {
       let simulatorResult = 'Allowed ✅';
       let matchingRule = 'Default fallback (allow all)';
 
-      const isMatch = (rule, target) => {
+      const isMatch = (rule: string, target: string) => {
         const regexStr = '^' + rule
           .replace(/[.+^\${}()|[\]\\\/]/g, '\\$&') // escape special characters
           .replace(/\\\*/g, '.*')                  // convert * to .*
@@ -4202,7 +4211,7 @@ async function generate() {
         ]
       };
 
-      const list = phraseCategories[category] || phraseCategories.inspirational;
+      const list = (phraseCategories as Record<string, string[]>)[category] || phraseCategories.inspirational;
       const phrasesList = Array.from({ length: count }, () => randomFrom(list));
       result = phrasesList.join('\n');
       resultHtml = renderSectionSuite('Random Phrases Package', [
@@ -4226,7 +4235,7 @@ async function generate() {
         const charArr = chars.split(' ');
         const matching = charArr.filter(c => {
           if (!search) return true;
-          return title.toLowerCase().includes(search) || c.codePointAt(0).toString(16).includes(search);
+          return title.toLowerCase().includes(search) || (c.codePointAt(0) ?? 0).toString(16).includes(search);
         });
         return [title, matching.join(' ')];
       }).filter(([_, chars]) => chars.length > 0);
@@ -4284,13 +4293,13 @@ async function generate() {
         }
       };
 
-      const charMap = fonts[font] || fonts.standard;
+      const charMap = (fonts as Record<string, Record<string, string[]>>)[font] || fonts.standard;
       const spaceStr = ' '.repeat(spacing);
       const upper = text.toUpperCase();
 
       const lines = Array.from({ length: 5 }, (_, row) => 
         upper.split('').map(c => {
-          const letter = charMap[c] || charMap['A'];
+          const letter = (charMap as Record<string, string[]>)[c] || charMap['A'];
           return letter[row] || '     ';
         }).join(spaceStr)
       ).join('\n');
@@ -4310,8 +4319,8 @@ async function generate() {
       const cUp = ['\u030d','\u030e','\u0304','\u0305','\u033f','\u0311','\u0306','\u0310','\u0352','\u0357','\u0351','\u0307','\u0308','\u030a','\u0342','\u0343','\u0344','\u034a','\u034b','\u034c'];
       const cDown = ['\u0316','\u0317','\u0318','\u0319','\u031c','\u031d','\u031e','\u031f','\u0320','\u0324','\u0325','\u0326','\u0329','\u032a','\u032b','\u032c','\u032d','\u032e','\u032f','\u0330'];
 
-      const creepify = (t) => {
-        return t.split('').map(char => {
+      const creepify = (t: string) => {
+        return t.split('').map((char: string) => {
           let g = char;
           for (let i = 0; i < size; i++) {
             if (toggleTop) g += randomFrom(cUp);
@@ -4541,7 +4550,7 @@ async function generate() {
       if (!text) { result = 'Please enter some text above.'; break; }
       const format = optionValue('old-english-format', 'standard');
       
-      const frakturMap = {};
+      const frakturMap: Record<string, string> = {};
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('').forEach((c, i) => {
         if (i < 26) frakturMap[c] = String.fromCodePoint(0x1D504 + i);
         else frakturMap[c] = String.fromCodePoint(0x1D51E + (i - 26));
@@ -4588,8 +4597,8 @@ async function generate() {
       if (!text) { result = 'Please enter some text above.'; break; }
       const mode = optionValue('leet-mode', 'advanced');
 
-      const basicMap = { e: '3', t: '7', a: '4', o: '0', i: '1', s: '5' };
-      const advancedMap = { ...basicMap, g: '9', b: '8', z: '2' };
+      const basicMap: Record<string, string> = { e: '3', t: '7', a: '4', o: '0', i: '1', s: '5' };
+      const advancedMap: Record<string, string> = { ...basicMap, g: '9', b: '8', z: '2' };
 
       const selectedMap = mode === 'basic' ? basicMap : advancedMap;
       const parsed = text.toLowerCase().split('').map(c => selectedMap[c] || c).join('');
@@ -4786,7 +4795,7 @@ async function generate() {
         modern: ['Skyline', 'Vista', 'Summit', 'Apex', 'Horizon', 'Central', 'Plaza', 'Parkway', 'Gateway', 'Metro']
       };
       
-      const list = prefixes[style] || prefixes.royal;
+      const list = (prefixes as Record<string, string[]>)[style] || prefixes.royal;
       const sufText = suffix === 'random' ? '' : titleCase(suffix);
       const sufList = ['Street', 'Avenue', 'Boulevard', 'Way', 'Lane', 'Drive', 'Court', 'Place', 'Circle'];
 
@@ -4814,7 +4823,7 @@ async function generate() {
       };
 
       const suffixes = ['Society', 'Club', 'Guild', 'Circle', 'Alliance', 'Fellowship', 'Collective', 'Gathering'];
-      const words = genreWords[genre] || genreWords.fiction;
+      const words = (genreWords as Record<string, string[]>)[genre] || genreWords.fiction;
 
       const names = generateMultiple(() => {
         return 'The ' + randomFrom(words) + ' ' + randomFrom(suffixes);
@@ -4851,11 +4860,11 @@ async function generate() {
         ]
       };
 
-      const list = templates[intent] || templates.sales;
+      const list = (templates as Record<string, string[]>)[intent] || templates.sales;
       const tone = optionValue('subject-tone', 'casual');
       const subjects = list.join('\n');
       
-      const avgLen = Math.round(subjects.split('\n').reduce((acc, s) => acc + s.length, 0) / list.length);
+      const avgLen = Math.round(subjects.split('\n').reduce((acc: number, s: string) => acc + s.length, 0) / list.length);
       const mobileNote = avgLen <= 60 ? '✅ Mobile-optimized (< 60 chars).' : '⚠️ Slightly long for mobile previewers.';
 
       result = subjects;
@@ -4922,7 +4931,7 @@ async function generate() {
         rock: '#Rock #Indie #Alternative #Guitar #Band #LiveMusic'
       };
 
-      const tags = genreTags[genre] || genreTags.lofi;
+      const tags = (genreTags as Record<string, string>)[genre] || genreTags.lofi;
       result = tags;
       resultHtml = renderSectionSuite('SoundCloud Tag Package', [
         { title: titleCase(genre) + ' Track Tags', body: tags, note: 'Copy into SoundCloud metadata.' }
@@ -4935,7 +4944,7 @@ async function generate() {
       const action = optionValue('error-action', 'retry');
       const type = severity === 'warning' ? '403' : '500';
       
-      const errorPayloads = {
+      const errorPayloads: Record<string, { status: number; code: string; message: string; hint: string }> = {
         '404': { status: 404, code: 'NOT_FOUND', message: 'The requested resource was not found on this server.', hint: 'Verify the URL path.' },
         '500': { status: 500, code: 'INTERNAL_SERVER_ERROR', message: 'An unhandled exception occurred during request processing.', hint: 'Check server logs.' },
         '403': { status: 403, code: 'FORBIDDEN', message: 'Access denied due to insufficient permissions.', hint: 'Authenticate with higher scope.' }
@@ -4956,7 +4965,7 @@ async function generate() {
       const mode = optionValue('cipher-mode', 'encode');
       const shift = clampNumber(optionValue('cipher-shift', '3'), 3, 1, 25);
 
-      const caesar = (str, s) => {
+      const caesar = (str: string, s: number) => {
         return str.split('').map(c => {
           const code = c.charCodeAt(0);
           if (code >= 65 && code <= 90) return String.fromCharCode(((code - 65 + s) % 26) + 65);
@@ -4965,7 +4974,7 @@ async function generate() {
         }).join('');
       };
 
-      const atbash = (str) => {
+      const atbash = (str: string) => {
         return str.split('').map(c => {
           const code = c.charCodeAt(0);
           if (code >= 65 && code <= 90) return String.fromCharCode(90 - (code - 65));
@@ -5020,7 +5029,7 @@ async function generate() {
       };
 
       const suffixes = ['Vane', 'Raven', 'Valen', 'Thorne', 'Drake', 'Kael', 'Zephyr'];
-      const list = prefixes[school] || prefixes.arcane;
+      const list = (prefixes as Record<string, string[]>)[school] || prefixes.arcane;
 
       const names = generateMultiple(() => randomFrom(list) + ' ' + randomFrom(suffixes), count);
 
@@ -8847,6 +8856,50 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
     default:
       result = 'This generator is coming soon! Check back for updates.';
     }
+
+  // Category Intelligence Upgrades
+  const isFrLang = typeof document !== 'undefined' && document.documentElement?.lang === 'fr';
+
+  if (toolSlug === 'password-generator') {
+    const password = result.split('\n')[0] || 'TaptogenPass-2026!';
+    const analysis = analyzePassword(password, isFrLang);
+    const badgeHtml = `
+      <div class="password-strength-panel" style="padding: 14px; margin-bottom: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border, rgba(255,255,255,0.15)); border-radius: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 0.85rem; font-weight: 600;">${isFrLang ? 'Niveau de Sécurité' : 'Security Level'}:</span>
+          <span style="padding: 4px 10px; border-radius: 12px; font-weight: 700; font-size: 0.82rem; background: ${analysis.strengthColor}; color: #ffffff;">${analysis.strengthLabel}</span>
+        </div>
+        <div style="font-size: 0.8rem; color: var(--color-text-muted, #94a3b8);">
+          <span>${isFrLang ? 'Entropie' : 'Entropy'}: <strong>${analysis.entropy} bits</strong></span> | 
+          <span>${isFrLang ? 'Temps estimé pour craquer' : 'Estimated crack time'}: <strong>${analysis.crackTime}</strong></span>
+        </div>
+      </div>
+    `;
+    resultHtml = badgeHtml + resultHtml;
+  } else if (toolSlug === 'invoice-generator' || toolSlug === 'receipt-generator') {
+    const sampleItems = [
+      { description: 'Prestation de service et conseil technique', quantity: 1, unitPriceHT: 450, tvaRate: 0.20 }
+    ];
+    const a4Html = renderInvoiceA4HTML({
+      invoiceNumber: 'FACT-2026-001',
+      date: new Date().toLocaleDateString('fr-FR'),
+      clientName: text ? compactSeed(text, 'Client') : 'Client Professionnel',
+      isAutoEntrepreneur: true,
+      items: sampleItems
+    }, isFrLang);
+    resultHtml = a4Html + resultHtml;
+  } else if (['word-counter', 'paragraph-generator', 'sentence-generator', 'essay-title-generator'].includes(toolSlug)) {
+    const stats = analyzeTextStatistics(text || result, isFrLang);
+    const statsHtml = `
+      <div class="text-stats-panel" style="padding: 12px 16px; margin-bottom: 14px; background: rgba(99, 102, 241, 0.08); border-left: 4px solid #6366f1; border-radius: 6px; font-size: 0.88rem;">
+        <strong>📊 ${isFrLang ? 'Analyse du texte' : 'Text Analysis'}:</strong> ${stats.wordCount} ${isFrLang ? 'mots' : 'words'} | ${stats.charCount} ${isFrLang ? 'caractères' : 'chars'} | ${stats.sentenceCount} ${isFrLang ? 'phrases' : 'sentences'} | ${isFrLang ? 'Lisibilité' : 'Readability'}: ${stats.readabilityScore}/100 (${stats.readabilityLevel})
+      </div>
+    `;
+    resultHtml = statsHtml + resultHtml;
+  } else if (['meta-tag-generator', 'ad-copy-generator', 'meta-title-generator', 'meta-description-generator'].includes(toolSlug)) {
+    const serpPreview = renderGoogleSearchSnippetPreview(text || 'Titre de la page', result || 'Description de la page');
+    resultHtml = serpPreview + resultHtml;
+  }
 
   renderPremiumOutput(result, resultHtml);
   if (output) {

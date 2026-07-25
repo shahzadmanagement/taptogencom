@@ -7,14 +7,14 @@
 | **Total Generators Tested** | 100 |
 | **Passed** | 100 🟢 |
 | **Failed** | 0 🔴 |
-| **Average Render Time** | 4374 ms |
+| **Average Render Time** | 4412 ms |
 
 ## Performance Profiles
 
 | Slug | Render Time (ms) | FCP (ms) | LCP (ms) | TTI (ms) | A11y Violations |
 | --- | --- | --- | --- | --- | --- |
 | acceptable-use-policy-generator | 7673 | 3680 | 3680 | 6227 | 0 |
-| ad-copy-generator | 4976 | 1152 | 1152 | 3518 | 0 |
+| ad-copy-generator | 7394 | 4120 | 4120 | 6078 | 0 |
 | affiliate-disclosure-generator | 4775 | 984 | 984 | 3462 | 0 |
 | ai-prompt-generator | 4358 | 1036 | 1036 | 3263 | 0 |
 | album-name-generator | 4236 | 1060 | 1060 | 3084 | 0 |
@@ -36,7 +36,7 @@
 | assignment-generator | 4220 | 888 | 888 | 2936 | 0 |
 | author-bio-generator | 3346 | 880 | 880 | 2453 | 0 |
 | avatar-name-generator | 3444 | 856 | 856 | 2480 | 0 |
-| baby-name-generator | 3467 | 860 | 860 | 2474 | 0 |
+| baby-name-generator | 4086 | 1164 | 1164 | 3042 | 0 |
 | baby-name-generator-with-last-name | 3846 | 940 | 940 | 3009 | 0 |
 | bakery-name-generator | 3478 | 996 | 996 | 2644 | 0 |
 | band-name-generator | 3453 | 884 | 884 | 2429 | 0 |
@@ -45,22 +45,22 @@
 | barcode-generator | 3426 | 840 | 840 | 2475 | 0 |
 | bibliography-generator | 3471 | 968 | 968 | 2545 | 0 |
 | big-text-generator | 3721 | 872 | 872 | 2591 | 0 |
-| bio-generator | 3696 | 944 | 944 | 2598 | 0 |
+| bio-generator | 3927 | 976 | 976 | 2842 | 0 |
 | blob-generator | 3393 | 848 | 848 | 2427 | 0 |
-| blog-name-generator | 3515 | 848 | 848 | 2483 | 0 |
-| blog-outline-generator | 3429 | 848 | 848 | 2510 | 0 |
+| blog-name-generator | 4249 | 1180 | 1180 | 3241 | 0 |
+| blog-outline-generator | 3824 | 1272 | 1272 | 2931 | 0 |
 | blog-tag-generator | 3354 | 832 | 832 | 2408 | 0 |
-| bold-text-generator | 3610 | 876 | 876 | 2687 | 0 |
+| bold-text-generator | 3671 | 1132 | 1132 | 2708 | 0 |
 | book-club-name-generator | 3395 | 856 | 856 | 2478 | 0 |
 | book-name-generator | 3451 | 892 | 892 | 2466 | 0 |
 | border-radius-generator | 3482 | 836 | 836 | 2555 | 0 |
 | box-shadow-generator | 3460 | 836 | 836 | 2396 | 0 |
-| brand-kit-generator | 3400 | 848 | 848 | 2419 | 0 |
+| brand-kit-generator | 3209 | 804 | 804 | 2335 | 0 |
 | brat-text-generator | 3599 | 840 | 840 | 2491 | 0 |
 | breadcrumb-generator | 3344 | 848 | 848 | 2470 | 0 |
 | bubble-text-generator | 3681 | 1100 | 1100 | 2763 | 0 |
 | business-card-generator | 3471 | 828 | 828 | 2417 | 0 |
-| business-name-generator | 3788 | 1084 | 1084 | 2665 | 0 |
+| business-name-generator | 3277 | 824 | 824 | 2470 | 0 |
 | cafe-name-generator | 3452 | 892 | 892 | 2569 | 0 |
 | cake-company-names-generator | 3470 | 816 | 816 | 2542 | 0 |
 | call-to-action-generator | 5774 | 1480 | 1480 | 3857 | 0 |

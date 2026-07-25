@@ -29,6 +29,7 @@ import KeyboardShortcuts from '@/components/KeyboardShortcuts.astro';
 import IntroSection from '@/components/IntroSection.astro';
 import FaqSection from '@/components/FaqSection.astro';
 import RelatedSection from '@/components/RelatedSection.astro';
+import MobileActionBar from '@/components/MobileActionBar.astro';
 
 interface Props {
   tool: Tool;
@@ -1447,6 +1448,8 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, language, copy.h1);
     </div>      </div>
     </div>
   </section>
+
+  <MobileActionBar isFr={language === 'fr'} />
 
   <script>
     import '@/scripts/tool-workspace';

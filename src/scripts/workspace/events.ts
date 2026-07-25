@@ -2,6 +2,9 @@ import type { ToolConfig } from '../../config';
 import { updateMetrics } from './metrics';
 import { updatePreviews } from './previews';
 import { syncFavorites } from './favorites';
+import { updateValidationTip } from './validation';
+import { renderSmartPresets } from './presets';
+import { initMobileActionBar, renderEmptyState } from './ui-enhancements';
 
 export function bindEvents(
   config: ToolConfig,
@@ -14,9 +17,14 @@ export function bindEvents(
   const extensionsContainer = document.getElementById(`${prefix}-extensions-container`);
   const mockupTargets = document.querySelectorAll('.mockup-preview-target');
 
+  // Initialize Wave 3 Smart Presets & Mobile Action Bar
+  renderSmartPresets(config.slug, input, generate);
+  initMobileActionBar(input, output, generate);
+
   const updateCountersAndFeatures = () => {
-    const textVal = input.value;
-    updateMetrics(textVal, config.counters);
+    const textVal = input?.value || '';
+    updateMetrics(textVal, config.counters, config.slug);
+    if (input) updateValidationTip(input, config.slug);
 
     if (searchContainer) searchContainer.style.display = textVal ? 'block' : 'none';
     if (extensionsContainer) extensionsContainer.style.display = textVal ? 'block' : 'none';
@@ -57,7 +65,7 @@ export function bindEvents(
       toolbar.appendChild(btn);
     });
 
-    input.parentNode?.insertBefore(toolbar, input);
+    input?.parentNode?.insertBefore(toolbar, input);
   }
 
   const workspaceEl = document.getElementById('tool-workspace');

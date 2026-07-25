@@ -5,11 +5,15 @@ interface Props {
 const { exporters = [] } = Astro.props;
 ---
 {exporters.includes('txt') && (
-  <button type="button" class="btn btn-ghost" id="btn-download-txt" title="Download Plain Text File" style="padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; min-height: 35px; white-space: nowrap;">📥 TXT</button>
+  <button type="button" class="btn btn-ghost" id="btn-download-txt" title="Télécharger le fichier TXT" style="padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; min-height: 35px; white-space: nowrap;">📥 TXT</button>
+)}
+{exporters.includes('csv') && (
+  <button type="button" class="btn btn-ghost" id="btn-download-csv" title="Télécharger le fichier CSV" style="padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; min-height: 35px; white-space: nowrap;">📊 CSV</button>
 )}
 {exporters.includes('html') && (
-  <button type="button" class="btn btn-ghost" id="btn-download-html" title="Download HTML File" style="padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; min-height: 35px; white-space: nowrap;">🌐 HTML</button>
+  <button type="button" class="btn btn-ghost" id="btn-download-html" title="Télécharger le fichier HTML" style="padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; min-height: 35px; white-space: nowrap;">🌐 HTML</button>
 )}
 {exporters.includes('json') && (
-  <button type="button" class="btn btn-ghost" id="btn-download-json" title="Download JSON File" style="padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; min-height: 35px; white-space: nowrap;">📄 JSON</button>
+  <button type="button" class="btn btn-ghost" id="btn-download-json" title="Télécharger le fichier JSON" style="padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; min-height: 35px; white-space: nowrap;">📄 JSON</button>
 )}
+

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import MobileActionBar from '@/components/MobileActionBar.astro';
 import { getRelatedTools, getToolBySlug, type Tool } from '@/data/tools';
 import { noindexToolSlugs, pass20ControlMap } from '@/data/tool-page-data';
 import { toolHubs } from '@/data/hubs';
@@ -237,9 +238,14 @@ const pass20Controls = pass20ControlMap[slug];
         </div>
       )}
 
-            <div class="content-section premium-content-section">
+      <div class="content-section premium-content-section">
         <section class="content-card intro-card">
-          <h2>${locale === 'es' ? '¿Qué es' : locale === 'pt' ? 'O que é' : locale === 'fr' ? 'Qu\'est-ce que' : locale === 'de' ? 'Was ist' : locale === 'it' ? 'Che cos\'è' : locale === 'pl' ? 'Co to jest' : locale === 'ru' ? 'Что такое' : 'Nedir'} {copy.h1}?</h2>
+          <h2>Was ist {copy.h1}?</h2>
+          <div class="featured-snippet-box" style="padding: 16px; background: rgba(99, 102, 241, 0.08); border-left: 4px solid var(--color-primary, #6366f1); border-radius: 8px; margin-bottom: 16px;">
+            <p style="margin: 0; font-size: 1.05rem; line-height: 1.6; font-weight: 500; color: var(--color-text-primary);">
+              <strong>{copy.h1}</strong> ist ein kostenloses Online-Tool zur sofortigen Generierung von optimierten {copy.primaryKeyword} Ergebnissen. Es bietet strukturierte Entwürfe direkt im Browser ohne Registrierung, Datenspeicherung oder Software-Installation.
+            </p>
+          </div>
           <p>{copy.metaDescription}</p>
           <p>{copy.intro}</p>
         </section>
@@ -248,10 +254,10 @@ const pass20Controls = pass20ControlMap[slug];
           <h2>Hauptvorteile</h2>
           <ul>
             <li><strong>100% Kostenlos</strong> - Keine Abonnements, keine Zusatzkosten und keine Kreditkarte erforderlich.</li>
-            <li><strong>Lokale Privatsphäre</strong> - Die gesamte Verarbeitung erfolgt in Ihrem Browser. Ihre Daten sind sicher.</li>
+            <li><strong>Lokale Privatsphäre</strong> - Die gesamte Verarbeitung erfolgt lokal im Browser. Ihre Daten sind sicher.</li>
             <li><strong>Sofortige Ergebnisse</strong> - Erhalten Sie optimierte Vorschläge in wenigen Millisekunden.</li>
             <li><strong>Ohne Registrierung</strong> - Nutzen Sie das Tool direkt ohne Anmeldung oder Benutzerkonto.</li>
-    </ul>
+          </ul>
         </section>
 
         <section class="content-card">
@@ -260,49 +266,11 @@ const pass20Controls = pass20ControlMap[slug];
             <li><strong>Interaktive Einstellungen</strong> - Passen Sie Ton, Anzahl und Struktur direkt über das Bedienfeld an.</li>
             <li><strong>Ein-Klick-Kopieren</strong> - Kopieren Sie einzelne Zeilen oder alle Ergebnisse sofort in die Zwischenablage.</li>
             <li><strong>Saubere Formatierung</strong> - Gibt gebrauchsfertigen Text ohne störende Formatierungen aus.</li>
-    </ul>
-        </section>
-
-        <section class="content-card">
-          <h2>${locale === 'es' ? 'Cómo usar' : locale === 'pt' ? 'Como usar' : locale === 'fr' ? 'Comment utiliser' : locale === 'de' ? 'Wie benutzt man' : locale === 'it' ? 'Come usare' : locale === 'pl' ? 'Jak używać' : locale === 'ru' ? 'Как использовать' : 'Nasıl Kullanılır'} {copy.h1}</h2>
-          <ol>
-            {guideCopy.howTo.map(step => <li>{step}</li>)}
-          </ol>
-        </section>
-
-        <section class="content-card">
-          <h2>${locale === 'es' ? 'Consejos para mejores resultados' : locale === 'pt' ? 'Dicas para obter melhores resultados' : locale === 'fr' ? 'Conseils pour de meilleurs résultats' : locale === 'de' ? 'Tipps für bessere Ergebnisse' : locale === 'it' ? 'Suggerimenti per risultati migliori' : locale === 'pl' ? 'Wskazówki dotyczące lepszych wyników' : locale === 'ru' ? 'Советы для получения лучших результатов' : 'Daha İyi Sonuçlar İçin İpuçları'}</h2>
-          <ul>
-            {guideCopy.tips.map(tip => <li><strong>{tip.title}</strong> - {tip.body}</li>)}
           </ul>
         </section>
 
         <section class="content-card">
-          <h2>Best Practices & häufige Fehler</h2>
-          
-          <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 12px; margin-bottom: 6px; color: var(--color-text-primary);">Best Practices</h3>
-          <ul>
-            <li><strong>Konkrete Eingaben machen</strong> - Geben Sie im Textfeld ausreichend Kontext für passende Vorschläge ein.</li>
-            <li><strong>Optionen testen</strong> - Ändern Sie Tonfall und Einstellungen, um das beste Ergebnis zu finden.</li>
-            <li><strong>Entwurf prüfen</strong> - Passen Sie die generierten Texte vor der Veröffentlichung individuell an.</li>
-          </ul>
-          <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 16px; margin-bottom: 6px; color: var(--color-text-primary);">Häufige Fehler</h3>
-          <ul>
-            <li><strong>Zu kurze Eingaben</strong> - Einzelne Wörter führen oft zu sehr allgemeinen Ergebnissen.</li>
-            <li><strong>Keine Endkontrolle</strong> - Namen oder Texte ungeprüft zu übernehmen kann Markenkonflikte verursachen.</li>
-            <li><strong>Einstellungen ignorieren</strong> - Das Tool ohne Anpassung der Optionen zu verwenden.</li>
-          </ul>
-    
-        </section>
-
-        <section class="content-card" style="text-align: center; padding: 30px;">
-          <h2>Probieren Sie {copy.h1} jetzt aus!</h2>
-          <p style="margin-bottom: 16px;">Bereit für einen schnelleren Workflow? Nutzen Sie das Tool direkt oben im interaktiven Bereich.</p>
-          <a href="#" class="btn btn-primary" style="display: inline-block; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; color: #fff; background: var(--color-primary);">Zum Generator</a>
-        </section>
-
-        <section class="content-card">
-          <h2>So nutzt du {copy.h1}</h2>
+          <h2>Wie benutzt man {copy.h1}?</h2>
           <ol>
             {guideCopy.howTo.map(step => <li>{step}</li>)}
           </ol>
@@ -315,13 +283,27 @@ const pass20Controls = pass20ControlMap[slug];
           </ul>
         </section>
 
+        <section class="content-card eeat-authority-section" style="background: rgba(255,255,255,0.02); border: 1px solid var(--color-border); border-radius: 8px; padding: 20px; margin-top: 20px;">
+          <h2 style="font-size: 1.15rem; margin-bottom: 10px;">Offizielle Standards & Verweise (E-E-A-T)</h2>
+          <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 12px;">
+            Unsere Generatoren halten sich an die Richtlinien für Sicherheit, Datenschutz und technische Standards in Deutschland und Europa:
+          </p>
+          <ul style="font-size: 0.88rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; list-style: none; padding: 0;">
+            <li><a href="https://www.bsi.bund.de/" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">BSI Bundesamt für Sicherheit</a></li>
+            <li><a href="https://www.bfdi.bund.de/" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">BfDI Datenschutz Deutschland</a></li>
+            <li><a href="https://www.din.de/" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">DIN Normen & Standards</a></li>
+            <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">MDN Web Docs</a></li>
+            <li><a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">W3C Web Standards</a></li>
+          </ul>
+        </section>
+
         <section class="content-card">
           <h2>Warum TapToGen nutzen?</h2>
           <ul>
-            <li><strong>Sofortige Ergebnisse</strong> - erstelle Ideen direkt in deinem Browser.</li>
-            <li><strong>Kostenlos</strong> - ohne Anmeldung und ohne versteckte Kosten.</li>
-            <li><strong>Praktische Privatsphäre</strong> - der Ablauf funktioniert auf der Seite, ohne ein Konto zu verlangen.</li>
-            <li><strong>Leicht zu prüfen</strong> - kopiere, vergleiche und passe Ergebnisse vor der Nutzung an.</li>
+            <li><strong>Sofortige Ergebnisse</strong> - Erstelle Ideen direkt in deinem Browser.</li>
+            <li><strong>Kostenlos</strong> - Ohne Anmeldung und ohne versteckte Kosten.</li>
+            <li><strong>Praktische Privatsphäre</strong> - Der Ablauf funktioniert lokal, ohne ein Konto zu verlangen.</li>
+            <li><strong>Leicht zu prüfen</strong> - Kopiere, vergleiche und passe Ergebnisse vor der Nutzung an.</li>
           </ul>
         </section>
 
@@ -380,6 +362,8 @@ const pass20Controls = pass20ControlMap[slug];
       </div>
     </div>
   </section>
+
+  <MobileActionBar isFr={false} />
 
   <script>
     import '@/scripts/tool-workspace';

@@ -1,0 +1,132 @@
+---
+interface Props {
+  isFr?: boolean;
+}
+
+const { isFr = true } = Astro.props;
+---
+
+<div class="mobile-action-bar" id="mobile-action-bar" aria-label={isFr ? "Barre d'actions rapides sur mobile" : "Mobile quick action bar"}>
+  <div class="mobile-action-bar-inner">
+    <button type="button" class="mobile-action-btn primary" id="mobile-generate-btn" aria-label={isFr ? "Générer les résultats" : "Generate results"}>
+      <svg class="mobile-btn-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+      </svg>
+      <span>{isFr ? 'Générer' : 'Generate'}</span>
+    </button>
+
+    <button type="button" class="mobile-action-btn secondary" id="mobile-copy-btn" aria-label={isFr ? "Copier les résultats" : "Copy results"}>
+      <svg class="mobile-btn-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+      <span>{isFr ? 'Copier' : 'Copy'}</span>
+    </button>
+
+    <button type="button" class="mobile-action-btn secondary" id="mobile-download-btn" aria-label={isFr ? "Télécharger les résultats" : "Download results"}>
+      <svg class="mobile-btn-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      <span>{isFr ? 'Exporter' : 'Export'}</span>
+    </button>
+
+    <button type="button" class="mobile-action-btn ghost" id="mobile-reset-btn" aria-label={isFr ? "Effacer la saisie" : "Clear input"}>
+      <svg class="mobile-btn-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 6h18"></path>
+        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+      </svg>
+      <span>{isFr ? 'Effacer' : 'Clear'}</span>
+    </button>
+  </div>
+</div>
+
+<style>
+  .mobile-action-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 10px 16px max(10px, env(safe-area-inset-bottom, 10px));
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  .mobile-action-bar-inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .mobile-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    min-height: 48px;
+    padding: 6px 8px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-size: 0.72rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-action-btn.primary {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+    flex-direction: row;
+    gap: 6px;
+    font-size: 0.88rem;
+  }
+
+  .mobile-action-btn.primary:active {
+    transform: scale(0.96);
+    box-shadow: 0 2px 6px rgba(99, 102, 241, 0.2);
+  }
+
+  .mobile-action-btn.secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f1f5f9;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-action-btn.secondary:active {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .mobile-action-btn.ghost {
+    background: transparent;
+    color: #94a3b8;
+  }
+
+  .mobile-action-btn.ghost:active {
+    color: #f1f5f9;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .mobile-action-btn:focus-visible {
+    outline: 2px solid #818cf8;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-action-bar {
+      display: block;
+    }
+  }
+</style>

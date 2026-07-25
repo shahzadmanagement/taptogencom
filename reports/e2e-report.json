@@ -3,7 +3,7 @@
     "totalTested": 100,
     "passed": 100,
     "failed": 0,
-    "averageRenderTimeMs": 4374
+    "averageRenderTimeMs": 4412
   },
   "results": [
     {
@@ -20,13 +20,12 @@
     {
       "slug": "ad-copy-generator",
       "status": "PASSED",
-      "renderTime": 4976,
-      "fcp": 1152,
-      "lcp": 1152,
-      "tti": 3518,
+      "renderTime": 7394,
+      "fcp": 4120,
+      "lcp": 4120,
+      "tti": 6078,
       "accessibilityViolations": 0,
-      "errors": [],
-      "cached": true
+      "errors": []
     },
     {
       "slug": "affiliate-disclosure-generator",
@@ -262,13 +261,12 @@
     {
       "slug": "baby-name-generator",
       "status": "PASSED",
-      "renderTime": 3467,
-      "fcp": 860,
-      "lcp": 860,
-      "tti": 2474,
+      "renderTime": 4086,
+      "fcp": 1164,
+      "lcp": 1164,
+      "tti": 3042,
       "accessibilityViolations": 0,
-      "errors": [],
-      "cached": true
+      "errors": []
     },
     {
       "slug": "baby-name-generator-with-last-name",
@@ -361,13 +359,12 @@
     {
       "slug": "bio-generator",
       "status": "PASSED",
-      "renderTime": 3696,
-      "fcp": 944,
-      "lcp": 944,
-      "tti": 2598,
+      "renderTime": 3927,
+      "fcp": 976,
+      "lcp": 976,
+      "tti": 2842,
       "accessibilityViolations": 0,
-      "errors": [],
-      "cached": true
+      "errors": []
     },
     {
       "slug": "blob-generator",
@@ -383,24 +380,22 @@
     {
       "slug": "blog-name-generator",
       "status": "PASSED",
-      "renderTime": 3515,
-      "fcp": 848,
-      "lcp": 848,
-      "tti": 2483,
+      "renderTime": 4249,
+      "fcp": 1180,
+      "lcp": 1180,
+      "tti": 3241,
       "accessibilityViolations": 0,
-      "errors": [],
-      "cached": true
+      "errors": []
     },
     {
       "slug": "blog-outline-generator",
       "status": "PASSED",
-      "renderTime": 3429,
-      "fcp": 848,
-      "lcp": 848,
-      "tti": 2510,
+      "renderTime": 3824,
+      "fcp": 1272,
+      "lcp": 1272,
+      "tti": 2931,
       "accessibilityViolations": 0,
-      "errors": [],
-      "cached": true
+      "errors": []
     },
     {
       "slug": "blog-tag-generator",
@@ -416,13 +411,12 @@
     {
       "slug": "bold-text-generator",
       "status": "PASSED",
-      "renderTime": 3610,
-      "fcp": 876,
-      "lcp": 876,
-      "tti": 2687,
+      "renderTime": 3671,
+      "fcp": 1132,
+      "lcp": 1132,
+      "tti": 2708,
       "accessibilityViolations": 0,
-      "errors": [],
-      "cached": true
+      "errors": []
     },
     {
       "slug": "book-club-name-generator",
@@ -471,13 +465,12 @@
     {
       "slug": "brand-kit-generator",
       "status": "PASSED",
-      "renderTime": 3400,
-      "fcp": 848,
-      "lcp": 848,
-      "tti": 2419,
+      "renderTime": 3209,
+      "fcp": 804,
+      "lcp": 804,
+      "tti": 2335,
       "accessibilityViolations": 0,
-      "errors": [],
-      "cached": true
+      "errors": []
     },
     {
       "slug": "brat-text-generator",
@@ -526,13 +519,12 @@
     {
       "slug": "business-name-generator",
       "status": "PASSED",
-      "renderTime": 3788,
-      "fcp": 1084,
-      "lcp": 1084,
-      "tti": 2665,
+      "renderTime": 3277,
+      "fcp": 824,
+      "lcp": 824,
+      "tti": 2470,
       "accessibilityViolations": 0,
-      "errors": [],
-      "cached": true
+      "errors": []
     },
     {
       "slug": "cafe-name-generator",

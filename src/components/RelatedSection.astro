@@ -11,11 +11,19 @@ interface Props {
 
 const { title, relatedTools = [], links, isSpanish = false } = Astro.props;
 
-const resolvedLinks = links || relatedTools.map(item => ({
+const rawLinks = links || relatedTools.map(item => ({
   url: getToolRoute(item.slug, isSpanish ? 'es' : 'en'),
   anchor: item.name,
   icon: item.icon
 }));
+
+// Filter out duplicates and limit to maximum 6 contextual recommendations
+const uniqueUrls = new Set<string>();
+const resolvedLinks = rawLinks.filter(item => {
+  if (uniqueUrls.has(item.url)) return false;
+  uniqueUrls.add(item.url);
+  return true;
+}).slice(0, 6);
 ---
 
 {resolvedLinks && resolvedLinks.length > 0 && (
