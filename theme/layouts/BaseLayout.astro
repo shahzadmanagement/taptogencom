@@ -1,7 +1,7 @@
 ---
 import { siteConfig } from '@/config/site';
 import { headerNav, footerNav } from '@/data/navigation';
-import { getSupportedLanguage } from '@/data/localization';
+import { getSupportedLanguage, supportedLanguages } from '@/data/localization';
 import { resolveCanonicalUrl } from '@/lib/search-canonical';
 import { buildSchemas } from '@/lib/search-schema';
 import { getHreflangAlternates } from '@/lib/search-hreflang';
@@ -42,7 +42,27 @@ const allSchemas = buildSchemas({
   customSchemas: [...schema, imageMeta.schema]
 });
 const hreflangs = getHreflangAlternates(Astro.url.pathname);
-const effectiveAlternates = (alternates && alternates.length > 0) ? alternates : hreflangs;
+const altList = (alternates && alternates.length > 0) ? alternates : hreflangs;
+const altMap = new Map<string, string>();
+altList.forEach(alt => {
+  if (alt.lang !== 'x-default') {
+    altMap.set(alt.lang, alt.href.replace(siteConfig.url, ''));
+  }
+});
+
+const allLanguageItems = supportedLanguages.map(l => {
+  let targetHref = altMap.get(l.code);
+  if (!targetHref) {
+    targetHref = l.code === 'en' ? '/' : `/${l.code}/`;
+  }
+  return {
+    code: l.code,
+    nativeName: l.nativeName,
+    href: targetHref,
+    isActive: l.code === lang
+  };
+});
+
 const currentPath = Astro.url.pathname;
 const isSpanish = lang === 'es';
 const navLabelMap: Record<string, string> = {
@@ -182,6 +202,8 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
       background-color: rgba(10, 10, 30, 0.98);
       backdrop-filter: blur(20px);
       min-width: 200px;
+      max-height: 400px;
+      overflow-y: auto;
       border-radius: 12px;
       padding: 6px;
       margin: 0;
@@ -332,38 +354,31 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
         <a href="/tools/" class={currentPath === '/tools/' || (currentPath.startsWith('/tools/') && currentPath !== '/tools/categories/') ? 'active' : ''}>{localizeLabel('/tools/', 'Tools')}</a>
         <a href="/categories/" class={currentPath === '/categories/' || currentPath.startsWith('/categories/') ? 'active' : ''}>{localizeLabel('/categories/', 'Categories')}</a>
         
-        {effectiveAlternates && effectiveAlternates.length > 0 && (
-          <div class="nav-item-dropdown" id="language-dropdown">
-            <button 
-              class="nav-dropdown-toggle" 
-              aria-haspopup="true" 
-              aria-expanded="false"
-              aria-label="Select Language"
-            >
-              <span>🌐 Language</span>
-              <span class="dropdown-chevron" aria-hidden="true">▼</span>
-            </button>
-            <ul class="nav-dropdown-menu" role="menu" aria-label="Languages">
-              {effectiveAlternates
-                .filter(alt => alt.lang !== 'x-default')
-                .map((alternate) => (
-                  <li role="none">
-                    <a 
-                      href={alternate.href.replace(siteConfig.url, '')}
-                      role="menuitem"
-                      class={alternate.lang === lang ? 'active-lang' : ''}
-                    >
-                      <span class="lang-name">
-                        {alternate.lang === 'en' ? 'English' : getSupportedLanguage(alternate.lang).nativeName}
-                      </span>
-                      {alternate.lang === lang && <span class="lang-check" aria-hidden="true">✓</span>}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-        )}
+        <div class="nav-item-dropdown" id="language-dropdown">
+          <button 
+            class="nav-dropdown-toggle" 
+            aria-haspopup="true" 
+            aria-expanded="false"
+            aria-label="Select Language"
+          >
+            <span>🌐 Language</span>
+            <span class="dropdown-chevron" aria-hidden="true">▼</span>
+          </button>
+          <ul class="nav-dropdown-menu" role="menu" aria-label="Languages">
+            {allLanguageItems.map((item) => (
+              <li role="none">
+                <a 
+                  href={item.href}
+                  role="menuitem"
+                  class={item.isActive ? 'active-lang' : ''}
+                >
+                  <span class="lang-name">{item.nativeName}</span>
+                  {item.isActive && <span class="lang-check" aria-hidden="true">✓</span>}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <a href="/blog/" class={currentPath === '/blog/' || currentPath.startsWith('/blog/') ? 'active' : ''}>{localizeLabel('/blog/', 'Blog')}</a>
         <a href="/about-us/" class={currentPath === '/about-us/' || currentPath.startsWith('/about-us/') ? 'active' : ''}>{localizeLabel('/about-us/', 'About')}</a>
@@ -399,16 +414,12 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
             <a href={item.href}>{localizeLabel(item.href, item.label)}</a>
           ))}
         </div>
-        {effectiveAlternates && effectiveAlternates.length > 0 && (
-          <div class="footer-col">
-            <h4>{isSpanish ? 'Idiomas' : 'Languages'}</h4>
-            {effectiveAlternates.filter(alt => alt.lang !== 'x-default').map((alternate) => (
-              <a href={alternate.href.replace(siteConfig.url, '')}>
-                {alternate.lang === 'en' ? 'English' : getSupportedLanguage(alternate.lang).nativeName}
-              </a>
-            ))}
-          </div>
-        )}
+        <div class="footer-col">
+          <h4>{isSpanish ? 'Idiomas' : 'Languages'}</h4>
+          {allLanguageItems.map((item) => (
+            <a href={item.href}>{item.nativeName}</a>
+          ))}
+        </div>
         <div class="footer-col">
           <h4>{isSpanish ? 'Empresa' : 'Company'}</h4>
           {footerNav.legal.map(item => (
