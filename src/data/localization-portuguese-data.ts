@@ -2,7 +2,7 @@ import type { LocalizedToolContent } from './localization';
 
 export const portugueseMasterToolData: LocalizedToolContent[] = [
   {
-    "canonicalToolId": "name-generator",
+    "canonicalToolId": "fancy-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nomes",
     "localizedSlug": "gerador-de-nomes",
@@ -19,7 +19,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Trademark and availability review required before public or commercial use."
   },
   {
-    "canonicalToolId": "username-generator",
+    "canonicalToolId": "name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nome de usuario",
     "localizedSlug": "gerador-de-nome-de-usuario",
@@ -36,7 +36,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Trademark and availability review required before public or commercial use."
   },
   {
-    "canonicalToolId": "business-name-generator",
+    "canonicalToolId": "username-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nomes para empresas",
     "localizedSlug": "gerador-de-nomes-para-empresas",
@@ -53,7 +53,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Trademark and availability review required before public or commercial use."
   },
   {
-    "canonicalToolId": "fantasy-name-generator",
+    "canonicalToolId": "business-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nomes de fantasia",
     "localizedSlug": "gerador-de-nomes-de-fantasia",
@@ -70,7 +70,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Avoid protected franchise names, celebrities, and recognizable third-party IP."
   },
   {
-    "canonicalToolId": "character-name-generator",
+    "canonicalToolId": "youtube-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nomes de personagens",
     "localizedSlug": "gerador-de-nomes-de-personagens",
@@ -87,7 +87,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Avoid protected franchise names, celebrities, and recognizable third-party IP."
   },
   {
-    "canonicalToolId": "baby-name-generator",
+    "canonicalToolId": "instagram-bio-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nomes de bebe",
     "localizedSlug": "gerador-de-nomes-de-bebe",
@@ -104,7 +104,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Review originality, availability, platform rules, and factual accuracy before use."
   },
   {
-    "canonicalToolId": "last-name-generator",
+    "canonicalToolId": "meta-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de sobrenomes",
     "localizedSlug": "gerador-de-sobrenomes",
@@ -121,7 +121,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Review originality, availability, platform rules, and factual accuracy before use."
   },
   {
-    "canonicalToolId": "middle-name-generator",
+    "canonicalToolId": "bold-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de segundo nome",
     "localizedSlug": "gerador-de-segundo-nome",
@@ -138,7 +138,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Review originality, availability, platform rules, and factual accuracy before use."
   },
   {
-    "canonicalToolId": "team-name-generator",
+    "canonicalToolId": "cursive-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nomes de equipe",
     "localizedSlug": "gerador-de-nomes-de-equipe",
@@ -155,7 +155,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Review originality, availability, platform rules, and factual accuracy before use."
   },
   {
-    "canonicalToolId": "domain-name-generator",
+    "canonicalToolId": "glitch-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nomes de dominio",
     "localizedSlug": "gerador-de-nomes-de-dominio",
@@ -172,7 +172,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Trademark and availability review required before public or commercial use."
   },
   {
-    "canonicalToolId": "product-name-generator",
+    "canonicalToolId": "password-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nomes de produtos",
     "localizedSlug": "gerador-de-nomes-de-produtos",
@@ -189,7 +189,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Trademark and availability review required before public or commercial use."
   },
   {
-    "canonicalToolId": "project-name-generator",
+    "canonicalToolId": "lorem-ipsum-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nomes de projetos",
     "localizedSlug": "gerador-de-nomes-de-projetos",
@@ -206,7 +206,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Review originality, availability, platform rules, and factual accuracy before use."
   },
   {
-    "canonicalToolId": "brand-kit-generator",
+    "canonicalToolId": "fantasy-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de kit de marca",
     "localizedSlug": "gerador-de-kit-de-marca",
@@ -223,7 +223,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Trademark and availability review required before public or commercial use."
   },
   {
-    "canonicalToolId": "slogan-generator",
+    "canonicalToolId": "text-case-converter",
     "language": "pt",
     "primaryKeyword": "gerador de slogans",
     "localizedSlug": "gerador-de-slogans",
@@ -240,7 +240,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Trademark and availability review required before public or commercial use."
   },
   {
-    "canonicalToolId": "tagline-generator",
+    "canonicalToolId": "team-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de frases de marca",
     "localizedSlug": "gerador-de-frases-de-marca",
@@ -257,7 +257,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Trademark and availability review required before public or commercial use."
   },
   {
-    "canonicalToolId": "blog-name-generator",
+    "canonicalToolId": "robots-txt-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nomes para blog",
     "localizedSlug": "gerador-de-nomes-para-blog",
@@ -274,7 +274,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Trademark and availability review required before public or commercial use."
   },
   {
-    "canonicalToolId": "podcast-name-generator",
+    "canonicalToolId": "word-counter",
     "language": "pt",
     "primaryKeyword": "gerador de nomes para podcast",
     "localizedSlug": "gerador-de-nomes-para-podcast",
@@ -291,7 +291,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Trademark and availability review required before public or commercial use."
   },
   {
-    "canonicalToolId": "youtube-tag-generator",
+    "canonicalToolId": "uuid-generator",
     "language": "pt",
     "primaryKeyword": "gerador de tags para video",
     "localizedSlug": "gerador-de-tags-para-video",
@@ -308,7 +308,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Avoid platform guarantees, ranking promises, virality claims, or misleading tags."
   },
   {
-    "canonicalToolId": "hashtag-generator",
+    "canonicalToolId": "random-number-generator",
     "language": "pt",
     "primaryKeyword": "gerador de hashtags",
     "localizedSlug": "gerador-de-hashtags",
@@ -325,7 +325,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Avoid platform guarantees, ranking promises, virality claims, or misleading tags."
   },
   {
-    "canonicalToolId": "keyword-generator",
+    "canonicalToolId": "small-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de palavras-chave",
     "localizedSlug": "gerador-de-palavras-chave",
@@ -342,7 +342,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Technical SEO output should be reviewed before production use."
   },
   {
-    "canonicalToolId": "meta-tag-generator",
+    "canonicalToolId": "italic-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de meta tags",
     "localizedSlug": "gerador-de-meta-tags",
@@ -359,7 +359,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Technical SEO output should be reviewed before production use."
   },
   {
-    "canonicalToolId": "meta-description-generator",
+    "canonicalToolId": "strikethrough-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de meta descriptions",
     "localizedSlug": "gerador-de-meta-descriptions",
@@ -376,7 +376,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Technical SEO output should be reviewed before production use."
   },
   {
-    "canonicalToolId": "seo-title-generator",
+    "canonicalToolId": "underline-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de titulos SEO",
     "localizedSlug": "gerador-de-titulos-seo",
@@ -393,7 +393,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Technical SEO output should be reviewed before production use."
   },
   {
-    "canonicalToolId": "faq-generator",
+    "canonicalToolId": "vaporwave-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de perguntas frequentes",
     "localizedSlug": "gerador-de-perguntas-frequentes",
@@ -410,7 +410,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Technical SEO output should be reviewed before production use."
   },
   {
-    "canonicalToolId": "canonical-tag-generator",
+    "canonicalToolId": "reverse-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de tag canonical",
     "localizedSlug": "gerador-de-tag-canonical",
@@ -427,7 +427,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Technical SEO output should be reviewed before production use."
   },
   {
-    "canonicalToolId": "robots-txt-generator",
+    "canonicalToolId": "unicode-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de robots.txt",
     "localizedSlug": "gerador-de-robots-txt",
@@ -444,7 +444,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Technical SEO output should be reviewed before production use."
   },
   {
-    "canonicalToolId": "open-graph-generator",
+    "canonicalToolId": "twitter-bio-generator",
     "language": "pt",
     "primaryKeyword": "gerador de Open Graph",
     "localizedSlug": "gerador-de-open-graph",
@@ -461,7 +461,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Technical SEO output should be reviewed before production use."
   },
   {
-    "canonicalToolId": "fancy-text-generator",
+    "canonicalToolId": "tiktok-bio-generator",
     "language": "pt",
     "primaryKeyword": "letras bonitas",
     "localizedSlug": "letras-bonitas",
@@ -478,7 +478,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Check readability, accessibility, and platform compatibility before sharing."
   },
   {
-    "canonicalToolId": "bold-text-generator",
+    "canonicalToolId": "linkedin-bio-generator",
     "language": "pt",
     "primaryKeyword": "texto em negrito",
     "localizedSlug": "texto-em-negrito",
@@ -495,7 +495,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Check readability, accessibility, and platform compatibility before sharing."
   },
   {
-    "canonicalToolId": "cursive-text-generator",
+    "canonicalToolId": "domain-name-generator",
     "language": "pt",
     "primaryKeyword": "letras cursivas",
     "localizedSlug": "letras-cursivas",
@@ -512,7 +512,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Check readability, accessibility, and platform compatibility before sharing."
   },
   {
-    "canonicalToolId": "italic-text-generator",
+    "canonicalToolId": "product-name-generator",
     "language": "pt",
     "primaryKeyword": "texto italico",
     "localizedSlug": "texto-italico",
@@ -529,7 +529,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Check readability, accessibility, and platform compatibility before sharing."
   },
   {
-    "canonicalToolId": "small-text-generator",
+    "canonicalToolId": "baby-name-generator",
     "language": "pt",
     "primaryKeyword": "letras pequenas",
     "localizedSlug": "letras-pequenas",
@@ -546,7 +546,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Check readability, accessibility, and platform compatibility before sharing."
   },
   {
-    "canonicalToolId": "reverse-text-generator",
+    "canonicalToolId": "middle-name-generator",
     "language": "pt",
     "primaryKeyword": "inverter texto",
     "localizedSlug": "inverter-texto",
@@ -563,7 +563,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Check readability, accessibility, and platform compatibility before sharing."
   },
   {
-    "canonicalToolId": "text-case-converter",
+    "canonicalToolId": "last-name-generator",
     "language": "pt",
     "primaryKeyword": "conversor de maiusculas e minusculas",
     "localizedSlug": "conversor-de-maiusculas-e-minusculas",
@@ -580,7 +580,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Check readability, accessibility, and platform compatibility before sharing."
   },
   {
-    "canonicalToolId": "word-counter",
+    "canonicalToolId": "discord-name-generator",
     "language": "pt",
     "primaryKeyword": "contador de palavras",
     "localizedSlug": "contador-de-palavras",
@@ -597,7 +597,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Check readability, accessibility, and platform compatibility before sharing."
   },
   {
-    "canonicalToolId": "paragraph-generator",
+    "canonicalToolId": "clan-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de paragrafos",
     "localizedSlug": "gerador-de-paragrafos",
@@ -614,7 +614,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Review factual claims, originality, compliance, and project rules before publishing."
   },
   {
-    "canonicalToolId": "sentence-generator",
+    "canonicalToolId": "band-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de frases",
     "localizedSlug": "gerador-de-frases",
@@ -631,7 +631,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Review factual claims, originality, compliance, and project rules before publishing."
   },
   {
-    "canonicalToolId": "writing-prompt-generator",
+    "canonicalToolId": "superhero-name-generator",
     "language": "pt",
     "primaryKeyword": "ideias para escrever",
     "localizedSlug": "ideias-para-escrever",
@@ -648,7 +648,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Review factual claims, originality, compliance, and project rules before publishing."
   },
   {
-    "canonicalToolId": "blog-outline-generator",
+    "canonicalToolId": "rap-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de estrutura para blog",
     "localizedSlug": "gerador-de-estrutura-para-blog",
@@ -665,7 +665,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Review factual claims, originality, compliance, and project rules before publishing."
   },
   {
-    "canonicalToolId": "product-description-generator",
+    "canonicalToolId": "song-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de descricoes de produtos",
     "localizedSlug": "gerador-de-descricoes-de-produtos",
@@ -682,7 +682,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Review factual claims, originality, compliance, and project rules before publishing."
   },
   {
-    "canonicalToolId": "glitch-text-generator",
+    "canonicalToolId": "paragraph-generator",
     "language": "pt",
     "primaryKeyword": "gerador de glitch text",
     "localizedSlug": "gerador-glitch-text",
@@ -699,7 +699,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "lorem-ipsum-generator",
+    "canonicalToolId": "sentence-generator",
     "language": "pt",
     "primaryKeyword": "gerador de lorem ipsum",
     "localizedSlug": "gerador-lorem-ipsum",
@@ -716,7 +716,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar."
   },
   {
-    "canonicalToolId": "uuid-generator",
+    "canonicalToolId": "blog-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de uuid",
     "localizedSlug": "gerador-uuid",
@@ -733,7 +733,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "random-number-generator",
+    "canonicalToolId": "pirate-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de números aleatorios",
     "localizedSlug": "gerador-numeros-aleatorios",
@@ -750,7 +750,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar."
   },
   {
-    "canonicalToolId": "strikethrough-text-generator",
+    "canonicalToolId": "medieval-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de strikethrough text",
     "localizedSlug": "gerador-strikethrough-text",
@@ -767,7 +767,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "underline-text-generator",
+    "canonicalToolId": "hreflang-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de underline text",
     "localizedSlug": "gerador-underline-text",
@@ -784,7 +784,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "vaporwave-text-generator",
+    "canonicalToolId": "schema-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de vaporwave text",
     "localizedSlug": "gerador-vaporwave-text",
@@ -801,7 +801,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "unicode-text-generator",
+    "canonicalToolId": "slug-generator",
     "language": "pt",
     "primaryKeyword": "gerador de unicode text",
     "localizedSlug": "gerador-unicode-text",
@@ -818,7 +818,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "discord-name-generator",
+    "canonicalToolId": "hash-generator",
     "language": "pt",
     "primaryKeyword": "gerador de discord name",
     "localizedSlug": "gerador-discord-name",
@@ -835,7 +835,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "clan-name-generator",
+    "canonicalToolId": "json-formatter",
     "language": "pt",
     "primaryKeyword": "gerador de clan name",
     "localizedSlug": "gerador-clan-name",
@@ -852,7 +852,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "band-name-generator",
+    "canonicalToolId": "coin-flip",
     "language": "pt",
     "primaryKeyword": "gerador de band name",
     "localizedSlug": "gerador-band-name",
@@ -869,7 +869,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "superhero-name-generator",
+    "canonicalToolId": "dice-roller",
     "language": "pt",
     "primaryKeyword": "gerador de superhero name",
     "localizedSlug": "gerador-superhero-name",
@@ -886,7 +886,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "rap-name-generator",
+    "canonicalToolId": "color-palette-generator",
     "language": "pt",
     "primaryKeyword": "gerador de rap name",
     "localizedSlug": "gerador-rap-name",
@@ -903,7 +903,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "song-name-generator",
+    "canonicalToolId": "town-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de song name",
     "localizedSlug": "gerador-song-name",
@@ -920,7 +920,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "pirate-name-generator",
+    "canonicalToolId": "kingdom-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de pirate name",
     "localizedSlug": "gerador-pirate-name",
@@ -937,7 +937,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "medieval-name-generator",
+    "canonicalToolId": "dragon-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de medieval name",
     "localizedSlug": "gerador-medieval-name",
@@ -954,7 +954,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "hreflang-tag-generator",
+    "canonicalToolId": "wolf-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de hreflang tag",
     "localizedSlug": "gerador-hreflang-tag",
@@ -971,7 +971,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao ha garantia de trafego, rankings, indexacao ou resultados em plataformas."
   },
   {
-    "canonicalToolId": "schema-tag-generator",
+    "canonicalToolId": "demon-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de schema markup",
     "localizedSlug": "gerador-schema-markup",
@@ -988,7 +988,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao ha garantia de trafego, rankings, indexacao ou resultados em plataformas."
   },
   {
-    "canonicalToolId": "slug-generator",
+    "canonicalToolId": "elf-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de url slug",
     "localizedSlug": "gerador-url-slug",
@@ -1005,7 +1005,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "hash-generator",
+    "canonicalToolId": "podcast-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de hash",
     "localizedSlug": "gerador-hash",
@@ -1022,7 +1022,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "json-formatter",
+    "canonicalToolId": "youtube-name-generator",
     "language": "pt",
     "primaryKeyword": "formatador de json",
     "localizedSlug": "gerador-json",
@@ -1039,7 +1039,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "coin-flip",
+    "canonicalToolId": "instagram-caption-generator",
     "language": "pt",
     "primaryKeyword": "gerador de coin flip",
     "localizedSlug": "gerador-coin-flip",
@@ -1056,7 +1056,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar."
   },
   {
-    "canonicalToolId": "dice-roller",
+    "canonicalToolId": "nickname-generator",
     "language": "pt",
     "primaryKeyword": "gerador de dice roller",
     "localizedSlug": "gerador-dice-roller",
@@ -1073,7 +1073,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar."
   },
   {
-    "canonicalToolId": "color-palette-generator",
+    "canonicalToolId": "hashtag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de paletas de colores",
     "localizedSlug": "gerador-paletas-de-colores",
@@ -1090,7 +1090,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "town-name-generator",
+    "canonicalToolId": "etsy-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de town name",
     "localizedSlug": "gerador-town-name",
@@ -1107,7 +1107,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "kingdom-name-generator",
+    "canonicalToolId": "writing-prompt-generator",
     "language": "pt",
     "primaryKeyword": "gerador de kingdom name",
     "localizedSlug": "gerador-kingdom-name",
@@ -1124,7 +1124,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "dragon-name-generator",
+    "canonicalToolId": "text-to-binary-generator",
     "language": "pt",
     "primaryKeyword": "gerador de dragon name",
     "localizedSlug": "gerador-dragon-name",
@@ -1141,7 +1141,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "wolf-name-generator",
+    "canonicalToolId": "morse-code-generator",
     "language": "pt",
     "primaryKeyword": "gerador de wolf name",
     "localizedSlug": "gerador-wolf-name",
@@ -1158,7 +1158,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "demon-name-generator",
+    "canonicalToolId": "anime-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de demon name",
     "localizedSlug": "gerador-demon-name",
@@ -1175,7 +1175,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "elf-name-generator",
+    "canonicalToolId": "fake-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de elf name",
     "localizedSlug": "gerador-elf-name",
@@ -1192,7 +1192,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "nickname-generator",
+    "canonicalToolId": "qr-code-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nickname",
     "localizedSlug": "gerador-nickname",
@@ -1209,7 +1209,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "etsy-tag-generator",
+    "canonicalToolId": "dnd-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de marketplace tag",
     "localizedSlug": "gerador-marketplace-tag",
@@ -1226,7 +1226,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao ha garantia de trafego, rankings, indexacao ou resultados em plataformas."
   },
   {
-    "canonicalToolId": "text-to-binary-generator",
+    "canonicalToolId": "orc-name-generator",
     "language": "pt",
     "primaryKeyword": "conversor de text to binary",
     "localizedSlug": "gerador-text-to-binary",
@@ -1243,7 +1243,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "morse-code-generator",
+    "canonicalToolId": "witch-name-generator",
     "language": "pt",
     "primaryKeyword": "conversor de morse code",
     "localizedSlug": "gerador-morse-code",
@@ -1260,7 +1260,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "anime-name-generator",
+    "canonicalToolId": "alien-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de anime style name",
     "localizedSlug": "gerador-anime-style-name",
@@ -1277,7 +1277,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "qr-code-text-generator",
+    "canonicalToolId": "vampire-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de qr code text",
     "localizedSlug": "gerador-qr-code-text",
@@ -1294,7 +1294,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar."
   },
   {
-    "canonicalToolId": "dnd-name-generator",
+    "canonicalToolId": "fairy-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de tabletop rpg name",
     "localizedSlug": "gerador-tabletop-rpg-name",
@@ -1311,7 +1311,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "orc-name-generator",
+    "canonicalToolId": "goblin-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de orc name",
     "localizedSlug": "gerador-orc-name",
@@ -1328,7 +1328,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "witch-name-generator",
+    "canonicalToolId": "character-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de witch name",
     "localizedSlug": "gerador-witch-name",
@@ -1345,7 +1345,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "alien-name-generator",
+    "canonicalToolId": "story-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de alien name",
     "localizedSlug": "gerador-alien-name",
@@ -1362,7 +1362,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "vampire-name-generator",
+    "canonicalToolId": "twitch-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de vampire name",
     "localizedSlug": "gerador-vampire-name",
@@ -1379,7 +1379,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "fairy-name-generator",
+    "canonicalToolId": "random-phrase-generator",
     "language": "pt",
     "primaryKeyword": "gerador de fairy name",
     "localizedSlug": "gerador-fairy-name",
@@ -1396,7 +1396,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "goblin-name-generator",
+    "canonicalToolId": "special-character-generator",
     "language": "pt",
     "primaryKeyword": "gerador de goblin name",
     "localizedSlug": "gerador-goblin-name",
@@ -1413,7 +1413,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "story-name-generator",
+    "canonicalToolId": "ascii-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de títulos de historias",
     "localizedSlug": "gerador-titulos-de-historias",
@@ -1430,7 +1430,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "twitch-name-generator",
+    "canonicalToolId": "creepy-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de twitch name",
     "localizedSlug": "gerador-twitch-name",
@@ -1447,7 +1447,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Nao promete alcance, seguidores, disponibilidade de nomes ou desempenho em plataformas."
   },
   {
-    "canonicalToolId": "random-phrase-generator",
+    "canonicalToolId": "gaming-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de frases aleatorias",
     "localizedSlug": "gerador-frases-aleatorias",
@@ -1464,7 +1464,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado antes de decisoes importantes."
   },
   {
-    "canonicalToolId": "special-character-generator",
+    "canonicalToolId": "guild-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de caracteres especiales",
     "localizedSlug": "gerador-caracteres-especiales",
@@ -1481,7 +1481,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "ascii-text-generator",
+    "canonicalToolId": "planet-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de ascii text art",
     "localizedSlug": "gerador-ascii-text-art",
@@ -1498,7 +1498,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "creepy-text-generator",
+    "canonicalToolId": "island-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de creepy text",
     "localizedSlug": "gerador-creepy-text",
@@ -1515,7 +1515,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "gaming-name-generator",
+    "canonicalToolId": "shop-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de gaming name",
     "localizedSlug": "gerador-gaming-name",
@@ -1532,7 +1532,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "guild-name-generator",
+    "canonicalToolId": "cafe-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de guild name",
     "localizedSlug": "gerador-guild-name",
@@ -1549,7 +1549,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "planet-name-generator",
+    "canonicalToolId": "project-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de planet name",
     "localizedSlug": "gerador-planet-name",
@@ -1566,7 +1566,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "island-name-generator",
+    "canonicalToolId": "stage-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de island name",
     "localizedSlug": "gerador-island-name",
@@ -1583,7 +1583,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "shop-name-generator",
+    "canonicalToolId": "wrestling-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de shop name",
     "localizedSlug": "gerador-shop-name",
@@ -1600,7 +1600,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Nao substitui revisao juridica, financeira, de marca ou disponibilidade comercial."
   },
   {
-    "canonicalToolId": "cafe-name-generator",
+    "canonicalToolId": "cool-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de cafe name",
     "localizedSlug": "gerador-cafe-name",
@@ -1617,12 +1617,12 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Nao substitui revisao juridica, financeira, de marca ou disponibilidade comercial."
   },
   {
-    "canonicalToolId": "stage-name-generator",
+    "canonicalToolId": "old-english-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de stage name",
     "localizedSlug": "gerador-stage-name",
     "h1": "Gerador de Stage Name",
-    "metaTitle": "Gerador de Nomes Artísticos - Pseudónimos de Palco Web",
+    "metaTitle": "Gerador de Nomes de Palco",
     "metaDescription": "Descubra nomes artísticos e marcantes para cantores, atores e artistas performáticos. Ferramenta online gratuita, fácil e sem cadastro.",
     "intro": "Crie rascunhos claros em português e revise cada resultado antes de usar.",
     "faqTopics": [
@@ -1634,7 +1634,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "wrestling-name-generator",
+    "canonicalToolId": "uwu-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de wrestling name",
     "localizedSlug": "gerador-wrestling-name",
@@ -1651,7 +1651,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "cool-text-generator",
+    "canonicalToolId": "leet-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de cool text",
     "localizedSlug": "gerador-cool-text",
@@ -1668,7 +1668,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "old-english-text-generator",
+    "canonicalToolId": "random-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de old english text",
     "localizedSlug": "gerador-old-english-text",
@@ -1685,7 +1685,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "uwu-text-generator",
+    "canonicalToolId": "discord-timestamp-generator",
     "language": "pt",
     "primaryKeyword": "gerador de uwu text",
     "localizedSlug": "gerador-uwu-text",
@@ -1702,7 +1702,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "leet-text-generator",
+    "canonicalToolId": "canonical-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de leet speak",
     "localizedSlug": "gerador-leet-speak",
@@ -1719,7 +1719,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "random-text-generator",
+    "canonicalToolId": "utm-generator",
     "language": "pt",
     "primaryKeyword": "gerador de texto aleatorio",
     "localizedSlug": "gerador-texto-aleatorio",
@@ -1736,7 +1736,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado antes de decisoes importantes."
   },
   {
-    "canonicalToolId": "discord-timestamp-generator",
+    "canonicalToolId": "gibberish-generator",
     "language": "pt",
     "primaryKeyword": "gerador de discord timestamp",
     "localizedSlug": "gerador-discord-timestamp",
@@ -1753,7 +1753,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "utm-generator",
+    "canonicalToolId": "shakespeare-insult-generator",
     "language": "pt",
     "primaryKeyword": "gerador de utm link",
     "localizedSlug": "gerador-utm-link",
@@ -1770,7 +1770,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao ha garantia de trafego, rankings, indexacao ou resultados em plataformas."
   },
   {
-    "canonicalToolId": "gibberish-generator",
+    "canonicalToolId": "tiktok-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de gibberish",
     "localizedSlug": "gerador-gibberish",
@@ -1787,7 +1787,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado antes de decisoes importantes."
   },
   {
-    "canonicalToolId": "couple-name-generator",
+    "canonicalToolId": "instagram-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de couple name",
     "localizedSlug": "gerador-couple-name",
@@ -1804,7 +1804,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "dwarf-name-generator",
+    "canonicalToolId": "couple-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de dwarven name",
     "localizedSlug": "gerador-dwarven-name",
@@ -1821,7 +1821,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "tiefling-name-generator",
+    "canonicalToolId": "dwarf-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de tiefling name",
     "localizedSlug": "gerador-tiefling-name",
@@ -1838,7 +1838,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "school-name-generator",
+    "canonicalToolId": "tiefling-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de school name",
     "localizedSlug": "gerador-school-name",
@@ -1855,7 +1855,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Nao substitui revisao juridica, financeira, de marca ou disponibilidade comercial."
   },
   {
-    "canonicalToolId": "street-name-generator",
+    "canonicalToolId": "school-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de street name",
     "localizedSlug": "gerador-street-name",
@@ -1872,7 +1872,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado antes de decisoes importantes."
   },
   {
-    "canonicalToolId": "book-club-name-generator",
+    "canonicalToolId": "street-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de book club name",
     "localizedSlug": "gerador-book-club-name",
@@ -1889,7 +1889,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "pinterest-tag-generator",
+    "canonicalToolId": "book-club-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de pinterest tag",
     "localizedSlug": "gerador-pinterest-tag",
@@ -1906,7 +1906,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Nao promete alcance, seguidores, disponibilidade de nomes ou desempenho em plataformas."
   },
   {
-    "canonicalToolId": "soundcloud-tag-generator",
+    "canonicalToolId": "seo-title-generator",
     "language": "pt",
     "primaryKeyword": "gerador de soundcloud tag",
     "localizedSlug": "gerador-soundcloud-tag",
@@ -1923,7 +1923,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Nao promete alcance, seguidores, disponibilidade de nomes ou desempenho em plataformas."
   },
   {
-    "canonicalToolId": "error-message-generator",
+    "canonicalToolId": "pinterest-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de error message",
     "localizedSlug": "gerador-error-message",
@@ -1940,7 +1940,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "cipher-generator",
+    "canonicalToolId": "soundcloud-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de cipher",
     "localizedSlug": "gerador-cipher",
@@ -1957,7 +1957,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "repeat-text-generator",
+    "canonicalToolId": "comeback-generator",
     "language": "pt",
     "primaryKeyword": "gerador de repeat text",
     "localizedSlug": "gerador-repeat-text",
@@ -1974,7 +1974,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado antes de decisoes importantes."
   },
   {
-    "canonicalToolId": "magic-name-generator",
+    "canonicalToolId": "error-message-generator",
     "language": "pt",
     "primaryKeyword": "gerador de magic name",
     "localizedSlug": "gerador-magic-name",
@@ -1991,7 +1991,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "angel-name-generator",
+    "canonicalToolId": "cipher-generator",
     "language": "pt",
     "primaryKeyword": "gerador de angel name",
     "localizedSlug": "gerador-angel-name",
@@ -2008,7 +2008,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "tavern-name-generator",
+    "canonicalToolId": "repeat-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de tavern name",
     "localizedSlug": "gerador-tavern-name",
@@ -2025,7 +2025,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "dungeon-name-generator",
+    "canonicalToolId": "magic-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de dungeon name",
     "localizedSlug": "gerador-dungeon-name",
@@ -2042,7 +2042,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "cat-name-generator",
+    "canonicalToolId": "angel-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de cat name",
     "localizedSlug": "gerador-cat-name",
@@ -2059,7 +2059,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "horse-name-generator",
+    "canonicalToolId": "tavern-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de horse name",
     "localizedSlug": "gerador-horse-name",
@@ -2076,7 +2076,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "snapchat-name-generator",
+    "canonicalToolId": "dungeon-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de snapchat name",
     "localizedSlug": "gerador-snapchat-name",
@@ -2093,7 +2093,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Nao promete alcance, seguidores, disponibilidade de nomes ou desempenho em plataformas."
   },
   {
-    "canonicalToolId": "bio-generator",
+    "canonicalToolId": "cat-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de biografías",
     "localizedSlug": "gerador-biografias",
@@ -2110,7 +2110,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Nao use para identidade falsa, imitacao ou dados pessoais sensiveis."
   },
   {
-    "canonicalToolId": "wifi-name-generator",
+    "canonicalToolId": "horse-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de wifi name",
     "localizedSlug": "gerador-wifi-name",
@@ -2127,7 +2127,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado antes de decisoes importantes."
   },
   {
-    "canonicalToolId": "color-name-generator",
+    "canonicalToolId": "twitter-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nombres de colores",
     "localizedSlug": "gerador-nombres-de-colores",
@@ -2144,7 +2144,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "hex-color-generator",
+    "canonicalToolId": "snapchat-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de colores hexadecimales",
     "localizedSlug": "gerador-colores-hexadecimales",
@@ -2161,7 +2161,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "rgb-generator",
+    "canonicalToolId": "linkedin-headline-generator",
     "language": "pt",
     "primaryKeyword": "gerador de colores rgb",
     "localizedSlug": "gerador-colores-rgb",
@@ -2178,7 +2178,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "ai-prompt-generator",
+    "canonicalToolId": "bio-generator",
     "language": "pt",
     "primaryKeyword": "gerador de prompts de ia",
     "localizedSlug": "gerador-prompts-de-ia",
@@ -2195,7 +2195,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial."
   },
   {
-    "canonicalToolId": "midjourney-prompt-generator",
+    "canonicalToolId": "slogan-generator",
     "language": "pt",
     "primaryKeyword": "gerador de prompts para midjourney",
     "localizedSlug": "gerador-prompts-para-midjourney",
@@ -2212,7 +2212,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial."
   },
   {
-    "canonicalToolId": "passphrase-generator",
+    "canonicalToolId": "wifi-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de frases de contraseña",
     "localizedSlug": "gerador-frases-de-contrasena",
@@ -2229,7 +2229,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "css-button-generator",
+    "canonicalToolId": "color-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de botones css",
     "localizedSlug": "gerador-botones-css",
@@ -2246,7 +2246,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "box-shadow-generator",
+    "canonicalToolId": "hex-color-generator",
     "language": "pt",
     "primaryKeyword": "gerador de sombra en caja css",
     "localizedSlug": "gerador-sombra-css",
@@ -2263,7 +2263,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "border-radius-generator",
+    "canonicalToolId": "rgb-generator",
     "language": "pt",
     "primaryKeyword": "gerador de borde redondeado css",
     "localizedSlug": "gerador-borde-redondeado-css",
@@ -2280,7 +2280,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "regex-generator",
+    "canonicalToolId": "ai-prompt-generator",
     "language": "pt",
     "primaryKeyword": "gerador de expresiones regulares",
     "localizedSlug": "gerador-expresiones-regulares",
@@ -2297,7 +2297,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "cron-expression-generator",
+    "canonicalToolId": "midjourney-prompt-generator",
     "language": "pt",
     "primaryKeyword": "gerador de expresiones cron",
     "localizedSlug": "gerador-expresiones-cron",
@@ -2314,7 +2314,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "random-letter-generator",
+    "canonicalToolId": "passphrase-generator",
     "language": "pt",
     "primaryKeyword": "gerador de letras aleatorias",
     "localizedSlug": "gerador-letras-aleatorias",
@@ -2331,7 +2331,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "random-question-generator",
+    "canonicalToolId": "pin-generator",
     "language": "pt",
     "primaryKeyword": "gerador de preguntas aleatorias",
     "localizedSlug": "gerador-preguntas-aleatorias",
@@ -2348,7 +2348,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "truth-or-dare-generator",
+    "canonicalToolId": "api-key-generator",
     "language": "pt",
     "primaryKeyword": "gerador de verdad o reto",
     "localizedSlug": "gerador-verdad-o-reto",
@@ -2365,7 +2365,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "would-you-rather-generator",
+    "canonicalToolId": "privacy-policy-generator",
     "language": "pt",
     "primaryKeyword": "gerador de qué preferirías",
     "localizedSlug": "gerador-que-preferirias",
@@ -2382,7 +2382,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "joke-generator",
+    "canonicalToolId": "terms-generator",
     "language": "pt",
     "primaryKeyword": "gerador de chistes",
     "localizedSlug": "gerador-chistes",
@@ -2399,7 +2399,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "compliment-generator",
+    "canonicalToolId": "cookie-policy-generator",
     "language": "pt",
     "primaryKeyword": "gerador de elogios y halagos",
     "localizedSlug": "gerador-elogios-y-halagos",
@@ -2416,7 +2416,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "email-signature-generator",
+    "canonicalToolId": "disclaimer-generator",
     "language": "pt",
     "primaryKeyword": "gerador de firma de correo",
     "localizedSlug": "gerador-firma-de-correo",
@@ -2433,7 +2433,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "gradient-generator",
+    "canonicalToolId": "open-graph-generator",
     "language": "pt",
     "primaryKeyword": "gerador de degradados css",
     "localizedSlug": "gerador-degradados-css",
@@ -2450,7 +2450,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "font-pairing-generator",
+    "canonicalToolId": "twitter-card-generator",
     "language": "pt",
     "primaryKeyword": "gerador de combinación de tipografías",
     "localizedSlug": "gerador-combinacion-de-tipografias",
@@ -2467,7 +2467,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "cold-email-generator",
+    "canonicalToolId": "youtube-description-generator",
     "language": "pt",
     "primaryKeyword": "gerador de correos en frío",
     "localizedSlug": "gerador-correos-en-frio",
@@ -2484,7 +2484,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "cover-letter-generator",
+    "canonicalToolId": "tiktok-caption-generator",
     "language": "pt",
     "primaryKeyword": "gerador de cartas de presentación",
     "localizedSlug": "gerador-cartas-de-presentacion",
@@ -2501,7 +2501,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial."
   },
   {
-    "canonicalToolId": "resume-summary-generator",
+    "canonicalToolId": "css-button-generator",
     "language": "pt",
     "primaryKeyword": "gerador de resumen de currículum",
     "localizedSlug": "gerador-resumen-de-curriculum",
@@ -2518,7 +2518,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial."
   },
   {
-    "canonicalToolId": "ad-copy-generator",
+    "canonicalToolId": "box-shadow-generator",
     "language": "pt",
     "primaryKeyword": "gerador de textos anuncios",
     "localizedSlug": "gerador-textos-anuncios",
@@ -2535,7 +2535,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "call-to-action-generator",
+    "canonicalToolId": "border-radius-generator",
     "language": "pt",
     "primaryKeyword": "gerador de llamadas a la acción",
     "localizedSlug": "gerador-llamadas-a-la-accion",
@@ -2552,7 +2552,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "random-emoji-generator",
+    "canonicalToolId": "regex-generator",
     "language": "pt",
     "primaryKeyword": "gerador de emojis aleatorios",
     "localizedSlug": "gerador-emojis-aleatorios",
@@ -2569,7 +2569,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "random-country-generator",
+    "canonicalToolId": "cron-expression-generator",
     "language": "pt",
     "primaryKeyword": "gerador de países aleatorios",
     "localizedSlug": "gerador-paises-aleatorios",
@@ -2586,7 +2586,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "random-date-generator",
+    "canonicalToolId": "random-letter-generator",
     "language": "pt",
     "primaryKeyword": "gerador de fechas aleatorias",
     "localizedSlug": "gerador-fechas-aleatorias",
@@ -2603,7 +2603,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "random-choice-generator",
+    "canonicalToolId": "random-question-generator",
     "language": "pt",
     "primaryKeyword": "gerador de elección aleatoria",
     "localizedSlug": "gerador-eleccion-aleatoria",
@@ -2620,7 +2620,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado antes de decisoes importantes."
   },
   {
-    "canonicalToolId": "game-idea-generator",
+    "canonicalToolId": "truth-or-dare-generator",
     "language": "pt",
     "primaryKeyword": "gerador de ideas de videojuegos",
     "localizedSlug": "gerador-ideas-de-videojuegos",
@@ -2637,7 +2637,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "rpg-character-generator",
+    "canonicalToolId": "would-you-rather-generator",
     "language": "pt",
     "primaryKeyword": "gerador de personajes de rol",
     "localizedSlug": "gerador-personajes-de-rol",
@@ -2654,7 +2654,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "npc-generator",
+    "canonicalToolId": "joke-generator",
     "language": "pt",
     "primaryKeyword": "gerador de personajes pnj",
     "localizedSlug": "gerador-personajes-pnj",
@@ -2671,7 +2671,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "quest-generator",
+    "canonicalToolId": "compliment-generator",
     "language": "pt",
     "primaryKeyword": "gerador de misiones de juego",
     "localizedSlug": "gerador-misiones-de-juego",
@@ -2688,7 +2688,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "story-plot-generator",
+    "canonicalToolId": "email-signature-generator",
     "language": "pt",
     "primaryKeyword": "gerador de tramas de historias",
     "localizedSlug": "gerador-tramas-de-historias",
@@ -2705,7 +2705,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "riddle-generator",
+    "canonicalToolId": "gradient-generator",
     "language": "pt",
     "primaryKeyword": "gerador de adivinanzas",
     "localizedSlug": "gerador-adivinanzas",
@@ -2722,7 +2722,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "icebreaker-generator",
+    "canonicalToolId": "font-pairing-generator",
     "language": "pt",
     "primaryKeyword": "gerador de preguntas rompehielos",
     "localizedSlug": "gerador-preguntas-rompehielos",
@@ -2739,7 +2739,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "product-title-generator",
+    "canonicalToolId": "blog-outline-generator",
     "language": "pt",
     "primaryKeyword": "gerador de títulos de productos",
     "localizedSlug": "gerador-titulos-de-productos",
@@ -2756,7 +2756,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "sku-generator",
+    "canonicalToolId": "cold-email-generator",
     "language": "pt",
     "primaryKeyword": "gerador de códigos sku",
     "localizedSlug": "gerador-codigos-sku",
@@ -2773,7 +2773,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "testimonial-generator",
+    "canonicalToolId": "cover-letter-generator",
     "language": "pt",
     "primaryKeyword": "gerador de testimonios",
     "localizedSlug": "gerador-testimonios",
@@ -2790,7 +2790,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "coupon-code-generator",
+    "canonicalToolId": "resume-summary-generator",
     "language": "pt",
     "primaryKeyword": "gerador de códigos de descuento",
     "localizedSlug": "gerador-codigos-de-descuento",
@@ -2807,7 +2807,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "barcode-generator",
+    "canonicalToolId": "ad-copy-generator",
     "language": "pt",
     "primaryKeyword": "gerador de códigos de barras",
     "localizedSlug": "gerador-codigos-de-barras",
@@ -2824,7 +2824,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "meeting-agenda-generator",
+    "canonicalToolId": "call-to-action-generator",
     "language": "pt",
     "primaryKeyword": "gerador de agendas de reunión",
     "localizedSlug": "gerador-agendas-de-reunion",
@@ -2841,7 +2841,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "citation-generator",
+    "canonicalToolId": "product-description-generator",
     "language": "pt",
     "primaryKeyword": "gerador de citas académicas",
     "localizedSlug": "gerador-citas-academicas",
@@ -2858,7 +2858,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial."
   },
   {
-    "canonicalToolId": "headline-generator",
+    "canonicalToolId": "random-emoji-generator",
     "language": "pt",
     "primaryKeyword": "gerador de titulares impactantes",
     "localizedSlug": "gerador-titulares-impactantes",
@@ -2875,7 +2875,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial."
   },
   {
-    "canonicalToolId": "meme-text-generator",
+    "canonicalToolId": "random-country-generator",
     "language": "pt",
     "primaryKeyword": "gerador de meme text",
     "localizedSlug": "gerador-meme-text",
@@ -2892,7 +2892,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "startup-name-generator",
+    "canonicalToolId": "random-date-generator",
     "language": "pt",
     "primaryKeyword": "gerador de startup name",
     "localizedSlug": "gerador-startup-name",
@@ -2909,7 +2909,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "photography-name-generator",
+    "canonicalToolId": "random-choice-generator",
     "language": "pt",
     "primaryKeyword": "gerador de photography business name",
     "localizedSlug": "gerador-photography-business-name",
@@ -2926,7 +2926,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "art-name-generator",
+    "canonicalToolId": "game-idea-generator",
     "language": "pt",
     "primaryKeyword": "gerador de art name",
     "localizedSlug": "gerador-art-name",
@@ -2943,7 +2943,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "avatar-name-generator",
+    "canonicalToolId": "rpg-character-generator",
     "language": "pt",
     "primaryKeyword": "gerador de avatar name",
     "localizedSlug": "gerador-avatar-name",
@@ -2960,7 +2960,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "video-game-name-generator",
+    "canonicalToolId": "npc-generator",
     "language": "pt",
     "primaryKeyword": "gerador de video game name",
     "localizedSlug": "gerador-video-game-name",
@@ -2977,7 +2977,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "text-summary-generator",
+    "canonicalToolId": "quest-generator",
     "language": "pt",
     "primaryKeyword": "gerador de resumen de textos",
     "localizedSlug": "gerador-resumen-de-textos",
@@ -2994,7 +2994,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial."
   },
   {
-    "canonicalToolId": "typography-generator",
+    "canonicalToolId": "story-plot-generator",
     "language": "pt",
     "primaryKeyword": "gerador de typography",
     "localizedSlug": "gerador-typography",
@@ -3011,7 +3011,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "wordart-generator",
+    "canonicalToolId": "riddle-generator",
     "language": "pt",
     "primaryKeyword": "gerador de word art",
     "localizedSlug": "gerador-word-art",
@@ -3028,7 +3028,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "social-media-post-generator",
+    "canonicalToolId": "icebreaker-generator",
     "language": "pt",
     "primaryKeyword": "gerador de publicaciones para redes social",
     "localizedSlug": "gerador-publicaciones-redes-sociales",
@@ -3045,7 +3045,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Nao promete alcance, seguidores, vendas, viralidade ou desempenho em plataformas."
   },
   {
-    "canonicalToolId": "email-subject-generator",
+    "canonicalToolId": "product-title-generator",
     "language": "pt",
     "primaryKeyword": "gerador de email subject line",
     "localizedSlug": "gerador-email-subject-line",
@@ -3062,7 +3062,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "drag-name-generator",
+    "canonicalToolId": "sku-generator",
     "language": "pt",
     "primaryKeyword": "gerador de drag queen name",
     "localizedSlug": "gerador-drag-queen-name",
@@ -3079,7 +3079,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "gamertag-generator",
+    "canonicalToolId": "testimonial-generator",
     "language": "pt",
     "primaryKeyword": "gerador de gamertag",
     "localizedSlug": "gerador-gamertag",
@@ -3096,7 +3096,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "dragonborn-name-generator",
+    "canonicalToolId": "keyword-generator",
     "language": "pt",
     "primaryKeyword": "gerador de dragonborn name",
     "localizedSlug": "gerador-dragonborn-name",
@@ -3113,7 +3113,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "email-name-generator",
+    "canonicalToolId": "faq-generator",
     "language": "pt",
     "primaryKeyword": "gerador de email address name",
     "localizedSlug": "gerador-email-address-name",
@@ -3130,7 +3130,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "synonym-generator",
+    "canonicalToolId": "license-key-generator",
     "language": "pt",
     "primaryKeyword": "gerador de synonym",
     "localizedSlug": "gerador-synonym",
@@ -3147,7 +3147,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial."
   },
   {
-    "canonicalToolId": "footnote-generator",
+    "canonicalToolId": "recovery-code-generator",
     "language": "pt",
     "primaryKeyword": "gerador de footnote",
     "localizedSlug": "gerador-footnote",
@@ -3164,7 +3164,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial."
   },
   {
-    "canonicalToolId": "all-caps-generator",
+    "canonicalToolId": "coupon-code-generator",
     "language": "pt",
     "primaryKeyword": "gerador de all caps",
     "localizedSlug": "gerador-all-caps",
@@ -3181,7 +3181,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "lowercase-generator",
+    "canonicalToolId": "barcode-generator",
     "language": "pt",
     "primaryKeyword": "gerador de lowercase",
     "localizedSlug": "gerador-lowercase",
@@ -3198,7 +3198,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "corporate-speak-generator",
+    "canonicalToolId": "refund-policy-generator",
     "language": "pt",
     "primaryKeyword": "gerador de corporate speak",
     "localizedSlug": "gerador-corporate-speak",
@@ -3215,7 +3215,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "random-word-generator",
+    "canonicalToolId": "shipping-policy-generator",
     "language": "pt",
     "primaryKeyword": "gerador de palabras aleatorias",
     "localizedSlug": "gerador-palabras-aleatorias",
@@ -3232,7 +3232,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "dialogue-tag-generator",
+    "canonicalToolId": "affiliate-disclosure-generator",
     "language": "pt",
     "primaryKeyword": "gerador de dialogue tag",
     "localizedSlug": "gerador-dialogue-tag",
@@ -3249,7 +3249,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial."
   },
   {
-    "canonicalToolId": "name-tag-generator",
+    "canonicalToolId": "invoice-generator",
     "language": "pt",
     "primaryKeyword": "gerador de name tag",
     "localizedSlug": "gerador-name-tag",
@@ -3266,7 +3266,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado antes de decisoes importantes."
   },
   {
-    "canonicalToolId": "graffiti-text-generator",
+    "canonicalToolId": "meeting-agenda-generator",
     "language": "pt",
     "primaryKeyword": "gerador de graffiti text",
     "localizedSlug": "gerador-graffiti-text",
@@ -3283,7 +3283,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "tag-cloud-generator",
+    "canonicalToolId": "citation-generator",
     "language": "pt",
     "primaryKeyword": "gerador de tag cloud",
     "localizedSlug": "gerador-tag-cloud",
@@ -3300,7 +3300,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao ha garantia de trafego, rankings, indexacao ou resultados em plataformas."
   },
   {
-    "canonicalToolId": "blog-tag-generator",
+    "canonicalToolId": "linkedin-post-generator",
     "language": "pt",
     "primaryKeyword": "gerador de blog tag",
     "localizedSlug": "gerador-blog-tag",
@@ -3317,7 +3317,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao ha garantia de trafego, rankings, indexacao ou resultados em plataformas."
   },
   {
-    "canonicalToolId": "random-height-generator",
+    "canonicalToolId": "facebook-post-generator",
     "language": "pt",
     "primaryKeyword": "gerador de estatura aleatoria",
     "localizedSlug": "gerador-estatura-aleatoria",
@@ -3334,7 +3334,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "essay-title-generator",
+    "canonicalToolId": "headline-generator",
     "language": "pt",
     "primaryKeyword": "gerador de títulos de ensayos",
     "localizedSlug": "gerador-titulos-de-ensayos",
@@ -3351,7 +3351,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial."
   },
   {
-    "canonicalToolId": "stable-diffusion-prompt-generator",
+    "canonicalToolId": "meme-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de prompts para stable diffusion",
     "localizedSlug": "gerador-prompts-para-stable-diffusion",
@@ -3368,7 +3368,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial."
   },
   {
-    "canonicalToolId": "character-prompt-generator",
+    "canonicalToolId": "startup-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de prompts de personajes",
     "localizedSlug": "gerador-prompts-de-personajes",
@@ -3385,7 +3385,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "content-brief-generator",
+    "canonicalToolId": "photography-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de briefs de contenido",
     "localizedSlug": "gerador-briefs-de-contenido",
@@ -3402,7 +3402,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e nao apresente como resultado garantido ou oficial."
   },
   {
-    "canonicalToolId": "press-release-generator",
+    "canonicalToolId": "art-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de notas de prensa",
     "localizedSlug": "gerador-notas-de-prensa",
@@ -3419,7 +3419,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise fatos, permissoes, marca, privacidade e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "author-bio-generator",
+    "canonicalToolId": "avatar-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de biografía de autor",
     "localizedSlug": "gerador-biografia-de-autor",
@@ -3436,7 +3436,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Nao use para identidade falsa, imitacao ou dados pessoais sensiveis."
   },
   {
-    "canonicalToolId": "viral-hook-generator",
+    "canonicalToolId": "video-game-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de ganchos virales",
     "localizedSlug": "gerador-ganchos-virales",
@@ -3453,7 +3453,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Nao promete alcance, seguidores, vendas, viralidade ou desempenho em plataformas."
   },
   {
-    "canonicalToolId": "content-calendar-generator",
+    "canonicalToolId": "text-summary-generator",
     "language": "pt",
     "primaryKeyword": "gerador de calendario de contenidos",
     "localizedSlug": "gerador-calendario-de-contenidos",
@@ -3470,7 +3470,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao ha garantia de trafego, rankings, indexacao ou resultados em plataformas."
   },
   {
-    "canonicalToolId": "text-shadow-generator",
+    "canonicalToolId": "typography-generator",
     "language": "pt",
     "primaryKeyword": "gerador de css text shadow",
     "localizedSlug": "gerador-css-text-shadow",
@@ -3487,7 +3487,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "css-grid-generator",
+    "canonicalToolId": "wordart-generator",
     "language": "pt",
     "primaryKeyword": "gerador de css grid",
     "localizedSlug": "gerador-css-grid",
@@ -3504,7 +3504,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "flexbox-generator",
+    "canonicalToolId": "social-media-post-generator",
     "language": "pt",
     "primaryKeyword": "gerador de css flexbox",
     "localizedSlug": "gerador-css-flexbox",
@@ -3521,7 +3521,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "html-table-generator",
+    "canonicalToolId": "email-subject-generator",
     "language": "pt",
     "primaryKeyword": "gerador de html table",
     "localizedSlug": "gerador-html-table",
@@ -3538,7 +3538,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "dummy-data-generator",
+    "canonicalToolId": "drag-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de dummy data",
     "localizedSlug": "gerador-dummy-data",
@@ -3555,7 +3555,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Revise compatibilidade, acessibilidade e seguranca antes de usar em producao."
   },
   {
-    "canonicalToolId": "raffle-generator",
+    "canonicalToolId": "gamertag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de raffle",
     "localizedSlug": "gerador-raffle",
@@ -3572,7 +3572,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "giveaway-generator",
+    "canonicalToolId": "dragonborn-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de giveaway winner",
     "localizedSlug": "gerador-giveaway-winner",
@@ -3589,7 +3589,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Mantenha como brincadeira ou ideacao; evite identidade, documentos, assedio ou pressao social."
   },
   {
-    "canonicalToolId": "character-backstory-generator",
+    "canonicalToolId": "email-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de trasfondo de personajes",
     "localizedSlug": "gerador-trasfondo-de-personajes",
@@ -3606,7 +3606,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha para ficcao, jogos ou mundos proprios e evite copiar universos protegidos."
   },
   {
-    "canonicalToolId": "worldbuilding-generator",
+    "canonicalToolId": "synonym-generator",
     "language": "pt",
     "primaryKeyword": "gerador de worldbuilding",
     "localizedSlug": "gerador-worldbuilding",
@@ -3623,7 +3623,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha para ficcao, jogos ou mundos proprios e evite copiar universos protegidos."
   },
   {
-    "canonicalToolId": "quiz-generator",
+    "canonicalToolId": "footnote-generator",
     "language": "pt",
     "primaryKeyword": "gerador de preguntas de cuestionarios",
     "localizedSlug": "gerador-preguntas-de-cuestionarios",
@@ -3640,7 +3640,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use como apoio de escrita; revise fontes, originalidade e regras academicas ou editoriais."
   },
   {
-    "canonicalToolId": "thesis-statement-generator",
+    "canonicalToolId": "all-caps-generator",
     "language": "pt",
     "primaryKeyword": "gerador de thesis statement",
     "localizedSlug": "gerador-thesis-statement",
@@ -3657,7 +3657,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use como apoio de escrita; revise fontes, originalidade e regras academicas ou editoriais."
   },
   {
-    "canonicalToolId": "landing-page-copy-generator",
+    "canonicalToolId": "lowercase-generator",
     "language": "pt",
     "primaryKeyword": "gerador de textos para páginas de aterrizaje",
     "localizedSlug": "gerador-textos-para-paginas-de-aterrizaje",
@@ -3674,7 +3674,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Confirme dados, permissoes, precos, alegacoes e tom da marca antes de publicar."
   },
   {
-    "canonicalToolId": "json-schema-generator",
+    "canonicalToolId": "corporate-speak-generator",
     "language": "pt",
     "primaryKeyword": "gerador de json schema",
     "localizedSlug": "gerador-json-schema",
@@ -3691,7 +3691,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo, valide entradas e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "typescript-type-generator",
+    "canonicalToolId": "random-word-generator",
     "language": "pt",
     "primaryKeyword": "gerador de typescript type",
     "localizedSlug": "gerador-typescript-type",
@@ -3708,7 +3708,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo, valide entradas e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "sql-query-generator",
+    "canonicalToolId": "dialogue-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de sql query",
     "localizedSlug": "gerador-sql-query",
@@ -3725,7 +3725,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo, valide entradas e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "htaccess-generator",
+    "canonicalToolId": "name-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de htaccess",
     "localizedSlug": "gerador-htaccess",
@@ -3742,7 +3742,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo, valide entradas e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "pwa-manifest-generator",
+    "canonicalToolId": "graffiti-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de pwa manifest",
     "localizedSlug": "gerador-pwa-manifest",
@@ -3759,7 +3759,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo, valide entradas e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "form-generator",
+    "canonicalToolId": "tag-cloud-generator",
     "language": "pt",
     "primaryKeyword": "gerador de html form",
     "localizedSlug": "gerador-html-form",
@@ -3776,7 +3776,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo, valide entradas e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "random-id-generator",
+    "canonicalToolId": "blog-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de identificadores aleatorios",
     "localizedSlug": "gerador-identificadores-aleatorios",
@@ -3793,7 +3793,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo, valide entradas e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "flashcard-generator",
+    "canonicalToolId": "random-height-generator",
     "language": "pt",
     "primaryKeyword": "gerador de flashcard",
     "localizedSlug": "gerador-flashcard",
@@ -3810,7 +3810,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use como apoio de escrita; revise fontes, originalidade e regras academicas ou editoriais."
   },
   {
-    "canonicalToolId": "study-plan-generator",
+    "canonicalToolId": "essay-title-generator",
     "language": "pt",
     "primaryKeyword": "gerador de study plan",
     "localizedSlug": "gerador-study-plan",
@@ -3827,7 +3827,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use como apoio de escrita; revise fontes, originalidade e regras academicas ou editoriais."
   },
   {
-    "canonicalToolId": "lesson-plan-generator",
+    "canonicalToolId": "ao3-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de lesson plan",
     "localizedSlug": "gerador-lesson-plan",
@@ -3844,7 +3844,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use como apoio de escrita; revise fontes, originalidade e regras academicas ou editoriais."
   },
   {
-    "canonicalToolId": "research-question-generator",
+    "canonicalToolId": "stable-diffusion-prompt-generator",
     "language": "pt",
     "primaryKeyword": "gerador de preguntas de investigación",
     "localizedSlug": "gerador-preguntas-de-investigacion",
@@ -3861,7 +3861,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use como apoio de escrita; revise fontes, originalidade e regras academicas ou editoriais."
   },
   {
-    "canonicalToolId": "bibliography-generator",
+    "canonicalToolId": "character-prompt-generator",
     "language": "pt",
     "primaryKeyword": "gerador de bibliography",
     "localizedSlug": "gerador-bibliography",
@@ -3878,7 +3878,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use como apoio de escrita; revise fontes, originalidade e regras academicas ou editoriais."
   },
   {
-    "canonicalToolId": "essay-topic-generator",
+    "canonicalToolId": "content-brief-generator",
     "language": "pt",
     "primaryKeyword": "gerador de essay topic",
     "localizedSlug": "gerador-essay-topic",
@@ -3895,7 +3895,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use como apoio de escrita; revise fontes, originalidade e regras academicas ou editoriais."
   },
   {
-    "canonicalToolId": "multiple-choice-generator",
+    "canonicalToolId": "press-release-generator",
     "language": "pt",
     "primaryKeyword": "gerador de preguntas de opción múltiple",
     "localizedSlug": "gerador-opcion-multiple",
@@ -3912,7 +3912,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use como apoio de escrita; revise fontes, originalidade e regras academicas ou editoriais."
   },
   {
-    "canonicalToolId": "product-bullet-points-generator",
+    "canonicalToolId": "author-bio-generator",
     "language": "pt",
     "primaryKeyword": "gerador de puntos clave del producto",
     "localizedSlug": "gerador-puntos-clave-del-producto",
@@ -3929,7 +3929,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Confirme dados, permissoes, precos, alegacoes e tom da marca antes de publicar."
   },
   {
-    "canonicalToolId": "customer-persona-generator",
+    "canonicalToolId": "x-post-generator",
     "language": "pt",
     "primaryKeyword": "gerador de perfil de cliente ideal",
     "localizedSlug": "gerador-perfil-de-cliente-ideal",
@@ -3946,7 +3946,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Confirme dados, permissoes, precos, alegacoes e tom da marca antes de publicar."
   },
   {
-    "canonicalToolId": "sales-email-generator",
+    "canonicalToolId": "viral-hook-generator",
     "language": "pt",
     "primaryKeyword": "gerador de correos de ventas",
     "localizedSlug": "gerador-correos-de-ventas",
@@ -3963,7 +3963,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Confirme dados, permissoes, precos, alegacoes e tom da marca antes de publicar."
   },
   {
-    "canonicalToolId": "follow-up-email-generator",
+    "canonicalToolId": "content-calendar-generator",
     "language": "pt",
     "primaryKeyword": "gerador de correos de seguimiento",
     "localizedSlug": "gerador-correos-de-seguimiento",
@@ -3980,7 +3980,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Confirme dados, permissoes, precos, alegacoes e tom da marca antes de publicar."
   },
   {
-    "canonicalToolId": "image-alt-text-generator",
+    "canonicalToolId": "tagline-generator",
     "language": "pt",
     "primaryKeyword": "gerador de image alt text",
     "localizedSlug": "gerador-image-alt-text",
@@ -3997,7 +3997,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao ha garantia de trafego, rankings, indexacao ou resultados em plataformas. Nao promete trafego, rankings, acessibilidade perfeita ou resultados de busca."
   },
   {
-    "canonicalToolId": "video-prompt-generator",
+    "canonicalToolId": "text-shadow-generator",
     "language": "pt",
     "primaryKeyword": "gerador de prompts de video",
     "localizedSlug": "gerador-prompts-de-video",
@@ -4014,7 +4014,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha para ficcao, jogos ou mundos proprios e evite copiar universos protegidos."
   },
   {
-    "canonicalToolId": "productivity-prompt-generator",
+    "canonicalToolId": "css-grid-generator",
     "language": "pt",
     "primaryKeyword": "gerador de prompts de productividad",
     "localizedSlug": "gerador-prompts-de-productividad",
@@ -4031,7 +4031,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use como apoio de escrita; revise fontes, originalidade e regras academicas ou editoriais."
   },
   {
-    "canonicalToolId": "random-list-generator",
+    "canonicalToolId": "flexbox-generator",
     "language": "pt",
     "primaryKeyword": "gerador de listas aleatorias",
     "localizedSlug": "gerador-listas-aleatorias",
@@ -4048,7 +4048,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Trate como inspiracao ou escolha leve, nao como identidade, documento ou decisao oficial."
   },
   {
-    "canonicalToolId": "random-color-generator",
+    "canonicalToolId": "html-table-generator",
     "language": "pt",
     "primaryKeyword": "gerador de colores aleatorios",
     "localizedSlug": "gerador-colores-aleatorios",
@@ -4065,7 +4065,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Trate como inspiracao ou escolha leve, nao como identidade, documento ou decisao oficial."
   },
   {
-    "canonicalToolId": "dnd-character-generator",
+    "canonicalToolId": "dummy-data-generator",
     "language": "pt",
     "primaryKeyword": "gerador de personajes rpg de mesa",
     "localizedSlug": "gerador-personajes-rpg-de-mesa",
@@ -4082,7 +4082,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha para ficcao, jogos ou mundos proprios e evite copiar universos protegidos."
   },
   {
-    "canonicalToolId": "dungeon-generator",
+    "canonicalToolId": "random-address-generator",
     "language": "pt",
     "primaryKeyword": "gerador de dungeon map idea",
     "localizedSlug": "gerador-dungeon-map-idea",
@@ -4099,7 +4099,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha para ficcao, jogos ou mundos proprios e evite copiar universos protegidos."
   },
   {
-    "canonicalToolId": "worksheet-generator",
+    "canonicalToolId": "raffle-generator",
     "language": "pt",
     "primaryKeyword": "gerador de worksheet",
     "localizedSlug": "gerador-worksheet",
@@ -4116,7 +4116,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use como apoio de escrita; revise fontes, originalidade e regras academicas ou editoriais."
   },
   {
-    "canonicalToolId": "rubric-generator",
+    "canonicalToolId": "giveaway-generator",
     "language": "pt",
     "primaryKeyword": "gerador de rubric",
     "localizedSlug": "gerador-rubric",
@@ -4133,7 +4133,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use como apoio de escrita; revise fontes, originalidade e regras academicas ou editoriais."
   },
   {
-    "canonicalToolId": "assignment-generator",
+    "canonicalToolId": "character-backstory-generator",
     "language": "pt",
     "primaryKeyword": "gerador de assignment",
     "localizedSlug": "gerador-assignment",
@@ -4150,7 +4150,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use como apoio de escrita; revise fontes, originalidade e regras academicas ou editoriais."
   },
   {
-    "canonicalToolId": "graphql-query-generator",
+    "canonicalToolId": "worldbuilding-generator",
     "language": "pt",
     "primaryKeyword": "gerador de graphql query",
     "localizedSlug": "gerador-graphql-query",
@@ -4167,7 +4167,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo, valide entradas e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "mock-api-generator",
+    "canonicalToolId": "roast-generator",
     "language": "pt",
     "primaryKeyword": "gerador de mock api",
     "localizedSlug": "gerador-mock-api",
@@ -4184,7 +4184,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo, valide entradas e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "wheel-spinner-generator",
+    "canonicalToolId": "quiz-generator",
     "language": "pt",
     "primaryKeyword": "gerador de wheel spinner",
     "localizedSlug": "gerador-wheel-spinner",
@@ -4201,7 +4201,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Trate como inspiracao ou escolha leve, nao como identidade, documento ou decisao oficial."
   },
   {
-    "canonicalToolId": "product-benefits-generator",
+    "canonicalToolId": "thesis-statement-generator",
     "language": "pt",
     "primaryKeyword": "gerador de beneficios del producto",
     "localizedSlug": "gerador-beneficios-del-producto",
@@ -4218,7 +4218,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Confirme dados, permissoes, precos, alegacoes e tom da marca antes de publicar."
   },
   {
-    "canonicalToolId": "pattern-generator",
+    "canonicalToolId": "landing-page-copy-generator",
     "language": "pt",
     "primaryKeyword": "gerador de css pattern",
     "localizedSlug": "gerador-css-pattern",
@@ -4235,7 +4235,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo, valide entradas e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "blob-generator",
+    "canonicalToolId": "json-schema-generator",
     "language": "pt",
     "primaryKeyword": "gerador de css blob",
     "localizedSlug": "gerador-css-blob",
@@ -4252,7 +4252,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo, valide entradas e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "wave-generator",
+    "canonicalToolId": "typescript-type-generator",
     "language": "pt",
     "primaryKeyword": "gerador de css wave",
     "localizedSlug": "gerador-css-wave",
@@ -4269,7 +4269,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo, valide entradas e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "viking-name-generator",
+    "canonicalToolId": "sql-query-generator",
     "language": "pt",
     "primaryKeyword": "gerador de viking style name",
     "localizedSlug": "gerador-viking-style-name",
@@ -4286,7 +4286,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha para ficcao, jogos ou mundos proprios e evite copiar universos protegidos."
   },
   {
-    "canonicalToolId": "wizard-name-generator",
+    "canonicalToolId": "htaccess-generator",
     "language": "pt",
     "primaryKeyword": "gerador de wizard name",
     "localizedSlug": "gerador-wizard-name",
@@ -4303,7 +4303,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha para ficcao, jogos ou mundos proprios e evite copiar universos protegidos."
   },
   {
-    "canonicalToolId": "villain-name-generator",
+    "canonicalToolId": "pwa-manifest-generator",
     "language": "pt",
     "primaryKeyword": "gerador de villain name",
     "localizedSlug": "gerador-villain-name",
@@ -4320,7 +4320,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "werewolf-name-generator",
+    "canonicalToolId": "form-generator",
     "language": "pt",
     "primaryKeyword": "gerador de werewolf name",
     "localizedSlug": "gerador-werewolf-name",
@@ -4337,7 +4337,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "japanese-name-generator",
+    "canonicalToolId": "jwt-generator",
     "language": "pt",
     "primaryKeyword": "gerador de japanese style name",
     "localizedSlug": "gerador-japanese-style-name",
@@ -4354,7 +4354,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique cultura, contexto, pronuncia, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "korean-name-generator",
+    "canonicalToolId": "random-id-generator",
     "language": "pt",
     "primaryKeyword": "gerador de korean style name",
     "localizedSlug": "gerador-korean-style-name",
@@ -4371,7 +4371,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique cultura, contexto, pronuncia, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "city-name-generator",
+    "canonicalToolId": "flashcard-generator",
     "language": "pt",
     "primaryKeyword": "gerador de city name",
     "localizedSlug": "gerador-city-name",
@@ -4388,7 +4388,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "restaurant-name-generator",
+    "canonicalToolId": "study-plan-generator",
     "language": "pt",
     "primaryKeyword": "gerador de restaurant name",
     "localizedSlug": "gerador-restaurant-name",
@@ -4405,7 +4405,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, permissoes, precos, dados reais e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "coffee-shop-name-generator",
+    "canonicalToolId": "lesson-plan-generator",
     "language": "pt",
     "primaryKeyword": "gerador de coffee shop name",
     "localizedSlug": "gerador-coffee-shop-name",
@@ -4422,7 +4422,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, permissoes, precos, dados reais e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "album-name-generator",
+    "canonicalToolId": "research-question-generator",
     "language": "pt",
     "primaryKeyword": "gerador de album name",
     "localizedSlug": "gerador-album-name",
@@ -4439,7 +4439,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "book-name-generator",
+    "canonicalToolId": "bibliography-generator",
     "language": "pt",
     "primaryKeyword": "gerador de book name",
     "localizedSlug": "gerador-book-name",
@@ -4456,7 +4456,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "movie-name-generator",
+    "canonicalToolId": "essay-topic-generator",
     "language": "pt",
     "primaryKeyword": "gerador de movie name",
     "localizedSlug": "gerador-movie-name",
@@ -4473,7 +4473,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "newsletter-name-generator",
+    "canonicalToolId": "multiple-choice-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nombres para boletines",
     "localizedSlug": "gerador-nombres-para-boletines",
@@ -4490,7 +4490,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, permissoes, precos, dados reais e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "price-tag-generator",
+    "canonicalToolId": "product-bullet-points-generator",
     "language": "pt",
     "primaryKeyword": "gerador de price tag",
     "localizedSlug": "gerador-price-tag",
@@ -4507,7 +4507,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "product-tag-generator",
+    "canonicalToolId": "amazon-listing-generator",
     "language": "pt",
     "primaryKeyword": "gerador de product tag",
     "localizedSlug": "gerador-product-tag",
@@ -4524,7 +4524,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "clothing-tag-generator",
+    "canonicalToolId": "etsy-listing-generator",
     "language": "pt",
     "primaryKeyword": "gerador de clothing tag",
     "localizedSlug": "gerador-clothing-tag",
@@ -4541,7 +4541,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "minutes-of-meeting-generator",
+    "canonicalToolId": "customer-persona-generator",
     "language": "pt",
     "primaryKeyword": "gerador de minutes of meeting",
     "localizedSlug": "gerador-minutes-of-meeting",
@@ -4558,7 +4558,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, permissoes, precos, dados reais e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "event-name-generator",
+    "canonicalToolId": "youtube-hook-generator",
     "language": "pt",
     "primaryKeyword": "gerador de event name",
     "localizedSlug": "gerador-event-name",
@@ -4575,7 +4575,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, permissoes, precos, dados reais e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "college-name-generator",
+    "canonicalToolId": "linkedin-summary-generator",
     "language": "pt",
     "primaryKeyword": "gerador de college name",
     "localizedSlug": "gerador-college-name",
@@ -4592,7 +4592,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "diner-name-generator",
+    "canonicalToolId": "sales-email-generator",
     "language": "pt",
     "primaryKeyword": "gerador de diner name",
     "localizedSlug": "gerador-diner-name",
@@ -4609,7 +4609,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, permissoes, precos, dados reais e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "flower-name-generator",
+    "canonicalToolId": "follow-up-email-generator",
     "language": "pt",
     "primaryKeyword": "gerador de flower name",
     "localizedSlug": "gerador-flower-name",
@@ -4626,7 +4626,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "newspaper-name-generator",
+    "canonicalToolId": "image-alt-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de newspaper name",
     "localizedSlug": "gerador-newspaper-name",
@@ -4643,7 +4643,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "plant-name-generator",
+    "canonicalToolId": "video-prompt-generator",
     "language": "pt",
     "primaryKeyword": "gerador de plant name",
     "localizedSlug": "gerador-plant-name",
@@ -4660,7 +4660,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "sibling-name-generator",
+    "canonicalToolId": "productivity-prompt-generator",
     "language": "pt",
     "primaryKeyword": "gerador de sibling name",
     "localizedSlug": "gerador-sibling-name",
@@ -4677,7 +4677,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique cultura, contexto, pronuncia, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "pick-a-name-generator",
+    "canonicalToolId": "brand-kit-generator",
     "language": "pt",
     "primaryKeyword": "gerador de pick a name",
     "localizedSlug": "gerador-pick-a-name",
@@ -4694,7 +4694,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "name-generator-wheel",
+    "canonicalToolId": "random-list-generator",
     "language": "pt",
     "primaryKeyword": "gerador de name wheel",
     "localizedSlug": "gerador-name-wheel",
@@ -4711,7 +4711,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "cake-company-names-generator",
+    "canonicalToolId": "random-color-generator",
     "language": "pt",
     "primaryKeyword": "gerador de cake company name",
     "localizedSlug": "gerador-cake-company-name",
@@ -4728,7 +4728,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, permissoes, precos, dados reais e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "car-name-generator",
+    "canonicalToolId": "dnd-character-generator",
     "language": "pt",
     "primaryKeyword": "gerador de car name",
     "localizedSlug": "gerador-car-name",
@@ -4745,7 +4745,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "title-name-generator",
+    "canonicalToolId": "dungeon-generator",
     "language": "pt",
     "primaryKeyword": "gerador de títulos creativos",
     "localizedSlug": "gerador-titulos-creativos",
@@ -4762,7 +4762,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "geo-tag-generator",
+    "canonicalToolId": "worksheet-generator",
     "language": "pt",
     "primaryKeyword": "gerador de geo tag",
     "localizedSlug": "gerador-geo-tag",
@@ -4779,7 +4779,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "pet-tag-generator",
+    "canonicalToolId": "rubric-generator",
     "language": "pt",
     "primaryKeyword": "gerador de pet tag",
     "localizedSlug": "gerador-pet-tag",
@@ -4796,7 +4796,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "dj-tag-generator",
+    "canonicalToolId": "assignment-generator",
     "language": "pt",
     "primaryKeyword": "gerador de dj tag",
     "localizedSlug": "gerador-dj-tag",
@@ -4813,7 +4813,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "clan-tag-generator",
+    "canonicalToolId": "graphql-query-generator",
     "language": "pt",
     "primaryKeyword": "gerador de clan tag",
     "localizedSlug": "gerador-clan-tag",
@@ -4830,7 +4830,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "hang-tag-generator",
+    "canonicalToolId": "mock-api-generator",
     "language": "pt",
     "primaryKeyword": "gerador de hang tag",
     "localizedSlug": "gerador-hang-tag",
@@ -4847,7 +4847,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "art-tag-generator",
+    "canonicalToolId": "wheel-spinner-generator",
     "language": "pt",
     "primaryKeyword": "gerador de art tag",
     "localizedSlug": "gerador-art-tag",
@@ -4864,7 +4864,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "email-tag-generator",
+    "canonicalToolId": "product-benefits-generator",
     "language": "pt",
     "primaryKeyword": "gerador de email tag",
     "localizedSlug": "gerador-email-tag",
@@ -4881,7 +4881,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "tag-team-name-generator",
+    "canonicalToolId": "pattern-generator",
     "language": "pt",
     "primaryKeyword": "gerador de tag team name",
     "localizedSlug": "gerador-tag-team-name",
@@ -4898,7 +4898,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "warrior-name-generator",
+    "canonicalToolId": "blob-generator",
     "language": "pt",
     "primaryKeyword": "gerador de warrior name",
     "localizedSlug": "gerador-warrior-name",
@@ -4915,7 +4915,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "secret-santa-name-generator",
+    "canonicalToolId": "wave-generator",
     "language": "pt",
     "primaryKeyword": "gerador de secret santa name",
     "localizedSlug": "gerador-secret-santa-name",
@@ -4932,7 +4932,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "anagram-of-name-generator",
+    "canonicalToolId": "viking-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de name anagram",
     "localizedSlug": "gerador-name-anagram",
@@ -4949,7 +4949,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras."
   },
   {
-    "canonicalToolId": "cyberpunk-name-generator",
+    "canonicalToolId": "wizard-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de cyberpunk name",
     "localizedSlug": "gerador-cyberpunk-name",
@@ -4966,7 +4966,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "goth-name-generator",
+    "canonicalToolId": "villain-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de goth name",
     "localizedSlug": "gerador-goth-name",
@@ -4983,7 +4983,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "project-name-generator-keywords",
+    "canonicalToolId": "werewolf-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de project name from keywords",
     "localizedSlug": "gerador-project-name-from-keywords",
@@ -5000,7 +5000,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, permissoes, precos, dados reais e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "scifi-name-generator",
+    "canonicalToolId": "japanese-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de sci-fi name",
     "localizedSlug": "gerador-sci-fi-name",
@@ -5017,7 +5017,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "last-name-and-first-name-generator",
+    "canonicalToolId": "korean-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de first and last name",
     "localizedSlug": "gerador-first-and-last-name",
@@ -5034,7 +5034,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique sensibilidade cultural, pronuncia, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "baby-name-generator-with-last-name",
+    "canonicalToolId": "city-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de baby name with last name",
     "localizedSlug": "gerador-baby-name-with-last-name",
@@ -5051,7 +5051,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique sensibilidade cultural, pronuncia, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "nickname-generator-based-on-name",
+    "canonicalToolId": "restaurant-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nickname from name",
     "localizedSlug": "gerador-nickname-from-name",
@@ -5068,7 +5068,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique sensibilidade cultural, pronuncia, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "phonetic-spelling-of-name-generator",
+    "canonicalToolId": "coffee-shop-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de phonetic spelling",
     "localizedSlug": "gerador-phonetic-spelling",
@@ -5085,7 +5085,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado com suas proprias regras ou fontes."
   },
   {
-    "canonicalToolId": "ipa-generator",
+    "canonicalToolId": "album-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de ipa",
     "localizedSlug": "gerador-ipa",
@@ -5102,7 +5102,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado com suas proprias regras ou fontes."
   },
   {
-    "canonicalToolId": "name-combination-generator",
+    "canonicalToolId": "book-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de name combination",
     "localizedSlug": "gerador-name-combination",
@@ -5119,12 +5119,12 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado com suas proprias regras ou fontes."
   },
   {
-    "canonicalToolId": "performer-names-generator",
+    "canonicalToolId": "movie-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de performer name",
     "localizedSlug": "gerador-performer-name",
     "h1": "Gerador de Performer Name",
-    "metaTitle": "Gerador de Nomes Artísticos - Nomes de Palco e Shows",
+    "metaTitle": "Gerador de Nomes Artísticos",
     "metaDescription": "Descubra pseudónimos marcantes para cantores, atores, dançarinos e artistas de palco. Ferramenta online gratuita, inspiradora e sem cadastro.",
     "intro": "Crie rascunhos claros em português e revise cada resultado antes de usar.",
     "faqTopics": [
@@ -5136,7 +5136,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, precos, permissoes e dados antes de publicar ou enviar a clientes."
   },
   {
-    "canonicalToolId": "disc-jockey-names-generator",
+    "canonicalToolId": "receipt-generator",
     "language": "pt",
     "primaryKeyword": "gerador de disc jockey name",
     "localizedSlug": "gerador-disc-jockey-name",
@@ -5153,7 +5153,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, precos, permissoes e dados antes de publicar ou enviar a clientes."
   },
   {
-    "canonicalToolId": "name-pronunciation-generator",
+    "canonicalToolId": "nda-generator",
     "language": "pt",
     "primaryKeyword": "gerador de name pronunciation",
     "localizedSlug": "gerador-name-pronunciation",
@@ -5170,7 +5170,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado com suas proprias regras ou fontes."
   },
   {
-    "canonicalToolId": "fantasy-language-generator",
+    "canonicalToolId": "newsletter-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de fantasy language",
     "localizedSlug": "gerador-fantasy-language",
@@ -5187,7 +5187,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use para mundos proprios, jogos ou ideias criativas sem copiar marcas nem pessoas reais."
   },
   {
-    "canonicalToolId": "color-palette-generator-from-name",
+    "canonicalToolId": "price-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de paletas de colores por nombre",
     "localizedSlug": "gerador-paleta-de-colores-por-nombre",
@@ -5204,7 +5204,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado com suas proprias regras ou fontes."
   },
   {
-    "canonicalToolId": "mountain-name-generator",
+    "canonicalToolId": "product-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de mountain name",
     "localizedSlug": "gerador-mountain-name",
@@ -5221,7 +5221,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use para mundos proprios, jogos ou ideias criativas sem copiar marcas nem pessoas reais."
   },
   {
-    "canonicalToolId": "forest-name-generator",
+    "canonicalToolId": "clothing-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de forest name",
     "localizedSlug": "gerador-forest-name",
@@ -5238,7 +5238,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use para mundos proprios, jogos ou ideias criativas sem copiar marcas nem pessoas reais."
   },
   {
-    "canonicalToolId": "team-name-generator-using-keywords",
+    "canonicalToolId": "minutes-of-meeting-generator",
     "language": "pt",
     "primaryKeyword": "gerador de team name with keyword",
     "localizedSlug": "gerador-team-name-with-keyword",
@@ -5255,7 +5255,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado com suas proprias regras ou fontes."
   },
   {
-    "canonicalToolId": "trademark-friendly-name-generator",
+    "canonicalToolId": "event-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de trademark friendly name",
     "localizedSlug": "gerador-trademark-friendly-name",
@@ -5272,7 +5272,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, precos, permissoes e dados antes de publicar ou enviar a clientes."
   },
   {
-    "canonicalToolId": "app-icon-generator",
+    "canonicalToolId": "college-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de app icon",
     "localizedSlug": "gerador-app-icon",
@@ -5289,7 +5289,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, precos, permissoes e dados antes de publicar ou enviar a clientes."
   },
   {
-    "canonicalToolId": "app-name-generator",
+    "canonicalToolId": "diner-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de app name",
     "localizedSlug": "gerador-app-name",
@@ -5306,7 +5306,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, precos, permissoes e dados antes de publicar ou enviar a clientes."
   },
   {
-    "canonicalToolId": "bakery-name-generator",
+    "canonicalToolId": "flower-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de bakery name",
     "localizedSlug": "gerador-bakery-name",
@@ -5323,7 +5323,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, precos, permissoes e dados antes de publicar ou enviar a clientes."
   },
   {
-    "canonicalToolId": "banner-generator",
+    "canonicalToolId": "newspaper-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de banner",
     "localizedSlug": "gerador-banner",
@@ -5340,7 +5340,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado. Verifique legibilidade, acessibilidade e compatibilidade antes de usar texto decorativo."
   },
   {
-    "canonicalToolId": "barbarian-name-generator",
+    "canonicalToolId": "plant-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de barbarian name",
     "localizedSlug": "gerador-barbarian-name",
@@ -5357,7 +5357,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use para mundos proprios, jogos ou ideias criativas sem copiar marcas nem pessoas reais."
   },
   {
-    "canonicalToolId": "big-text-generator",
+    "canonicalToolId": "sibling-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de big text",
     "localizedSlug": "gerador-big-text",
@@ -5374,7 +5374,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado. Verifique legibilidade, acessibilidade e compatibilidade antes de usar texto decorativo."
   },
   {
-    "canonicalToolId": "brat-text-generator",
+    "canonicalToolId": "pick-a-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de brat text",
     "localizedSlug": "gerador-brat-text",
@@ -5391,7 +5391,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado. Verifique legibilidade, acessibilidade e compatibilidade antes de usar texto decorativo."
   },
   {
-    "canonicalToolId": "breadcrumb-generator",
+    "canonicalToolId": "name-generator-wheel",
     "language": "pt",
     "primaryKeyword": "gerador de breadcrumb",
     "localizedSlug": "gerador-breadcrumb",
@@ -5408,7 +5408,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao ha garantia de trafego, rankings, indexacao ou resultados em plataformas. Nao garante trafego, rankings, rich results ou comportamento de buscadores."
   },
   {
-    "canonicalToolId": "bubble-text-generator",
+    "canonicalToolId": "cake-company-names-generator",
     "language": "pt",
     "primaryKeyword": "gerador de bubble text",
     "localizedSlug": "gerador-bubble-text",
@@ -5425,7 +5425,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado. Verifique legibilidade, acessibilidade e compatibilidade antes de usar texto decorativo."
   },
   {
-    "canonicalToolId": "business-card-generator",
+    "canonicalToolId": "car-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de business card",
     "localizedSlug": "gerador-business-card",
@@ -5442,7 +5442,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, precos, permissoes e dados antes de publicar ou enviar a clientes."
   },
   {
-    "canonicalToolId": "castle-name-generator",
+    "canonicalToolId": "title-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de castle name",
     "localizedSlug": "gerador-castle-name",
@@ -5459,7 +5459,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use para mundos proprios, jogos ou ideias criativas sem copiar marcas nem pessoas reais."
   },
   {
-    "canonicalToolId": "channel-name-generator",
+    "canonicalToolId": "geo-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de channel name",
     "localizedSlug": "gerador-channel-name",
@@ -5476,7 +5476,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Nao promete seguidores, alcance, viralidade, vendas ou disponibilidade em plataformas."
   },
   {
-    "canonicalToolId": "club-name-generator",
+    "canonicalToolId": "pet-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de club name",
     "localizedSlug": "gerador-club-name",
@@ -5493,7 +5493,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique sensibilidade cultural, pronuncia, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "cocktail-name-generator",
+    "canonicalToolId": "dj-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de cocktail name",
     "localizedSlug": "gerador-cocktail-name",
@@ -5510,7 +5510,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use para mundos proprios, jogos ou ideias criativas sem copiar marcas nem pessoas reais."
   },
   {
-    "canonicalToolId": "cowboy-name-generator",
+    "canonicalToolId": "clan-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de cowboy name",
     "localizedSlug": "gerador-cowboy-name",
@@ -5527,7 +5527,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use para mundos proprios, jogos ou ideias criativas sem copiar marcas nem pessoas reais."
   },
   {
-    "canonicalToolId": "css-code-generator",
+    "canonicalToolId": "hang-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de css code",
     "localizedSlug": "gerador-css-code",
@@ -5544,7 +5544,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "cursive-name-generator",
+    "canonicalToolId": "art-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de cursive name",
     "localizedSlug": "gerador-cursive-name",
@@ -5561,7 +5561,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado. Verifique legibilidade, acessibilidade e compatibilidade antes de usar texto decorativo."
   },
   {
-    "canonicalToolId": "cute-text-generator",
+    "canonicalToolId": "email-tag-generator",
     "language": "pt",
     "primaryKeyword": "gerador de cute text",
     "localizedSlug": "gerador-cute-text",
@@ -5578,7 +5578,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado. Verifique legibilidade, acessibilidade e compatibilidade antes de usar texto decorativo."
   },
   {
-    "canonicalToolId": "dalle-prompt-generator",
+    "canonicalToolId": "tag-team-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de prompts para dall-e",
     "localizedSlug": "gerador-prompts-para-dalle",
@@ -5595,7 +5595,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e revise originalidade, permissoes e contexto."
   },
   {
-    "canonicalToolId": "dinosaur-name-generator",
+    "canonicalToolId": "warrior-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de dinosaur name",
     "localizedSlug": "gerador-dinosaur-name",
@@ -5612,7 +5612,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique sensibilidade cultural, pronuncia, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "display-name-generator",
+    "canonicalToolId": "secret-santa-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de display name",
     "localizedSlug": "gerador-display-name",
@@ -5629,7 +5629,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Nao promete seguidores, alcance, viralidade, vendas ou disponibilidade em plataformas."
   },
   {
-    "canonicalToolId": "dj-name-generator",
+    "canonicalToolId": "anagram-of-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de dj name",
     "localizedSlug": "gerador-dj-name",
@@ -5646,7 +5646,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Use para mundos proprios, jogos ou ideias criativas sem copiar marcas nem pessoas reais."
   },
   {
-    "canonicalToolId": "dog-name-generator",
+    "canonicalToolId": "cyberpunk-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de dog name",
     "localizedSlug": "gerador-dog-name",
@@ -5663,7 +5663,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique sensibilidade cultural, pronuncia, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "estimate-generator",
+    "canonicalToolId": "goth-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de estimate",
     "localizedSlug": "gerador-estimate",
@@ -5680,7 +5680,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, precos, permissoes e dados antes de publicar ou enviar a clientes."
   },
   {
-    "canonicalToolId": "fake-text-generator",
+    "canonicalToolId": "project-name-generator-keywords",
     "language": "pt",
     "primaryKeyword": "gerador de sample placeholder text",
     "localizedSlug": "gerador-sample-placeholder-text",
@@ -5697,7 +5697,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Edite o rascunho com criterio humano e revise originalidade, permissoes e contexto."
   },
   {
-    "canonicalToolId": "farm-name-generator",
+    "canonicalToolId": "scifi-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de farm name",
     "localizedSlug": "gerador-farm-name",
@@ -5714,7 +5714,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, dominio, precos, permissoes e dados antes de publicar ou enviar a clientes."
   },
   {
-    "canonicalToolId": "favicon-generator",
+    "canonicalToolId": "last-name-and-first-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de favicon",
     "localizedSlug": "gerador-favicon",
@@ -5731,7 +5731,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "food-truck-name-generator",
+    "canonicalToolId": "baby-name-generator-with-last-name",
     "language": "pt",
     "primaryKeyword": "gerador de food truck name",
     "localizedSlug": "gerador-food-truck-name",
@@ -5748,7 +5748,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, permissoes, precos, dados e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "funny-name-generator",
+    "canonicalToolId": "nickname-generator-based-on-name",
     "language": "pt",
     "primaryKeyword": "gerador de funny name",
     "localizedSlug": "gerador-funny-name",
@@ -5765,7 +5765,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique contexto, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "gnome-name-generator",
+    "canonicalToolId": "phonetic-spelling-of-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de gnome name",
     "localizedSlug": "gerador-gnome-name",
@@ -5782,7 +5782,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "hotel-name-generator",
+    "canonicalToolId": "ipa-generator",
     "language": "pt",
     "primaryKeyword": "gerador de hotel name",
     "localizedSlug": "gerador-hotel-name",
@@ -5799,7 +5799,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, permissoes, precos, dados e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "html-code-generator",
+    "canonicalToolId": "name-combination-generator",
     "language": "pt",
     "primaryKeyword": "gerador de html code",
     "localizedSlug": "gerador-html-code",
@@ -5816,7 +5816,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual. Teste o codigo e revise seguranca, acessibilidade e compatibilidade antes da producao."
   },
   {
-    "canonicalToolId": "invisible-text-generator",
+    "canonicalToolId": "performer-names-generator",
     "language": "pt",
     "primaryKeyword": "gerador de invisible text",
     "localizedSlug": "gerador-invisible-text",
@@ -5833,7 +5833,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado. Verifique legibilidade, acessibilidade e compatibilidade antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "letterhead-generator",
+    "canonicalToolId": "disc-jockey-names-generator",
     "language": "pt",
     "primaryKeyword": "gerador de membretes",
     "localizedSlug": "gerador-membretes",
@@ -5850,7 +5850,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, permissoes, precos, dados e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "logo-generator",
+    "canonicalToolId": "name-pronunciation-generator",
     "language": "pt",
     "primaryKeyword": "gerador de logo",
     "localizedSlug": "gerador-logo",
@@ -5867,7 +5867,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, permissoes, precos, dados e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "mermaid-name-generator",
+    "canonicalToolId": "fantasy-language-generator",
     "language": "pt",
     "primaryKeyword": "gerador de mermaid name",
     "localizedSlug": "gerador-mermaid-name",
@@ -5884,7 +5884,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "monster-name-generator",
+    "canonicalToolId": "color-palette-generator-from-name",
     "language": "pt",
     "primaryKeyword": "gerador de monster name",
     "localizedSlug": "gerador-monster-name",
@@ -5901,7 +5901,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "mood-board-generator",
+    "canonicalToolId": "mountain-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de mood board",
     "localizedSlug": "gerador-mood-board",
@@ -5918,12 +5918,12 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "pen-name-generator",
+    "canonicalToolId": "forest-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de pen name",
     "localizedSlug": "gerador-pen-name",
     "h1": "Gerador de Pen Name",
-    "metaTitle": "Gerador de Nomes Artísticos - Pseudónimos de Autores",
+    "metaTitle": "Gerador de Pseudónimos de Autor",
     "metaDescription": "Gere pseudónimos literários e nomes artísticos elegantes para livros, artigos e obras. Ferramenta gratuita online, prática e sem cadastro.",
     "intro": "Crie rascunhos claros em português e revise cada resultado antes de usar.",
     "faqTopics": [
@@ -5935,7 +5935,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique contexto, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "pet-name-generator",
+    "canonicalToolId": "team-name-generator-using-keywords",
     "language": "pt",
     "primaryKeyword": "gerador de pet name",
     "localizedSlug": "gerador-pet-name",
@@ -5952,7 +5952,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique contexto, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "pixel-text-generator",
+    "canonicalToolId": "trademark-friendly-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de pixel text",
     "localizedSlug": "gerador-pixel-text",
@@ -5969,7 +5969,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado. Verifique legibilidade, acessibilidade e compatibilidade antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "playlist-name-generator",
+    "canonicalToolId": "acceptable-use-policy-generator",
     "language": "pt",
     "primaryKeyword": "gerador de playlist name",
     "localizedSlug": "gerador-playlist-name",
@@ -5986,7 +5986,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "proposal-generator",
+    "canonicalToolId": "app-icon-generator",
     "language": "pt",
     "primaryKeyword": "gerador de proposal",
     "localizedSlug": "gerador-proposal",
@@ -6003,7 +6003,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, permissoes, precos, dados e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "purchase-order-generator",
+    "canonicalToolId": "app-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de purchase order",
     "localizedSlug": "gerador-purchase-order",
@@ -6020,7 +6020,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, permissoes, precos, dados e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "qr-code-generator",
+    "canonicalToolId": "bakery-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de qr code",
     "localizedSlug": "gerador-qr-code",
@@ -6037,7 +6037,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado antes de decisoes importantes."
   },
   {
-    "canonicalToolId": "quotation-generator",
+    "canonicalToolId": "banner-generator",
     "language": "pt",
     "primaryKeyword": "gerador de quotation",
     "localizedSlug": "gerador-quotation",
@@ -6054,7 +6054,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, permissoes, precos, dados e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "retro-text-generator",
+    "canonicalToolId": "barbarian-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de retro text",
     "localizedSlug": "gerador-retro-text",
@@ -6071,7 +6071,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado. Verifique legibilidade, acessibilidade e compatibilidade antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "robot-name-generator",
+    "canonicalToolId": "big-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de robot name",
     "localizedSlug": "gerador-robot-name",
@@ -6088,7 +6088,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "salon-name-generator",
+    "canonicalToolId": "brat-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de salon name",
     "localizedSlug": "gerador-salon-name",
@@ -6105,7 +6105,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, permissoes, precos, dados e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "ship-name-generator",
+    "canonicalToolId": "breadcrumb-generator",
     "language": "pt",
     "primaryKeyword": "gerador de ship name",
     "localizedSlug": "gerador-ship-name",
@@ -6122,7 +6122,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "short-code-generator",
+    "canonicalToolId": "bubble-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de short code",
     "localizedSlug": "gerador-short-code",
@@ -6139,7 +6139,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado antes de decisoes importantes."
   },
   {
-    "canonicalToolId": "sigil-generator",
+    "canonicalToolId": "business-card-generator",
     "language": "pt",
     "primaryKeyword": "gerador de sigil",
     "localizedSlug": "gerador-sigil",
@@ -6156,7 +6156,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "sitemap-generator",
+    "canonicalToolId": "castle-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de sitemap",
     "localizedSlug": "gerador-sitemap",
@@ -6173,7 +6173,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao ha garantia de trafego, rankings, indexacao ou resultados em plataformas. Nao garante trafego, rankings, indexacao ou resultados de busca."
   },
   {
-    "canonicalToolId": "spaceship-name-generator",
+    "canonicalToolId": "channel-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de spaceship name",
     "localizedSlug": "gerador-spaceship-name",
@@ -6190,7 +6190,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "sports-team-name-generator",
+    "canonicalToolId": "chatgpt-prompt-generator",
     "language": "pt",
     "primaryKeyword": "gerador de sports team name",
     "localizedSlug": "gerador-sports-team-name",
@@ -6207,7 +6207,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique contexto, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "tattoo-name-generator",
+    "canonicalToolId": "club-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de tattoo name",
     "localizedSlug": "gerador-tattoo-name",
@@ -6224,7 +6224,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado. Verifique legibilidade, acessibilidade e compatibilidade antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "typewriter-text-generator",
+    "canonicalToolId": "cocktail-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de typewriter text",
     "localizedSlug": "gerador-typewriter-text",
@@ -6241,7 +6241,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado. Verifique legibilidade, acessibilidade e compatibilidade antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "ancient-greek-inspired-name-generator",
+    "canonicalToolId": "contract-generator",
     "language": "pt",
     "primaryKeyword": "gerador de ancient greek inspired name",
     "localizedSlug": "gerador-ancient-greek-inspired-name",
@@ -6258,7 +6258,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "roman-inspired-character-name-generator",
+    "canonicalToolId": "cowboy-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nombres romanos",
     "localizedSlug": "gerador-nombres-romanos",
@@ -6275,7 +6275,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "ancient-egyptian-inspired-name-generator",
+    "canonicalToolId": "css-code-generator",
     "language": "pt",
     "primaryKeyword": "gerador de ancient egyptian inspired name",
     "localizedSlug": "gerador-ancient-egyptian-inspired-name",
@@ -6292,7 +6292,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "iupac-name-generator",
+    "canonicalToolId": "cursive-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de iupac name",
     "localizedSlug": "gerador-iupac-name",
@@ -6309,7 +6309,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Use como apoio pratico e confirme o resultado antes de decisoes importantes."
   },
   {
-    "canonicalToolId": "victorian-name-generator",
+    "canonicalToolId": "cute-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de victorian name",
     "localizedSlug": "gerador-victorian-name",
@@ -6326,7 +6326,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique contexto, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "racehorse-name-generator",
+    "canonicalToolId": "dalle-prompt-generator",
     "language": "pt",
     "primaryKeyword": "gerador de racehorse name",
     "localizedSlug": "gerador-racehorse-name",
@@ -6343,7 +6343,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Verifique contexto, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "emo-name-generator",
+    "canonicalToolId": "dinosaur-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de emo name",
     "localizedSlug": "gerador-emo-name",
@@ -6360,7 +6360,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "poster-generator",
+    "canonicalToolId": "display-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de pósteres",
     "localizedSlug": "gerador-posteres",
@@ -6377,7 +6377,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, permissoes, precos, dados e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "flyer-generator",
+    "canonicalToolId": "dj-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de flyer",
     "localizedSlug": "gerador-flyer",
@@ -6394,7 +6394,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Revise marca, permissoes, precos, dados e conformidade antes do uso público."
   },
   {
-    "canonicalToolId": "fantasy-map-generator",
+    "canonicalToolId": "dmca-policy-generator",
     "language": "pt",
     "primaryKeyword": "gerador de fantasy map",
     "localizedSlug": "gerador-fantasy-map",
@@ -6411,7 +6411,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público. Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos."
   },
   {
-    "canonicalToolId": "papyrus-generator",
+    "canonicalToolId": "dog-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de papyrus text",
     "localizedSlug": "gerador-papyrus-text",
@@ -6428,7 +6428,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado. Verifique legibilidade, acessibilidade e compatibilidade antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "serif-generator",
+    "canonicalToolId": "estimate-generator",
     "language": "pt",
     "primaryKeyword": "gerador de serif text",
     "localizedSlug": "gerador-serif-text",
@@ -6445,7 +6445,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado. Verifique legibilidade, acessibilidade e compatibilidade antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "instagram-bio-generator",
+    "canonicalToolId": "fake-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de biografía para instagram",
     "localizedSlug": "gerador-biografia-para-instagram",
@@ -6462,7 +6462,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "password-generator",
+    "canonicalToolId": "farm-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de contraseñas",
     "localizedSlug": "gerador-contrasenas",
@@ -6479,7 +6479,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "twitter-bio-generator",
+    "canonicalToolId": "favicon-generator",
     "language": "pt",
     "primaryKeyword": "gerador de biografía para twitter",
     "localizedSlug": "gerador-biografia-para-twitter",
@@ -6496,7 +6496,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "tiktok-bio-generator",
+    "canonicalToolId": "food-truck-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de biografía para tiktok",
     "localizedSlug": "gerador-biografia-para-tiktok",
@@ -6513,7 +6513,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "linkedin-bio-generator",
+    "canonicalToolId": "funny-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de biografía para linkedin",
     "localizedSlug": "gerador-biografia-para-linkedin",
@@ -6530,7 +6530,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "youtube-name-generator",
+    "canonicalToolId": "gnome-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nombres para youtube",
     "localizedSlug": "gerador-nombres-para-youtube",
@@ -6547,7 +6547,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "instagram-caption-generator",
+    "canonicalToolId": "hotel-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de pies de foto para instagram",
     "localizedSlug": "gerador-pies-de-foto-para-instagram",
@@ -6564,7 +6564,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "fake-name-generator",
+    "canonicalToolId": "html-code-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nombres falsos",
     "localizedSlug": "gerador-nombres-falsos",
@@ -6581,7 +6581,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "shakespeare-insult-generator",
+    "canonicalToolId": "invisible-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de insultos de shakespeare",
     "localizedSlug": "gerador-insultos-de-shakespeare",
@@ -6598,7 +6598,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar."
   },
   {
-    "canonicalToolId": "tiktok-name-generator",
+    "canonicalToolId": "letterhead-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nombres para tiktok",
     "localizedSlug": "gerador-nombres-para-tiktok",
@@ -6615,7 +6615,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "instagram-name-generator",
+    "canonicalToolId": "logo-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nombres para instagram",
     "localizedSlug": "gerador-nombres-para-instagram",
@@ -6632,7 +6632,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "comeback-generator",
+    "canonicalToolId": "mermaid-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de respuestas ingeniosas",
     "localizedSlug": "gerador-respuestas-ingeniosas",
@@ -6649,7 +6649,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar."
   },
   {
-    "canonicalToolId": "twitter-name-generator",
+    "canonicalToolId": "meta-description-generator",
     "language": "pt",
     "primaryKeyword": "gerador de nombres para twitter",
     "localizedSlug": "gerador-nombres-para-twitter",
@@ -6666,7 +6666,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "linkedin-headline-generator",
+    "canonicalToolId": "monster-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de titulares para linkedin",
     "localizedSlug": "gerador-titulares-para-linkedin",
@@ -6683,7 +6683,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "pin-generator",
+    "canonicalToolId": "mood-board-generator",
     "language": "pt",
     "primaryKeyword": "gerador de código pin",
     "localizedSlug": "gerador-codigo-pin",
@@ -6700,7 +6700,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "api-key-generator",
+    "canonicalToolId": "pen-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de claves api",
     "localizedSlug": "gerador-claves-api",
@@ -6717,7 +6717,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "privacy-policy-generator",
+    "canonicalToolId": "pet-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de política de privacidad",
     "localizedSlug": "gerador-politica-de-privacidad",
@@ -6734,7 +6734,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "terms-generator",
+    "canonicalToolId": "pixel-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de términos y condiciones",
     "localizedSlug": "gerador-terminos-y-condiciones",
@@ -6751,7 +6751,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "cookie-policy-generator",
+    "canonicalToolId": "playlist-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de política de cookies",
     "localizedSlug": "gerador-politica-de-cookies",
@@ -6768,7 +6768,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "disclaimer-generator",
+    "canonicalToolId": "proposal-generator",
     "language": "pt",
     "primaryKeyword": "gerador de descargo de responsabilidad",
     "localizedSlug": "gerador-descargo-de-responsabilidad",
@@ -6785,7 +6785,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "twitter-card-generator",
+    "canonicalToolId": "purchase-order-generator",
     "language": "pt",
     "primaryKeyword": "gerador de tarjetas de twitter",
     "localizedSlug": "gerador-tarjetas-de-twitter",
@@ -6802,7 +6802,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao ha garantia de trafego, rankings, indexacao ou resultados em plataformas."
   },
   {
-    "canonicalToolId": "youtube-description-generator",
+    "canonicalToolId": "qr-code-generator",
     "language": "pt",
     "primaryKeyword": "gerador de descripciones para youtube",
     "localizedSlug": "gerador-descripciones-para-youtube",
@@ -6819,7 +6819,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "tiktok-caption-generator",
+    "canonicalToolId": "quotation-generator",
     "language": "pt",
     "primaryKeyword": "gerador de subtítulos para tiktok",
     "localizedSlug": "gerador-subtitulos-para-tiktok",
@@ -6836,7 +6836,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "license-key-generator",
+    "canonicalToolId": "ransom-note-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de claves de licencia",
     "localizedSlug": "gerador-claves-de-licencia",
@@ -6853,7 +6853,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "recovery-code-generator",
+    "canonicalToolId": "retro-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de códigos de recuperación",
     "localizedSlug": "gerador-codigos-de-recuperacion",
@@ -6870,7 +6870,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "refund-policy-generator",
+    "canonicalToolId": "return-policy-generator",
     "language": "pt",
     "primaryKeyword": "gerador de política de reembolso",
     "localizedSlug": "gerador-politica-de-reembolso",
@@ -6887,7 +6887,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "shipping-policy-generator",
+    "canonicalToolId": "robot-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de política de envío",
     "localizedSlug": "gerador-politica-de-envio",
@@ -6904,7 +6904,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "affiliate-disclosure-generator",
+    "canonicalToolId": "salon-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de divulgación de afiliados",
     "localizedSlug": "gerador-divulgacion-de-afiliados",
@@ -6921,7 +6921,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "invoice-generator",
+    "canonicalToolId": "service-agreement-generator",
     "language": "pt",
     "primaryKeyword": "gerador de facturas",
     "localizedSlug": "gerador-facturas",
@@ -6938,7 +6938,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "linkedin-post-generator",
+    "canonicalToolId": "ship-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de publicaciones para linkedin",
     "localizedSlug": "gerador-publicaciones-para-linkedin",
@@ -6955,7 +6955,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "facebook-post-generator",
+    "canonicalToolId": "shopify-product-description-generator",
     "language": "pt",
     "primaryKeyword": "gerador de publicaciones para facebook",
     "localizedSlug": "gerador-publicaciones-para-facebook",
@@ -6972,7 +6972,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "ao3-tag-generator",
+    "canonicalToolId": "short-code-generator",
     "language": "pt",
     "primaryKeyword": "gerador de etiquetas ao3",
     "localizedSlug": "gerador-etiquetas-ao3",
@@ -6989,7 +6989,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "x-post-generator",
+    "canonicalToolId": "sigil-generator",
     "language": "pt",
     "primaryKeyword": "gerador de publicaciones para x",
     "localizedSlug": "gerador-publicaciones-para-x",
@@ -7006,7 +7006,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "random-address-generator",
+    "canonicalToolId": "sitemap-generator",
     "language": "pt",
     "primaryKeyword": "gerador de direcciones aleatorias",
     "localizedSlug": "gerador-direcciones-aleatorias",
@@ -7023,7 +7023,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar."
   },
   {
-    "canonicalToolId": "roast-generator",
+    "canonicalToolId": "spaceship-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de insultos humorísticos",
     "localizedSlug": "gerador-insultos-humoristicos",
@@ -7040,7 +7040,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar."
   },
   {
-    "canonicalToolId": "jwt-generator",
+    "canonicalToolId": "sports-team-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de tokens jwt",
     "localizedSlug": "gerador-tokens-jwt",
@@ -7057,7 +7057,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   },
   {
-    "canonicalToolId": "amazon-listing-generator",
+    "canonicalToolId": "tattoo-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de fichas para amazon",
     "localizedSlug": "gerador-fichas-para-amazon",
@@ -7074,7 +7074,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "etsy-listing-generator",
+    "canonicalToolId": "token-generator",
     "language": "pt",
     "primaryKeyword": "gerador de fichas para etsy",
     "localizedSlug": "gerador-fichas-para-etsy",
@@ -7091,7 +7091,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "youtube-hook-generator",
+    "canonicalToolId": "typewriter-text-generator",
     "language": "pt",
     "primaryKeyword": "gerador de ganchos para youtube",
     "localizedSlug": "gerador-ganchos-para-youtube",
@@ -7108,7 +7108,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "linkedin-summary-generator",
+    "canonicalToolId": "ancient-greek-inspired-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de resumen para linkedin",
     "localizedSlug": "gerador-resumen-para-linkedin",
@@ -7125,7 +7125,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "receipt-generator",
+    "canonicalToolId": "roman-inspired-character-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de recibos",
     "localizedSlug": "gerador-recibos",
@@ -7142,7 +7142,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "nda-generator",
+    "canonicalToolId": "ancient-egyptian-inspired-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de acuerdos de confidencialidad",
     "localizedSlug": "gerador-acuerdos-de-confidencialidad",
@@ -7159,7 +7159,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "acceptable-use-policy-generator",
+    "canonicalToolId": "iupac-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de política de uso aceptable",
     "localizedSlug": "gerador-politica-de-uso-aceptable",
@@ -7176,7 +7176,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "chatgpt-prompt-generator",
+    "canonicalToolId": "victorian-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de prompts para chatgpt",
     "localizedSlug": "gerador-prompts-para-chatgpt",
@@ -7193,7 +7193,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "contract-generator",
+    "canonicalToolId": "racehorse-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de contratos",
     "localizedSlug": "gerador-contratos",
@@ -7210,7 +7210,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "dmca-policy-generator",
+    "canonicalToolId": "emo-name-generator",
     "language": "pt",
     "primaryKeyword": "gerador de política dmca",
     "localizedSlug": "gerador-politica-dmca",
@@ -7227,7 +7227,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "ransom-note-text-generator",
+    "canonicalToolId": "poster-generator",
     "language": "pt",
     "primaryKeyword": "gerador de texto estilo rescate",
     "localizedSlug": "gerador-texto-estilo-rescate",
@@ -7244,7 +7244,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique legibilidade, acessibilidade e compatibilidade de plataforma antes de compartilhar texto estilizado."
   },
   {
-    "canonicalToolId": "return-policy-generator",
+    "canonicalToolId": "flyer-generator",
     "language": "pt",
     "primaryKeyword": "gerador de política de devolución",
     "localizedSlug": "gerador-politica-de-devolucion",
@@ -7261,7 +7261,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "service-agreement-generator",
+    "canonicalToolId": "fantasy-map-generator",
     "language": "pt",
     "primaryKeyword": "gerador de acuerdos de servicio",
     "localizedSlug": "gerador-acuerdos-de-servicio",
@@ -7278,7 +7278,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "shopify-product-description-generator",
+    "canonicalToolId": "papyrus-generator",
     "language": "pt",
     "primaryKeyword": "gerador de descripciones para shopify",
     "localizedSlug": "gerador-descripciones-para-shopify",
@@ -7295,7 +7295,7 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Verifique originalidade, sensibilidade, direitos e disponibilidade antes do uso público."
   },
   {
-    "canonicalToolId": "token-generator",
+    "canonicalToolId": "serif-generator",
     "language": "pt",
     "primaryKeyword": "gerador de tokens",
     "localizedSlug": "gerador-tokens",
@@ -7312,4 +7312,3 @@ export const portugueseMasterToolData: LocalizedToolContent[] = [
     "riskSafetyNote": "Revise precisao, originalidade, compatibilidade e regras do projeto antes de publicar. Nao use saidas tecnicas como credenciais, segredos de seguranca ou mudancas de producao sem revisao manual."
   }
 ];
-export const portugueseLocalizedToolData = portugueseMasterToolData;

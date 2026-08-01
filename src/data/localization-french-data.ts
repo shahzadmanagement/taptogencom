@@ -1,11 +1,11 @@
 import type { LocalizedToolContent } from './localization';
 
-export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
+export const frenchMasterToolData: LocalizedToolContent[] = [
   {
-    "canonicalToolId": "token-generator",
+    "canonicalToolId": "fancy-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de jetons de sécurité",
-    "localizedSlug": "générateur-de-jetons-de-sécurité",
+    "localizedSlug": "generateur-de-jetons-de-securite",
     "h1": "Générateur de jetons de sécurité",
     "metaTitle": "Générateur de Jetons Sécurisés - Tokens Aléatoires SEO",
     "metaDescription": "Générez des jetons d'accès et tokens cryptographiques sécurisés pour vos applications. Outil gratuit en ligne, rapide et sans inscription.",
@@ -19,10 +19,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "shopify-product-description-generator",
+    "canonicalToolId": "name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de fiches shopify",
-    "localizedSlug": "générateur-de-fiches-shopify",
+    "localizedSlug": "generateur-de-fiches-shopify",
     "h1": "Générateur de fiches produits Shopify",
     "metaTitle": "Générateur de Fiches Produits Shopify - Descriptions SEO",
     "metaDescription": "Rédigez des descriptions de produits Shopify vendeuses et optimisées pour le référencement. Outil gratuit en ligne, rapide et sans inscription.",
@@ -36,10 +36,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "service-agreement-generator",
+    "canonicalToolId": "username-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’accord de service",
-    "localizedSlug": "générateur-de-contrats-d-accord-de-service",
+    "localizedSlug": "generateur-de-contrats-d-accord-de-service",
     "h1": "Générateur de contrats d’accord de service",
     "metaTitle": "Générateur de Contrat de Service - Accord SLA en Ligne",
     "metaDescription": "Générez des accords de niveau de service (SLA) professionnels pour encadrer vos prestations. Outil gratuit en ligne, rapide et sans inscription.",
@@ -53,10 +53,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "return-policy-generator",
+    "canonicalToolId": "business-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de politique de retour",
-    "localizedSlug": "générateur-de-politique-de-retour",
+    "localizedSlug": "generateur-de-politique-de-retour",
     "h1": "Générateur de politique de retour e-commerce",
     "metaTitle": "Générateur de Politique de Retour - E-Commerce et CGV",
     "metaDescription": "Établissez une politique de retour et de rétractation claire pour votre boutique e-commerce. Outil gratuit en ligne, rapide et sans inscription.",
@@ -70,10 +70,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "ransom-note-text-generator",
+    "canonicalToolId": "youtube-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte découpage",
-    "localizedSlug": "générateur-de-texte-découpage",
+    "localizedSlug": "generateur-de-texte-decoupage",
     "h1": "Générateur de texte style découpage de presse",
     "metaTitle": "Générateur de Texte Style Rançon - Polices Découpées Web",
     "metaDescription": "Transformez vos textes en lettres découpées style note de rançon pour vos projets visuels. Outil gratuit en ligne, amusant et sans inscription.",
@@ -87,10 +87,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dmca-policy-generator",
+    "canonicalToolId": "instagram-bio-generator",
     "language": "fr",
     "primaryKeyword": "générateur de politique dmca",
-    "localizedSlug": "générateur-de-politique-dmca",
+    "localizedSlug": "generateur-de-politique-dmca",
     "h1": "Générateur de politique DMCA et droits d’auteur",
     "metaTitle": "Générateur de Politique DMCA - Droits d'Auteur en Ligne",
     "metaDescription": "Créez une politique DMCA conforme pour protéger votre site contre les violations de copyright. Outil gratuit en ligne, rapide et sans inscription.",
@@ -104,10 +104,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "contract-generator",
+    "canonicalToolId": "meta-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de contrats",
-    "localizedSlug": "générateur-de-contrats",
+    "localizedSlug": "generateur-de-contrats",
     "h1": "Générateur de contrats de prestation",
     "metaTitle": "Générateur de Contrats de Prestation - Modèles en Ligne",
     "metaDescription": "Rédigez des contrats professionnels de prestation de services adaptés aux indépendants. Outil gratuit en ligne, rapide et sans inscription.",
@@ -121,10 +121,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "chatgpt-prompt-generator",
+    "canonicalToolId": "bold-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prompts chatgpt",
-    "localizedSlug": "générateur-de-prompts-chatgpt",
+    "localizedSlug": "generateur-de-prompts-chatgpt",
     "h1": "Générateur de prompts ChatGPT",
     "metaTitle": "Générateur de Prompts ChatGPT - Prompts IA Optimisés SEO",
     "metaDescription": "Générez des prompts détaillés et optimisés pour obtenir les meilleures réponses de ChatGPT. Outil gratuit en ligne, efficace et sans inscription.",
@@ -138,10 +138,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "acceptable-use-policy-generator",
+    "canonicalToolId": "cursive-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de politique d’utilisation",
-    "localizedSlug": "générateur-de-politique-d-utilisation",
+    "localizedSlug": "generateur-de-politique-d-utilisation",
     "h1": "Générateur de politique d’utilisation acceptable",
     "metaTitle": "Générateur de Politique d'Usage Acceptable - Mentions Web",
     "metaDescription": "Définissez les règles d'utilisation acceptable pour encadrer l'accès à vos sites et applications. Outil gratuit en ligne, rapide et sans inscription.",
@@ -155,10 +155,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "nda-generator",
+    "canonicalToolId": "glitch-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nda",
-    "localizedSlug": "générateur-de-nda",
+    "localizedSlug": "generateur-de-nda",
     "h1": "Générateur d’accords de confidentialité (NDA)",
     "metaTitle": "Générateur d'Accord de Confidentialité - Modèle NDA Web",
     "metaDescription": "Créez des accords de confidentialité (NDA) professionnels pour protéger vos secrets d'affaires. Outil gratuit en ligne, rapide et sans inscription.",
@@ -172,10 +172,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "receipt-generator",
+    "canonicalToolId": "password-generator",
     "language": "fr",
     "primaryKeyword": "générateur de reçus",
-    "localizedSlug": "générateur-de-reçus",
+    "localizedSlug": "generateur-de-recus",
     "h1": "Générateur de reçus de paiement",
     "metaTitle": "Générateur de Reçus de Paiement - Modèles Simples SEO",
     "metaDescription": "Créez des reçus de paiement et justificatifs d'achat professionnels à imprimer au format PDF. Outil gratuit en ligne, rapide et sans inscription.",
@@ -189,10 +189,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "linkedin-summary-generator",
+    "canonicalToolId": "lorem-ipsum-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’intro linkedin",
-    "localizedSlug": "générateur-d-intro-linkedin",
+    "localizedSlug": "generateur-d-intro-linkedin",
     "h1": "Générateur d’introduction de profil LinkedIn",
     "metaTitle": "Générateur de Résumé LinkedIn - Profil Professionnel SEO",
     "metaDescription": "Rédigez un résumé LinkedIn percutant pour valoriser votre parcours auprès des recruteurs. Outil gratuit en ligne, efficace et sans inscription.",
@@ -206,10 +206,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "youtube-hook-generator",
+    "canonicalToolId": "fantasy-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’accroches youtube",
-    "localizedSlug": "générateur-d-accroches-youtube",
+    "localizedSlug": "generateur-d-accroches-youtube",
     "h1": "Générateur d’accroches vidéo YouTube",
     "metaTitle": "Générateur d'Accroches YouTube - Hooks de Vidéos SEO",
     "metaDescription": "Concevez des phrases d'accroche captivantes pour retenir l'attention de vos spectateurs YouTube. Outil gratuit en ligne, rapide et sans inscription.",
@@ -223,10 +223,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "etsy-listing-generator",
+    "canonicalToolId": "text-case-converter",
     "language": "fr",
     "primaryKeyword": "générateur de fiches etsy",
-    "localizedSlug": "générateur-de-fiches-etsy",
+    "localizedSlug": "generateur-de-fiches-etsy",
     "h1": "Générateur de fiches produits Etsy",
     "metaTitle": "Générateur de Fiches Produits Etsy - Descritpions SEO",
     "metaDescription": "Rédigez des titres et descriptions attractifs pour mettre en valeur vos créations sur Etsy. Outil gratuit en ligne, efficace et sans inscription.",
@@ -240,10 +240,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "amazon-listing-generator",
+    "canonicalToolId": "team-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de fiches amazon",
-    "localizedSlug": "générateur-de-fiches-amazon",
+    "localizedSlug": "generateur-de-fiches-amazon",
     "h1": "Générateur de fiches produits Amazon",
     "metaTitle": "Générateur d'Annonces Amazon - Descriptions de Vente SEO",
     "metaDescription": "Créez des titres et descriptions optimisés pour augmenter vos ventes sur la plateforme Amazon. Outil gratuit en ligne, rapide et sans inscription.",
@@ -257,10 +257,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "jwt-generator",
+    "canonicalToolId": "robots-txt-generator",
     "language": "fr",
     "primaryKeyword": "générateur de jetons jwt",
-    "localizedSlug": "générateur-de-jetons-jwt",
+    "localizedSlug": "generateur-de-jetons-jwt",
     "h1": "Générateur de jetons JWT (JSON Web Token)",
     "metaTitle": "Générateur de Tokens JWT - Jetons JSON Web en Ligne",
     "metaDescription": "Générez et décodez des jetons JWT (JSON Web Token) sécurisés pour vos tests d'applications web. Outil technique gratuit, précis et sans inscription.",
@@ -274,10 +274,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "roast-generator",
+    "canonicalToolId": "word-counter",
     "language": "fr",
     "primaryKeyword": "générateur de roasts",
-    "localizedSlug": "générateur-de-roasts",
+    "localizedSlug": "generateur-de-roasts",
     "h1": "Générateur de roasts et taquineries",
     "metaTitle": "Générateur de Blagues Roast - Phrases Humoristiques Web",
     "metaDescription": "Générez des blagues roast d'esprit et répliques drôles pour vous amuser entre amis en ligne. Outil gratuit en ligne, amusant et sans inscription.",
@@ -291,10 +291,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-address-generator",
+    "canonicalToolId": "uuid-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’adresses factices",
-    "localizedSlug": "générateur-d-adresses-factices",
+    "localizedSlug": "generateur-d-adresses-factices",
     "h1": "Générateur d’adresses factices de test",
     "metaTitle": "Générateur d'Adresses Aléatoires - Données Factices SEO",
     "metaDescription": "Générez des adresses et coordonnées factices avec code postal pour vos tests informatiques. Outil technique gratuit, rapide et sans inscription.",
@@ -308,10 +308,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "x-post-generator",
+    "canonicalToolId": "random-number-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tweets x",
-    "localizedSlug": "générateur-de-tweets-x",
+    "localizedSlug": "generateur-de-tweets-x",
     "h1": "Générateur de tweets X/Twitter",
     "metaTitle": "Générateur de Posts Twitter X - Textes Viraux en Ligne",
     "metaDescription": "Rédigez des tweets et posts courts captivants pour la plateforme X (Twitter) avec hashtags. Outil gratuit en ligne, pratique et sans inscription.",
@@ -325,10 +325,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "ao3-tag-generator",
+    "canonicalToolId": "small-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tags ao3",
-    "localizedSlug": "générateur-de-tags-ao3",
+    "localizedSlug": "generateur-de-tags-ao3",
     "h1": "Générateur de tags AO3 (Fanfiction)",
     "metaTitle": "Générateur de Tags AO3 - Étiquettes pour Fanfics SEO",
     "metaDescription": "Créez des étiquettes et tags organisés pour catégoriser vos fanfictions sur Archive of Our Own. Outil gratuit en ligne, rapide et sans inscription.",
@@ -342,10 +342,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "facebook-post-generator",
+    "canonicalToolId": "italic-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de posts facebook",
-    "localizedSlug": "générateur-de-posts-facebook",
+    "localizedSlug": "generateur-de-posts-facebook",
     "h1": "Générateur de publications Facebook",
     "metaTitle": "Générateur de Posts Facebook - Publication de Page SEO",
     "metaDescription": "Rédigez des publications engageantes pour vos pages et groupes Facebook en quelques clics. Outil gratuit en ligne, pratique et sans inscription.",
@@ -359,10 +359,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "linkedin-post-generator",
+    "canonicalToolId": "strikethrough-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de posts linkedin",
-    "localizedSlug": "générateur-de-posts-linkedin",
+    "localizedSlug": "generateur-de-posts-linkedin",
     "h1": "Générateur de publications LinkedIn",
     "metaTitle": "Générateur de Posts LinkedIn - Textes Professionnels SEO",
     "metaDescription": "Rédigez des posts captivants pour renforcer votre présence et votre visibilité sur LinkedIn. Outil gratuit en ligne, efficace et sans inscription.",
@@ -376,10 +376,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "invoice-generator",
+    "canonicalToolId": "underline-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de factures",
-    "localizedSlug": "générateur-de-factures",
+    "localizedSlug": "generateur-de-factures",
     "h1": "Générateur de factures",
     "metaTitle": "Générateur de Factures en Ligne - Modèles Gratuit PDF",
     "metaDescription": "Créez des factures commerciales professionnelles prêtes à imprimer ou télécharger au format PDF. Outil gratuit en ligne, rapide et sans inscription.",
@@ -393,10 +393,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "affiliate-disclosure-generator",
+    "canonicalToolId": "vaporwave-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de divulgation d’affiliation",
-    "localizedSlug": "générateur-de-divulgation-d-affiliation",
+    "localizedSlug": "generateur-de-divulgation-d-affiliation",
     "h1": "Générateur de divulgation d’affiliation",
     "metaTitle": "Générateur de Mentions d'Affiliation - Transparence Web",
     "metaDescription": "Rédigez un avertissement légal d'affiliation clair pour garantir la transparence de votre blog. Outil gratuit en ligne, pratique et sans inscription.",
@@ -410,10 +410,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "shipping-policy-generator",
+    "canonicalToolId": "reverse-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de politique de livraison",
-    "localizedSlug": "générateur-de-politique-de-livraison",
+    "localizedSlug": "generateur-de-politique-de-livraison",
     "h1": "Générateur de politique de livraison",
     "metaTitle": "Générateur de Politique d'Expédition - Livraisons Web",
     "metaDescription": "Rédigez une politique d'expédition et de livraison transparente pour votre boutique en ligne. Outil gratuit en ligne, rapide et sans inscription.",
@@ -427,10 +427,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "refund-policy-generator",
+    "canonicalToolId": "unicode-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de politique de remboursement",
-    "localizedSlug": "générateur-de-politique-de-remboursement",
+    "localizedSlug": "generateur-de-politique-de-remboursement",
     "h1": "Générateur de politique de remboursement",
     "metaTitle": "Générateur de Politique de Remboursement - Retours SEO",
     "metaDescription": "Établissez des conditions de retour et de remboursement claires pour rassurer vos clients e-commerce. Outil gratuit en ligne, rapide et sans inscription.",
@@ -444,10 +444,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "recovery-code-generator",
+    "canonicalToolId": "twitter-bio-generator",
     "language": "fr",
     "primaryKeyword": "générateur de codes de récupération",
-    "localizedSlug": "générateur-de-codes-de-récupération",
+    "localizedSlug": "generateur-de-codes-de-recuperation",
     "h1": "Générateur de codes de récupération 2FA",
     "metaTitle": "Générateur de Codes de Secours 2FA - Sécurité Web SEO",
     "metaDescription": "Générez des codes de récupération à usage unique pour vos systèmes d'authentification à deux facteurs. Outil gratuit en ligne, sécurisé et instantané.",
@@ -461,10 +461,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "license-key-generator",
+    "canonicalToolId": "tiktok-bio-generator",
     "language": "fr",
     "primaryKeyword": "générateur de clés de licence",
-    "localizedSlug": "générateur-de-clés-de-licence",
+    "localizedSlug": "generateur-de-cles-de-licence",
     "h1": "Générateur de clés de licence",
     "metaTitle": "Générateur de Clés de Licence - Serials Logiciel SEO",
     "metaDescription": "Générez des numéros de série et clés de produit alphanumériques pour vos logiciels en ligne. Outil gratuit en ligne, rapide et sans inscription.",
@@ -478,10 +478,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "tiktok-caption-generator",
+    "canonicalToolId": "linkedin-bio-generator",
     "language": "fr",
     "primaryKeyword": "générateur de légendes tiktok",
-    "localizedSlug": "générateur-de-légendes-tiktok",
+    "localizedSlug": "generateur-de-legendes-tiktok",
     "h1": "Générateur de légendes TikTok",
     "metaTitle": "Générateur de Légendes TikTok - Descriptions Virales SEO",
     "metaDescription": "Rédigez des légendes captivantes et des hashtags tendance pour booster vos vidéos TikTok en ligne. Outil gratuit en ligne, rapide et sans inscription.",
@@ -495,10 +495,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "youtube-description-generator",
+    "canonicalToolId": "domain-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de description youtube",
-    "localizedSlug": "générateur-de-description-youtube",
+    "localizedSlug": "generateur-de-description-youtube",
     "h1": "Générateur de descriptions de vidéos YouTube",
     "metaTitle": "Générateur de Description YouTube - Textes de Vidéos SEO",
     "metaDescription": "Concevez des descriptions YouTube structurées avec liens et chapitres pour optimiser votre chaîne. Outil gratuit en ligne, efficace et sans inscription.",
@@ -512,10 +512,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "twitter-card-generator",
+    "canonicalToolId": "product-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de twitter card",
-    "localizedSlug": "générateur-de-twitter-card",
+    "localizedSlug": "generateur-de-twitter-card",
     "h1": "Générateur de balises Twitter Card",
     "metaTitle": "Générateur de Twitter Cards - Balises Meta pour Twitter",
     "metaDescription": "Générez des balises meta Twitter Cards personnalisées pour optimiser le partage de vos liens sur X. Outil technique gratuit, précis et sans inscription.",
@@ -529,10 +529,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "disclaimer-generator",
+    "canonicalToolId": "baby-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de mentions légales",
-    "localizedSlug": "générateur-de-mentions-légales",
+    "localizedSlug": "generateur-de-mentions-legales",
     "h1": "Générateur de mentions légales et avertissements",
     "metaTitle": "Générateur de Mentions Légales - Avertissement Web SEO",
     "metaDescription": "Rédigez des mentions légales et avertissements d'exonération de responsabilité pour votre site. Outil gratuit en ligne, rapide et sans inscription.",
@@ -546,10 +546,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cookie-policy-generator",
+    "canonicalToolId": "middle-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de politique de cookies",
-    "localizedSlug": "générateur-de-politique-de-cookies",
+    "localizedSlug": "generateur-de-politique-de-cookies",
     "h1": "Générateur de politique de cookies",
     "metaTitle": "Générateur de Politique de Cookies RGPD - Conforme Web",
     "metaDescription": "Créez une politique de gestion des cookies claire et conforme au RGPD pour informer vos utilisateurs. Outil gratuit en ligne, rapide et sans inscription.",
@@ -563,10 +563,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "terms-generator",
+    "canonicalToolId": "last-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de conditions générales",
-    "localizedSlug": "générateur-de-cgu-cgv",
+    "localizedSlug": "generateur-de-cgu-cgv",
     "h1": "Générateur de conditions générales (CGU/CGV)",
     "metaTitle": "Générateur de CGU et CGV - Conditions Générales Web",
     "metaDescription": "Générez des conditions générales d'utilisation (CGU) et de vente (CGV) pour protéger votre site web. Outil gratuit en ligne, rapide et sans inscription.",
@@ -580,10 +580,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "privacy-policy-generator",
+    "canonicalToolId": "discord-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de politique de confidentialité",
-    "localizedSlug": "générateur-de-politique-de-confidentialité",
+    "localizedSlug": "generateur-de-politique-de-confidentialite",
     "h1": "Générateur de politique de confidentialité",
     "metaTitle": "Générateur de Politique de Confidentialité RGPD Web SEO",
     "metaDescription": "Rédigez une politique de confidentialité conforme au RGPD pour protéger les données de votre site web. Outil gratuit en ligne, rapide et sans inscription.",
@@ -597,10 +597,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "api-key-generator",
+    "canonicalToolId": "clan-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de clés api",
-    "localizedSlug": "générateur-de-clés-api",
+    "localizedSlug": "generateur-de-cles-api",
     "h1": "Générateur de clés d’API",
     "metaTitle": "Générateur de Clés API Sécurisées - Tokens Clés Web",
     "metaDescription": "Générez des clés d'API alfanumériques et jetons secrets cryptographiques pour vos projets web. Outil technique gratuit, précis et sans inscription.",
@@ -614,10 +614,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "pin-generator",
+    "canonicalToolId": "band-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de code pin",
-    "localizedSlug": "générateur-de-code-pin",
+    "localizedSlug": "generateur-de-code-pin",
     "h1": "Générateur de code PIN",
     "metaTitle": "Générateur de Code PIN Aléatoire - Codes Sécurisés Web",
     "metaDescription": "Générez des codes PIN aléatoires à 4 ou 6 chiffres hautement sécurisés pour vos applications. Outil gratuit en ligne, sécurisé et sans inscription.",
@@ -631,10 +631,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "linkedin-headline-generator",
+    "canonicalToolId": "superhero-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de titre linkedin",
-    "localizedSlug": "générateur-de-titre-linkedin",
+    "localizedSlug": "generateur-de-titre-linkedin",
     "h1": "Générateur de titre de profil LinkedIn",
     "metaTitle": "Générateur de Titre LinkedIn - Titres de Profil SEO",
     "metaDescription": "Rédigez un titre professionnel percutant pour attirer l'attention des recruteurs sur LinkedIn. Outil gratuit en ligne, efficace et sans inscription.",
@@ -648,10 +648,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "twitter-name-generator",
+    "canonicalToolId": "rap-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom twitter",
-    "localizedSlug": "générateur-de-nom-twitter",
+    "localizedSlug": "generateur-de-nom-twitter",
     "h1": "Générateur de nom Twitter/X",
     "metaTitle": "Générateur de Pseudo Twitter X - Noms d'Utilisateur SEO",
     "metaDescription": "Trouvez des pseudos originaux et nom d'utilisateurs captivants pour votre profil sur Twitter X. Outil gratuit en ligne, rapide et sans inscription.",
@@ -665,10 +665,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "comeback-generator",
+    "canonicalToolId": "song-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de réparties",
-    "localizedSlug": "générateur-de-réparties",
+    "localizedSlug": "generateur-de-reparties",
     "h1": "Générateur de réparties et comebacks",
     "metaTitle": "Générateur de Réparties Drôles - Répliques d'Esprit SEO",
     "metaDescription": "Générez des réparties d'esprit et répliques drôles pour répondre avec humour lors de discussions. Outil gratuit en ligne, amusant et sans inscription.",
@@ -682,10 +682,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "instagram-name-generator",
+    "canonicalToolId": "paragraph-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom instagram",
-    "localizedSlug": "générateur-de-nom-instagram",
+    "localizedSlug": "generateur-de-nom-instagram",
     "h1": "Générateur de nom Instagram",
     "metaTitle": "Générateur de Pseudo Instagram - Noms de Compte SEO",
     "metaDescription": "Trouvez des noms d'utilisateurs uniques et stylés pour personnaliser votre profil Instagram. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -699,10 +699,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "tiktok-name-generator",
+    "canonicalToolId": "sentence-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom tiktok",
-    "localizedSlug": "générateur-de-nom-tiktok",
+    "localizedSlug": "generateur-de-nom-tiktok",
     "h1": "Générateur de nom TikTok",
     "metaTitle": "Générateur de Pseudo TikTok - Noms de Compte Viraux SEO",
     "metaDescription": "Découvrez des pseudos originaux et des nom d'utilisateurs tendance pour votre profil TikTok. Outil gratuit en ligne, rapide et sans inscription.",
@@ -716,10 +716,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "shakespeare-insult-generator",
+    "canonicalToolId": "blog-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’insultes shakespeariennes",
-    "localizedSlug": "générateur-d-insultes-shakespeariennes",
+    "localizedSlug": "generateur-d-insultes-shakespeariennes",
     "h1": "Générateur d’insultes shakespeariennes",
     "metaTitle": "Générateur d'Insultes de Shakespeare - Citations Web",
     "metaDescription": "Générez des railleries poétiques et répliques théâtrales inspirées de l'œuvre de Shakespeare. Outil gratuit en ligne, amusant et sans inscription.",
@@ -733,10 +733,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "fake-name-generator",
+    "canonicalToolId": "pirate-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de faux nom",
-    "localizedSlug": "générateur-de-faux-nom",
+    "localizedSlug": "generateur-de-faux-nom",
     "h1": "Générateur de faux nom anonyme",
     "metaTitle": "Générateur de Faux Noms - Identités Fictives en Ligne",
     "metaDescription": "Générez des noms et identités factices complètes pour tester vos applications et formulaires. Outil gratuit en ligne, pratique et sans inscription.",
@@ -750,10 +750,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "instagram-caption-generator",
+    "canonicalToolId": "medieval-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de légendes instagram",
-    "localizedSlug": "générateur-de-légendes-instagram",
+    "localizedSlug": "generateur-de-legendes-instagram",
     "h1": "Générateur de légendes Instagram",
     "metaTitle": "Générateur de Légendes Instagram - Textes de Photos SEO",
     "metaDescription": "Rédigez des légendes captivantes et des hashtags engagés pour vos publications Instagram. Outil gratuit en ligne, efficace et sans inscription.",
@@ -767,10 +767,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "youtube-name-generator",
+    "canonicalToolId": "hreflang-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de chaîne youtube",
-    "localizedSlug": "générateur-de-nom-de-chaîne-youtube",
+    "localizedSlug": "generateur-de-nom-de-chaine-youtube",
     "h1": "Générateur de nom de chaîne YouTube",
     "metaTitle": "Générateur de Nom de Chaîne YouTube - Noms Viraux SEO",
     "metaDescription": "Trouvez des idées de noms évocateurs et mémorables pour baptiser votre nouvelle chaîne YouTube. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -784,10 +784,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "linkedin-bio-generator",
+    "canonicalToolId": "schema-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de bio linkedin",
-    "localizedSlug": "générateur-de-bio-linkedin",
+    "localizedSlug": "generateur-de-bio-linkedin",
     "h1": "Générateur de résumé LinkedIn",
     "metaTitle": "Générateur de Bio LinkedIn - Présentation de Profil SEO",
     "metaDescription": "Rédigez un résumé professionnel attrayant pour valoriser votre parcours sur votre profil LinkedIn. Outil gratuit en ligne, efficace et sans inscription.",
@@ -801,10 +801,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "tiktok-bio-generator",
+    "canonicalToolId": "slug-generator",
     "language": "fr",
     "primaryKeyword": "générateur de bio tiktok",
-    "localizedSlug": "générateur-de-bio-tiktok",
+    "localizedSlug": "generateur-de-bio-tiktok",
     "h1": "Générateur de bio TikTok",
     "metaTitle": "Générateur de Bio TikTok - Biographies Tendances SEO",
     "metaDescription": "Créez des biographies TikTok courtes et originales pour attirer de nouveaux abonnés sur votre profil. Outil gratuit en ligne, rapide et sans inscription.",
@@ -818,10 +818,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "twitter-bio-generator",
+    "canonicalToolId": "hash-generator",
     "language": "fr",
     "primaryKeyword": "générateur de bio twitter",
-    "localizedSlug": "générateur-de-bio-twitter",
+    "localizedSlug": "generateur-de-bio-twitter",
     "h1": "Générateur de bio Twitter/X",
     "metaTitle": "Générateur de Bio Twitter X - Biographies de Profil SEO",
     "metaDescription": "Rédigez des présentations concises et percutantes pour mettre en valeur votre profil Twitter X. Outil gratuit en ligne, pratique et sans inscription.",
@@ -835,10 +835,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "password-generator",
+    "canonicalToolId": "json-formatter",
     "language": "fr",
     "primaryKeyword": "générateur de mots de passe",
-    "localizedSlug": "générateur-de-mots-de-passe",
+    "localizedSlug": "generateur-de-mots-de-passe",
     "h1": "Générateur de mots de passe sécurisés",
     "metaTitle": "Générateur de Mots de Passe Forts - Mots de Passe SEO",
     "metaDescription": "Générez des mots de passe aléatoires hautement sécurisés avec symboles, chiffres et majuscules. Outil gratuit en ligne, sécurisé et sans inscription.",
@@ -852,10 +852,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "instagram-bio-generator",
+    "canonicalToolId": "coin-flip",
     "language": "fr",
     "primaryKeyword": "générateur de biographie instagram",
-    "localizedSlug": "générateur-de-biographie-instagram",
+    "localizedSlug": "generateur-de-biographie-instagram",
     "h1": "Générateur de biographie Instagram",
     "metaTitle": "Générateur de Bio Instagram - Biographies Stylées SEO",
     "metaDescription": "Rédigez des biographies Instagram captivantes et structurées avec emojis pour votre profil. Outil gratuit en ligne, rapide et sans inscription.",
@@ -869,10 +869,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "meta-description-generator",
+    "canonicalToolId": "dice-roller",
     "language": "fr",
     "primaryKeyword": "générateur de meta description",
-    "localizedSlug": "générateur-de-meta-description",
+    "localizedSlug": "generateur-de-meta-description",
     "h1": "Générateur de meta description",
     "metaTitle": "Générateur de Méta Description SEO - Balises Web SEO",
     "metaDescription": "Générez des méta descriptions optimisées pour le référencement naturel et l'amélioration du CTR. Outil gratuit en ligne, précis et sans inscription.",
@@ -886,10 +886,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "brand-kit-generator",
+    "canonicalToolId": "color-palette-generator",
     "language": "fr",
     "primaryKeyword": "générateur de kit de marque",
-    "localizedSlug": "générateur-de-kit-de-marque",
+    "localizedSlug": "generateur-de-kit-de-marque",
     "h1": "Générateur de kit de marque",
     "metaTitle": "Générateur de Brand Kit - Identité Visuelle de Marque",
     "metaDescription": "Créez des chartes graphiques complètes avec palettes de couleurs et typographies de marque. Outil gratuit en ligne, pratique et sans inscription.",
@@ -903,10 +903,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "tagline-generator",
+    "canonicalToolId": "town-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de slogan et accroche",
-    "localizedSlug": "générateur-de-slogan-et-accroche",
+    "localizedSlug": "generateur-de-slogan-et-accroche",
     "h1": "Générateur de slogan et accroche",
     "metaTitle": "Générateur de Slogans et Slogans d'Entreprise SEO Web",
     "metaDescription": "Trouvez des slogans accrocheurs et mémorables pour vos produits, marques et campagnes web. Outil gratuit en ligne, efficace et sans inscription.",
@@ -920,10 +920,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "faq-generator",
+    "canonicalToolId": "kingdom-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de faq",
-    "localizedSlug": "générateur-de-faq",
+    "localizedSlug": "generateur-de-faq",
     "h1": "Générateur de FAQ",
     "metaTitle": "Générateur de FAQ - Questions Fréquentes et Schema SEO",
     "metaDescription": "Rédigez des foires aux questions structurées avec balisage Schema.org pour votre site web. Outil gratuit en ligne, rapide et sans inscription.",
@@ -937,10 +937,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "keyword-generator",
+    "canonicalToolId": "dragon-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de mots-clés",
-    "localizedSlug": "générateur-de-mots-clés",
+    "localizedSlug": "generateur-de-mots-cles",
     "h1": "Générateur de mots-clés",
     "metaTitle": "Générateur de Mots-Clés SEO - Mots-Clés de Recherche",
     "metaDescription": "Générez des listes de mots-clés pertinents et requêtes de recherche pour optimiser votre SEO. Outil gratuit en ligne, efficace et sans inscription.",
@@ -954,10 +954,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "product-description-generator",
+    "canonicalToolId": "wolf-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de description de produit",
-    "localizedSlug": "générateur-de-description-de-produit",
+    "localizedSlug": "generateur-de-description-de-produit",
     "h1": "Générateur de description de produit",
     "metaTitle": "Générateur de Descriptions de Produits - Textes SEO",
     "metaDescription": "Créez des descriptions de produits vendeuses et optimisées pour le référencement de votre boutique. Outil gratuit en ligne, rapide et sans inscription.",
@@ -971,10 +971,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "blog-outline-generator",
+    "canonicalToolId": "demon-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de plan de blog",
-    "localizedSlug": "générateur-de-plan-de-blog",
+    "localizedSlug": "generateur-de-plan-de-blog",
     "h1": "Générateur de plan de blog",
     "metaTitle": "Générateur de Plan d'Article de Blog - Plan SEO Web",
     "metaDescription": "Générez des plans d'articles de blog structurés avec sous-titres H2 et H3 optimisés SEO. Outil gratuit en ligne, efficace et sans inscription.",
@@ -988,10 +988,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "open-graph-generator",
+    "canonicalToolId": "elf-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur open graph",
-    "localizedSlug": "générateur-open-graph",
+    "localizedSlug": "generateur-open-graph",
     "h1": "Générateur Open Graph",
     "metaTitle": "Générateur de Balises Open Graph - Meta Tags Social",
     "metaDescription": "Créez des balises meta Open Graph (og:title, og:image) pour optimiser vos partages sociaux. Outil gratuit en ligne, précis et sans inscription.",
@@ -1005,10 +1005,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "slogan-generator",
+    "canonicalToolId": "podcast-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de slogan",
-    "localizedSlug": "générateur-de-slogan",
+    "localizedSlug": "generateur-de-slogan",
     "h1": "Générateur de slogan",
     "metaTitle": "Générateur de Slogans Publicitaires - Phrases Accroche",
     "metaDescription": "Trouvez des idées de slogans commerciaux originaux et percutants pour promouvoir vos marques. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1022,10 +1022,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "seo-title-generator",
+    "canonicalToolId": "youtube-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de titre seo",
-    "localizedSlug": "générateur-de-titre-seo",
+    "localizedSlug": "generateur-de-titre-seo",
     "h1": "Générateur de titre SEO",
     "metaTitle": "Générateur de Titres SEO - Balises Title Optimisées",
     "metaDescription": "Générez des balises Title captivantes et calibrées pour maximiser le taux de clic sur Google. Outil gratuit en ligne, rapide et sans inscription.",
@@ -1039,10 +1039,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "canonical-tag-generator",
+    "canonicalToolId": "instagram-caption-generator",
     "language": "fr",
     "primaryKeyword": "générateur de balise canonique",
-    "localizedSlug": "générateur-de-balise-canonique",
+    "localizedSlug": "generateur-de-balise-canonique",
     "h1": "Générateur de balise canonique",
     "metaTitle": "Générateur de Balises Canonical - Balises HTML SEO",
     "metaDescription": "Générez des balises canoniques HTML valides pour éviter le contenu dupliqué sur votre site web. Outil technique gratuit, précis et sans inscription.",
@@ -1056,10 +1056,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "project-name-generator",
+    "canonicalToolId": "nickname-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de projet",
-    "localizedSlug": "générateur-de-nom-de-projet",
+    "localizedSlug": "generateur-de-nom-de-projet",
     "h1": "Générateur de nom de projet",
     "metaTitle": "Générateur de Noms de Projets - Idées Originales SEO",
     "metaDescription": "Trouvez des noms de projets innovants et inspirants pour vos initiatives professionnelles. Outil gratuit en ligne, pratique et sans inscription.",
@@ -1073,10 +1073,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "character-name-generator",
+    "canonicalToolId": "hashtag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de personnage",
-    "localizedSlug": "générateur-de-nom-de-personnage",
+    "localizedSlug": "generateur-de-nom-de-personnage",
     "h1": "Générateur de nom de personnage",
     "metaTitle": "Générateur de Nomes de Personnages - Fiction et RPG",
     "metaDescription": "Générez des noms de personnages originaux pour vos romans, pièces de théâtre et jeux de rôle. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1090,12 +1090,12 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "writing-prompt-generator",
+    "canonicalToolId": "etsy-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’idées d’écriture",
-    "localizedSlug": "générateur-d-idées-d-écriture",
+    "localizedSlug": "generateur-d-idees-d-ecriture",
     "h1": "Générateur d’idées d’écriture",
-    "metaTitle": "Générateur d'Idées d'Écriture - Prompts de Récit SEO",
+    "metaTitle": "Générateur d'Idées d'Écriture SEO",
     "metaDescription": "Trouvez des sujets et déclencheurs d'écriture stimulants pour débloquer votre inspiration littéraire. Outil gratuit en ligne, inspirant et sans inscription.",
     "intro": "Stimulez votre imagination avec des points de départ d’histoires captivants pour écrire chaque jour.",
     "searchIntentNote": "Écriture créative et idées d’amorce littéraire.",
@@ -1107,10 +1107,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "hashtag-generator",
+    "canonicalToolId": "writing-prompt-generator",
     "language": "fr",
     "primaryKeyword": "générateur de hashtag",
-    "localizedSlug": "générateur-de-hashtag",
+    "localizedSlug": "generateur-de-hashtag",
     "h1": "Générateur de hashtag",
     "metaTitle": "Générateur de Hashtags - Mots-Clés Réseaux Sociaux SEO",
     "metaDescription": "Trouvez des hashtags pertinents et populaires pour maximiser la portée de vos publications web. Outil gratuit en ligne, rapide et sans inscription.",
@@ -1124,10 +1124,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "podcast-name-generator",
+    "canonicalToolId": "text-to-binary-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de podcast",
-    "localizedSlug": "générateur-de-nom-de-podcast",
+    "localizedSlug": "generateur-de-nom-de-podcast",
     "h1": "Générateur de nom de podcast",
     "metaTitle": "Générateur de Noms de Podcast - Titres d'Émissions",
     "metaDescription": "Générez des idées de titres captivants et originaux pour lancer votre nouveau podcast en ligne. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1141,10 +1141,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "blog-name-generator",
+    "canonicalToolId": "morse-code-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de blog",
-    "localizedSlug": "générateur-de-nom-de-blog",
+    "localizedSlug": "generateur-de-nom-de-blog",
     "h1": "Générateur de nom de blog",
     "metaTitle": "Générateur de Noms de Blog - Idées de Titres Web SEO",
     "metaDescription": "Trouvez des noms de blog originaux et mémorables adaptés à votre thématique et ligne éditoriale. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1158,10 +1158,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "sentence-generator",
+    "canonicalToolId": "anime-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de phrase",
-    "localizedSlug": "générateur-de-phrase",
+    "localizedSlug": "generateur-de-phrase",
     "h1": "Générateur de phrase",
     "metaTitle": "Générateur de Phrases Aléatoires - Exemples de Textes",
     "metaDescription": "Générez des phrases complètes et bien structurées pour vos exercices de rédaction et tests. Outil gratuit en ligne, pratique et sans inscription.",
@@ -1175,10 +1175,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "paragraph-generator",
+    "canonicalToolId": "fake-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de paragraphe",
-    "localizedSlug": "générateur-de-paragraphe",
+    "localizedSlug": "generateur-de-paragraphe",
     "h1": "Générateur de paragraphe",
     "metaTitle": "Générateur de Paragraphes - Textes de Rédaction SEO",
     "metaDescription": "Créez des paragraphes thématiques et fluides pour enrichir vos articles de blog et contenus. Outil gratuit en ligne, efficace et sans inscription.",
@@ -1192,10 +1192,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "last-name-generator",
+    "canonicalToolId": "qr-code-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de famille",
-    "localizedSlug": "générateur-de-nom-de-famille",
+    "localizedSlug": "generateur-de-nom-de-famille",
     "h1": "Générateur de nom de famille",
     "metaTitle": "Générateur de Noms de Famille - Patronymes du Monde",
     "metaDescription": "Découvrez des noms de famille traditionnels et réalistes pour vos personnages de fiction et récits. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1209,10 +1209,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "middle-name-generator",
+    "canonicalToolId": "dnd-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de deuxième prénom",
-    "localizedSlug": "générateur-de-deuxième-prénom",
+    "localizedSlug": "generateur-de-deuxieme-prenom",
     "h1": "Générateur de deuxième prénom",
     "metaTitle": "Générateur de Second Prénom - Idées d'Harmonie Web",
     "metaDescription": "Trouvez un second prénom élégant qui s'harmonise parfaitement avec votre prénom principal. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1226,10 +1226,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "baby-name-generator",
+    "canonicalToolId": "orc-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prénom de bébé",
-    "localizedSlug": "générateur-de-prénom-de-bébé",
+    "localizedSlug": "generateur-de-prenom-de-bebe",
     "h1": "Générateur de prénom de bébé",
     "metaTitle": "Générateur de Prénoms de Bébé - Idées Filles Garçons",
     "metaDescription": "Explorez des prénoms de bébé rares, modernes et classiques avec leurs origines et tendances. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1243,10 +1243,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "product-name-generator",
+    "canonicalToolId": "witch-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de produit",
-    "localizedSlug": "générateur-de-nom-de-produit",
+    "localizedSlug": "generateur-de-nom-de-produit",
     "h1": "Générateur de nom de produit",
     "metaTitle": "Générateur de Noms de Produits - Marque et Concept SEO",
     "metaDescription": "Générez des noms de produits accrocheurs et mémorables pour vos offres et nouveautés commerciales. Outil gratuit en ligne, rapide et sans inscription.",
@@ -1260,10 +1260,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "domain-name-generator",
+    "canonicalToolId": "alien-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de domaine",
-    "localizedSlug": "générateur-de-nom-de-domaine",
+    "localizedSlug": "generateur-de-nom-de-domaine",
     "h1": "Générateur de nom de domaine",
     "metaTitle": "Générateur de Noms de Domaine Web - Adresses Web SEO",
     "metaDescription": "Recherchez des noms de domaine disponibles et pertinents pour créer votre site internet ou marque. Outil gratuit en ligne, efficace et sans inscription.",
@@ -1277,10 +1277,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "reverse-text-generator",
+    "canonicalToolId": "vampire-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte inversé",
-    "localizedSlug": "générateur-de-texte-inversé",
+    "localizedSlug": "generateur-de-texte-inverse",
     "h1": "Générateur de texte inversé",
     "metaTitle": "Générateur de Texte Inversé - Effet Miroir en Ligne",
     "metaDescription": "Inversez l'ordre des lettres ou retournez vos phrases en écriture miroir d'un seul clic. Outil gratuit en ligne, amusant et rapide à utiliser.",
@@ -1294,10 +1294,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "italic-text-generator",
+    "canonicalToolId": "fairy-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte en italique",
-    "localizedSlug": "générateur-de-texte-en-italique",
+    "localizedSlug": "generateur-de-texte-en-italique",
     "h1": "Générateur de texte en italique",
     "metaTitle": "Générateur de Texte en Italique - Fontes Unicode SEO",
     "metaDescription": "Convertissez votre texte en lettres inclinées en italique Unicode à copier-coller dans vos bios. Outil gratuit en ligne, rapide et sans inscription.",
@@ -1311,10 +1311,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "small-text-generator",
+    "canonicalToolId": "goblin-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de petit texte",
-    "localizedSlug": "générateur-de-petit-texte",
+    "localizedSlug": "generateur-de-petit-texte",
     "h1": "Générateur de petit texte",
     "metaTitle": "Générateur de Petit Texte - Lettres Minuscules Unicode",
     "metaDescription": "Transformez vos textes en petites lettres et indices Unicode réduits à copier et coller. Outil gratuit en ligne, amusant et sans inscription.",
@@ -1328,7 +1328,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "word-counter",
+    "canonicalToolId": "character-name-generator",
     "language": "fr",
     "primaryKeyword": "compteur de mots",
     "localizedSlug": "compteur-de-mots",
@@ -1345,10 +1345,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "robots-txt-generator",
+    "canonicalToolId": "story-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de robots.txt",
-    "localizedSlug": "générateur-de-robots-txt",
+    "localizedSlug": "generateur-de-robots-txt",
     "h1": "Générateur de robots.txt",
     "metaTitle": "Générateur de Fichier Robots.txt - Balises de Crawl SEO",
     "metaDescription": "Créez un fichier robots.txt valide pour contrôler l'indexation de vos pages par les moteurs de recherche. Outil technique gratuit et sans inscription.",
@@ -1362,10 +1362,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "team-name-generator",
+    "canonicalToolId": "twitch-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d’équipe",
-    "localizedSlug": "générateur-de-nom-d-équipe",
+    "localizedSlug": "generateur-de-nom-d-equipe",
     "h1": "Générateur de nom d’équipe",
     "metaTitle": "Générateur de Noms d'Équipe - Idées de Groupes Web",
     "metaDescription": "Trouvez des noms d'équipes originaux et amusants pour vos tournois, quiz et clubs sportifs. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1379,7 +1379,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "text-case-converter",
+    "canonicalToolId": "random-phrase-generator",
     "language": "fr",
     "primaryKeyword": "convertisseur de casse de texte",
     "localizedSlug": "convertisseur-de-casse-de-texte",
@@ -1396,10 +1396,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "fantasy-name-generator",
+    "canonicalToolId": "special-character-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom fantastique",
-    "localizedSlug": "générateur-de-nom-fantastique",
+    "localizedSlug": "generateur-de-nom-fantastique",
     "h1": "Générateur de nom fantastique",
     "metaTitle": "Générateur de Noms Fantastiques - Noms de Fantasy RPG",
     "metaDescription": "Générez des prénoms et noms mystiques pour elfes, nains et mages de récits fantastiques et RPG. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1413,10 +1413,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cursive-text-generator",
+    "canonicalToolId": "ascii-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte en cursive",
-    "localizedSlug": "générateur-de-texte-en-cursive",
+    "localizedSlug": "generateur-de-texte-en-cursive",
     "h1": "Générateur de texte en cursive",
     "metaTitle": "Générateur de Texte Cursif - Calligraphie en Ligne",
     "metaDescription": "Transformez vos mots en écriture cursives et caractères caligraphiques élégants à copier-coller. Outil gratuit en ligne, beau et sans inscription.",
@@ -1430,10 +1430,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "bold-text-generator",
+    "canonicalToolId": "creepy-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte en gras",
-    "localizedSlug": "générateur-de-texte-en-gras",
+    "localizedSlug": "generateur-de-texte-en-gras",
     "h1": "Générateur de texte en gras",
     "metaTitle": "Générateur de Texte en Gras - Caractères Unicode SEO",
     "metaDescription": "Convertissez votre texte en caractères Unicode en gras pour faire ressortir vos messages sociaux. Outil gratuit en ligne, rapide et sans inscription.",
@@ -1447,10 +1447,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "meta-tag-generator",
+    "canonicalToolId": "gaming-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de meta tags",
-    "localizedSlug": "générateur-de-meta-tags",
+    "localizedSlug": "generateur-de-meta-tags",
     "h1": "Générateur de meta tags",
     "metaTitle": "Générateur de Balises Meta Tags - Code HTML SEO Web",
     "metaDescription": "Générez les balises meta title, description et robots essentielles pour optimiser le référencement web. Outil technique gratuit et sans inscription.",
@@ -1464,10 +1464,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "youtube-tag-generator",
+    "canonicalToolId": "guild-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tags youtube",
-    "localizedSlug": "générateur-de-tags-youtube",
+    "localizedSlug": "generateur-de-tags-youtube",
     "h1": "Générateur de tags YouTube",
     "metaTitle": "Générateur de Tags YouTube - Mots-Clés de Vidéos SEO",
     "metaDescription": "Trouvez des tags et mots-clés pertinents pour amélioer le référencement de vos vidéos YouTube. Outil gratuit en ligne, efficace et sans inscription.",
@@ -1481,10 +1481,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "business-name-generator",
+    "canonicalToolId": "planet-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d’entreprise",
-    "localizedSlug": "générateur-de-nom-d-entreprise",
+    "localizedSlug": "generateur-de-nom-d-entreprise",
     "h1": "Générateur de nom d’entreprise",
     "metaTitle": "Générateur de Noms d'Entreprise - Idées de Sociétés",
     "metaDescription": "Trouvez des noms de société mémorables et modernes pour lancer votre entreprise ou startup. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1498,10 +1498,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "username-generator",
+    "canonicalToolId": "island-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d’utilisateur",
-    "localizedSlug": "générateur-de-nom-d-utilisateur",
+    "localizedSlug": "generateur-de-nom-d-utilisateur",
     "h1": "Générateur de nom d’utilisateur",
     "metaTitle": "Générateur de Noms d'Utilisateurs - Pseudos Web SEO",
     "metaDescription": "Trouvez des pseudos originaux et nom d'utilisateurs disponibles pour vos réseaux sociaux et jeux. Outil gratuit en ligne, pratique et sans inscription.",
@@ -1515,7 +1515,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "flyer-generator",
+    "canonicalToolId": "shop-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prospectus et flyers",
     "localizedSlug": "g-n-rateur-flyer",
@@ -1532,7 +1532,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "roman-inspired-character-name-generator",
+    "canonicalToolId": "cafe-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom romain antique",
     "localizedSlug": "g-n-rateur-nombres-romanos",
@@ -1549,7 +1549,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "sitemap-generator",
+    "canonicalToolId": "project-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de sitemaps xml",
     "localizedSlug": "g-n-rateur-sitemap",
@@ -1566,7 +1566,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "sigil-generator",
+    "canonicalToolId": "stage-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de sceaux et symboles mystiques",
     "localizedSlug": "g-n-rateur-sigil",
@@ -1583,7 +1583,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "short-code-generator",
+    "canonicalToolId": "wrestling-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de shortcodes",
     "localizedSlug": "g-n-rateur-short-code",
@@ -1600,7 +1600,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "quotation-generator",
+    "canonicalToolId": "cool-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de devis et cotations",
     "localizedSlug": "g-n-rateur-quotation",
@@ -1617,7 +1617,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "qr-code-generator",
+    "canonicalToolId": "old-english-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de codes qr",
     "localizedSlug": "g-n-rateur-qr-code",
@@ -1634,7 +1634,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "purchase-order-generator",
+    "canonicalToolId": "uwu-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de bons de commande",
     "localizedSlug": "g-n-rateur-purchase-order",
@@ -1651,7 +1651,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "proposal-generator",
+    "canonicalToolId": "leet-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de propositions commerciales",
     "localizedSlug": "g-n-rateur-proposal",
@@ -1668,7 +1668,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "mood-board-generator",
+    "canonicalToolId": "random-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de moodboards visuels",
     "localizedSlug": "g-n-rateur-mood-board",
@@ -1685,7 +1685,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "logo-generator",
+    "canonicalToolId": "discord-timestamp-generator",
     "language": "fr",
     "primaryKeyword": "générateur de logos",
     "localizedSlug": "g-n-rateur-logo",
@@ -1702,10 +1702,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "letterhead-generator",
+    "canonicalToolId": "canonical-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’en-têtes de lettres",
-    "localizedSlug": "générateur-de-papier-timbré",
+    "localizedSlug": "generateur-de-papier-timbre",
     "h1": "Générateur d’en-têtes de lettres professionnelles",
     "metaTitle": "Générateur de Papier Timbré - En-Têtes de Lettre SEO",
     "metaDescription": "Créez des en-têtes de lettres et papiers timbrés professionnels pour vos documents d'entreprise. Outil gratuit en ligne, rapide et sans inscription.",
@@ -1719,10 +1719,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "html-code-generator",
+    "canonicalToolId": "utm-generator",
     "language": "fr",
     "primaryKeyword": "générateur de code html",
-    "localizedSlug": "générateur-de-code-html",
+    "localizedSlug": "generateur-de-code-html",
     "h1": "Générateur de code HTML",
     "metaTitle": "Générateur de Code HTML - Balises et Snippets Web SEO",
     "metaDescription": "Générez du code HTML propre et des balises structurées pour intégrer facilement vos éléments web. Outil technique gratuit, précis et sans inscription.",
@@ -1736,10 +1736,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "favicon-generator",
+    "canonicalToolId": "gibberish-generator",
     "language": "fr",
     "primaryKeyword": "générateur de favicons web",
-    "localizedSlug": "générateur-de-favicon",
+    "localizedSlug": "generateur-de-favicon",
     "h1": "Générateur de favicons web",
     "metaTitle": "Générateur de Favicon - Icônes de Site Web SEO Web",
     "metaDescription": "Créez des fichiers favicon.ico et icônes d'onglets pour tous les navigateurs et appareils mobiles. Outil gratuit en ligne, rapide et sans inscription.",
@@ -1753,10 +1753,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "estimate-generator",
+    "canonicalToolId": "shakespeare-insult-generator",
     "language": "fr",
     "primaryKeyword": "générateur de devis professionnels",
-    "localizedSlug": "générateur-d-estimations",
+    "localizedSlug": "generateur-d-estimations",
     "h1": "Générateur de devis professionnels",
     "metaTitle": "Générateur d'Estimations de Prix - Devis Pro Web SEO",
     "metaDescription": "Établissez des estimations de coûts et évaluations financières précises pour vos clients en ligne. Outil gratuit en ligne, pratique et sans inscription.",
@@ -1770,10 +1770,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dalle-prompt-generator",
+    "canonicalToolId": "tiktok-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prompts pour dALL-E",
-    "localizedSlug": "générateur-de-prompts-dalle",
+    "localizedSlug": "generateur-de-prompts-dalle",
     "h1": "Générateur de prompts pour DALL-E",
     "metaTitle": "Générateur de Prompts DALL-E - Image IA Web SEO Web",
     "metaDescription": "Concevez des descriptions et prompts précis pour générer des images époustouflantes avec DALL-E. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1787,10 +1787,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "css-code-generator",
+    "canonicalToolId": "instagram-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de code css",
-    "localizedSlug": "générateur-de-code-css",
+    "localizedSlug": "generateur-de-code-css",
     "h1": "Générateur de code CSS",
     "metaTitle": "Générateur de Code CSS3 - Styles et Effets Web SEO",
     "metaDescription": "Générez du code CSS3 moderne avec dégradés, ombres portées et animations fluides en quelques clics. Outil technique gratuit, précis et sans inscription.",
@@ -1804,10 +1804,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "business-card-generator",
+    "canonicalToolId": "couple-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de cartes de visite",
-    "localizedSlug": "générateur-de-cartes-de-visite",
+    "localizedSlug": "generateur-de-cartes-de-visite",
     "h1": "Générateur de cartes de visite",
     "metaTitle": "Générateur de Cartes de Visite - Modèles Pro Web SEO",
     "metaDescription": "Créez des cartes de visite professionnelles prêtes à imprimer ou télécharger au format numérique. Outil gratuit en ligne, pratique et sans inscription.",
@@ -1821,10 +1821,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "breadcrumb-generator",
+    "canonicalToolId": "dwarf-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de fil d’ariane",
-    "localizedSlug": "générateur-de-fil-d-ariane",
+    "localizedSlug": "generateur-de-fil-d-ariane",
     "h1": "Générateur de fil d’ariane (Breadcrumbs)",
     "metaTitle": "Générateur de Fil d'Ariane - Breadcrumb HTML SEO Web",
     "metaDescription": "Générez du code HTML et du balisage Schema.org pour créer un fil d'ariane clair sur votre site web. Outil technique gratuit, précis et sans inscription.",
@@ -1838,10 +1838,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "banner-generator",
+    "canonicalToolId": "tiefling-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de bannières web",
-    "localizedSlug": "générateur-de-bannières",
+    "localizedSlug": "generateur-de-bannieres",
     "h1": "Générateur de bannières web",
     "metaTitle": "Générateur de Bannières Web - Visuels Pubs Web SEO",
     "metaDescription": "Concevez des bannières publicitaires et visuels d'en-tête attrayants pour votre site ou réseau social. Outil gratuit en ligne, rapide et sans inscription.",
@@ -1855,10 +1855,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "app-icon-generator",
+    "canonicalToolId": "school-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’icônes d’applications",
-    "localizedSlug": "générateur-d-icônes-d-application",
+    "localizedSlug": "generateur-d-icones-d-application",
     "h1": "Générateur d’icônes d’applications",
     "metaTitle": "Générateur d'Icônes d'App - Visuels iOS Android SEO",
     "metaDescription": "Générez des icônes d'applications mobiles aux dimensions requises pour iOS, iPadOS et Android. Outil technique gratuit, précis et sans inscription.",
@@ -1872,10 +1872,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "color-palette-generator-from-name",
+    "canonicalToolId": "street-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de palettes de couleurs par nom",
-    "localizedSlug": "générateur-de-palette-de-couleurs-par-nom",
+    "localizedSlug": "generateur-de-palette-de-couleurs-par-nom",
     "h1": "Générateur de palettes de couleurs par nom",
     "metaTitle": "Générateur de Palette par Nom - Couleurs Web SEO Pro",
     "metaDescription": "Transformez n'importe quel mot ou nom en une palette de couleurs harmonieuse et personnalisée. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1889,10 +1889,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "fantasy-language-generator",
+    "canonicalToolId": "book-club-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de langues fantastiques de fiction",
-    "localizedSlug": "générateur-de-langue-fantastique",
+    "localizedSlug": "generateur-de-langue-fantastique",
     "h1": "Générateur de langues fantastiques de fiction",
     "metaTitle": "Générateur de Langue Fantastique - Dialectes SEO Web",
     "metaDescription": "Créez des dialectes imaginaires et des vocabulaires fictifs pour enrichir vos univers de fantasy. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1906,10 +1906,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "ipa-generator",
+    "canonicalToolId": "seo-title-generator",
     "language": "fr",
     "primaryKeyword": "générateur de transcription api",
-    "localizedSlug": "générateur-d-alphabet-phonétique",
+    "localizedSlug": "generateur-d-alphabet-phonetique",
     "h1": "Générateur de la transcription API (Alphabet Phonétique International)",
     "metaTitle": "Générateur de Transcriptions IPA - Phonétique SEO Web",
     "metaDescription": "Convertissez vos textes en symboles de l'alphabet phonétique international (API/IPA) rapidement. Outil linguistique gratuit, précis et sans inscription.",
@@ -1923,10 +1923,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "phonetic-spelling-of-name-generator",
+    "canonicalToolId": "pinterest-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’orthographe phonétique de prénom",
-    "localizedSlug": "générateur-de-prononciation-phonétique",
+    "localizedSlug": "generateur-de-prononciation-phonetique",
     "h1": "Générateur d’orthographe phonétique de prénom",
     "metaTitle": "Générateur de Prononciation Phonétique des Noms SEO",
     "metaDescription": "Obtenez l'orthographe phonétique exacte de vos noms pour faciliter leur prononciation en public. Outil gratuit en ligne, pratique et sans inscription.",
@@ -1940,10 +1940,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "title-name-generator",
+    "canonicalToolId": "soundcloud-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de titres créatifs",
-    "localizedSlug": "générateur-de-titres-de-noblesse",
+    "localizedSlug": "generateur-de-titres-de-noblesse",
     "h1": "Générateur de titres créatifs",
     "metaTitle": "Générateur de Titres de Noblesse - Noms d'Élite SEO",
     "metaDescription": "Générez des titres honorifiques, rangs de noblesse et appellations de prestige pour vos fictions. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1957,10 +1957,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "minutes-of-meeting-generator",
+    "canonicalToolId": "comeback-generator",
     "language": "fr",
     "primaryKeyword": "générateur de compte-rendu de réunion",
-    "localizedSlug": "générateur-de-procès-verbal-de-réunion",
+    "localizedSlug": "generateur-de-proces-verbal-de-reunion",
     "h1": "Générateur de compte-rendu de réunion",
     "metaTitle": "Générateur de Procès-Verbal - Compte-Rendu SEO Web",
     "metaDescription": "Rédigez des compte-rendus et procès-verbaux de réunions structurés avec prises de décisions et actions. Outil gratuit en ligne, pratique et sans inscription.",
@@ -1974,10 +1974,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "newsletter-name-generator",
+    "canonicalToolId": "error-message-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de newsletter",
-    "localizedSlug": "générateur-de-nom-de-newsletter",
+    "localizedSlug": "generateur-de-nom-de-newsletter",
     "h1": "Générateur de nom de newsletter",
     "metaTitle": "Générateur de Nom de Newsletter - Idées de Titres SEO",
     "metaDescription": "Trouvez des noms de newsletters percutants et mémorables pour développer votre communauté par e-mail. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -1991,10 +1991,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "wave-generator",
+    "canonicalToolId": "cipher-generator",
     "language": "fr",
     "primaryKeyword": "générateur de vagues de séparation css",
-    "localizedSlug": "générateur-de-vagues-svg",
+    "localizedSlug": "generateur-de-vagues-svg",
     "h1": "Générateur de vagues de séparation CSS (Waves)",
     "metaTitle": "Générateur de Vagues SVG - Séparateurs CSS SEO Web",
     "metaDescription": "Générez des séparateurs de sections en forme de vagues SVG personnalisables pour vos sites web. Outil technique gratuit, précis et sans inscription.",
@@ -2008,10 +2008,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "blob-generator",
+    "canonicalToolId": "repeat-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de formes organiques css",
-    "localizedSlug": "générateur-de-formes-blob-svg",
+    "localizedSlug": "generateur-de-formes-blob-svg",
     "h1": "Générateur de formes organiques CSS (Blobs)",
     "metaTitle": "Générateur de Formes Blob SVG - Formes Orga SEO Web",
     "metaDescription": "Créez des formes organiques et blobs SVG fluides pour dynamiser l'arrière-plan de vos pages web. Outil technique gratuit, précis et sans inscription.",
@@ -2025,10 +2025,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "pattern-generator",
+    "canonicalToolId": "magic-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de motifs de fond css",
-    "localizedSlug": "générateur-de-motifs-css",
+    "localizedSlug": "generateur-de-motifs-css",
     "h1": "Générateur de motifs de fond CSS (Patterns)",
     "metaTitle": "Générateur de Motifs CSS - Arrière-Plans Web SEO Pro",
     "metaDescription": "Générez des motifs géométriques et textures d'arrière-plan en CSS pur sans alourdir vos pages web. Outil technique gratuit, précis et sans inscription.",
@@ -2042,10 +2042,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "product-benefits-generator",
+    "canonicalToolId": "angel-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de bénéfices et avantages produits",
-    "localizedSlug": "générateur-de-bénéfices-produit",
+    "localizedSlug": "generateur-de-benefices-produit",
     "h1": "Générateur de bénéfices et avantages produits",
     "metaTitle": "Générateur de Bénéfices Produit - Copywriting SEO Web",
     "metaDescription": "Transformez les caractéristiques techniques de vos produits en bénéfices clients persuasifs et clairs. Outil gratuit en ligne, efficace et sans inscription.",
@@ -2059,10 +2059,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "wheel-spinner-generator",
+    "canonicalToolId": "tavern-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de roues de tirage au sort",
-    "localizedSlug": "générateur-de-roue-de-la-fortune",
+    "localizedSlug": "generateur-de-roue-de-la-fortune",
     "h1": "Générateur de roues de tirage au sort",
     "metaTitle": "Générateur de Roue de la Fortune - Tirage au Sort SEO",
     "metaDescription": "Créez une roue décisionnelle et interactive pour effectuer des tirages au sort équitables en ligne. Outil gratuit en ligne, amusant et sans inscription.",
@@ -2076,10 +2076,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "mock-api-generator",
+    "canonicalToolId": "dungeon-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de fausses api",
-    "localizedSlug": "générateur-de-mock-api",
+    "localizedSlug": "generateur-de-mock-api",
     "h1": "Générateur de fausses API (Mock API)",
     "metaTitle": "Générateur de Mock API - Données Factices JSON SEO",
     "metaDescription": "Générez des réponses d'API factices au format JSON pour tester vos front-ends sans serveur backend. Outil technique gratuit, précis et sans inscription.",
@@ -2093,10 +2093,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "graphql-query-generator",
+    "canonicalToolId": "cat-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de requêtes graphql",
-    "localizedSlug": "générateur-de-requêtes-graphql",
+    "localizedSlug": "generateur-de-requetes-graphql",
     "h1": "Générateur de requêtes GraphQL",
     "metaTitle": "Générateur de Requêtes GraphQL - Queries Code SEO Web",
     "metaDescription": "Formulez des requêtes et mutations GraphQL valides pour interroger efficacement vos APIs distantes. Outil technique gratuit, précis et sans inscription.",
@@ -2110,10 +2110,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "assignment-generator",
+    "canonicalToolId": "horse-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de sujets de devoirs",
-    "localizedSlug": "générateur-de-devoirs-scolaires",
+    "localizedSlug": "generateur-de-devoirs-scolaires",
     "h1": "Générateur de sujets de devoirs et travaux",
     "metaTitle": "Générateur de Devoirs Scolaires - Exercices SEO Web",
     "metaDescription": "Concevez des devoirs scolaires et sujets d'évaluation adaptés au niveau de vos élèves en ligne. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2127,10 +2127,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "rubric-generator",
+    "canonicalToolId": "twitter-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de grilles d’évaluation",
-    "localizedSlug": "générateur-de-grilles-d-évaluation",
+    "localizedSlug": "generateur-de-grilles-d-evaluation",
     "h1": "Générateur de grilles d’évaluation et barèmes",
     "metaTitle": "Générateur de Grille d'Évaluation - Barèmes SEO Web",
     "metaDescription": "Construisez des barèmes de notation et grilles d'évaluation précises par critères de compétence. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2144,10 +2144,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "worksheet-generator",
+    "canonicalToolId": "snapchat-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de fiches d’exercices pédagogiques",
-    "localizedSlug": "générateur-de-fiches-d-exercices",
+    "localizedSlug": "generateur-de-fiches-d-exercices",
     "h1": "Générateur de fiches d’exercices pédagogiques",
     "metaTitle": "Générateur de Fiches d'Exercices - Devoirs Web SEO",
     "metaDescription": "Concevez des fiches d'exercices et devoirs imprimables pour accompagner l'apprentissage de vos élèves. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2161,10 +2161,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dnd-character-generator",
+    "canonicalToolId": "linkedin-headline-generator",
     "language": "fr",
     "primaryKeyword": "générateur de personnages donjons & dragons",
-    "localizedSlug": "générateur-de-personnages-dnd",
+    "localizedSlug": "generateur-de-personnages-dnd",
     "h1": "Générateur de personnages Donjons & Dragons",
     "metaTitle": "Générateur de Personnages D&D - Fichiers 5e SEO Web",
     "metaDescription": "Générez des aventuriers de Donjons et Dragons 5e complets avec classe, raça et compétences. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -2178,10 +2178,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-color-generator",
+    "canonicalToolId": "bio-generator",
     "language": "fr",
     "primaryKeyword": "générateur de couleurs aléatoires",
-    "localizedSlug": "générateur-de-couleurs-aléatoires",
+    "localizedSlug": "generateur-de-couleurs-aleatoires",
     "h1": "Générateur de couleurs aléatoires",
     "metaTitle": "Générateur de Couleurs Aléatoires - Code HEX RGB SEO",
     "metaDescription": "Tirez au sort des couleurs aléatoires avec leurs codes HEX, RGB et HSL pour vos projets graphiques. Outil gratuit en ligne, rapide et sans inscription.",
@@ -2195,10 +2195,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-list-generator",
+    "canonicalToolId": "slogan-generator",
     "language": "fr",
     "primaryKeyword": "générateur de listes aléatoires",
-    "localizedSlug": "générateur-de-listes-aléatoires",
+    "localizedSlug": "generateur-de-listes-aleatoires",
     "h1": "Générateur de listes aléatoires",
     "metaTitle": "Générateur de Listes Aléatoires - Tirage au Sort SEO",
     "metaDescription": "Mélangez et réordonnez des listes d'éléments de manière parfaitement aléatoire en un seul clic. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2212,10 +2212,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "productivity-prompt-generator",
+    "canonicalToolId": "wifi-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prompts de productivité",
-    "localizedSlug": "générateur-de-prompts-de-productivité",
+    "localizedSlug": "generateur-de-prompts-de-productivite",
     "h1": "Générateur de prompts de productivité",
     "metaTitle": "Générateur de Prompts de Productivité - IA SEO Web",
     "metaDescription": "Obtenez des prompts structurés pour automatiser vos tâches quotidiennes et organiser vos projets. Outil gratuit en ligne, efficace et sans inscription.",
@@ -2229,10 +2229,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "video-prompt-generator",
+    "canonicalToolId": "color-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prompts pour vidéos ia",
-    "localizedSlug": "générateur-de-prompts-vidéo",
+    "localizedSlug": "generateur-de-prompts-video",
     "h1": "Générateur de prompts pour vidéos IA",
     "metaTitle": "Générateur de Prompts Vidéo IA - Sora Runway SEO Web",
     "metaDescription": "Rédigez des descriptions précises de scènes animées pour générer des vidéos par IA (Sora, Runway). Outil gratuit en ligne, inspirant et sans inscription.",
@@ -2246,10 +2246,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "follow-up-email-generator",
+    "canonicalToolId": "hex-color-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’e-mails de relance",
-    "localizedSlug": "générateur-d-e-mails-de-relance",
+    "localizedSlug": "generateur-d-e-mails-de-relance",
     "h1": "Générateur d’e-mails de relance",
     "metaTitle": "Générateur d'E-Mails de Relance - Prospection SEO Web",
     "metaDescription": "Rédigez des e-mails de relance courtois et professionnels pour réactiver vos prospects sans réponse. Outil gratuit en ligne, efficace et sans inscription.",
@@ -2263,10 +2263,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "sales-email-generator",
+    "canonicalToolId": "rgb-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’e-mails de vente et prospection",
-    "localizedSlug": "générateur-d-e-mails-de-vente",
+    "localizedSlug": "generateur-d-e-mails-de-vente",
     "h1": "Générateur d’e-mails de vente et prospection",
     "metaTitle": "Générateur d'E-Mails de Vente - Prospection B2B SEO",
     "metaDescription": "Formulez des messages de prospection commerciale persuasifs et ciblés pour développer vos ventes. Outil gratuit en ligne, efficace et sans inscription.",
@@ -2280,10 +2280,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "customer-persona-generator",
+    "canonicalToolId": "ai-prompt-generator",
     "language": "fr",
     "primaryKeyword": "générateur de personas de clients idéaux",
-    "localizedSlug": "générateur-de-buyer-persona",
+    "localizedSlug": "generateur-de-buyer-persona",
     "h1": "Générateur de personas de clients idéaux",
     "metaTitle": "Générateur de Buyer Persona - Profil Client SEO Web",
     "metaDescription": "Modélisez le profil type de vos acheteurs cibles avec objectifs, habitudes et freins d'achat clairs. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2297,10 +2297,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "product-bullet-points-generator",
+    "canonicalToolId": "midjourney-prompt-generator",
     "language": "fr",
     "primaryKeyword": "générateur de points clés de fiches produits",
-    "localizedSlug": "générateur-de-points-clés-produit",
+    "localizedSlug": "generateur-de-points-cles-produit",
     "h1": "Générateur de points clés de fiches produits",
     "metaTitle": "Générateur de Points Clés Produit - Amazon SEO Web",
     "metaDescription": "Résumez les caractéristiques majeures de vos articles sous forme de puces vendeuses pour e-commerce. Outil gratuit en ligne, rapide et sans inscription.",
@@ -2314,10 +2314,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "multiple-choice-generator",
+    "canonicalToolId": "passphrase-generator",
     "language": "fr",
     "primaryKeyword": "générateur de questions à choix multiples",
-    "localizedSlug": "générateur-de-qcm",
+    "localizedSlug": "generateur-de-qcm",
     "h1": "Générateur de questions à choix multiples (QCM)",
     "metaTitle": "Générateur de QCM en Ligne - Questions Choix Multiples",
     "metaDescription": "Créez des questionnaires à choix multiples (QCM) avec choix de réponses et corrections détaillées. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2331,10 +2331,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "essay-topic-generator",
+    "canonicalToolId": "pin-generator",
     "language": "fr",
     "primaryKeyword": "générateur de sujets de rédaction et dissertations",
-    "localizedSlug": "générateur-de-sujets-de-dissertation",
+    "localizedSlug": "generateur-de-sujets-de-dissertation",
     "h1": "Générateur de sujets de rédaction et dissertations",
     "metaTitle": "Générateur de Sujets de Dissertation - Thèmes SEO Web",
     "metaDescription": "Trouvez des sujets de dissertation stimulants et des problématiques de réflexion pour vos rédactions. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -2348,10 +2348,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "bibliography-generator",
+    "canonicalToolId": "api-key-generator",
     "language": "fr",
     "primaryKeyword": "générateur de bibliographies et références",
-    "localizedSlug": "générateur-de-bibliographie",
+    "localizedSlug": "generateur-de-bibliographie",
     "h1": "Générateur de bibliographies et références",
     "metaTitle": "Générateur de Bibliographie - Sources Cités SEO Web",
     "metaDescription": "Compilez et ordonnez la liste des livres et sources cités dans vos travaux d'études ou recherches. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2365,10 +2365,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "research-question-generator",
+    "canonicalToolId": "privacy-policy-generator",
     "language": "fr",
     "primaryKeyword": "générateur de questions de recherche académique",
-    "localizedSlug": "générateur-de-questions-de-recherche",
+    "localizedSlug": "generateur-de-questions-de-recherche",
     "h1": "Générateur de questions de recherche académique",
     "metaTitle": "Générateur de Questions de Recherche - Problématiques",
     "metaDescription": "Formulez des problématiques académiques précises et pertinentes pour vos projets de recherche en ligne. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2382,10 +2382,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "lesson-plan-generator",
+    "canonicalToolId": "terms-generator",
     "language": "fr",
     "primaryKeyword": "générateur de fiches de cours et leçons",
-    "localizedSlug": "générateur-de-plans-de-cours",
+    "localizedSlug": "generateur-de-plans-de-cours",
     "h1": "Générateur de fiches de cours et leçons",
     "metaTitle": "Générateur de Plans de Cours - Fiches Enseignant SEO",
     "metaDescription": "Concevez des séquences pédagogiques, objectifs de cours et activités pour enseignants et formateurs. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2399,10 +2399,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "study-plan-generator",
+    "canonicalToolId": "cookie-policy-generator",
     "language": "fr",
     "primaryKeyword": "générateur de plannings d’études",
-    "localizedSlug": "générateur-de-plannings-de-révision",
+    "localizedSlug": "generateur-de-plannings-de-revision",
     "h1": "Générateur de plannings d’études",
     "metaTitle": "Générateur de Plannings de Révision - Examens SEO Web",
     "metaDescription": "Organisez vos révisions d'examens et répartissez vos sessions d'apprentissage de façon efficace. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2416,10 +2416,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "flashcard-generator",
+    "canonicalToolId": "disclaimer-generator",
     "language": "fr",
     "primaryKeyword": "générateur de cartes de révision",
-    "localizedSlug": "générateur-de-flashcards",
+    "localizedSlug": "generateur-de-flashcards",
     "h1": "Générateur de cartes de révision (Flashcards)",
     "metaTitle": "Générateur de Flashcards - Cartes Mémoire SEO Web Pro",
     "metaDescription": "Créez des cartes mémoire verso/recto pour stimuler la mémorisation et réviser vos examens facilement. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2433,10 +2433,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-id-generator",
+    "canonicalToolId": "open-graph-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’identifiants aléatoires",
-    "localizedSlug": "générateur-d-identifiants-aléatoires",
+    "localizedSlug": "generateur-d-identifiants-aleatoires",
     "h1": "Générateur d’identifiants aléatoires",
     "metaTitle": "Générateur d'Identifiants Aléatoires - Clés UUID SEO",
     "metaDescription": "Générez des chaînes d'identifiants aléatoires (UUID, jetons, clés) hautement sécurisées pour vos applications. Outil technique gratuit et sans inscription.",
@@ -2450,10 +2450,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "form-generator",
+    "canonicalToolId": "twitter-card-generator",
     "language": "fr",
     "primaryKeyword": "générateur de formulaires html",
-    "localizedSlug": "générateur-de-formulaires-html",
+    "localizedSlug": "generateur-de-formulaires-html",
     "h1": "Générateur de formulaires HTML",
     "metaTitle": "Générateur de Formulaires HTML - Code Form SEO Web",
     "metaDescription": "Générez le code HTML et CSS de vos formulaires de contact, champs de saisie et formulaires web. Outil technique gratuit, précis et sans inscription.",
@@ -2467,10 +2467,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "pwa-manifest-generator",
+    "canonicalToolId": "youtube-description-generator",
     "language": "fr",
     "primaryKeyword": "générateur de manifeste pwa",
-    "localizedSlug": "générateur-de-manifest-pwa",
+    "localizedSlug": "generateur-de-manifest-pwa",
     "h1": "Générateur de manifeste PWA (Web App)",
     "metaTitle": "Générateur de Manifest PWA - manifest.json SEO Web",
     "metaDescription": "Créez le fichier manifest.json requis pour rendre votre site web installable sous forme de PWA. Outil technique gratuit, précis et sans inscription.",
@@ -2484,10 +2484,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "htaccess-generator",
+    "canonicalToolId": "tiktok-caption-generator",
     "language": "fr",
     "primaryKeyword": "générateur de fichiers .htaccess",
-    "localizedSlug": "générateur-de-fichier-htaccess",
+    "localizedSlug": "generateur-de-fichier-htaccess",
     "h1": "Générateur de fichiers .htaccess",
     "metaTitle": "Générateur de .htaccess Apache - Redirections SEO Web",
     "metaDescription": "Configurez vos redirections 301, HTTPS et règles de sécurité pour serveurs web Apache en ligne. Outil technique gratuit, précis et sans inscription.",
@@ -2501,10 +2501,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "sql-query-generator",
+    "canonicalToolId": "css-button-generator",
     "language": "fr",
     "primaryKeyword": "générateur de requêtes sql",
-    "localizedSlug": "générateur-de-requêtes-sql",
+    "localizedSlug": "generateur-de-requetes-sql",
     "h1": "Générateur de requêtes SQL",
     "metaTitle": "Générateur de Requêtes SQL - Code Base de Données SEO",
     "metaDescription": "Formulez des requêtes SQL (SELECT, INSERT, UPDATE, JOIN) valides pour MySQL et PostgreSQL. Outil technique gratuit, précis et sans inscription.",
@@ -2518,10 +2518,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "typescript-type-generator",
+    "canonicalToolId": "box-shadow-generator",
     "language": "fr",
     "primaryKeyword": "générateur de types typescript",
-    "localizedSlug": "générateur-de-types-typescript",
+    "localizedSlug": "generateur-de-types-typescript",
     "h1": "Générateur de types TypeScript",
     "metaTitle": "Générateur de Types TypeScript - Interfaces JSON SEO",
     "metaDescription": "Convertissez du code JSON brut en interfaces et types TypeScript typés avec une précision totale. Outil technique gratuit, précis et sans inscription.",
@@ -2535,10 +2535,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "json-schema-generator",
+    "canonicalToolId": "border-radius-generator",
     "language": "fr",
     "primaryKeyword": "générateur de schémas de validation json schema",
-    "localizedSlug": "générateur-de-json-schema",
+    "localizedSlug": "generateur-de-json-schema",
     "h1": "Générateur de schémas de validation JSON Schema",
     "metaTitle": "Générateur de JSON Schema - Validation de Données SEO",
     "metaDescription": "Générez des schémas de validation JSON Schema pour contrôler la structure des données de vos APIs web. Outil technique gratuit, précis et sans inscription.",
@@ -2552,10 +2552,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "landing-page-copy-generator",
+    "canonicalToolId": "regex-generator",
     "language": "fr",
     "primaryKeyword": "générateur de textes pour pages d’atterrissage",
-    "localizedSlug": "générateur-de-copy-landing-page",
+    "localizedSlug": "generateur-de-copy-landing-page",
     "h1": "Générateur de textes pour pages d’atterrissage (Landing Pages)",
     "metaTitle": "Générateur de Textes de Landing Page - Copywriting SEO",
     "metaDescription": "Rédigez des titres et textes de landing page à fort taux de conversion pour vos produits. Outil gratuit en ligne, rapide et sans inscription.",
@@ -2569,10 +2569,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "thesis-statement-generator",
+    "canonicalToolId": "cron-expression-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’énoncés de thèse académique",
-    "localizedSlug": "générateur-de-problématique-de-thèse",
+    "localizedSlug": "generateur-de-problematique-de-these",
     "h1": "Générateur d’énoncés de thèse académique",
     "metaTitle": "Générateur de Problématiques de Thèse - Sujets SEO",
     "metaDescription": "Formulez des problématiques de thèse et énoncés de mémoire clairs pour vos travaux académiques. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2586,10 +2586,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "quiz-generator",
+    "canonicalToolId": "random-letter-generator",
     "language": "fr",
     "primaryKeyword": "générateur de questions de quiz",
-    "localizedSlug": "générateur-de-quiz",
+    "localizedSlug": "generateur-de-quiz",
     "h1": "Générateur de questions de quiz et questionnaires",
     "metaTitle": "Générateur de Quiz en Ligne - Questions Réponses SEO",
     "metaDescription": "Créez des quiz interactifs et questionnaires de connaissances captivants pour vos audiences web. Outil gratuit en ligne, rapide et sans inscription.",
@@ -2603,10 +2603,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "worldbuilding-generator",
+    "canonicalToolId": "random-question-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’éléments de worldbuilding",
-    "localizedSlug": "générateur-de-worldbuilding",
+    "localizedSlug": "generateur-de-worldbuilding",
     "h1": "Générateur d’éléments de worldbuilding (Univers de fiction)",
     "metaTitle": "Générateur de Worldbuilding - Création d'Univers SEO",
     "metaDescription": "Développez des détails géographiques et culturels riches pour vos univers de fantasy et SF. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -2620,10 +2620,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "character-backstory-generator",
+    "canonicalToolId": "truth-or-dare-generator",
     "language": "fr",
     "primaryKeyword": "générateur de passé de personnages",
-    "localizedSlug": "générateur-d-histoire-de-personnage",
+    "localizedSlug": "generateur-d-histoire-de-personnage",
     "h1": "Générateur de passé et historique de personnages",
     "metaTitle": "Générateur d'Histoire de Personnage - Backstory SEO",
     "metaDescription": "Concevez le passé et les origines secrètes de vos personnages de romans et jeux de rôle. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -2637,10 +2637,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "giveaway-generator",
+    "canonicalToolId": "would-you-rather-generator",
     "language": "fr",
     "primaryKeyword": "générateur de gagnants pour jeux-concours",
-    "localizedSlug": "générateur-de-jeux-concours",
+    "localizedSlug": "generateur-de-jeux-concours",
     "h1": "Générateur de gagnants pour jeux-concours",
     "metaTitle": "Générateur de Jeux Concours - Idées de Concours SEO",
     "metaDescription": "Rédigez les règles et mécanismes d'engagement pour organiser un jeu concours sur les réseaux. Outil gratuit en ligne, efficace et sans inscription.",
@@ -2654,10 +2654,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "raffle-generator",
+    "canonicalToolId": "joke-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tirages au sort pour tombolas",
-    "localizedSlug": "générateur-de-tombola",
+    "localizedSlug": "generateur-de-tombola",
     "h1": "Générateur de tirages au sort pour tombolas",
     "metaTitle": "Générateur de Tirage de Tombola - Tirage au Sort SEO",
     "metaDescription": "Effectuez des tirages au sort de tombola et désignez les gagnants de manière impartiale en ligne. Outil gratuit en ligne, équitable et sans inscription.",
@@ -2671,10 +2671,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dummy-data-generator",
+    "canonicalToolId": "compliment-generator",
     "language": "fr",
     "primaryKeyword": "générateur de données de test fictives",
-    "localizedSlug": "générateur-de-données-factices",
+    "localizedSlug": "generateur-de-donnees-factices",
     "h1": "Générateur de données de test fictives (Dummy Data)",
     "metaTitle": "Générateur de Données Factices - Tests de Base SEO",
     "metaDescription": "Générez des jeux de données factices (noms, adresses, e-mails) pour tester vos bases de données. Outil technique gratuit, précis et sans inscription.",
@@ -2688,10 +2688,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "html-table-generator",
+    "canonicalToolId": "email-signature-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tableaux html",
-    "localizedSlug": "générateur-de-tableaux-html",
+    "localizedSlug": "generateur-de-tableaux-html",
     "h1": "Générateur de tableaux HTML",
     "metaTitle": "Générateur de Tableaux HTML - Code CSS Table SEO Web",
     "metaDescription": "Créez des tableaux HTML responsifs et stylisés en CSS prêts à intégrer sur votre site internet. Outil technique gratuit, précis et sans inscription.",
@@ -2705,10 +2705,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "flexbox-generator",
+    "canonicalToolId": "gradient-generator",
     "language": "fr",
     "primaryKeyword": "générateur de mises en page flexbox css",
-    "localizedSlug": "générateur-de-layout-flexbox",
+    "localizedSlug": "generateur-de-layout-flexbox",
     "h1": "Générateur de mises en page Flexbox CSS",
     "metaTitle": "Générateur de Layout Flexbox CSS - Mises en Page SEO",
     "metaDescription": "Concevez et visualisez des mises en page CSS Flexbox réactives avec prévisualisation en temps réel. Outil technique gratuit, précis et sans inscription.",
@@ -2722,10 +2722,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "css-grid-generator",
+    "canonicalToolId": "font-pairing-generator",
     "language": "fr",
     "primaryKeyword": "générateur de grilles css",
-    "localizedSlug": "générateur-de-grille-css",
+    "localizedSlug": "generateur-de-grille-css",
     "h1": "Générateur de grilles CSS (CSS Grid)",
     "metaTitle": "Générateur de Grilles CSS Grid - Layouts Web SEO Pro",
     "metaDescription": "Générez du code CSS Grid personnalisé pour créer des grilles web modernes et réactives facilement. Outil technique gratuit, précis et sans inscription.",
@@ -2739,10 +2739,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "content-calendar-generator",
+    "canonicalToolId": "blog-outline-generator",
     "language": "fr",
     "primaryKeyword": "générateur de planning éditorial",
-    "localizedSlug": "générateur-de-calendrier-éditorial",
+    "localizedSlug": "generateur-de-calendrier-editorial",
     "h1": "Générateur de planning éditorial et calendrier de contenu",
     "metaTitle": "Générateur de Calendrier Éditorial - Planning SEO Web",
     "metaDescription": "Planifiez votre stratégie de contenu et organisez vos dates de publication sur les réseaux sociaux. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2756,12 +2756,12 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "viral-hook-generator",
+    "canonicalToolId": "cold-email-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’accroches virales",
-    "localizedSlug": "générateur-d-accroches-virales",
+    "localizedSlug": "generateur-d-accroches-virales",
     "h1": "Générateur d’accroches virales (Viral Hooks)",
-    "metaTitle": "Générateur d'Accroches Virales - Phrases d'Impact SEO",
+    "metaTitle": "Générateur d'Accroches Virales SEO",
     "metaDescription": "Rédigez des phrases d'accroche virales pour captiver votre audience dès les premières secondes. Outil gratuit en ligne, efficace et sans inscription.",
     "intro": "Générez des phrases d’amorce percutantes pour retenir les spectateurs dès les 3 premières secondes.",
     "searchIntentNote": "Création de contenu vidéo court et hooks viraux.",
@@ -2773,10 +2773,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "author-bio-generator",
+    "canonicalToolId": "cover-letter-generator",
     "language": "fr",
     "primaryKeyword": "générateur de biographie d’auteur",
-    "localizedSlug": "générateur-de-bio-d-auteur",
+    "localizedSlug": "generateur-de-bio-d-auteur",
     "h1": "Générateur de biographie d’auteur",
     "metaTitle": "Générateur de Bio d'Auteur - Présentations SEO Web",
     "metaDescription": "Rédigez une biographie d'auteur professionnelle pour agrémenter vos livres, blogs et articles. Outil gratuit en ligne, efficace et sans inscription.",
@@ -2790,10 +2790,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "press-release-generator",
+    "canonicalToolId": "resume-summary-generator",
     "language": "fr",
     "primaryKeyword": "générateur de communiqués de presse",
-    "localizedSlug": "générateur-de-communiqués-de-presse",
+    "localizedSlug": "generateur-de-communiques-de-presse",
     "h1": "Générateur de communiqués de presse",
     "metaTitle": "Générateur de Communiqué de Presse - Modèles RP SEO",
     "metaDescription": "Formulez des communiqués de presse structurés pour annoncer vos nouveautés aux journalistes. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2807,10 +2807,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "content-brief-generator",
+    "canonicalToolId": "ad-copy-generator",
     "language": "fr",
     "primaryKeyword": "générateur de briefs de rédaction de contenu",
-    "localizedSlug": "générateur-de-brief-de-contenu",
+    "localizedSlug": "generateur-de-brief-de-contenu",
     "h1": "Générateur de briefs de rédaction de contenu",
     "metaTitle": "Générateur de Brief de Contenu - Consignes SEO Web",
     "metaDescription": "Créez des briefs de rédaction complets avec mots-clés et consignes pour vos rédacteurs web. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2824,10 +2824,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "character-prompt-generator",
+    "canonicalToolId": "call-to-action-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prompts de personnages",
-    "localizedSlug": "générateur-de-prompts-de-personnage",
+    "localizedSlug": "generateur-de-prompts-de-personnage",
     "h1": "Générateur de prompts de personnages",
     "metaTitle": "Générateur de Prompts de Personnages - IA Web SEO Pro",
     "metaDescription": "Formulez des prompts précis pour générer des portraits et descriptions visuelles de personnages. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -2841,10 +2841,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "stable-diffusion-prompt-generator",
+    "canonicalToolId": "product-description-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prompts pour stable diffusion",
-    "localizedSlug": "générateur-de-prompts-stable-diffusion",
+    "localizedSlug": "generateur-de-prompts-stable-diffusion",
     "h1": "Générateur de prompts pour Stable Diffusion",
     "metaTitle": "Générateur de Prompts Stable Diffusion - IA SEO Web",
     "metaDescription": "Créez des prompts détaillés et optimisés pour générer des images haute définition avec Stable Diffusion. Outil gratuit en ligne et sans inscription.",
@@ -2858,10 +2858,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "essay-title-generator",
+    "canonicalToolId": "random-emoji-generator",
     "language": "fr",
     "primaryKeyword": "générateur de sujets et titres de dissertations",
-    "localizedSlug": "générateur-de-titres-de-dissertation",
+    "localizedSlug": "generateur-de-titres-de-dissertation",
     "h1": "Générateur de sujets et titres de dissertations",
     "metaTitle": "Générateur de Titres de Dissertation - Intitulés SEO",
     "metaDescription": "Trouvez des titres stimulants et académiques pour vos rédactions et devoirs de recherche. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -2875,10 +2875,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-height-generator",
+    "canonicalToolId": "random-country-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tailles et grandeurs aléatoires",
-    "localizedSlug": "générateur-de-taille-aléatoire",
+    "localizedSlug": "generateur-de-taille-aleatoire",
     "h1": "Générateur de tailles et grandeurs aléatoires",
     "metaTitle": "Générateur de Taille Aléatoire - Hauteurs Web SEO Pro",
     "metaDescription": "Générez des mesures de tailles et hauteurs aléatoires en cm et pieds pour vos tests de données. Outil gratuit en ligne, rapide et sans inscription.",
@@ -2892,10 +2892,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-word-generator",
+    "canonicalToolId": "random-date-generator",
     "language": "fr",
     "primaryKeyword": "générateur de mots aléatoires",
-    "localizedSlug": "générateur-de-mots-aléatoires",
+    "localizedSlug": "generateur-de-mots-aleatoires",
     "h1": "Générateur de mots aléatoires",
     "metaTitle": "Générateur de Mots Aléatoires - Liste de Mots SEO Web",
     "metaDescription": "Tirez au sort des mots aléatoires de la langue française pour vos jeux, ateliers et exercices. Outil gratuit en ligne, rapide et sans inscription.",
@@ -2909,10 +2909,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "corporate-speak-generator",
+    "canonicalToolId": "random-choice-generator",
     "language": "fr",
     "primaryKeyword": "générateur de jargon d’entreprise",
-    "localizedSlug": "générateur-de-jargon-d-entreprise",
+    "localizedSlug": "generateur-de-jargon-d-entreprise",
     "h1": "Générateur de jargon d’entreprise (Corporate Speak)",
     "metaTitle": "Générateur de Jargon d'Entreprise - Parler Corporate",
     "metaDescription": "Générez des phrases amusantes remplies de jargon corporate et de termes de bureau tendance. Outil gratuit en ligne, amusant et sans inscription.",
@@ -2926,10 +2926,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "lowercase-generator",
+    "canonicalToolId": "game-idea-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte en minuscules",
-    "localizedSlug": "générateur-de-texte-en-minuscules",
+    "localizedSlug": "generateur-de-texte-en-minuscules",
     "h1": "Générateur de texte en minuscules",
     "metaTitle": "Générateur de Texte en Minuscules - Conversion SEO",
     "metaDescription": "Convertissez instantanément l'intégralité de vos textes en caractères minuscules en un clic. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2943,10 +2943,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "all-caps-generator",
+    "canonicalToolId": "rpg-character-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte en majuscules",
-    "localizedSlug": "générateur-de-texte-en-majuscules",
+    "localizedSlug": "generateur-de-texte-en-majuscules",
     "h1": "Générateur de texte en majuscules (ALL CAPS)",
     "metaTitle": "Générateur de Texte en Majuscules - Conversion SEO",
     "metaDescription": "Transformez l'ensemble de vos phrases et paragraphes en caractères MAJUSCULES rapidement. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2960,10 +2960,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "footnote-generator",
+    "canonicalToolId": "npc-generator",
     "language": "fr",
     "primaryKeyword": "générateur de notes de bas de page",
-    "localizedSlug": "générateur-de-notes-de-bas-de-page",
+    "localizedSlug": "generateur-de-notes-de-bas-de-page",
     "h1": "Générateur de notes de bas de page",
     "metaTitle": "Générateur de Notes de Bas de Page - Cites SEO Web",
     "metaDescription": "Formulez et insérez des appels de notes de bas de page propres pour vos articles et documents. Outil gratuit en ligne, pratique et sans inscription.",
@@ -2977,10 +2977,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "synonym-generator",
+    "canonicalToolId": "quest-generator",
     "language": "fr",
     "primaryKeyword": "générateur de synonymes et nuances de mots",
-    "localizedSlug": "générateur-de-synonymes",
+    "localizedSlug": "generateur-de-synonymes",
     "h1": "Générateur de synonymes et nuances de mots",
     "metaTitle": "Générateur de Synonymes en Ligne - Vocabulaire SEO",
     "metaDescription": "Trouvez des équivalents et synonymes riches pour enrichir vos textes et éviter les répétitions. Outil gratuit en ligne, efficace et sans inscription.",
@@ -2994,10 +2994,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "gamertag-generator",
+    "canonicalToolId": "story-plot-generator",
     "language": "fr",
     "primaryKeyword": "générateur de gamertag",
-    "localizedSlug": "générateur-de-gamertag",
+    "localizedSlug": "generateur-de-gamertag",
     "h1": "Générateur de Gamertag et pseudo de jeu",
     "metaTitle": "Générateur de Gamertag - Pseudos de Joueurs SEO Web",
     "metaDescription": "Trouvez des gamertags originaux et pseudos uniques pour vos comptes Xbox, PlayStation et Steam. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -3011,12 +3011,12 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "email-subject-generator",
+    "canonicalToolId": "riddle-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’objets d’e-mail engageants",
-    "localizedSlug": "générateur-d-objets-d-e-mail",
+    "localizedSlug": "generateur-d-objets-d-e-mail",
     "h1": "Générateur d’objets d’e-mail engageants",
-    "metaTitle": "Générateur d'Objets d'E-Mail - Accroches E-Mails SEO",
+    "metaTitle": "Générateur d'Objets d'E-Mail SEO",
     "metaDescription": "Concevez des objets d'e-mails captivants pour augmenter le taux d'ouverture de vos newsletters. Outil gratuit en ligne, efficace et sans inscription.",
     "intro": "Générez des objets d’e-mails vendeurs et intriguants pour faire décoller l’ouverture de vos campagnes.",
     "searchIntentNote": "E-mail marketing et optimisation du taux d’ouverture.",
@@ -3028,10 +3028,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "social-media-post-generator",
+    "canonicalToolId": "icebreaker-generator",
     "language": "fr",
     "primaryKeyword": "générateur de publications pour réseaux sociaux",
-    "localizedSlug": "générateur-de-posts-réseaux-sociaux",
+    "localizedSlug": "generateur-de-posts-reseaux-sociaux",
     "h1": "Générateur de publications pour réseaux sociaux",
     "metaTitle": "Générateur de Posts Réseaux Sociaux - Pubs Web SEO",
     "metaDescription": "Rédigez des publications captivantes adaptées à Instagram, LinkedIn, Facebook et Twitter. Outil gratuit en ligne, efficace et sans inscription.",
@@ -3045,10 +3045,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "wordart-generator",
+    "canonicalToolId": "product-title-generator",
     "language": "fr",
     "primaryKeyword": "générateur de textes artistiques",
-    "localizedSlug": "générateur-de-wordart",
+    "localizedSlug": "generateur-de-wordart",
     "h1": "Générateur de textes artistiques (Word Art)",
     "metaTitle": "Générateur de WordArt en Ligne - Effets de Texte SEO",
     "metaDescription": "Transformez vos mots en titres visuels rétro style WordArt avec dégradés et effets 3D colorés. Outil gratuit en ligne, amusant et sans inscription.",
@@ -3062,10 +3062,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "typography-generator",
+    "canonicalToolId": "sku-generator",
     "language": "fr",
     "primaryKeyword": "générateur de styles typographiques",
-    "localizedSlug": "générateur-de-typographie",
+    "localizedSlug": "generateur-de-typographie",
     "h1": "Générateur de styles typographiques",
     "metaTitle": "Générateur de Typographie - Polices de Texte SEO Web",
     "metaDescription": "Explorez des combinaisons et styles typographiques élégants pour sublimer vos créations web. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -3079,10 +3079,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "text-summary-generator",
+    "canonicalToolId": "testimonial-generator",
     "language": "fr",
     "primaryKeyword": "générateur de résumés de texte",
-    "localizedSlug": "générateur-de-résumé-de-texte",
+    "localizedSlug": "generateur-de-resume-de-texte",
     "h1": "Générateur de résumés de texte",
     "metaTitle": "Générateur de Résumé de Texte - Synthèse Web SEO Pro",
     "metaDescription": "Condensez de longs articles et documents en une synthèse claire des points essentiels rapidement. Outil gratuit en ligne, efficace et sans inscription.",
@@ -3096,10 +3096,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "headline-generator",
+    "canonicalToolId": "keyword-generator",
     "language": "fr",
     "primaryKeyword": "générateur de titres percutants",
-    "localizedSlug": "générateur-de-titres-d-articles",
+    "localizedSlug": "generateur-de-titres-d-articles",
     "h1": "Générateur de titres percutants",
     "metaTitle": "Générateur de Titres d'Articles - Titres Accrocheurs",
     "metaDescription": "Générez des titres d'articles captivants pour attirer des lecteurs sur votre blog ou site web. Outil gratuit en ligne, efficace et sans inscription.",
@@ -3113,10 +3113,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "citation-generator",
+    "canonicalToolId": "faq-generator",
     "language": "fr",
     "primaryKeyword": "générateur de citations académiques et bibliographie",
-    "localizedSlug": "générateur-de-citations-académiques",
+    "localizedSlug": "generateur-de-citations-academiques",
     "h1": "Générateur de citations académiques et bibliographie",
     "metaTitle": "Générateur de Citations Académiques - Normes SEO Web",
     "metaDescription": "Formatez des citations bibliographiques précises aux normes APA, MLA ou Chicago en quelques clics. Outil académique gratuit, précis et sans inscription.",
@@ -3130,10 +3130,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "meeting-agenda-generator",
+    "canonicalToolId": "license-key-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’ordres du jour de réunion",
-    "localizedSlug": "générateur-d-ordre-du-jour-de-réunion",
+    "localizedSlug": "generateur-d-ordre-du-jour-de-reunion",
     "h1": "Générateur d’ordres du jour de réunion",
     "metaTitle": "Générateur d'Ordre du Jour - Réunions Pro SEO Web Pro",
     "metaDescription": "Organisez le déroulement et l'ordre du jour de vos réunions de travail avec objectifs et créneaux. Outil gratuit en ligne, pratique et sans inscription.",
@@ -3147,10 +3147,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "barcode-generator",
+    "canonicalToolId": "recovery-code-generator",
     "language": "fr",
     "primaryKeyword": "générateur de codes-barres",
-    "localizedSlug": "générateur-de-code-barres",
+    "localizedSlug": "generateur-de-code-barres",
     "h1": "Générateur de codes-barres",
     "metaTitle": "Générateur de Code-Barres - Codes EAN-13 PDF SEO Web",
     "metaDescription": "Générez des codes-barres EAN, UPC et Code128 au format vectoriel prêts à être scannés ou imprimés. Outil technique gratuit, précis et sans inscription.",
@@ -3167,7 +3167,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     "canonicalToolId": "coupon-code-generator",
     "language": "fr",
     "primaryKeyword": "générateur de codes promo et réductions",
-    "localizedSlug": "générateur-de-codes-promo",
+    "localizedSlug": "generateur-de-codes-promo",
     "h1": "Générateur de codes promo et réductions",
     "metaTitle": "Générateur de Codes Promo - Codes Réduction SEO Web",
     "metaDescription": "Générez des séries de codes de réduction et bons d'achat personnalisés pour vos opérations e-commerce. Outil gratuit en ligne, rapide et sans inscription.",
@@ -3181,10 +3181,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "testimonial-generator",
+    "canonicalToolId": "barcode-generator",
     "language": "fr",
     "primaryKeyword": "générateur de témoignages et avis clients",
-    "localizedSlug": "générateur-d-avis-clients",
+    "localizedSlug": "generateur-d-avis-clients",
     "h1": "Générateur de témoignages et avis clients",
     "metaTitle": "Générateur d'Avis Clients - Témoignages Web SEO Pro",
     "metaDescription": "Rédigez des exemples de témoignages et avis clients persuasifs pour renforcer votre crédibilité. Outil gratuit en ligne, pratique et sans inscription.",
@@ -3198,10 +3198,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "sku-generator",
+    "canonicalToolId": "refund-policy-generator",
     "language": "fr",
     "primaryKeyword": "générateur de codes sku e-commerce",
-    "localizedSlug": "générateur-de-sku",
+    "localizedSlug": "generateur-de-sku",
     "h1": "Générateur de codes SKU e-commerce",
     "metaTitle": "Générateur de Codes SKU - Gestion de Stock SEO Web",
     "metaDescription": "Créez une nomenclature de codes SKU claire pour référencer et organiser les produits de votre catalogue. Outil gratuit en ligne, pratique et sans inscription.",
@@ -3215,10 +3215,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "product-title-generator",
+    "canonicalToolId": "shipping-policy-generator",
     "language": "fr",
     "primaryKeyword": "générateur de titres de produits e-commerce",
-    "localizedSlug": "générateur-de-titres-de-produits",
+    "localizedSlug": "generateur-de-titres-de-produits",
     "h1": "Générateur de titres de produits e-commerce",
     "metaTitle": "Générateur de Titres de Produits - E-Commerce SEO Web",
     "metaDescription": "Formulez des titres de produits optimisés pour le référencement et l'attractivité sur votre boutique. Outil gratuit en ligne, efficace et sans inscription.",
@@ -3232,10 +3232,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "icebreaker-generator",
+    "canonicalToolId": "affiliate-disclosure-generator",
     "language": "fr",
     "primaryKeyword": "générateur de questions brise-glace",
-    "localizedSlug": "générateur-de-questions-icebreaker",
+    "localizedSlug": "generateur-de-questions-icebreaker",
     "h1": "Générateur de questions brise-glace",
     "metaTitle": "Générateur de Questions Icebreaker - Brise-Glace SEO",
     "metaDescription": "Trouvez des questions brise-glace originales pour dynamiser vos réunions d'équipe et ateliers. Outil gratuit en ligne, amusant et sans inscription.",
@@ -3249,10 +3249,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "riddle-generator",
+    "canonicalToolId": "invoice-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’énigmes et devinettes",
-    "localizedSlug": "générateur-d-énigmes",
+    "localizedSlug": "generateur-d-enigmes",
     "h1": "Générateur d’énigmes et devinettes",
     "metaTitle": "Générateur d'Énigmes - Devinettes et Jeux Web SEO Pro",
     "metaDescription": "Générez des énigmes captivantes et des devinettes avec leurs réponses pour vos jeux et quiz. Outil gratuit en ligne, amusant et sans inscription.",
@@ -3266,10 +3266,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "story-plot-generator",
+    "canonicalToolId": "meeting-agenda-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’intrigues et scénarios",
-    "localizedSlug": "générateur-d-intrigues-de-récit",
+    "localizedSlug": "generateur-d-intrigues-de-recit",
     "h1": "Générateur d’intrigues et scénarios",
     "metaTitle": "Générateur d'Intrigues de Récit - Scénarios SEO Web",
     "metaDescription": "Trouvez des idées de trames narratives et d'intrigues originales pour nourrir vos projets d'écriture. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -3283,10 +3283,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "quest-generator",
+    "canonicalToolId": "citation-generator",
     "language": "fr",
     "primaryKeyword": "générateur de quêtes et missions de jeu",
-    "localizedSlug": "générateur-de-quêtes-rpg",
+    "localizedSlug": "generateur-de-quetes-rpg",
     "h1": "Générateur de quêtes et missions de jeu",
     "metaTitle": "Générateur de Quêtes de RPG - Scénarios de Jeu SEO",
     "metaDescription": "Concevez des quêtes principales et secondaires captivantes avec récompenses pour vos parties de RPG. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -3300,10 +3300,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "npc-generator",
+    "canonicalToolId": "linkedin-post-generator",
     "language": "fr",
     "primaryKeyword": "générateur de pnj",
-    "localizedSlug": "générateur-de-pnj",
+    "localizedSlug": "generateur-de-pnj",
     "h1": "Générateur de PNJ (Personnages Non Joueurs)",
     "metaTitle": "Générateur de PNJ - Personnages Non Joueurs SEO Web",
     "metaDescription": "Générez des PNJ uniques avec rôles, personnalités et motivations pour enrichir vos jeux de rôle. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -3317,10 +3317,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "rpg-character-generator",
+    "canonicalToolId": "facebook-post-generator",
     "language": "fr",
     "primaryKeyword": "générateur de personnages de jeu de rôle",
-    "localizedSlug": "générateur-de-personnages-de-rpg",
+    "localizedSlug": "generateur-de-personnages-de-rpg",
     "h1": "Générateur de personnages de jeu de rôle (JDR)",
     "metaTitle": "Générateur de Personnages de RPG - Fiches Jeu SEO Web",
     "metaDescription": "Créez des fiches de personnages de jeux de rôle complètes avec statistiques, compétences et histoire. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -3334,10 +3334,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "game-idea-generator",
+    "canonicalToolId": "headline-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’idées de jeux vidéo",
-    "localizedSlug": "générateur-d-idées-de-jeux",
+    "localizedSlug": "generateur-d-idees-de-jeux",
     "h1": "Générateur d’idées de jeux vidéo",
     "metaTitle": "Générateur d'Idées de Jeux - Game Design SEO Web Pro",
     "metaDescription": "Découvrez des concepts de gameplay et des idées de jeux vidéo originaux pour vos projets de dev. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -3351,10 +3351,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-choice-generator",
+    "canonicalToolId": "meme-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de choix aléatoires",
-    "localizedSlug": "générateur-de-choix-aléatoire",
+    "localizedSlug": "generateur-de-choix-aleatoire",
     "h1": "Générateur de choix aléatoires",
     "metaTitle": "Générateur de Choix Aléatoire - Décision Web SEO Pro",
     "metaDescription": "Tranchez rapidement vos dilemmes et faites des choix aléatoires impartiaux parmi plusieurs options. Outil gratuit en ligne, rapide et sans inscription.",
@@ -3368,10 +3368,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-date-generator",
+    "canonicalToolId": "startup-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de dates aléatoires",
-    "localizedSlug": "générateur-de-dates-aléatoires",
+    "localizedSlug": "generateur-de-dates-aleatoires",
     "h1": "Générateur de dates aléatoires",
     "metaTitle": "Générateur de Dates Aléatoires - Calendrier SEO Web",
     "metaDescription": "Tirez au sort des dates et plages horaires aléatoires pour vos tests et tirages au sort en ligne. Outil gratuit en ligne, rapide et sans inscription.",
@@ -3385,10 +3385,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-country-generator",
+    "canonicalToolId": "photography-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de pays aléatoires",
-    "localizedSlug": "générateur-de-pays-aléatoires",
+    "localizedSlug": "generateur-de-pays-aleatoires",
     "h1": "Générateur de pays aléatoires",
     "metaTitle": "Générateur de Pays Aléatoires - Tirage Pays SEO Web",
     "metaDescription": "Sélectionnez un pays du monde au hasard pour vos quiz de géographie ou vos idées de voyages. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -3402,10 +3402,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-emoji-generator",
+    "canonicalToolId": "art-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’émojis aléatoires",
-    "localizedSlug": "générateur-d-émojis-aléatoires",
+    "localizedSlug": "generateur-d-emojis-aleatoires",
     "h1": "Générateur d’émojis aléatoires",
     "metaTitle": "Générateur d'Émojis Aléatoires - Émojis Web SEO Pro",
     "metaDescription": "Tirez au sort des émojis et symboles expressifs au hasard pour vos messages et réseaux sociaux. Outil gratuit en ligne, rapide et sans inscription.",
@@ -3419,10 +3419,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "call-to-action-generator",
+    "canonicalToolId": "avatar-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’appels à l’action",
-    "localizedSlug": "générateur-de-call-to-action",
+    "localizedSlug": "generateur-de-call-to-action",
     "h1": "Générateur d’appels à l’action (CTA)",
     "metaTitle": "Générateur de Call-To-Action - Boutons CTA Web SEO",
     "metaDescription": "Formulez des appels à l'action (CTA) persuasifs et incitatifs pour booster les conversions de votre site. Outil gratuit en ligne, efficace et sans inscription.",
@@ -3436,10 +3436,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "ad-copy-generator",
+    "canonicalToolId": "video-game-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de textes publicitaires",
-    "localizedSlug": "générateur-de-textes-publicitaires",
+    "localizedSlug": "generateur-de-textes-publicitaires",
     "h1": "Générateur de textes publicitaires",
     "metaTitle": "Générateur de Textes Publicitaires - Copie Pub SEO",
     "metaDescription": "Concevez des accroches et annonces publicitaires percutantes pour Google Ads, Meta et TikTok Ads. Outil gratuit en ligne, efficace et sans inscription.",
@@ -3453,10 +3453,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "resume-summary-generator",
+    "canonicalToolId": "text-summary-generator",
     "language": "fr",
     "primaryKeyword": "générateur de profil et résumé de cv",
-    "localizedSlug": "générateur-de-résumé-de-cv",
+    "localizedSlug": "generateur-de-resume-de-cv",
     "h1": "Générateur de profil et résumé de CV",
     "metaTitle": "Générateur de Résumé de CV - Profil Professionnel SEO",
     "metaDescription": "Rédigez une présentation et une accroche de CV captivante pour valoriser vos compétences de travail. Outil gratuit en ligne, pratique et sans inscription.",
@@ -3470,10 +3470,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cover-letter-generator",
+    "canonicalToolId": "typography-generator",
     "language": "fr",
     "primaryKeyword": "générateur de lettre de motivation",
-    "localizedSlug": "générateur-de-lettre-de-motivation",
+    "localizedSlug": "generateur-de-lettre-de-motivation",
     "h1": "Générateur de lettre de motivation",
     "metaTitle": "Générateur de Lettre de Motivation - Modèles SEO Web",
     "metaDescription": "Formulez des lettres de motivation personnalisées et convaincantes pour réussir vos candidatures. Outil gratuit en ligne, efficace et sans inscription.",
@@ -3487,10 +3487,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cold-email-generator",
+    "canonicalToolId": "wordart-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’e-mails de prospection",
-    "localizedSlug": "générateur-de-cold-email",
+    "localizedSlug": "generateur-de-cold-email",
     "h1": "Générateur d’e-mails de prospection (Cold Email)",
     "metaTitle": "Générateur de Cold Email - Prospection B2B SEO Web",
     "metaDescription": "Rédigez des e-mails de prospection à froid (cold emailing) ciblés et orientés conversion commerciale. Outil gratuit en ligne, efficace et sans inscription.",
@@ -3504,10 +3504,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "font-pairing-generator",
+    "canonicalToolId": "social-media-post-generator",
     "language": "fr",
     "primaryKeyword": "générateur de combinaisons typographiques",
-    "localizedSlug": "générateur-d-associations-de-polices",
+    "localizedSlug": "generateur-d-associations-de-polices",
     "h1": "Générateur de combinaisons typographiques",
     "metaTitle": "Générateur d'Associations de Polices - Fonts SEO Web",
     "metaDescription": "Découvrez des combinaisons de typographies et polices de caractères parfaitement harmonieuses pour le web. Outil graphique gratuit et sans inscription.",
@@ -3521,10 +3521,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "gradient-generator",
+    "canonicalToolId": "email-subject-generator",
     "language": "fr",
     "primaryKeyword": "générateur de dégradés de couleurs css",
-    "localizedSlug": "générateur-de-dégradés-css",
+    "localizedSlug": "generateur-de-degrades-css",
     "h1": "Générateur de dégradés de couleurs CSS",
     "metaTitle": "Générateur de Dégradés CSS3 - Colors Gradient SEO Web",
     "metaDescription": "Créez des dégradés de couleurs fluides (linéaires et radiaux) et obtenez le code CSS3 instantanément. Outil technique gratuit, précis et sans inscription.",
@@ -3538,10 +3538,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "email-signature-generator",
+    "canonicalToolId": "drag-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de signature d’e-mail professionnelle",
-    "localizedSlug": "générateur-de-signature-d-e-mail",
+    "localizedSlug": "generateur-de-signature-d-e-mail",
     "h1": "Générateur de signature d’e-mail professionnelle",
     "metaTitle": "Générateur de Signature d'E-Mail - HTML Pro SEO Web",
     "metaDescription": "Créez des signatures d'e-mails HTML élégantes avec coordonnées, liens sociaux et logo pour votre boîte mail. Outil gratuit en ligne et sans inscription.",
@@ -3555,10 +3555,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "compliment-generator",
+    "canonicalToolId": "gamertag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de compliments positifs",
-    "localizedSlug": "générateur-de-compliments",
+    "localizedSlug": "generateur-de-compliments",
     "h1": "Générateur de compliments positifs",
     "metaTitle": "Générateur de Compliments - Mots Doux et Positifs SEO",
     "metaDescription": "Générez des compliments chaleureux et des paroles bienveillantes pour apporter de la joie à vos proches. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -3572,10 +3572,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "joke-generator",
+    "canonicalToolId": "dragonborn-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de blagues et devinettes",
-    "localizedSlug": "générateur-de-blagues",
+    "localizedSlug": "generateur-de-blagues",
     "h1": "Générateur de blagues et devinettes",
     "metaTitle": "Générateur de Blagues en Ligne - Humour et Dev SEO",
     "metaDescription": "Découvrez des blagues amusantes, devinettes drôles et jeux de mots hilarants à partager entre amis. Outil gratuit en ligne, amusant et sans inscription.",
@@ -3589,10 +3589,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "would-you-rather-generator",
+    "canonicalToolId": "email-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de dilemmes « tu préfères... »",
-    "localizedSlug": "générateur-de-tu-préfères",
+    "localizedSlug": "generateur-de-tu-preferes",
     "h1": "Générateur de dilemmes « Tu préfères... »",
     "metaTitle": "Générateur de \"Tu Préfères\" - Dilemmes et Jeux SEO",
     "metaDescription": "Générez des dilemmes insolites pour jouer au jeu \"Tu préfères ?\" entre amis ou en soirée. Outil gratuit en ligne, amusant et sans inscription.",
@@ -3606,10 +3606,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "truth-or-dare-generator",
+    "canonicalToolId": "synonym-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’action ou vérité",
-    "localizedSlug": "générateur-de-action-ou-vérité",
+    "localizedSlug": "generateur-de-action-ou-verite",
     "h1": "Générateur d’Action ou Vérité",
     "metaTitle": "Générateur d'Action ou Vérité - Questions Soirée SEO",
     "metaDescription": "Obtenez des défis amusants et des vérités surprenantes pour vos soirées du jeu Action ou Vérité. Outil gratuit en ligne, amusant et sans inscription.",
@@ -3623,10 +3623,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-question-generator",
+    "canonicalToolId": "footnote-generator",
     "language": "fr",
     "primaryKeyword": "générateur de questions aléatoires",
-    "localizedSlug": "générateur-de-questions-aléatoires",
+    "localizedSlug": "generateur-de-questions-aleatoires",
     "h1": "Générateur de questions aléatoires",
     "metaTitle": "Générateur de Questions Aléatoires - Sujets Web SEO",
     "metaDescription": "Tirez au sort des questions de réflexion et sujets de conversation aléatoires pour vos activités. Outil gratuit en ligne, pratique et sans inscription.",
@@ -3640,10 +3640,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-letter-generator",
+    "canonicalToolId": "all-caps-generator",
     "language": "fr",
     "primaryKeyword": "générateur de lettres aléatoires",
-    "localizedSlug": "générateur-de-lettres-aléatoires",
+    "localizedSlug": "generateur-de-lettres-aleatoires",
     "h1": "Générateur de lettres aléatoires",
     "metaTitle": "Générateur de Lettres Aléatoires - Alphabet Web SEO",
     "metaDescription": "Tirez au sort des lettres de l'alphabet au hasard pour vos jeux de mots (Petit Bac, Scrabble, etc.). Outil gratuit en ligne, rapide et sans inscription.",
@@ -3657,10 +3657,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cron-expression-generator",
+    "canonicalToolId": "lowercase-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’expressions cron",
-    "localizedSlug": "générateur-d-expressions-cron",
+    "localizedSlug": "generateur-d-expressions-cron",
     "h1": "Générateur d’expressions Cron",
     "metaTitle": "Générateur d'Expressions Cron - Tâches Planifiées SEO",
     "metaDescription": "Générez et validez des expressions Crontab (Cron syntax) pour automatiser vos tâches serveur sous Linux. Outil technique gratuit et sans inscription.",
@@ -3674,10 +3674,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "regex-generator",
+    "canonicalToolId": "corporate-speak-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’expressions régulières",
-    "localizedSlug": "générateur-de-expressions-régulières",
+    "localizedSlug": "generateur-de-expressions-regulieres",
     "h1": "Générateur d’expressions régulières (Regex)",
     "metaTitle": "Générateur de Regex - Expressions Régulières SEO Web",
     "metaDescription": "Formulez et testez des expressions régulières (Regex) valides pour contrôler la saisie de vos textes. Outil technique gratuit, précis et sans inscription.",
@@ -3691,10 +3691,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "border-radius-generator",
+    "canonicalToolId": "random-word-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’arrondi de bordure css",
-    "localizedSlug": "générateur-de-border-radius-css",
+    "localizedSlug": "generateur-de-border-radius-css",
     "h1": "Générateur d’arrondi de bordure CSS (Border Radius)",
     "metaTitle": "Générateur de Border Radius CSS - Coins Arrondis SEO",
     "metaDescription": "Ajustez les coins arrondis de vos éléments web et obtenez le code CSS border-radius en temps réel. Outil technique gratuit, précis et sans inscription.",
@@ -3708,10 +3708,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "box-shadow-generator",
+    "canonicalToolId": "dialogue-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’ombre portée css",
-    "localizedSlug": "générateur-de-box-shadow-css",
+    "localizedSlug": "generateur-de-box-shadow-css",
     "h1": "Générateur d’ombre portée CSS (Box Shadow)",
     "metaTitle": "Générateur de Box Shadow CSS3 - Ombres Portées SEO",
     "metaDescription": "Créez des ombres portées douces (box-shadow) et personnalisées avec prévisualisation du code CSS3. Outil technique gratuit, précis et sans inscription.",
@@ -3725,10 +3725,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "css-button-generator",
+    "canonicalToolId": "name-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de boutons en css",
-    "localizedSlug": "générateur-de-boutons-css",
+    "localizedSlug": "generateur-de-boutons-css",
     "h1": "Générateur de boutons en CSS",
     "metaTitle": "Générateur de Boutons CSS - Styles et Effets SEO Web",
     "metaDescription": "Concevez des boutons web modernes avec survol, dégradés et ombres et copiez le code HTML/CSS pur. Outil technique gratuit, précis et sans inscription.",
@@ -3742,10 +3742,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "passphrase-generator",
+    "canonicalToolId": "graffiti-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de phrases de passe sécurisées",
-    "localizedSlug": "générateur-de-passphrase",
+    "localizedSlug": "generateur-de-passphrase",
     "h1": "Générateur de phrases de passe sécurisées",
     "metaTitle": "Générateur de Passphrases Sécurisées - Mots de Passe",
     "metaDescription": "Générez des phrases de passe (passphrases) longues, mémorables et ultra sécurisées pour protéger vos comptes. Outil gratuit en ligne et sans inscription.",
@@ -3759,10 +3759,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "midjourney-prompt-generator",
+    "canonicalToolId": "tag-cloud-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prompts pour midjourney",
-    "localizedSlug": "générateur-de-prompts-midjourney",
+    "localizedSlug": "generateur-de-prompts-midjourney",
     "h1": "Générateur de prompts pour Midjourney",
     "metaTitle": "Générateur de Prompts Midjourney - Image IA Web SEO",
     "metaDescription": "Rédigez des prompts détaillés et optimisés avec paramètres pour créer des visuels magnifiques via Midjourney. Outil gratuit en ligne et sans inscription.",
@@ -3776,10 +3776,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "ai-prompt-generator",
+    "canonicalToolId": "blog-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prompts pour ia",
-    "localizedSlug": "générateur-de-prompts-ia",
+    "localizedSlug": "generateur-de-prompts-ia",
     "h1": "Générateur de prompts pour IA",
     "metaTitle": "Générateur de Prompts IA - ChatGPT Claude SEO Web Pro",
     "metaDescription": "Formulez des consignes et prompts structurés pour tirer le meilleur parti des modèles d'IA générative. Outil gratuit en ligne, efficace et sans inscription.",
@@ -3793,10 +3793,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "rgb-generator",
+    "canonicalToolId": "random-height-generator",
     "language": "fr",
     "primaryKeyword": "générateur de valeurs de couleurs rgb",
-    "localizedSlug": "générateur-de-couleurs-rgb",
+    "localizedSlug": "generateur-de-couleurs-rgb",
     "h1": "Générateur de valeurs de couleurs RGB",
     "metaTitle": "Générateur de Code Couleur RGB - Nuancier Web SEO Pro",
     "metaDescription": "Obtenez les valeurs RGB et RGBA exactes de vos couleurs pour vos feuilles de style CSS et projets web. Outil gratuit en ligne, pratique et sans inscription.",
@@ -3810,10 +3810,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "hex-color-generator",
+    "canonicalToolId": "essay-title-generator",
     "language": "fr",
     "primaryKeyword": "générateur de couleurs au format hexadécimal",
-    "localizedSlug": "générateur-de-code-couleur-hex",
+    "localizedSlug": "generateur-de-code-couleur-hex",
     "h1": "Générateur de couleurs au format Hexadécimal",
     "metaTitle": "Générateur de Code Couleur HEX - Palettes Web SEO Pro",
     "metaDescription": "Convertissez et découvrez des codes couleur hexadécimaux (#HEX) valides pour le design web et graphique. Outil gratuit en ligne, rapide et sans inscription.",
@@ -3827,10 +3827,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "color-name-generator",
+    "canonicalToolId": "ao3-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de noms de couleurs",
-    "localizedSlug": "générateur-de-noms-de-couleurs",
+    "localizedSlug": "generateur-de-noms-de-couleurs",
     "h1": "Générateur de noms de couleurs",
     "metaTitle": "Générateur de Noms de Couleurs - Nuances Web SEO Pro",
     "metaDescription": "Trouvez les dénominations et nuances poétiques associées aux codes couleur de vos palettes graphiques. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -3844,10 +3844,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "bio-generator",
+    "canonicalToolId": "stable-diffusion-prompt-generator",
     "language": "fr",
     "primaryKeyword": "générateur de biographie pour profil",
-    "localizedSlug": "générateur-de-bio-personnelle",
+    "localizedSlug": "generateur-de-bio-personnelle",
     "h1": "Générateur de biographie pour profil",
     "metaTitle": "Générateur de Bio Personnelle - Pseudos et Profils",
     "metaDescription": "Concevez une présentation et biographie courte captivante pour vos profils de réseaux sociaux et blogs. Outil gratuit en ligne, efficace et sans inscription.",
@@ -3861,10 +3861,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cipher-generator",
+    "canonicalToolId": "character-prompt-generator",
     "language": "fr",
     "primaryKeyword": "générateur de chiffrements cryptographiques",
-    "localizedSlug": "générateur-de-chiffrement",
+    "localizedSlug": "generateur-de-chiffrement",
     "h1": "Générateur de chiffrements cryptographiques",
     "metaTitle": "Générateur de Chiffrement de Texte - Cryptage SEO Web",
     "metaDescription": "Chiffrez et déchiffrez des messages secrets (César, Vigenère, Rot13) pour vos énigmes et tests de sécurité. Outil gratuit en ligne et sans inscription.",
@@ -3878,10 +3878,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "error-message-generator",
+    "canonicalToolId": "content-brief-generator",
     "language": "fr",
     "primaryKeyword": "générateur de messages d’erreur",
-    "localizedSlug": "générateur-de-messages-d-erreur",
+    "localizedSlug": "generateur-de-messages-d-erreur",
     "h1": "Générateur de messages d’erreur",
     "metaTitle": "Générateur de Messages d'Erreur - Codes Web SEO Pro",
     "metaDescription": "Rédigez des messages d'erreur et retours d'interfaces clairs et utiles pour guider les utilisateurs. Outil gratuit en ligne, pratique et sans inscription.",
@@ -3895,10 +3895,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "gibberish-generator",
+    "canonicalToolId": "press-release-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte charabia",
-    "localizedSlug": "générateur-de-texte-incompréhensible",
+    "localizedSlug": "generateur-de-texte-incomprehensible",
     "h1": "Générateur de texte charabia",
     "metaTitle": "Générateur de Texte Incompréhensible - Gibberish SEO",
     "metaDescription": "Générez du texte absurde, des suites de mots sans queue ni tête ou du charabia pour vos tests d'interface. Outil gratuit en ligne et sans inscription.",
@@ -3912,10 +3912,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "utm-generator",
+    "canonicalToolId": "author-bio-generator",
     "language": "fr",
     "primaryKeyword": "générateur de liens de suivi utm",
-    "localizedSlug": "générateur-de-liens-utm",
+    "localizedSlug": "generateur-de-liens-utm",
     "h1": "Générateur de liens de suivi UTM",
     "metaTitle": "Générateur de Liens UTM - Tracking Google Analytics",
     "metaDescription": "Créez des URLs de suivi UTM précises pour mesurer l'efficacité de vos campagnes marketing dans Analytics. Outil gratuit en ligne, pratique et sans inscription.",
@@ -3929,10 +3929,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "discord-timestamp-generator",
+    "canonicalToolId": "x-post-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’horodatages discord",
-    "localizedSlug": "générateur-de-timestamp-discord",
+    "localizedSlug": "generateur-de-timestamp-discord",
     "h1": "Générateur d’horodatages Discord (Timestamps)",
     "metaTitle": "Générateur de Timestamp Discord - Heures DYN SEO Web",
     "metaDescription": "Formatez des horodatages dynamiques pour afficher les heures et dates adaptées aux fuseaux horaires Discord. Outil gratuit en ligne et sans inscription.",
@@ -3946,10 +3946,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-text-generator",
+    "canonicalToolId": "viral-hook-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte aléatoire",
-    "localizedSlug": "générateur-de-texte-aléatoire",
+    "localizedSlug": "generateur-de-texte-aleatoire",
     "h1": "Générateur de texte aléatoire",
     "metaTitle": "Générateur de Texte Aléatoire - Remplissage Web SEO",
     "metaDescription": "Générez des paragraphes de texte aléatoire et faux-texte de remplissage pour vos maquettes de sites web. Outil gratuit en ligne, pratique et sans inscription.",
@@ -3963,10 +3963,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "leet-text-generator",
+    "canonicalToolId": "content-calendar-generator",
     "language": "fr",
     "primaryKeyword": "générateur de langage leet speak (1337)",
-    "localizedSlug": "générateur-de-texte-leet-speak",
+    "localizedSlug": "generateur-de-texte-leet-speak",
     "h1": "Générateur de langage Leet Speak (1337)",
     "metaTitle": "Générateur de Texte Leet Speak - Convertisseur 1337",
     "metaDescription": "Convertissez vos phrases en écriture Leet Speak (1337 5p34k) avec remplacement de lettres par des chiffres. Outil gratuit en ligne, amusant et sans inscription.",
@@ -3980,10 +3980,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "special-character-generator",
+    "canonicalToolId": "tagline-generator",
     "language": "fr",
     "primaryKeyword": "générateur de caractères spéciaux et symboles",
-    "localizedSlug": "générateur-de-caractères-spéciaux",
+    "localizedSlug": "generateur-de-caracteres-speciaux",
     "h1": "Générateur de caractères spéciaux et symboles",
     "metaTitle": "Générateur de Caractères Spéciaux - Symboles SEO Web",
     "metaDescription": "Trouvez et copiez des caractères spéciaux, symboles typographiques et signes rares en un seul clic. Outil gratuit en ligne, pratique et sans inscription.",
@@ -3997,10 +3997,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-phrase-generator",
+    "canonicalToolId": "text-shadow-generator",
     "language": "fr",
     "primaryKeyword": "générateur de phrases aléatoires",
-    "localizedSlug": "générateur-de-phrases-aléatoires",
+    "localizedSlug": "generateur-de-phrases-aleatoires",
     "h1": "Générateur de phrases aléatoires",
     "metaTitle": "Générateur de Phrases Aléatoires - Idées Web SEO Pro",
     "metaDescription": "Générez des phrases complètes et expressions aléatoires pour stimuler votre écriture ou vos tests web. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4014,10 +4014,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "story-name-generator",
+    "canonicalToolId": "css-grid-generator",
     "language": "fr",
     "primaryKeyword": "générateur de titre de roman et d’histoire",
-    "localizedSlug": "générateur-de-noms-d-histoires",
+    "localizedSlug": "generateur-de-noms-d-histoires",
     "h1": "Générateur de titre de roman et d’histoire",
     "metaTitle": "Générateur de Noms d'Histoires - Titres de Livres SEO",
     "metaDescription": "Trouvez des titres évocateurs et des noms accrocheurs pour vos romans, nouvelles et récits d'aventure. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4031,10 +4031,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "morse-code-generator",
+    "canonicalToolId": "flexbox-generator",
     "language": "fr",
     "primaryKeyword": "convertisseur et traducteur de code morse",
-    "localizedSlug": "générateur-de-code-morse",
+    "localizedSlug": "generateur-de-code-morse",
     "h1": "Convertisseur et traducteur de code Morse",
     "metaTitle": "Générateur de Code Morse - Traducteur Texte SOS SEO",
     "metaDescription": "Convertissez du texte en code Morse et inversement avec traduction instantanée des points et traits. Outil gratuit en ligne, pratique et sans inscription.",
@@ -4048,10 +4048,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "nickname-generator",
+    "canonicalToolId": "html-table-generator",
     "language": "fr",
     "primaryKeyword": "générateur de pseudonyme",
-    "localizedSlug": "générateur-de-surnoms",
+    "localizedSlug": "generateur-de-surnoms",
     "h1": "Générateur de pseudonyme",
     "metaTitle": "Générateur de Surnoms - Pseudos Originaux SEO Web Pro",
     "metaDescription": "Trouvez des surnoms affectueux, drôles ou stylisés pour vos amis, proches et comptes de jeux vidéo. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4065,10 +4065,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "color-palette-generator",
+    "canonicalToolId": "dummy-data-generator",
     "language": "fr",
     "primaryKeyword": "générateur de palettes de couleurs web",
-    "localizedSlug": "générateur-de-palettes-de-couleurs",
+    "localizedSlug": "generateur-de-palettes-de-couleurs",
     "h1": "Générateur de palettes de couleurs web",
     "metaTitle": "Générateur de Palettes de Couleurs - Harmonies SEO",
     "metaDescription": "Créez des combinaisons et assortiments de couleurs harmonieux (complémentaires, analogues) pour vos designs. Outil gratuit en ligne et sans inscription.",
@@ -4082,10 +4082,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dice-roller",
+    "canonicalToolId": "random-address-generator",
     "language": "fr",
     "primaryKeyword": "lanceur de dés virtuels",
-    "localizedSlug": "lanceur-de-dés-virtuel",
+    "localizedSlug": "lanceur-de-des-virtuel",
     "h1": "Lanceur de dés virtuels (JDR & jeux de société)",
     "metaTitle": "Lanceur de Dés Virtuel en Ligne - Tirage D6 D20 SEO",
     "metaDescription": "Lancez des dés virtuels (D4, D6, D10, D20, D100) pour vos jeux de société et parties de jeu de rôle en ligne. Outil gratuit en ligne, pratique et sans inscription.",
@@ -4099,7 +4099,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "coin-flip",
+    "canonicalToolId": "raffle-generator",
     "language": "fr",
     "primaryKeyword": "simulateur de pile ou face",
     "localizedSlug": "pile-ou-face-en-ligne",
@@ -4116,7 +4116,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "json-formatter",
+    "canonicalToolId": "giveaway-generator",
     "language": "fr",
     "primaryKeyword": "formateur et validateur de code json",
     "localizedSlug": "formateur-de-json",
@@ -4133,10 +4133,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "hash-generator",
+    "canonicalToolId": "character-backstory-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’empreintes numériques hash",
-    "localizedSlug": "générateur-de-hash",
+    "localizedSlug": "generateur-de-hash",
     "h1": "Générateur d’empreintes numériques (Hash MD5, SHA-256)",
     "metaTitle": "Générateur de Hash en Ligne - MD5 SHA256 Code SEO Web",
     "metaDescription": "Générez des empreintes numériques et hachages sécurisés (MD5, SHA-1, SHA-256) à partir de vos textes. Outil technique gratuit, précis et sans inscription.",
@@ -4150,10 +4150,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "slug-generator",
+    "canonicalToolId": "worldbuilding-generator",
     "language": "fr",
     "primaryKeyword": "générateur de slugs d’url optimisés",
-    "localizedSlug": "générateur-de-slugs-url",
+    "localizedSlug": "generateur-de-slugs-url",
     "h1": "Générateur de slugs d’URL optimisés",
     "metaTitle": "Générateur de Slugs URL - Nettoyage d'Accents SEO Web",
     "metaDescription": "Transformez vos titres en slugs d'URL optimisés pour le référencement naturel avec suppression d'accents. Outil technique gratuit et sans inscription.",
@@ -4167,10 +4167,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "schema-tag-generator",
+    "canonicalToolId": "roast-generator",
     "language": "fr",
     "primaryKeyword": "générateur de balises schema.org",
-    "localizedSlug": "générateur-de-balises-schema-org",
+    "localizedSlug": "generateur-de-balises-schema-org",
     "h1": "Générateur de balises Schema.org",
     "metaTitle": "Générateur de Balises Schema.org - JSON-LD Web SEO",
     "metaDescription": "Générez du balisage de données structurées (JSON-LD) conforme aux normes Schema.org pour Google. Outil technique gratuit, précis et sans inscription.",
@@ -4184,10 +4184,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "uuid-generator",
+    "canonicalToolId": "quiz-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’identifiant unique uuid",
-    "localizedSlug": "générateur-de-uuid",
+    "localizedSlug": "generateur-de-uuid",
     "h1": "Générateur d’identifiant unique UUID / GUID",
     "metaTitle": "Générateur de UUID v4 en Ligne - Clés Identifiants",
     "metaDescription": "Générez des identifiants uniques universels (UUID v4) aléatoires et sécurisés pour vos applications web. Outil technique gratuit et sans inscription.",
@@ -4201,10 +4201,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "lorem-ipsum-generator",
+    "canonicalToolId": "thesis-statement-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte lorem ipsum",
-    "localizedSlug": "générateur-de-lorem-ipsum",
+    "localizedSlug": "generateur-de-lorem-ipsum",
     "h1": "Générateur de texte Lorem Ipsum",
     "metaTitle": "Générateur de Lorem Ipsum - Faux Texte de Remplissage",
     "metaDescription": "Générez du faux-texte de remplissage Lorem Ipsum en paragraphes, phrases ou mots pour vos maquettes. Outil gratuit en ligne, rapide et sans inscription.",
@@ -4218,10 +4218,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "name-generator",
+    "canonicalToolId": "landing-page-copy-generator",
     "language": "fr",
     "primaryKeyword": "générateur de noms",
-    "localizedSlug": "générateur-de-noms-aléatoires",
+    "localizedSlug": "generateur-de-noms-aleatoires",
     "h1": "Générateur de noms",
     "metaTitle": "Générateur de Noms Aléatoires - Idées de Prénoms SEO",
     "metaDescription": "Générez des prénoms et noms de famille aléatoires pour vos personnages, fictions et profils de tests. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4235,10 +4235,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "serif-generator",
+    "canonicalToolId": "json-schema-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte avec empattements",
-    "localizedSlug": "générateur-de-texte-serif",
+    "localizedSlug": "generateur-de-texte-serif",
     "h1": "Générateur de texte avec empattements (Serif)",
     "metaTitle": "Générateur de Texte Serif - Style de Police Unicode",
     "metaDescription": "Convertissez votre texte avec des polices à empattement élégantes (Serif Unicode) pour vos réseaux. Outil gratuit en ligne, stylisé et sans inscription.",
@@ -4252,10 +4252,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "papyrus-generator",
+    "canonicalToolId": "typescript-type-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte style papyrus ancien",
-    "localizedSlug": "générateur-de-texte-papyrus",
+    "localizedSlug": "generateur-de-texte-papyrus",
     "h1": "Générateur de texte style papyrus ancien",
     "metaTitle": "Générateur de Texte Papyrus - Style Ancien Web SEO",
     "metaDescription": "Convertissez vos textes avec des polices inspirées des papyrus anciens et égyptiens. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4269,10 +4269,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "fantasy-map-generator",
+    "canonicalToolId": "sql-query-generator",
     "language": "fr",
     "primaryKeyword": "générateur de carte fantastique",
-    "localizedSlug": "générateur-de-cartes-de-fantasy",
+    "localizedSlug": "generateur-de-cartes-de-fantasy",
     "h1": "Générateur de carte fantastique (Fantasy Map)",
     "metaTitle": "Générateur de Cartes de Fantasy - Cartographie SEO",
     "metaDescription": "Générez des idées de géographie et cartes de monde imaginaire pour vos romans et jeux de rôle. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4286,10 +4286,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "emo-name-generator",
+    "canonicalToolId": "htaccess-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom emo et alternatif",
-    "localizedSlug": "générateur-de-noms-emo",
+    "localizedSlug": "generateur-de-noms-emo",
     "h1": "Générateur de nom emo et alternatif",
     "metaTitle": "Générateur de Noms Emo - Pseudos Alternatifs SEO Web",
     "metaDescription": "Trouvez des noms et pseudos emo sombres et mélancoliques pour vos profils et réseaux sociaux. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4303,10 +4303,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "racehorse-name-generator",
+    "canonicalToolId": "pwa-manifest-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de cheval de course",
-    "localizedSlug": "générateur-de-noms-de-chevaux-de-course",
+    "localizedSlug": "generateur-de-noms-de-chevaux-de-course",
     "h1": "Générateur de nom de cheval de course",
     "metaTitle": "Générateur de Noms de Chevaux de Course - Noms SEO Web",
     "metaDescription": "Trouvez des noms élégants et prestigieux pour chevaux de course, poulains et pur-sang. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4320,10 +4320,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "victorian-name-generator",
+    "canonicalToolId": "form-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d’époque victorienne",
-    "localizedSlug": "générateur-de-noms-victoriens",
+    "localizedSlug": "generateur-de-noms-victoriens",
     "h1": "Générateur de nom d’époque victorienne",
     "metaTitle": "Générateur de Noms Victoriens - Prénoms Anciens SEO",
     "metaDescription": "Générez des prénoms et noms de famille de l'époque victorienne pour vos romans historiques. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4337,10 +4337,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "iupac-name-generator",
+    "canonicalToolId": "jwt-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de molécule chimique (IUPAC)",
-    "localizedSlug": "générateur-de-noms-iupac",
+    "localizedSlug": "generateur-de-noms-iupac",
     "h1": "Générateur de nom de molécule chimique (IUPAC)",
     "metaTitle": "Générateur de Noms IUPAC - Nomenclature Chimie SEO",
     "metaDescription": "Générez des dénominations chimiques conformes aux règles de la nomenclature IUPAC. Outil scientifique gratuit, précis et sans inscription.",
@@ -4354,10 +4354,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "ancient-egyptian-inspired-name-generator",
+    "canonicalToolId": "random-id-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom égyptien ancien",
-    "localizedSlug": "générateur-de-noms-égyptiens-anciens",
+    "localizedSlug": "generateur-de-noms-egyptiens-anciens",
     "h1": "Générateur de nom égyptien ancien",
     "metaTitle": "Générateur de Noms Égyptiens Anciens - Pharaons SEO",
     "metaDescription": "Inspirez-vous de l'Égypte antique pour générer des noms de pharaons et personnages légendaires. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4371,10 +4371,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "ancient-greek-inspired-name-generator",
+    "canonicalToolId": "flashcard-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom grec ancien",
-    "localizedSlug": "générateur-de-noms-grec-anciens",
+    "localizedSlug": "generateur-de-noms-grec-anciens",
     "h1": "Générateur de nom grec ancien",
     "metaTitle": "Générateur de Noms Grecs Anciens - Mythologie SEO Web",
     "metaDescription": "Découvrez des noms inspirés de la Grèce antique et de la mythologie grecque pour vos fictions. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4388,10 +4388,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "typewriter-text-generator",
+    "canonicalToolId": "study-plan-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte style machine à écrire",
-    "localizedSlug": "générateur-de-texte-machine-à-écrire",
+    "localizedSlug": "generateur-de-texte-machine-a-ecrire",
     "h1": "Générateur de texte style machine à écrire",
     "metaTitle": "Générateur de Texte Machine à Écrire - Vintage SEO",
     "metaDescription": "Transformez vos phrases avec l'esthétique rétro d'une véritable machine à écrire vintage. Outil gratuit en ligne, stylisé et sans inscription.",
@@ -4405,10 +4405,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "tattoo-name-generator",
+    "canonicalToolId": "lesson-plan-generator",
     "language": "fr",
     "primaryKeyword": "générateur de style de texte pour tatouage",
-    "localizedSlug": "générateur-de-noms-de-tatouage",
+    "localizedSlug": "generateur-de-noms-de-tatouage",
     "h1": "Générateur de style de texte pour tatouage",
     "metaTitle": "Générateur de Noms de Tatouage - Idées Tatouages Web",
     "metaDescription": "Découvrez des styles typographiques et idées de mots pour personnaliser votre prochain tatouage. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4422,10 +4422,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "sports-team-name-generator",
+    "canonicalToolId": "research-question-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d’équipe sportive",
-    "localizedSlug": "générateur-de-noms-d-équipe-de-sport",
+    "localizedSlug": "generateur-de-noms-d-equipe-de-sport",
     "h1": "Générateur de nom d’équipe sportive",
     "metaTitle": "Générateur de Noms d'Équipe de Sport - Noms SEO Web",
     "metaDescription": "Trouvez des noms d'équipes sportives percutants et intimidants pour vos clubs et tournois. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4439,10 +4439,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "spaceship-name-generator",
+    "canonicalToolId": "bibliography-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de vaisseau spatial",
-    "localizedSlug": "générateur-de-noms-de-vaisseaux-spatiaux",
+    "localizedSlug": "generateur-de-noms-de-vaisseaux-spatiaux",
     "h1": "Générateur de nom de vaisseau spatial",
     "metaTitle": "Générateur de Noms de Vaisseaux Spatiaux - SF SEO Web",
     "metaDescription": "Générez des noms de vaisseaux spatiaux futuristes et croiseurs galactiques pour vos histoires de SF. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4456,10 +4456,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "ship-name-generator",
+    "canonicalToolId": "essay-topic-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de navire",
-    "localizedSlug": "générateur-de-noms-de-bateaux",
+    "localizedSlug": "generateur-de-noms-de-bateaux",
     "h1": "Générateur de nom de navire (bateau & fiction)",
     "metaTitle": "Générateur de Noms de Bateaux - Navires et Navire SEO",
     "metaDescription": "Inspirez-vous de grands marins pour trouver le nom idéal de votre bateau ou navire de légende. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4473,10 +4473,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "salon-name-generator",
+    "canonicalToolId": "multiple-choice-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de salon de coiffure",
-    "localizedSlug": "générateur-de-noms-de-salon-de-coiffure",
+    "localizedSlug": "generateur-de-noms-de-salon-de-coiffure",
     "h1": "Générateur de nom de salon de coiffure et beauté",
     "metaTitle": "Générateur de Noms de Salon de Coiffure - Beauté SEO",
     "metaDescription": "Trouvez des noms élégants et accrocheurs pour votre salon de coiffure ou institut de beauté. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4490,10 +4490,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "robot-name-generator",
+    "canonicalToolId": "product-bullet-points-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de robot",
-    "localizedSlug": "générateur-de-noms-de-robots",
+    "localizedSlug": "generateur-de-noms-de-robots",
     "h1": "Générateur de nom de robot",
     "metaTitle": "Générateur de Noms de Robots - Cyborgs et IA SEO Web",
     "metaDescription": "Générez des noms de robots, androïdes et intelligences artificielles pour vos récits de SF. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4507,10 +4507,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "retro-text-generator",
+    "canonicalToolId": "amazon-listing-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte rétro",
-    "localizedSlug": "générateur-de-texte-rétro",
+    "localizedSlug": "generateur-de-texte-retro",
     "h1": "Générateur de texte rétro",
     "metaTitle": "Générateur de Texte Rétro - Polices Synthwave SEO Web",
     "metaDescription": "Créez des titres rétro style années 80 (synthwave, néon) pour vos projets graphiques web. Outil gratuit en ligne, stylisé et sans inscription.",
@@ -4524,10 +4524,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "playlist-name-generator",
+    "canonicalToolId": "etsy-listing-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de playlist",
-    "localizedSlug": "générateur-de-noms-de-playlist",
+    "localizedSlug": "generateur-de-noms-de-playlist",
     "h1": "Générateur de nom de playlist",
     "metaTitle": "Générateur de Noms de Playlist - Titres Musique SEO",
     "metaDescription": "Trouvez des titres de playlists Spotify et Apple Music originaux selon votre humeur musicale. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4541,10 +4541,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "pixel-text-generator",
+    "canonicalToolId": "customer-persona-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte pixel art",
-    "localizedSlug": "générateur-de-texte-pixel-art",
+    "localizedSlug": "generateur-de-texte-pixel-art",
     "h1": "Générateur de texte pixel art",
     "metaTitle": "Générateur de Texte Pixel Art - Style Retro Game SEO",
     "metaDescription": "Transformez votre texte en écriture pixel art rétro 8-bit inspirée des jeux vidéo d'époque. Outil gratuit en ligne, stylisé et sans inscription.",
@@ -4558,10 +4558,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "pet-name-generator",
+    "canonicalToolId": "youtube-hook-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d’animal de compagnie",
-    "localizedSlug": "générateur-de-noms-d-animaux",
+    "localizedSlug": "generateur-de-noms-d-animaux",
     "h1": "Générateur de nom d’animal de compagnie",
     "metaTitle": "Générateur de Noms d'Animaux - Idées de Prénoms SEO",
     "metaDescription": "Trouvez des noms mignons et originaux pour vos chiens, chats, rongeurs et autres compagnons. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4575,10 +4575,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "pen-name-generator",
+    "canonicalToolId": "linkedin-summary-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de plume",
-    "localizedSlug": "générateur-de-nom-de-plume",
+    "localizedSlug": "generateur-de-nom-de-plume",
     "h1": "Générateur de nom de plume (Pseudonyme littéraire)",
     "metaTitle": "Générateur de Nom de Plume - Pseudos d'Auteurs SEO",
     "metaDescription": "Créez un nom de plume mystérieux et professionnel pour signer vos romans et publications. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4592,10 +4592,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "monster-name-generator",
+    "canonicalToolId": "sales-email-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de monstre",
-    "localizedSlug": "générateur-de-noms-de-monstres",
+    "localizedSlug": "generateur-de-noms-de-monstres",
     "h1": "Générateur de nom de monstre",
     "metaTitle": "Générateur de Noms de Monstres - Créatures RPG SEO",
     "metaDescription": "Générez des noms de monstres effrayants et de créatures fantastiques pour vos jeux et récits. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4609,10 +4609,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "mermaid-name-generator",
+    "canonicalToolId": "follow-up-email-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de sirène",
-    "localizedSlug": "générateur-de-noms-de-sirènes",
+    "localizedSlug": "generateur-de-noms-de-sirenes",
     "h1": "Générateur de nom de sirène",
     "metaTitle": "Générateur de Noms de Sirènes - Noms Féeriques SEO",
     "metaDescription": "Découvrez de magnifiques noms de sirènes et créatures marines féeriques pour vos histoires. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4626,10 +4626,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "invisible-text-generator",
+    "canonicalToolId": "image-alt-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte invisible",
-    "localizedSlug": "générateur-de-texte-invisible",
+    "localizedSlug": "generateur-de-texte-invisible",
     "h1": "Générateur de texte invisible (Espace vierge Unicode)",
     "metaTitle": "Générateur de Texte Invisible - Espace Blanc Unicode",
     "metaDescription": "Générez des caractères invisibles et espaces vides Unicode (Blank text) à copier-coller facilement. Outil gratuit en ligne, pratique et sans inscription.",
@@ -4643,10 +4643,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "hotel-name-generator",
+    "canonicalToolId": "video-prompt-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d’hôtel et hébergement",
-    "localizedSlug": "générateur-de-noms-d-hôtels",
+    "localizedSlug": "generateur-de-noms-d-hotels",
     "h1": "Générateur de nom d’hôtel et hébergement",
     "metaTitle": "Générateur de Noms d'Hôtels - Idées de Résidences SEO",
     "metaDescription": "Trouvez des noms prestigieux et évocateurs pour votre hôtel, gîte ou résidence de vacances. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4660,10 +4660,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "gnome-name-generator",
+    "canonicalToolId": "productivity-prompt-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de gnome",
-    "localizedSlug": "générateur-de-noms-de-gnomes",
+    "localizedSlug": "generateur-de-noms-de-gnomes",
     "h1": "Générateur de nom de gnome",
     "metaTitle": "Générateur de Noms de Gnomes - Personnages RPG SEO",
     "metaDescription": "Générez des noms de gnomes farfelus et ingénieux pour vos univers de fantasy et jeux de rôle. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4677,10 +4677,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "funny-name-generator",
+    "canonicalToolId": "brand-kit-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom rigolo",
-    "localizedSlug": "générateur-de-noms-drôles",
+    "localizedSlug": "generateur-de-noms-droles",
     "h1": "Générateur de nom rigolo",
     "metaTitle": "Générateur de Noms Drôles - Pseudos Hilarants SEO Web",
     "metaDescription": "Tirez au sort des noms hilarants, jeux de mots et pseudos amusants pour divertir vos amis. Outil gratuit en ligne, amusant et sans inscription.",
@@ -4694,10 +4694,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "food-truck-name-generator",
+    "canonicalToolId": "random-list-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de food truck",
-    "localizedSlug": "générateur-de-noms-de-food-truck",
+    "localizedSlug": "generateur-de-noms-de-food-truck",
     "h1": "Générateur de nom de food truck",
     "metaTitle": "Générateur de Noms de Food Truck - Idées Street Food",
     "metaDescription": "Découvrez des noms originaux et appétissants pour lancer votre concept de food truck ou street food. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4711,10 +4711,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "farm-name-generator",
+    "canonicalToolId": "random-color-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de ferme et domaine",
-    "localizedSlug": "générateur-de-noms-de-fermes",
+    "localizedSlug": "generateur-de-noms-de-fermes",
     "h1": "Générateur de nom de ferme et domaine",
     "metaTitle": "Générateur de Noms de Fermes - Domaines Agricoles SEO",
     "metaDescription": "Trouvez des noms authentiques pour votre ferme, domaine agricole ou exploitation biologique. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4728,10 +4728,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "fake-text-generator",
+    "canonicalToolId": "dnd-character-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte de remplissage",
-    "localizedSlug": "générateur-de-faux-texte",
+    "localizedSlug": "generateur-de-faux-texte",
     "h1": "Générateur de texte de remplissage (Faux Texte)",
     "metaTitle": "Générateur de Faux Texte - Paragraphes Web SEO Pro",
     "metaDescription": "Générez du faux-texte de remplissage propre pour tester la mise en page de vos sites et maquettes. Outil gratuit en ligne, pratique et sans inscription.",
@@ -4745,10 +4745,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dog-name-generator",
+    "canonicalToolId": "dungeon-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de chien",
-    "localizedSlug": "générateur-de-noms-de-chiens",
+    "localizedSlug": "generateur-de-noms-de-chiens",
     "h1": "Générateur de nom de chien",
     "metaTitle": "Générateur de Noms de Chiens - Idées Toutous SEO Web",
     "metaDescription": "Trouvez le prénom parfait pour votre chiot selon sa race, son caractère et sa lettre de l'année. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4762,10 +4762,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dj-name-generator",
+    "canonicalToolId": "worksheet-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de dj",
-    "localizedSlug": "générateur-de-noms-de-dj",
+    "localizedSlug": "generateur-de-noms-de-dj",
     "h1": "Générateur de nom de DJ",
     "metaTitle": "Générateur de Noms de DJ - Pseudos d'Artistes SEO Web",
     "metaDescription": "Trouvez des noms d'artistes et pseudos de DJ percutants pour vos projets de musique électronique. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4779,10 +4779,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "display-name-generator",
+    "canonicalToolId": "rubric-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d’affichage",
-    "localizedSlug": "générateur-de-noms-d-affichage",
+    "localizedSlug": "generateur-de-noms-d-affichage",
     "h1": "Générateur de nom d’affichage (Display Name)",
     "metaTitle": "Générateur de Noms d'Affichage - Pseudos Web SEO Pro",
     "metaDescription": "Concevez des noms d'affichage originaux pour vos profils sociaux, forums et applications web. Outil gratuit en ligne, pratique et sans inscription.",
@@ -4796,10 +4796,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dinosaur-name-generator",
+    "canonicalToolId": "assignment-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de dinosaure",
-    "localizedSlug": "générateur-de-noms-de-dinosaures",
+    "localizedSlug": "generateur-de-noms-de-dinosaures",
     "h1": "Générateur de nom de dinosaure",
     "metaTitle": "Générateur de Noms de Dinosaures - Espèces SEO Web",
     "metaDescription": "Générez des noms de dinosaures scientifiquement crédibles ou imaginaires pour vos créations. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4813,10 +4813,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cute-text-generator",
+    "canonicalToolId": "graphql-query-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte mignon",
-    "localizedSlug": "générateur-de-texte-mignon",
+    "localizedSlug": "generateur-de-texte-mignon",
     "h1": "Générateur de texte mignon",
     "metaTitle": "Générateur de Texte Mignon - Polices Mignonnes SEO",
     "metaDescription": "Embellissez vos messages avec des symboles mignons et écritures kawaii pour les réseaux sociaux. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4830,10 +4830,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cursive-name-generator",
+    "canonicalToolId": "mock-api-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prénom en écriture cursive",
-    "localizedSlug": "générateur-de-noms-en-cursive",
+    "localizedSlug": "generateur-de-noms-en-cursive",
     "h1": "Générateur de prénom en écriture cursive",
     "metaTitle": "Générateur de Noms en Cursive - Calligraphie Web SEO",
     "metaDescription": "Convertissez votre nom dans une police cursive élégante style écriture manuscrite calligraphique. Outil gratuit en ligne, stylisé et sans inscription.",
@@ -4847,10 +4847,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cowboy-name-generator",
+    "canonicalToolId": "wheel-spinner-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de cowboy",
-    "localizedSlug": "générateur-de-noms-de-cow-boys",
+    "localizedSlug": "generateur-de-noms-de-cow-boys",
     "h1": "Générateur de nom de cowboy",
     "metaTitle": "Générateur de Noms de Cow-Boys - Far West Noms SEO",
     "metaDescription": "Générez des noms de cow-boys légendaires et hors-la-loi du Far West pour vos récits de western. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4864,10 +4864,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cocktail-name-generator",
+    "canonicalToolId": "product-benefits-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de cocktail",
-    "localizedSlug": "générateur-de-noms-de-cocktails",
+    "localizedSlug": "generateur-de-noms-de-cocktails",
     "h1": "Générateur de nom de cocktail",
     "metaTitle": "Générateur de Noms de Cocktails - Boissons Web SEO",
     "metaDescription": "Trouvez des noms captivants pour vos créations de cocktails et cartes de boissons de bar. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4881,10 +4881,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "club-name-generator",
+    "canonicalToolId": "pattern-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de club ou d’association",
-    "localizedSlug": "générateur-de-noms-de-clubs",
+    "localizedSlug": "generateur-de-noms-de-clubs",
     "h1": "Générateur de nom de club ou d’association",
     "metaTitle": "Générateur de Noms de Clubs - Associations Web SEO",
     "metaDescription": "Trouvez des noms rassembleurs pour vos clubs de lecture, associations et groupements passionnés. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4898,10 +4898,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "channel-name-generator",
+    "canonicalToolId": "blob-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de chaîne youtube",
-    "localizedSlug": "générateur-de-nom-de-chaîne",
+    "localizedSlug": "generateur-de-nom-de-chaine",
     "h1": "Générateur de nom de chaîne YouTube",
     "metaTitle": "Générateur de Nom de Chaîne - YouTube Twitch SEO Web",
     "metaDescription": "Découvrez des idées de noms de chaînes YouTube ou Twitch accrocheurs pour lancer votre marque. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4915,10 +4915,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "castle-name-generator",
+    "canonicalToolId": "wave-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de château",
-    "localizedSlug": "générateur-de-noms-de-châteaux",
+    "localizedSlug": "generateur-de-noms-de-chateaux",
     "h1": "Générateur de nom de château",
     "metaTitle": "Générateur de Noms de Châteaux - Forteresses SEO Web",
     "metaDescription": "Générez des noms de châteaux médiévaux et de forteresses majestueuses pour vos univers fantasy. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -4932,10 +4932,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "bubble-text-generator",
+    "canonicalToolId": "viking-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte dans des bulles",
-    "localizedSlug": "générateur-de-texte-à-bulles",
+    "localizedSlug": "generateur-de-texte-a-bulles",
     "h1": "Générateur de texte dans des bulles (Bubble Text)",
     "metaTitle": "Générateur de Texte à Bulles - Caractères SEO Web Pro",
     "metaDescription": "Convertissez vos textes avec des caractères encerclés (Bubble text) à copier-coller sur le web. Outil gratuit en ligne, stylisé et sans inscription.",
@@ -4949,10 +4949,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "brat-text-generator",
+    "canonicalToolId": "wizard-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte style brat",
-    "localizedSlug": "générateur-de-texte-brat",
+    "localizedSlug": "generateur-de-texte-brat",
     "h1": "Générateur de texte style Brat",
     "metaTitle": "Générateur de Texte Brat - Style Tendance Web SEO Pro",
     "metaDescription": "Adoptez l'esthétique minimaliste et verte du style Brat pour personnaliser vos visuels texte. Outil gratuit en ligne, tendance et sans inscription.",
@@ -4966,10 +4966,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "big-text-generator",
+    "canonicalToolId": "villain-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de grands caractères",
-    "localizedSlug": "générateur-de-grand-texte",
+    "localizedSlug": "generateur-de-grand-texte",
     "h1": "Générateur de grands caractères (Grand Texte)",
     "metaTitle": "Générateur de Grand Texte - Grosses Lettres SEO Web",
     "metaDescription": "Créez des titres en grosses lettres et caractères géants visibles pour vos publications web. Outil gratuit en ligne, pratique et sans inscription.",
@@ -4983,10 +4983,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "barbarian-name-generator",
+    "canonicalToolId": "werewolf-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de barbare",
-    "localizedSlug": "générateur-de-noms-de-barbares",
+    "localizedSlug": "generateur-de-noms-de-barbares",
     "h1": "Générateur de nom de barbare",
     "metaTitle": "Générateur de Noms de Barbares - Guerriers RPG SEO",
     "metaDescription": "Générez des noms de guerriers barbares redoutables pour vos personnages de Donjons et Dragons. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5000,10 +5000,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "bakery-name-generator",
+    "canonicalToolId": "japanese-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de boulangerie",
-    "localizedSlug": "générateur-de-noms-de-boulangerie",
+    "localizedSlug": "generateur-de-noms-de-boulangerie",
     "h1": "Générateur de nom de boulangerie",
     "metaTitle": "Générateur de Noms de Boulangerie - Pâtisserie SEO",
     "metaDescription": "Trouvez des noms gourmands et chaleureux pour votre boulangerie, pâtisserie ou salon de thé. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5017,10 +5017,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "app-name-generator",
+    "canonicalToolId": "korean-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d’application mobile",
-    "localizedSlug": "générateur-de-nom-d-application",
+    "localizedSlug": "generateur-de-nom-d-application",
     "h1": "Générateur de nom d’application mobile",
     "metaTitle": "Générateur de Nom d'Application - Idées Apps SEO Web",
     "metaDescription": "Trouvez des noms d'applications mobiles mémorables et disponibles pour iOS et Google Play Store. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5034,10 +5034,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "trademark-friendly-name-generator",
+    "canonicalToolId": "city-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de marque libre de droits",
-    "localizedSlug": "générateur-de-noms-libres-de-droits",
+    "localizedSlug": "generateur-de-noms-libres-de-droits",
     "h1": "Générateur de nom de marque libre de droits",
     "metaTitle": "Générateur de Noms Libres de Droits - Marques SEO Web",
     "metaDescription": "Générez des noms de marque originaux et protégeables commercialement sans risque de conflit. Outil gratuit en ligne, pratique et sans inscription.",
@@ -5051,10 +5051,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "team-name-generator-using-keywords",
+    "canonicalToolId": "restaurant-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d’équipe par mots-clés",
-    "localizedSlug": "générateur-de-noms-d-équipe-par-mots-clés",
+    "localizedSlug": "generateur-de-noms-d-equipe-par-mots-cles",
     "h1": "Générateur de nom d’équipe par mots-clés",
     "metaTitle": "Générateur de Noms d'Équipe par Mots-Clés SEO Web Pro",
     "metaDescription": "Créez des noms d'équipe personnalisés à partir de vos propres mots-clés et thématiques fortes. Outil gratuit en ligne, efficace et sans inscription.",
@@ -5068,10 +5068,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "forest-name-generator",
+    "canonicalToolId": "coffee-shop-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de forêt",
-    "localizedSlug": "générateur-de-noms-de-forêts",
+    "localizedSlug": "generateur-de-noms-de-forets",
     "h1": "Générateur de nom de forêt",
     "metaTitle": "Générateur de Noms de Forêts - Bois Mystiques SEO Web",
     "metaDescription": "Générez des noms de forêts anciennes et de bois mystiques enchantés pour vos aventures fantasy. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5085,10 +5085,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "mountain-name-generator",
+    "canonicalToolId": "album-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de montagne",
-    "localizedSlug": "générateur-de-noms-de-montagnes",
+    "localizedSlug": "generateur-de-noms-de-montagnes",
     "h1": "Générateur de nom de montagne",
     "metaTitle": "Générateur de Noms de Montagnes - Pics Randonnée SEO",
     "metaDescription": "Trouvez des noms de montagnes, sommets et pics majesteux pour vos cartes et romans d'aventure. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5102,10 +5102,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "name-pronunciation-generator",
+    "canonicalToolId": "book-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de guide de prononciation de prénoms",
-    "localizedSlug": "générateur-de-prononciation-de-nom",
+    "localizedSlug": "generateur-de-prononciation-de-nom",
     "h1": "Générateur de guide de prononciation de prénoms",
     "metaTitle": "Générateur de Prononciation de Nom - Audio SEO Web",
     "metaDescription": "Écoutez et vérifiez la prononciation exacte de n'importe quel prénom ou nom de famille. Outil gratuit en ligne, pratique et sans inscription.",
@@ -5119,10 +5119,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "disc-jockey-names-generator",
+    "canonicalToolId": "movie-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de disc jockey",
-    "localizedSlug": "générateur-de-noms-de-disc-jockey",
+    "localizedSlug": "generateur-de-noms-de-disc-jockey",
     "h1": "Générateur de nom de Disc Jockey (DJ)",
     "metaTitle": "Générateur de Noms de Disc-Jockey - Pseudos DJ SEO",
     "metaDescription": "Trouvez des noms de disc-jockey et pseudos d'artistes originaux pour mixer en club ou festival. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5136,10 +5136,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "performer-names-generator",
+    "canonicalToolId": "receipt-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d’artiste de scène",
-    "localizedSlug": "générateur-de-noms-d-artistes-de-scène",
+    "localizedSlug": "generateur-de-noms-d-artistes-de-scene",
     "h1": "Générateur de nom d’artiste de scène",
     "metaTitle": "Générateur de Noms d'Artistes de Scène - Pseudos SEO",
     "metaDescription": "Générez des pseudos de scène marquants pour comédiens, chanteurs et artistes du spectacle. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5153,10 +5153,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "name-combination-generator",
+    "canonicalToolId": "nda-generator",
     "language": "fr",
     "primaryKeyword": "générateur de combinaison de prénoms",
-    "localizedSlug": "générateur-de-combinaison-de-prénoms",
+    "localizedSlug": "generateur-de-combinaison-de-prenoms",
     "h1": "Générateur de combinaison de prénoms",
     "metaTitle": "Générateur de Combinaison de Prénoms - Mélange SEO",
     "metaDescription": "Fusionnez deux prénoms ou mots pour créer une combinaison originale et harmonieuse en ligne. Outil gratuit en ligne, amusant et sans inscription.",
@@ -5170,10 +5170,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "nickname-generator-based-on-name",
+    "canonicalToolId": "newsletter-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de surnom à partir d’un prénom",
-    "localizedSlug": "générateur-de-surnom-à-partir-du-prénom",
+    "localizedSlug": "generateur-de-surnom-a-partir-du-prenom",
     "h1": "Générateur de surnom à partir d’un prénom",
     "metaTitle": "Générateur de Surnom par Prénom - Pseudos Web SEO Pro",
     "metaDescription": "Trouvez des surnoms amusants et mignons basés directement sur la sonorité de votre prénom. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5187,10 +5187,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "baby-name-generator-with-last-name",
+    "canonicalToolId": "price-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prénom de bébé avec nom de famille",
-    "localizedSlug": "générateur-de-prénom-bébé-avec-nom-de-famille",
+    "localizedSlug": "generateur-de-prenom-bebe-avec-nom-de-famille",
     "h1": "Générateur de prénom de bébé avec nom de famille",
     "metaTitle": "Générateur de Prénom Bébé avec Nom de Famille SEO Web",
     "metaDescription": "Testez l'harmonie sonore entre des prénoms de bébé et votre nom de famille pour faire le meilleur choix. Outil gratuit en ligne et sans inscription.",
@@ -5204,10 +5204,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "last-name-and-first-name-generator",
+    "canonicalToolId": "product-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prénom et nom de famille",
-    "localizedSlug": "générateur-de-nom-et-prénom-complet",
+    "localizedSlug": "generateur-de-nom-et-prenom-complet",
     "h1": "Générateur de prénom et nom de famille",
     "metaTitle": "Générateur de Nom et Prénom Complet - Identité SEO",
     "metaDescription": "Générez des associations complètes de prénoms et noms de famille pour vos personnages et tests. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5221,10 +5221,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "scifi-name-generator",
+    "canonicalToolId": "clothing-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de science-fiction",
-    "localizedSlug": "générateur-de-noms-de-science-fiction",
+    "localizedSlug": "generateur-de-noms-de-science-fiction",
     "h1": "Générateur de nom de science-fiction",
     "metaTitle": "Générateur de Noms de Science-Fiction - SF SEO Web",
     "metaDescription": "Découvrez des noms futuristes pour personnages, planètes et espèces extraterrestres de SF. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5238,10 +5238,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "project-name-generator-keywords",
+    "canonicalToolId": "minutes-of-meeting-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de projet par mots-clés",
-    "localizedSlug": "générateur-de-nom-de-projet-par-mots-clés",
+    "localizedSlug": "generateur-de-nom-de-projet-par-mots-cles",
     "h1": "Générateur de nom de projet par mots-clés",
     "metaTitle": "Générateur de Nom de Projet par Mots-Clés SEO Web Pro",
     "metaDescription": "Générez des noms de projets innovants et professionnels à partir de vos mots-clés d'entreprise. Outil gratuit en ligne, pratique et sans inscription.",
@@ -5255,10 +5255,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "goth-name-generator",
+    "canonicalToolId": "event-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom gothique",
-    "localizedSlug": "générateur-de-noms-gothiques",
+    "localizedSlug": "generateur-de-noms-gothiques",
     "h1": "Générateur de nom gothique",
     "metaTitle": "Générateur de Noms Gothiques - Pseudos Sombre SEO Web",
     "metaDescription": "Trouvez des noms et pseudos gothiques poétiques et sombres pour vos profils et personnages. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5272,10 +5272,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cyberpunk-name-generator",
+    "canonicalToolId": "college-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom cyberpunk",
-    "localizedSlug": "générateur-de-noms-cyberpunk",
+    "localizedSlug": "generateur-de-noms-cyberpunk",
     "h1": "Générateur de nom cyberpunk",
     "metaTitle": "Générateur de Noms Cyberpunk - Pseudos Futurs SEO Web",
     "metaDescription": "Générez des pseudos cyberpunk rebelles et futuristes pour vos personnages de jeux de rôle et fictions. Outil gratuit en ligne et sans inscription.",
@@ -5289,10 +5289,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "anagram-of-name-generator",
+    "canonicalToolId": "diner-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’anagramme de prénom",
-    "localizedSlug": "générateur-d-anagramme-de-nom",
+    "localizedSlug": "generateur-d-anagramme-de-nom",
     "h1": "Générateur d’anagramme de prénom",
     "metaTitle": "Générateur d'Anagramme de Nom - Pseudos Cachés SEO",
     "metaDescription": "Mélangez les lettres de votre nom ou prénom pour trouver un pseudonyme anagramme original. Outil gratuit en ligne, amusant et sans inscription.",
@@ -5306,10 +5306,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "secret-santa-name-generator",
+    "canonicalToolId": "flower-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tirage secret santa",
-    "localizedSlug": "générateur-de-tirage-secret-santa",
+    "localizedSlug": "generateur-de-tirage-secret-santa",
     "h1": "Générateur de tirage Secret Santa (Père Noël Secret)",
     "metaTitle": "Générateur de Tirage Secret Santa - Noel Web SEO Pro",
     "metaDescription": "Organisez un tirage au sort Secret Santa entre amis ou collègues pour échanger des cadeaux de Noël. Outil gratuit en ligne, rapide et sans inscription.",
@@ -5323,10 +5323,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "warrior-name-generator",
+    "canonicalToolId": "newspaper-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de guerrier",
-    "localizedSlug": "générateur-de-noms-de-guerriers",
+    "localizedSlug": "generateur-de-noms-de-guerriers",
     "h1": "Générateur de nom de guerrier",
     "metaTitle": "Générateur de Noms de Guerriers - Combattants SEO Web",
     "metaDescription": "Générez des noms de guerriers valeureux et de combattants légendaires pour vos récits et jeux. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5340,10 +5340,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "tag-team-name-generator",
+    "canonicalToolId": "plant-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d’équipe de catch",
-    "localizedSlug": "générateur-de-noms-d-équipe-de-catch",
+    "localizedSlug": "generateur-de-noms-d-equipe-de-catch",
     "h1": "Générateur de nom d’équipe de catch",
     "metaTitle": "Générateur de Noms d'Équipe de Catch - Duos SEO Web",
     "metaDescription": "Trouvez des noms accrocheurs et intimidants pour vos duos de catcheurs et équipes en compétition. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5357,10 +5357,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "email-tag-generator",
+    "canonicalToolId": "sibling-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’étiquettes d’organisation e-mail",
-    "localizedSlug": "générateur-de-tags-d-e-mail",
+    "localizedSlug": "generateur-de-tags-d-e-mail",
     "h1": "Générateur d’étiquettes d’organisation e-mail",
     "metaTitle": "Générateur de Tags d'E-Mail - Alias de Boîte SEO Web",
     "metaDescription": "Créez des alias et tags d'e-mails pour organiser votre boîte de réception et filtrer le spam. Outil gratuit en ligne, pratique et sans inscription.",
@@ -5374,10 +5374,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "art-tag-generator",
+    "canonicalToolId": "pick-a-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tags pour artistes",
-    "localizedSlug": "générateur-de-tags-d-art",
+    "localizedSlug": "generateur-de-tags-d-art",
     "h1": "Générateur de tags pour artistes",
     "metaTitle": "Générateur de Tags d'Art - Hashtags d'Artistes SEO",
     "metaDescription": "Générez des mots-clés et tags artistiques pertinents pour promouvoir vos œuvres sur les réseaux. Outil gratuit en ligne, efficace et sans inscription.",
@@ -5391,10 +5391,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "hang-tag-generator",
+    "canonicalToolId": "name-generator-wheel",
     "language": "fr",
     "primaryKeyword": "générateur d’étiquettes suspendues",
-    "localizedSlug": "générateur-d-étiquettes-suspendues",
+    "localizedSlug": "generateur-d-etiquettes-suspendues",
     "h1": "Générateur d’étiquettes suspendues (Hang Tags)",
     "metaTitle": "Générateur d'Étiquettes Suspendues - Vêtements SEO",
     "metaDescription": "Concevez des étiquettes imprimables pour vêtements et articles de mode avec prix et références. Outil gratuit en ligne, pratique et sans inscription.",
@@ -5408,10 +5408,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "clan-tag-generator",
+    "canonicalToolId": "cake-company-names-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tags de clan",
-    "localizedSlug": "générateur-de-tags-de-clan",
+    "localizedSlug": "generateur-de-tags-de-clan",
     "h1": "Générateur de tags de clan (Gaming)",
     "metaTitle": "Générateur de Tags de Clan - Pseudos Gaming SEO Web",
     "metaDescription": "Trouvez des sigles et tags de clan originaux (3 ou 4 lettres) pour vos équipes de jeu en ligne. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5425,10 +5425,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dj-tag-generator",
+    "canonicalToolId": "car-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de jingles et dj tag",
-    "localizedSlug": "générateur-de-tags-vocal-dj",
+    "localizedSlug": "generateur-de-tags-vocal-dj",
     "h1": "Générateur de jingles et d’identifiants DJ (DJ Tag)",
     "metaTitle": "Générateur de Tags Vocaux de DJ - Signatures Audio",
     "metaDescription": "Concevez des voix off et jingles d'accroche pour signer vos mixtapes et sets de DJ en soirée. Outil gratuit en ligne, efficace et sans inscription.",
@@ -5442,12 +5442,12 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "pet-tag-generator",
+    "canonicalToolId": "title-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de médailles pour animaux",
-    "localizedSlug": "générateur-d-étiquettes-d-animaux",
+    "localizedSlug": "generateur-d-etiquettes-d-animaux",
     "h1": "Générateur de médailles pour animaux",
-    "metaTitle": "Générateur d'Étiquettes d'Animaux - Médailles SEO Web",
+    "metaTitle": "Générateur d'Étiquettes d'Animaux SEO Web",
     "metaDescription": "Créez le texte d'identification pour la médaille ou le collier de votre chien ou chat chéri. Outil gratuit en ligne, pratique et sans inscription.",
     "intro": "Optimisez le texte de la médaille d’identification de votre chien ou chat pour la sécurité de votre compagnon.",
     "searchIntentNote": "Gravure et sécurité pour animaux domestiques.",
@@ -5462,7 +5462,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     "canonicalToolId": "geo-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de balises de géolocalisation",
-    "localizedSlug": "générateur-de-geotags",
+    "localizedSlug": "generateur-de-geotags",
     "h1": "Générateur de balises de géolocalisation (Geo Tags)",
     "metaTitle": "Générateur de Geotags EXIF - Coordonnées GPS SEO Web",
     "metaDescription": "Formatez des coordonnées GPS et balises géographiques pour géotaguer vos visuels et photos web. Outil gratuit en ligne, précis et sans inscription.",
@@ -5476,10 +5476,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "car-name-generator",
+    "canonicalToolId": "pet-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de surnom pour voiture",
-    "localizedSlug": "générateur-de-noms-de-voitures",
+    "localizedSlug": "generateur-de-noms-de-voitures",
     "h1": "Générateur de surnom pour voiture",
     "metaTitle": "Générateur de Noms de Voitures - Surnoms Autos SEO",
     "metaDescription": "Trouvez un surnom drôle, élégant ou puissant pour personnaliser votre automobile au quotidien. Outil gratuit en ligne, amusant et sans inscription.",
@@ -5493,10 +5493,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cake-company-names-generator",
+    "canonicalToolId": "dj-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de pâtisserie",
-    "localizedSlug": "générateur-de-noms-de-pâtisserie",
+    "localizedSlug": "generateur-de-noms-de-patisserie",
     "h1": "Générateur de nom de pâtisserie",
     "metaTitle": "Générateur de Noms de Pâtisserie - Douceurs SEO Web",
     "metaDescription": "Trouvez des noms gourmands et évocateurs pour votre entreprise de pâtisserie ou cake design. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5510,7 +5510,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "name-generator-wheel",
+    "canonicalToolId": "clan-tag-generator",
     "language": "fr",
     "primaryKeyword": "roue de tirage au sort de prénoms",
     "localizedSlug": "roue-de-tirage-au-sort-de-noms",
@@ -5527,10 +5527,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "pick-a-name-generator",
+    "canonicalToolId": "hang-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tirage au sort de prénom",
-    "localizedSlug": "générateur-de-sélection-de-nom",
+    "localizedSlug": "generateur-de-selection-de-nom",
     "h1": "Générateur de tirage au sort de prénom",
     "metaTitle": "Générateur de Sélection de Nom - Tirage au Sort SEO",
     "metaDescription": "Sélectionnez un nom au hasard dans une liste d'inscrits pour vos tirages au sort et concours. Outil gratuit en ligne, pratique et sans inscription.",
@@ -5544,10 +5544,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "sibling-name-generator",
+    "canonicalToolId": "art-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de prénoms pour frères et sœurs",
-    "localizedSlug": "générateur-de-prénoms-de-fratrie",
+    "localizedSlug": "generateur-de-prenoms-de-fratrie",
     "h1": "Générateur de prénoms pour frères et sœurs",
     "metaTitle": "Générateur de Prénoms de Fratrie - Harmonie SEO Web",
     "metaDescription": "Trouvez des prénoms assortis qui s'accordent parfaitement avec ceux de vos premiers enfants. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5561,10 +5561,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "plant-name-generator",
+    "canonicalToolId": "email-tag-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de plante",
-    "localizedSlug": "générateur-de-noms-de-plantes",
+    "localizedSlug": "generateur-de-noms-de-plantes",
     "h1": "Générateur de nom de plante (fiction)",
     "metaTitle": "Générateur de Noms de Plantes - Surnoms Fleurs SEO",
     "metaDescription": "Donnez un petit nom mignon ou botanique à vos plantes d'intérieur, fleurs et potager bio. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5578,10 +5578,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "newspaper-name-generator",
+    "canonicalToolId": "tag-team-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de journal",
-    "localizedSlug": "générateur-de-noms-de-journaux",
+    "localizedSlug": "generateur-de-noms-de-journaux",
     "h1": "Générateur de nom de journal",
     "metaTitle": "Générateur de Noms de Journaux - Titres Presse SEO",
     "metaDescription": "Générez des titres de presse et noms de journaux crédibles pour vos gazettes et fictions. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5595,10 +5595,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "flower-name-generator",
+    "canonicalToolId": "warrior-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de fleur",
-    "localizedSlug": "générateur-de-noms-de-fleurs",
+    "localizedSlug": "generateur-de-noms-de-fleurs",
     "h1": "Générateur de nom de fleur (fiction)",
     "metaTitle": "Générateur de Noms de Fleurs - Plantes Féeriques SEO",
     "metaDescription": "Trouvez de magnifiques noms de fleurs poétiques et imaginaires pour vos créations et jardins. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5612,10 +5612,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "diner-name-generator",
+    "canonicalToolId": "secret-santa-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de brasserie",
-    "localizedSlug": "générateur-de-noms-de-diner",
+    "localizedSlug": "generateur-de-noms-de-diner",
     "h1": "Générateur de nom de brasserie",
     "metaTitle": "Générateur de Noms de Diner - Restaurants Rétro SEO",
     "metaDescription": "Trouvez des noms vintage et chaleureux pour votre restaurant style diner américain rétro. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5629,10 +5629,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "college-name-generator",
+    "canonicalToolId": "anagram-of-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de collège et université",
-    "localizedSlug": "générateur-de-noms-d-universités",
+    "localizedSlug": "generateur-de-noms-d-universites",
     "h1": "Générateur de nom de collège et université",
     "metaTitle": "Générateur de Noms d'Universités - Écoles SEO Web Pro",
     "metaDescription": "Générez des noms d'universités prestigieuses et de campus fictifs pour vos romans et jeux. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5646,10 +5646,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "event-name-generator",
+    "canonicalToolId": "cyberpunk-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d’événement",
-    "localizedSlug": "générateur-de-noms-d-événements",
+    "localizedSlug": "generateur-de-noms-d-evenements",
     "h1": "Générateur de nom d’événement",
     "metaTitle": "Générateur de Noms d'Événements - Titres Fêtes SEO",
     "metaDescription": "Trouvez des titres percutants pour vos soirées, conférences, festivals et événements pro. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5663,10 +5663,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "clothing-tag-generator",
+    "canonicalToolId": "goth-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’étiquettes de vêtements",
-    "localizedSlug": "générateur-d-étiquettes-de-vêtements",
+    "localizedSlug": "generateur-d-etiquettes-de-vetements",
     "h1": "Générateur d’étiquettes de vêtements",
     "metaTitle": "Générateur d'Étiquettes de Vêtements - Textile SEO",
     "metaDescription": "Concevez des étiquettes de marque et conseils de lavage pour vos vêtements et créations textile. Outil gratuit en ligne, pratique et sans inscription.",
@@ -5680,10 +5680,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "product-tag-generator",
+    "canonicalToolId": "project-name-generator-keywords",
     "language": "fr",
     "primaryKeyword": "générateur d’étiquettes produit",
-    "localizedSlug": "générateur-de-tags-de-produits",
+    "localizedSlug": "generateur-de-tags-de-produits",
     "h1": "Générateur d’étiquettes produit",
     "metaTitle": "Générateur de Tags de Produits - Étiquettes SEO Web",
     "metaDescription": "Générez des étiquettes et références produits claires pour vos catalogues et boutiques en ligne. Outil gratuit en ligne, pratique et sans inscription.",
@@ -5697,10 +5697,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "price-tag-generator",
+    "canonicalToolId": "scifi-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’étiquettes de prix",
-    "localizedSlug": "générateur-d-étiquettes-de-prix",
+    "localizedSlug": "generateur-d-etiquettes-de-prix",
     "h1": "Générateur d’étiquettes de prix",
     "metaTitle": "Générateur d'Étiquettes de Prix - Magasins SEO Web",
     "metaDescription": "Créez des étiquettes de prix prêtes à imprimer pour vos articles en boutique ou braderie. Outil gratuit en ligne, pratique et sans inscription.",
@@ -5714,10 +5714,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "movie-name-generator",
+    "canonicalToolId": "last-name-and-first-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de titre de film",
-    "localizedSlug": "générateur-de-titres-de-films",
+    "localizedSlug": "generateur-de-titres-de-films",
     "h1": "Générateur de titre de film",
     "metaTitle": "Générateur de Titres de Films - Idées Cinéma SEO Web",
     "metaDescription": "Trouvez des titres de films captivants et des accroches scénaristiques pour vos projets vidéo. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5731,10 +5731,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "book-name-generator",
+    "canonicalToolId": "baby-name-generator-with-last-name",
     "language": "fr",
     "primaryKeyword": "générateur de titre de livre",
-    "localizedSlug": "générateur-de-titres-de-livres",
+    "localizedSlug": "generateur-de-titres-de-livres",
     "h1": "Générateur de titre de livre",
     "metaTitle": "Générateur de Titres de Livres - Romans et Belles SEO",
     "metaDescription": "Générez des titres de livres percutants et évocateurs pour vos romans, essais et nouvelles. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5748,10 +5748,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "album-name-generator",
+    "canonicalToolId": "nickname-generator-based-on-name",
     "language": "fr",
     "primaryKeyword": "générateur de titre d’album de musique",
-    "localizedSlug": "générateur-de-titres-d-albums",
+    "localizedSlug": "generateur-de-titres-d-albums",
     "h1": "Générateur de titre d’album de musique",
     "metaTitle": "Générateur de Titres d'Albums - Noms Musique SEO Web",
     "metaDescription": "Trouvez le titre idéal pour votre prochain album de musique, EP ou mixtape d'artiste. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5765,10 +5765,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "coffee-shop-name-generator",
+    "canonicalToolId": "phonetic-spelling-of-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de salon de café",
-    "localizedSlug": "générateur-de-noms-de-coffee-shop",
+    "localizedSlug": "generateur-de-noms-de-coffee-shop",
     "h1": "Générateur de nom de salon de café",
     "metaTitle": "Générateur de Noms de Coffee Shop - Cafés SEO Web Pro",
     "metaDescription": "Découvrez des noms chaleureux et modernes pour ouvrir votre propre coffee shop ou café cosy. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5782,10 +5782,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "restaurant-name-generator",
+    "canonicalToolId": "ipa-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de restaurant",
-    "localizedSlug": "générateur-de-noms-de-restaurants",
+    "localizedSlug": "generateur-de-noms-de-restaurants",
     "h1": "Générateur de nom de restaurant",
     "metaTitle": "Générateur de Noms de Restaurants - Bistrots SEO Web",
     "metaDescription": "Trouvez des noms gourmands et accueillants pour votre restaurant, bistrot ou trattoria. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5799,10 +5799,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "city-name-generator",
+    "canonicalToolId": "name-combination-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de ville",
-    "localizedSlug": "générateur-de-noms-de-villes",
+    "localizedSlug": "generateur-de-noms-de-villes",
     "h1": "Générateur de nom de ville",
     "metaTitle": "Générateur de Noms de Villes - Cités Imaginaires SEO",
     "metaDescription": "Générez des noms de villes, cités et villages fictifs crédibles pour vos romans et univers. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5816,10 +5816,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "korean-name-generator",
+    "canonicalToolId": "performer-names-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom coréen",
-    "localizedSlug": "générateur-de-noms-coréens",
+    "localizedSlug": "generateur-de-noms-coreens",
     "h1": "Générateur de nom coréen (fiction)",
     "metaTitle": "Générateur de Noms Coréens - Prénoms K-Pop SEO Web",
     "metaDescription": "Générez des prénoms et noms coréens authentiques avec leur écriture Hangul et signification. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5833,10 +5833,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "japanese-name-generator",
+    "canonicalToolId": "disc-jockey-names-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom japonais",
-    "localizedSlug": "générateur-de-noms-japonais",
+    "localizedSlug": "generateur-de-noms-japonais",
     "h1": "Générateur de nom japonais (fiction)",
     "metaTitle": "Générateur de Noms Japonais - Prénoms Manga SEO Web",
     "metaDescription": "Découvrez de magnifiques prénoms japonais traditionnels et modernes pour vos personnages. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5850,10 +5850,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "werewolf-name-generator",
+    "canonicalToolId": "name-pronunciation-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de loup-garou",
-    "localizedSlug": "générateur-de-noms-de-loups-garous",
+    "localizedSlug": "generateur-de-noms-de-loups-garous",
     "h1": "Générateur de nom de loup-garou",
     "metaTitle": "Générateur de Noms de Loups-Garous - Lycanthropes SEO",
     "metaDescription": "Générez des noms de loups-garous féroces et mystérieux pour vos histoires de fantastique. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5867,10 +5867,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "villain-name-generator",
+    "canonicalToolId": "fantasy-language-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de super-vilain",
-    "localizedSlug": "générateur-de-noms-de-méchants",
+    "localizedSlug": "generateur-de-noms-de-mechants",
     "h1": "Générateur de nom de super-vilain",
     "metaTitle": "Générateur de Noms de Méchants - Antagonistes SEO Web",
     "metaDescription": "Trouvez des noms d'antagonistes sombres et terrifiants pour vos super-vilains et monstres. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5884,10 +5884,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "wizard-name-generator",
+    "canonicalToolId": "color-palette-generator-from-name",
     "language": "fr",
     "primaryKeyword": "générateur de nom de sorcier",
-    "localizedSlug": "générateur-de-noms-de-sorciers",
+    "localizedSlug": "generateur-de-noms-de-sorciers",
     "h1": "Générateur de nom de sorcier",
     "metaTitle": "Générateur de Noms de Sorciers - Mages Fantasy SEO",
     "metaDescription": "Concevez des noms d'archimages et de sorciers érudits pour vos univers de magie et fantasy. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5901,10 +5901,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "viking-name-generator",
+    "canonicalToolId": "mountain-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom viking",
-    "localizedSlug": "générateur-de-noms-de-vikings",
+    "localizedSlug": "generateur-de-noms-de-vikings",
     "h1": "Générateur de nom viking",
     "metaTitle": "Générateur de Noms de Vikings - Guerriers Nordiques",
     "metaDescription": "Découvrez des noms de guerriers et jarls nordiques légendaires pour vos récits historiques. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5918,10 +5918,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dungeon-generator",
+    "canonicalToolId": "forest-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de cartes de donjon",
-    "localizedSlug": "générateur-de-donjons-rpg",
+    "localizedSlug": "generateur-de-donjons-rpg",
     "h1": "Générateur de cartes de donjon",
     "metaTitle": "Générateur de Donjons RPG - Cartes de Donjon SEO Web",
     "metaDescription": "Concevez des plans et descriptions de donjons mystérieux remplis de pièges pour vos jeux de rôle. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -5935,10 +5935,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "image-alt-text-generator",
+    "canonicalToolId": "team-name-generator-using-keywords",
     "language": "fr",
     "primaryKeyword": "générateur de texte alternatif d’image",
-    "localizedSlug": "générateur-de-texte-alternatif-image",
+    "localizedSlug": "generateur-de-texte-alternatif-image",
     "h1": "Générateur de texte alternatif d’image (Alt Text)",
     "metaTitle": "Générateur de Texte Alternatif Image - Balises Alt SEO",
     "metaDescription": "Rédigez des balises alt d'images descriptives pour améliorer l'accessibilité web et le référencement. Outil gratuit en ligne, pratique et sans inscription.",
@@ -5952,10 +5952,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "text-shadow-generator",
+    "canonicalToolId": "trademark-friendly-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’ombre de texte css",
-    "localizedSlug": "générateur-de-text-shadow-css",
+    "localizedSlug": "generateur-de-text-shadow-css",
     "h1": "Générateur d’ombre de texte CSS",
     "metaTitle": "Générateur de Text Shadow CSS3 - Ombres de Texte SEO",
     "metaDescription": "Générez du code CSS text-shadow personnalisable pour ajouter des ombres portées élégantes à vos textes. Outil technique gratuit, précis et sans inscription.",
@@ -5969,10 +5969,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "blog-tag-generator",
+    "canonicalToolId": "acceptable-use-policy-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tags pour blog",
-    "localizedSlug": "générateur-de-tags-de-blog",
+    "localizedSlug": "generateur-de-tags-de-blog",
     "h1": "Générateur de tags pour blog",
     "metaTitle": "Générateur de Tags de Blog - Mots-Clés d'Articles SEO",
     "metaDescription": "Formulez des tags et étiquettes pertinents pour organiser les catégories et articles de votre blog web. Outil gratuit en ligne, pratique et sans inscription.",
@@ -5986,10 +5986,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "tag-cloud-generator",
+    "canonicalToolId": "app-icon-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nuage de mots",
-    "localizedSlug": "générateur-de-nuage-de-tags",
+    "localizedSlug": "generateur-de-nuage-de-tags",
     "h1": "Générateur de nuage de mots",
     "metaTitle": "Générateur de Nuage de Tags - Mots-Clés Visuels SEO",
     "metaDescription": "Transformez vos textes et données en un nuage de mots-clés interactif et esthétique pour votre site. Outil gratuit en ligne, pratique et sans inscription.",
@@ -6003,10 +6003,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "graffiti-text-generator",
+    "canonicalToolId": "app-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte style graffiti",
-    "localizedSlug": "générateur-de-texte-graffiti",
+    "localizedSlug": "generateur-de-texte-graffiti",
     "h1": "Générateur de texte style graffiti",
     "metaTitle": "Générateur de Texte Graffiti - Polices Urban Web SEO",
     "metaDescription": "Convertissez vos mots en lettrages graffiti urbains et polices street art colorées en quelques clics. Outil gratuit en ligne, stylisé et sans inscription.",
@@ -6020,10 +6020,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "name-tag-generator",
+    "canonicalToolId": "bakery-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de badge nominatif",
-    "localizedSlug": "générateur-d-étiquettes-de-nom",
+    "localizedSlug": "generateur-d-etiquettes-de-nom",
     "h1": "Générateur de badge nominatif",
     "metaTitle": "Générateur d'Étiquettes de Nom - Badges Événements SEO",
     "metaDescription": "Concevez des badges et étiquettes nominatives prêtes à imprimer pour vos réunions et événements pro. Outil gratuit en ligne, pratique et sans inscription.",
@@ -6037,10 +6037,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dialogue-tag-generator",
+    "canonicalToolId": "banner-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’incises de dialogue",
-    "localizedSlug": "générateur-d-incises-de-dialogue",
+    "localizedSlug": "generateur-d-incises-de-dialogue",
     "h1": "Générateur d’incises de dialogue",
     "metaTitle": "Générateur d'Incises de Dialogue - Écriture Roman SEO",
     "metaDescription": "Variez les incises de dialogue dans vos récits pour fluidifier les conversations de vos personnages. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6054,10 +6054,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "email-name-generator",
+    "canonicalToolId": "barbarian-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur d’adresse e-mail professionnelle",
-    "localizedSlug": "générateur-de-nom-d-e-mail",
+    "localizedSlug": "generateur-de-nom-d-e-mail",
     "h1": "Générateur d’adresse e-mail professionnelle",
     "metaTitle": "Générateur de Nom d'E-Mail - Adresses Pro Web SEO Pro",
     "metaDescription": "Trouvez des idées d'adresses e-mails professionnelles et disponibles pour vos comptes d'entreprise. Outil gratuit en ligne, pratique et sans inscription.",
@@ -6071,10 +6071,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dragonborn-name-generator",
+    "canonicalToolId": "big-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de drakéide",
-    "localizedSlug": "générateur-de-noms-de-drakéides",
+    "localizedSlug": "generateur-de-noms-de-drakeides",
     "h1": "Générateur de nom de drakéide (D&D)",
     "metaTitle": "Générateur de Noms de Drakéides - Personnages D&D SEO",
     "metaDescription": "Générez des noms de drakéides majesteux et imposants pour vos parties de Donjons et Dragons 5e. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6088,10 +6088,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "drag-name-generator",
+    "canonicalToolId": "brat-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de drag queen",
-    "localizedSlug": "générateur-de-noms-de-drag-queen",
+    "localizedSlug": "generateur-de-noms-de-drag-queen",
     "h1": "Générateur de nom de Drag Queen",
     "metaTitle": "Générateur de Noms de Drag Queen - Pseudos Scène SEO",
     "metaDescription": "Trouvez des noms de drag queen flamboyants, fabuleux et pleins d'esprit pour vos performances. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6105,10 +6105,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "video-game-name-generator",
+    "canonicalToolId": "breadcrumb-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de jeu vidéo",
-    "localizedSlug": "générateur-de-noms-de-jeux-vidéo",
+    "localizedSlug": "generateur-de-noms-de-jeux-video",
     "h1": "Générateur de nom de jeu vidéo",
     "metaTitle": "Générateur de Noms de Jeux Vidéo - Idées Titres SEO",
     "metaDescription": "Trouvez des titres de jeux vidéo originaux et accrocheurs pour vos créations de studio indépendant. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6122,10 +6122,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "avatar-name-generator",
+    "canonicalToolId": "bubble-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de pseudo d'avatar",
-    "localizedSlug": "générateur-de-noms-d-avatar",
+    "localizedSlug": "generateur-de-noms-d-avatar",
     "h1": "Générateur de pseudo d'avatar",
     "metaTitle": "Générateur de Noms d'Avatar - Pseudos Profils SEO Web",
     "metaDescription": "Créer des noms d'avatars uniques et stylisés pour vos profils de réseaux sociaux et jeux en ligne. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6139,12 +6139,12 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "art-name-generator",
+    "canonicalToolId": "business-card-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d'œuvre d'art",
-    "localizedSlug": "générateur-de-noms-d-œuvres-d-art",
+    "localizedSlug": "generateur-de-noms-d-oeuvres-d-art",
     "h1": "Générateur de nom d'œuvre d'art",
-    "metaTitle": "Générateur de Noms d'Œuvres d'Art - Titres Tableau SEO",
+    "metaTitle": "Générateur de Noms d'Œuvres d'Art SEO",
     "metaDescription": "Trouvez des titres poétiques et évocateurs pour vos tableaux, sculptures et créations artistiques. Outil gratuit en ligne, inspirant et sans inscription.",
     "intro": "Trouvez l’inspiration pour titrer vos œuvres plastiques et visuelles en fonction des émotions qu’elles suscitent.",
     "searchIntentNote": "Titrages d’œuvres artistiques et fictions.",
@@ -6156,10 +6156,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "photography-name-generator",
+    "canonicalToolId": "castle-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d'entreprise de photographie",
-    "localizedSlug": "générateur-de-noms-de-photographie",
+    "localizedSlug": "generateur-de-noms-de-photographie",
     "h1": "Générateur de nom d'entreprise de photographie",
     "metaTitle": "Générateur de Noms de Photographie - Studios SEO Web",
     "metaDescription": "Trouvez des noms professionnels pour votre studio de photographie ou portfolio de photographe. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6173,10 +6173,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "startup-name-generator",
+    "canonicalToolId": "channel-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de startup",
-    "localizedSlug": "générateur-de-noms-de-startup",
+    "localizedSlug": "generateur-de-noms-de-startup",
     "h1": "Générateur de nom de startup",
     "metaTitle": "Générateur de Noms de Startup - Noms d'Entreprises SEO",
     "metaDescription": "Générez des noms de startups modernes, innovants et mémorables pour lancer votre projet en ligne. Outil gratuit en ligne, efficace et sans inscription.",
@@ -6190,10 +6190,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "meme-text-generator",
+    "canonicalToolId": "chatgpt-prompt-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte pour mème",
-    "localizedSlug": "générateur-de-texte-de-mème",
+    "localizedSlug": "generateur-de-texte-de-meme",
     "h1": "Générateur de texte pour mème",
     "metaTitle": "Générateur de Texte de Mème - Légendes Rétro SEO Web",
     "metaDescription": "Rédigez des légendes amusantes et textes de mèmes (Impact font) pour créer des contenus viraux. Outil gratuit en ligne, amusant et sans inscription.",
@@ -6207,10 +6207,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "wifi-name-generator",
+    "canonicalToolId": "club-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de réseau wi-fi",
-    "localizedSlug": "générateur-de-noms-de-réseau-wifi",
+    "localizedSlug": "generateur-de-noms-de-reseau-wifi",
     "h1": "Générateur de nom de réseau Wi-Fi",
     "metaTitle": "Générateur de Noms de Réseau Wi-Fi - SSID Drôles SEO",
     "metaDescription": "Trouvez des noms de réseau Wi-Fi drôles et originaux pour personnaliser le SSID de votre box internet. Outil gratuit en ligne, amusant et sans inscription.",
@@ -6224,10 +6224,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "snapchat-name-generator",
+    "canonicalToolId": "cocktail-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de pseudo snapchat",
-    "localizedSlug": "générateur-de-noms-snapchat",
+    "localizedSlug": "generateur-de-noms-snapchat",
     "h1": "Générateur de pseudo Snapchat",
     "metaTitle": "Générateur de Noms Snapchat - Pseudos Originaux SEO",
     "metaDescription": "Trouvez des pseudos Snapchat tendance et faciles à retenir pour développer votre réseau d'amis. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6241,10 +6241,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "horse-name-generator",
+    "canonicalToolId": "contract-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de cheval",
-    "localizedSlug": "générateur-de-noms-de-chevaux",
+    "localizedSlug": "generateur-de-noms-de-chevaux",
     "h1": "Générateur de nom de cheval",
     "metaTitle": "Générateur de Noms de Chevaux - Idées Équitation SEO",
     "metaDescription": "Trouvez des noms majestueux et doux pour vos chevaux, juments et poulains en club hippique. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6258,10 +6258,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cat-name-generator",
+    "canonicalToolId": "cowboy-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de chat",
-    "localizedSlug": "générateur-de-noms-de-chats",
+    "localizedSlug": "generateur-de-noms-de-chats",
     "h1": "Générateur de nom de chat",
     "metaTitle": "Générateur de Noms de Chats - Idées Chatons SEO Web",
     "metaDescription": "Trouvez le prénom idéal pour votre chaton selon sa couleur et sa lettre de l'année en cours. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6275,10 +6275,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dungeon-name-generator",
+    "canonicalToolId": "css-code-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de donjon",
-    "localizedSlug": "générateur-de-noms-de-donjons",
+    "localizedSlug": "generateur-de-noms-de-donjons",
     "h1": "Générateur de nom de donjon",
     "metaTitle": "Générateur de Noms de Donjons - Souterrains RPG SEO",
     "metaDescription": "Générez des noms de donjons sombres et de souterrains inquiétants pour vos parties de jeu de rôle. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6292,10 +6292,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "tavern-name-generator",
+    "canonicalToolId": "cursive-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de taverne",
-    "localizedSlug": "générateur-de-noms-de-tavernes",
+    "localizedSlug": "generateur-de-noms-de-tavernes",
     "h1": "Générateur de nom de taverne",
     "metaTitle": "Générateur de Noms de Tavernes - Auberges Fantasy SEO",
     "metaDescription": "Trouvez des noms de tavernes médiévales et d'auberges chaleureuses pour vos aventuriers de RPG. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6309,10 +6309,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "angel-name-generator",
+    "canonicalToolId": "cute-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d'ange",
-    "localizedSlug": "générateur-de-noms-d-anges",
+    "localizedSlug": "generateur-de-noms-d-anges",
     "h1": "Générateur de nom d'ange",
     "metaTitle": "Générateur de Noms d'Anges - Êtres Célestes SEO Web",
     "metaDescription": "Découvrez des noms d'anges célestes et d'archanges divins pour vos fictions et récits mystiques. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6326,10 +6326,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "magic-name-generator",
+    "canonicalToolId": "dalle-prompt-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom magique",
-    "localizedSlug": "générateur-de-noms-de-magie",
+    "localizedSlug": "generateur-de-noms-de-magie",
     "h1": "Générateur de nom magique",
     "metaTitle": "Générateur de Noms de Magie - Sorts et Envoûtements SEO",
     "metaDescription": "Générez des noms de sortilèges magiques et d'enchantements mystiques pour vos personnages érudits. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6343,10 +6343,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "repeat-text-generator",
+    "canonicalToolId": "dinosaur-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de répétition de texte",
-    "localizedSlug": "générateur-de-texte-répété",
+    "localizedSlug": "generateur-de-texte-repete",
     "h1": "Générateur de répétition de texte",
     "metaTitle": "Générateur de Texte Répété - Répétiteur de Mots SEO",
     "metaDescription": "Répétez automatiquement un mot ou une phrase plusieurs milliers de fois en un instant. Outil gratuit en ligne, pratique et sans inscription.",
@@ -6360,10 +6360,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "soundcloud-tag-generator",
+    "canonicalToolId": "display-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tags soundcloud",
-    "localizedSlug": "générateur-de-tags-soundcloud",
+    "localizedSlug": "generateur-de-tags-soundcloud",
     "h1": "Générateur de tags SoundCloud",
     "metaTitle": "Générateur de Tags SoundCloud - Hashtags Musique SEO",
     "metaDescription": "Formulez des tags SoundCloud optimisés pour améliorer le référencement de vos morceaux de musique. Outil gratuit en ligne, efficace et sans inscription.",
@@ -6377,10 +6377,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "pinterest-tag-generator",
+    "canonicalToolId": "dj-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tags pinterest",
-    "localizedSlug": "générateur-de-tags-pinterest",
+    "localizedSlug": "generateur-de-tags-pinterest",
     "h1": "Générateur de tags Pinterest",
     "metaTitle": "Générateur de Tags Pinterest - Mots-Clés Pins SEO Web",
     "metaDescription": "Générez des mots-clés et hashtags pertinents pour vos épingles Pinterest afin de gagner en visibilité. Outil gratuit en ligne, efficace et sans inscription.",
@@ -6394,10 +6394,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "book-club-name-generator",
+    "canonicalToolId": "dmca-policy-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de club de lecture",
-    "localizedSlug": "générateur-de-noms-de-club-de-lecture",
+    "localizedSlug": "generateur-de-noms-de-club-de-lecture",
     "h1": "Générateur de nom de club de lecture",
     "metaTitle": "Générateur de Noms de Club de Lecture - Livres SEO",
     "metaDescription": "Trouvez des noms accueillants et originaux pour créer votre club de lecture entre passionnés. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6411,10 +6411,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "street-name-generator",
+    "canonicalToolId": "dog-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de rue",
-    "localizedSlug": "générateur-de-noms-de-rues",
+    "localizedSlug": "generateur-de-noms-de-rues",
     "h1": "Générateur de nom de rue",
     "metaTitle": "Générateur de Noms de Rues - Voies Urbaines SEO Web",
     "metaDescription": "Générez des noms de rues, boulevards et ruelles réalistes pour cartographier vos villes fictives. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6428,10 +6428,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "school-name-generator",
+    "canonicalToolId": "estimate-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d'école",
-    "localizedSlug": "générateur-de-noms-d-écoles",
+    "localizedSlug": "generateur-de-noms-d-ecoles",
     "h1": "Générateur de nom d'école ou d'académie",
     "metaTitle": "Générateur de Noms d'Écoles - Lycées et Académies SEO",
     "metaDescription": "Trouvez des noms d'établissements scolaires et d'académies prestigieuses pour vos univers de fictions. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6445,10 +6445,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "tiefling-name-generator",
+    "canonicalToolId": "fake-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de tieffelin",
-    "localizedSlug": "générateur-de-noms-de-tieffelins",
+    "localizedSlug": "generateur-de-noms-de-tieffelins",
     "h1": "Générateur de nom de tieffelin",
     "metaTitle": "Générateur de Noms de Tieffelins - D&D 5e RPG SEO Web",
     "metaDescription": "Générez des noms de tieffelins vertueux ou sombres pour vos aventuriers Donjons et Dragons 5e. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6462,10 +6462,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dwarf-name-generator",
+    "canonicalToolId": "farm-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de nain",
-    "localizedSlug": "générateur-de-noms-de-nains",
+    "localizedSlug": "generateur-de-noms-de-nains",
     "h1": "Générateur de nom de nain (fantasy)",
     "metaTitle": "Générateur de Noms de Nains - Clans Fantasy SEO Web",
     "metaDescription": "Découvrez des noms de nains féroces et noms de clans pour vos guerriers des montagnes fantasy. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6479,10 +6479,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "couple-name-generator",
+    "canonicalToolId": "favicon-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de couple",
-    "localizedSlug": "générateur-de-nom-de-couple",
+    "localizedSlug": "generateur-de-nom-de-couple",
     "h1": "Générateur de nom de couple",
     "metaTitle": "Générateur de Nom de Couple - Fusion de Prénoms SEO",
     "metaDescription": "Fusionnez les deux prénoms des amoureux pour créer un nom de couple (ship name) drôle et mignon. Outil gratuit en ligne, amusant et sans inscription.",
@@ -6496,10 +6496,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "uwu-text-generator",
+    "canonicalToolId": "food-truck-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte uwu",
-    "localizedSlug": "générateur-de-texte-uwu",
+    "localizedSlug": "generateur-de-texte-uwu",
     "h1": "Générateur de texte UwU",
     "metaTitle": "Générateur de Texte UwU - Style Kawaii Web SEO Pro",
     "metaDescription": "Convertissez votre texte dans le style mignon et enfantin UwU/Owo pour vos messages sur Discord. Outil gratuit en ligne, amusant et sans inscription.",
@@ -6513,10 +6513,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "old-english-text-generator",
+    "canonicalToolId": "funny-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte gothique ancien",
-    "localizedSlug": "générateur-de-texte-vieux-français",
+    "localizedSlug": "generateur-de-texte-vieux-francais",
     "h1": "Générateur de texte gothique ancien",
     "metaTitle": "Générateur de Texte Vieux Français - Gothique SEO Web",
     "metaDescription": "Transformez vos phrases avec des caractères gothiques et typographies médiévales (Old English style). Outil gratuit en ligne, stylisé et sans inscription.",
@@ -6530,10 +6530,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cool-text-generator",
+    "canonicalToolId": "gnome-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte stylé",
-    "localizedSlug": "générateur-de-texte-stylé",
+    "localizedSlug": "generateur-de-texte-style",
     "h1": "Générateur de texte stylé",
     "metaTitle": "Générateur de Texte Stylé - Polices Web Cool SEO Pro",
     "metaDescription": "Générez des polices de caractères stylisées et symboles tendance pour embellir vos bios sociales. Outil gratuit en ligne, pratique et sans inscription.",
@@ -6547,10 +6547,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "wrestling-name-generator",
+    "canonicalToolId": "hotel-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de catcheur",
-    "localizedSlug": "générateur-de-noms-de-catcheurs",
+    "localizedSlug": "generateur-de-noms-de-catcheurs",
     "h1": "Générateur de nom de catcheur",
     "metaTitle": "Générateur de Noms de Catcheurs - Ring Pseudos SEO",
     "metaDescription": "Trouvez des pseudos de catcheurs imposants et des noms de ring spectaculaires pour le spectacle. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6564,10 +6564,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "stage-name-generator",
+    "canonicalToolId": "html-code-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de scène",
-    "localizedSlug": "générateur-de-nom-de-scène",
+    "localizedSlug": "generateur-de-nom-de-scene",
     "h1": "Générateur de nom de scène",
     "metaTitle": "Générateur de Nom de Scène - Pseudos d'Artistes SEO",
     "metaDescription": "Créez un nom de scène mémorable et charismatique pour vos carrières de comédien, chanteur ou artiste. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6581,10 +6581,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "cafe-name-generator",
+    "canonicalToolId": "invisible-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de café",
-    "localizedSlug": "générateur-de-noms-de-cafés",
+    "localizedSlug": "generateur-de-noms-de-cafes",
     "h1": "Générateur de nom de café",
     "metaTitle": "Générateur de Noms de Cafés - Bistrots Chaleureux SEO",
     "metaDescription": "Trouvez des noms accueillants et élégants pour créer votre café, salon de thé ou coffee bar cosy. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6598,10 +6598,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "shop-name-generator",
+    "canonicalToolId": "letterhead-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de boutique",
-    "localizedSlug": "générateur-de-noms-de-boutiques",
+    "localizedSlug": "generateur-de-noms-de-boutiques",
     "h1": "Générateur de nom de boutique",
     "metaTitle": "Générateur de Noms de Boutiques - Magasins SEO Web",
     "metaDescription": "Découvrez des idées de noms de boutiques en ligne et magasins physiques pour lancer votre marque. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6615,10 +6615,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "fancy-text-generator",
+    "canonicalToolId": "logo-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte stylisé",
-    "localizedSlug": "générateur-de-texte-fantaisie",
+    "localizedSlug": "generateur-de-texte-fantaisie",
     "h1": "Générateur de texte stylisé",
     "metaTitle": "Générateur de Texte Fantaisie - Polices Rares SEO Web",
     "metaDescription": "Convertissez vos textes avec des caractères fantaisie et polices décoratives rares en un seul clic. Outil gratuit en ligne, stylisé et sans inscription.",
@@ -6632,10 +6632,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "random-number-generator",
+    "canonicalToolId": "mermaid-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nombres aléatoires",
-    "localizedSlug": "générateur-de-nombres-aléatoires",
+    "localizedSlug": "generateur-de-nombres-aleatoires",
     "h1": "Générateur de nombres aléatoires",
     "metaTitle": "Générateur de Nombres Aléatoires - Tirage Web SEO Pro",
     "metaDescription": "Générez des chiffres et nombres aléatoires dans la plage de votre choix pour vos tirages au sort. Outil gratuit en ligne, pratique et sans inscription.",
@@ -6649,10 +6649,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "poster-generator",
+    "canonicalToolId": "meta-description-generator",
     "language": "fr",
     "primaryKeyword": "générateur d'affiches",
-    "localizedSlug": "générateur-de-posters-et-affiches",
+    "localizedSlug": "generateur-de-posters-et-affiches",
     "h1": "Générateur d'affiches",
     "metaTitle": "Générateur de Posters et Affiches - Visuels SEO Web",
     "metaDescription": "Concevez des idées d'affiches et posters événementiels percutants pour votre communication visuelle. Outil gratuit en ligne, pratique et sans inscription.",
@@ -6666,10 +6666,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "glitch-text-generator",
+    "canonicalToolId": "monster-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte glitch",
-    "localizedSlug": "générateur-de-texte-glitch",
+    "localizedSlug": "generateur-de-texte-glitch",
     "h1": "Générateur de texte glitch",
     "metaTitle": "Générateur de Texte Glitch - Effet Zalgo Unicode SEO",
     "metaDescription": "Créez des textes avec effets de bug visuel (Glitch/Zalgo text) à copier-coller sur les réseaux. Outil gratuit en ligne, stylisé et sans inscription.",
@@ -6683,10 +6683,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "strikethrough-text-generator",
+    "canonicalToolId": "mood-board-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte raturé",
-    "localizedSlug": "générateur-de-texte-barré",
+    "localizedSlug": "generateur-de-texte-barre",
     "h1": "Générateur de texte raturé",
     "metaTitle": "Générateur de Texte Barré - Conversion Unicode SEO",
     "metaDescription": "Convertissez vos phrases en texte barré (Strikethrough text) grâce aux caractères spéciaux Unicode. Outil gratuit en ligne, pratique et sans inscription.",
@@ -6700,10 +6700,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "underline-text-generator",
+    "canonicalToolId": "pen-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte souligné",
-    "localizedSlug": "générateur-de-texte-souligné",
+    "localizedSlug": "generateur-de-texte-souligne",
     "h1": "Générateur de texte souligné",
     "metaTitle": "Générateur de Texte Souligné - Style Unicode Web SEO",
     "metaDescription": "Soulignez facilement vos mots et phrases avec des caractères de soulignement Unicode personnalisés. Outil gratuit en ligne, pratique et sans inscription.",
@@ -6717,10 +6717,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "vaporwave-text-generator",
+    "canonicalToolId": "pet-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte vaporwave",
-    "localizedSlug": "générateur-de-texte-vaporwave",
+    "localizedSlug": "generateur-de-texte-vaporwave",
     "h1": "Générateur de texte vaporwave",
     "metaTitle": "Générateur de Texte Vaporwave - Pleine Largeur SEO",
     "metaDescription": "Convertissez vos mots dans le style esthétique Vaporwave avec des caractères pleine largeur (Fullwidth). Outil gratuit en ligne, stylisé et sans inscription.",
@@ -6734,10 +6734,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "unicode-text-generator",
+    "canonicalToolId": "pixel-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte unicode",
-    "localizedSlug": "générateur-de-texte-unicode",
+    "localizedSlug": "generateur-de-texte-unicode",
     "h1": "Générateur de texte Unicode",
     "metaTitle": "Générateur de Texte Unicode - Polices Spéciales SEO",
     "metaDescription": "Générez plus de 30 styles de textes Unicode originaux à copier-coller partout sur les réseaux sociaux. Outil gratuit en ligne, pratique et sans inscription.",
@@ -6751,10 +6751,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "discord-name-generator",
+    "canonicalToolId": "playlist-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de pseudo discord",
-    "localizedSlug": "générateur-de-noms-discord",
+    "localizedSlug": "generateur-de-noms-discord",
     "h1": "Générateur de pseudo Discord",
     "metaTitle": "Générateur de Noms Discord - Pseudos Stylisés SEO Web",
     "metaDescription": "Trouvez des pseudos Discord tendance, stylisés et originaux pour vous démarquer sur vos serveurs. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6768,10 +6768,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "clan-name-generator",
+    "canonicalToolId": "proposal-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de clan",
-    "localizedSlug": "générateur-de-noms-de-clans",
+    "localizedSlug": "generateur-de-noms-de-clans",
     "h1": "Générateur de nom de clan",
     "metaTitle": "Générateur de Noms de Clans - Noms Équipes Gaming SEO",
     "metaDescription": "Générez des noms de clans épiques et d'équipes e-sport pour vous imposer dans vos jeux multijoueurs. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6785,10 +6785,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "band-name-generator",
+    "canonicalToolId": "purchase-order-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de groupe de musique",
-    "localizedSlug": "générateur-de-noms-de-groupes-de-musique",
+    "localizedSlug": "generateur-de-noms-de-groupes-de-musique",
     "h1": "Générateur de nom de groupe de musique",
     "metaTitle": "Générateur de Noms de Groupes de Musique - Rock SEO",
     "metaDescription": "Trouvez des noms de groupes de musique originaux pour votre formation rock, pop, électro ou hip-hop. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6802,10 +6802,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "superhero-name-generator",
+    "canonicalToolId": "qr-code-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de super-héros",
-    "localizedSlug": "générateur-de-noms-de-super-héros",
+    "localizedSlug": "generateur-de-noms-de-super-heros",
     "h1": "Générateur de nom de super-héros",
     "metaTitle": "Générateur de Noms de Super-Héros - Pseudos SEO Web",
     "metaDescription": "Générez des noms de super-héros épiques et des identités secrètes puissantes pour vos univers de comics. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6819,10 +6819,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "rap-name-generator",
+    "canonicalToolId": "quotation-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de rappeur",
-    "localizedSlug": "générateur-de-noms-de-rappeurs",
+    "localizedSlug": "generateur-de-noms-de-rappeurs",
     "h1": "Générateur de nom de rappeur",
     "metaTitle": "Générateur de Noms de Rappeurs - Pseudos Hip-Hop SEO",
     "metaDescription": "Trouvez un blaze de rappeur ou pseudo hip-hop percutant pour marquer la scène urbaine et vos mixtapes. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6836,10 +6836,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "song-name-generator",
+    "canonicalToolId": "ransom-note-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de titre de chanson",
-    "localizedSlug": "générateur-de-titres-de-chansons",
+    "localizedSlug": "generateur-de-titres-de-chansons",
     "h1": "Générateur de titre de chanson",
     "metaTitle": "Générateur de Titres de Chansons - Noms Musique SEO",
     "metaDescription": "Trouvez des titres de morceaux captivants et poétiques pour composer vos chansons et albums. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6853,10 +6853,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "pirate-name-generator",
+    "canonicalToolId": "retro-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de pirate",
-    "localizedSlug": "générateur-de-noms-de-pirates",
+    "localizedSlug": "generateur-de-noms-de-pirates",
     "h1": "Générateur de nom de pirate",
     "metaTitle": "Générateur de Noms de Pirates - Corsaires SEO Web Pro",
     "metaDescription": "Découvrez des noms de corsaires redoutables et de pirates légendaires pour voguer sur les mers du Far West. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6870,10 +6870,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "medieval-name-generator",
+    "canonicalToolId": "return-policy-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom médiéval",
-    "localizedSlug": "générateur-de-noms-médiévaux",
+    "localizedSlug": "generateur-de-noms-medievaux",
     "h1": "Générateur de nom médiéval",
     "metaTitle": "Générateur de Noms Médiévaux - Chevaliers SEO Web Pro",
     "metaDescription": "Générez des prénoms et titres de noblesse du Moyen Âge pour peupler vos romans historiques et jeux. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6887,10 +6887,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "hreflang-tag-generator",
+    "canonicalToolId": "robot-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de balises hreflang",
-    "localizedSlug": "générateur-de-balises-hreflang",
+    "localizedSlug": "generateur-de-balises-hreflang",
     "h1": "Générateur de balises hreflang",
     "metaTitle": "Générateur de Balises Hreflang - SEO Multilingue Web",
     "metaDescription": "Générez des balises rel=\"alternate\" hreflang valides pour optimiser le référencement international de vos sites web. Outil gratuit en ligne et sans inscription.",
@@ -6904,10 +6904,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "town-name-generator",
+    "canonicalToolId": "salon-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de ville fictive",
-    "localizedSlug": "générateur-de-noms-de-villages",
+    "localizedSlug": "generateur-de-noms-de-villages",
     "h1": "Générateur de nom de ville fictive",
     "metaTitle": "Générateur de Noms de Villages - Bourgades SEO Web Pro",
     "metaDescription": "Trouvez des noms de villages pittoresques et de bourgades provinciales réalistes pour vos histoires. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6921,10 +6921,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "kingdom-name-generator",
+    "canonicalToolId": "service-agreement-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de royaume",
-    "localizedSlug": "générateur-de-noms-de-royaumes",
+    "localizedSlug": "generateur-de-noms-de-royaumes",
     "h1": "Générateur de nom de royaume",
     "metaTitle": "Générateur de Noms de Royaumes - Empires Fantasy SEO",
     "metaDescription": "Générez des noms de royaumes épiques, d'empires et de principautés pour construire vos mondes imaginaires. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6938,10 +6938,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dragon-name-generator",
+    "canonicalToolId": "ship-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de dragon",
-    "localizedSlug": "générateur-de-noms-de-dragons",
+    "localizedSlug": "generateur-de-noms-de-dragons",
     "h1": "Générateur de nom de dragon",
     "metaTitle": "Générateur de Noms de Dragons - Créatures RPG SEO Web",
     "metaDescription": "Découvrez d'anciens noms de dragons redoutables et de wyvernes légendaires pour vos aventures fantasy. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6955,10 +6955,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "wolf-name-generator",
+    "canonicalToolId": "shopify-product-description-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de loup",
-    "localizedSlug": "générateur-de-noms-de-loups",
+    "localizedSlug": "generateur-de-noms-de-loups",
     "h1": "Générateur de nom de loup",
     "metaTitle": "Générateur de Noms de Loups - Idées Alpha SEO Web Pro",
     "metaDescription": "Trouvez des noms puissants pour des loups solitaires, chefs de meute et alpha mystiques en ligne. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6972,10 +6972,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "demon-name-generator",
+    "canonicalToolId": "short-code-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de démon",
-    "localizedSlug": "générateur-de-noms-de-démons",
+    "localizedSlug": "generateur-de-noms-de-demons",
     "h1": "Générateur de nom de démon",
     "metaTitle": "Générateur de Noms de Démons - Entités Sombre SEO Web",
     "metaDescription": "Générez des noms de démons terrifiants et d'entités des enfers pour vos récits de dark fantasy. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -6989,10 +6989,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "elf-name-generator",
+    "canonicalToolId": "sigil-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d'elfe",
-    "localizedSlug": "générateur-de-noms-d-elfes",
+    "localizedSlug": "generateur-de-noms-d-elfes",
     "h1": "Générateur de nom d'elfe",
     "metaTitle": "Générateur de Noms d'Elfes - Personnages Féeriques SEO",
     "metaDescription": "Générez de magnifiques noms d'elfes sylvains, elfes de nuit et nobles hauts-elfes pour vos romans. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7006,10 +7006,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "etsy-tag-generator",
+    "canonicalToolId": "sitemap-generator",
     "language": "fr",
     "primaryKeyword": "générateur de tags etsy",
-    "localizedSlug": "générateur-de-tags-etsy",
+    "localizedSlug": "generateur-de-tags-etsy",
     "h1": "Générateur de tags Etsy",
     "metaTitle": "Générateur de Tags Etsy - Mots-Clés Boutique SEO Web",
     "metaDescription": "Trouvez des mots-clés et tags vendeurs optimisés pour référencer vos créations faites main sur Etsy. Outil gratuit en ligne, efficace et sans inscription.",
@@ -7023,7 +7023,7 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "text-to-binary-generator",
+    "canonicalToolId": "spaceship-name-generator",
     "language": "fr",
     "primaryKeyword": "convertisseur texte en binaire",
     "localizedSlug": "convertisseur-de-texte-en-binaire",
@@ -7040,10 +7040,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "anime-name-generator",
+    "canonicalToolId": "sports-team-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d'anime",
-    "localizedSlug": "générateur-de-noms-d-animés",
+    "localizedSlug": "generateur-de-noms-d-animes",
     "h1": "Générateur de nom d'anime",
     "metaTitle": "Générateur de Noms d'Animés - Personnages Manga SEO",
     "metaDescription": "Générez des noms de personnages d'animés et héros de manga japonais réalistes pour vos créations. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7057,10 +7057,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "qr-code-text-generator",
+    "canonicalToolId": "tattoo-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de qr code texte",
-    "localizedSlug": "générateur-de-qr-code-texte",
+    "localizedSlug": "generateur-de-qr-code-texte",
     "h1": "Générateur de QR code texte",
     "metaTitle": "Générateur de QR Code Texte - Flashcode Web SEO Pro",
     "metaDescription": "Transformez n'importe quel texte ou message en QR code téléchargeable et lisible sur smartphone. Outil gratuit en ligne, pratique et sans inscription.",
@@ -7074,10 +7074,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "dnd-name-generator",
+    "canonicalToolId": "token-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom dnd",
-    "localizedSlug": "générateur-de-noms-dnd-5e",
+    "localizedSlug": "generateur-de-noms-dnd-5e",
     "h1": "Générateur de nom D&D (JDR)",
     "metaTitle": "Générateur de Noms D&D 5e - Personnages RPG SEO Web",
     "metaDescription": "Générez des noms de personnages crédibles pour toutes les races et classes de Donjons et Dragons 5e. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7091,10 +7091,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "orc-name-generator",
+    "canonicalToolId": "typewriter-text-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d'orc",
-    "localizedSlug": "générateur-de-noms-d-orques",
+    "localizedSlug": "generateur-de-noms-d-orques",
     "h1": "Générateur de nom d'orc",
     "metaTitle": "Générateur de Noms d'Orques - Guerriers Bruts SEO Web",
     "metaDescription": "Générez des noms d'orques brutaux et terrifiants pour peupler vos armées fantastiques et RPG. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7108,10 +7108,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "witch-name-generator",
+    "canonicalToolId": "ancient-greek-inspired-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de sorcière",
-    "localizedSlug": "générateur-de-noms-de-sorcières",
+    "localizedSlug": "generateur-de-noms-de-sorcieres",
     "h1": "Générateur de nom de sorcière",
     "metaTitle": "Générateur de Noms de Sorcières - Magie Noire SEO Web",
     "metaDescription": "Trouvez des noms de sorcières mystérieuses, jeteuses de sorts et enchanteresses d'autrefois. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7125,10 +7125,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "alien-name-generator",
+    "canonicalToolId": "roman-inspired-character-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d'extraterrestre",
-    "localizedSlug": "générateur-de-noms-d-extraterrestres",
+    "localizedSlug": "generateur-de-noms-d-extraterrestres",
     "h1": "Générateur de nom d'extraterrestre",
     "metaTitle": "Générateur de Noms d'Extraterrestres - Aliens SF SEO",
     "metaDescription": "Générez des noms d'aliens et de créatures venus d'autres galaxies pour vos histoires de SF. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7142,10 +7142,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "vampire-name-generator",
+    "canonicalToolId": "ancient-egyptian-inspired-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de vampire",
-    "localizedSlug": "générateur-de-noms-de-vampires",
+    "localizedSlug": "generateur-de-noms-de-vampires",
     "h1": "Générateur de nom de vampire",
     "metaTitle": "Générateur de Noms de Vampires - Noms Gothiques SEO",
     "metaDescription": "Générez des prénoms et noms de famille de vampires immortels élégants, nobles et ténébreux. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7159,10 +7159,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "fairy-name-generator",
+    "canonicalToolId": "iupac-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de fée",
-    "localizedSlug": "générateur-de-noms-de-fées",
+    "localizedSlug": "generateur-de-noms-de-fees",
     "h1": "Générateur de nom de fée",
     "metaTitle": "Générateur de Noms de Fées - Créatures Enchanteresses",
     "metaDescription": "Découvrez de doux noms de fées et d'esprits de la nature féeriques pour vos contes merveilleux. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7176,10 +7176,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "goblin-name-generator",
+    "canonicalToolId": "victorian-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de goblin",
-    "localizedSlug": "générateur-de-noms-de-goblinoïdes",
+    "localizedSlug": "generateur-de-noms-de-goblinoides",
     "h1": "Générateur de nom de goblin",
     "metaTitle": "Générateur de Noms de Goblinoïdes - Goblins RPG SEO",
     "metaDescription": "Générez des noms de goblinoïdes malicieux et de petits monstres rusés pour vos parties de JDR. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7193,10 +7193,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "twitch-name-generator",
+    "canonicalToolId": "racehorse-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur de pseudo twitch",
-    "localizedSlug": "générateur-de-noms-twitch",
+    "localizedSlug": "generateur-de-noms-twitch",
     "h1": "Générateur de pseudo Twitch",
     "metaTitle": "Générateur de Noms Twitch - Pseudos Streamers SEO Web",
     "metaDescription": "Trouvez un nom d'utilisateur Twitch original et accrocheur pour lancer votre chaîne de streaming. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7210,10 +7210,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "ascii-text-generator",
+    "canonicalToolId": "emo-name-generator",
     "language": "fr",
     "primaryKeyword": "générateur d'art texte ascii",
-    "localizedSlug": "générateur-de-texte-ascii-art",
+    "localizedSlug": "generateur-de-texte-ascii-art",
     "h1": "Générateur d'art texte ASCII",
     "metaTitle": "Générateur de Texte ASCII Art - Bannières Web SEO Pro",
     "metaDescription": "Convertissez vos titres en bannières ASCII art en caractères spéciaux pour terminaux et code. Outil gratuit en ligne, pratique et sans inscription.",
@@ -7227,10 +7227,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "creepy-text-generator",
+    "canonicalToolId": "poster-generator",
     "language": "fr",
     "primaryKeyword": "générateur de texte effrayant",
-    "localizedSlug": "générateur-de-texte-effrayant",
+    "localizedSlug": "generateur-de-texte-effrayant",
     "h1": "Générateur de texte effrayant",
     "metaTitle": "Générateur de Texte Effrayant - Style Horreur SEO Web",
     "metaDescription": "Transformez votre texte avec une police lugubre et déformée pour des messages d'horreur sur le web. Outil gratuit en ligne, stylisé et sans inscription.",
@@ -7244,10 +7244,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "gaming-name-generator",
+    "canonicalToolId": "flyer-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de gamer",
-    "localizedSlug": "générateur-de-noms-gaming",
+    "localizedSlug": "generateur-de-noms-gaming",
     "h1": "Générateur de nom de gamer",
     "metaTitle": "Générateur de Noms Gaming - Pseudos Joueurs SEO Web",
     "metaDescription": "Générez des pseudos gaming uniques, stylisés et intimidants pour vos jeux vidéo multijoueurs. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7261,10 +7261,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "guild-name-generator",
+    "canonicalToolId": "fantasy-map-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de guilde",
-    "localizedSlug": "générateur-de-noms-de-guildes",
+    "localizedSlug": "generateur-de-noms-de-guildes",
     "h1": "Générateur de nom de guilde",
     "metaTitle": "Générateur de Noms de Guildes - Teams MMORPG SEO Web",
     "metaDescription": "Trouvez des noms de guildes prestigieuses et d'alliances de joueurs pour vos aventures MMORPG. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7278,10 +7278,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "planet-name-generator",
+    "canonicalToolId": "papyrus-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom de planète",
-    "localizedSlug": "générateur-de-noms-de-planètes",
+    "localizedSlug": "generateur-de-noms-de-planetes",
     "h1": "Générateur de nom de planète",
     "metaTitle": "Générateur de Noms de Planètes - Mondes SF Web SEO",
     "metaDescription": "Générez des noms de planètes inexplorées et de mondes extraterrestres pour vos récits de SF. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7295,10 +7295,10 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   },
   {
-    "canonicalToolId": "island-name-generator",
+    "canonicalToolId": "serif-generator",
     "language": "fr",
     "primaryKeyword": "générateur de nom d'île",
-    "localizedSlug": "générateur-de-noms-d-îles",
+    "localizedSlug": "generateur-de-noms-d-iles",
     "h1": "Générateur de nom d'île",
     "metaTitle": "Générateur de Noms d'Îles - Îles Tropicales SEO Web",
     "metaDescription": "Générez des noms d'îles mystérieuses, d'atolls tropicaux et de paradis marins pour vos récits. Outil gratuit en ligne, inspirant et sans inscription.",
@@ -7312,5 +7312,5 @@ export const frenchOptimizedBatch1ToolData: LocalizedToolContent[] = [
     ]
   }
 ];
-export const frenchMasterToolData = frenchOptimizedBatch1ToolData;
-export const frenchLocalizedToolData = frenchMasterToolData;
+
+export const frenchOptimizedBatch1ToolData = frenchMasterToolData;

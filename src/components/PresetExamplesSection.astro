@@ -1,0 +1,40 @@
+---
+import type { PresetExample } from '@/lib/helpful-content-engine';
+
+interface Props {
+  presets: PresetExample[];
+  toolName: string;
+}
+
+const { presets, toolName } = Astro.props;
+---
+
+{presets && presets.length > 0 && (
+  <section class="content-card preset-examples-section" style="margin-top: 2rem; margin-bottom: 2rem;">
+    <h2 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-text-primary);">
+      {toolName} Input & Output Preset Examples
+    </h2>
+    <p style="margin-bottom: 1.25rem; color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">
+      Review these real-world preset examples to see how input prompts and settings transform into optimized outputs.
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+      {presets.map((preset, i) => (
+        <div style="padding: 1rem; border-radius: 8px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+          <div style="font-size: 0.9rem; font-weight: 600; color: #818cf8; margin-bottom: 0.5rem;">
+            {preset.title}
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.875rem;">
+            <div>
+              <span style="font-weight: 600; color: rgba(255,255,255,0.6); display: block; margin-bottom: 0.2rem;">Sample Input:</span>
+              <code style="background: rgba(0,0,0,0.3); padding: 0.4rem 0.6rem; border-radius: 4px; display: block; word-break: break-word; color: #e2e8f0;">{preset.input}</code>
+            </div>
+            <div>
+              <span style="font-weight: 600; color: rgba(255,255,255,0.6); display: block; margin-bottom: 0.2rem;">Generated Output:</span>
+              <code style="background: rgba(0,0,0,0.3); padding: 0.4rem 0.6rem; border-radius: 4px; display: block; word-break: break-word; color: #34d399;">{preset.output}</code>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+)}

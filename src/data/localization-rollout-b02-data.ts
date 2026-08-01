@@ -10,10 +10,10 @@ import {
 } from './localization-rollout-b01-data';
 
 const tools: RolloutToolSpec[] = [
-  { canonicalToolId: 'story-name-generator', label: 'Títulos de Historias', slugBase: 'titulos-de-historias', kind: 'creative' },
+  { canonicalToolId: 'story-name-generator', label: 'Story Title', slugBase: 'story-title', kind: 'creative' },
   { canonicalToolId: 'twitch-name-generator', label: 'Twitch Name', slugBase: 'twitch-name', kind: 'social' },
-  { canonicalToolId: 'random-phrase-generator', label: 'Frases Aleatorias', slugBase: 'frases-aleatorias', kind: 'utility' },
-  { canonicalToolId: 'special-character-generator', label: 'Caracteres Especiales', slugBase: 'caracteres-especiales', kind: 'text' },
+  { canonicalToolId: 'random-phrase-generator', label: 'Random Phrase', slugBase: 'random-phrase', kind: 'utility' },
+  { canonicalToolId: 'special-character-generator', label: 'Special Character', slugBase: 'special-character', kind: 'text' },
   { canonicalToolId: 'ascii-text-generator', label: 'ASCII Text Art', slugBase: 'ascii-text-art', kind: 'text' },
   { canonicalToolId: 'creepy-text-generator', label: 'Creepy Text', slugBase: 'creepy-text', kind: 'text' },
   { canonicalToolId: 'gaming-name-generator', label: 'Gaming Name', slugBase: 'gaming-name', kind: 'gaming' },
@@ -28,7 +28,7 @@ const tools: RolloutToolSpec[] = [
   { canonicalToolId: 'old-english-text-generator', label: 'Old English Text', slugBase: 'old-english-text', kind: 'text' },
   { canonicalToolId: 'uwu-text-generator', label: 'UwU Text', slugBase: 'uwu-text', kind: 'text' },
   { canonicalToolId: 'leet-text-generator', label: 'Leet Speak', slugBase: 'leet-speak', kind: 'text' },
-  { canonicalToolId: 'random-text-generator', label: 'Texto Aleatorio', slugBase: 'texto-aleatorio', kind: 'utility' },
+  { canonicalToolId: 'random-text-generator', label: 'Random Text', slugBase: 'random-text', kind: 'utility' },
   { canonicalToolId: 'discord-timestamp-generator', label: 'Discord Timestamp', slugBase: 'discord-timestamp', kind: 'developer' },
   { canonicalToolId: 'utm-generator', label: 'UTM Link', slugBase: 'utm-link', kind: 'seo' },
   { canonicalToolId: 'gibberish-generator', label: 'Gibberish', slugBase: 'gibberish', kind: 'utility' },
@@ -50,9 +50,9 @@ const tools: RolloutToolSpec[] = [
   { canonicalToolId: 'cat-name-generator', label: 'Cat Name', slugBase: 'cat-name', kind: 'name' },
   { canonicalToolId: 'horse-name-generator', label: 'Horse Name', slugBase: 'horse-name', kind: 'name' },
   { canonicalToolId: 'snapchat-name-generator', label: 'Snapchat Name', slugBase: 'snapchat-name', kind: 'social' },
-  { canonicalToolId: 'bio-generator', label: 'Biografías', slugBase: 'biografias', kind: 'bio' },
+  { canonicalToolId: 'bio-generator', label: 'Bio', slugBase: 'bio', kind: 'bio' },
   { canonicalToolId: 'wifi-name-generator', label: 'WiFi Name', slugBase: 'wifi-name', kind: 'utility' },
-  { canonicalToolId: 'color-name-generator', label: 'Nombres de Colores', slugBase: 'nombres-de-colores', kind: 'creative' },
+  { canonicalToolId: 'color-name-generator', label: 'Color Name', slugBase: 'color-name', kind: 'creative' },
 ];
 
 export const rolloutB02ToolIds = tools.map((tool) => tool.canonicalToolId);
@@ -65,9 +65,9 @@ const b02SafetyAddendum: Record<RolloutLanguage, Record<'utility' | 'social' | '
     bio: 'No lo uses para identidad falsa, suplantacion ni datos personales sensibles.',
   },
   fr: {
-    utility: 'Utilisez-le comme aide pratique et vérifiez le resultat avant toute decision importante.',
-    social: 'Aucune portee, abonnes, disponibilité de noms ni performance de plateforme ne sont promis.',
-    business: 'Ne remplace pas une revue juridique, financiere, de marque ou de disponibilité commerciale.',
+    utility: 'Utilisez-le comme aide pratique et verifiez le resultat avant toute decision importante.',
+    social: 'Aucune portee, abonnes, disponibilite de noms ni performance de plateforme ne sont promis.',
+    business: 'Ne remplace pas une revue juridique, financiere, de marque ou de disponibilite commerciale.',
     bio: 'Ne lutilisez pas pour une fausse identite, une usurpation ou des donnees personnelles sensibles.',
   },
   de: {
@@ -84,14 +84,14 @@ const b02SafetyAddendum: Record<RolloutLanguage, Record<'utility' | 'social' | '
   },
   it: {
     utility: 'Usalo come supporto pratico e verifica il risultato prima di decisioni importanti.',
-    social: 'Non promette copertura, follower, disponibilità di nomi o performance di piattaforma.',
-    business: 'Non sostituisce revisioni legali, finanziarie, di marchio o disponibilità commerciale.',
+    social: 'Non promette copertura, follower, disponibilita di nomi o performance di piattaforma.',
+    business: 'Non sostituisce revisioni legali, finanziarie, di marchio o disponibilita commerciale.',
     bio: 'Non usarlo per false identita, imitazione o dati personali sensibili.',
   },
   pl: {
-    utility: 'Traktuj to jako praktyczna pomoc i sprawdź wynik przed waznymi decyzjami.',
-    social: 'Nie obiecuje zasiegu, obserwujacych, dostępnośći nazw ani wynikow platformy.',
-    business: 'Nie zastepuje kontroli prawnej, finansowej, markowej ani dostępnośći handlowej.',
+    utility: 'Traktuj to jako praktyczna pomoc i sprawdz wynik przed waznymi decyzjami.',
+    social: 'Nie obiecuje zasiegu, obserwujacych, dostepnosci nazw ani wynikow platformy.',
+    business: 'Nie zastepuje kontroli prawnej, finansowej, markowej ani dostepnosci handlowej.',
     bio: 'Nie uzywaj do falszywej tozsamosci, podszywania sie ani wrazliwych danych osobowych.',
   },
   ru: {
@@ -102,7 +102,7 @@ const b02SafetyAddendum: Record<RolloutLanguage, Record<'utility' | 'social' | '
   },
   tr: {
     utility: 'Pratik destek olarak kullanin ve onemli kararlardan once sonucu kontrol edin.',
-    social: 'Erisim, takipci, ad uygunluğu veya platform performansi vadetmez.',
+    social: 'Erisim, takipci, ad uygunlugu veya platform performansi vadetmez.',
     business: 'Hukuki, finansal, marka veya ticari uygunluk incelemesinin yerine gecmez.',
     bio: 'Sahte kimlik, taklit veya hassas kisisel veriler icin kullanmayin.',
   },

@@ -1,0 +1,1132 @@
+{
+  "check1": [
+    {
+      "locale": "es",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "fr",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "de",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "pt",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "it",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "pl",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "ru",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "tr",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "id",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "sv",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "ms",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "bg",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "hi",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "bn",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "nl",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "ja",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "ko",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    },
+    {
+      "locale": "ar",
+      "expected": 430,
+      "actual": 430,
+      "status": "PASS"
+    }
+  ],
+  "check2": [],
+  "check3": [],
+  "check4": [],
+  "check5": [],
+  "check6": [],
+  "check7": [],
+  "check8": [],
+  "check9": [
+    {
+      "toolId": "fancy-text-generator",
+      "locale": "es",
+      "localizedSlug": "letras-bonitas",
+      "generatedUrl": "/es/tools/letras-bonitas/",
+      "canonical": "https://taptogen.com/es/tools/letras-bonitas/",
+      "hreflangCount": 20,
+      "metaTitle": "Generador de Nombres Gratis - Ideas Creativas Online — TapToGen",
+      "metaDescription": "Genera nombres originales y creativos para proyectos, personajes, marcas y empresas al instante. Herramienta gratuita online sin registro."
+    },
+    {
+      "toolId": "youtube-tag-generator",
+      "locale": "fr",
+      "localizedSlug": "generateur-de-texte-decoupage",
+      "generatedUrl": "/fr/tools/generateur-de-texte-decoupage/",
+      "canonical": "https://taptogen.com/fr/tools/generateur-de-texte-decoupage/",
+      "hreflangCount": 20,
+      "metaTitle": "Générateur de Texte Style Rançon - Polices Découpées Web — TapToGen",
+      "metaDescription": "Transformez vos textes en lettres découpées style note de rançon pour vos projets visuels. Outil gratuit en ligne, amusant et sans inscription."
+    },
+    {
+      "toolId": "cursive-text-generator",
+      "locale": "de",
+      "localizedSlug": "ersteller-unicode-text-ersteller",
+      "generatedUrl": "/de/tools/ersteller-unicode-text-ersteller/",
+      "canonical": "https://taptogen.com/de/tools/ersteller-unicode-text-ersteller/",
+      "hreflangCount": 20,
+      "metaTitle": "Kostenloser Unicode Text-Ersteller - Ergebnisse Online — TapToGen",
+      "metaDescription": "Erstellen Sie ganz einfach erstklassige Unicode Text-Ersteller Entwürfe mit unserem kostenlosen Online-Werkzeug. Ohne Registrierung oder Installation."
+    },
+    {
+      "toolId": "fantasy-name-generator",
+      "locale": "pt",
+      "localizedSlug": "gerador-de-kit-de-marca",
+      "generatedUrl": "/pt/tools/gerador-de-kit-de-marca/",
+      "canonical": "https://taptogen.com/pt/tools/gerador-de-kit-de-marca/",
+      "hreflangCount": 20,
+      "metaTitle": "Gerador de Kit de Marca - Identidade Visual Grátis Web — TapToGen",
+      "metaDescription": "Desenvolva rascunhos para a identidade visual da sua marca, paleta de cores e conceitos visuais. Ferramenta online fácil e gratuita de usar."
+    },
+    {
+      "toolId": "uuid-generator",
+      "locale": "it",
+      "localizedSlug": "generatore-di-tag-video",
+      "generatedUrl": "/it/tools/generatore-di-tag-video/",
+      "canonical": "https://taptogen.com/it/tools/generatore-di-tag-video/",
+      "hreflangCount": 20,
+      "metaTitle": "Generatoree di Tag Video - Parole Chiave YouTube SEO — TapToGen",
+      "metaDescription": "Genera tag e parole chiave ottimizzate per aumentare le visualizzazioni dei tuoi video. Strumento gratuito online per la SEO dei tuoi contenuti."
+    },
+    {
+      "toolId": "strikethrough-text-generator",
+      "locale": "pl",
+      "localizedSlug": "kreator-meta-description",
+      "generatedUrl": "/pl/tools/kreator-meta-description/",
+      "canonical": "https://taptogen.com/pl/tools/kreator-meta-description/",
+      "hreflangCount": 20,
+      "metaTitle": "Kreator Meta Description - Opisy SEO dla Google WWW — TapToGen",
+      "metaDescription": "Twórz przyciągające uwagę meta opisy dla swoich stron internetowych. Zwiększ wskaźnik klikalności CTR w wynikach wyszukiwania Google. Skorzystaj z darmowej..."
+    },
+    {
+      "toolId": "unicode-text-generator",
+      "locale": "ru",
+      "localizedSlug": "robots-txt",
+      "generatedUrl": "/ru/tools/robots-txt/",
+      "canonical": "https://taptogen.com/ru/tools/robots-txt/",
+      "hreflangCount": 20,
+      "metaTitle": "Генератор Robots.txt Online - Правильный Файл Сайта — TapToGen",
+      "metaDescription": "Сгенерируйте корректный файл robots.txt для индексации сайта поисковиками. Быстрая настройка правил индексирования в реальном времени. Попробуйте бесплатный..."
+    },
+    {
+      "toolId": "product-name-generator",
+      "locale": "tr",
+      "localizedSlug": "italik-yazi-olusturucu",
+      "generatedUrl": "/tr/tools/italik-yazi-olusturucu/",
+      "canonical": "https://taptogen.com/tr/tools/italik-yazi-olusturucu/",
+      "hreflangCount": 20,
+      "metaTitle": "İtalik Yazı Oluşturucu - Eğik Metin Font Çevirici Online — TapToGen",
+      "metaDescription": "Metinlerinizi sosyal medya için eğik italik fontlara hızlıca dönüştürün. Instagram ve profil açıklamaları için ücretsiz italik araç. Ücretsiz çevrimiçi..."
+    },
+    {
+      "toolId": "discord-name-generator",
+      "locale": "id",
+      "localizedSlug": "penghitung-kata",
+      "generatedUrl": "/id/tools/penghitung-kata/",
+      "canonical": "https://taptogen.com/id/tools/penghitung-kata/",
+      "hreflangCount": 20,
+      "metaTitle": "Penghitung Kata Online - Hitung Karakter dan Teks Online — TapToGen",
+      "metaDescription": "Hitung jumlah kata, karakter, kalimat, dan paragraf dalam teks secara instan. Alat kalkulator kata gratis paling akurat online. Gunakan alat pembuat..."
+    },
+    {
+      "toolId": "rap-name-generator",
+      "locale": "sv",
+      "localizedSlug": "bloggdisposition-skapare",
+      "generatedUrl": "/sv/tools/bloggdisposition-skapare/",
+      "canonical": "https://taptogen.com/sv/tools/bloggdisposition-skapare/",
+      "hreflangCount": 20,
+      "metaTitle": "BloggdispositionsSkapare - Skapa Struktur för Inlägg — TapToGen",
+      "metaDescription": "Skapa strukturerade dispositioner och rubrikplaner för dina blogginlägg. Generera SEO-vänliga artikelstrukturer gratis online. Använd detta kostnadsfria..."
+    },
+    {
+      "toolId": "pirate-name-generator",
+      "locale": "ms",
+      "localizedSlug": "penjana-random-number",
+      "generatedUrl": "/ms/tools/penjana-random-number/",
+      "canonical": "https://taptogen.com/ms/tools/penjana-random-number/",
+      "hreflangCount": 20,
+      "metaTitle": "Penjana Nombor Rawak - Cipta Nombor Slumped Online — TapToGen",
+      "metaDescription": "Jana nombor rawak mengikut julat pilihan anda untuk cabutan bertuah atau ujian. Penjana nombor rawak percuma secara pantas online. Gunakan alat percuma ini..."
+    },
+    {
+      "toolId": "slug-generator",
+      "locale": "bg",
+      "localizedSlug": "sazdatel-na-unicode-text-sazdatel",
+      "generatedUrl": "/bg/tools/sazdatel-na-unicode-text-sazdatel/",
+      "canonical": "https://taptogen.com/bg/tools/sazdatel-na-unicode-text-sazdatel/",
+      "hreflangCount": 20,
+      "metaTitle": "Генератор На Уникод Текст - Стилни Символи онлайн безплатно — TapToGen",
+      "metaDescription": "Превърнете текста си в уникални Уникод шрифтове и специални символи онлайн. Използвайте нашия безплатен генератор на уникод текст бързо."
+    },
+    {
+      "toolId": "dice-roller",
+      "locale": "hi",
+      "localizedSlug": "janaratar-superhero-name",
+      "generatedUrl": "/hi/tools/janaratar-superhero-name/",
+      "canonical": "https://taptogen.com/hi/tools/janaratar-superhero-name/",
+      "hreflangCount": 20,
+      "metaTitle": "सुपरहीरो नाम जनरेटर - कॉमिक्स के लिए शक्तिशाली नाम — TapToGen",
+      "metaDescription": "अपनी कॉमिक्स और कहानियों के शक्तिशाली सुपरहीरो पात्रों के लिए नाम जनरेट करें। मुफ्त ऑनलाइन सुपरहीरो नाम जनरेटर का उपयोग करें। इस मुफ्त ऑनलाइन टूल का उपयोग..."
+    },
+    {
+      "toolId": "dragon-name-generator",
+      "locale": "bn",
+      "localizedSlug": "janaratar-medieval-name",
+      "generatedUrl": "/bn/tools/janaratar-medieval-name/",
+      "canonical": "https://taptogen.com/bn/tools/janaratar-medieval-name/",
+      "hreflangCount": 20,
+      "metaTitle": "মধ্যযুগীয় নাম জেনারেটর - প্রাচীন রাজা প্রজা নাম অনলাইন — TapToGen",
+      "metaDescription": "মধ্যযুগীয় ইতিহাস, রাজপরিবার ও প্রাচীন যোদ্ধাদের নাম জেনারেট করুন। ফ্রি অনলাইন মধ্যযুগীয় নাম জেনারেটর দিয়ে সেরা নাম পছন্দ করুন। এই বিনামূল্যে অনলাইন টুল..."
+    },
+    {
+      "toolId": "youtube-name-generator",
+      "locale": "nl",
+      "localizedSlug": "creador-json-formatter",
+      "generatedUrl": "/tools/youtube-name-generator/",
+      "canonical": "https://taptogen.com/tools/youtube-name-generator/",
+      "hreflangCount": 2,
+      "metaTitle": "YouTube Name Generator - Channel Name Ideas — TapToGen",
+      "metaDescription": "Brainstorm YouTube channel name ideas for your niche - free & instant. — Free, instant, and secure browser-based generator tools. Generate names, text styl"
+    },
+    {
+      "toolId": "etsy-tag-generator",
+      "locale": "ja",
+      "localizedSlug": "machi-name-jenereta",
+      "generatedUrl": "/ja/tools/machi-name-jenereta/",
+      "canonical": "https://taptogen.com/ja/tools/machi-name-jenereta/",
+      "hreflangCount": 20,
+      "metaTitle": "街の名前ジェネレーター - 架空の町や都市・村のネーミングアイデア自動作成ツール【無料オンラインおすすめネーミ — TapToGen",
+      "metaDescription": "ファンタジー世界や現代小説、RPGゲームに登場する町、都市、村の魅力的な名前を生成します。舞台設定にぴったりの地名を素早く探すことができます。当サイトの無料Webツールを活用して、理想のネーミング案を即座に作成しましょう。 完全無料でブラウザ上から登録不要で今すぐご利用いただけます。豊富なアイデアと"
+    },
+    {
+      "toolId": "anime-name-generator",
+      "locale": "ko",
+      "localizedSlug": "angma-mawang-ireum-saengseonggi",
+      "generatedUrl": "/ko/tools/angma-mawang-ireum-saengseonggi/",
+      "canonical": "https://taptogen.com/ko/tools/angma-mawang-ireum-saengseonggi/",
+      "hreflangCount": 20,
+      "metaTitle": "악마 이름 생성기 - 공포스럽고 매혹적인 마왕·악마명을 무료로 자동 추천 생성 툴【무료 온라인 추천 — TapToGen",
+      "metaDescription": "지옥의 대악마, 타락천사, 마왕, 서큐버스, 데몬 캐릭터에 부합하는 섬뜩하고 매혹적인 이름을 자동 생성해 드립니다. 어두운 분위기의 창작물 제작에 유용하게 활용하세요.본 무료 웹 도구를 활용하여 비즈니스 및 브랜드에 완벽하게 부합하는 최적의 추천 아이디어를 즉시 생성해"
+    },
+    {
+      "toolId": "witch-name-generator",
+      "locale": "ar",
+      "localizedSlug": "muwallid-morse-kud-muwallid",
+      "generatedUrl": "/ar/tools/muwallid-morse-kud-muwallid/",
+      "canonical": "https://taptogen.com/ar/tools/muwallid-morse-kud-muwallid/",
+      "hreflangCount": 20,
+      "metaTitle": "مولد شفرة مورس - تحويل النص إلى نقاط شرطات مجاناً أونلاين — TapToGen",
+      "metaDescription": "حوّل نصوصك إلى شفرة مورس الصوتية والنصية المشهورة (نقاط وشرطات) بسرعة فائقة. أداة مجانية تساعدك في تعلم شفرة مورس وإرسال رسائل مشفرة وممتعة لأصدقائك."
+    },
+    {
+      "toolId": "goblin-name-generator",
+      "locale": "es",
+      "localizedSlug": "generador-orc-nombres",
+      "generatedUrl": "/es/tools/generador-orc-nombres/",
+      "canonical": "https://taptogen.com/es/tools/generador-orc-nombres/",
+      "hreflangCount": 20,
+      "metaTitle": "Generador de Nombres de Orcos - Guerreros Épicos Web — TapToGen",
+      "metaDescription": "Encuentra nombres feroces y brutales para orcos y guerreros de fantasía en tus partidas de rol. Herramienta gratuita e instantánea online."
+    },
+    {
+      "toolId": "random-phrase-generator",
+      "locale": "fr",
+      "localizedSlug": "convertisseur-de-casse-de-texte",
+      "generatedUrl": "/fr/tools/convertisseur-de-casse-de-texte/",
+      "canonical": "https://taptogen.com/fr/tools/convertisseur-de-casse-de-texte/",
+      "hreflangCount": 20,
+      "metaTitle": "Convertisseur de Casse de Texte - Majuscules Minuscules — TapToGen",
+      "metaDescription": "Convertissez facilement vos textes en MAJUSCULES, minuscules, Title Case et camelCase en un clic. Outil gratuit en ligne, rapide et sans inscription."
+    },
+    {
+      "toolId": "guild-name-generator",
+      "locale": "de",
+      "localizedSlug": "color-namen-ersteller",
+      "generatedUrl": "/de/tools/color-namen-ersteller/",
+      "canonical": "https://taptogen.com/de/tools/color-namen-ersteller/",
+      "hreflangCount": 20,
+      "metaTitle": "Kostenloser Farbnamen-Ersteller - Ergebnisse Online — TapToGen",
+      "metaDescription": "Erstellen Sie ganz einfach erstklassige Farbnamen-Ersteller Entwürfe mit unserem kostenlosen Online-Werkzeug. Ohne Registrierung oder Installation."
+    },
+    {
+      "toolId": "cafe-name-generator",
+      "locale": "pt",
+      "localizedSlug": "gerador-guild-name",
+      "generatedUrl": "/pt/tools/gerador-guild-name/",
+      "canonical": "https://taptogen.com/pt/tools/gerador-guild-name/",
+      "hreflangCount": 20,
+      "metaTitle": "Gerador de Nomes de Guildas - Clãs de MMORPG e Jogos — TapToGen",
+      "metaDescription": "Crie nomes épicos e imponentes para guildas de MMORPG, clãs e alianças de eSports. Ferramenta online gratuita, rápida e sem cadastro online."
+    },
+    {
+      "toolId": "cool-text-generator",
+      "locale": "it",
+      "localizedSlug": "generatore-di-nomi-per-cafe",
+      "generatedUrl": "/it/tools/generatore-di-nomi-per-cafe/",
+      "canonical": "https://taptogen.com/it/tools/generatore-di-nomi-per-cafe/",
+      "hreflangCount": 20,
+      "metaTitle": "Generatoree di Noms per Cafè - Bar e Caffetterie SEO — TapToGen",
+      "metaDescription": "Crea nomi accoglienti ed eleganti per il tuo nuovo cafè, bar o caffetteria di quartiere. Strumento gratuito online ricco di spunti ideali."
+    },
+    {
+      "toolId": "random-text-generator",
+      "locale": "pl",
+      "localizedSlug": "kreator-old-english-text",
+      "generatedUrl": "/pl/tools/kreator-old-english-text/",
+      "canonical": "https://taptogen.com/pl/tools/kreator-old-english-text/",
+      "hreflangCount": 20,
+      "metaTitle": "Kreator Gotyckiego Tekstu - Staroangielski Style — TapToGen",
+      "metaDescription": "Przekształć litery w eleganckie czcionki gotyckie i staroangielskie. Kopiuj zabytkowy styl pisma do nagłówków i opisów bez opłat. Wypróbuj bezpłatne..."
+    },
+    {
+      "toolId": "shakespeare-insult-generator",
+      "locale": "ru",
+      "localizedSlug": "utm-link",
+      "generatedUrl": "/tools/shakespeare-insult-generator/",
+      "canonical": "https://taptogen.com/tools/shakespeare-insult-generator/",
+      "hreflangCount": 2,
+      "metaTitle": "Shakespeare Insult Generator - Safe Stage Banter — TapToGen",
+      "metaDescription": "Draft theatrical old-style joke lines with consent, safe boundaries, and softer alternatives. — Free, instant, and secure browser-based generator tools. Ge"
+    },
+    {
+      "toolId": "dwarf-name-generator",
+      "locale": "tr",
+      "localizedSlug": "olusturucu-tiefling-name",
+      "generatedUrl": "/tr/tools/olusturucu-tiefling-name/",
+      "canonical": "https://taptogen.com/tr/tools/olusturucu-tiefling-name/",
+      "hreflangCount": 20,
+      "metaTitle": "Tiefling İsim Oluşturucu - Mistik DnD İsimleri Online — TapToGen",
+      "metaDescription": "D&D oyunları ve fantastik dünyalar için gizemli Tiefling isimleri oluşturun. Şeytani ve asil kurgusal karakter isim üreticisi. Ücretsiz çevrimiçi aracımızı..."
+    },
+    {
+      "toolId": "book-club-name-generator",
+      "locale": "id",
+      "localizedSlug": "pembuat-pinterest-tag-pembuat",
+      "generatedUrl": "/id/tools/pembuat-pinterest-tag-pembuat/",
+      "canonical": "https://taptogen.com/id/tools/pembuat-pinterest-tag-pembuat/",
+      "hreflangCount": 20,
+      "metaTitle": "Pembuat Tag Pinterest - Pembuat Kata Kunci Pins Online — TapToGen",
+      "metaDescription": "Hasilkan tag dan kata kunci Pinterest pilihan yang meningkatkan jangkauan pin Anda. Alat pembuat tag Pinterest SEO gratis terbaik. Gunakan alat pembuat..."
+    },
+    {
+      "toolId": "error-message-generator",
+      "locale": "sv",
+      "localizedSlug": "skapare-magic-name",
+      "generatedUrl": "/sv/tools/skapare-magic-name/",
+      "canonical": "https://taptogen.com/sv/tools/skapare-magic-name/",
+      "hreflangCount": 20,
+      "metaTitle": "MaginamnSkapare - Skapa Magiska Formler och Spell — TapToGen",
+      "metaDescription": "Generera förtrollande magi-namn och zakläningsnamn för dina fantasyberättelser. Skapa magiska kraftnamn snabbt och gratis online. Använd detta kostnadsfria..."
+    },
+    {
+      "toolId": "angel-name-generator",
+      "locale": "ms",
+      "localizedSlug": "penjana-cat-name",
+      "generatedUrl": "/ms/tools/penjana-cat-name/",
+      "canonical": "https://taptogen.com/ms/tools/penjana-cat-name/",
+      "hreflangCount": 20,
+      "metaTitle": "Penjana Nama Kucing - Cipta Nama Kucing Comel Online — TapToGen",
+      "metaDescription": "Jana nama kucing yang comel, manja dan unik untuk anak kucing kesayangan anda. Penjana nama kucing percuma secara pantas online. Gunakan alat percuma ini..."
+    },
+    {
+      "toolId": "horse-name-generator",
+      "locale": "bg",
+      "localizedSlug": "sazdatel-na-wifi-name-sazdatel",
+      "generatedUrl": "/bg/tools/sazdatel-na-wifi-name-sazdatel/",
+      "canonical": "https://taptogen.com/bg/tools/sazdatel-na-wifi-name-sazdatel/",
+      "hreflangCount": 20,
+      "metaTitle": "Генератор На Имена За Wi-Fi Мрежи - Wi-Fi онлайн безплатно — TapToGen",
+      "metaDescription": "Намерете забавни и оригинални имена за вашата домашна Wi-Fi мрежа онлайн. Използвайте нашия безплатен генератор на имена за Wi-Fi мрежи."
+    },
+    {
+      "toolId": "slogan-generator",
+      "locale": "hi",
+      "localizedSlug": "janaratar-midjourney-prompt",
+      "generatedUrl": "/hi/tools/janaratar-midjourney-prompt/",
+      "canonical": "https://taptogen.com/hi/tools/janaratar-midjourney-prompt/",
+      "hreflangCount": 20,
+      "metaTitle": "मिडजर्नी प्रॉम्प्ट जनरेटर - एआई आर्ट प्रॉम्प्ट्स बनाएं — TapToGen",
+      "metaDescription": "अद्भुत एआई चित्र बनाने के लिए विस्तृत मिडजर्नी प्रॉम्प्ट्स बनाएं। मुफ्त ऑनलाइन मिडजर्नी प्रॉम्प्ट जनरेटर का उपयोग करें तुरंत आसानी से। इस मुफ्त ऑनलाइन टूल..."
+    },
+    {
+      "toolId": "rgb-generator",
+      "locale": "bn",
+      "localizedSlug": "janaratar-css-border-radius",
+      "generatedUrl": "/bn/tools/janaratar-css-border-radius/",
+      "canonical": "https://taptogen.com/bn/tools/janaratar-css-border-radius/",
+      "hreflangCount": 20,
+      "metaTitle": "বর্ডার রেডিয়াস জেনারেটর - গোল সিএসএস ফ্রেম অনলাইন — TapToGen",
+      "metaDescription": "ওয়েব বক্স ও ইমেজের জন্য নিখুঁত সিএসএস বর্ডার রেডিয়াস কোড বানান। ফ্রি বর্ডার রেডিয়াস জেনারেটর দিয়ে গোল কর্নার ডিজাইন করুন সহজে। এই বিনামূল্যে অনলাইন টুল..."
+    },
+    {
+      "toolId": "pin-generator",
+      "locale": "nl",
+      "localizedSlug": "creador-random-question-creador",
+      "generatedUrl": "/tools/pin-generator/",
+      "canonical": "https://taptogen.com/tools/pin-generator/",
+      "hreflangCount": 2,
+      "metaTitle": "PIN Generator - Sample PIN Placeholders — TapToGen",
+      "metaDescription": "Generate sample PIN-style placeholders for demos and UI testing. Not production security advice. — Free, instant, and secure browser-based generator tools."
+    },
+    {
+      "toolId": "cookie-policy-generator",
+      "locale": "ja",
+      "localizedSlug": "homekotoba-jenereta",
+      "generatedUrl": "/tools/cookie-policy-generator/",
+      "canonical": "https://taptogen.com/tools/cookie-policy-generator/",
+      "hreflangCount": 2,
+      "metaTitle": "Cookie Policy Generator - Informational Draft — TapToGen",
+      "metaDescription": "Draft cookie policy sections with professional-review reminders - free & instant. — Free, instant, and secure browser-based generator tools. Generate names"
+    },
+    {
+      "toolId": "tiktok-caption-generator",
+      "locale": "ko",
+      "localizedSlug": "jagisogaeseo-seodu-saengseonggi",
+      "generatedUrl": "/tools/tiktok-caption-generator/",
+      "canonical": "https://taptogen.com/tools/tiktok-caption-generator/",
+      "hreflangCount": 2,
+      "metaTitle": "TikTok Caption Generator - Caption Drafts — TapToGen",
+      "metaDescription": "Draft TikTok captions with hooks and safe calls to action - free & instant. — Free, instant, and secure browser-based generator tools. Generate names, text"
+    },
+    {
+      "toolId": "regex-generator",
+      "locale": "ar",
+      "localizedSlug": "muwallid-ashwai-emoji-muwallid",
+      "generatedUrl": "/ar/tools/muwallid-ashwai-emoji-muwallid/",
+      "canonical": "https://taptogen.com/ar/tools/muwallid-ashwai-emoji-muwallid/",
+      "hreflangCount": 20,
+      "metaTitle": "مولد الإيموجي والرموز التعبيرية - رموز مجاناً أونلاين — TapToGen",
+      "metaDescription": "اختر رموزاً تعبيرية وإيموجيهات عشوائية ممتعة لنسخها ولصقها في منشوراتك ومحادثاتك فورياً. أداة مجانية تمنحك تشكيلة واسعة من الإيموجي لإضافة المرح على رسائلك."
+    },
+    {
+      "toolId": "truth-or-dare-generator",
+      "locale": "es",
+      "localizedSlug": "generador-ideas-de-videojuegos",
+      "generatedUrl": "/es/tools/generador-ideas-de-videojuegos/",
+      "canonical": "https://taptogen.com/es/tools/generador-ideas-de-videojuegos/",
+      "hreflangCount": 20,
+      "metaTitle": "Generador de Ideas de Videojuegos - Conceptos Creativos — TapToGen",
+      "metaDescription": "Encuentra ideas originales de mecánicas y tramas para el desarrollo de videojuegos. Herramienta gratuita online ideal para desarrolladores."
+    },
+    {
+      "toolId": "gradient-generator",
+      "locale": "fr",
+      "localizedSlug": "generateur-de-layout-flexbox",
+      "generatedUrl": "/fr/tools/generateur-de-layout-flexbox/",
+      "canonical": "https://taptogen.com/fr/tools/generateur-de-layout-flexbox/",
+      "hreflangCount": 20,
+      "metaTitle": "Générateur de Layout Flexbox CSS - Mises en Page SEO — TapToGen",
+      "metaDescription": "Concevez et visualisez des mises en page CSS Flexbox réactives avec prévisualisation en temps réel. Outil technique gratuit, précis et sans inscription."
+    },
+    {
+      "toolId": "cover-letter-generator",
+      "locale": "de",
+      "localizedSlug": "ersteller-viral-hook-ersteller",
+      "generatedUrl": "/de/tools/ersteller-viral-hook-ersteller/",
+      "canonical": "https://taptogen.com/de/tools/ersteller-viral-hook-ersteller/",
+      "hreflangCount": 20,
+      "metaTitle": "Kostenloser Viral Hook-Ersteller - Ergebnisse Online — TapToGen",
+      "metaDescription": "Erstellen Sie ganz einfach erstklassige Viral Hook-Ersteller Entwürfe mit unserem kostenlosen Online-Werkzeug. Ohne Registrierung oder Installation."
+    },
+    {
+      "toolId": "product-description-generator",
+      "locale": "pt",
+      "localizedSlug": "gerador-citas-academicas",
+      "generatedUrl": "/pt/tools/gerador-citas-academicas/",
+      "canonical": "https://taptogen.com/pt/tools/gerador-citas-academicas/",
+      "hreflangCount": 20,
+      "metaTitle": "Gerador de Citações Académicas - Formatador ABNT Grátis — TapToGen",
+      "metaDescription": "Formate citações bibliográficas e referências acadêmicas nos padrões ABNT e APA rapidamente. Ferramenta gratuita online e fácil de utilizar."
+    },
+    {
+      "toolId": "game-idea-generator",
+      "locale": "it",
+      "localizedSlug": "generatore-di-nomi-per-artisti",
+      "generatedUrl": "/it/tools/generatore-di-nomi-per-artisti/",
+      "canonical": "https://taptogen.com/it/tools/generatore-di-nomi-per-artisti/",
+      "hreflangCount": 20,
+      "metaTitle": "Generatoree di Nomi per Artisti - Arte Creativa SEO — TapToGen",
+      "metaDescription": "Trova pseudonimi ed il nome d'arte perfetto per presentare le tue opere grafiche e dipinti. Strumento online gratuito stimolante ed utile."
+    },
+    {
+      "toolId": "story-plot-generator",
+      "locale": "pl",
+      "localizedSlug": "kreator-typography",
+      "generatedUrl": "/pl/tools/kreator-typography/",
+      "canonical": "https://taptogen.com/pl/tools/kreator-typography/",
+      "hreflangCount": 20,
+      "metaTitle": "Kreator Tipografii Online - Stylizacja Krojów Online — TapToGen",
+      "metaDescription": "Eksperymentuj z ustawieniami typografii, interlinii i krojów pism na stronach WWW. Wygeneruj czysty kod stylów CSS dla projektantów grafiki."
+    },
+    {
+      "toolId": "sku-generator",
+      "locale": "ru",
+      "localizedSlug": "drag-queen-name",
+      "generatedUrl": "/ru/tools/drag-queen-name/",
+      "canonical": "https://taptogen.com/ru/tools/drag-queen-name/",
+      "hreflangCount": 20,
+      "metaTitle": "Генератор Drag Queen Имен - Яркие Снические Ники Онлайн — TapToGen",
+      "metaDescription": "Сгенерируйте эксцентричные, яркие и смелые сценические имена для шоу. Бесплатный инструмент создания незабываемых псевдонимов. Попробуйте бесплатный онлайн..."
+    },
+    {
+      "toolId": "license-key-generator",
+      "locale": "tr",
+      "localizedSlug": "olusturucu-synonym",
+      "generatedUrl": "/tools/license-key-generator/",
+      "canonical": "https://taptogen.com/tools/license-key-generator/",
+      "hreflangCount": 2,
+      "metaTitle": "License Key Generator - Sample Placeholders — TapToGen",
+      "metaDescription": "Generate sample license key placeholders for demos and testing - free & instant. — Free, instant, and secure browser-based generator tools. Generate names,"
+    },
+    {
+      "toolId": "shipping-policy-generator",
+      "locale": "id",
+      "localizedSlug": "pembuat-random-word-pembuat",
+      "generatedUrl": "/tools/shipping-policy-generator/",
+      "canonical": "https://taptogen.com/tools/shipping-policy-generator/",
+      "hreflangCount": 2,
+      "metaTitle": "Shipping Policy Generator - Draft Ecommerce Policy Helper — TapToGen",
+      "metaDescription": "Create draft-only shipping policy sections with merchant checklist, region, customs, carrier, marketplace, and review reminders. — Free, instant, and secur"
+    },
+    {
+      "toolId": "citation-generator",
+      "locale": "sv",
+      "localizedSlug": "skapare-tag-cloud",
+      "generatedUrl": "/sv/tools/skapare-tag-cloud/",
+      "canonical": "https://taptogen.com/sv/tools/skapare-tag-cloud/",
+      "hreflangCount": 20,
+      "metaTitle": "TaggmolnsSkapare - Visualisera Nyckelord i Moln Online — TapToGen",
+      "metaDescription": "Skapa och visualisera ord- och taggmoln från dina texter för snygg presentation. Generera estetiska taggmoln gratis online. Använd detta kostnadsfria..."
+    },
+    {
+      "toolId": "meme-text-generator",
+      "locale": "ms",
+      "localizedSlug": "penjana-stable-diffusion-prompt",
+      "generatedUrl": "/ms/tools/penjana-stable-diffusion-prompt/",
+      "canonical": "https://taptogen.com/ms/tools/penjana-stable-diffusion-prompt/",
+      "hreflangCount": 20,
+      "metaTitle": "Penjana Prompt Stable Diffusion - Cipta Seni AI Online — TapToGen",
+      "metaDescription": "Hasilkan arahan prompt Stable Diffusion yang terperinci untuk penjanaan imej AI. Penjana prompt AI percuma secara pantas online. Gunakan alat percuma ini..."
+    },
+    {
+      "toolId": "video-game-name-generator",
+      "locale": "bg",
+      "localizedSlug": "sazdatel-na-viral-hook-sazdatel",
+      "generatedUrl": "/bg/tools/sazdatel-na-viral-hook-sazdatel/",
+      "canonical": "https://taptogen.com/bg/tools/sazdatel-na-viral-hook-sazdatel/",
+      "hreflangCount": 20,
+      "metaTitle": "Генератор На Вирални Кукички - Ганчове онлайн безплатно — TapToGen",
+      "metaDescription": "Генерирайте грабващи вниманието вирални кукички за вашите видеа и постове. Използвайте нашия безплатен генератор на вирални кукички онлайн."
+    },
+    {
+      "toolId": "social-media-post-generator",
+      "locale": "hi",
+      "localizedSlug": "janaratar-css-flexbox",
+      "generatedUrl": "/hi/tools/janaratar-css-flexbox/",
+      "canonical": "https://taptogen.com/hi/tools/janaratar-css-flexbox/",
+      "hreflangCount": 20,
+      "metaTitle": "फ्लेक्सबॉक्स जनरेटर - सीएसएस फ्लेक्स लेआउट कोड ऑनलाइन — TapToGen",
+      "metaDescription": "वेबसाइट एलीमेंट्स के अलाइनमेंट के लिए सीएसएस फ्लेक्सबॉक्स कोड बनाएं। मुफ्त ऑनलाइन फ्लेक्सबॉक्स जनरेटर से डिजाइन लेआउट तैयार करें आसानी से।"
+    },
+    {
+      "toolId": "dragonborn-name-generator",
+      "locale": "bn",
+      "localizedSlug": "janaratar-giveaway-winner",
+      "generatedUrl": "/bn/tools/janaratar-giveaway-winner/",
+      "canonical": "https://taptogen.com/bn/tools/janaratar-giveaway-winner/",
+      "hreflangCount": 20,
+      "metaTitle": "গিভঅ্যাওয়ে জেনারেটর - সোশ্যাল প্রতিযোগিতা বিজয়ী অনলাইন — TapToGen",
+      "metaDescription": "ফেসবুক ও ইনস্টাগ্রাম গিভঅ্যাওয়ে প্রতিযোগিতার র্যান্ডম বিজয়ী বাছুন। ফ্রি গিভঅ্যাওয়ে জেনারেটর দিয়ে লটারি নাম বিজয়ী তৈরি করুন সহজে। এই বিনামূল্যে অনলাইন টুল..."
+    },
+    {
+      "toolId": "lowercase-generator",
+      "locale": "nl",
+      "localizedSlug": "creador-landing-page-copy-creador",
+      "generatedUrl": "/nl/tools/creador-landing-page-copy-creador/",
+      "canonical": "https://taptogen.com/nl/tools/creador-landing-page-copy-creador/",
+      "hreflangCount": 20,
+      "metaTitle": "Landing Page Copy Maker - Schrijf Webteksten online — TapToGen",
+      "metaDescription": "Schrijf conversiegerichte en overtuigende landing page teksten voor je producten. Gebruik onze gratis online landing page copy Maker tool."
+    },
+    {
+      "toolId": "name-tag-generator",
+      "locale": "ja",
+      "localizedSlug": "htaccess-jenereta",
+      "generatedUrl": "/ja/tools/htaccess-jenereta/",
+      "canonical": "https://taptogen.com/ja/tools/htaccess-jenereta/",
+      "hreflangCount": 20,
+      "metaTitle": ".htaccessジェネレーター - リダイレクトやSSL化の記述コードを無料で自動生成ツール【無料オンライン — TapToGen",
+      "metaDescription": "Webサーバーの301リダイレクト設定、常時SSL化、BASIC認証、アクセス制限の.htaccess記述を自動生成できる無料ツールです。安全なサーバー設定コードをワンクリックで手軽に取得できます。当サイトの無料Webツールを活用して、理想のネーミング案を即座に作成しましょう。 完全無料でブラウザ上"
+    },
+    {
+      "toolId": "random-height-generator",
+      "locale": "ko",
+      "localizedSlug": "flashcard-amgi-card-saengseonggi",
+      "generatedUrl": "/ko/tools/flashcard-amgi-card-saengseonggi/",
+      "canonical": "https://taptogen.com/ko/tools/flashcard-amgi-card-saengseonggi/",
+      "hreflangCount": 20,
+      "metaTitle": "플래시카드 생성기 - 단어 암기 및 시험 대비 질문 카드를 무료로 자동 제작 생성 툴【무료 온라인 — TapToGen",
+      "metaDescription": "영어 단어, 자격증 개념, 시험 공식을 효과적으로 암기할 수 있는 앞/뒷면 양면 플래시카드 서식을 자동 제작해 드립니다. 인쇄하거나 모바일에서 암기 효율을 극대화해 보세요.본 무료 웹 도구를 활용하여 비즈니스 및 브랜드에 완벽하게 부합하는 최적의 추천 아이디어를 즉시"
+    },
+    {
+      "toolId": "character-prompt-generator",
+      "locale": "ar",
+      "localizedSlug": "muwallid-maraji-muwallid",
+      "generatedUrl": "/ar/tools/muwallid-maraji-muwallid/",
+      "canonical": "https://taptogen.com/ar/tools/muwallid-maraji-muwallid/",
+      "hreflangCount": 20,
+      "metaTitle": "مولد قائمة القراءات والمراجع - تنظيم المصادر - أداة مجا — TapToGen",
+      "metaDescription": "أنشئ قائمة مراجع وقراءات (Bibliography) مرتبة أبجدياً وموثقة وفق المعايير الأكاديمية المعترف بها. أداة مجانية تضمن للباحثين ترتيب المصادر في نهاية البحث بسلاسة."
+    },
+    {
+      "toolId": "viral-hook-generator",
+      "locale": "es",
+      "localizedSlug": "generador-correos-de-ventas",
+      "generatedUrl": "/es/tools/generador-correos-de-ventas/",
+      "canonical": "https://taptogen.com/es/tools/generador-correos-de-ventas/",
+      "hreflangCount": 20,
+      "metaTitle": "Generador de Correos de Ventas - Emails Persuasivos — TapToGen",
+      "metaDescription": "Redacta plantillas de email de ventas orientadas a captar clientes y agendar reuniones. Herramienta gratuita online y lista para usar hoy."
+    },
+    {
+      "toolId": "css-grid-generator",
+      "locale": "fr",
+      "localizedSlug": "generateur-de-noms-d-histoires",
+      "generatedUrl": "/fr/tools/generateur-de-noms-d-histoires/",
+      "canonical": "https://taptogen.com/fr/tools/generateur-de-noms-d-histoires/",
+      "hreflangCount": 20,
+      "metaTitle": "Générateur de Noms d'Histoires - Titres de Livres SEO — TapToGen",
+      "metaDescription": "Trouvez des titres évocateurs et des noms accrocheurs pour vos romans, nouvelles et récits d'aventure. Outil gratuit en ligne, inspirant et sans inscription."
+    },
+    {
+      "toolId": "random-address-generator",
+      "locale": "de",
+      "localizedSlug": "title-namen-ersteller",
+      "generatedUrl": "/tools/random-address-generator/",
+      "canonical": "https://taptogen.com/tools/random-address-generator/",
+      "hreflangCount": 2,
+      "metaTitle": "Random Address Generator - Sample Address Data — TapToGen",
+      "metaDescription": "Create fictional sample address placeholders for mockups and tests. Not for impersonation or official use. — Free, instant, and secure browser-based genera"
+    },
+    {
+      "toolId": "roast-generator",
+      "locale": "pt",
+      "localizedSlug": "gerador-mock-api",
+      "generatedUrl": "/tools/roast-generator/",
+      "canonical": "https://taptogen.com/tools/roast-generator/",
+      "hreflangCount": 2,
+      "metaTitle": "Roast Generator - Safe Friendly Roasts — TapToGen",
+      "metaDescription": "Draft opt-in friendly roast lines with clean alternatives, off-limits reminders, and safety notes. — Free, instant, and secure browser-based generator tool"
+    },
+    {
+      "toolId": "json-schema-generator",
+      "locale": "it",
+      "localizedSlug": "generatore-di-forme-blob-svg",
+      "generatedUrl": "/it/tools/generatore-di-forme-blob-svg/",
+      "canonical": "https://taptogen.com/it/tools/generatore-di-forme-blob-svg/",
+      "hreflangCount": 20,
+      "metaTitle": "Generatoree di Forme Blob SVG - Forme Organiche SEO Pro — TapToGen",
+      "metaDescription": "Genera forme fluide ed organiche (Blob) in formato vettoriale SVG per decorare le tue pagine web. Strumento online gratuito pratico e veloce."
+    },
+    {
+      "toolId": "pwa-manifest-generator",
+      "locale": "pl",
+      "localizedSlug": "kreator-villain-name",
+      "generatedUrl": "/pl/tools/kreator-villain-name/",
+      "canonical": "https://taptogen.com/pl/tools/kreator-villain-name/",
+      "hreflangCount": 20,
+      "metaTitle": "Kreator Imion Złoczyńców - Mroczne Nazwy Antagonistów — TapToGen",
+      "metaDescription": "Wygeneruj przerażające i mroczne imiona dla czarnych charakterów oraz antagonistów. Idealne wsparcie dla autorów i twórców gier. Wypróbuj bezpłatne..."
+    },
+    {
+      "toolId": "study-plan-generator",
+      "locale": "ru",
+      "localizedSlug": "restaurant-name",
+      "generatedUrl": "/ru/tools/restaurant-name/",
+      "canonical": "https://taptogen.com/ru/tools/restaurant-name/",
+      "hreflangCount": 20,
+      "metaTitle": "Генератор Названий Ресторанов - Имена Заведений Онлайн — TapToGen",
+      "metaDescription": "Найдите изысканные и привлекательные названия для ресторанов, кафе и гастробаров. Быстрый генератор названий ресторанного бизнеса. Попробуйте бесплатный..."
+    },
+    {
+      "toolId": "essay-topic-generator",
+      "locale": "tr",
+      "localizedSlug": "olusturucu-movie-name",
+      "generatedUrl": "/tr/tools/olusturucu-movie-name/",
+      "canonical": "https://taptogen.com/tr/tools/olusturucu-movie-name/",
+      "hreflangCount": 20,
+      "metaTitle": "Film Adı Oluşturucu - Sinema Senaryo Başlığı Online — TapToGen",
+      "metaDescription": "Filmleriniz, dizileriniz ve kısa senaryolarınız için etkileyici başlıklar üretin. Sinematik ve merak uyandıran film ismi aracı. Ücretsiz çevrimiçi aracımızı..."
+    },
+    {
+      "toolId": "etsy-listing-generator",
+      "locale": "id",
+      "localizedSlug": "pembuat-clothing-tag-pembuat",
+      "generatedUrl": "/tools/etsy-listing-generator/",
+      "canonical": "https://taptogen.com/tools/etsy-listing-generator/",
+      "hreflangCount": 2,
+      "metaTitle": "Etsy Listing Generator - Listing Drafts — TapToGen",
+      "metaDescription": "Draft Etsy listing titles, details, and description sections - free & instant. — Free, instant, and secure browser-based generator tools. Generate names, t"
+    },
+    {
+      "toolId": "sales-email-generator",
+      "locale": "sv",
+      "localizedSlug": "skapare-diner-name",
+      "generatedUrl": "/sv/tools/skapare-diner-name/",
+      "canonical": "https://taptogen.com/sv/tools/skapare-diner-name/",
+      "hreflangCount": 20,
+      "metaTitle": "MatställesnamnSkapare - Skapa Namn för Matställen — TapToGen",
+      "metaDescription": "Generera trevliga och klassiska namn för din vägkrog, diner eller gatukök enkelt. Skapa inbjudande matställesnamn gratis idag. Använd detta kostnadsfria..."
+    },
+    {
+      "toolId": "brand-kit-generator",
+      "locale": "ms",
+      "localizedSlug": "penjana-pick-a-name",
+      "generatedUrl": "/ms/tools/penjana-pick-a-name/",
+      "canonical": "https://taptogen.com/ms/tools/penjana-pick-a-name/",
+      "hreflangCount": 20,
+      "metaTitle": "Penjana Pilih Nama - Buat Pemilihan Nama Rawak Online — TapToGen",
+      "metaDescription": "Pilih satu nama secara automatik dan saksama daripada senarai nama pilihan anda. Alat pilih nama rawak percuma secara pantas online. Gunakan alat percuma..."
+    },
+    {
+      "toolId": "dungeon-generator",
+      "locale": "bg",
+      "localizedSlug": "sazdatel-na-title-name-sazdatel",
+      "generatedUrl": "/bg/tools/sazdatel-na-title-name-sazdatel/",
+      "canonical": "https://taptogen.com/bg/tools/sazdatel-na-title-name-sazdatel/",
+      "hreflangCount": 20,
+      "metaTitle": "Генератор На Креативни Заглавия - Заглавие онлайн безплатно — TapToGen",
+      "metaDescription": "Генерирайте оригинални заглавия за творчески проекти и презентации. Използвайте генератор на креативни заглавия безплатно. Използвайте нашия безплатен..."
+    },
+    {
+      "toolId": "graphql-query-generator",
+      "locale": "hi",
+      "localizedSlug": "janaratar-clan-tag",
+      "generatedUrl": "/hi/tools/janaratar-clan-tag/",
+      "canonical": "https://taptogen.com/hi/tools/janaratar-clan-tag/",
+      "hreflangCount": 20,
+      "metaTitle": "क्लैन टैग जनरेटर - गेमिंग टीम के छोटे कोड्स बनाएं ऑनलाइन — TapToGen",
+      "metaDescription": "गेमिंग स्क्वाड और क्लैन के लिए 3-4 अक्षरों के शार्ट टैग्स जनरेट करें। मुफ्त ऑनलाइन क्लैन टैग जनरेटर से गेमिंग कोड्स तुरंत बनाएं। इस मुफ्त ऑनलाइन टूल का..."
+    },
+    {
+      "toolId": "blob-generator",
+      "locale": "bn",
+      "localizedSlug": "janaratar-warrior-name",
+      "generatedUrl": "/bn/tools/janaratar-warrior-name/",
+      "canonical": "https://taptogen.com/bn/tools/janaratar-warrior-name/",
+      "hreflangCount": 20,
+      "metaTitle": "যোদ্ধা নাম জেনারেটর - সাহসী সেনাপতির বীরত্বপূর্ণ নাম — TapToGen",
+      "metaDescription": "গল্প ও গেমের বীর সেনাপতি ও বীরত্বপূর্ণ যোদ্ধাদের শক্তিশালী নাম বানান। ফ্রি যোদ্ধা নাম জেনারেটর ব্যবহার করে রাজকীয় সেনাপতি নাম পান। এই বিনামূল্যে অনলাইন টুল..."
+    },
+    {
+      "toolId": "villain-name-generator",
+      "locale": "nl",
+      "localizedSlug": "creador-goth-name-creador",
+      "generatedUrl": "/nl/tools/creador-goth-name-creador/",
+      "canonical": "https://taptogen.com/nl/tools/creador-goth-name-creador/",
+      "hreflangCount": 20,
+      "metaTitle": "Goth Naam Maker - Duistere & Romantische Namen — TapToGen",
+      "metaDescription": "Genereer duastere en stijlvolle gothic namen voor fictieve personages en profielen. Gebruik onze gratis online goth naam Maker tool."
+    },
+    {
+      "toolId": "city-name-generator",
+      "locale": "ja",
+      "localizedSlug": "myoji-akachan-namae-jenereta",
+      "generatedUrl": "/ja/tools/myoji-akachan-namae-jenereta/",
+      "canonical": "https://taptogen.com/ja/tools/myoji-akachan-namae-jenereta/",
+      "hreflangCount": 20,
+      "metaTitle": "苗字対応赤ちゃん名前ジェネレーター - 家の苗字にぴったり調和する名前候補を自動作成【無料オンラインおすすめネ — TapToGen",
+      "metaDescription": "ご家族の苗字（姓）を入力することで、音の繋がりや画数バランスが良い赤ちゃんの名前候補を自動提案できる無料ツールです。一生の宝物となる素敵な命名案をワンクリックで楽しく探せます。当サイトの無料Webツールを活用して、理想のネーミング案を即座に作成しましょう。 完全無料でブラウザ上から登録不要で今すぐご"
+    },
+    {
+      "toolId": "movie-name-generator",
+      "locale": "ko",
+      "localizedSlug": "performer-yemyeong-stage-saengseonggi",
+      "generatedUrl": "/ko/tools/performer-yemyeong-stage-saengseonggi/",
+      "canonical": "https://taptogen.com/ko/tools/performer-yemyeong-stage-saengseonggi/",
+      "hreflangCount": 20,
+      "metaTitle": "공연자 예명 생성기 - 무대 아티스트 및 연기자 활동명을 무료로 자동 추천 생성 툴【무료 온라인 추 — TapToGen",
+      "metaDescription": "뮤지컬 배우, 댄서, 마술사, 버스킹 아티스트의 무대 위 관객들에게 강력한 존재감을 각인시킬 스타일리시한 예명을 추천 생성해 드립니다. 세련된 무대 이름을 발굴하세요.본 무료 웹 도구를 활용하여 비즈니스 및 브랜드에 완벽하게 부합하는 최적의 추천 아이디어를 즉시 생성해"
+    },
+    {
+      "toolId": "price-tag-generator",
+      "locale": "ar",
+      "localizedSlug": "muwallid-alwan-lawhat-alwan-muwallid-from-asmaa",
+      "generatedUrl": "/ar/tools/muwallid-alwan-lawhat-alwan-muwallid-from-asmaa/",
+      "canonical": "https://taptogen.com/ar/tools/muwallid-alwan-lawhat-alwan-muwallid-from-asmaa/",
+      "hreflangCount": 20,
+      "metaTitle": "مولد لوحة الألوان من الاسم - استخراج الألوان أونلاين — TapToGen",
+      "metaDescription": "حوّل أي اسم أو كلمة إلى لوحة ألوان متناسقة وجذابة مستوحاة من الطاقة التعبيرية للاسم. أداة مجانية تمنح المصممين خيارات ألوان فريدة ومناسبة للهويات."
+    },
+    {
+      "toolId": "event-name-generator",
+      "locale": "es",
+      "localizedSlug": "generador-de-nombres-comerciales-sin-marcas",
+      "generatedUrl": "/es/tools/generador-de-nombres-comerciales-sin-marcas/",
+      "canonical": "https://taptogen.com/es/tools/generador-de-nombres-comerciales-sin-marcas/",
+      "hreflangCount": 20,
+      "metaTitle": "Generador de Nombres para Registro de Marca - Marca SEO — TapToGen",
+      "metaDescription": "Genera nombres originales y distintivos con alta viabilidad para registro de marca. Herramienta gratuita en línea e ideal para startups."
+    },
+    {
+      "toolId": "newspaper-name-generator",
+      "locale": "fr",
+      "localizedSlug": "generateur-de-noms-de-guerriers",
+      "generatedUrl": "/fr/tools/generateur-de-noms-de-guerriers/",
+      "canonical": "https://taptogen.com/fr/tools/generateur-de-noms-de-guerriers/",
+      "hreflangCount": 20,
+      "metaTitle": "Générateur de Noms de Guerriers - Combattants SEO Web — TapToGen",
+      "metaDescription": "Générez des noms de guerriers valeureux et de combattants légendaires pour vos récits et jeux. Outil gratuit en ligne, inspirant et sans inscription."
+    },
+    {
+      "toolId": "cake-company-names-generator",
+      "locale": "de",
+      "localizedSlug": "robot-namen-ersteller",
+      "generatedUrl": "/de/tools/robot-namen-ersteller/",
+      "canonical": "https://taptogen.com/de/tools/robot-namen-ersteller/",
+      "hreflangCount": 20,
+      "metaTitle": "Kostenloser Roboter-NamensErsteller - Ergebnisse Online — TapToGen",
+      "metaDescription": "Erstellen Sie ganz einfach erstklassige Roboter-NamensErsteller Entwürfe mit unserem kostenlosen Online-Werkzeug. Ohne Registrierung oder Installation."
+    },
+    {
+      "toolId": "pet-tag-generator",
+      "locale": "pt",
+      "localizedSlug": "gerador-club-name",
+      "generatedUrl": "/pt/tools/gerador-club-name/",
+      "canonical": "https://taptogen.com/pt/tools/gerador-club-name/",
+      "hreflangCount": 20,
+      "metaTitle": "Gerador de Nomes de Clubes - Grupos e Associações Web — TapToGen",
+      "metaDescription": "Descubra nomes atrativos para clubes sociais, associações esportivas e grupos de amigos. Ferramenta online gratuita, prática e sem cadastro."
+    },
+    {
+      "toolId": "art-tag-generator",
+      "locale": "it",
+      "localizedSlug": "generatore-di-nomi-in-corsivo",
+      "generatedUrl": "/it/tools/generatore-di-nomi-in-corsivo/",
+      "canonical": "https://taptogen.com/it/tools/generatore-di-nomi-in-corsivo/",
+      "hreflangCount": 20,
+      "metaTitle": "Generatoree di Nomi in Corsivo - Scrittura Elegante SEO — TapToGen",
+      "metaDescription": "Trasforma il tuo nome in stili corsivi e scritture eleganti Unicode da condividere sui social. Strumento online gratuito semplice e pratico."
+    },
+    {
+      "toolId": "anagram-of-name-generator",
+      "locale": "pl",
+      "localizedSlug": "kreator-dj-name",
+      "generatedUrl": "/pl/tools/kreator-dj-name/",
+      "canonical": "https://taptogen.com/pl/tools/kreator-dj-name/",
+      "hreflangCount": 20,
+      "metaTitle": "Kreator Nazw DJ - Nowoczesne Pseudonimy Estradowe — TapToGen",
+      "metaDescription": "Wygeneruj mocne i unikalne pseudonimy sceniczne dla DJ-ów oraz producentów. Wypróbuj darmowy Kreator mian muzycznych w przeglądarce. Wypróbuj bezpłatne..."
+    },
+    {
+      "toolId": "scifi-name-generator",
+      "locale": "ru",
+      "localizedSlug": "farm-name",
+      "generatedUrl": "/ru/tools/farm-name/",
+      "canonical": "https://taptogen.com/ru/tools/farm-name/",
+      "hreflangCount": 20,
+      "metaTitle": "Генератор Названий Ферм - Имена Усадеб и Хозяйств Онлайн — TapToGen",
+      "metaDescription": "Сгенерируйте душевные и традиционные названия для фермерских хозяйств, ранчо и усадеб. Придумайте уютный бренд для фермы в сети. Попробуйте бесплатный..."
+    },
+    {
+      "toolId": "phonetic-spelling-of-name-generator",
+      "locale": "tr",
+      "localizedSlug": "olusturucu-gnome-name",
+      "generatedUrl": "/tr/tools/olusturucu-gnome-name/",
+      "canonical": "https://taptogen.com/tr/tools/olusturucu-gnome-name/",
+      "hreflangCount": 20,
+      "metaTitle": "Gnom İsim Oluşturucu - Büyülü Küçük Yaratık Online — TapToGen",
+      "metaDescription": "Fantastik dünyalar ve oyunlar için sevimli ve kurnaz gnom isimleri üretin. Bahçe ve fantastik gnom karakter isim aracı. Ücretsiz çevrimiçi aracımızı hemen..."
+    },
+    {
+      "toolId": "name-pronunciation-generator",
+      "locale": "id",
+      "localizedSlug": "pembuat-logo-pembuat",
+      "generatedUrl": "/id/tools/pembuat-logo-pembuat/",
+      "canonical": "https://taptogen.com/id/tools/pembuat-logo-pembuat/",
+      "hreflangCount": 20,
+      "metaTitle": "Pembuat Ide Logo - Pembuat Konsep Identitas Merek — TapToGen",
+      "metaDescription": "Dapatkan berbagai ide konsep logo dan simbol unik untuk membangun merek bisnis Anda. Pembuat ide logo usaha gratis. Gunakan alat pembuat otomatis gratis ini..."
+    },
+    {
+      "toolId": "forest-name-generator",
+      "locale": "sv",
+      "localizedSlug": "skapare-pen-name",
+      "generatedUrl": "/sv/tools/skapare-pen-name/",
+      "canonical": "https://taptogen.com/sv/tools/skapare-pen-name/",
+      "hreflangCount": 20,
+      "metaTitle": "PseudonymSkapare - Skapa Författarnamn för Bok Online — TapToGen",
+      "metaDescription": "Generera eleganta och mystiska pseudonymer och författarnamn för ditt skrivande. Skapa minnesvärda pen-names gratis online. Använd detta kostnadsfria..."
+    },
+    {
+      "toolId": "app-icon-generator",
+      "locale": "ms",
+      "localizedSlug": "penjana-proposal",
+      "generatedUrl": "/ms/tools/penjana-proposal/",
+      "canonical": "https://taptogen.com/ms/tools/penjana-proposal/",
+      "hreflangCount": 20,
+      "metaTitle": "Penjana Cadangan Projek - Tulis Proposal Kertas Online — TapToGen",
+      "metaDescription": "Hasilkan dokumen cadangan projek (proposal) yang teratur dan profesional untuk perniagaan. Penjana cadangan projek percuma online. Gunakan alat percuma ini..."
+    },
+    {
+      "toolId": "barbarian-name-generator",
+      "locale": "bg",
+      "localizedSlug": "sazdatel-na-retro-text-sazdatel",
+      "generatedUrl": "/bg/tools/sazdatel-na-retro-text-sazdatel/",
+      "canonical": "https://taptogen.com/bg/tools/sazdatel-na-retro-text-sazdatel/",
+      "hreflangCount": 20,
+      "metaTitle": "Генератор На Ретро Текст - Ретро Букви онлайн безплатно — TapToGen",
+      "metaDescription": "Преобразувайте думите си в 80s ретро и синтуейв стил текстове за дизайн. Използвайте генератор на ретро текст безплатно онлайн. Използвайте нашия безплатен..."
+    },
+    {
+      "toolId": "business-card-generator",
+      "locale": "hi",
+      "localizedSlug": "janaratar-sigil",
+      "generatedUrl": "/hi/tools/janaratar-sigil/",
+      "canonical": "https://taptogen.com/hi/tools/janaratar-sigil/",
+      "hreflangCount": 20,
+      "metaTitle": "सिजिल जनरेटर - जादुई सिंबल्स और प्रतीक चिन्ह बनाएं — TapToGen",
+      "metaDescription": "अपनी इच्छाओं और विचारों से अनूठे जादुई सिजिल प्रतीक चिन्ह जनरेट करें। मुफ्त ऑनलाइन सिजिल जनरेटर से रहस्यमयी सिंबल्स बनाएं आसानी से। इस मुफ्त ऑनलाइन टूल का..."
+    },
+    {
+      "toolId": "club-name-generator",
+      "locale": "bn",
+      "localizedSlug": "janaratar-tattoo-name",
+      "generatedUrl": "/bn/tools/janaratar-tattoo-name/",
+      "canonical": "https://taptogen.com/bn/tools/janaratar-tattoo-name/",
+      "hreflangCount": 20,
+      "metaTitle": "ট্যাটু নাম জেনারেটর - সুন্দর ট্যাটু ফন্ট স্টাইল অনলাইন — TapToGen",
+      "metaDescription": "আপনার নামের ট্যাটুর জন্য চমৎকার ও কাস্টম ফন্ট ডিজাইন বানান। ফ্রি ট্যাটু নাম জেনারেটর ব্যবহার করে বডি আর্ট ফন্ট পছন্দ করুন সহজে। এই বিনামূল্যে অনলাইন টুল..."
+    },
+    {
+      "toolId": "css-code-generator",
+      "locale": "nl",
+      "localizedSlug": "creador-ancient-egyptian-inspired-name-creador",
+      "generatedUrl": "/nl/tools/creador-ancient-egyptian-inspired-name-creador/",
+      "canonical": "https://taptogen.com/nl/tools/creador-ancient-egyptian-inspired-name-creador/",
+      "hreflangCount": 20,
+      "metaTitle": "Egyptische Naam Maker - Oud Egyptische Namen online — TapToGen",
+      "metaDescription": "Genereer mystieke en historische Oud-Egyptische namen voor farao's en fictieve karakters. Gebruik onze gratis Egyptische naam Maker."
+    },
+    {
+      "toolId": "display-name-generator",
+      "locale": "ja",
+      "localizedSlug": "poster-design-text-jenereta",
+      "generatedUrl": "/ja/tools/poster-design-text-jenereta/",
+      "canonical": "https://taptogen.com/ja/tools/poster-design-text-jenereta/",
+      "hreflangCount": 20,
+      "metaTitle": "ポスターテキストジェネレーター - 遠くからでも目立つポスターの見出しを無料自動作成【無料オンラインおすすめネ — TapToGen",
+      "metaDescription": "イベントポスターや宣伝告知で街行く人の目を一瞬で惹きつけるキャッチコピーや見出しレイアウトを自動生成できる無料ツールです。インパクトある文面をワンクリックで手軽に作成できます。当サイトの無料Webツールを活用して、理想のネーミング案を即座に作成しましょう。 完全無料でブラウザ上から登録不要で今すぐご"
+    },
+    {
+      "toolId": "estimate-generator",
+      "locale": "ko",
+      "localizedSlug": "serif-font-batangche-saengseonggi",
+      "generatedUrl": "/ko/tools/serif-font-batangche-saengseonggi/",
+      "canonical": "https://taptogen.com/ko/tools/serif-font-batangche-saengseonggi/",
+      "hreflangCount": 20,
+      "metaTitle": "세리프 폰트 생성기 - 가독성 높은 클래식 바탕체 글씨를 무료로 실시간 자동 변환 툴【무료 온라인 — TapToGen",
+      "metaDescription": "영문 텍스트를 획 끝에 획이 달린 고풍스럽고 가독성 높은 클래식 세리프(Serif) 유니코드 폰트로 실시간 변환해 드립니다. 서적 본문이나 정중한 텍스트에 멋지게 써보세요.본 무료 웹 도구를 활용하여 비즈니스 및 브랜드에 완벽하게 부합하는 최적의 추천 아이디어를 즉시"
+    },
+    {
+      "toolId": "food-truck-name-generator",
+      "locale": "ar",
+      "localizedSlug": "muwallid-tiktok-bayo-muwallid",
+      "generatedUrl": "/ar/tools/muwallid-tiktok-bayo-muwallid/",
+      "canonical": "https://taptogen.com/ar/tools/muwallid-tiktok-bayo-muwallid/",
+      "hreflangCount": 20,
+      "metaTitle": "مولد بايو تيك توك - كتابة بايو جذاب أونلاين - أداة مجان — TapToGen",
+      "metaDescription": "صغ بايو تيك توك (TikTok Bio) عائلياً أو شخصياً ممتعاً يشجع المشاهدين على الضغط على زر المتابعة فوراً. أداة مجانية تساعد صناع المحتوى في زيادة تفاعل الحساب."
+    },
+    {
+      "toolId": "invisible-text-generator",
+      "locale": "es",
+      "localizedSlug": "generador-insultos-de-shakespeare",
+      "generatedUrl": "/es/tools/generador-insultos-de-shakespeare/",
+      "canonical": "https://taptogen.com/es/tools/generador-insultos-de-shakespeare/",
+      "hreflangCount": 20,
+      "metaTitle": "Generador de Insultos de Shakespeare - Frases Teatrales — TapToGen",
+      "metaDescription": "Genera insultos dramáticos e ingeniosos al estilo del célebre dramaturgo William Shakespeare. Herramienta online gratuita y divertida de usar."
+    },
+    {
+      "toolId": "meta-description-generator",
+      "locale": "fr",
+      "localizedSlug": "generateur-de-posters-et-affiches",
+      "generatedUrl": "/fr/tools/generateur-de-posters-et-affiches/",
+      "canonical": "https://taptogen.com/fr/tools/generateur-de-posters-et-affiches/",
+      "hreflangCount": 20,
+      "metaTitle": "Générateur de Posters et Affiches - Visuels SEO Web — TapToGen",
+      "metaDescription": "Concevez des idées d'affiches et posters événementiels percutants pour votre communication visuelle. Outil gratuit en ligne, pratique et sans inscription."
+    },
+    {
+      "toolId": "pet-name-generator",
+      "locale": "de",
+      "localizedSlug": "ersteller-keyword-ersteller",
+      "generatedUrl": "/de/tools/ersteller-keyword-ersteller/",
+      "canonical": "https://taptogen.com/de/tools/ersteller-keyword-ersteller/",
+      "hreflangCount": 20,
+      "metaTitle": "Kostenloser Keyword-Ersteller - Perfekte Ergebnisse — TapToGen",
+      "metaDescription": "Erstellen Sie ganz einfach erstklassige Keyword-Ersteller Entwürfe mit unserem kostenlosen Online-Werkzeug. Ohne Registrierung oder Installation."
+    },
+    {
+      "toolId": "purchase-order-generator",
+      "locale": "pt",
+      "localizedSlug": "gerador-tarjetas-de-twitter",
+      "generatedUrl": "/pt/tools/gerador-tarjetas-de-twitter/",
+      "canonical": "https://taptogen.com/pt/tools/gerador-tarjetas-de-twitter/",
+      "hreflangCount": 20,
+      "metaTitle": "Gerador de Twitter Cards - Tags Meta para Redes SEO — TapToGen",
+      "metaDescription": "Crie tags meta de Twitter Cards personalizadas para prévia de links no X de forma simples. Ferramenta técnica gratuita, precisa e sem cadastro."
+    },
+    {
+      "toolId": "return-policy-generator",
+      "locale": "it",
+      "localizedSlug": "generatore-di-politica-di-rimborso",
+      "generatedUrl": "/tools/return-policy-generator/",
+      "canonical": "https://taptogen.com/tools/return-policy-generator/",
+      "hreflangCount": 2,
+      "metaTitle": "Return Policy Generator - Draft Ecommerce Policy Helper — TapToGen",
+      "metaDescription": "Create draft-only return policy sections with refund timing, exceptions, marketplace, processor, and merchant review reminders. — Free, instant, and secure"
+    },
+    {
+      "toolId": "ship-name-generator",
+      "locale": "pl",
+      "localizedSlug": "kreator-publicaciones-para-linkedin",
+      "generatedUrl": "/pl/tools/kreator-publicaciones-para-linkedin/",
+      "canonical": "https://taptogen.com/pl/tools/kreator-publicaciones-para-linkedin/",
+      "hreflangCount": 20,
+      "metaTitle": "Kreator Postów na LinkedIn - Treści Biznesowe Online — TapToGen",
+      "metaDescription": "Napisz merytoryczne i angażujące posty biznesowe do serwisu LinkedIn. Zbuduj pozycję eksperta w branży i pozyskaj klientów firmy. Wypróbuj bezpłatne..."
+    },
+    {
+      "toolId": "sitemap-generator",
+      "locale": "ru",
+      "localizedSlug": "direcciones-aleatorias",
+      "generatedUrl": "/ru/tools/direcciones-aleatorias/",
+      "canonical": "https://taptogen.com/ru/tools/direcciones-aleatorias/",
+      "hreflangCount": 20,
+      "metaTitle": "Генератор Случайных Адресов - Фейковые Адреса Теста — TapToGen",
+      "metaDescription": "Сгенерируйте случайные вымышленные адресные данные для тестирования форм и систем. Быстрый и удобный инструмент разработчиков. Попробуйте бесплатный онлайн..."
+    },
+    {
+      "toolId": "typewriter-text-generator",
+      "locale": "tr",
+      "localizedSlug": "olusturucu-ganchos-para-youtube",
+      "generatedUrl": "/tr/tools/olusturucu-ganchos-para-youtube/",
+      "canonical": "https://taptogen.com/tr/tools/olusturucu-ganchos-para-youtube/",
+      "hreflangCount": 20,
+      "metaTitle": "YouTube Kanca Oluşturucu - Giriş Cümlesi Yap Online — TapToGen",
+      "metaDescription": "YouTube videolarınızın ilk 5 saniyesi için izleyiciyi tutan kancalar üretin. İzlenme süresini artıran giriş metinleri. Ücretsiz çevrimiçi aracımızı hemen..."
+    },
+    {
+      "toolId": "iupac-name-generator",
+      "locale": "id",
+      "localizedSlug": "pembuat-acceptable-use-policy-pembuat",
+      "generatedUrl": "/id/tools/pembuat-acceptable-use-policy-pembuat/",
+      "canonical": "https://taptogen.com/id/tools/pembuat-acceptable-use-policy-pembuat/",
+      "hreflangCount": 20,
+      "metaTitle": "Pembuat Kebijakan Penggunaan Layanan - Web Online — TapToGen",
+      "metaDescription": "Buat aturan penggunaan layanan situs web yang adil dan aman untuk melindungi platform Anda. Pembuat kebijakan penggunaan gratis. Gunakan alat pembuat..."
+    },
+    {
+      "toolId": "poster-generator",
+      "locale": "sv",
+      "localizedSlug": "skapare-texto-estilo-rescate",
+      "generatedUrl": "/sv/tools/skapare-texto-estilo-rescate/",
+      "canonical": "https://taptogen.com/sv/tools/skapare-texto-estilo-rescate/",
+      "hreflangCount": 20,
+      "metaTitle": "LösenordsbrevstextSkapare - Skapa Klippbokstext Online — TapToGen",
+      "metaDescription": "Omvandla vanlig text till dramatiskt klippboksteckensnitt i kollagestil för berättelser. Generera unik kollagetext gratis. Använd detta kostnadsfria..."
+    }
+  ],
+  "check10": [],
+  "check11": [],
+  "check12": [],
+  "check13": [],
+  "check14": [],
+  "check15": [],
+  "check16": [],
+  "check17": [],
+  "check18": [],
+  "check19": [],
+  "check20": []
+}

@@ -20,7 +20,7 @@ const tools: RolloutToolSpec[] = [
   { canonicalToolId: 'album-name-generator', label: 'Album Name', slugBase: 'album-name', kind: 'creative' },
   { canonicalToolId: 'book-name-generator', label: 'Book Name', slugBase: 'book-name', kind: 'creative' },
   { canonicalToolId: 'movie-name-generator', label: 'Movie Name', slugBase: 'movie-name', kind: 'creative' },
-  { canonicalToolId: 'newsletter-name-generator', label: 'Nombres para Boletines', slugBase: 'nombres-para-boletines', kind: 'business' },
+  { canonicalToolId: 'newsletter-name-generator', label: 'Newsletter Name', slugBase: 'newsletter-name', kind: 'business' },
   { canonicalToolId: 'price-tag-generator', label: 'Price Tag', slugBase: 'price-tag', kind: 'utility' },
   { canonicalToolId: 'product-tag-generator', label: 'Product Tag', slugBase: 'product-tag', kind: 'utility' },
   { canonicalToolId: 'clothing-tag-generator', label: 'Clothing Tag', slugBase: 'clothing-tag', kind: 'utility' },
@@ -36,7 +36,7 @@ const tools: RolloutToolSpec[] = [
   { canonicalToolId: 'name-generator-wheel', label: 'Name Wheel', slugBase: 'name-wheel', kind: 'utility' },
   { canonicalToolId: 'cake-company-names-generator', label: 'Cake Company Name', slugBase: 'cake-company-name', kind: 'business' },
   { canonicalToolId: 'car-name-generator', label: 'Car Name', slugBase: 'car-name', kind: 'creative' },
-  { canonicalToolId: 'title-name-generator', label: 'Títulos Creativos', slugBase: 'titulos-creativos', kind: 'creative' },
+  { canonicalToolId: 'title-name-generator', label: 'Title Name', slugBase: 'title-name', kind: 'creative' },
   { canonicalToolId: 'geo-tag-generator', label: 'Geo Tag', slugBase: 'geo-tag', kind: 'utility' },
   { canonicalToolId: 'pet-tag-generator', label: 'Pet Tag', slugBase: 'pet-tag', kind: 'utility' },
   { canonicalToolId: 'dj-tag-generator', label: 'DJ Tag', slugBase: 'dj-tag', kind: 'utility' },
@@ -58,15 +58,15 @@ export const rolloutB06ToolIds = tools.map((tool) => tool.canonicalToolId);
 
 const b06SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' | 'name' | 'fictional', string>> = {
   es: {
-    business: 'Revisa marca, dominio, permisos, precios, datos reales y cumplimiento antes del uso público.',
+    business: 'Revisa marca, dominio, permisos, precios, datos reales y cumplimiento antes del uso publico.',
     utility: 'Usalo como ayuda practica; confirma etiquetas, listas o sorteos con tus propias reglas.',
-    name: 'Comprueba cultura, contexto, pronunciación, derechos y disponibilidad antes de usarlo en público.',
+    name: 'Comprueba cultura, contexto, pronunciacion, derechos y disponibilidad antes de usarlo en publico.',
     fictional: 'Mantenlo como inspiracion creativa y evita copiar marcas, personas reales o universos protegidos.',
   },
   fr: {
-    business: 'Vérifiez marque, domaine, autorisations, prix, donnees reelles et conformite avant usage public.',
+    business: 'Verifiez marque, domaine, autorisations, prix, donnees reelles et conformite avant usage public.',
     utility: 'Utilisez-le comme aide pratique; confirmez etiquettes, listes ou tirages avec vos propres regles.',
-    name: 'Vérifiez culture, contexte, prononciation, droits et disponibilité avant usage public.',
+    name: 'Verifiez culture, contexte, prononciation, droits et disponibilite avant usage public.',
     fictional: 'Gardez un usage creatif et evitez de copier marques, personnes reelles ou univers proteges.',
   },
   de: {
@@ -76,21 +76,21 @@ const b06SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' |
     fictional: 'Nutze es als kreative Inspiration und kopiere keine Marken, realen Personen oder geschuetzten Welten.',
   },
   pt: {
-    business: 'Revise marca, dominio, permissoes, precos, dados reais e conformidade antes do uso público.',
+    business: 'Revise marca, dominio, permissoes, precos, dados reais e conformidade antes do uso publico.',
     utility: 'Use como apoio pratico; confirme etiquetas, listas ou sorteios com suas proprias regras.',
-    name: 'Verifique cultura, contexto, pronuncia, direitos e disponibilidade antes do uso público.',
+    name: 'Verifique cultura, contexto, pronuncia, direitos e disponibilidade antes do uso publico.',
     fictional: 'Mantenha como inspiracao criativa e evite copiar marcas, pessoas reais ou universos protegidos.',
   },
   it: {
     business: 'Controlla marchio, dominio, permessi, prezzi, dati reali e conformita prima delluso pubblico.',
     utility: 'Usalo come supporto pratico; conferma etichette, liste o estrazioni con le tue regole.',
-    name: 'Controlla cultura, contesto, pronuncia, diritti e disponibilità prima delluso pubblico.',
+    name: 'Controlla cultura, contesto, pronuncia, diritti e disponibilita prima delluso pubblico.',
     fictional: 'Usalo come ispirazione creativa ed evita di copiare marchi, persone reali o universi protetti.',
   },
   pl: {
-    business: 'Sprawdz marke, domene, zgody, ceny, prawdziwe dane i zgodnosc przed publicznym użyciem.',
+    business: 'Sprawdz marke, domene, zgody, ceny, prawdziwe dane i zgodnosc przed publicznym uzyciem.',
     utility: 'Traktuj jako praktyczna pomoc; potwierdz etykiety, listy lub losowania wedlug wlasnych zasad.',
-    name: 'Sprawdz kulture, kontekst, wymowe, prawa i dostępność przed publicznym użyciem.',
+    name: 'Sprawdz kulture, kontekst, wymowe, prawa i dostepnosc przed publicznym uzyciem.',
     fictional: 'Uzywaj jako kreatywnej inspiracji i nie kopiuj marek, realnych osob ani chronionych swiatow.',
   },
   ru: {
@@ -102,7 +102,7 @@ const b06SafetyAddendum: Record<RolloutLanguage, Record<'business' | 'utility' |
   tr: {
     business: 'Halka acik kullanimdan once marka, alan adi, izinler, fiyatlar, gercek veriler ve uyumu kontrol edin.',
     utility: 'Pratik destek olarak kullanin; etiketleri, listeleri veya cekilisleri kendi kurallarinizla dogrulayin.',
-    name: 'Halka acik kullanimdan once kultur, baglam, telaffuz, haklar ve uygunluğu kontrol edin.',
+    name: 'Halka acik kullanimdan once kultur, baglam, telaffuz, haklar ve uygunlugu kontrol edin.',
     fictional: 'Yaratici ilham olarak kullanin; marka, gercek kisi veya korunan evrenleri kopyalamayin.',
   },
   id: {

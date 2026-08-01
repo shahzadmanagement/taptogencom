@@ -1,3 +1,5 @@
+import { copyText } from '../../lib/clipboard';
+
 export class ClipboardHelper {
   private static liveRegion: HTMLElement | null = null;
   private static toastTimeout: any = null;
@@ -94,42 +96,35 @@ export class ClipboardHelper {
     }
 
     try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(text);
+      const success = await copyText(text);
+
+      if (success) {
+        // Mobile Haptic Vibration
+        if (typeof navigator !== 'undefined' && 'vibrate' in navigator && typeof navigator.vibrate === 'function') {
+          try { navigator.vibrate(40); } catch (e) {}
+        }
+
+        // Button visual state
+        if (button) {
+          const originalText = button.textContent || 'Copy';
+          const isFr = document.documentElement.lang === 'fr';
+          button.textContent = isFr ? 'Copié !' : 'Copied!';
+          button.classList.add('copied');
+          button.setAttribute('aria-label', isFr ? 'Texte copié !' : 'Text copied!');
+          setTimeout(() => {
+            button.textContent = originalText;
+            button.classList.remove('copied');
+            button.removeAttribute('aria-label');
+          }, 2000);
+        }
+
+        // Animated Toast & Live Region Announcement
+        this.showToast(customMsg || '', false);
+        return true;
       } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
-        document.body.appendChild(textarea);
-        textarea.focus();
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
+        this.showToast(customMsg || '', true);
+        return false;
       }
-
-      // Mobile Haptic Vibration
-      if (typeof navigator !== 'undefined' && 'vibrate' in navigator && typeof navigator.vibrate === 'function') {
-        try { navigator.vibrate(40); } catch (e) {}
-      }
-
-      // Button visual state
-      if (button) {
-        const originalText = button.textContent || 'Copy';
-        const isFr = document.documentElement.lang === 'fr';
-        button.textContent = isFr ? 'Copié !' : 'Copied!';
-        button.classList.add('copied');
-        button.setAttribute('aria-label', isFr ? 'Texte copié !' : 'Text copied!');
-        setTimeout(() => {
-          button.textContent = originalText;
-          button.classList.remove('copied');
-          button.removeAttribute('aria-label');
-        }, 2000);
-      }
-
-      // Animated Toast & Live Region Announcement
-      this.showToast(customMsg || '', false);
-      return true;
     } catch (err) {
       console.error('Failed to copy text: ', err);
       this.showToast(customMsg || '', true);

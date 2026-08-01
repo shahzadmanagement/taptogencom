@@ -97,6 +97,13 @@ export const createWorkspace = wrapErrorBoundary(async function (
     initDownloads(activeConfig);
   }
 
+  const { initBatchProcessing } = await import('./batch/index');
+  initBatchProcessing(activeConfig, (txt) => {
+    if (input) input.value = txt;
+    generate();
+    return output?.textContent?.trim() || txt;
+  });
+
   const { bindEvents } = await import('./events');
   const updateCountersAndFeatures = bindEvents(activeConfig, input, output, generate);
 
@@ -104,6 +111,18 @@ export const createWorkspace = wrapErrorBoundary(async function (
     const { bindShortcuts } = await import('./shortcuts');
     bindShortcuts(activeConfig, input, updateCountersAndFeatures, generate);
   }
+
+  const { bindStateSync } = await import('./state');
+  bindStateSync(input, generate);
+
+  const { bindDomainAvailability } = await import('./domain-checker');
+  bindDomainAvailability(activeConfig);
+
+  const { bindQRDesigner } = await import('./qr-designer');
+  bindQRDesigner(activeConfig);
+
+  const { initCommandPalette } = await import('./command-palette/index');
+  initCommandPalette();
 
   if (randomBtn) {
     randomBtn.addEventListener('click', async () => {
@@ -113,52 +132,56 @@ export const createWorkspace = wrapErrorBoundary(async function (
     });
   }
 
-  // Font Size Slider initialization
-  const slider = document.getElementById('font-size-slider') as HTMLInputElement | null;
-  if (slider && output && output.style && typeof output.style.setProperty === 'function') {
-    const cachedSize = typeof localStorage !== 'undefined' ? localStorage.getItem('taptogen-font-size') : null;
-    if (cachedSize) {
-      slider.value = cachedSize;
-      output.style.setProperty('--intent-font-size', cachedSize + 'px');
-    } else {
-      output.style.setProperty('--intent-font-size', slider.value + 'px');
-    }
-    slider.addEventListener('input', () => {
-      output.style.setProperty('--intent-font-size', slider.value + 'px');
-      if (typeof localStorage !== 'undefined') {
-        localStorage.setItem('taptogen-font-size', slider.value);
+  if (typeof document !== 'undefined') {
+    const slider = document.getElementById('font-size-slider') as HTMLInputElement | null;
+    if (slider && output && output.style && typeof output.style.setProperty === 'function') {
+      const cachedSize = typeof localStorage !== 'undefined' ? localStorage.getItem('taptogen-font-size') : null;
+      if (cachedSize) {
+        slider.value = cachedSize;
+        output.style.setProperty('--intent-font-size', cachedSize + 'px');
+      } else {
+        output.style.setProperty('--intent-font-size', slider.value + 'px');
       }
-    });
+      slider.addEventListener('input', () => {
+        output.style.setProperty('--intent-font-size', slider.value + 'px');
+        if (typeof localStorage !== 'undefined') {
+          localStorage.setItem('taptogen-font-size', slider.value);
+        }
+      });
+    }
   }
 
   if (flags.enableHistory) {
-    const { initHistory } = await import('./history');
+    const { initHistory, checkSessionRestore } = await import('./history');
     initHistory(activeConfig, output);
+    checkSessionRestore(toolSlug, generate);
   }
 
-  const copyBtnAll = document.getElementById('copy-btn');
-  const workspaceEl = document.getElementById('tool-workspace');
-  const isTextTransform = workspaceEl?.dataset.type === 'text-transform';
-  if (copyBtnAll && isTextTransform) {
-    const newCopyBtn = copyBtnAll.cloneNode(true) as HTMLElement;
-    copyBtnAll.parentNode?.replaceChild(newCopyBtn, copyBtnAll);
-    
-    newCopyBtn.addEventListener('click', async () => {
-      const visibleCards = Array.from(document.querySelectorAll('.intent-style-card, .intent-wide-card, .result-card'))
-        .filter(card => (card as HTMLElement).style.display !== 'none');
+  if (typeof document !== 'undefined') {
+    const copyBtnAll = document.getElementById('copy-btn');
+    const workspaceEl = document.getElementById('tool-workspace');
+    const isTextTransform = workspaceEl?.dataset.type === 'text-transform';
+    if (copyBtnAll && isTextTransform) {
+      const newCopyBtn = copyBtnAll.cloneNode(true) as HTMLElement;
+      copyBtnAll.parentNode?.replaceChild(newCopyBtn, copyBtnAll);
       
-      const copyTextList = visibleCards.map(card => {
-        const name = card.querySelector('.result-label')?.textContent?.trim() || '';
-        const preview = card.querySelector('.intent-preview-text, .intent-section-pre, .result-text')?.textContent || '';
-        return name ? `${name}: ${preview}` : preview;
-      }).filter(Boolean).join('\n');
-      
-      if (copyTextList) {
-        const { ClipboardHelper } = await import('./clipboard');
-        await ClipboardHelper.copy(copyTextList, newCopyBtn);
-        analytics.trackExport('copy_all', visibleCards.length);
-      }
-    });
+      newCopyBtn.addEventListener('click', async () => {
+        const visibleCards = Array.from(document.querySelectorAll('.intent-style-card, .intent-wide-card, .result-card'))
+          .filter(card => (card as HTMLElement).style.display !== 'none');
+        
+        const copyTextList = visibleCards.map(card => {
+          const name = card.querySelector('.result-label')?.textContent?.trim() || '';
+          const preview = card.querySelector('.intent-preview-text, .intent-section-pre, .result-text')?.textContent || '';
+          return name ? `${name}: ${preview}` : preview;
+        }).filter(Boolean).join('\n');
+        
+        if (copyTextList) {
+          const { ClipboardHelper } = await import('./clipboard');
+          await ClipboardHelper.copy(copyTextList, newCopyBtn);
+          analytics.trackExport('copy_all', visibleCards.length);
+        }
+      });
+    }
   }
 
   if (input.value) {
@@ -167,7 +190,9 @@ export const createWorkspace = wrapErrorBoundary(async function (
 
   const duration = endMark('workspace-init');
   logger.info(`Workspace for "${toolSlug}" successfully initialized in ${duration.toFixed(2)}ms`);
-  document.getElementById('tool-workspace')?.setAttribute('data-hydrated', 'true');
+  if (typeof document !== 'undefined') {
+    document.getElementById('tool-workspace')?.setAttribute('data-hydrated', 'true');
+  }
 
   setTimeout(() => {
     observeBundlePerformance();

@@ -1,6 +1,7 @@
 import type { ToolConfig } from '../../config';
 
 export function updatePreviews(textVal: string, targets: NodeListOf<Element>) {
+  if (typeof document === 'undefined') return;
   const firstPreview = document.querySelector('.intent-preview-text')?.textContent || textVal || 'Your text...';
   targets.forEach(el => {
     el.textContent = firstPreview;
@@ -8,7 +9,7 @@ export function updatePreviews(textVal: string, targets: NodeListOf<Element>) {
 }
 
 export function initPreviews(config: ToolConfig) {
-  if (config.previews.length === 0) return;
+  if (config.previews.length === 0 || typeof document === 'undefined') return;
 
   const tabs = document.querySelectorAll('.mockup-tab-group button');
   const panels = document.querySelectorAll('.mockup-panel');

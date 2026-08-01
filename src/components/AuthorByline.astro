@@ -1,0 +1,33 @@
+---
+interface Props {
+  lastUpdated?: string;
+  authorName?: string;
+  authorRole?: string;
+}
+
+const {
+  lastUpdated = 'July 2026',
+  authorName = 'TapToGen Engineering & Editorial Team',
+  authorRole = 'Web Utility & Search Optimization Specialists'
+} = Astro.props;
+---
+
+<div class="author-eeat-card" style="margin-top: 2rem; margin-bottom: 2rem; padding: 1.5rem; border-radius: 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+  <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+    <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #a855f7); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #ffffff; font-size: 1.1rem;">
+      TTG
+    </div>
+    <div style="flex: 1; min-width: 220px;">
+      <div style="font-size: 0.95rem; font-weight: 700; color: var(--color-text-primary, #ffffff); font-family: sans-serif;">
+        Written & Reviewed by {authorName}
+      </div>
+      <div style="font-size: 0.825rem; color: rgba(255, 255, 255, 0.6); margin-top: 0.2rem; font-family: sans-serif;">
+        {authorRole} • Verified for Editorial Accuracy
+      </div>
+    </div>
+    <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); border-left: 1px solid rgba(255, 255, 255, 0.1); padding-left: 1rem; font-family: sans-serif;">
+      <div><strong>Last Reviewed:</strong> {lastUpdated}</div>
+      <div><strong>Editorial Policy:</strong> <a href="/about-us/" style="color: #818cf8; text-decoration: underline;">Learn More</a></div>
+    </div>
+  </div>
+</div>

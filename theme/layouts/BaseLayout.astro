@@ -107,6 +107,11 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
   <meta name="twitter:description" content={meta.description} />
   <meta name="twitter:image" content={imageMeta.url} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="TapToGen" />
   <link rel="sitemap" href="/sitemap-index.xml" />
   {siteConfig.verification.google && <meta name="google-site-verification" content={siteConfig.verification.google} />}
   {siteConfig.verification.bing && <meta name="msvalidate.01" content={siteConfig.verification.bing} />}
@@ -454,5 +459,6 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
     }, { threshold: 0.1 });
     document.querySelectorAll('.tool-card, .feature-card, .category-card, .step-card, .faq-item').forEach(el => observer.observe(el));
   </script>
+  <script is:inline src="/sw-register.js"></script>
 </body>
 </html>

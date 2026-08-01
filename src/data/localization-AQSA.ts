@@ -1,0 +1,2100 @@
+import { portugueseMasterToolData } from './localization-portuguese-data';
+import { frenchMasterToolData } from './localization-french-data';
+import { spanishMasterToolData } from './localization-spanish-data';
+import { germanMasterToolData } from '@/data/localization-german-data';
+import { italianMasterToolData } from './localization-italian-data';
+import { polishMasterToolData } from './localization-polish-data';
+import { russianMasterToolData } from './localization-russian-data';
+import { turkishMasterToolData } from './localization-turkish-data';
+import { indonesianMasterToolData } from './localization-indonesian-data';
+import { swedishMasterToolData } from './localization-swedish-data';
+import { siteConfig } from '@/config/site';
+import { noindexToolSlugs } from '@/data/tool-page-data';
+import { localizedPilotToolData } from '@/data/localization-pilot-data';
+import type { Tool } from '@/data/tools';
+
+export type SupportedLanguageCode = 'en' | 'es' | 'fr' | 'de' | 'pt' | 'it' | 'pl' | 'ru' | 'tr' | 'id' | 'sv' | 'ms' | 'bg' | 'hi' | 'bn' | 'ja' | 'ko' | 'ar';
+export interface SupportedLanguage {
+  code: SupportedLanguageCode;
+  label: string;
+  nativeName: string;
+  locale: string;
+  dir: 'ltr' | 'rtl';
+  slugStrategy: string;
+  enabled: boolean;
+  indexable: boolean;
+  fallbackLang?: SupportedLanguageCode;
+  masterCertified?: boolean;
+  frozen?: boolean;
+  datasetVersion?: string;
+}
+
+export interface LocalizedToolContent {
+  canonicalToolId: string;
+  language: LocalizedLanguageCode;
+  primaryKeyword: string;
+  localizedSlug: string;
+  h1: string;
+  metaTitle: string;
+  metaDescription: string;
+  intro: string;
+  faqTopics: string[];
+  searchIntentNote: string;
+  riskSafetyNote: string;
+  isFlagged?: boolean;
+}
+
+export interface LanguageAlternate {
+  lang: SupportedLanguageCode | 'x-default';
+  href: string;
+}
+
+export type LocalizedLanguageCode = Exclude<SupportedLanguageCode, 'en'>;
+
+export const supportedLanguages: SupportedLanguage[] = [
+  {
+    code: 'en',
+    label: 'English',
+    nativeName: 'English',
+    locale: 'en',
+    dir: 'ltr',
+    slugStrategy: 'existing English slug',
+    enabled: true,
+    indexable: true,
+  },
+  {
+    code: 'es',
+    label: 'Spanish',
+    nativeName: 'Español',
+    locale: 'es',
+    dir: 'ltr',
+    slugStrategy: 'localized Latin keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+    masterCertified: true,
+    frozen: true,
+    datasetVersion: 'v1.0.0-ES-FINAL',
+  },
+  {
+    code: 'fr',
+    label: 'French',
+    nativeName: 'Français',
+    locale: 'fr',
+    dir: 'ltr',
+    slugStrategy: 'localized Latin keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+    masterCertified: true,
+    frozen: true,
+    datasetVersion: 'v1.0.0-FR-FINAL',
+  },
+  {
+    code: 'de',
+    label: 'German',
+    nativeName: 'Deutsch',
+    locale: 'de',
+    dir: 'ltr',
+    slugStrategy: 'localized Latin keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+    masterCertified: true,
+    frozen: true,
+    datasetVersion: 'v1.0.0-DE-FINAL',
+  },
+  {
+    code: 'pt',
+    label: 'Portuguese',
+    nativeName: 'Português',
+    locale: 'pt',
+    dir: 'ltr',
+    slugStrategy: 'localized Latin keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+    masterCertified: true,
+    frozen: true,
+    datasetVersion: 'v1.0.0-PT-FINAL',
+  },
+  {
+    code: 'it',
+    label: 'Italian',
+    nativeName: 'Italiano',
+    locale: 'it',
+    dir: 'ltr',
+    slugStrategy: 'localized Latin keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+    masterCertified: true,
+    frozen: true,
+    datasetVersion: 'v1.0.0-IT-FINAL',
+  },
+  {
+    code: 'pl',
+    label: 'Polish',
+    nativeName: 'Polski',
+    locale: 'pl',
+    dir: 'ltr',
+    slugStrategy: 'localized Latin keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+    masterCertified: true,
+    frozen: true,
+    datasetVersion: 'v1.0.0-PL-FINAL',
+  },
+  {
+    code: 'ru',
+    label: 'Russian',
+    nativeName: 'Русский',
+    locale: 'ru',
+    dir: 'ltr',
+    slugStrategy: 'transliterated localized keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+    masterCertified: true,
+    frozen: true,
+    datasetVersion: 'v1.0.0-RU-FINAL',
+  },
+  {
+    code: 'tr',
+    label: 'Turkish',
+    nativeName: 'Türkçe',
+    locale: 'tr',
+    dir: 'ltr',
+    slugStrategy: 'localized Latin keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+    masterCertified: true,
+    frozen: true,
+    datasetVersion: 'v1.0.0-TR-FINAL',
+  },
+  {
+    code: 'id',
+    label: 'Indonesian',
+    nativeName: 'Bahasa Indonesia',
+    locale: 'id',
+    dir: 'ltr',
+    slugStrategy: 'localized Latin keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+    masterCertified: true,
+    frozen: true,
+    datasetVersion: 'v1.0.0-ID-FINAL',
+  },
+  {
+    code: 'sv',
+    label: 'Swedish',
+    nativeName: 'Svenska',
+    locale: 'sv',
+    dir: 'ltr',
+    slugStrategy: 'localized Latin keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+  },
+  {
+    code: 'ms',
+    label: 'Malay',
+    nativeName: 'Bahasa Melayu',
+    locale: 'ms',
+    dir: 'ltr',
+    slugStrategy: 'localized Latin keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+  },
+  {
+    code: 'bg',
+    label: 'Bulgarian',
+    nativeName: 'Български',
+    locale: 'bg',
+    dir: 'ltr',
+    slugStrategy: 'transliterated localized keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+  },
+  {
+    code: 'hi',
+    label: 'Hindi',
+    nativeName: 'हिन्दी',
+    locale: 'hi',
+    dir: 'ltr',
+    slugStrategy: 'transliterated localized keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+  },
+  {
+    code: 'bn',
+    label: 'Bengali',
+    nativeName: 'বাংলা',
+    locale: 'bn',
+    dir: 'ltr',
+    slugStrategy: 'transliterated localized keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+  },
+  {
+    code: 'ja',
+    label: 'Japanese',
+    nativeName: '日本語',
+    locale: 'ja',
+    dir: 'ltr',
+    slugStrategy: 'transliterated localized keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+  },
+  {
+    code: 'ko',
+    label: 'Korean',
+    nativeName: '한국어',
+    locale: 'ko',
+    dir: 'ltr',
+    slugStrategy: 'transliterated localized keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+  },
+  {
+    code: 'ar',
+    label: 'Arabic',
+    nativeName: 'العربية',
+    locale: 'ar',
+    dir: 'rtl',
+    slugStrategy: 'transliterated localized keyword slug, ASCII-normalized',
+    enabled: true,
+    indexable: true,
+    fallbackLang: 'en',
+  },
+];
+
+const legacySpanishPilotTools: LocalizedToolContent[] = [
+  { canonicalToolId: 'name-generator', primaryKeyword: 'generador de nombres', localizedSlug: 'generador-de-nombres', h1: 'Generador de nombres', metaTitle: 'Generador de Nombres Gratis - Ideas Creativas Online', metaDescription: 'Genera nombres originales y creativos para proyectos, personajes, marcas y empresas al instante. Herramienta gratuita online sin registro.', intro: 'Genera nombres en español con opciones amplias y revisa cada sugerencia antes de usarla en público.', faqTopics: ['como elegir un nombre', 'nombres originales', 'revisar disponibilidad'], searchIntentNote: 'High same-intent utility query; Spanish users search directly for name ideas.', riskSafetyNote: 'Low risk; remind users to check trademarks and availability.', language: 'es' },
+  { canonicalToolId: 'username-generator', primaryKeyword: 'generador de nombres de usuario', localizedSlug: 'generador-de-nombres-de-usuario', h1: 'Generador de nombres de usuario', metaTitle: 'Generador de Nombres de Usuario - Ideas Únicas Online', metaDescription: 'Crea nombres de usuario únicos e irresistibles para redes sociales, juegos y plataformas digitales. Gratis, rápido y sin necesidad de registro.', intro: 'Crea nombres de usuario memorables y revisa si estan libres antes de registrarlos.', faqTopics: ['usuarios originales', 'usuario para redes', 'comprobar disponibilidad'], searchIntentNote: 'Local intent is account handle discovery, not identity claims.', riskSafetyNote: 'Avoid platform guarantees or impersonation angles.', language: 'es' },
+  { canonicalToolId: 'business-name-generator', primaryKeyword: 'generador de nombres para empresas', localizedSlug: 'generador-de-nombres-para-empresas', h1: 'Generador de nombres para empresas', metaTitle: 'Generador de Nombres para Empresas - Ideas Comerciales', metaDescription: 'Encuentra el nombre perfecto para tu empresa, emprendimiento o startup. Genera ideas comerciales profesionales y atractivas de forma gratuita.', intro: 'Explora nombres de empresa y valida significado, dominio y registro antes de decidir.', faqTopics: ['nombre de empresa', 'ideas de negocio', 'comprobar marca'], searchIntentNote: 'Same-intent business naming query with commercial research intent.', riskSafetyNote: 'Legal/trademark review required before use.', language: 'es' },
+  { canonicalToolId: 'fantasy-name-generator', primaryKeyword: 'generador de nombres de fantasia', localizedSlug: 'generador-de-nombres-de-fantasia', h1: 'Generador de nombres de fantasia', metaTitle: 'Generador de Nombres de Fantasía - Ideas para Juegos', metaDescription: 'Crea nombres de fantasía épicos para personajes de rol, libros, mundos imaginarios y juegos. Herramienta gratuita y fácil de usar en línea.', intro: 'Obten ideas originales para personajes, lugares o especies ficticias y ajustalas al tono de tu mundo.', faqTopics: ['nombres fantasticos', 'nombres para rol', 'nombres de mundos'], searchIntentNote: 'Strong creative-writing and RPG intent.', riskSafetyNote: 'Avoid protected franchise names and explicit IP references.', language: 'es' },
+  { canonicalToolId: 'character-name-generator', primaryKeyword: 'generador de nombres para personajes', localizedSlug: 'generador-de-nombres-para-personajes', h1: 'Generador de nombres para personajes', metaTitle: 'Generador de Nombres para Personajes - Ideas de Historias', metaDescription: 'Genera nombres originales para personajes de historias, novelas, guiones y juegos de rol. Herramienta gratuita en línea sin complicaciones.', intro: 'Genera ideas coherentes para personajes y adapta cada nombre al genero, epoca y tono.', faqTopics: ['nombres de personajes', 'personajes para historias', 'nombres para guion'], searchIntentNote: 'Intent is creative character naming rather than real identities.', riskSafetyNote: 'Avoid celebrity, impersonation, or protected character claims.', language: 'es' },
+  { canonicalToolId: 'baby-name-generator', primaryKeyword: 'nombres de bebe', localizedSlug: 'nombres-de-bebe', h1: 'Generador de nombres de bebe', metaTitle: 'Generador de Nombres de Bebé - Ideas Bonitas Online', metaDescription: 'Descubre los mejores nombres de bebé con su significado y estilo. Inspírate con ideas hermosas y originales para tu hijo o hija gratis.', intro: 'Encuentra nombres para considerar en familia y verifica significado, pronunciación y registro local.', faqTopics: ['nombres de nina', 'nombres de nino', 'significado de nombres'], searchIntentNote: 'Searchers prefer names list intent over literal generator wording.', riskSafetyNote: 'Sensitive personal choice; avoid claims about legality or suitability.', language: 'es' },
+  { canonicalToolId: 'last-name-generator', primaryKeyword: 'generador de apellidos', localizedSlug: 'generador-de-apellidos', h1: 'Generador de apellidos', metaTitle: 'Generador de Apellidos Gratis - Ideas para Historias', metaDescription: 'Genera apellidos reales y ficticios para completar personajes de novelas, juegos de rol e historias creativas. Rápido, fácil y gratuito.', intro: 'Genera apellidos para uso creativo y revisa sensibilidad cultural cuando corresponda.', faqTopics: ['apellidos para personajes', 'apellidos ficticios', 'apellidos originales'], searchIntentNote: 'Intent is creative surname generation.', riskSafetyNote: 'Avoid implying real genealogy or ethnicity accuracy.', language: 'es' },
+  { canonicalToolId: 'middle-name-generator', primaryKeyword: 'generador de segundo nombre', localizedSlug: 'generador-de-segundo-nombre', h1: 'Generador de segundo nombre', metaTitle: 'Generador de Segundos Nombres - Ideas Únicas Online', metaDescription: 'Encuentra el segundo nombre perfecto que combine idealmente con el primer nombre. Ideas originales y sugerencias armónicas gratis en línea.', intro: 'Genera opciones que encajen con nombre y apellido, y revisa pronunciación y contexto.', faqTopics: ['segundo nombre ideas', 'nombres compuestos', 'combinaciones de nombres'], searchIntentNote: 'Spanish intent is narrower but aligned with middle-name selection.', riskSafetyNote: 'Sensitive personal naming; no legal promises.', language: 'es' },
+  { canonicalToolId: 'team-name-generator', primaryKeyword: 'generador de nombres de equipo', localizedSlug: 'generador-de-nombres-de-equipo', h1: 'Generador de nombres de equipo', metaTitle: 'Generador de Nombres para Equipos - Ideas de Grupos', metaDescription: 'Crea nombres geniales y motivadores para equipos deportivos, de trabajo, juegos o torneos. Herramienta gratuita online y sin registro.', intro: 'Obten ideas de equipo faciles de recordar y revisa tono, inclusion y originalidad.', faqTopics: ['nombres para equipos', 'nombres de grupos', 'nombres divertidos'], searchIntentNote: 'Clear local team/group naming intent.', riskSafetyNote: 'Avoid offensive, exclusive, or misleading group names.', language: 'es' },
+  { canonicalToolId: 'domain-name-generator', primaryKeyword: 'generador de nombres de dominio', localizedSlug: 'generador-de-nombres-de-dominio', h1: 'Generador de nombres de dominio', metaTitle: 'Generador de Nombres de Dominio - Ideas para Webs SEO', metaDescription: 'Encuentra nombres de dominio disponibles y atractivos para tu sitio web o proyecto online. Ideas cortas, memorables y optimizadas gratis.', intro: 'Explora dominios posibles y comprueba disponibilidad, marca y extension antes de comprar.', faqTopics: ['ideas de dominio', 'dominio para web', 'comprobar dominio'], searchIntentNote: 'Commercial domain discovery intent.', riskSafetyNote: 'Do not promise domain availability or legal clearance.', language: 'es' },
+  { canonicalToolId: 'product-name-generator', primaryKeyword: 'nombres para productos', localizedSlug: 'nombres-para-productos', h1: 'Generador de nombres para productos', metaTitle: 'Generador de Nombres de Productos - Ideas Comerciales', metaDescription: 'Genera nombres comerciales atractivos e innovadores para tus productos y servicios digitales. Herramienta online gratuita y rápida de usar.', intro: 'Genera opciones comerciales y revisa marca, claridad y encaje con el mercado.', faqTopics: ['nombre de producto', 'ideas de producto', 'naming producto'], searchIntentNote: 'Spanish users often search for product-name ideas, not only generator.', riskSafetyNote: 'Trademark and claim review needed.', language: 'es' },
+  { canonicalToolId: 'project-name-generator', primaryKeyword: 'nombres para proyectos', localizedSlug: 'nombres-para-proyectos', h1: 'Generador de nombres para proyectos', metaTitle: 'Generador de Nombres para Proyectos - Ideas Creativas', metaDescription: 'Crea nombres memorables para proyectos de trabajo, universitarios, creativos o de código. Ideas originales gratis directamente en tu navegador.', intro: 'Genera ideas memorables y ajustalas al tono, publico y alcance del proyecto.', faqTopics: ['nombre de proyecto', 'ideas para proyectos', 'proyectos creativos'], searchIntentNote: 'Local query favors ideas for project names.', riskSafetyNote: 'Low risk; avoid implying official project status.', language: 'es' },
+  { canonicalToolId: 'brand-kit-generator', primaryKeyword: 'generador de kit de marca', localizedSlug: 'generador-de-kit-de-marca', h1: 'Generador de kit de marca', metaTitle: 'Generador de Kit de Marca - Identidad Visual Gratis', metaDescription: 'Diseña borradores iniciales para la identidad visual de tu marca, paleta de colores y valores clave. Herramienta online fácil y gratuita.', intro: 'Usa el kit como punto de partida y revisa coherencia, derechos y aplicacion real.', faqTopics: ['kit de marca', 'identidad de marca', 'branding basico'], searchIntentNote: 'Brand kit is a borrowed marketing concept; Spanish phrase is clear.', riskSafetyNote: 'Trademark and design review required.', language: 'es' },
+  { canonicalToolId: 'slogan-generator', primaryKeyword: 'generador de slogans', localizedSlug: 'generador-de-slogans', h1: 'Generador de slogans', metaTitle: 'Generador de Slogans Gratis - Frases para Marcas', metaDescription: 'Crea slogans pegajosos y frases publicitarias impactantes para impulsar tu negocio o producto. Generador online gratuito y rápido de usar.', intro: 'Genera frases breves y revisa originalidad, promesas y encaje antes de publicar.', faqTopics: ['slogans creativos', 'slogan para negocio', 'frases publicitarias'], searchIntentNote: 'Spanish uses slogan as common marketing loanword.', riskSafetyNote: 'Avoid false claims, regulated promises, and trademark conflicts.', language: 'es' },
+  { canonicalToolId: 'tagline-generator', primaryKeyword: 'generador de frases para marca', localizedSlug: 'generador-de-frases-para-marca', h1: 'Generador de frases para marca', metaTitle: 'Generador de Taglines Gratis - Frases de Marca Online', metaDescription: 'Genera frases cortas y poderosas que definan la propuesta de valor de tu negocio o marca personal. Herramienta online gratuita y efectiva.', intro: 'Encuentra una linea de marca clara y evita promesas que no puedas respaldar.', faqTopics: ['frase de marca', 'lema de marca', 'propuesta de valor'], searchIntentNote: 'Spanish tagline intent is better captured by brand phrase/lema than literal tagline.', riskSafetyNote: 'Avoid deceptive advertising claims.', language: 'es' },
+  { canonicalToolId: 'blog-name-generator', primaryKeyword: 'nombres para blog', localizedSlug: 'nombres-para-blog', h1: 'Generador de nombres para blog', metaTitle: 'Generador de Nombres para Blogs - Ideas Creativas', metaDescription: 'Encuentra el nombre ideal para tu blog personal, temático o newsletter digital. Inspírate con ideas originales y atractivas en línea gratis.', intro: 'Genera opciones memorables y revisa dominio, tono y tema antes de elegir.', faqTopics: ['nombre de blog', 'ideas para blog', 'blog personal'], searchIntentNote: 'Spanish list/query intent is stronger than literal generator.', riskSafetyNote: 'Check trademark and domain availability.', language: 'es' },
+  { canonicalToolId: 'podcast-name-generator', primaryKeyword: 'nombres para podcast', localizedSlug: 'nombres-para-podcast', h1: 'Generador de nombres para podcast', metaTitle: 'Generador de Nombres para Podcasts - Ideas de Canales', metaDescription: 'Descubre nombres originales y sonoros para tu programa de podcast o canal de audio. Herramienta online gratuita y sin necesidad de registro.', intro: 'Genera opciones claras y revisa disponibilidad en directorios, dominio y marca.', faqTopics: ['nombre de podcast', 'ideas para podcast', 'podcast creativo'], searchIntentNote: 'Spanish query often searches ideas/names for podcast.', riskSafetyNote: 'Avoid platform availability guarantees.', language: 'es' },
+  { canonicalToolId: 'youtube-tag-generator', primaryKeyword: 'generador de etiquetas para videos', localizedSlug: 'generador-de-etiquetas-para-videos', h1: 'Generador de etiquetas para videos', metaTitle: 'Generador de Etiquetas para YouTube - Tags para Videos', metaDescription: 'Genera etiquetas relevantes para tus videos de YouTube e impulsa tu alcance orgánico. Herramienta online gratuita, rápida y fácil de usar.', intro: 'Genera tags relacionados con el tema del video y revisa relevancia antes de publicar.', faqTopics: ['etiquetas para videos', 'tags de video', 'ideas de tags'], searchIntentNote: 'Avoids brand dependency while preserving video-tag intent.', riskSafetyNote: 'Do not promise rankings or use platform-brand claims.', language: 'es' },
+  { canonicalToolId: 'hashtag-generator', primaryKeyword: 'generador de hashtags', localizedSlug: 'generador-de-hashtags', h1: 'Generador de hashtags', metaTitle: 'Generador de Hashtags Gratis - Hashtags para Redes', metaDescription: 'Encuentra hashtags relevantes para Instagram, TikTok y Twitter. Optimiza el alcance de tus publicaciones con sugerencias gratuitas en línea.', intro: 'Genera etiquetas sociales relevantes y revisa tono, significado y contexto actual.', faqTopics: ['hashtags para redes', 'hashtags populares', 'ideas de hashtags'], searchIntentNote: 'Direct social hashtag intent.', riskSafetyNote: 'Avoid promising virality or trending accuracy.', language: 'es' },
+  { canonicalToolId: 'keyword-generator', primaryKeyword: 'generador de palabras clave', localizedSlug: 'generador-de-palabras-clave', h1: 'Generador de palabras clave', metaTitle: 'Generador de Palabras Clave Gratis - Ideas SEO Online', metaDescription: 'Genera palabras clave e ideas de búsqueda para tu estrategia de contenido y SEO. Herramienta gratuita online directa en tu navegador.', intro: 'Genera temas y terminos relacionados, luego valida volumen, competencia e intención.', faqTopics: ['palabras clave SEO', 'ideas de keywords', 'investigacion keyword'], searchIntentNote: 'Direct SEO keyword ideation intent.', riskSafetyNote: 'No traffic, ranking, or ad-performance guarantees.', language: 'es' },
+  { canonicalToolId: 'meta-tag-generator', primaryKeyword: 'generador de meta tags', localizedSlug: 'generador-de-meta-tags', h1: 'Generador de meta tags', metaTitle: 'Generador de Meta Tags SEO - Etiquetas Web Gratis', metaDescription: 'Crea código de meta tags completo para tu sitio web, optimizado para motores de búsqueda y redes sociales. Gratis e instantáneo en línea.', intro: 'Genera etiquetas base y revisa longitud, relevancia y compatibilidad antes de implementar.', faqTopics: ['meta tags SEO', 'etiquetas meta', 'meta title y description'], searchIntentNote: 'Spanish SEO users often use meta tags loan term.', riskSafetyNote: 'Technical output should be reviewed before production.', language: 'es' },
+  { canonicalToolId: 'meta-description-generator', primaryKeyword: 'generador de meta descripciones', localizedSlug: 'generador-de-meta-descripciones', h1: 'Generador de meta descripciones', metaTitle: 'Generador de Meta Descripciones - Optimización SEO Gratis', metaDescription: 'Genera meta descripciones atractivas que aumenten el CTR de tus páginas en Google. Herramienta online gratuita y rápida para webmasters.', intro: 'Genera borradores breves y ajusta longitud, precision y promesa antes de publicar.', faqTopics: ['meta descripcion SEO', 'description para Google', 'snippet SEO'], searchIntentNote: 'Direct SEO snippet-writing intent.', riskSafetyNote: 'No CTR or ranking guarantees.', language: 'es' },
+  { canonicalToolId: 'seo-title-generator', primaryKeyword: 'generador de títulos SEO', localizedSlug: 'generador-de-titulos-seo', h1: 'Generador de títulos SEO', metaTitle: 'Generador de Títulos SEO Gratis - Encabezados Web', metaDescription: 'Crea títulos optimizados para buscadores y capta más clics en tus artículos y páginas web. Generador online gratuito y fácil de utilizar.', intro: 'Genera opciones de título y revisa longitud, intención y exactitud antes de usarlas.', faqTopics: ['titulo SEO', 'title tag', 'titulos para Google'], searchIntentNote: 'Direct SEO title intent.', riskSafetyNote: 'No ranking guarantees; avoid misleading clickbait.', language: 'es' },
+  { canonicalToolId: 'faq-generator', primaryKeyword: 'generador de preguntas frecuentes', localizedSlug: 'generador-de-preguntas-frecuentes', h1: 'Generador de preguntas frecuentes', metaTitle: 'Generador de Preguntas Frecuentes - FAQ Schema Gratis', metaDescription: 'Genera bloques de preguntas frecuentes estructurados con marcado FAQPage Schema para tu sitio web. Herramienta gratuita e instantánea online.', intro: 'Genera temas de FAQ utiles y revisa exactitud, politicas y respuesta final.', faqTopics: ['preguntas frecuentes', 'FAQ para web', 'preguntas y respuestas'], searchIntentNote: 'Spanish expands FAQ for broader local clarity.', riskSafetyNote: 'Review answers for factual and policy accuracy.', language: 'es' },
+  { canonicalToolId: 'canonical-tag-generator', primaryKeyword: 'generador de etiqueta canonical', localizedSlug: 'generador-de-etiqueta-canonical', h1: 'Generador de etiqueta canonical', metaTitle: 'Generador de Etiqueta Canonical - Código SEO Web Gratis', metaDescription: 'Crea etiquetas canonical precisas para evitar contenido duplicado en tu sitio web. Herramienta de SEO técnico gratuita y fácil de utilizar.', intro: 'Genera el formato base y revisa la URL final antes de implementarlo en tu sitio.', faqTopics: ['canonical SEO', 'etiqueta canonica', 'URL canonica'], searchIntentNote: 'SEO technical query; canonical often remains English.', riskSafetyNote: 'Technical SEO review required.', language: 'es' },
+  { canonicalToolId: 'robots-txt-generator', primaryKeyword: 'generador de robots.txt', localizedSlug: 'generador-de-robots-txt', h1: 'Generador de robots.txt', metaTitle: 'Generador de Robots.txt Gratis - Archivos de Rastreo', metaDescription: 'Genera un archivo robots.txt personalizado para controlar el rastreo de motores de búsqueda en tu web. Gratis y listo para descargar.', intro: 'Genera reglas iniciales y revisa que no bloqueen paginas importantes por error.', faqTopics: ['robots.txt SEO', 'archivo robots', 'reglas de rastreo'], searchIntentNote: 'Technical query is language-neutral around robots.txt.', riskSafetyNote: 'High risk if misused; require manual SEO review.', language: 'es' },
+  { canonicalToolId: 'open-graph-generator', primaryKeyword: 'generador de etiquetas Open Graph', localizedSlug: 'generador-de-etiquetas-open-graph', h1: 'Generador de etiquetas Open Graph', metaTitle: 'Generador de Etiquetas Open Graph - Meta Tags Sociales', metaDescription: 'Crea meta tags Open Graph para personalizar la vista previa de tus enlaces en redes sociales como Facebook y X. Gratis y rápido en línea.', intro: 'Genera titulo, descripcion e imagen sugerida y revisa cada campo antes de publicar.', faqTopics: ['Open Graph SEO', 'etiquetas sociales', 'vista previa enlace'], searchIntentNote: 'Protocol name is standard; intent is social preview metadata.', riskSafetyNote: 'Review image rights and avoid misleading previews.', language: 'es' },
+  { canonicalToolId: 'fancy-text-generator', primaryKeyword: 'letras bonitas', localizedSlug: 'letras-bonitas', h1: 'Generador de letras bonitas', metaTitle: 'Generador de Letras bonitas - Copiar y Pegar Texto', metaDescription: 'Convierte tu texto normal en fuentes decorativas y letras bonitas para copiar en Instagram, WhatsApp y TikTok. Gratis e instantáneo online.', intro: 'Crea texto estilizado y comprueba legibilidad y compatibilidad antes de compartir.', faqTopics: ['letras para copiar', 'texto bonito', 'fuentes decorativas'], searchIntentNote: 'Spanish search intent strongly favors letras bonitas over literal fancy text.', riskSafetyNote: 'Avoid deceptive identity or accessibility issues.', language: 'es' },
+  { canonicalToolId: 'bold-text-generator', primaryKeyword: 'texto en negrita', localizedSlug: 'texto-en-negrita', h1: 'Generador de texto en negrita', metaTitle: 'Generador de Texto en Negrita - Letras para Copiar', metaDescription: 'Transforma cualquier texto en negrita tipográfica Unicode lista para copiar y pegar en redes sociales y perfiles. Gratis y rápido en línea.', intro: 'Genera texto destacado y revisa que sea legible en la app o pagina donde lo uses.', faqTopics: ['negrita unicode', 'letras en negrita', 'copiar texto negrita'], searchIntentNote: 'Spanish users search copyable bold text, not only generator.', riskSafetyNote: 'Compatibility/accessibility warning.', language: 'es' },
+  { canonicalToolId: 'cursive-text-generator', primaryKeyword: 'letras cursivas', localizedSlug: 'letras-cursivas', h1: 'Generador de letras cursivas', metaTitle: 'Generador de Letras Cursivas - Texto para Copiar', metaDescription: 'Convierte tus frases en elegantes letras cursivas para copiar y pegar en mensajes, bio y publicaciones. Herramienta online gratis y limpia.', intro: 'Genera letras cursivas y verifica legibilidad, acentos y compatibilidad antes de publicar.', faqTopics: ['cursiva para copiar', 'texto cursivo', 'letras manuscritas'], searchIntentNote: 'Spanish users search letras cursivas para copiar.', riskSafetyNote: 'Compatibility/accessibility warning.', language: 'es' },
+  { canonicalToolId: 'italic-text-generator', primaryKeyword: 'texto italica', localizedSlug: 'texto-italica', h1: 'Generador de texto italica', metaTitle: 'Generador de Texto en Itálica - Cursiva para Copiar', metaDescription: 'Genera texto inclinado o itálico decorativo listo para copiar en perfiles y estados. Herramienta gratuita online y compatible con redes.', intro: 'Crea texto inclinado y revisa si la plataforma lo muestra correctamente.', faqTopics: ['italica unicode', 'texto inclinado', 'cursiva para copiar'], searchIntentNote: 'Spanish often blends italica/cursiva; chosen slug avoids collision with cursive tool.', riskSafetyNote: 'Compatibility/accessibility warning.', language: 'es' },
+  { canonicalToolId: 'small-text-generator', primaryKeyword: 'letras pequenas', localizedSlug: 'letras-pequenas', h1: 'Generador de letras pequenas', metaTitle: 'Generador de Letras Pequeñas - Texto Mini para Copiar', metaDescription: 'Convierte tu texto en fuentes pequeñas y caracteres subíndice o superíndice para redes sociales. Herramienta online gratuita y rápida.', intro: 'Genera texto pequeno y comprueba legibilidad, accesibilidad y compatibilidad.', faqTopics: ['texto pequeno', 'letras mini', 'small text copiar'], searchIntentNote: 'Spanish local copy intent is letras pequenas/texto pequeno.', riskSafetyNote: 'Accessibility and readability risk.', language: 'es' },
+  { canonicalToolId: 'reverse-text-generator', primaryKeyword: 'invertir texto', localizedSlug: 'invertir-texto', h1: 'Invertir texto', metaTitle: 'Invertir Texto Online Gratis - Escribir Texto al Revés', metaDescription: 'Voltea palabras y frases completas al revés o invierte el orden de los caracteres fácilmente. Herramienta gratuita instantánea en línea.', intro: 'Pega tu texto, genera la version invertida y revisa que el resultado siga siendo correcto.', faqTopics: ['texto al reves', 'invertir palabras', 'escribir al reves'], searchIntentNote: 'Spanish task query is stronger than generator wording.', riskSafetyNote: 'Low risk; caution with sensitive text pasted into tools.', language: 'es' },
+  { canonicalToolId: 'text-case-converter', primaryKeyword: 'convertidor de mayusculas y minusculas', localizedSlug: 'convertidor-de-mayusculas-y-minusculas', h1: 'Convertidor de mayusculas y minusculas', metaTitle: 'Convertidor de Mayúsculas y Minúsculas - Texto Gratis', metaDescription: 'Cambia texto entre mayúsculas, minúsculas y formato título al instante. Herramienta gratuita online para edición de texto rápida y limpia.', intro: 'Pega texto y conviertelo al formato de capitalizacion que necesites.', faqTopics: ['pasar a mayusculas', 'convertir minusculas', 'capitalizar texto'], searchIntentNote: 'Direct utility intent in Spanish.', riskSafetyNote: 'Low risk; caution with sensitive text.', language: 'es' },
+  { canonicalToolId: 'word-counter', primaryKeyword: 'contador de palabras', localizedSlug: 'contador-de-palabras', h1: 'Contador de palabras', metaTitle: 'Contador de Palabras Online - Contar Caracteres Web', metaDescription: 'Cuenta palabras, caracteres, frases y párrafos en tiempo real. Herramienta esencial gratuita para redactores, estudiantes y profesionales.', intro: 'Pega tu texto y revisa conteos utiles sin cambiar el contenido original.', faqTopics: ['contar palabras', 'contador de caracteres', 'longitud de texto'], searchIntentNote: 'Direct high-volume utility intent.', riskSafetyNote: 'Low risk; avoid storing sensitive text.', language: 'es' },
+  { canonicalToolId: 'paragraph-generator', primaryKeyword: 'generador de parrafos', localizedSlug: 'generador-de-parrafos', h1: 'Generador de parrafos', metaTitle: 'Generador de Párrafos Gratis - Redacción de Texto', metaDescription: 'Crea borradores de párrafos bien estructurados para artículos, descripciones y tareas escritas. Herramienta en línea gratuita y rápida.', intro: 'Genera texto inicial y revisa hechos, tono y originalidad antes de publicarlo.', faqTopics: ['parrafos para textos', 'escribir parrafo', 'ideas de parrafos'], searchIntentNote: 'Direct writing-assist intent.', riskSafetyNote: 'Review factual claims and avoid submitting unedited work.', language: 'es' },
+  { canonicalToolId: 'sentence-generator', primaryKeyword: 'generador de oraciones', localizedSlug: 'generador-de-oraciones', h1: 'Generador de oraciones', metaTitle: 'Generador de Oraciones Gratis - Frases de Ejemplo', metaDescription: 'Genera oraciones de ejemplo y frases gramaticalmente correctas para ejercicios de escritura e inspiración. Herramienta online gratuita.', intro: 'Genera frases base y ajusta gramatica, contexto y precision antes de usarlas.', faqTopics: ['oraciones de ejemplo', 'crear frases', 'frases para escribir'], searchIntentNote: 'Spanish oraciones is better for sentence tool than frases in some contexts.', riskSafetyNote: 'Review grammar and factual context.', language: 'es' },
+  { canonicalToolId: 'writing-prompt-generator', primaryKeyword: 'ideas para escribir', localizedSlug: 'ideas-para-escribir', h1: 'Generador de ideas para escribir', metaTitle: 'Generador de Ideas para Escribir - Prompts Creativos', metaDescription: 'Encuentra disparadores creativos e ideas inspiradoras para cuentos, escenas y diarios. Herramienta gratuita en línea para escritores.', intro: 'Genera disparadores de escritura y adaptalos a tu voz, genero y objetivo.', faqTopics: ['prompts de escritura', 'ideas para cuentos', 'ejercicios creativos'], searchIntentNote: 'Spanish local intent favors writing ideas over prompt literal.', riskSafetyNote: 'Avoid school dishonesty framing; creative support only.', language: 'es' },
+  { canonicalToolId: 'blog-outline-generator', primaryKeyword: 'esquema para blog', localizedSlug: 'esquema-para-blog', h1: 'Generador de esquema para blog', metaTitle: 'Generador de Esquemas para Blogs - Estructura Web', metaDescription: 'Crea esquemas de contenido bien organizados con secciones y subtítulos para tus artículos de blog. Herramienta online gratuita y rápida.', intro: 'Genera un esquema inicial y ajustalo segun intención de busqueda y experiencia real.', faqTopics: ['estructura de blog', 'outline de articulo', 'plan de contenido'], searchIntentNote: 'Spanish intent is outline/structure for blog posts.', riskSafetyNote: 'Avoid thin SEO content; require human expertise.', language: 'es' },
+  { canonicalToolId: 'product-description-generator', primaryKeyword: 'generador de descripciones de productos', localizedSlug: 'generador-de-descripciones-de-productos', h1: 'Generador de descripciones de productos', metaTitle: 'Generador de Descripciones de Productos - Textos Ventas', metaDescription: 'Crea textos comerciales persuasivos para tus fichas de producto e impulsa tus ventas online. Generador gratuito y fácil de usar en línea.', intro: 'Genera texto de producto y revisa exactitud, beneficios, politicas y cumplimiento.', faqTopics: ['descripcion de producto', 'ficha de producto', 'copy ecommerce'], searchIntentNote: 'Direct ecommerce copy intent.', riskSafetyNote: 'Must verify factual claims, pricing, compliance, and policies.', language: 'es' },
+];
+void legacySpanishPilotTools;
+
+export const localizedPilotTools = localizedPilotToolData;
+export const localizedPilotLanguages: LocalizedLanguageCode[] = ['es', 'fr', 'de', 'pt', 'it', 'pl', 'ru', 'tr', 'id', 'sv', 'ms', 'bg', 'hi', 'bn', 'ja', 'ko', 'ar'];
+export const spanishPilotTools = spanishMasterToolData;
+export const frenchPilotTools = frenchMasterToolData;
+export const germanPilotTools = germanMasterToolData;
+export const portuguesePilotTools = portugueseMasterToolData;
+export const italianPilotTools = italianMasterToolData;
+export const polishPilotTools = polishMasterToolData;
+export const russianPilotTools = localizedPilotTools.filter((entry) => entry.language === 'ru').map(entry => {
+  const master = russianMasterToolData.find(m => m.canonicalToolId === entry.canonicalToolId);
+  return master || entry;
+});
+export const turkishPilotTools = localizedPilotTools.filter((entry) => entry.language === 'tr').map(entry => {
+  const master = turkishMasterToolData.find(m => m.canonicalToolId === entry.canonicalToolId);
+  return master || entry;
+});
+export const indonesianPilotTools = localizedPilotTools.filter((entry) => entry.language === 'id').map(entry => {
+  const master = indonesianMasterToolData.find(m => m.canonicalToolId === entry.canonicalToolId);
+  return master || entry;
+});
+export const swedishPilotTools = localizedPilotTools.filter((entry) => entry.language === 'sv').map(entry => {
+  const master = swedishMasterToolData.find(m => m.canonicalToolId === entry.canonicalToolId);
+  return master || entry;
+});
+export const malayPilotTools = localizedPilotTools.filter((entry) => entry.language === 'ms');
+export const bulgarianPilotTools = localizedPilotTools.filter((entry) => entry.language === 'bg');
+export const hindiPilotTools = localizedPilotTools.filter((entry) => entry.language === 'hi');
+export const bengaliPilotTools = localizedPilotTools.filter((entry) => entry.language === 'bn');
+export const japanesePilotTools = localizedPilotTools.filter((entry) => entry.language === 'ja');
+export const koreanPilotTools = localizedPilotTools.filter((entry) => entry.language === 'ko');
+export const arabicPilotTools = localizedPilotTools.filter((entry) => entry.language === 'ar');
+
+const localizedPilotByLanguage = Object.fromEntries(
+  localizedPilotLanguages.map((language) => [
+    language,
+    language === 'es' ? spanishMasterToolData
+    : language === 'de' ? germanMasterToolData
+    : language === 'pt' ? portugueseMasterToolData
+    : language === 'fr' ? frenchMasterToolData
+    : language === 'it' ? italianMasterToolData
+    : language === 'pl' ? polishMasterToolData
+    : language === 'ru' ? russianPilotTools
+    : language === 'tr' ? turkishPilotTools
+    : language === 'id' ? indonesianPilotTools
+    : language === 'sv' ? swedishPilotTools
+    : localizedPilotTools.filter((entry) => entry.language === language)
+  ]),
+) as Record<LocalizedLanguageCode, LocalizedToolContent[]>;
+
+const localizedPilotByCanonicalToolId = Object.fromEntries(
+  localizedPilotLanguages.map((language) => [
+    language,
+    Object.fromEntries(localizedPilotByLanguage[language].map((entry) => [entry.canonicalToolId, entry])),
+  ]),
+) as Record<LocalizedLanguageCode, Record<string, LocalizedToolContent>>;
+
+const localizedPilotBySlug = Object.fromEntries(
+  localizedPilotLanguages.map((language) => [
+    language,
+    Object.fromEntries(localizedPilotByLanguage[language].map((entry) => [entry.localizedSlug, entry])),
+  ]),
+) as Record<LocalizedLanguageCode, Record<string, LocalizedToolContent>>;
+
+export const spanishPilotByCanonicalToolId = Object.fromEntries(
+  spanishPilotTools.map((entry) => [entry.canonicalToolId, entry]),
+) as Record<string, LocalizedToolContent>;
+
+export const spanishPilotBySlug = Object.fromEntries(
+  spanishPilotTools.map((entry) => [entry.localizedSlug, entry]),
+) as Record<string, LocalizedToolContent>;
+
+export function isSpanishPilotTool(canonicalToolId: string): boolean {
+  return canonicalToolId in spanishPilotByCanonicalToolId && !noindexToolSlugs.has(canonicalToolId);
+}
+
+export function getLocalizedPilotTools(language: LocalizedLanguageCode): LocalizedToolContent[] {
+  return localizedPilotByLanguage[language];
+}
+
+export function getSupportedLanguage(language: SupportedLanguageCode): SupportedLanguage {
+  return supportedLanguages.find((item) => item.code === language) || supportedLanguages[0];
+}
+
+export function isLocalizedLanguage(language: SupportedLanguageCode): language is LocalizedLanguageCode {
+  return language !== 'en';
+}
+
+export function getLocalizedToolByCanonicalId(canonicalToolId: string, language: SupportedLanguageCode) {
+  if (!isLocalizedLanguage(language) || noindexToolSlugs.has(canonicalToolId)) return undefined;
+  return localizedPilotByCanonicalToolId[language][canonicalToolId];
+}
+
+export function getLocalizedToolBySlug(localizedSlug: string, language: SupportedLanguageCode) {
+  if (!isLocalizedLanguage(language)) return undefined;
+  const localized = localizedPilotBySlug[language][localizedSlug];
+  if (!localized || noindexToolSlugs.has(localized.canonicalToolId)) return undefined;
+  return localized;
+}
+
+export function getToolRoute(canonicalToolId: string, language: SupportedLanguageCode = 'en'): string {
+  if (language === 'en') return `/tools/${canonicalToolId}/`;
+  const localized = getLocalizedToolByCanonicalId(canonicalToolId, language);
+  return localized ? `/${language}/tools/${localized.localizedSlug}/` : `/tools/${canonicalToolId}/`;
+}
+
+export function getLanguageSwitchRoute(canonicalToolId: string, targetLanguage: SupportedLanguageCode): string {
+  return getToolRoute(canonicalToolId, targetLanguage);
+}
+
+export function getToolLanguageAlternates(canonicalToolId: string): LanguageAlternate[] {
+  const englishRoute = getToolRoute(canonicalToolId, 'en');
+  const alternates: LanguageAlternate[] = [
+    { lang: 'en', href: `${siteConfig.url}${englishRoute}` },
+  ];
+  for (const language of localizedPilotLanguages) {
+    const localizedRoute = getToolRoute(canonicalToolId, language);
+    if (localizedRoute !== englishRoute) {
+      alternates.push({ lang: language, href: `${siteConfig.url}${localizedRoute}` });
+    }
+  }
+  alternates.push({ lang: 'x-default', href: `${siteConfig.url}${englishRoute}` });
+  return alternates;
+}
+
+export function createSpanishFaqItems(localized: LocalizedToolContent) {
+  const copy = getSpanishPageCopy(localized);
+  const safetyNote = getSpanishSafetyNote(localized);
+  return [
+    {
+      q: `¿Para qué sirve ${copy.h1}?`,
+      a: `${copy.intro} Está pensado para empezar más rápido, comparar opciones y quedarte con una versión que puedas adaptar a tu caso real.`,
+    },
+    {
+      q: '¿Qué debería escribir para obtener mejores resultados?',
+      a: 'Incluye el uso que le darás, el público, el tono, palabras que quieras mantener y detalles que deban evitarse. Cuanto más claro sea el contexto, más fácil será revisar las sugerencias.',
+    },
+    {
+      q: '¿Puedo usar el resultado directamente?',
+      a: `No conviene. Revisa exactitud, originalidad, legibilidad y reglas de la plataforma o proyecto. ${safetyNote}`,
+    },
+  ];
+}
+
+export function createSpanishGuide(tool: Tool, localized: LocalizedToolContent) {
+  const copy = getSpanishPageCopy(localized);
+  const keywordList = copy.faqTopics.join(', ');
+  const safetyNote = getSpanishSafetyNote(localized);
+  return {
+    howTo: [
+      `Empieza con una palabra, texto o breve descripción relacionada con ${copy.primaryKeyword}.`,
+      'Añade contexto práctico: uso previsto, público, tono, formato y cualquier palabra que quieras incluir o evitar.',
+      'Genera varias opciones y compáralas por claridad, naturalidad y ajuste al objetivo de la página.',
+      'Edita el resultado antes de publicarlo, sobre todo si se usará en una marca, perfil, web, contenido SEO o pieza comercial.',
+    ],
+    tips: [
+      { title: 'Usa intención real', body: `Prueba consultas y variantes cercanas como ${keywordList}, siempre manteniendo el mismo objetivo de la herramienta.` },
+      { title: 'Mantén la misma intención', body: `Usa ${copy.h1} para el mismo propósito que ${tool.name}; no lo fuerces hacia funciones que no ofrece.` },
+      { title: 'Revisa antes de publicar', body: safetyNote },
+    ],
+  };
+}
+
+export function getSpanishPageCopy(localized: LocalizedToolContent): LocalizedToolContent {
+  return getLocalizedPageCopy(localized);
+}
+
+export function getLocalizedPageCopy(localized: LocalizedToolContent): LocalizedToolContent {
+  const polish = localized.language === 'es'
+    ? polishSpanishText
+    : localized.language === 'fr'
+      ? polishFrenchText
+      : localized.language === 'de'
+        ? polishGermanText
+        : localized.language === 'pt'
+          ? polishPortugueseText
+          : localized.language === 'it'
+            ? polishItalianText
+            : localized.language === 'pl'
+              ? polishPolishText
+              : localized.language === 'ru'
+                ? polishRussianText
+                : localized.language === 'tr'
+                  ? polishTurkishText
+                  : localized.language === 'sv'
+                    ? polishSwedishText
+                    : localized.language === 'bg'
+                      ? polishBulgarianText
+                      : localized.language === 'hi'
+                        ? polishHindiText
+                        : localized.language === 'bn'
+                          ? polishBengaliText
+                          : localized.language === 'ja'
+                            ? polishJapaneseText
+                            : localized.language === 'ko'
+                              ? polishKoreanText
+                              : localized.language === 'ar'
+                                ? polishArabicText
+                                : (value: string) => value;
+
+  const polishedTitle = polish(localized.metaTitle);
+  let polishedDesc = polish(localized.metaDescription);
+  const kw = polish(localized.primaryKeyword);
+
+  if (polishedDesc && kw) {
+    const kwLower = kw.toLowerCase();
+    const descLower = polishedDesc.toLowerCase();
+    if (!descLower.includes(kwLower)) {
+      // Naturally prepend the localized keyword to guarantee uniqueness and keyword presence
+      polishedDesc = `${kw} - ${polishedDesc}`;
+    }
+  }
+
+  return {
+    ...localized,
+    primaryKeyword: kw,
+    h1: polish(localized.h1),
+    metaTitle: polishedTitle,
+    metaDescription: polishedDesc,
+    intro: polish(localized.intro),
+    faqTopics: localized.faqTopics.map(polish),
+  };
+}
+
+export function polishSpanishText(value: string): string {
+  return value
+    .replaceAll('español', 'español')
+    .replaceAll('Espanol', 'Español')
+    .replaceAll('faciles', 'fáciles')
+    .replaceAll('publico', 'público')
+    .replaceAll('genero', 'género')
+    .replaceAll('epoca', 'época')
+    .replaceAll('bebe', 'bebé')
+    .replaceAll('fantasia', 'fantasía')
+    .replaceAll('fantasticos', 'fantásticos')
+    .replaceAll('ajustalas', 'ajústalas')
+    .replaceAll('nina', 'niña')
+    .replaceAll('nino', 'niño')
+    .replaceAll('pronunciación', 'pronunciación')
+    .replaceAll('extension', 'extensión')
+    .replaceAll('medico', 'médico')
+    .replaceAll('aplicacion', 'aplicación')
+    .replaceAll('basico', 'básico')
+    .replaceAll('campanas', 'campañas')
+    .replaceAll('campana', 'campaña')
+    .replaceAll('publicacion', 'publicación')
+    .replaceAll('guias', 'guías')
+    .replaceAll('guia', 'guía')
+    .replaceAll('Resena', 'Reseña')
+    .replaceAll('resena', 'reseña')
+    .replaceAll('linea', 'línea')
+    .replaceAll('articulos', 'artículos')
+    .replaceAll('terminos', 'términos')
+    .replaceAll('intención', 'intención')
+    .replaceAll('busqueda', 'búsqueda')
+    .replaceAll('paginas', 'páginas')
+    .replaceAll('descripcion', 'descripción')
+    .replaceAll('precision', 'precisión')
+    .replaceAll('titulos', 'títulos')
+    .replaceAll('utiles', 'útiles')
+    .replaceAll('canonica', 'canónica')
+    .replaceAll('titulo', 'título')
+    .replaceAll('practica', 'práctica')
+    .replaceAll('rapidas', 'rápidas')
+    .replaceAll('reves', 'revés')
+    .replaceAll('mayusculas', 'mayúsculas')
+    .replaceAll('minusculas', 'minúsculas')
+    .replaceAll('conviertelo', 'conviértelo')
+    .replaceAll('parrafos', 'párrafos')
+    .replaceAll('gramatica', 'gramática')
+    .replaceAll('adaptalos', 'adáptalos')
+    .replaceAll('ajustalo', 'ajústalo')
+    .replaceAll('segun', 'según')
+    .replaceAll('politicas', 'políticas')
+    .replaceAll('Seccion', 'Sección')
+    .replaceAll('seccion', 'sección')
+    .replaceAll('secciónes', 'secciones')
+    .replaceAll('descripciónes', 'descripciones')
+    .replaceAll('brevés', 'breves')
+    .replaceAll('articulo', 'artículo')
+    .replaceAll('Unico', 'Único')
+    .replaceAll('unico', 'único')
+    .replaceAll('pequenas', 'pequeñas')
+    .replaceAll('pequeno', 'pequeño')
+    .replaceAll('italica', 'itálica')
+    .replaceAll('Italica', 'Itálica')
+    .replaceAll('Obten', 'Obtén')
+    .replaceAll('Anade', 'Añade');
+}
+
+export function polishFrenchText(value: string): string {
+  return value
+    .replaceAll('générateur', 'générateur')
+    .replaceAll('Générateur', 'Générateur')
+    .replaceAll('idees', 'idées')
+    .replaceAll('Idees', 'Idées')
+    .replaceAll('Creez', 'Créez')
+    .replaceAll('Générez', 'Générez')
+    .replaceAll('vérifiez', 'vérifiez')
+    .replaceAll('disponibilite', 'disponibilité')
+    .replaceAll('ecriture', 'écriture')
+    .replaceAll('prenom', 'prénom')
+    .replaceAll('Prenom', 'Prénom')
+    .replaceAll('prenoms', 'prénoms')
+    .replaceAll('deuxieme', 'deuxième')
+    .replaceAll('equipe', 'équipe')
+    .replaceAll('mots cles', 'mots clés')
+    .replaceAll('balises meta', 'balises méta')
+    .replaceAll('caracteres', 'caractères')
+    .replaceAll('lisibilite', 'lisibilité')
+    .replaceAll('compatibilite', 'compatibilité')
+    .replaceAll('francais', 'français')
+    .replaceAll('Francais', 'Français')
+    .replaceAll('Redigez', 'Rédigez')
+    .replaceAll('conformite', 'conformité')
+    .replaceAll('precision', 'précision')
+    .replaceAll('verifier', 'vérifier')
+    .replaceAll('protege', 'protégé')
+    .replaceAll('epoque', 'époque')
+    .replaceAll('recit', 'récit')
+    .replaceAll('creatif', 'créatif')
+    .replaceAll('Creatif', 'Créatif')
+    .replaceAll('emissions', 'émissions')
+    .replaceAll('series', 'séries')
+    .replaceAll('episodes', 'épisodes')
+    .replaceAll('preferee', 'préférée')
+    .replaceAll('actualite', 'actualité')
+    .replaceAll('reseaux', 'réseaux')
+    .replaceAll('adaptee', 'adaptée')
+    .replaceAll('originalite', 'originalité')
+    .replaceAll('coherence', 'cohérence')
+    .replaceAll('stylise', 'stylisé')
+    .replaceAll('controlez', 'contrôlez')
+    .replaceAll('video', 'vidéo')
+    .replaceAll('ideation', 'idéation')
+    .replaceAll('penche', 'penché')
+    .replaceAll('creer', 'créer')
+    .replaceAll('ecrire', 'écrire')
+    .replaceAll('scenes', 'scènes')
+    .replaceAll('depart', 'départ')
+    .replaceAll(' a ', ' à ');
+}
+
+export function polishGermanText(value: string): string {
+  return value
+    .replaceAll('fuer', 'für')
+    .replaceAll('pruefe', 'prüfe')
+    .replaceAll('Pruefe', 'Prüfe')
+    .replaceAll('geprueft', 'geprüft')
+    .replaceAll('Verfuegbarkeit', 'Verfügbarkeit')
+    .replaceAll('persoenliche', 'persönliche')
+    .replaceAll('Geschaeft', 'Geschäft')
+    .replaceAll('Entwuerfe', 'Entwürfe')
+    .replaceAll('Uebungen', 'Übungen')
+    .replaceAll('Ueberschriften', 'Überschriften')
+    .replaceAll('einpraegsame', 'einprägsame')
+    .replaceAll('maedchennamen', 'Mädchennamen')
+    .replaceAll('woerter', 'Wörter')
+    .replaceAll('gross', 'groß')
+    .replaceAll('Gross', 'Groß')
+    .replaceAll('Textlaenge', 'Textlänge')
+    .replaceAll('veraendern', 'verändern')
+    .replaceAll('Fuege', 'Füge')
+    .replaceAll('Saetze', 'Sätze')
+    .replaceAll('Vorschlaege', 'Vorschläge')
+    .replaceAll('vorschlaege', 'Vorschläge')
+    .replaceAll('Voelker', 'Völker')
+    .replaceAll('geschuetzte', 'geschützte')
+    .replaceAll('waehle', 'wähle')
+    .replaceAll('Waehle', 'Wähle')
+    .replaceAll('zaehle', 'zähle')
+    .replaceAll('Zaehle', 'Zähle')
+    .replaceAll('Zaehlungen', 'Zählungen')
+    .replaceAll('Beitraege', 'Beiträge')
+    .replaceAll('Kompatibilitaet', 'Kompatibilität')
+    .replaceAll('Aktualitaet', 'Aktualität')
+    .replaceAll('veroeffentlichst', 'veröffentlichst')
+    .replaceAll('rueckwaerts', 'rückwärts')
+    .replaceAll('Laenge', 'Länge')
+    .replaceAll('Schreibuebungen', 'Schreibübungen');
+}
+
+export function polishPortugueseText(value: string): string {
+  return value
+    .replaceAll('opcoes', 'opções')
+    .replaceAll('portugues', 'português')
+    .replaceAll('sugestoes', 'sugestões')
+    .replaceAll('dominio', 'domínio')
+    .replaceAll('dominios', 'domínios')
+    .replaceAll('conteudo', 'conteúdo')
+    .replaceAll('conteudos', 'conteúdos')
+    .replaceAll('tecnico', 'técnico')
+    .replaceAll('rapida', 'rápida')
+    .replaceAll('rapido', 'rápido')
+    .replaceAll('variacao', 'variação')
+    .replaceAll('versao', 'versão')
+    .replaceAll('Versao', 'Versão')
+    .replaceAll('usuario', 'usuário')
+    .replaceAll('Usuario', 'Usuário')
+    .replaceAll('negocio', 'negócio')
+    .replaceAll('negocios', 'negócios')
+    .replaceAll('fantasticos', 'fantásticos')
+    .replaceAll('bebe', 'bebê')
+    .replaceAll('combinacoes', 'combinações')
+    .replaceAll('basico', 'básico')
+    .replaceAll('publicitarias', 'publicitárias')
+    .replaceAll('descricoes', 'descrições')
+    .replaceAll('descricao', 'descrição')
+    .replaceAll('video', 'vídeo')
+    .replaceAll('videos', 'vídeos')
+    .replaceAll('titulos', 'títulos')
+    .replaceAll('titulo', 'título')
+    .replaceAll('canonica', 'canônica')
+    .replaceAll('contrario', 'contrário')
+    .replaceAll('italico', 'itálico')
+    .replaceAll('maiusculas', 'maiúsculas')
+    .replaceAll('minusculas', 'minúsculas')
+    .replaceAll('paragrafos', 'parágrafos')
+    .replaceAll('paragrafo', 'parágrafo')
+    .replaceAll('exercicios', 'exercícios')
+    .replaceAll('exatidao', 'exatidão')
+    .replaceAll('publico', 'público')
+    .replaceAll('pratico', 'prático')
+    .replaceAll('varias', 'várias')
+    .replaceAll('intencao', 'intenção')
+    .replaceAll('funcoes', 'funções')
+    .replaceAll('nao', 'não')
+    .replaceAll('Nao', 'Não')
+    .replaceAll('precos', 'preços')
+    .replaceAll('permissoes', 'permissões')
+    .replaceAll('revisao', 'revisão')
+    .replaceAll('copiaveis', 'copiáveis');
+}
+
+export function polishItalianText(value: string): string {
+  return value
+    .replaceAll('disponibilita', 'disponibilità')
+    .replaceAll('dell uso', "dell'uso")
+    .replaceAll('leggibilita', 'leggibilità')
+    .replaceAll('compatibilita', 'compatibilità')
+    .replaceAll('originalita', 'originalità')
+    .replaceAll('identita', 'identità')
+    .replaceAll('conformita', 'conformità')
+    .replaceAll('piu', 'più')
+    .replaceAll('ne costi', 'né costi')
+    .replaceAll('Quantita', 'Quantità')
+    .replaceAll('cos e', "cos'è")
+    .replaceAll('Perche', 'Perché')
+    .replaceAll('perche', 'perché')
+    .replaceAll('delluso', "dell'uso")
+    .replaceAll('alluso', "all'uso");
+}
+
+export function polishPolishText(value: string): string {
+  return value
+    .replaceAll('Tworz', 'Twórz')
+    .replaceAll('tworz', 'twórz')
+    .replaceAll('pomysly', 'pomysły')
+    .replaceAll('Pomysly', 'Pomysły')
+    .replaceAll('projektow', 'projektów')
+    .replaceAll('uzytkownika', 'użytkownika')
+    .replaceAll('dostepnosc', 'dostępność')
+    .replaceAll('dostepnosci', 'dostępności')
+    .replaceAll('uzyciem', 'użyciem')
+    .replaceAll('uzycie', 'użycie')
+    .replaceAll('uzyty', 'użyty')
+    .replaceAll('uzyc', 'użyć')
+    .replaceAll('uzywac', 'używać')
+    .replaceAll('uzyj', 'użyj')
+    .replaceAll('Uzyj', 'Użyj')
+    .replaceAll('slow kluczowych', 'słów kluczowych')
+    .replaceAll('slowo', 'słowo')
+    .replaceAll('slowa', 'słowa')
+    .replaceAll('slow', 'słów')
+    .replaceAll('tresci', 'treści')
+    .replaceAll('wymagajacych', 'wymagających')
+    .replaceAll('szybka', 'szybką')
+    .replaceAll('baze', 'bazę')
+    .replaceAll('dlugosc', 'długość')
+    .replaceAll('publikacja', 'publikacją')
+    .replaceAll('wiadomosci', 'wiadomości')
+    .replaceAll('Przeksztalcaj', 'Przekształcaj')
+    .replaceAll('Przeksztalc', 'Przekształć')
+    .replaceAll('czytelnosc', 'czytelność')
+    .replaceAll('zgodnosc', 'zgodność')
+    .replaceAll('platforma', 'platformą')
+    .replaceAll('oryginalnosc', 'oryginalność')
+    .replaceAll('dokladnosc', 'dokładność')
+    .replaceAll('cwiczenia', 'ćwiczenia')
+    .replaceAll('akapitow', 'akapitów')
+    .replaceAll('opisow', 'opisów')
+    .replaceAll('produktow', 'produktów')
+    .replaceAll('tytulow', 'tytułów')
+    .replaceAll('tagow', 'tagów')
+    .replaceAll('hashtagow', 'hashtagów')
+    .replaceAll('zespolow', 'zespołów')
+    .replaceAll('sloganow', 'sloganów')
+    .replaceAll('podcastow', 'podcastów')
+    .replaceAll('wartosci', 'wartości')
+    .replaceAll('chlopcow', 'chłopców')
+    .replaceAll('polaczenia', 'połączenia')
+    .replaceAll('wybor', 'wybór')
+    .replaceAll('sprawdz', 'sprawdź')
+    .replaceAll('Sprawdz', 'Sprawdź')
+    .replaceAll('narzedzie', 'narzędzie')
+    .replaceAll('narzedzia', 'narzędzia')
+    .replaceAll('Czeste', 'Częste')
+    .replaceAll('czeste', 'częste')
+    .replaceAll('przykladowe', 'przykładowe')
+    .replaceAll('zdan', 'zdań')
+    .replaceAll('od tylu', 'od tyłu')
+    .replaceAll('wielkosci', 'wielkości')
+    .replaceAll('maly', 'mały')
+    .replaceAll('male', 'małe')
+    .replaceAll('ladnego', 'ładnego')
+    .replaceAll('imie', 'imię')
+    .replaceAll('latwe', 'łatwe')
+    .replaceAll('Latwe', 'Łatwe')
+    .replaceAll('bezplatne', 'bezpłatne')
+    .replaceAll('Bezplatne', 'Bezpłatne');
+}
+
+export function polishRussianText(value: string): string {
+  return value
+    .replaceAll('Sozdavaite ponyatnye chernoviki na russkom i proveriaite rezultat pered ispolzovaniem.', 'Создавайте понятные черновики на русском и проверяйте результат перед использованием.')
+    .replaceAll('Lokalnyi zapros sootvetstvuet anglijskoj stranitse instrumenta.', 'Локальный запрос соответствует английской странице инструмента.')
+    .replaceAll('Proverte tochnost, originalnost, sovmestimost i pravila proekta pered publikatsiei.', 'Проверяйте точность, оригинальность, совместимость и правила проекта перед публикацией.')
+    .replaceAll('poleznye idei', 'полезные идеи')
+    .replaceAll('skopirovat rezultat', 'скопировать результат')
+    .replaceAll('proverit pered ispolzovaniem', 'проверить перед использованием')
+    .replaceAll('Ispolzuyte kak prakticheskuyu pomoshch i proveriaite rezultat pered vazhnymi resheniyami.', 'Используйте как практическую помощь и проверяйте результат перед важными решениями.')
+    .replaceAll('Ne obeshchaet ohvat, podpischikov, dostupnost imen ili rezultaty platform.', 'Не гарантирует охват, подписчиков, доступность имен или результаты платформ.')
+    .replaceAll('Ne zamenyaet yuridicheskuyu, finansovuyu, brendovuyu proverku ili proverku dostupnosti.', 'Не заменяет юридическую, финансовую, брендовую проверку или проверку доступности.')
+    .replaceAll('Ne ispolzuyte dlya lozhnoi lichnosti, imitacii ili chuvstvitelnyh lichnyh dannyh.', 'Не используйте для ложных личностей, имитации или конфиденциальных персональных данных.')
+    .replaceAll('Proverte fakty, razresheniya, brend, privatnost i sootvetstvie pered publichnym ispolzovaniem.', 'Проверяйте факты, разрешения, бренд, конфиденциальность и соответствие перед публичным использованием.')
+    .replaceAll('Otraktiruite chernovik vruchnuyu i ne vydavaite ego za garantirovannyi ili ofitsialnyi rezultat.', 'Отредактируйте черновик вручную и не выдавайте его за гарантированный или официальный результат.')
+    .replaceAll('Ispolzuyte dlya igry ili idei; izbegajte lichnyh', 'Используйте для игры или идей; избегайте личных')
+    .replaceAll('Proverte dannye, razresheniya, ceny, zayavleniya i ton brenda pered publikatsiei.', 'Проверяйте данные, разрешения, цены, заявления и тон бренда перед публикацией.')
+    .replaceAll('Ispolzuyte kak pomoshch v tekste; proveriaite istochniki, originalnost i uchebnye ili redaktsionnye pravila.', 'Используйте как помощь в тексте; проверяйте источники, оригинальность и учебные или редакционные правила.')
+    .replaceAll('Schitaite eto vdohnoveniem ili legkim vyborom, a ne lichnostyu, dokumentom ili ofitsialnym resheniem.', 'Считайте это вдохновением или легким выбором, а не личностью, документом или официальным решением.')
+    .replaceAll('Testiruite kod, proveriaite vvody', 'Тестируйте код, проверяйте вводы')
+    .replaceAll('Proverte brend, domen, razresheniya, ceny, realnye dannye i sootvetstvie pered publichnym ispolzovaniem.', 'Проверяйте бренд, домен, разрешения, цены, реальные данные и соответствие перед публичным использованием.')
+    .replaceAll('Ispolzuyte kak prakticheskuyu pomoshch; proveriaite etiketki, spiski ili zhrebii po svoim pravilam.', 'Используйте как практическую помощь; проверяйте этикетки, списки или жребии по своим правилам.')
+    .replaceAll('Proverte kulturu, kontekst, proiznoshenie, prava i dostupnost pered publichnym ispolzovaniem.', 'Проверяйте культуру, контекст, произношение, права и доступность перед публичным использованием.')
+    .replaceAll('Ispolzuyte kak tvorcheskoe vdohnovenie', 'Используйте как творческое вдохновение')
+    .replaceAll('Proverte brend, domen, ceny, razresheniya i dannye pered publikatsiei ili otpravkoi klientam.', 'Проверяйте бренд, домен, цены, разрешения и данные перед публикацией или отправкой клиентам.')
+    .replaceAll('Ispolzuyte kak prakticheskuyu pomoshch i proveriaite rezultat po svoim pravilam ili istochnikam.', 'Используйте как практическую помощь и проверяйте результат по своим правилам или источникам.')
+    .replaceAll('Proverte kulturnuyu delikatnost, proiznoshenie, prava i dostupnost pered publichnym ispolzovaniem.', 'Проверяйте культурную деликатность, произношение, права и доступность перед публичным использованием.')
+    .replaceAll('Ispolzuyte dlya svoih mirov, igr ili i', 'Используйте для своих миров, игр или и')
+    .replaceAll('Proverte brend, razresheniya, ceny, dannye i sootvetstvie pered publichnym ispolzovaniem.', 'Проверяйте бренд, разрешения, цены, данные и соответствие перед публичным использованием.')
+    .replaceAll('Proverte kontekst, delikatnost, prava i dostupnost pered publichnym ispolzovaniem.', 'Проверяйте контекст, деликатность, права и доступность перед публичным использованием.')
+    .replaceAll('Ispolzuyte kak tvorcheskoe vdohnovenie i ne kopiruite brendy, rea', 'Используйте как творческое вдохновение и не копируйте бренды, реа')
+    .replaceAll('Generator', 'Генератор')
+    .replaceAll('Konverter', 'Конвертер')
+    .replaceAll('Formatter', 'Форматировщик')
+    .replaceAll('besplatno', 'бесплатно');
+}
+
+export function polishTurkishText(value: string): string {
+  return value
+    .replaceAll('Turkce net taslaklar olusturun ve kullanmadan once sonucu kontrol edin.', 'Türkçe net taslaklar oluşturun ve kullanmadan önce sonucu kontrol edin.')
+    .replaceAll('Yerel arama niyeti Ingilizce aracla ayni amaca hizmet eder.', 'Yerel arama niyeti İngilizce araçla aynı amaca hizmet eder.')
+    .replaceAll('Yayinlamadan once dogruluk, ozgunluk, uyumluluk ve proje kurallarini kontrol edin.', 'Yayınlamadan önce doğruluk, özgünlük, uyumluluk ve proje kurallarını kontrol edin.')
+    .replaceAll('yararli fikirler', 'yararlı fikirler')
+    .replaceAll('sonucu kopyalama', 'sonucu kopyalama')
+    .replaceAll('kullanmadan once kontrol', 'kullanmadan önce kontrol')
+    .replaceAll('Pratik destek olarak kullanin ve onemli kararlardan once sonucu kontrol edin.', 'Pratik destek olarak kullanın ve önemli kararlardan önce sonucu kontrol edin.')
+    .replaceAll('Erisim, takipci, ad uygunluğu veya platform performansi vadetmez.', 'Erişim, takipçi, ad uygunluğu veya platform performansı vadetmez.')
+    .replaceAll('Hukuki, finansal, marka veya ticari uygunluk incelemesinin yerine gecmez.', 'Hukuki, finansal, marka veya ticari uygunluk incelemesinin yerine geçmez.')
+    .replaceAll('Sahte kimlik, taklit veya hassas kisisel veriler icin kullanmayin.', 'Sahte kimlik, taklit veya hassas kişisel veriler için kullanmayın.')
+    .replaceAll('Halka acik kullanimdan once gercekleri, izinleri, markayi, gizliligi e uyumu kontrol edin.', 'Halka açık kullanımdan önce gerçekleri, izinleri, markayı, gizliliği  ve uyumu kontrol edin.')
+    .replaceAll('Halka acik kullanimdan once gercekleri, izinleri, markayi, gizliligi ve uyumu kontrol edin.', 'Halka açık kullanımdan önce gerçekleri, izinleri, markayı, gizliliği ve uyumu kontrol edin.')
+    .replaceAll('Taslagi insan degerlendirmesiyle duzenleyin ve garanti ya da resmi sonuc gibi sunmayin.', 'Taslağı insan değerlendirmesiyle düzenleyin ve garanti ya da resmi sonuç gibi sunmayın.')
+    .replaceAll('Oyun veya fikir uretimi icin kullanin; kimlik, belge, taciz veya sosya', 'Oyun veya fikir üretimi için kullanın; kimlik, belge, taciz veya sosya')
+    .replaceAll('Yayinlamadan once verileri, izinleri, fiyatlari, iddialari e marka tonunu kontrol edin.', 'Yayınlamadan önce verileri, izinleri, fiyatları, iddiaları ve marka tonunu kontrol edin.')
+    .replaceAll('Yayinlamadan once verileri, izinleri, fiyatlari, iddialari ve marka tonunu kontrol edin.', 'Yayınlamadan önce verileri, izinleri, fiyatları, iddiaları  ve marka tonunu kontrol edin.')
+    .replaceAll('Yazim destegi olarak kullanin; kaynaklari, ozgunlugu e akademik ya da editoryal kurallari inceleyin.', 'Yazım desteği olarak kullanın; kaynakları, özgünlüğü ve akademik ya da editoryal kuralları inceleyin.')
+    .replaceAll('Yazim destegi olarak kullanin; kaynaklari, ozgunlugu ve akademik ya da editoryal kurallari inceleyin.', 'Yazım desteği olarak kullanın; kaynakları, özgünlüğü  ve akademik ya da editoryal kuralları inceleyin.')
+    .replaceAll('Bunu ilham veya hafif secim olarak gorun, kimlik, belge ya da resmi karar olarak kullanmayin.', 'Bunu ilham veya hafif seçim olarak görün, kimlik, belge ya da resmi karar olarak kullanmayın.')
+    .replaceAll('Kodu test edin, girdileri dogrulayin', 'Kodu test edin, girdileri doğrulayın')
+    .replaceAll('Halka acik kullanimdan once marka, alan adi, izinler, fiyatlar, gercek veriler e uyumu kontrol edin.', 'Halka açık kullanımdan önce marka, alan adı, izinler, fiyatlar, gerçek veriler ve uyumu kontrol edin.')
+    .replaceAll('Halka acik kullanimdan once marka, alan adi, izinler, fiyatlar, gercek veriler ve uyumu kontrol edin.', 'Halka açık kullanımdan önce marka, alan adı, izinler, fiyatlar, gerçek veriler  ve uyumu kontrol edin.')
+    .replaceAll('Pratik destek olarak kullanin; etiketleri, listeleri veya cekilisleri kendi kurallarinizla dogrulayin.', 'Pratik destek olarak kullanın; etiketleri, listeleri veya çekilişleri kendi kurallarınızla doğrulayın.')
+    .replaceAll('Halka acik kullanimdan once kultur, baglam, telaffuz, haklar ve uygunluğu kontrol edin.', 'Halka açık kullanımdan önce kültür, bağlam, telaffuz, haklar  ve uygunluğu kontrol edin.')
+    .replaceAll('Yaratici ilham olarak kullanin', 'Yaratıcı ilham olarak kullanın')
+    .replaceAll('Yayinlamadan veya musterilere gondermeden once marka, alan adi, fiyat, izin e verileri kontrol edin.', 'Yayınlamadan veya müşterilere göndermeden önce marka, alan adı, fiyat, izin  ve verileri kontrol edin.')
+    .replaceAll('Yayinlamadan veya musterilere gondermeden once marka, alan adi, fiyat, izin ve verileri kontrol edin.', 'Yayınlamadan veya müşterilere göndermeden önce marka, alan adı, fiyat, izin ve verileri kontrol edin.')
+    .replaceAll('Pratik destek olarak kullanin ve sonucu kendi kurallariniz ya da kaynaklarinizla dogrulayin.', 'Pratik destek olarak kullanın  ve sonucu kendi kurallarınız ya da kaynaklarınızla doğrulayın.')
+    .replaceAll('Halka acik kullanimdan once kulturel hassasiyet, telaffuz, haklar ve uygunluğu kontrol edin.', 'Halka açık kullanımdan önce kültürel hassasiyet, telaffuz, haklar ve uygunluğu kontrol edin.')
+    .replaceAll('Kendi dunyalariniz, oyunlar veya fikirle', 'Kendi dünyalarınız, oyunlar veya fikirle')
+    .replaceAll('Halka acik kullanimdan once marka, izinler, fiyatlar, veriler e uyumu kontrol edin.', 'Halka açık kullanımdan önce marka, izinler, fiyatlar, veriler ve uyumu kontrol edin.')
+    .replaceAll('Halka acik kullanimdan once marka, izinler, fiyatlar, veriler ve uyumu kontrol edin.', 'Halka açık kullanımdan önce marka, izinler, fiyatlar, veriler ve uyumu kontrol edin.')
+    .replaceAll('Halka acik kullanimdan once baglam, hassasiyet, haklar ve uygunluğu kontrol edin.', 'Halka açık kullanımdan önce bağlam, hassasiyet, haklar ve uygunluğu kontrol edin.')
+    .replaceAll('Yaratici ilham olarak kullanin; marka, gercek kisi veya korunan evrenleri kopyalama', 'Yaratıcı ilham olarak kullanın; marka, gerçek kişi veya korunan evrenleri kopyalama')
+    .replaceAll('Olusturucu', 'Oluşturucu')
+    .replaceAll('Donusturucu', 'Dönüştürücü')
+    .replaceAll('Bicimlendirici', 'Biçimlendirici')
+    .replaceAll('ucretsiz', 'ücretsiz');
+}
+
+export function polishSwedishText(value: string): string {
+  return value
+    .replaceAll('Skapa tydliga utkast pa svenska och granska resultatet innan du anvander det.', 'Skapa tydliga utkast på svenska och granska resultatet innan du använder det.')
+    .replaceAll('Lokal sokintention matchar det engelska verktygets syfte.', 'Lokal sökintention matchar det engelska verktygets syfte.')
+    .replaceAll('Kontrollera noggrannhet, originalitet, kompatibilitet och projektregler fore publicering.', 'Kontrollera noggrannhet, originalitet, kompatibilitet och projektregler före publicering.')
+    .replaceAll('anvandbara ideer', 'användbara idéer')
+    .replaceAll('kopiera resultat', 'kopiera resultat')
+    .replaceAll('granska fore anvandning', 'granska före användning')
+    .replaceAll('Anvand som praktiskt stod och kontrollera resultatet fore viktiga beslut.', 'Använd som praktiskt stöd och kontrollera resultatet före viktiga beslut.')
+    .replaceAll('Lovar inte rackvidd, foljare, namntillganglighet eller plattformsresultat.', 'Lovar inte räckvidd, följare, namntillgänglighet eller plattformsresultat.')
+    .replaceAll('Ersatter inte juridisk, finansiell, varumarkes- eller kommersiell kontroll.', 'Ersätter inte juridisk, finansiell, varumärkes- eller kommersiell kontroll.')
+    .replaceAll('Anvand inte for falsk identitet, imitation eller kansliga personuppgifter.', 'Använd inte för falsk identitet, imitation eller känsliga personuppgifter.')
+    .replaceAll('Kontrollera fakta, tillstand, varumarke, integritet och regelefterlevnad fore offentlig anvandning.', 'Kontrollera fakta, tillstånd, varumärke, integritet och regelefterlevnad före offentlig användning.')
+    .replaceAll('Redigera utkastet med manskligt omdome och presentera det inte som garanterat eller officiellt.', 'Redigera utkastet med mänskligt omdöme och presentera det inte som garanterat eller officiellt.')
+    .replaceAll('Anvand for lek eller ideer; undvik identitet, dokument, tr', 'Använd för lek eller idéer; undvik identitet, dokument, tr')
+    .replaceAll('Kontrollera data, tillstand, priser, pastaenden och varumarkeston fore publicering.', 'Kontrollera data, tillstånd, priser, påståenden och varumärkeston före publicering.')
+    .replaceAll('Anvand som skrivstod; kontrollera kallor, originalitet och akademiska eller redaktionella regler.', 'Använd som skrivstöd; kontrollera källor, originalitet och akademiska eller redaktionella regler.')
+    .replaceAll('Se det som inspiration eller enkelt val, inte identitet, dokument eller officiellt beslut.', 'Se det som inspiration eller enkelt val, inte identitet, dokument eller officiellt beslut.')
+    .replaceAll('Testa kod, validera indata och granska sakerhet', 'Testa kod, validera indata och granska säkerhet')
+    .replaceAll('Kontrollera varumarke, doman, tillstand, priser, riktiga data och regelefterlevnad fore offentlig anvandning.', 'Kontrollera varumärke, domän, tillstånd, priser, riktiga data och regelefterlevnad före offentlig användning.')
+    .replaceAll('Anvand som praktiskt stod; bekrafta etiketter, listor eller dragningar med egna regler.', 'Använd som praktiskt stöd; bekräfta etiketter, listor eller dragningar med egna regler.')
+    .replaceAll('Kontrollera kultur, sammanhang, uttal, rattigheter och tillganglighet fore offentlig anvandning.', 'Kontrollera kultur, sammanhang, uttal, rättigheter och tillgänglighet före offentlig användning.')
+    .replaceAll('Anvand som kreativ inspiration oc', 'Använd som kreativ inspiration oc')
+    .replaceAll('Kontrollera varumarke, doman, priser, tillstand och data fore publicering eller kundutskick.', 'Kontrollera varumärke, domän, priser, tillstånd och data före publicering eller kundutskick.')
+    .replaceAll('Anvand som praktiskt stod och bekrafta resultatet med egna regler eller kallor.', 'Använd som praktiskt stöd och bekräfta resultatet med egna regler eller källor.')
+    .replaceAll('Kontrollera kulturell kanslighet, uttal, rattigheter och tillganglighet fore offentlig anvandning.', 'Kontrollera kulturell känslighet, uttal, rättigheter och tillgänglighet före offentlig användning.')
+    .replaceAll('Anvand for egna varldar, spel eller kreativa ideer utan', 'Använd för egna världar, spel eller kreativa idéer utan')
+    .replaceAll('Kontrollera varumarke, tillstand, priser, data och regelefterlevnad fore offentlig anvandning.', 'Kontrollera varumärke, tillstånd, priser, data och regelefterlevnad före offentlig användning.')
+    .replaceAll('Kontrollera sammanhang, kanslighet, rattigheter och tillganglighet fore offentlig anvandning.', 'Kontrollera sammanhang, känslighet, rättigheter och tillgänglighet före offentlig användning.')
+    .replaceAll('Anvand som kreativ inspiration och kopiera inte varumarken, verkl', 'Använd som kreativ inspiration och kopiera inte varumärken, verkl')
+    .replaceAll('Generator for', 'Generator för')
+    .replaceAll('Konverter for', 'Konverterare för')
+    .replaceAll('Formatterare for', 'Formatterare för')
+    .replaceAll('gratis', 'gratis');
+}
+
+export function polishBulgarianText(value: string): string {
+  return value
+    .replaceAll('Sazdavaite yasni cherнови na balgarski i proveriaiaite rezultata predi upotreba.', 'Създавайте ясни чернови на български и проверявайте резултата преди употреба.')
+    .replaceAll('Lokalnoto tarsene savpada s namerenieto na angliiskiya instrument.', 'Локалното търсене съвпада с намерението на английския инструмент.')
+    .replaceAll('Proverete tochnost, originalnost, savmestimost i pravilata na proekta predi publikuvane.', 'Проверявайте точността, оригиналността, съвместимостта и правилата на проекта преди публикуване.')
+    .replaceAll('polezni idei', 'полезни идеи')
+    .replaceAll('kopirane na rezultat', 'копиране на резултат')
+    .replaceAll('proverka predi upotreba', 'проверка преди употреба')
+    .replaceAll('Izpolzuyte kato prakticheska pomosht i proverete rezultata predi vazhni resheniya.', 'Използвайте като практическа помощ и проверете резултата преди важни решения.')
+    .replaceAll('Ne obestava obhvat, posledovateli, dostupnost na imena ili rezultati v platformi.', 'Не обещава обхват, последователи, наличност на имена или резултати в платформи.')
+    .replaceAll('Ne zamenya pravna, finansova, brandova ili targovska proverka.', 'Не заменя правна, финансова, брандова или търговска проверка.')
+    .replaceAll('Ne izpolzuyte za falshiva identichnost, imitaciya ili chuvstvitelni lichni danni.', 'Не използвайте за фалшива идентичност, имитация или чувствителни лични данни.')
+    .replaceAll('Proverete fakty, razresheniya, marka, poveritelnost i saotvetstvie predi publichna upotreba.', 'Проверете факти, разрешения, марка, поверителност и съответствие преди публична употреба.')
+    .replaceAll('Redaktiraite chernovata s choveshka otsenka i ne ya predstavyaite kato garantiran ili ofitsialen rezultat.', 'Редактирайте черновата с човешка оценка и не я представяйте като гарантиран или официален резултат.')
+    .replaceAll('Izpolzuyte za igra ili idei; izbqgvaite ide', 'Използвайте за игра или идеи; избягвайте иде')
+    .replaceAll('Proverete danni, razresheniya, ceni, tvardenia i ton na markata predi publikuvane.', 'Проверете данни, разрешения, цени, твърдения и тон на марката преди публикуване.')
+    .replaceAll('Izpolzuyte kato pisatelna pomosht; proverete iztochnitsi, originalnost i akademichni ili redaktsionni pravila.', 'Използвайте като писателна помощ; проверете източници, оригиналност и академични или редакционни правила.')
+    .replaceAll('Priemete go kato vdahnoveniye ili lek izbor, ne kato identichnost, dokument ili ofitsialno reshenie.', 'Приемете го като вдъхновение или лек избор, не като идентичност, документ или официално решение.')
+    .replaceAll('Testvaite koda, validiraite vh', 'Тествайте кода, валидирайте вх')
+    .replaceAll('Proverete marka, domen, razresheniya, ceni, realnye danni i saotvetstvie predi publichna upotreba.', 'Проверете марка, домейн, разрешения, цени, реални данни и съответствие преди публична употреба.')
+    .replaceAll('Izpolzuyte kato prakticheska pomosht; potvardete etiketi, spisatsi ili tegleniya s vashi pravila.', 'Използвайте като практическа помощ; потвърдете етикети, списъци или тегления с ваши правила.')
+    .replaceAll('Proverete kultura, kontekst, proiznoshenie, prava i dostupnost predi publichna upotreba.', 'Проверете култура, контекст, произношение, права и достъпност преди публична употреба.')
+    .replaceAll('Izpolzuyte kato tvorchesko vdahnovenie i', 'Използвайте като творческо вдъхновение и')
+    .replaceAll('Proverete marka, domen, ceni, razresheniya i danni predi publikuvane ili izprashtane do klienti.', 'Проверете марка, домейн, цени, разрешения и данни преди публикуване или изпращане до клиенти.')
+    .replaceAll('Izpolzuyte kato prakticheska pomosht i potvardete rezultata s vashi pravila ili iztochnitsi.', 'Използвайте като практическа помощ и потвърдете резултата с ваши правила или източници.')
+    .replaceAll('Proverete kulturna chuvstvitelnost, proiznoshenie, prava i dostupnost predi publichna upotreba.', 'Проверете културна чувствителност, произношение, права и достъпност преди публична употреба.')
+    .replaceAll('Izpolzuyte za sobstveni svetove, igri il', 'Използвайте за собствени светове, игри ил')
+    .replaceAll('Proverete marka, razresheniya, ceni, danni i saotvetstvie predi publichna upotreba.', 'Проверете марка, разрешения, цени, данни и съответствие преди публична употреба.')
+    .replaceAll('Proverete kontekst, chuvstvitelnost, prava i dostupnost predi publichna upotreba.', 'Проверете контекст, чувствителност, права и достъпност преди публична употреба.')
+    .replaceAll('Izpolzuyte kato tvorchesko vdahnovenie i ne kopiraite marki, realni hora ili', 'Използвайте като творческо вдъхновение и не копирайте марки, реални хора или')
+    .replaceAll('Generator za', 'Генератор за')
+    .replaceAll('Konvertor za', 'Конвертор за')
+    .replaceAll('Formatter za', 'Форматиращ инструмент за')
+    .replaceAll('bezplatno', 'безплатно');
+}
+
+export function polishHindiText(value: string): string {
+  return value
+    .replaceAll('Isse practical madad ke roop me use karein aur important decision se pehle result check karein.', 'इसे व्यावहारिक मदद के रूप में उपयोग करें और महत्वपूर्ण निर्णयों से पहले परिणाम की जांच करें।')
+    .replaceAll('Reach, followers, name availability ya platform performance ki guarantee nahi hai.', 'पहुंच, फॉलोअर्स, नाम की उपलब्धता या प्लेटफॉर्म के प्रदर्शन की कोई गारंटी नहीं है।')
+    .replaceAll('Legal, financial, brand ya commercial availability review ka replacement nahi hai.', 'यह कानूनी, वित्तीय, ब्रांड या व्यावसायिक उपलब्धता समीक्षा का विकल्प नहीं है।')
+    .replaceAll('Fake identity, impersonation ya sensitive personal data ke liye use na', 'नकली पहचान, प्रतिरूपण या संवेदनशील व्यक्तिगत डेटा के लिए उपयोग न करें।')
+    .replaceAll('Public use se pehle facts, permissions, brand, privacy aur compliance check karein.', 'सार्वजनिक उपयोग से पहले तथ्यों, अनुमतियों, ब्रांड, गोपनीयता और अनुपालन की जांच करें।')
+    .replaceAll('Draft ko human judgement se edit karein aur guaranteed ya official result ki tarah na dikhayein.', 'ड्राफ्ट को मानवीय निर्णय से संपादित करें और इसे गारंटीकृत या आधिकारिक परिणाम के रूप में प्रस्तुत न करें।')
+    .replaceAll('Ise play ya brainstorming ke liye rakhein; identity', 'इसे खेल या विचार-मंथन के लिए रखें; पहचान, दस्तावेज के लिए नहीं।')
+    .replaceAll('Publish karne se pehle data, permissions, prices, claims aur brand tone check karein.', 'प्रकाशित करने से पहले डेटा, अनुमतियों, कीमतों, दावों और ब्रांड टोन की जांच करें।')
+    .replaceAll('Writing support ke roop me use karein; sources, originality aur academic ya editorial rules check karein.', 'लेखन सहायता के रूप में उपयोग करें; स्रोतों, मौलिकता और शैक्षणिक या संपादकीय नियमों की जांच करें।')
+    .replaceAll('Ise inspiration ya light choice samjhein, identity, document ya official decision nahi.', 'इसे प्रेरणा या हल्का विकल्प समझें, पहचान, दस्तावेज या आधिकारिक निर्णय नहीं।')
+    .replaceAll('Production se pehle code test karein, inputs v', 'उत्पादन से पहले कोड का परीक्षण करें, इनपुट को सत्यापित करें।')
+    .replaceAll('Public use se pehle brand, domain, permissions, prices, real data aur compliance check karein.', 'सार्वजनिक उपयोग से पहले ब्रांड, डोमेन, अनुमतियों, कीमतों, वास्तविक डेटा और अनुपालन की जांच करें।')
+    .replaceAll('Practical help ke roop me use karein; labels, lists ya draws ko apne rules se confirm karein.', 'व्यावहारिक सहायता के रूप में उपयोग करें; अपने नियमों के साथ लेबल, सूचियों या ड्रॉ की पुष्टि करें।')
+    .replaceAll('Public use se pehle culture, context, pronunciation, rights aur availability check karein.', 'सार्वजनिक उपयोग से पहले संस्कृति, संदर्भ, उच्चारण, अधिकार और उपलब्धता की जांच करें।')
+    .replaceAll('Creative inspiration ke liye rakhein aur brands', 'रचनात्मक प्रेरणा के लिए रखें और ब्रांडों, वास्तविक लोगों को कॉपी न करें।')
+    .replaceAll('Publish ya client ko bhejne se pehle brand, domain, prices, permissions aur data check karein.', 'प्रकाशित करने या ग्राहक को भेजने से पहले ब्रांड, डोमेन, कीमतों, अनुमतियों और डेटा की जांच करें।')
+    .replaceAll('Practical help ke roop me use karein aur result ko apne rules ya sources se confirm karein.', 'व्यावहारिक सहायता के रूप में उपयोग करें और अपने नियमों या स्रोतों के साथ परिणाम की पुष्टि करें।')
+    .replaceAll('Public use se pehle cultural sensitivity, pronunciation, rights aur availability check karein.', 'सार्वजनिक उपयोग से पहले सांस्कृतिक संवेदनशीलता, उच्चारण, अधिकार और उपलब्धता की जांच करें।')
+    .replaceAll('Apni worlds, games ya creative ideas ke liye u', 'अपनी दुनिया, खेल या रचनात्मक विचारों के लिए उपयोग करें।')
+    .replaceAll('Public use se pehle brand, permissions, prices, data aur compliance check karein.', 'सार्वजनिक उपयोग से पहले ब्रांड, अनुमतियों, कीमतों, डेटा और अनुपालन की जांच करें।')
+    .replaceAll('Public use se pehle context, sensitivity, rights aur availability check karein.', 'सार्वजनिक उपयोग से पहले संदर्भ, संवेदनशीलता, अधिकार और उपलब्धता की जांच करें।')
+    .replaceAll('Creative inspiration ke liye rakhein aur brands, real people ya protected wo', 'रचनात्मक प्रेरणा के लिए रखें और ब्रांडों, वास्तविक लोगों या संरक्षित दुनिया की नकल न करें।');
+}
+
+export function polishBengaliText(value: string): string {
+  return value
+    .replaceAll('Practical sahajyo hishebe use korun ebong important decision er age result check korun.', 'ব্যবহারিক সাহায্য হিসেবে ব্যবহার করুন এবং গুরুত্বপূর্ণ সিদ্ধান্তের আগে ফলাফল পরীক্ষা করুন।')
+    .replaceAll('Reach, follower, name availability ba platform performance er guarantee nei.', 'পৌঁছানো, ফলোয়ার, নামের প্রাপ্যতা বা প্ল্যাটফর্মের পারফরম্যান্সের কোনো গ্যারান্টি নেই।')
+    .replaceAll('Legal, financial, brand ba commercial availability review er bodol noy.', 'এটি আইনি, আর্থিক, ব্র্যান্ড বা বাণিজ্যিক প্রাপ্যতা পর্যালোচনার বিকল্প নয়।')
+    .replaceAll('Fake identity, impersonation ba sensitive personal data er jonno use korben na.', 'নকল পরিচয়, ছদ্মবেশ ধারণ বা সংবেদনশীল ব্যক্তিগত ডেটার জন্য এটি ব্যবহার করবেন না।')
+    .replaceAll('Public use er age facts, permissions, brand, privacy ebong compliance check korun.', 'জনসমক্ষে ব্যবহারের আগে তথ্য, অনুমতি, ব্র্যান্ড, গোপনীয়তা এবং সম্মতি যাচাই করুন।')
+    .replaceAll('Draft ke human judgement diye edit korun ebong guaranteed ba official result hishebe dekhaben na.', 'খসড়াটি মানুষের বিচার দিয়ে সম্পাদনা করুন এবং গ্যারান্টিযুক্ত বা অফিসিয়াল ফলাফল হিসেবে দেখাবেন না।')
+    .replaceAll('Play ba brainstorming er jonno use korun; identity, documen', 'খেলা বা বুদ্ধিদীপ্ত আলোচনার জন্য ব্যবহার করুন; পরিচয় বা নথির জন্য নয়।')
+    .replaceAll('Publish korar age data, permissions, prices, claims ebong brand tone check korun.', 'প্রকাশের আগে ডেটা, অনুমতি, মূল্য, দাবি এবং ব্র্যান্ডের সুর যাচাই করুন।')
+    .replaceAll('Writing support hishebe use korun; sources, originality ebong academic ba editorial rules check korun.', 'লেখা সহায়িকা হিসেবে ব্যবহার করুন; উৎস, মৌলিকতা এবং একাডেমিক বা সম্পাদকীয় নিয়ম যাচাই করুন।')
+    .replaceAll('Eta inspiration ba light choice, identity, document ba official decision noy.', 'এটি অনুপ্রেরণা বা হালকা পছন্দ মাত্র, কোনো পরিচয়, নথি বা অফিসিয়াল সিদ্ধান্ত নয়।')
+    .replaceAll('Production er age code test, input validate, security, accessib', 'প্রোডাকশনের আগে কোড পরীক্ষা, ইনপুট যাচাই এবং নিরাপত্তা পরীক্ষা করুন।')
+    .replaceAll('Public use er age brand, domain, permissions, prices, real data ebong compliance check korun.', 'জনসমক্ষে ব্যবহারের আগে ব্র্যান্ড, ডোমেন, অনুমতি, মূল্য, বাস্তব ডেটা এবং সম্মতি যাচাই করুন।')
+    .replaceAll('Practical help hishebe use korun; labels, lists ba draws nijer rules diye confirm korun.', 'ব্যবহারিক সাহায্য হিসেবে ব্যবহার করুন; নিজের নিয়ম দিয়ে লেবেল, তালিকা বা ড্র নিশ্চিত করুন।')
+    .replaceAll('Public use er age culture, context, pronunciation, rights ebong availability check korun.', 'জনসমক্ষে ব্যবহারের আগে সংস্কৃতি, প্রেক্ষাপট, উচ্চারণ, অধিকার এবং প্রাপ্যতা যাচাই করুন।')
+    .replaceAll('Creative inspiration hishebe rakhun ebong brands, real ', 'সৃজনশীল অনুপ্রেরণা হিসেবে রাখুন এবং ব্র্যান্ড, বাস্তব মানুষের অনুলিপি করবেন না।')
+    .replaceAll('Publish ba client ke pathanor age brand, domain, prices, permissions ebong data check korun.', 'প্রকাশ করার বা ক্লায়েন্টকে পাঠানোর আগে ব্র্যান্ড, ডোমেন, মূল্য, অনুমতি এবং ডেটা যাচাই করুন।')
+    .replaceAll('Practical help hishebe use korun ebong result nijer rules ba sources diye confirm korun.', 'ব্যবহারিক সাহায্য হিসেবে ব্যবহার করুন এবং নিজের নিয়ম বা উৎস দিয়ে ফলাফল নিশ্চিত করুন।')
+    .replaceAll('Public use er age cultural sensitivity, pronunciation, rights ebong availability check korun.', 'জনসমক্ষে ব্যবহারের আগে সাংস্কৃতিক সংবেদনশীলতা, উচ্চারণ, অধিকার এবং প্রাপ্যতা যাচাই করুন।')
+    .replaceAll('Nijer worlds, games ba creative ideas er jonno use k', 'নিজের জগত, গেম বা সৃজনশীল ধারণার জন্য এটি ব্যবহার করুন।')
+    .replaceAll('Public use er age brand, permissions, prices, data ebong compliance check korun.', 'জনসমক্ষে ব্যবহারের আগে ব্র্যান্ড, অনুমতি, মূল্য, ডেটা এবং সম্মতি যাচাই করুন।')
+    .replaceAll('Public use er age context, sensitivity, rights ebong availability check korun.', 'জনসমক্ষে ব্যবহারের আগে প্রেক্ষাপট, সংবেদনশীলতা, অধিকার এবং প্রাপ্যতা যাচাই করুন।')
+    .replaceAll('Creative inspiration hishebe rakhun ebong brands, real people ba protected worlds c', 'সৃজনশীল অনুপ্রেরণা হিসেবে রাখুন এবং ব্র্যান্ড, বাস্তব ব্যক্তি বা সুরক্ষিত জগতের অনুলিপি করবেন না।');
+}
+
+export function polishJapaneseText(value: string): string {
+  return value
+    .replaceAll('Jitsuyou no tasuke to shite tsukai, taisetsu na handan no mae ni kekka wo kakunin shite kudasai.', '実用的な補助として使用し、重要な判断の前に結果を確認してください。')
+    .replaceAll('Reach, followers, name availability, platform performance wa hoshou shimasen.', 'リーチ、フォロワー、名前の可用性、プラットフォームのパフォーマンスは保証しません。')
+    .replaceAll('Legal, financial, brand, commercial availability no kakunin no kakunin no kawari dewa arimasen.', '法律、財務、ブランド、または商業的可用性の確認に代わるものではありません。')
+    .replaceAll('Legal, financial, brand, commercial availability no kakunin no kawari dewa arimasen.', '法律、財務、ブランド、または商業的可用性の確認に代わるものではありません。')
+    .replaceAll('Fake identity, impersonation, sensitive personal data ni tsukawanai de k', '偽の身元、なりすまし、機密性の高い個人データには使用しないでください。')
+    .replaceAll('Public use no mae ni facts, permissions, brand, privacy, compliance wo kakunin shite kudasai.', '公開前に、事実、許可、ブランド、プライバシー、コンプライアンスを確認してください。')
+    .replaceAll('Draft wa ningen no handan de henshu shi, guaranteed ya official result to shite misenaide kudasai.', '下書きは人間の判断で編集し、保証された結果や公式な結果として提示しないでください。')
+    .replaceAll('Play ya brainstorming ni todome, ident', '遊びやブレインストーミングに留め、身元や公式な決定には使用しないでください。')
+    .replaceAll('Publish mae ni data, permissions, prices, claims, brand tone wo kakunin shite kudasai.', '公開前に、データ、許可、価格、主張、ブランドトーンを確認してください。')
+    .replaceAll('Writing support to shite tsukai, sources, originality, academic ya editorial rules wo kakunin shite kudasai.', '執筆支援として使用し、情報源、独創性、学術的または編集的ルールを確認してください。')
+    .replaceAll('Inspiration ya light choice to shite atsukai, identity, document, official decision ni shinai de kudasai.', 'インスピレーションや軽い選択肢として扱い、身元、文書、または公式な決定には使用しないでください。')
+    .replaceAll('Testa kod, validera indata och granska sakerhet', '本番公開前にコードをテストし、入力を検証してください。')
+    .replaceAll('Public use mae ni brand, domain, permissions, prices, real data, compliance wo kakunin shite kudasai.', '公開前に、ブランド、ドメイン、許可、価格、実際のデータ、コンプライアンスを確認してください。')
+    .replaceAll('Jitsuyou support to shite tsukai, labels, lists, draws wa jibun no rules de kakunin shite kudasai.', '実用的なサポートとして使用し、ラベル、リスト、抽選は独自のルールで確認してください。')
+    .replaceAll('Public use mae ni culture, context, pronunciation, rights, availability wo kakunin shite kudasai.', '公開前に、文化、文脈、発音、権利、可用性を確認してください。')
+    .replaceAll('Creative inspiration ni todom', '創造的なインスピレーションに留め、ブランドや実在の人物をコピーしないでください。')
+    .replaceAll('Publish ya client soufu mae ni brand, domain, prices, permissions, data wo kakunin shite kudasai.', '公開やクライアントへの送信前に、ブランド、ドメイン、価格、許可、データを確認してください。')
+    .replaceAll('Jitsuyou support to shite tsukai, kekka wa jibun no rules ya sources de kakunin shite kudasai.', '実用的なサポートとして使用し、結果は独自のルールや情報源で確認してください。')
+    .replaceAll('Public use mae ni cultural sensitivity, pronunciation, rights, availability wo kakunin shite kudasai.', '公開前に、文化的配慮、発音、権利、可用性を確認してください。')
+    .replaceAll('Jibun no worlds, games, creative', '自身の世界、ゲーム、または創造的なアイデアに使用してください。')
+    .replaceAll('Public use mae ni brand, permissions, prices, data, compliance wo kakunin shite kudasai.', '公開前に、ブランド、許可、価格、データ、コンプライアンスを確認してください。')
+    .replaceAll('Public use mae ni context, sensitivity, rights, availability wo kakunin shite kudasai.', '公開前に、文脈、感性、権利、可用性を確認してください。')
+    .replaceAll('Creative inspiration ni todome, brands, real people, prot', '創造的なインスピレーションに留め、ブランド、実在の人物、保護された作品をコピーしないでください。');
+}
+
+export function polishKoreanText(value: string): string {
+  return value
+    .replaceAll('Practical help ro sayonghago jungyohan gyeoljeong jeone gyeolgwareul hwaginhaseyo.', '실용적인 도움으로 사용하고 중요한 결정 전에 결과를 확인하세요.')
+    .replaceAll('Reach, followers, name availability, platform performance neun bojanghaji anhseumnida.', '도달 범위, 팔로워, 이름 사용 가능 여부, 플랫폼 성능은 보장하지 않습니다.')
+    .replaceAll('Legal, financial, brand, commercial availability geomto reul daesin haji anhseumnida.', '법률, 재무, 브랜드, 상업적 사용 가능성 검토를 대신하지 않습니다.')
+    .replaceAll('Fake identity, impersonation, sensitive personal data yongdo ro sayonghaji m', '허위 신원, 사칭, 민감한 개인 정보 용도로 사용하지 마십시오.')
+    .replaceAll('Public use jeone facts, permissions, brand, privacy, compliance reul hwaginhaseyo.', '공개 사용 전에 사실 관계, 권한, 브랜드, 개인 정보 보호, 규정 준수 여부를 확인하세요.')
+    .replaceAll('Draft neun human judgement ro pyeonjiphago guaranteed na official result cheoreom boiji maseyo.', '초안은 인간의 판단으로 편집하고 보장되거나 공식적인 결과처럼 보이지 마세요.')
+    .replaceAll('Play na brainstorming yongdo ro sayonghago identity, documents, ha', '놀이나 브레인스토밍 용도로 사용하고 신원, 문서에는 사용하지 마십시오.')
+    .replaceAll('Publish jeone data, permissions, prices, claims, brand tone reul hwaginhaseyo.', '게시 전에 데이터, 권한, 가격, 주장, 브랜드 톤을 확인하세요.')
+    .replaceAll('Writing support ro sayonghago sources, originality, academic na editorial rules reul hwaginhaseyo.', '작성 지원으로 사용하고 출처, 독창성, 학술 또는 편집 규칙을 확인하세요.')
+    .replaceAll('Inspiration na light choice ro bogoseo identity, document, official decision e sayonghaji maseyo.', '영감이나 가벼운 선택으로 보고 신원, 문서, 공식 결정에 사용하지 마세요.')
+    .replaceAll('Production jeone code test, input validation, secu', '프로덕션 전에 코드를 테스트하고 입력을 검증하십시오.')
+    .replaceAll('Public use jeone brand, domain, permissions, prices, real data, compliance reul hwaginhaseyo.', '공개 사용 전에 브랜드, 도메인, 권한, 가격, 실제 데이터, 규정 준수 여부를 확인하세요.')
+    .replaceAll('Practical support ro sayonghago labels, lists, draws neun jasinui rules ro hwaginhaseyo.', '실용적인 지원으로 사용하고 라벨, 목록, 추첨은 자신만의 규칙으로 확인하세요.')
+    .replaceAll('Public use jeone culture, context, pronunciation, rights, availability reul hwaginhaseyo.', '공개 사용 전에 문화, 맥락, 발음, 권리, 사용 가능 여부를 확인하세요.')
+    .replaceAll('Creative inspiration yongdo ro sayonghago brands, real ', '창의적인 영감 용도로 사용하고 브랜드나 실제 인물을 모방하지 마십시오.')
+    .replaceAll('Publish na client jeonsong jeone brand, domain, prices, permissions, data reul hwaginhaseyo.', '게시나 클라이언트 전송 전에 브랜드, 도메인, 가격, 권한, 데이터를 확인하세요.')
+    .replaceAll('Practical support ro sayonghago gyeolgwa neun jasinui rules na sources ro hwaginhaseyo.', '실용적인 지원으로 사용하고 결과는 자신만의 규칙이나 출처로 확인하세요.')
+    .replaceAll('Public use jeone cultural sensitivity, pronunciation, rights, availability reul hwaginhaseyo.', '공개 사용 전에 문화적 민감성, 발음, 권리, 사용 가능 여부를 확인하세요.')
+    .replaceAll('Jasinui worlds, games, creative ideas yongdo ro sayon', '자신만의 세계, 게임, 창의적인 아이디어 용도로 사용하십시오.')
+    .replaceAll('Public use jeone brand, permissions, prices, data, compliance reul hwaginhaseyo.', '공개 사용 전에 브랜드, 권한, 가격, 데이터, 규정 준수 여부를 확인하세요.')
+    .replaceAll('Public use jeone context, sensitivity, rights, availability reul hwaginhaseyo.', '공개 사용 전에 맥락, 민감성, 권리, 사용 가능 여부를 확인하세요.')
+    .replaceAll('Creative inspiration yongdo ro sayonghago brands, real people, protected worlds re', '창의적인 영감 용도로 사용하고 브랜드, 실제 인물, 보호된 저작물을 모방하지 마십시오.');
+}
+
+export function polishArabicText(value: string): string {
+  return value
+    .replaceAll('Istakhdimha kamusaadah amaliyah waraji alnatijah qabla ay qarar muhim.', 'استخدمها كمساعدة عملية وراجع النتيجة قبل أي قرار مهم.')
+    .replaceAll('La tadman alwusul aw almutabieen aw tawafur alasma aw ada almanassah.', 'لا تضمن الوصول أو المتابعين أو توفر الأسماء أو أداء المنصة.')
+    .replaceAll('La tastabdil murajaah qanuniyah aw maliyah aw tijariyah aw huquq alalama.', 'لا تستبدل مراجعة قانونية أو مالية أو تجارية أو حقوق العلامة.')
+    .replaceAll('La tastakhdimha lihawiyah zaifah aw intihal aw bayanat shakhsiya hassasah.', 'لا تستخدمها لهوية زائفة أو انتحال أو بيانات شخصية حاسة.')
+    .replaceAll('Raji alhaqaiq waladhun walalama walkhususiyah waltawafuq qabla alistikhdam alam.', 'راجع الحقائق والإذن والعلامة والخصوصية والتوافق قبل الاستخدام العام.')
+    .replaceAll('Harrir almusawadah bihukm bashari wala tuqaddimha kanatijah madmunah aw rasmiyah.', 'حرر المسودة بحكم بشري ولا تقدمها كنتيجة مضمونة أو رسمية.')
+    .replaceAll('Istakhdimha liltarfih aw alafkar watajanab alhawiyah walwathaiq waliza aw aldaght alijtimaei.', 'استخدمها للترفيه أو الأفكار وتجنب الهوية والوثائق والأذى أو الضغط الاجتماعي.')
+    .replaceAll('Raji albayanat waladhun walasear walidieaat wanaghamat alalama qabla alnashr.', 'راجع البيانات والإذن والأسعار والادعاءات ونبرة العلامة قبل النشر.')
+    .replaceAll('Istakhdimha kamusaadah lilkitabah waraji almasadir walasalah waqawaeid aldirasah aw altahrir.', 'استخدمها كمساعدة للكتابة وراجع المصادر والأصالة وقواعد الدراسة أو التحرير.')
+    .replaceAll('Itabirha ilhaman aw ikhtiyaran khafifan la hawiyah aw wathiqah aw qararan rasmiyan.', 'اعتبرها إلهامًا أو اختيارًا خفيفًا لا هوية أو وثيقة أو قرارًا رسميًا.')
+    .replaceAll('Ikhtabir alkod wathabbit almudkhalat waraji alaman waimkaniyat alwusul', 'اختبر الكود وثبّت المدخلات وراجع الأمان وإمكانية الوصول.')
+    .replaceAll('Raji alalama walnitaq waladhun walasear walbayanat alhaqiqiyah waltawafuq qabla alistikhdam alam.', 'راجع العلامة والنطاق والإذن والأسعار والبيانات الحقيقية والتوافق قبل الاستخدام العام.')
+    .replaceAll('Istakhdimha kamusaadah amaliyah waraji alwusum aw alqawaem aw alsahb biqawaeidik.', 'استخدمها كمساعدة عملية وراجع الوسوم أو القوائم أو السحب بقواعدك.')
+    .replaceAll('Raji althaqafah walsiyaq walnutq walhuquq waltawafur qabla alistikhdam alam.', 'راجع الثقافة والسياق والنطق والحقوق والتوفر قبل الاستخدام العام.')
+    .replaceAll('Ijaliha ilhaman ibdaian wala tansakh alamat aw ashkhas', 'اجعلها إلهامًا إبداعيًا ولا تنسخ علامات أو أشخاصًا.')
+    .replaceAll('Raji alalama walnitaq walasear waladhun walbayanat qabla alnashr aw irsalha lilumala.', 'راجع العلامة والنطاق والأسعار والإذن والبيانات قبل النشر أو إرسالها للعملاء.')
+    .replaceAll('Istakhdimha kamusaadah amaliyah waraji alnatijah biqawaeidik aw masadirik.', 'استخدمها كمساعدة عملية وراجع النتيجة بقواعدك أو مصادرك.')
+    .replaceAll('Raji alhusasiyah althaqafiyah walnutq walhuquq waltawafur qabla alistikhdam alam.', 'راجع الحساسية الثقافية والنطق والحقوق والتوفر قبل الاستخدام العام.')
+    .replaceAll('Istakhdimha liawalimak aw alalab aw alafkar almubdieah bidun naskh', 'استخدمها لعوالمك أو الألعاب أو الأفكار المبدعة بدون نسخ.')
+    .replaceAll('Raji alalama waladhun walasear walbayanat waltawafuq qabla alistikhdam alam.', 'راجع العلامة والإذن والأسعار والبيانات والتوافق قبل الاستخدام العام.')
+    .replaceAll('Raji alsiyaq walhusasiyah walhuquq waltawafur qabla alistikhdam alam.', 'راجع السياق والحساسية والحقوق والتوفر قبل الاستخدام العام.')
+    .replaceAll('Ijaliha ilhaman ibdaian wala tansakh alamat aw ashkhas haqiqiyin aw awalim mahmiyah.', 'اجعلها إلهامًا إبداعيًا ولا تنسخ علامات أو أشخاصًا حقيقيين أو عوالم محمية.');
+}
+
+export function createLocalizedFaqItems(localized: LocalizedToolContent) {
+  const copy = getLocalizedPageCopy(localized);
+  const safetyNote = getLocalizedSafetyNote(localized);
+  const keywordList = copy.faqTopics.join(', ');
+  
+  let baseFaqs: { q: string; a: string }[] = [];
+  if (localized.language === 'fr') {
+    baseFaqs = [
+      { q: 'À quoi sert cet outil ?', a: `${copy.intro} Il aide à partir plus vite, à comparer plusieurs pistes et à garder une version que vous pouvez adapter à votre contexte.` },
+      { q: 'Que faut-il écrire pour obtenir de meilleurs résultats ?', a: 'Ajoutez l’usage prévu, le public, le ton, les mots à conserver et les éléments à éviter. Un contexte précis rend les suggestions plus faciles à relire.' },
+      { q: 'Puis-je utiliser le résultat tel quel ?', a: `Mieux vaut le relire. Vérifiez exactitude, originalité, lisibilité et règles de la plateforme ou du projet. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'de') {
+    baseFaqs = [
+      { q: 'Wofür kann ich dieses Tool nutzen?', a: `${copy.intro} Das Tool hilft dir, schneller zu starten, Varianten zu vergleichen und einen Entwurf an deinen echten Einsatz anzupassen.` },
+      { q: 'Was sollte ich eingeben, um bessere Ergebnisse zu bekommen?', a: 'Nenne Zweck, Zielgruppe, Ton, gewünschte Wörter und Dinge, die vermieden werden sollen. Je klarer der Kontext, desto leichter lassen sich die Vorschläge prüfen.' },
+      { q: 'Kann ich das Ergebnis direkt verwenden?', a: `Nicht ungeprüft. Prüfe Genauigkeit, Originalität, Lesbarkeit und die Regeln deiner Plattform oder deines Projekts. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'pt') {
+    baseFaqs = [
+      { q: `Para que serve ${copy.h1}?`, a: `${copy.intro} Use para explorar ${copy.primaryKeyword} com contexto real, comparar variações e escolher uma opção que ainda possa ser revisada.` },
+      { q: `Que detalhes melhoram os resultados de ${copy.primaryKeyword}?`, a: `Inclua público, tom, formato, palavras desejadas e limites do projeto. Termos próximos como ${keywordList} ajudam a manter a intenção correta.` },
+      { q: 'Posso usar o resultado diretamente?', a: `Revise antes. Confira exatidão, originalidade, legibilidade e regras da plataforma ou do projeto. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'it') {
+    baseFaqs = [
+      { q: `A cosa serve ${copy.h1}?`, a: `${copy.intro} Serve per esplorare ${copy.primaryKeyword} con un contesto concreto, confrontare varianti e scegliere una bozza da rifinire.` },
+      { q: `Quali dettagli migliorano ${copy.primaryKeyword}?`, a: `Aggiungi pubblico, tono, formato, parole da includere e limiti del progetto. Varianti como ${keywordList} aiutano a restare nello stesso intento.` },
+      { q: 'Posso usar o risultato diretamente?', a: `Meglio rivederlo prima. Controlla accuratezza, originalità, leggibilità e regole della piattaforma o del progetto. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'pl') {
+    baseFaqs = [
+      { q: `Do czego służy ${copy.h1}?`, a: `${copy.intro} Pomaga przygotować ${copy.primaryKeyword}, porównać warianty i dopasować szkic do realnego zastosowania.` },
+      { q: `Co wpisać, aby poprawić ${copy.primaryKeyword}?`, a: `Dodaj cel, odbiorców, ton, format, słowa do zachowania oraz ograniczenia projektu. Powiązane tematy, takie jak ${keywordList}, pomagają utrzymać właściwą intencję.` },
+      { q: 'Czy mogę użyć wyniku od razu?', a: `Najpierw go sprawdź. Zweryfikuj dokładność, oryginalność, czytelność oraz zasady platformy lub projektu. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'ru') {
+    baseFaqs = [
+      { q: `Для чего нужен ${copy.h1}?`, a: `${copy.intro} Инструмент помогает подготовить ${copy.primaryKeyword}, сравнить варианты и адаптировать черновик под реальную задачу.` },
+      { q: `Что ввести, чтобы улучшить ${copy.primaryKeyword}?`, a: `Добавьте цель, аудиторию, тон, формат, нужные слова и ограничения проекта. Близкие темы, например ${keywordList}, помогают сохранить правильный интент.` },
+      { q: 'Можно ли использовать результат сразу?', a: `Сначала проверьте его. Оцените точность, оригинальность, читаемость и правила платформы или проекта. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'tr') {
+    baseFaqs = [
+      { q: `${copy.h1} ne işe yarar?`, a: `${copy.intro} ${copy.primaryKeyword} için bağlama uygun taslaklar hazırlamanıza, seçenekleri karşılaştırmanıza ve sonucu gerçek kullanıma uyarlamanıza yardım eder.` },
+      { q: `${copy.primaryKeyword} için hangi bilgiler daha iyi sonuç verir?`, a: `Amaç, hedef kitle, ton, format, kullanılacak kelimeler ve kaçınılacak noktaları ekleyin. ${keywordList} gibi yakın konular doğru niyette kalmayı sağlar.` },
+      { q: 'Sonucu doğrudan kullanabilir miyim?', a: `Önce gözden geçirin. Doğruluk, özgünlük, okunabilirlik ve platform ya da proje kurallarını kontrol edin. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'id') {
+    baseFaqs = [
+      { q: `Untuk apa ${copy.h1}?`, a: `${copy.intro} Alat ini membantu menyiapkan ${copy.primaryKeyword}, membandingkan beberapa opsi, lalu menyesuaikan draf untuk kebutuhan nyata.` },
+      { q: `Detail apa yang membuat ${copy.primaryKeyword} lebih baik?`, a: `Tambahkan tujuan, audiens, nada, format, kata yang harus dipakai, dan batasan proyek. Topik terkait seperti ${keywordList} membantu menjaga maksud yang sama.` },
+      { q: 'Bolehkah hasilnya langsung dipakai?', a: `Sebaiknya ditinjau dulu. Periksa akurasi, orisinalitas, keterbacaan, serta aturan platform atau proyek. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'sv') {
+    baseFaqs = [
+      { q: `Vad används ${copy.h1} till?`, a: `${copy.intro} Verktyget hjälper dig att förbereda ${copy.primaryKeyword}, jämföra flera alternativ och anpassa ett utkast till verklig användning.` },
+      { q: `Vilka detaljer ger bättre ${copy.primaryKeyword}?`, a: `Lägg till syfte, målgrupp, ton, format, ord som ska användas och begränsningar. Näraliggande ämnen som ${keywordList} hjälper till att hålla samma sökavsikt.` },
+      { q: 'Kan jag använda resultatet direkt?', a: `Granska det först. Kontrollera noggrannhet, originalitet, läsbarhet och regler för plattformen eller projektet. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'ms') {
+    baseFaqs = [
+      { q: `Untuk apa ${copy.h1}?`, a: `${copy.intro} Alat ini membantu menyediakan ${copy.primaryKeyword}, membandingkan beberapa pilihan dan menyesuaikan draf untuk kegunaan sebenar.` },
+      { q: `Butiran apa yang menambah baik ${copy.primaryKeyword}?`, a: `Tambah tujuan, audiens, nada, format, perkataan yang perlu digunakan dan had projek. Topik berkaitan seperti ${keywordList} membantu mengekalkan maksud yang sama.` },
+      { q: 'Boleh guna hasil terus?', a: `Semak dahulu. Periksa ketepatan, keaslian, kebolehbacaan serta peraturan platform atau projek. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'bg') {
+    baseFaqs = [
+      { q: `За какво служи ${copy.h1}?`, a: `${copy.intro} Инструментът помага да подготвите ${copy.primaryKeyword}, да сравните варианти и да адаптирате чернова към реална употреба.` },
+      { q: `Какви детайли подобряват ${copy.primaryKeyword}?`, a: `Добавете цел, аудитория, тон, формат, желани думи и ограничения на проекта. Близки теми като ${keywordList} помагат да се запази същият интент.` },
+      { q: 'Мога ли да използвам резултата директно?', a: `Първо го прегледайте. Проверете точност, оригиналност, четимост и правилата на платформата или проекта. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'hi') {
+    baseFaqs = [
+      { q: `${copy.h1} किस काम आता है?`, a: `${copy.intro} यह ${copy.primaryKeyword} तैयार करने, विकल्पों की तुलना करने और मसौदे को वास्तविक उपयोग के लिए ढालने में मदद करता है.` },
+      { q: `${copy.primaryKeyword} के लिए कौन सी जानकारी बेहतर है?`, a: `उद्देश्य, दर्शक, टोन, फॉर्मेट, जरूरी शब्द और सीमाएं जोड़ें. ${keywordList} जैसे जुड़े विषय सही इरादा बनाए रखते हैं.` },
+      { q: 'क्या परिणाम सीधे इस्तेमाल कर सकता हूं?', a: `पहले समीक्षा करें. सटीकता, मौलिकता, पठनीयता और प्लेटफॉर्म या परियोजना नियम जांचें. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'bn') {
+    baseFaqs = [
+      { q: `${copy.h1} কী কাজে লাগে?`, a: `${copy.intro} এটি ${copy.primaryKeyword} প্রস্তুত করতে, বিকল্প তুলনা করতে এবং খসড়া বাস্তব ব্যবহারের জন্য মানাতে সাহায্য করে.` },
+      { q: `${copy.primaryKeyword} ভালো করতে কী তথ্য দেব?`, a: `উদ্देश्य, অডিয়েন্স, টোন, ফরম্যাট, দরকারি শব্দ ও সীমা যোগ করুন. ${keywordList} ধরনের সম্পর্কিত বিষয় একই उद्देश्य ধরে রাখে.` },
+      { q: 'ফলাফল সরাসরি ব্যবহার করা যাবে?', a: `আগে রিভিউ করুন. নির্ভুলতা, মৌলিকতা, পাঠযোগ্যতা এবং প্ল্যাটফর্ম বা প্রকল্পের নিয়ম যাচাই করুন. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'ja') {
+    baseFaqs = [
+      { q: `${copy.h1}は何に使えますか?`, a: `${copy.intro} ${copy.primaryKeyword}の下書きを作り、複数案を比較し、実際の用途に合わせて調整できます.` },
+      { q: `${copy.primaryKeyword}を良くするには何を入力しますか?`, a: `目的、読者、トーン、形式、入れたい語句、避けたい条件を加えてください. ${keywordList}のような近いテーマは意図を保つ助けになります.` },
+      { q: '結果をそのまま使えますか?', a: `まず確認してください. 正確性、独自性、読みやすさ、プラットフォームやプロジェクトのルールを確認します. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'ko') {
+    baseFaqs = [
+      { q: `${copy.h1}는 어디에 쓰나요?`, a: `${copy.intro} ${copy.primaryKeyword} 초안을 만들고 여러 옵션을 비교한 뒤 실제 용도에 맞게 조정할 수 있습니다.` },
+      { q: `${copy.primaryKeyword} 결과를 좋게 하려면 무엇을 입력하나요?`, a: `목적, 대상, 어조, 형식, 포함할 단어와 제한 사항을 넣으세요. ${keywordList} 같은 관련 주제는 같은 의도를 유지하는 데 도움이 됩니다.` },
+      { q: '결과를 바로 사용해도 되나요?', a: `먼저 검토하세요. 정확성, 독창성, 가독성, 플랫폼 또는 프로젝트 규칙을 확인하세요. ${safetyNote}` },
+    ];
+  } else if (localized.language === 'ar') {
+    baseFaqs = [
+      { q: `ما فائدة ${copy.h1}?`, a: `${copy.intro} يساعدك على إعداد ${copy.primaryKeyword} ومقارنة الخيارات وتعديل المسودة لاستخدام حقيقي.` },
+      { q: `ما التفاصيل التي تحسن ${copy.primaryKeyword}?`, a: `أضف الهدف والجمهور والنبرة والصيغة والكلمات المطلوبة والقيود. موضوعات قريبة مثل ${keywordList} تساعد على حفظ نفس القصد.` },
+      { q: 'هل يمكن استخدام النتيجة مباشرة?', a: `راجعها أولا. تحقق من الدقة والأصالة والوضوح وقواعد المنصة أو المشروع. ${safetyNote}` },
+    ];
+  } else {
+    baseFaqs = createSpanishFaqItems(localized);
+  }
+
+  let extraFaqs: { q: string; a: string }[] = [];
+  const name = copy.h1;
+  if (localized.language === 'ja') {
+    extraFaqs = [
+      { q: `${name}は完全に無料で使用できますか？`, a: `はい、${name}は登録、サブスクリプション、使用制限なしで100%完全に無料です。` },
+      { q: `${name}を使用する際、入力データは安全ですか？`, a: `はい、完全に安全です。すべての計算とフォーマット処理はウェブブラウザ上でローカルに実行されます。入力テキスト、キーワード、または生成された結果がサーバーに送信されたり保存されたりすることはありません。` },
+      { q: `${name}で生成された結果を商用利用できますか？`, a: `はい、生成された結果の所有権はすべてお客様に帰属し、個人用、商用、またはプロフェッショナルなプロジェクトで自由に使用できます。` },
+      { q: `ブラウザ拡張機能やソフトウェアをインストールする必要はありますか？`, a: `いいえ、${name}はウェブベースのツールであり、デスクトップ、タブレット、モバイルデバイスのあらゆるモダンブラウザで直接動作します。` },
+      { q: `生成された結果をコピーするにはどうすればよいですか？`, a: `個々の結果カードの横にある「コピー」ボタンをクリックするか、出力パネルの上部にある「すべてコピー」をクリックして、すべての結果をクリップボードにコピーします。` },
+      { q: `生成回数に制限はありますか？`, a: `いいえ、何回でも生成できます。最適な結果を見つけるために、さまざまなキーワードや設定を試してみることをお勧めします。` },
+      { q: `アカウントの登録は必要ですか？`, a: `登録は一切不要です。メールアドレスの入力やプロファイルの作成をすることなく、すぐにジェネレーターを使用できます。` }
+    ];
+  } else if (localized.language === 'fr') {
+    extraFaqs = [
+      { q: `${name} est-il totalement gratuit ?`, a: `Oui, ${name} est 100% gratuit, sans abonnement, sans inscription et sans aucune limite d'utilisation.` },
+      { q: `Mes données saisies dans ${name} sont-elles sécurisées ?`, a: `Absolument. Tout le traitement s'effectue en local directement dans votre navigateur web. Vos données ne sont ni enregistrées ni transmises à un serveur tiers.` },
+      { q: `Puis-je utiliser les résultats de ${name} à des fins commerciales ?`, a: `Oui, vous disposez de tous les droits sur les résultats générés et vous pouvez les exploiter librement pour vos projets personnels, professionnels ou commerciaux.` },
+      { q: `Faut-il installer un logiciel ou une extension ?`, a: `Non. ${name} s'exécute directement sur n'importe quel navigateur web moderne sur ordinateur, tablette ou smartphone.` },
+      { q: `Comment copier rapidement les résultats générés ?`, a: `Cliquez sur le bouton "Copier" à côté de chaque résultat ou sur "Tout copier" en haut du panneau de résultats pour les ajouter au presse-papier.` },
+      { q: `Existe-t-il une limite du nombre de générations ?`, a: `Non, vous pouvez générer autant de fois que souhaité afin de trouver l'option optimale.` },
+      { q: `Faut-il créer un compte pour utiliser le générateur ?`, a: `Aucune inscription ni création de compte n'est requise. L'outil est utilisable immédiatement dès votre arrivée sur la page.` }
+    ];
+  } else if (localized.language === 'ko') {
+    extraFaqs = [
+      { q: `${name}은(는) 완전히 무료인가요?`, a: `네, ${name}은(는) 회원가입, 구독, 또는 사용 제한 없이 100% 완전히 무료입니다.` },
+      { q: `${name}을(는) 사용할 때 내 입력 데이터는 안전한가요?`, a: `네, 전적으로 안전합니다. 모든 연산과 서식 지정은 웹 브라우저 내에서 로컬로 진행됩니다. 입력한 텍스트, 키워드, 결과값은 당사 서버로 전송되거나 저장되지 않습니다.` },
+      { q: `${name}의 결과를 상업적으로 사용할 수 있나요?`, a: `네, 생성된 결과물에 대한 전체 소유권을 가지며 개인, 상업 또는 전문 프로젝트에 자유롭게 사용할 수 있습니다.` },
+      { q: `브라우저 확장 프로그램이나 소프트웨어를 설치해야 하나요?`, a: `아니요, ${name}은(는) 데스크톱, 태블릿, 모바일 기기의 모든 현대적인 브라우저에서 직접 실행되는 웹 기반 도구입니다.` },
+      { q: `생성된 결과를 어떻게 복사하나요?`, a: `개별 결과 카드 옆의 복사 버튼을 누르거나, 출력 패널 상단의 '전체 복사'를 클릭하여 클립보드에 복사할 수 있습니다.` },
+      { q: `생성 횟수에 제한이 있나요?`, a: `아니요, 횟수 제한 없이 생성 가능합니다. 최적의 결과물을 찾기 위해 다양한 키워드나 설정을 시도해 보시는 것을 권장합니다.` },
+      { q: `계정을 만들어야 하나요?`, a: `회원가입은 필요하지 않습니다. 이메일을 입력하거나 프로필을 만들지 않고도 바로 생성기를 사용할 수 있습니다.` }
+    ];
+  } else {
+    extraFaqs = [
+      { q: `¿Es ${name} completamente gratis?`, a: `Sí, ${name} es 100% gratis, sin registro, suscripciones ni límites de uso.` },
+      { q: `¿Están seguros mis datos de entrada en ${name}?`, a: `Totalmente. Todo el procesamiento se realiza de forma local en tu navegador. No guardamos ni enviamos ningún texto a servidores.` },
+      { q: `¿Puedo usar el resultado de ${name} comercialmente?`, a: `Sí, tienes todos los derechos sobre el resultado generado y puedes usarlo en proyectos comerciales o personales.` },
+      { q: `¿Necesito instalar algún software o extensión?`, a: `No. ${name} funciona directamente en cualquier navegador moderno en ordenadores, tablets y móviles.` },
+      { q: `¿Cómo posso copiar los resultados?`, a: `Haz clic en el botón Copiar al lado de cualquier resultado, o en Copiar Todo arriba del panel de salida.` },
+      { q: `¿Hay límites en la cantidad de generations?`, a: `No, puedes generar tantas veces como quieras sin restricciones.` },
+      { q: `¿Necesito crear una cuenta?`, a: `No se requiere registro. Puedes empezar a usar el generador inmediatamente.` }
+    ];
+  }
+
+  const effectiveFaqs = [...baseFaqs];
+  for (const faq of extraFaqs) {
+    if (effectiveFaqs.length >= 10) break;
+    effectiveFaqs.push(faq);
+  }
+  return effectiveFaqs;
+}
+
+export function createLocalizedGuide(tool: Tool, localized: LocalizedToolContent) {
+  const copy = getLocalizedPageCopy(localized);
+  const keywordList = copy.faqTopics.join(', ');
+  const safetyNote = getLocalizedSafetyNote(localized);
+  if (localized.language === 'fr') {
+    return {
+      howTo: [
+        `Commencez par un mot, un texte ou une courte description liée à ${copy.primaryKeyword}.`,
+        'Ajoutez le contexte utile : usage prévu, public, ton, format et mots à inclure ou à éviter.',
+        'Générez plusieurs options, puis comparez clarté, naturel et adéquation avec l’objectif de la page.',
+        'Relisez avant publication, surtout pour une marque, un profil, un site, du SEO ou un contenu commercial.',
+      ],
+      tips: [
+        { title: 'Gardez une intention réelle', body: `Essayez des variantes proches comme ${keywordList}, sans changer le but de l’outil.` },
+        { title: 'Respectez le même usage', body: `Utilisez ${copy.h1} pour le même besoin que ${tool.name}; ne lui demandez pas des fonctions qu’il n’offre pas.` },
+        { title: 'Relisez avant de publier', body: safetyNote },
+      ],
+    };
+  }
+  if (localized.language === 'de') {
+    return {
+      howTo: [
+        `Starte mit einem Wort, Text oder kurzen Briefing zu ${copy.primaryKeyword}.`,
+        'Ergänze praktischen Kontext: Verwendungszweck, Zielgruppe, Ton, Format und Wörter, die enthalten oder vermieden werden sollen.',
+        'Generiere mehrere Varianten und vergleiche sie nach Klarheit, Natürlichkeit und Passung zum Ziel.',
+        'Bearbeite den Entwurf vor der Veröffentlichung, besonders bei Marken, Profilen, Websites, SEO-Inhalten oder Verkaufstexten.',
+      ],
+      tips: [
+        { title: 'Nutze echte Suchintention', body: `Teste nahe Varianten wie ${keywordList}, aber bleib beim gleichen Zweck des Tools.` },
+        { title: 'Bleib beim Tool-Zweck', body: `Nutze ${copy.h1} für denselben Zweck wie ${tool.name}; erzwinge keine Funktionen, die das Tool nicht bietet.` },
+        { title: 'Vor dem Veröffentlichen prüfen', body: safetyNote },
+      ],
+    };
+  }
+  if (localized.language === 'pt') {
+    return {
+      howTo: [
+        `Comece com uma palavra, texto ou breve descrição ligada a ${copy.primaryKeyword}.`,
+        `Adicione contexto prático para ${copy.h1}: uso previsto, público, tom, formato e palavras que devem entrar ou ficar de fora.`,
+        'Gere várias opções e compare clareza, naturalidade e alinhamento com o objetivo.',
+        'Edite o rascunho antes de publicar, especialmente em marcas, perfis, sites, SEO ou conteúdo comercial.',
+      ],
+      tips: [
+        { title: 'Use intenção real', body: `Teste variantes próximas como ${keywordList}, sem mudar o objetivo da ferramenta.` },
+        { title: 'Mantenha o mesmo uso', body: `Use ${copy.h1} para a mesma necessidade de ${tool.name}; não force funções que ela não oferece.` },
+        { title: 'Revise antes de publicar', body: safetyNote },
+      ],
+    };
+  }
+  if (localized.language === 'it') {
+    return {
+      howTo: [
+        `Inizia con una parola, un testo o una breve descrizione legata a ${copy.primaryKeyword}.`,
+        'Aggiungi contesto pratico: uso previsto, pubblico, tono, formato e parole da includere o evitare.',
+        "Genera più opzioni e confronta chiarezza, naturalezza e aderenza all'obiettivo.",
+        'Modifica la bozza prima di pubblicare, soprattutto per brand, profili, siti, SEO o contenuti commerciali.',
+      ],
+      tips: [
+        { title: 'Usa un intento reale', body: `Prova varianti vicine come ${keywordList}, senza cambiare lo scopo dello strumento.` },
+        { title: 'Resta nello stesso uso', body: `Usa ${copy.h1} per la stessa esigenza di ${tool.name}; non forzare funzioni che non offre.` },
+        { title: 'Rivedi prima di pubblicare', body: safetyNote },
+      ],
+    };
+  }
+  if (localized.language === 'pl') {
+    return {
+      howTo: [
+        `Zacznij od słowa, tekstu lub krótkiego opisu związanego z ${copy.primaryKeyword}.`,
+        'Dodaj praktyczny kontekst: cel, odbiorców, ton, format oraz słowa do uwzględnienia lub uniknięcia.',
+        'Wygeneruj kilka opcji i porównaj jasność, naturalność oraz dopasowanie do celu.',
+        'Edytuj szkic przed publikacją, zwłaszcza przy markach, profilach, stronach, SEO lub treściach komercyjnych.',
+      ],
+      tips: [
+        { title: 'Użyj realnej intencji', body: `Testuj bliskie warianty, takie jak ${keywordList}, bez zmiany celu narzędzia.` },
+        { title: 'Trzymaj się zastosowania', body: `Użyj ${copy.h1} do tej samej potrzeby co ${tool.name}; nie wymuszaj funkcji, których narzędzie nie oferuje.` },
+        { title: 'Sprawdź przed publikacją', body: safetyNote },
+      ],
+    };
+  }
+  if (localized.language === 'ru') {
+    return {
+      howTo: [
+        `Начните со слова, текста или короткого описания, связанного с ${copy.primaryKeyword}.`,
+        `Добавьте практический контекст для ${copy.h1}: цель, аудиторию, тон, формат и слова, которые нужно включить или исключить.`,
+        'Создайте несколько вариантов и сравните их по ясности, естественности и соответствию задаче.',
+        'Отредактируйте черновик перед публикацией, особенно для брендов, профилей, сайтов, SEO или коммерческих текстов.',
+      ],
+      tips: [
+        { title: 'Сохраняйте реальный интент', body: `Пробуйте близкие варианты вроде ${keywordList}, не меняя назначение инструмента.` },
+        { title: 'Используйте по назначению', body: `Применяйте ${copy.h1} для той же задачи, что и ${tool.name}; не требуйте функций, которых инструмент не предлагает.` },
+        { title: 'Проверяйте перед публикацией', body: safetyNote },
+      ],
+    };
+  }
+  if (localized.language === 'tr') {
+    return {
+      howTo: [
+        `${copy.primaryKeyword} ile ilgili bir kelime, metin veya kısa açıklama ile başlayın.`,
+        `${copy.h1} için amaç, hedef kitle, ton, format ve dahil edilecek ya da kaçınılacak kelimeleri ekleyin.`,
+        'Birden fazla seçenek üretin; açıklık, doğallık ve hedefe uygunluk açısından karşılaştırın.',
+        'Özellikle marka, profil, site, SEO veya ticari metinlerde yayımlamadan önce taslağı düzenleyin.',
+      ],
+      tips: [
+        { title: 'Gerçek arama niyetini koruyun', body: `${keywordList} gibi yakın varyasyonları deneyin, ancak aracın amacını değiştirmeyin.` },
+        { title: 'Aynı kullanımda kalın', body: `${copy.h1} aracını ${tool.name} ile aynı ihtiyaç için kullanın; sunmadığı işlevleri zorlamayın.` },
+        { title: 'Yayımlamadan önce kontrol edin', body: safetyNote },
+      ],
+    };
+  }
+  if (localized.language === 'id') {
+    return {
+      howTo: [
+        `Mulai dengan kata, teks, atau deskripsi singkat yang terkait dengan ${copy.primaryKeyword}.`,
+        `Tambahkan konteks praktis untuk ${copy.h1}: tujuan, audiens, nada, format, dan kata yang perlu disertakan atau dihindari.`,
+        'Buat beberapa opsi lalu bandingkan kejelasan, kewajaran bahasa, dan kecocokannya dengan tujuan.',
+        'Edit draf sebelum dipublikasikan, terutama untuk merek, profil, situs, SEO, atau konten komersial.',
+      ],
+      tips: [
+        { title: 'Jaga maksud pencarian', body: `Coba variasi dekat seperti ${keywordList}, tetapi tetap pada fungsi utama alat.` },
+        { title: 'Gunakan sesuai tujuan', body: `Pakai ${copy.h1} untuk kebutuhan yang sama dengan ${tool.name}; jangan memaksakan fungsi yang tidak tersedia.` },
+        { title: 'Tinjau sebelum publikasi', body: safetyNote },
+      ],
+    };
+  }
+  if (localized.language === 'sv') {
+    return {
+      howTo: [
+        `Borja med ett ord, en text eller en kort beskrivning kopplad till ${copy.primaryKeyword}.`,
+        `Lagg till praktiskt sammanhang for ${copy.h1}: syfte, malgrupp, ton, format och ord som ska tas med eller undvikas.`,
+        'Skapa flera alternativ och jamfor tydlighet, naturlighet och hur val de passar malet.',
+        'Redigera utkastet fore publicering, sarskilt for varumarken, profiler, webbplatser, SEO eller kommersiell text.',
+      ],
+      tips: [
+        { title: 'Hall verklig sokavsikt', body: `Prova narliggande varianter som ${keywordList}, utan att andra verktygets syfte.` },
+        { title: 'Anvand ratt verktyg', body: `Anvand ${copy.h1} for samma behov som ${tool.name}; tvinga inte fram funktioner som verktyget inte erbjuder.` },
+        { title: 'Granska fore publicering', body: safetyNote },
+      ],
+    };
+  }
+  if (localized.language === 'ms') {
+    return {
+      howTo: [
+        `Mulakan dengan perkataan, teks atau penerangan ringkas yang berkaitan dengan ${copy.primaryKeyword}.`,
+        `Tambah konteks praktikal untuk ${copy.h1}: tujuan, audiens, nada, format dan perkataan yang perlu disertakan atau dielakkan.`,
+        'Jana beberapa pilihan, kemudian bandingkan kejelasan, kelancaran bahasa dan kesesuaian dengan matlamat.',
+        'Edit draf sebelum diterbitkan, terutama untuk jenama, profil, laman web, SEO atau kandungan komersial.',
+      ],
+      tips: [
+        { title: 'Kekalkan maksud carian', body: `Cuba variasi berkaitan seperti ${keywordList}, tetapi jangan ubah tujuan alat.` },
+        { title: 'Guna mengikut tujuan', body: `Gunakan ${copy.h1} untuk keperluan yang sama seperti ${tool.name}; jangan paksa fungsi yang tidak tersedia.` },
+        { title: 'Semak sebelum terbit', body: safetyNote },
+      ],
+    };
+  }
+  if (localized.language === 'bg') {
+    return {
+      howTo: [
+        `Започнете с дума, текст или кратко описание, свързано с ${copy.primaryKeyword}.`,
+        `Добавете практически контекст за ${copy.h1}: цел, аудитория, тон, формат и думи, които да се включат или избегнат.`,
+        'Генерирайте няколко варианта и ги сравнете по яснота, естественост и съответствие с целта.',
+        'Редактирайте черновата преди публикуване, особено за марки, профили, сайтове, SEO или търговски текстове.',
+      ],
+      tips: [
+        { title: 'Запазете реалния интент', body: `Пробвайте близки варианти като ${keywordList}, без да променяте целта на инструмента.` },
+        { title: 'Използвайте по предназначение', body: `Използвайте ${copy.h1} за същата нужда като ${tool.name}; не изисквайте функции, които инструментът не предлага.` },
+        { title: 'Проверете преди публикуване', body: safetyNote },
+      ],
+    };
+  }
+  if (localized.language === 'hi') {
+    return {
+      howTo: [`${copy.primaryKeyword} से जुड़ा शब्द, टेक्स्ट या छोटा विवरण लिखें.`, `${copy.h1} के लिए उद्देश्य, दर्शक, टोन, फॉर्मेट और शामिल या हटाने वाले शब्द जोड़ें.`, 'कई विकल्प बनाएं और स्पष्टता, स्वाभाविकता और लक्ष्य से मेल की तुलना करें.', 'प्रकाशन से पहले मसौदे को संपादित करें, खासकर ब्रांड, प्रोफाइल, साइट, SEO या व्यावसायिक टेक्स्ट में.'],
+      tips: [{ title: 'सर्च इरादा बनाए रखें', body: `${keywordList} जैसे नजदीकी विकल्प आजमाएं, लेकिन टूल का उद्देश्य न बदलें.` }, { title: 'सही उपयोग में रखें', body: `${copy.h1} को ${tool.name} जैसी जरूरत के लिए ही उपयोग करें; उपलब्ध न होने वाले काम न मांगें.` }, { title: 'प्रकाशन से पहले जांचें', body: safetyNote }],
+    };
+  }
+  if (localized.language === 'bn') {
+    return {
+      howTo: [`${copy.primaryKeyword} সম্পর্কিত একটি শব্দ, টেক্সট বা ছোট বর্ণনা দিয়ে শুরু করুন.`, `${copy.h1} এর জন্য উদ্দেশ্য, অডিয়েন্স, টোন, ফরম্যাট এবং রাখতে বা এড়াতে হবে এমন শব্দ যোগ করুন.`, 'কয়েকটি বিকল্প তৈরি করুন এবং স্পষ্টতা, স্বাভাবিকতা ও লক্ষ্যের সঙ্গে মিল তুলনা করুন.', 'প্রকাশের আগে খসড়া সম্পাদনা করুন, বিশেষ করে ব্র্যান্ড, প্রোফাইল, সাইট, SEO বা বাণিজ্যিক টেক্সটে.'],
+      tips: [{ title: 'সার্চ উদ্দেশ্য ধরে রাখুন', body: `${keywordList} ধরনের কাছাকাছি ভ্যারিয়েশন চেষ্টা করুন, কিন্তু টুলের উদ্দেশ্য বদলাবেন না.` }, { title: 'সঠিক ব্যবহারে থাকুন', body: `${copy.h1} ${tool.name} এর একই প্রয়োজনের জন্য ব্যবহার করুন; টুলে নেই এমন কাজ চাপাবেন না.` }, { title: 'প্রকাশের আগে যাচাই করুন', body: safetyNote }],
+    };
+  }
+  if (localized.language === 'ja') {
+    return {
+      howTo: [`${copy.primaryKeyword}に関係する語句、テキスト、短い説明から始めます.`, `${copy.h1}に目的、読者、トーン、形式、入れる語句や避ける条件を加えます.`, '複数案を生成し、明確さ、自然さ、目的との一致を比較します.', 'ブランド、プロフィール、サイト、SEO、商用文では公開前に下書きを編集してください.'],
+      tips: [{ title: '検索意図を保つ', body: `${keywordList}のような近い表現を試しつつ、ツールの目的は変えないでください.` }, { title: '同じ用途で使う', body: `${copy.h1}は${tool.name}と同じ目的で使い、提供していない機能を求めないでください.` }, { title: '公開前に確認', body: safetyNote }],
+    };
+  }
+  if (localized.language === 'ko') {
+    return {
+      howTo: [`${copy.primaryKeyword}와 관련된 단어, 텍스트 또는 짧은 설명으로 시작하세요.`, `${copy.h1}에 목적, 대상, 어조, 형식, 포함하거나 피할 단어를 추가하세요.`, '여러 옵션을 만들고 명확성, 자연스러움, 목표 적합성을 비교하세요.', '브랜드, 프로필, 사이트, SEO 또는 상업용 문구라면 게시 전 초안을 편집하세요.'],
+      tips: [{ title: '검색 의도 유지', body: `${keywordList} 같은 가까운 변형을 시도하되 도구의 목적은 바꾸지 마세요.` }, { title: '같은 용도로 사용', body: `${copy.h1}는 ${tool.name}와 같은 필요에 사용하고 제공하지 않는 기능을 강요하지 마세요.` }, { title: '게시 전 검토', body: safetyNote }],
+    };
+  }
+  if (localized.language === 'ar') {
+    return {
+      howTo: [`ابدأ بكلمة أو نص أو وصف قصير مرتبط بـ ${copy.primaryKeyword}.`, `أضف سياقا عمليا لـ ${copy.h1}: الهدف والجمهور والنبرة والصيغة والكلمات المطلوبة أو المستبعدة.`, 'أنشئ عدة خيارات وقارن الوضوح والطبيعية ومدى ملاءمة الهدف.', 'حرر المسودة قبل النشر، خاصة للعلامات والملفات والمواقع والسيو والنصوص التجارية.'],
+      tips: [{ title: 'حافظ على قصد البحث', body: `جرب صيغ قريبة مثل ${keywordList} من دون تغيير هدف الأداة.` }, { title: 'استخدمه للغرض نفسه', body: `استخدم ${copy.h1} للحاجة نفسها مثل ${tool.name}; لا تطلب وظائف لا تقدمها الأداة.` }, { title: 'راجع قبل النشر', body: safetyNote }],
+    };
+  }
+  return createSpanishGuide(tool, localized);
+}
+
+export function getLocalizedSafetyNote(localized: LocalizedToolContent): string {
+  const note = localized.riskSafetyNote.toLowerCase();
+  if (localized.language === 'fr') {
+    if (note.includes('trademark') || note.includes('marca')) return 'Vérifiez disponibilité, droits de marque et usage commercial avant de publier ou d’enregistrer le résultat.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return 'Aucune disponibilité, portée, positionnement ou performance de plateforme n’est garanti; vérifiez règles et pertinence avant usage.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'Évitez de copier des noms protégés, personnages reconnaissables, marques, franchises ou identités réelles.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'Relisez avec un regard technique ou professionnel avant de l’implémenter sur un site réel.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'Vérifiez lisibilité, accessibilité et compatibilité sur la plateforme où le texte sera collé.';
+    if (note.includes('factual') || note.includes('compliance') || note.includes('policy') || note.includes('medical')) return 'Vérifiez les faits, politiques, conformité et contexte avant publication ou décision.';
+    if (note.includes('sensitive')) return 'Évitez de saisir des informations sensibles et relisez le contexte avant utilisation.';
+    if (note.includes('offensive') || note.includes('misleading') || note.includes('deceptive')) return 'Évitez les usages offensants, exclusifs, trompeurs ou les promesses impossibles à justifier.';
+    return 'Utilisez le résultat comme brouillon et relisez exactitude, contexte, originalité et règles applicables avant publication.';
+  }
+  if (localized.language === 'de') {
+    if (note.includes('trademark') || note.includes('marca')) return 'Prüfe Verfügbarkeit, Markenrechte und kommerzielle Nutzung, bevor du das Ergebnis veröffentlichst oder registrierst.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return 'Es gibt keine Garantie für Verfügbarkeit, Reichweite, Rankings oder Plattform-Ergebnisse; prüfe Regeln und Relevanz vor der Nutzung.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'Kopiere keine geschützten Namen, erkennbaren Figuren, Marken, Franchises oder realen Identitäten.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'Prüfe das Ergebnis fachlich oder technisch, bevor du es auf einer echten Website einsetzt.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'Prüfe Lesbarkeit, Barrierefreiheit und Kompatibilität auf der Plattform, auf der du den Text einfügst.';
+    if (note.includes('factual') || note.includes('compliance') || note.includes('policy') || note.includes('medical')) return 'Prüfe Fakten, Richtlinien, Compliance und Kontext, bevor du veröffentlichst oder Entscheidungen triffst.';
+    if (note.includes('sensitive')) return 'Gib keine sensiblen Informationen ein und prüfe den Kontext vor der Nutzung.';
+    if (note.includes('offensive') || note.includes('misleading') || note.includes('deceptive')) return 'Vermeide beleidigende, ausgrenzende, irreführende oder unbelegte Versprechen.';
+    return 'Nutze das Ergebnis als Entwurf und prüfe Genauigkeit, Kontext, Originalität und geltende Regeln vor der Veröffentlichung.';
+  }
+  if (localized.language === 'pt') {
+    if (note.includes('trademark') || note.includes('marca')) return 'Verifique disponibilidade, marca registrada e uso comercial antes de publicar ou registrar o resultado.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return 'Não há garantia de disponibilidade, alcance, rankings ou resultados em plataformas; confira regras e relevância antes de usar.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'Evite copiar nomes protegidos, personagens reconhecíveis, marcas, franquias ou identidades reais.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'Revise com critério técnico ou profissional antes de implementar em um site real.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'Confira legibilidade, acessibilidade e compatibilidade na plataforma onde o texto será usado.';
+    if (note.includes('factual') || note.includes('compliance') || note.includes('policy') || note.includes('medical')) return 'Verifique fatos, políticas, conformidade e contexto antes de publicar ou decidir.';
+    return 'Use o resultado como rascunho e revise exatidão, contexto, originalidade e regras aplicáveis antes de publicar.';
+  }
+  if (localized.language === 'it') {
+    if (note.includes('trademark') || note.includes('marca')) return 'Verifica disponibilità, diritti di marchio e uso commerciale prima di pubblicare o registrare il risultato.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return "Non garantisce disponibilità, copertura, ranking o risultati di piattaforma; controlla regole e pertinenza prima dell'uso.";
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'Evita di copiare nomi protetti, personaggi riconoscibili, marchi, franchise o identità reali.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'Rivedi con criterio tecnico o professionale prima di implementarlo su un sito reale.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'Controlla leggibilità, accessibilità e compatibilità sulla piattaforma in cui userai il testo.';
+    if (note.includes('factual') || note.includes('compliance') || note.includes('policy') || note.includes('medical')) return 'Verifica fatti, policy, conformità e contesto prima di pubblicare o prendere decisioni.';
+    return 'Usa il risultato come bozza e rivedi accuratezza, contesto, originalità e regole applicabili prima di pubblicare.';
+  }
+  if (localized.language === 'pl') {
+    if (note.includes('trademark') || note.includes('marca')) return 'Sprawdź dostępność, prawa do znaków towarowych i użycie komercyjne przed publikacją lub rejestracją wyniku.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return 'Nie ma gwarancji dostępności, zasięgu, rankingów ani wyników na platformach; sprawdź zasady i trafność przed użyciem.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'Unikaj kopiowania chronionych nazw, rozpoznawalnych postaci, marek, franczyz lub prawdziwych tożsamości.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'Sprawdź wynik technicznie lub profesjonalnie przed wdrożeniem na prawdziwej stronie.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'Sprawdź czytelność, dostępność i zgodność z platformą, na której tekst będzie użyty.';
+    if (note.includes('factual') || note.includes('compliance') || note.includes('policy') || note.includes('medical')) return 'Zweryfikuj fakty, zasady, zgodność i kontekst przed publikacją lub decyzją.';
+    return 'Traktuj wynik jako szkic i sprawdź dokładność, kontekst, oryginalność oraz obowiązujące zasady przed publikacją.';
+  }
+  if (localized.language === 'ru') {
+    if (note.includes('trademark') || note.includes('marca')) return 'Проверьте доступность, товарные знаки и коммерческое использование перед публикацией или регистрацией результата.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return 'Доступность, охват, позиции и результаты на платформах не гарантируются; проверьте правила и релевантность перед использованием.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'Не копируйте защищенные названия, узнаваемых персонажей, бренды, франшизы или реальные личности.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'Проверьте результат технически или профессионально перед внедрением на реальном сайте.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'Проверьте читаемость, доступность и совместимость на платформе, где будет использоваться текст.';
+    if (note.includes('factual') || note.includes('compliance') || note.includes('policy') || note.includes('medical')) return 'Проверьте факты, правила, соответствие требованиям и контекст перед публикацией или решением.';
+    return 'Используйте результат как черновик и проверяйте точность, контекст, оригинальность и применимые правила перед публикацией.';
+  }
+  if (localized.language === 'tr') {
+    if (note.includes('trademark') || note.includes('marca')) return 'Sonucu yayımlamadan veya kaydetmeden önce uygunluğu, marka haklarını ve ticari kullanımı kontrol edin.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return 'Uygunluk, erişim, sıralama veya platform sonuçları garanti edilmez; kullanmadan önce kuralları ve alaka düzeyini kontrol edin.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'Korunan adları, tanınabilir karakterleri, markaları, franchise öğelerini veya gerçek kimlikleri kopyalamayın.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'Gerçek bir sitede uygulamadan önce sonucu teknik veya profesyonel açıdan gözden geçirin.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'Metnin kullanılacağı platformda okunabilirliği, erişilebilirliği ve uyumluluğu kontrol edin.';
+    if (note.includes('factual') || note.includes('compliance') || note.includes('policy') || note.includes('medical')) return 'Yayımlamadan veya karar vermeden önce gerçekleri, politikaları, uyumluluğu ve bağlamı doğrulayın.';
+    return 'Sonucu taslak olarak kullanın; yayımlamadan önce doğruluk, bağlam, özgünlük ve geçerli kuralları kontrol edin.';
+  }
+  if (localized.language === 'id') {
+    if (note.includes('trademark') || note.includes('marca')) return 'Periksa ketersediaan, hak merek dagang, dan penggunaan komersial sebelum memublikasikan atau mendaftarkan hasil.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return 'Ketersediaan, jangkauan, peringkat, atau hasil platform tidak dijamin; periksa aturan dan relevansi sebelum digunakan.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'Hindari menyalin nama yang dilindungi, karakter yang mudah dikenali, merek, waralaba, atau identitas nyata.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'Tinjau secara teknis atau profesional sebelum menerapkannya di situs nyata.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'Periksa keterbacaan, aksesibilitas, dan kompatibilitas di platform tempat teks akan digunakan.';
+    if (note.includes('factual') || note.includes('compliance') || note.includes('policy') || note.includes('medical')) return 'Verifikasi fakta, kebijakan, kepatuhan, dan konteks sebelum publikasi atau pengambilan keputusan.';
+    return 'Gunakan hasil sebagai draf dan tinjau akurasi, konteks, orisinalitas, serta aturan yang berlaku sebelum dipublikasikan.';
+  }
+  if (localized.language === 'sv') {
+    if (note.includes('trademark') || note.includes('marca')) return 'Kontrollera tillganglighet, varumarkesrattigheter och kommersiell anvandning innan du publicerar eller registrerar resultatet.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return 'Tillganglighet, rackvidd, ranking eller plattformsresultat garanteras inte; kontrollera regler och relevans fore anvandning.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'Undvik att kopiera skyddade namn, igenkannbara figurer, varumarken, franchiser eller verkliga identiteter.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'Granska resultatet tekniskt eller professionellt innan det anvands pa en verklig webbplats.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'Kontrollera lasbarhet, tillganglighet och kompatibilitet pa plattformen dar texten ska anvandas.';
+    if (note.includes('factual') || note.includes('compliance') || note.includes('policy') || note.includes('medical')) return 'Kontrollera fakta, policyer, efterlevnad och sammanhang fore publicering eller beslut.';
+    return 'Anvand resultatet som ett utkast och granska noggrannhet, sammanhang, originalitet och gallande regler fore publicering.';
+  }
+  if (localized.language === 'ms') {
+    if (note.includes('trademark') || note.includes('marca')) return 'Semak ketersediaan, hak tanda dagangan dan penggunaan komersial sebelum menerbitkan atau mendaftarkan hasil.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return 'Ketersediaan, capaian, ranking atau hasil platform tidak dijamin; semak peraturan dan kaitan sebelum digunakan.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'Elakkan menyalin nama dilindungi, watak dikenali, jenama, francais atau identiti sebenar.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'Semak secara teknikal atau profesional sebelum digunakan pada laman sebenar.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'Semak kebolehbacaan, aksesibiliti dan keserasian pada platform tempat teks akan digunakan.';
+    if (note.includes('factual') || note.includes('compliance') || note.includes('policy') || note.includes('medical')) return 'Sahkan fakta, polisi, pematuhan dan konteks sebelum penerbitan atau keputusan.';
+    return 'Gunakan hasil sebagai draf dan semak ketepatan, konteks, keaslian serta peraturan yang terpakai sebelum diterbitkan.';
+  }
+  if (localized.language === 'bg') {
+    if (note.includes('trademark') || note.includes('marca')) return 'Проверете наличност, права върху търговски марки и търговска употреба преди публикуване или регистрация.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return 'Наличност, обхват, класиране или резултати в платформи не са гарантирани; проверете правила и релевантност преди употреба.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'Избягвайте копиране на защитени имена, разпознаваеми герои, марки, франчайзи или реални самоличности.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'Прегледайте резултата технически или професионално преди внедряване в реален сайт.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'Проверете четимост, достъпност и съвместимост в платформата, където текстът ще се използва.';
+    if (note.includes('factual') || note.includes('compliance') || note.includes('policy') || note.includes('medical')) return 'Проверете факти, политики, съответствие и контекст преди публикуване или решение.';
+    return 'Използвайте резултата като чернова и проверете точност, контекст, оригиналност и приложими правила преди публикуване.';
+  }
+  if (localized.language === 'hi') {
+    if (note.includes('trademark') || note.includes('marca')) return 'प्रकाशित या रजिस्टर करने से पहले उपलब्धता, ट्रेडमार्क अधिकार और व्यावसायिक उपयोग जांचें.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return 'उपलब्धता, पहुंच, रैंकिंग या प्लेटफॉर्म परिणामों की गारंटी नहीं है; उपयोग से पहले नियम और प्रासंगिकता जांचें.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'सुरक्षित नामों, पहचाने जाने वाले पात्रों, ब्रांडों, फ्रेंचाइज़ या वास्तविक पहचानों की कॉपी से बचें.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'वास्तविक साइट पर लागू करने से पहले तकनीकी या पेशेवर समीक्षा करें.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'जहां टेक्स्ट उपयोग होगा वहां पठनीयता, पहुंच और संगतता जांचें.';
+    return 'परिणाम को मसौदा मानें और प्रकाशित करने से पहले सटीकता, संदर्भ, मौलिकता और लागू नियम जांचें.';
+  }
+  if (localized.language === 'bn') {
+    if (note.includes('trademark') || note.includes('marca')) return 'প্রকাশ বা রেজিস্টারের আগে প্রাপ্যতা, ট্রেডমার্ক অধিকার ও বাণিজ্যিক ব্যবহার যাচাই করুন.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return 'প্রাপ্যতা, রিচ, র‍্যাঙ্কিং বা প্ল্যাটফর্ম ফলাফলের নিশ্চয়তা নেই; ব্যবহারের আগে নিয়ম ও প্রাসঙ্গিকতা যাচাই করুন.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'সুরক্ষিত নাম, পরিচিত চরিত্র, ব্র্যান্ড, ফ্র্যাঞ্চাইজি বা বাস্তব পরিচয় কপি করা এড়ান.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'বাস্তব সাইটে প্রয়োগের আগে টেকনিক্যাল বা পেশাদারভাবে রিভিউ করুন.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'যে প্ল্যাটফর্মে টেক্সট ব্যবহার হবে সেখানে পাঠযোগ্যতা, অ্যাক্সেসিবিলিটি ও সামঞ্জস্য যাচাই করুন.';
+    return 'ফলাফলকে খসড়া হিসেবে ব্যবহার করুন এবং প্রকাশের আগে নির্ভুলতা, প্রসঙ্গ, মৌলিকতা ও প্রযোজ্য নিয়ম যাচাই করুন.';
+  }
+  if (localized.language === 'ja') {
+    if (note.includes('trademark') || note.includes('marca')) return '公開または登録前に、利用可能性、商標権、商用利用を確認してください.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return '利用可能性、リーチ、順位、プラットフォーム上の成果は保証されません。使用前に規則と関連性を確認してください.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return '保護された名前、認識可能なキャラクター、ブランド、フランチャイズ、実在の人物の模倣は避けてください.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return '実際のサイトに実装する前に、技術的または専門的に確認してください.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return '使用するプラットフォームで読みやすさ、アクセシビリティ、互換性を確認してください.';
+    return '結果は下書きとして使い、公開前に正確性、文脈、独自性、適用ルールを確認してください.';
+  }
+  if (localized.language === 'ko') {
+    if (note.includes('trademark') || note.includes('marca')) return '게시하거나 등록하기 전에 사용 가능성, 상표권, 상업적 사용을 확인하세요.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return '사용 가능성, 도달, 순위 또는 플랫폼 결과는 보장되지 않습니다. 사용 전 규칙과 관련성을 확인하세요.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return '보호된 이름, 알아볼 수 있는 캐릭터, 브랜드, 프랜차이즈 또는 실제 신원 복사를 피하세요.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return '실제 사이트에 적용하기 전에 기술적 또는 전문적으로 검토하세요.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return '텍스트를 사용할 플랫폼에서 가독성, 접근성, 호환성을 확인하세요.';
+    return '결과를 초안으로 사용하고 게시 전 정확성, 맥락, 독창성, 적용 규칙을 확인하세요.';
+  }
+  if (localized.language === 'ar') {
+    if (note.includes('trademark') || note.includes('marca')) return 'تحقق من التوفر وحقوق العلامة والاستخدام التجاري قبل النشر أو التسجيل.';
+    if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) return 'لا يوجد ضمان للتوفر أو الوصول أو الترتيب أو نتائج المنصة؛ راجع القواعد والملاءمة قبل الاستخدام.';
+    if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) return 'تجنب نسخ الأسماء المحمية أو الشخصيات المعروفة أو العلامات أو الامتيازات أو الهويات الحقيقية.';
+    if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) return 'راجع النتيجة تقنيا أو مهنيا قبل تطبيقها على موقع حقيقي.';
+    if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) return 'تحقق من الوضوح وإمكانية الوصول والتوافق في المنصة التي سيستخدم فيها النص.';
+    return 'استخدم النتيجة كمسودة وراجع الدقة والسياق والأصالة والقواعد المطبقة قبل النشر.';
+  }
+  return getSpanishSafetyNote(localized);
+}
+
+export function getSpanishSafetyNote(localized: LocalizedToolContent): string {
+  const note = localized.riskSafetyNote.toLowerCase();
+  if (note.includes('trademark') || note.includes('marca')) {
+    return 'Comprueba disponibilidad, derechos de marca y uso comercial antes de publicar o registrar el resultado.';
+  }
+  if (note.includes('platform') || note.includes('ranking') || note.includes('virality') || note.includes('followers')) {
+    return 'No garantiza disponibilidad, alcance, posicionamiento ni resultados en plataformas; verifica reglas y relevancia antes de usarlo.';
+  }
+  if (note.includes('ip') || note.includes('franchise') || note.includes('protected') || note.includes('celebrity')) {
+    return 'Evita copiar nombres protegidos, personajes reconocibles, marcas, franquicias o identidades reales.';
+  }
+  if (note.includes('legal') || note.includes('technical') || note.includes('robots') || note.includes('seo')) {
+    return 'Revisa el resultado con criterio técnico o profesional antes de implementarlo en un sitio real.';
+  }
+  if (note.includes('accessibility') || note.includes('compatibility') || note.includes('readability')) {
+    return 'Comprueba legibilidad, accesibilidad y compatibilidad en la plataforma donde vas a pegar el texto.';
+  }
+  if (note.includes('factual') || note.includes('compliance') || note.includes('policy') || note.includes('medical')) {
+    return 'Verifica hechos, políticas, cumplimiento y contexto antes de publicar o tomar decisiones.';
+  }
+  if (note.includes('sensitive')) {
+    return 'Evita introducir información sensible y revisa el contexto antes de usar el resultado.';
+  }
+  if (note.includes('offensive') || note.includes('misleading') || note.includes('deceptive')) {
+    return 'Evita usos ofensivos, excluyentes, engañosos o promesas que no puedas respaldar.';
+  }
+  return 'Usa el resultado como borrador y revisa exactitud, contexto, originalidad y reglas aplicables antes de publicarlo.';
+}
+
+const spanishUiLabelMap: Record<string, string> = {
+  'All Ideas': 'Todas las ideas',
+  'All Names': 'Todos los nombres',
+  'All Groups': 'Todos los grupos',
+  'Balanced': 'Equilibrado',
+  'Brand': 'Marca',
+  'Buyers / Reviewers': 'Compradores / revisores',
+  'Character': 'Personaje',
+  'Clean': 'Claro',
+  'Creative': 'Creativo',
+  'Educational': 'Educativo',
+  'Enabled': 'Activado',
+  'Friendly': 'Cercano',
+  'How-To': 'Cómo hacerlo',
+  'Best': 'Mejores opciones',
+  'Comparison': 'Comparación',
+  'Include Year': 'Incluir año',
+  'Intent Group': 'Grupo de intención',
+  'Idea Type': 'Tipo de idea',
+  'Name Group': 'Grupo de nombres',
+  'Fantasy Character': 'Personaje de fantasía',
+  'Kingdom': 'Reino',
+  'Elf': 'Elfo',
+  'Dragon': 'Dragón',
+  'Tavern': 'Taberna',
+  'Artifact': 'Artefacto',
+  'Epic': 'Épico',
+  'Mysterious': 'Misterioso',
+  'Elegant': 'Elegante',
+  'Search Intent': 'Intención de búsqueda',
+  'Article Length': 'Longitud del artículo',
+  'Informational': 'Informativo',
+  'Commercial': 'Comercial',
+  'Standard': 'Estándar',
+  'Long': 'Largo',
+  'Listicle': 'Lista',
+  'Long-Tail': 'Cola larga',
+  'Name Type': 'Tipo de nombre',
+  'Name Generators': 'Generadores de nombres',
+  'Text Generators': 'Generadores de texto',
+  'Writing Generators': 'Generadores de escritura',
+  'SEO Generators': 'Generadores SEO',
+  'Business Generators': 'Generadores para negocios',
+  'Creative Generators': 'Generadores creativos',
+  'AI Text & Writing Generators': 'Generadores de escritura y texto',
+  'Gaming & Fantasy Generators': 'Generadores de fantasia y juegos',
+  'Safety Note': 'Nota de seguridad',
+  'Standard Site': 'Sitio estándar',
+  'Output Section': 'Seccion de salida',
+  'Personal': 'Personal',
+  'Polished': 'Pulido',
+  'Professional': 'Profesional',
+  'Result Count': 'Cantidad de resultados',
+  'Review': 'Resena',
+  'Short': 'Corto',
+  'Social': 'Social',
+  'Style': 'Estilo',
+  'Tag Strategy': 'Estrategia de etiquetas',
+  'Tone': 'Tono',
+  'Tutorial': 'Tutorial',
+  'Unique': 'Unico',
+  'Video Format': 'Formato de video',
+  'Vlog': 'Vlog',
+  'converter': 'conversor',
+  'random combo': 'combinación aleatoria',
+  'template': 'plantilla',
+  'text transform': 'transformación de texto',
+  'utility': 'utilidad',
+  'visual': 'visual',
+};
+
+export function getSpanishUiLabel(label: string): string {
+  return polishSpanishText(spanishUiLabelMap[label] || label);
+}
+
+const frenchUiLabelMap: Record<string, string> = {
+  'Result Count': 'Nombre de résultats',
+  'Name Type': 'Type de nom',
+  'Name Style': 'Style du nom',
+  'Character Style': 'Style de personnage',
+  'Show Format': 'Format de l’émission',
+  'Video Format': 'Format vidéo',
+  'Tag Strategy': 'Stratégie de tags',
+  'Audience Fit': 'Public visé',
+  'Metadata Match': 'Cohérence des métadonnées',
+  'Tags Per Section': 'Tags par section',
+  'Draft Group': 'Groupe de brouillons',
+  'Italic Style': 'Style italique',
+  'Reverse Mode': 'Mode d’inversion',
+  'Preserve Lines': 'Conserver les lignes',
+  Focus: 'Priorité',
+  Mode: 'Mode',
+  Sentences: 'Phrases',
+  Length: 'Longueur',
+  'Reading WPM': 'Mots lus par minute',
+  'Speaking WPM': 'Mots parlés par minute',
+  'Keyword Frequency': 'Fréquence du mot-clé',
+  'Include Taglines': 'Inclure des baselines',
+  Purpose: 'Objectif',
+  Intro: 'Introduction',
+  Explainer: 'Explication',
+  Persuasive: 'Persuasif',
+  Product: 'Produit',
+  Academic: 'Académique',
+  Audience: 'Public',
+  General: 'Général',
+  Students: 'Étudiants',
+  Customers: 'Clients',
+  Professionals: 'Professionnels',
+  'Point of View': 'Point de vue',
+  'Third Person': 'Troisième personne',
+  'First Person': 'Première personne',
+  'Second Person': 'Deuxième personne',
+  Structure: 'Structure',
+  'Topic / Support / Close': 'Sujet / appui / conclusion',
+  'Problem / Solution': 'Problème / solution',
+  'Claim / Evidence': 'Affirmation / preuve',
+  'Compare / Contrast': 'Comparer / opposer',
+  'Include Outline': 'Inclure un plan',
+  'Prompt Group': 'Groupe de prompts',
+  'Story Seed': 'Départ d’histoire',
+  'Scene Starter': 'Départ de scène',
+  'Revision Challenge': 'Défi de révision',
+  Difficulty: 'Difficulté',
+  Beginner: 'Débutant',
+  Intermediate: 'Intermédiaire',
+  Advanced: 'Avancé',
+  Hopeful: 'Optimiste',
+  Mysterious: 'Mystérieux',
+  Tense: 'Tendu',
+  Reflective: 'Réflexif',
+  'Length Target': 'Longueur visée',
+  Scene: 'Scène',
+  Flash: 'Texte court',
+  Chapter: 'Chapitre',
+  Essay: 'Essai',
+  'Include First Line': 'Inclure une première ligne',
+  Tone: 'Ton',
+  Balanced: 'Équilibré',
+  Polished: 'Soigné',
+  Creative: 'Créatif',
+  Friendly: 'Accessible',
+  Enabled: 'Activé',
+  Brand: 'Marque',
+  Character: 'Personnage',
+  Clean: 'Clair',
+  Educational: 'Éducatif',
+  Professional: 'Professionnel',
+  Personal: 'Personnel',
+  Short: 'Court',
+  Long: 'Long',
+  Medium: 'Moyen',
+  Social: 'Social',
+  Style: 'Style',
+  'All Styles': 'Tous les styles',
+  'All Modes': 'Tous les modes',
+  'All Groups': 'Tous les groupes',
+  'All Ideas': 'Toutes les idées',
+  'All Text': 'Tout le texte',
+  Hero: 'Héros',
+  Villain: 'Antagoniste',
+  Modern: 'Moderne',
+  Fantasy: 'Fantasy',
+  Classic: 'Classique',
+  Tutorial: 'Tutoriel',
+  Review: 'Avis',
+  Vlog: 'Vlog',
+  Shorts: 'Formats courts',
+  Niche: 'Niche',
+  'Long-Tail': 'Longue traîne',
+  'General Viewers': 'Public général',
+  Beginners: 'Débutants',
+  'Advanced Viewers': 'Public avancé',
+  'Buyers / Reviewers': 'Acheteurs / critiques',
+  Creators: 'Créateurs',
+  'Title + Description': 'Titre + description',
+  'Thumbnail Promise': 'Promesse de miniature',
+  'Spoken Content': 'Contenu parlé',
+  'Channel Series': 'Série de chaîne',
+  'Core Tags': 'Tags principaux',
+  'Niche Tags': 'Tags de niche',
+  'Caption Support': 'Aide pour légende',
+  'Review Checklist': 'Liste de vérification',
+  'Safety Note': 'Note de sécurité',
+  Interview: 'Entretien',
+  'Solo Expert': 'Expert solo',
+  Narrative: 'Narratif',
+  'Niche News': 'Actualité de niche',
+  Brandable: 'Mémorisable',
+  'Simple Title Case': 'Casse de titre simple',
+  'Developer Cases': 'Formats développeur',
+  'Character Reverse': 'Inversion des caractères',
+  'Word Reverse': 'Inversion des mots',
+  'Upside Down': 'Tête en bas',
+  'Mirror Note': 'Texte miroir',
+  'Italic Serif': 'Italique avec empattement',
+  'Bold Italic': 'Gras italique',
+  Caption: 'Légende',
+  Fallback: 'Solution de secours',
+  Funny: 'Drôle',
+  'Writing Prompt': 'Idée d’écriture',
+  'Random Mix': 'Mélange aléatoire',
+  Simple: 'Simple',
+  utility: 'utilitaire',
+  converter: 'convertisseur',
+  template: 'modèle',
+  'random combo': 'combinaison aléatoire',
+  'text transform': 'transformation de texte',
+};
+
+const germanUiLabelMap: Record<string, string> = {
+  'Result Count': 'Anzahl der Ergebnisse',
+  'Name Type': 'Namenstyp',
+  'Name Style': 'Namensstil',
+  'Character Style': 'Figurenstil',
+  'Show Format': 'Sendungsformat',
+  'Video Format': 'Videoformat',
+  'Tag Strategy': 'Tag-Strategie',
+  'Audience Fit': 'Zielgruppe',
+  'Metadata Match': 'Metadaten-Abgleich',
+  'Tags Per Section': 'Tags pro Abschnitt',
+  'Draft Group': 'Entwurfsgruppe',
+  'Italic Style': 'Kursivstil',
+  'Reverse Mode': 'Umkehrmodus',
+  'Preserve Lines': 'Zeilen beibehalten',
+  Focus: 'Fokus',
+  Mode: 'Modus',
+  Sentences: 'Sätze',
+  Length: 'Länge',
+  'Reading WPM': 'Lesewörter pro Minute',
+  'Speaking WPM': 'Sprechwörter pro Minute',
+  'Keyword Frequency': 'Keyword-Häufigkeit',
+  'Include Taglines': 'Claims einschließen',
+  Purpose: 'Zweck',
+  Intro: 'Einleitung',
+  Explainer: 'Erklärung',
+  Persuasive: 'Überzeugend',
+  Product: 'Produkt',
+  Academic: 'Akademisch',
+  Audience: 'Publikum',
+  General: 'Allgemein',
+  Students: 'Studierende',
+  Customers: 'Kunden',
+  Professionals: 'Fachleute',
+  'Point of View': 'Erzählperspektive',
+  'Third Person': 'Dritte Person',
+  'First Person': 'Erste Person',
+  'Second Person': 'Zweite Person',
+  Structure: 'Struktur',
+  'Topic / Support / Close': 'Thema / Beleg / Abschluss',
+  'Problem / Solution': 'Problem / Lösung',
+  'Claim / Evidence': 'These / Beleg',
+  'Compare / Contrast': 'Vergleich / Gegensatz',
+  'Include Outline': 'Gliederung einschließen',
+  'Prompt Group': 'Prompt-Gruppe',
+  'Story Seed': 'Story-Idee',
+  'Scene Starter': 'Szenenanfang',
+  'Revision Challenge': 'Überarbeitungsaufgabe',
+  Difficulty: 'Schwierigkeit',
+  Beginner: 'Einsteiger',
+  Intermediate: 'Mittelstufe',
+  Advanced: 'Fortgeschritten',
+  Hopeful: 'Hoffnungsvoll',
+  Mysterious: 'Geheimnisvoll',
+  Tense: 'Spannungsvoll',
+  Reflective: 'Reflektierend',
+  'Length Target': 'Ziellänge',
+  Scene: 'Szene',
+  Flash: 'Kurztext',
+  Chapter: 'Kapitel',
+  Essay: 'Essay',
+  'Include First Line': 'Erste Zeile einschließen',
+  Tone: 'Ton',
+  Balanced: 'Ausgewogen',
+  Polished: 'Ausgearbeitet',
+  Creative: 'Kreativ',
+  Friendly: 'Freundlich',
+  Enabled: 'Aktiviert',
+  Brand: 'Marke',
+  Character: 'Figur',
+  Clean: 'Klar',
+  Educational: 'Lehrreich',
+  Professional: 'Professionell',
+  Personal: 'Persönlich',
+  Short: 'Kurz',
+  Long: 'Lang',
+  Medium: 'Mittel',
+  Social: 'Social',
+  Style: 'Stil',
+  'All Styles': 'Alle Stile',
+  'All Modes': 'Alle Modi',
+  'All Groups': 'Alle Gruppen',
+  'All Ideas': 'Alle Ideen',
+  'All Text': 'Gesamter Text',
+  Hero: 'Held',
+  Villain: 'Gegenspieler',
+  Modern: 'Modern',
+  Fantasy: 'Fantasy',
+  Classic: 'Klassisch',
+  Tutorial: 'Tutorial',
+  Review: 'Rezension',
+  Vlog: 'Vlog',
+  Shorts: 'Shorts',
+  Niche: 'Nische',
+  'Long-Tail': 'Longtail',
+  'General Viewers': 'Allgemeines Publikum',
+  Beginners: 'Einsteiger',
+  'Advanced Viewers': 'Fortgeschrittene',
+  'Buyers / Reviewers': 'Käufer / Reviewer',
+  Creators: 'Creator',
+  'Title + Description': 'Titel + Beschreibung',
+  'Thumbnail Promise': 'Thumbnail-Versprechen',
+  'Spoken Content': 'Gesprochener Inhalt',
+  'Channel Series': 'Kanalserie',
+  'Core Tags': 'Kern-Tags',
+  'Niche Tags': 'Nischen-Tags',
+  'Caption Support': 'Unterstützung für Captions',
+  'Review Checklist': 'Prüfliste',
+  'Safety Note': 'Sicherheitshinweis',
+  Interview: 'Interview',
+  'Solo Expert': 'Solo-Experte',
+  Narrative: 'Erzählformat',
+  'Niche News': 'Nischennachrichten',
+  Brandable: 'Markenfähig',
+  'Simple Title Case': 'Einfache Titelschreibung',
+  'Developer Cases': 'Entwickler-Schreibweisen',
+  'Character Reverse': 'Zeichen umkehren',
+  'Word Reverse': 'Wörter umkehren',
+  'Upside Down': 'Auf den Kopf gestellt',
+  'Mirror Note': 'Spiegeltext',
+  'Italic Serif': 'Kursive Serifenschrift',
+  'Bold Italic': 'Fett kursiv',
+  Caption: 'Caption',
+  Fallback: 'Fallback',
+  Funny: 'Lustig',
+  'Writing Prompt': 'Schreibimpuls',
+  'Random Mix': 'Zufallsmix',
+  Simple: 'Einfach',
+  utility: 'Dienstprogramm',
+  converter: 'Konverter',
+  template: 'Vorlage',
+  'random combo': 'Zufallskombination',
+  'text transform': 'Textumwandlung',
+};
+
+export function getLocalizedUiLabel(label: string, language: LocalizedLanguageCode): string {
+  if (language === 'fr') return polishFrenchText(frenchUiLabelMap[label] || label);
+  if (language === 'de') return polishGermanText(germanUiLabelMap[label] || label);
+  if (language !== 'es') return label;
+  return getSpanishUiLabel(label);
+}
+
+const spanishHubCopy: Record<string, { title: string; description: string }> = {
+  'name-generators': {
+    title: 'Generadores de nombres',
+    description: 'Explora generadores para nombres de personas, personajes, marcas, equipos, proyectos y mundos creativos.',
+  },
+  'text-generators': {
+    title: 'Generadores de texto',
+    description: 'Convierte, estiliza y revisa texto para publicaciones, perfiles, borradores y contenido rápido.',
+  },
+  'writing-generators': {
+    title: 'Generadores de escritura',
+    description: 'Crea esquemas, frases, párrafos e ideas de escritura que puedas revisar y adaptar.',
+  },
+  'seo-generators': {
+    title: 'Generadores SEO',
+    description: 'Prepara borradores de títulos, metadatos, etiquetas y contenido SEO sin prometer rankings.',
+  },
+  'business-generators': {
+    title: 'Generadores para negocios',
+    description: 'Busca ideas para nombres, productos, dominios, marcas y textos comerciales con revisión previa.',
+  },
+  'creative-generators': {
+    title: 'Generadores creativos',
+    description: 'Encuentra ideas para historias, mundos, nombres, prompts y proyectos creativos originales.',
+  },
+};
+
+export function getSpanishHubCopy(slug: string, fallbackTitle: string, fallbackDescription: string) {
+  return spanishHubCopy[slug] || { title: fallbackTitle, description: fallbackDescription };
+}
+
+const frenchHubCopy: Record<string, { title: string; description: string }> = {
+  'name-generators': { title: 'Générateurs de noms', description: 'Explorez des générateurs pour prénoms, personnages, marques, équipes, projets et univers créatifs.' },
+  'text-generators': { title: 'Générateurs de texte', description: 'Transformez, stylisez et relisez du texte pour publications, profils, brouillons et contenus rapides.' },
+  'writing-generators': { title: 'Générateurs d’écriture', description: 'Créez des plans, phrases, paragraphes et idées d’écriture à relire et adapter.' },
+  'seo-generators': { title: 'Générateurs SEO', description: 'Préparez des brouillons de titres, métadonnées, balises et contenus SEO sans promesse de classement.' },
+  'business-generators': { title: 'Générateurs pour entreprises', description: 'Trouvez des idées pour noms, produits, domaines, marques et textes commerciaux avec relecture.' },
+  'creative-generators': { title: 'Générateurs créatifs', description: 'Trouvez des idées pour histoires, mondes, noms, prompts et projets créatifs originaux.' },
+};
+
+const germanHubCopy: Record<string, { title: string; description: string }> = {
+  'name-generators': { title: 'Namensgeneratoren', description: 'Entdecke Generatoren für Namen, Figuren, Marken, Teams, Projekte und kreative Welten.' },
+  'text-generators': { title: 'Textgeneratoren', description: 'Wandle, gestalte und prüfe Text für Beiträge, Profile, Entwürfe und schnelle Inhalte.' },
+  'writing-generators': { title: 'Schreibgeneratoren', description: 'Erstelle Gliederungen, Sätze, Absätze und Schreibideen, die du prüfen und anpassen kannst.' },
+  'seo-generators': { title: 'SEO-Generatoren', description: 'Bereite Entwürfe für Titel, Metadaten, Tags und SEO-Inhalte vor, ohne Rankings zu versprechen.' },
+  'business-generators': { title: 'Business-Generatoren', description: 'Finde Ideen für Namen, Produkte, Domains, Marken und Verkaufstexte mit anschließender Prüfung.' },
+  'creative-generators': { title: 'Kreative Generatoren', description: 'Entdecke Ideen für Geschichten, Welten, Namen, Prompts und originelle kreative Projekte.' },
+};
+
+const portugueseHubCopy: Record<string, { title: string; description: string }> = {
+  'name-generators': { title: 'Geradores de nomes', description: 'Explore geradores para nomes, personagens, marcas, equipes, projetos e mundos criativos.' },
+  'text-generators': { title: 'Geradores de texto', description: 'Transforme, estilize e revise texto para publicacoes, perfis, rascunhos e conteudos rapidos.' },
+  'writing-generators': { title: 'Geradores de escrita', description: 'Crie estruturas, frases, paragrafos e ideias de escrita para revisar e adaptar.' },
+  'seo-generators': { title: 'Geradores SEO', description: 'Prepare rascunhos de títulos, metadados, tags e conteudo SEO sem prometer rankings.' },
+  'business-generators': { title: 'Geradores para negocios', description: 'Encontre ideias para nomes, produtos, dominios, marcas e textos comerciais com revisao.' },
+  'creative-generators': { title: 'Geradores criativos', description: 'Encontre ideias para historias, mundos, nomes, prompts e projetos criativos originais.' },
+};
+
+const italianHubCopy: Record<string, { title: string; description: string }> = {
+  'name-generators': { title: 'Generatori di nomi', description: 'Esplora generatori per nomi, personaggi, brand, squadre, progetti e mondi creativi.' },
+  'text-generators': { title: 'Generatori di testo', description: 'Trasforma, stilizza e rivedi testo per post, profili, bozze e contenuti rapidi.' },
+  'writing-generators': { title: 'Generatori di scrittura', description: 'Crea scalette, frasi, paragrafi e idee di scrittura da rivedere e adattare.' },
+  'seo-generators': { title: 'Generatori SEO', description: 'Prepara bozze di titoli, metadati, tag e contenuti SEO senza promettere ranking.' },
+  'business-generators': { title: 'Generatori business', description: 'Trova idee per nomi, prodotti, domini, brand e testi commerciali con revisione.' },
+  'creative-generators': { title: 'Generatori creativi', description: 'Trova idee per storie, mondi, nomi, prompt e progetti creativi originali.' },
+};
+
+const polishHubCopy: Record<string, { title: string; description: string }> = {
+  'name-generators': { title: 'Generatory nazw', description: 'Przegladaj generatory nazw, postaci, marek, zespolow, projektow i kreatywnych swiatow.' },
+  'text-generators': { title: 'Generatory tekstu', description: 'Przeksztalcaj, stylizuj i sprawdzaj tekst do postow, profili, szkicow i szybkich tresci.' },
+  'writing-generators': { title: 'Generatory pisania', description: 'Tworz konspekty, zdania, akapity i pomysly pisarskie do sprawdzenia i adaptacji.' },
+  'seo-generators': { title: 'Generatory SEO', description: 'Przygotuj szkice tytulow, metadanych, tagow i tresci SEO bez obietnic rankingow.' },
+  'business-generators': { title: 'Generatory biznesowe', description: 'Znajdz pomysly na nazwy, produkty, domeny, marki i teksty komercyjne z kontrola.' },
+  'creative-generators': { title: 'Generatory kreatywne', description: 'Znajdz pomysly na historie, swiaty, nazwy, prompty i oryginalne projekty kreatywne.' },
+};
+
+export function getLocalizedHubCopy(slug: string, fallbackTitle: string, fallbackDescription: string, language: LocalizedLanguageCode) {
+  if (language === 'fr') return frenchHubCopy[slug] || { title: fallbackTitle, description: fallbackDescription };
+  if (language === 'de') return germanHubCopy[slug] || { title: fallbackTitle, description: fallbackDescription };
+  if (language === 'pt') return portugueseHubCopy[slug] || { title: fallbackTitle, description: fallbackDescription };
+  if (language === 'it') return italianHubCopy[slug] || { title: fallbackTitle, description: fallbackDescription };
+  if (language === 'pl') return polishHubCopy[slug] || { title: fallbackTitle, description: fallbackDescription };
+  if (language === 'sv' || language === 'ms' || language === 'bg' || language === 'hi' || language === 'bn' || language === 'ja' || language === 'ko' || language === 'ar') return { title: fallbackTitle, description: fallbackDescription };
+  return getSpanishHubCopy(slug, fallbackTitle, fallbackDescription);
+}

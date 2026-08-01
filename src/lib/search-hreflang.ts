@@ -1,5 +1,5 @@
 import { resolveCanonicalUrl } from './search-canonical';
-import { getToolLanguageAlternates, localizedPilotTools } from '../data/localization';
+import { getToolLanguageAlternates, getLocalizedToolBySlug, type SupportedLanguageCode } from '../data/localization';
 import { tools } from '../data/tools';
 import { noindexToolSlugs } from '../data/tool-page-data';
 
@@ -27,9 +27,7 @@ export function getHreflangAlternates(pathname: string): HreflangAlternate[] {
     const indexableToolsSlugs = new Set(tools.filter(t => !noindexToolSlugs.has(t.slug)).map(t => t.slug));
     
     if (isLocalized) {
-      const entry = localizedPilotTools.find(
-        (t) => t.language === lang && t.localizedSlug === slug
-      );
+      const entry = getLocalizedToolBySlug(slug, lang as SupportedLanguageCode);
       if (entry && indexableToolsSlugs.has(entry.canonicalToolId)) {
         isToolDetail = true;
         toolSlug = entry.canonicalToolId;

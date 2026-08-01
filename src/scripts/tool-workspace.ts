@@ -1,4 +1,5 @@
 import { trackGeneratorOpen, trackGenerate, trackCopy, trackDownload, trackShare, trackOptionChange } from '../lib/analytics';
+import { copyText as performCopyText } from '../lib/clipboard';
 import qrcode from './qrcodegen';
 import { analyzePassword, generateDicewarePassphrase, removeAmbiguousChars } from './workspace/category-engines/passwordEngine';
 import { calculateInvoiceTotals, renderInvoiceA4HTML } from './workspace/category-engines/invoiceEngine';
@@ -510,27 +511,8 @@ function updateUndoRedoButtons() {
 }
 
 async function copyText(value: string, trigger?: HTMLElement | null): Promise<void> {
-  try {
-    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
-      await navigator.clipboard.writeText(value);
-    } else {
-      throw new Error('Clipboard API unavailable');
-    }
-  } catch (err) {
-    const textarea = document.createElement('textarea');
-    textarea.value = value;
-    textarea.style.position = 'fixed';
-    textarea.style.opacity = '0';
-    document.body.appendChild(textarea);
-    textarea.select();
-    try {
-      document.execCommand('copy');
-    } catch (e) {
-      console.error('Fallback copy failed:', e);
-    }
-    document.body.removeChild(textarea);
-  }
-  if (!trigger) return;
+  const success = await performCopyText(value);
+  if (!success || !trigger) return;
   const original = trigger.textContent || 'Copy';
   trigger.textContent = 'Copied!';
   trigger.classList.add('copied');
@@ -9020,14 +9002,16 @@ redoBtn?.addEventListener('click', () => {
 shareBtn?.addEventListener('click', async () => {
   try {
     trackShare(toolSlug);
-    await navigator.clipboard.writeText(window.location.href);
-    const origText = shareBtn.innerHTML;
-    shareBtn.innerHTML = '✅ Copied Link!';
-    shareBtn.classList.add('copied');
-    setTimeout(() => {
-      shareBtn.innerHTML = origText;
-      shareBtn.classList.remove('copied');
-    }, 2000);
+    const success = await performCopyText(window.location.href);
+    if (success) {
+      const origText = shareBtn.innerHTML;
+      shareBtn.innerHTML = '✅ Copied Link!';
+      shareBtn.classList.add('copied');
+      setTimeout(() => {
+        shareBtn.innerHTML = origText;
+        shareBtn.classList.remove('copied');
+      }, 2000);
+    }
   } catch (err) {
     console.error('Failed to copy link: ', err);
   }

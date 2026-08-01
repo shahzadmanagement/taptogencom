@@ -1,0 +1,80 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Offline Mode — TapToGen"
+  description="You are currently offline. TapToGen tools run locally in your browser and remain accessible offline."
+  noindex={true}
+>
+  <style>
+    .offline-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      padding: 40px 20px;
+    }
+    .offline-card {
+      background: var(--color-bg-secondary, rgba(30, 41, 59, 0.7));
+      border: 1px solid var(--color-border, rgba(255, 255, 255, 0.12));
+      border-radius: 20px;
+      padding: 48px 36px;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .offline-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .offline-icon {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+    .offline-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--color-text-primary, #f8fafc);
+    }
+    .offline-desc {
+      color: var(--color-text-secondary, #94a3b8);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .offline-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+
+  <div class="offline-container">
+    <div class="offline-card">
+      <span class="offline-badge">⚡ Offline Mode Active</span>
+      <div class="offline-icon">📡</div>
+      <h1 class="offline-title">You are currently offline</h1>
+      <p class="offline-desc">
+        TapToGen tools operate 100% locally in your browser memory.
+        All previously visited generator tools and font utilities remain fully functional without an active network connection.
+      </p>
+      <div class="offline-actions">
+        <button class="btn btn-primary" onclick="window.location.reload()">Retry Connection</button>
+        <a href="/" class="btn btn-outline">Return Home</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

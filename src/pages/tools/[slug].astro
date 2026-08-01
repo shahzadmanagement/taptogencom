@@ -16,6 +16,16 @@ import IntroSection from '@/components/IntroSection.astro';
 import ExamplesSection from '@/components/ExamplesSection.astro';
 import FaqSection from '@/components/FaqSection.astro';
 import RelatedSection from '@/components/RelatedSection.astro';
+import AuthorByline from '@/components/AuthorByline.astro';
+import PresetExamplesSection from '@/components/PresetExamplesSection.astro';
+import ExpertInsightSection from '@/components/ExpertInsightSection.astro';
+import ComparisonSection from '@/components/ComparisonSection.astro';
+import {
+  getUniqueFaqsForTool,
+  getPresetsForTool,
+  getExpertInsightsForTool,
+  getComparisonBlockForTool
+} from '@/lib/helpful-content-engine';
 import { getInternalLinks } from '@/lib/search-internal-links';
 
 export const prerender = true;
@@ -48,6 +58,16 @@ const toolSchema = {
   "description": tool.description.replace(/<[^>]*>/g, ''), // Strip HTML tags for JSON schema validity
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
+  "author": {
+    "@type": "Organization",
+    "name": "TapToGen Editorial Team",
+    "url": "https://taptogen.com/about-us/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TapToGen",
+    "url": "https://taptogen.com/"
+  },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "browserRequirements": "Requires JavaScript"
 };
@@ -84,11 +104,15 @@ const extraFaqs = [
   { q: `Do I need to sign up for an account?`, a: `No sign-up is required. You can start using the generator immediately without entering an email or creating a profile.` }
 ];
 
-const effectiveFaqItems = [...baseFaqs];
-for (const faq of extraFaqs) {
-  if (effectiveFaqItems.length >= 10) break;
-  effectiveFaqItems.push(faq);
+const uniqueFaqs = getUniqueFaqsForTool(tool, 'en');
+const effectiveFaqItems = uniqueFaqs.map(f => ({ q: f.q, a: f.a }));
+if (effectiveFaqItems.length >= 10) {
+  effectiveFaqItems.splice(10);
 }
+
+const presets = getPresetsForTool(tool);
+const expertInsight = getExpertInsightsForTool(tool);
+const comparisonBlock = getComparisonBlockForTool(tool);
 
 const faqSchema = effectiveFaqItems.length > 0 ? {
   "@context": "https://schema.org",
@@ -416,6 +440,12 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, 'en', tool.name);
           <p style="margin-bottom: 16px;">Ready to optimize your workflow? Try {tool.name} now. Simply scroll back up to the interactive console, enter your details, and tap generate to get started immediately!</p>
           <a href="#" class="btn btn-primary" style="display: inline-block; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; color: #fff; background: var(--color-primary);">Go to Generator</a>
         </section>
+
+        <PresetExamplesSection presets={presets} toolName={tool.name} />
+        <ExpertInsightSection insight={expertInsight} toolName={tool.name} />
+        <ComparisonSection comparison={comparisonBlock} />
+
+        <AuthorByline />
 
         <FaqSection faqTitle="Frequently Asked Questions" faqItems={effectiveFaqItems.map(f => ({ question: f.q, answer: f.a }))} />
 

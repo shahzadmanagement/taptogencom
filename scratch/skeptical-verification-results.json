@@ -1,0 +1,7 @@
+{
+  "defectCount": 2,
+  "auditLog": [
+    "C9 DEFECT: Generated HTML dist/es/tools/letras-bonitas/index.html missing rendered AuthorByline text",
+    "C9 DEFECT: Generated HTML dist/de/tools/character-backstory-ersteller/index.html missing rendered AuthorByline text"
+  ]
+}

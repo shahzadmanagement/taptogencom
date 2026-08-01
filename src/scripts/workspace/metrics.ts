@@ -12,7 +12,8 @@ export const platformLimits: Record<string, { name: string; max: number }> = {
 };
 
 export function updateMetrics(text: string, config: ToolConfig['counters'], toolSlug: string = '') {
-  const isFr = typeof document !== 'undefined' && document.documentElement?.lang === 'fr';
+  if (typeof document === 'undefined') return;
+  const isFr = document.documentElement?.lang === 'fr';
 
   if (config.chars) {
     const el = document.getElementById('char-counter');

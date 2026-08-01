@@ -1,0 +1,52 @@
+---
+import type { ExpertInsight } from '@/lib/helpful-content-engine';
+
+interface Props {
+  insight: ExpertInsight;
+  toolName: string;
+}
+
+const { insight, toolName } = Astro.props;
+---
+
+{insight && (
+  <section class="content-card expert-insight-section" style="margin-top: 2rem; margin-bottom: 2rem;">
+    <h2 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-text-primary);">
+      Expert Insights & Technical Notes for {toolName}
+    </h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+      <div style="padding: 1rem; border-radius: 8px; background: rgba(99, 102, 241, 0.05); border: 1px solid rgba(99, 102, 241, 0.15);">
+        <h3 style="font-size: 1rem; font-weight: 600; color: #818cf8; margin-bottom: 0.5rem;">💡 Professional Tips</h3>
+        <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.875rem; color: rgba(255,255,255,0.8);">
+          {insight.professionalTips.map(tip => (
+            <li style="margin-bottom: 0.4rem;">{tip}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div style="padding: 1rem; border-radius: 8px; background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.15);">
+        <h3 style="font-size: 1rem; font-weight: 600; color: #f87171; margin-bottom: 0.5rem;">⚠️ Common Mistakes</h3>
+        <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.875rem; color: rgba(255,255,255,0.8);">
+          {insight.commonMistakes.map(mistake => (
+            <li style="margin-bottom: 0.4rem;">{mistake}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 1.25rem; padding: 1rem; border-radius: 8px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+      <div>
+        <strong style="color: #e2e8f0; display: block; margin-bottom: 0.2rem;">🔒 Data Privacy:</strong>
+        {insight.privacyNotes}
+      </div>
+      <div>
+        <strong style="color: #e2e8f0; display: block; margin-bottom: 0.2rem;">⚡ Performance & Limitations:</strong>
+        {insight.technicalLimitations}
+      </div>
+      <div>
+        <strong style="color: #e2e8f0; display: block; margin-bottom: 0.2rem;">📱 Browser Compatibility:</strong>
+        {insight.browserCompatibility}
+      </div>
+    </div>
+  </section>
+)}

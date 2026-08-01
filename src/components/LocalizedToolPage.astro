@@ -30,11 +30,21 @@ import IntroSection from '@/components/IntroSection.astro';
 import FaqSection from '@/components/FaqSection.astro';
 import RelatedSection from '@/components/RelatedSection.astro';
 import MobileActionBar from '@/components/MobileActionBar.astro';
+import AuthorByline from '@/components/AuthorByline.astro';
+import PresetExamplesSection from '@/components/PresetExamplesSection.astro';
+import ExpertInsightSection from '@/components/ExpertInsightSection.astro';
+import ComparisonSection from '@/components/ComparisonSection.astro';
+import {
+  getUniqueFaqsForTool,
+  getPresetsForTool,
+  getExpertInsightsForTool,
+  getComparisonBlockForTool
+} from '@/lib/helpful-content-engine';
 
 interface Props {
   tool: Tool;
   localized: LocalizedToolContent;
-  language: Extract<LocalizedLanguageCode, 'pt' | 'it' | 'pl' | 'ru' | 'tr' | 'id' | 'sv' | 'ms' | 'bg' | 'hi' | 'bn' | 'ja' | 'ko' | 'ar'>;
+  language: Extract<LocalizedLanguageCode, 'es' | 'pt' | 'it' | 'pl' | 'ru' | 'tr' | 'id' | 'sv' | 'ms' | 'bg' | 'hi' | 'bn' | 'ja' | 'ko' | 'ar' | 'fr' | 'de' | 'nl'>;
 }
 
 interface LocalizedUiText {
@@ -1132,6 +1142,10 @@ const localizedRoute = getLanguageSwitchRoute(slug, language);
 const alternates = getToolLanguageAlternates(slug);
 const pass20Controls = pass20ControlMap[slug];
 
+const presets = getPresetsForTool(tool);
+const expertInsight = getExpertInsightsForTool(tool);
+const comparisonBlock = getComparisonBlockForTool(tool);
+
 const toolSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
@@ -1140,6 +1154,16 @@ const toolSchema = {
   description: copy.metaDescription,
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
+  author: {
+    '@type': 'Organization',
+    name: 'TapToGen Editorial Team',
+    url: 'https://taptogen.com/about-us/'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'TapToGen',
+    url: 'https://taptogen.com/'
+  },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   browserRequirements: 'Requires JavaScript',
   inLanguage: language,
@@ -1415,6 +1439,12 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, language, copy.h1);
             {text.whyItems.map((item) => <li><strong>{item[0]}</strong> - {item[1]}</li>)}
           </ul>
         </section>
+
+        <PresetExamplesSection presets={presets} toolName={copy.h1} />
+        <ExpertInsightSection insight={expertInsight} toolName={copy.h1} />
+        <ComparisonSection comparison={comparisonBlock} />
+
+        <AuthorByline />
 
         <FaqSection faqTitle={text.faq} faqItems={faqItems.map(f => ({ question: f.q, answer: f.a }))} />
       </div>

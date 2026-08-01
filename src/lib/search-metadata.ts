@@ -3,7 +3,7 @@ import { tools } from '../data/tools';
 import { categories } from '../data/categories';
 import { toolHubs } from '../data/hubs';
 import { noindexToolSlugs } from '../data/tool-page-data';
-import { localizedPilotTools } from '../data/localization';
+import { getLocalizedToolBySlug, type SupportedLanguageCode } from '../data/localization';
 import { resolveCanonicalUrl } from './search-canonical';
 
 export interface MetadataOptions {
@@ -138,9 +138,7 @@ export function buildMetadata(options: MetadataOptions): PageMetadata {
   } else if (isToolDetail) {
     const slug = pathParts[pathParts.length - 1];
     if (isLocalized) {
-      const entry = localizedPilotTools.find(
-        (t) => t.language === lang && t.localizedSlug === slug
-      );
+      const entry = getLocalizedToolBySlug(slug, lang as SupportedLanguageCode);
       if (entry) {
         title = entry.metaTitle;
         description = entry.metaDescription;
@@ -165,6 +163,9 @@ export function buildMetadata(options: MetadataOptions): PageMetadata {
 
   // Brand suffix if needed (excluding Home page for length constraints)
   if (!isHome && !title.includes('TapToGen')) {
+    if (title.length > 48) {
+      title = title.slice(0, 45).trim() + '...';
+    }
     title = `${title} — TapToGen`;
   }
 

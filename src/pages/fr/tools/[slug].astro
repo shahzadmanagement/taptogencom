@@ -1,5 +1,15 @@
 ---
 import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import AuthorByline from '@/components/AuthorByline.astro';
+import PresetExamplesSection from '@/components/PresetExamplesSection.astro';
+import ExpertInsightSection from '@/components/ExpertInsightSection.astro';
+import ComparisonSection from '@/components/ComparisonSection.astro';
+import {
+  getUniqueFaqsForTool,
+  getPresetsForTool,
+  getExpertInsightsForTool,
+  getComparisonBlockForTool
+} from '@/lib/helpful-content-engine';
 import MobileActionBar from '@/components/MobileActionBar.astro';
 import { getRelatedTools, getToolBySlug, type Tool } from '@/data/tools';
 import { noindexToolSlugs, pass20ControlMap } from '@/data/tool-page-data';
@@ -42,6 +52,9 @@ interface Props {
 }
 
 const { tool, localized } = Astro.props;
+const presets = getPresetsForTool(tool);
+const expertInsight = getExpertInsightsForTool(tool);
+const comparisonBlock = getComparisonBlockForTool(tool);
 const slug = tool.slug;
 const locale: string = 'fr';
 
@@ -72,6 +85,16 @@ const toolSchema = {
   "description": copy.metaDescription,
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
+  "author": {
+    "@type": "Organization",
+    "name": "TapToGen Editorial Team",
+    "url": "https://taptogen.com/about-us/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TapToGen",
+    "url": "https://taptogen.com/"
+  },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "browserRequirements": "Requires JavaScript",
   "inLanguage": "fr"
@@ -246,6 +269,12 @@ const pass20Controls = pass20ControlMap[slug];
           </div>
           <p>{copy.intro}</p>
         </section>
+
+        <PresetExamplesSection presets={presets} toolName={tool.name} />
+        <ExpertInsightSection insight={expertInsight} toolName={tool.name} />
+        <ComparisonSection comparison={comparisonBlock} />
+
+        <AuthorByline />
 
         <section class="content-card">
           <h2>Principaux Avantages</h2>

@@ -1,0 +1,2736 @@
+{
+  "sampledCount": 260,
+  "issues": [
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "fancy-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "username-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "business-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "youtube-tag-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "meta-tag-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "bold-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "cursive-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "glitch-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "lorem-ipsum-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "fantasy-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "text-case-converter"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "team-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "robots-txt-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "word-counter"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "uuid-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "random-number-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "small-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "italic-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "strikethrough-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "underline-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "vaporwave-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "reverse-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "unicode-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "domain-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "product-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "baby-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "middle-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "last-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "discord-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "clan-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "band-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "superhero-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "rap-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "song-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "paragraph-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "sentence-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "blog-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "pirate-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "medieval-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "hreflang-tag-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "schema-tag-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "slug-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "hash-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "json-formatter"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "coin-flip"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "dice-roller"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "color-palette-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "town-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "kingdom-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "dragon-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "wolf-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "demon-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "elf-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "podcast-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "nickname-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "hashtag-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "etsy-tag-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "writing-prompt-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "text-to-binary-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "morse-code-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "anime-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "qr-code-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "dnd-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "orc-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "witch-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "alien-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "vampire-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "fairy-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "goblin-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "character-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "story-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "twitch-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "random-phrase-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "special-character-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "ascii-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "creepy-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "gaming-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "guild-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "planet-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "island-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "shop-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "cafe-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "project-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "stage-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "wrestling-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "cool-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "old-english-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "uwu-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "leet-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "random-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "discord-timestamp-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "canonical-tag-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "utm-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "gibberish-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "couple-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "dwarf-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "tiefling-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "school-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "street-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "book-club-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "seo-title-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "pinterest-tag-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "soundcloud-tag-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "error-message-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "cipher-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "repeat-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "magic-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "angel-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "tavern-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "dungeon-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "cat-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "horse-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "snapchat-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "bio-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "slogan-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "wifi-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "color-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "hex-color-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "rgb-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "ai-prompt-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "midjourney-prompt-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "passphrase-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "open-graph-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "css-button-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "box-shadow-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "border-radius-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "regex-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "cron-expression-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "random-letter-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "random-question-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "truth-or-dare-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "would-you-rather-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "joke-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "compliment-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "email-signature-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "gradient-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "font-pairing-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "blog-outline-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "cold-email-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "cover-letter-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "resume-summary-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "ad-copy-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "call-to-action-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "product-description-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "random-emoji-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "random-country-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "random-date-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "random-choice-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "game-idea-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "rpg-character-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "npc-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "quest-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "story-plot-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "riddle-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "icebreaker-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "product-title-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "sku-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "testimonial-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "keyword-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "faq-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "coupon-code-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "barcode-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "meeting-agenda-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "citation-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "headline-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "meme-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "startup-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "photography-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "art-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "avatar-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "video-game-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "text-summary-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "typography-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "wordart-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "social-media-post-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "email-subject-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "drag-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "gamertag-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "dragonborn-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "email-name-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "synonym-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "footnote-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "all-caps-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "lowercase-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "corporate-speak-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "random-word-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "dialogue-tag-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "name-tag-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "graffiti-text-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "tag-cloud-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "blog-tag-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "random-height-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "essay-title-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "stable-diffusion-prompt-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "character-prompt-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "content-brief-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "press-release-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "author-bio-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "viral-hook-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "content-calendar-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "tagline-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "text-shadow-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "css-grid-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "flexbox-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "html-table-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "dummy-data-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "raffle-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "giveaway-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "character-backstory-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "worldbuilding-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "quiz-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "thesis-statement-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "landing-page-copy-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "json-schema-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "typescript-type-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "sql-query-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "htaccess-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "pwa-manifest-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "form-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "random-id-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "flashcard-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "study-plan-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Missing Examples",
+      "severity": "MEDIUM",
+      "affectedTools": [
+        "lesson-plan-generator"
+      ],
+      "evidence": "Tool registry lacks explicit preset input/output example pairs in 'examples' array.",
+      "whyGoogleDislikesIt": "Utility tools without concrete input/output examples increase user friction and fail to satisfy transactional search intent.",
+      "estimatedSeoImpact": "Lower user engagement signals and higher bounce rate.",
+      "exactPriority": "P2"
+    },
+    {
+      "category": "Duplicate FAQs",
+      "severity": "HIGH",
+      "affectedTools": [
+        "business-name-generator",
+        "domain-name-generator",
+        "product-name-generator",
+        "shop-name-generator",
+        "cafe-name-generator",
+        "project-name-generator",
+        "slogan-generator",
+        "email-signature-generator",
+        "product-title-generator",
+        "sku-generator",
+        "coupon-code-generator",
+        "meeting-agenda-generator",
+        "startup-name-generator",
+        "photography-name-generator",
+        "email-name-generator",
+        "tagline-generator"
+      ],
+      "evidence": "Identical FAQ question repeated across 16 tools: \"Can I customize the generated business content for my industry?\"",
+      "whyGoogleDislikesIt": "Duplicated FAQ questions dilute page-level keyword intent and trigger template spam warnings.",
+      "estimatedSeoImpact": "Suppression of FAQPage rich snippets in Search Console.",
+      "exactPriority": "P1"
+    },
+    {
+      "category": "Duplicate FAQs",
+      "severity": "HIGH",
+      "affectedTools": [
+        "youtube-tag-generator",
+        "hashtag-generator",
+        "pinterest-tag-generator",
+        "soundcloud-tag-generator",
+        "bio-generator",
+        "social-media-post-generator",
+        "author-bio-generator"
+      ],
+      "evidence": "Identical FAQ question repeated across 7 tools: \"Can I copy and paste the generated text directly onto mobile apps?\"",
+      "whyGoogleDislikesIt": "Duplicated FAQ questions dilute page-level keyword intent and trigger template spam warnings.",
+      "estimatedSeoImpact": "Suppression of FAQPage rich snippets in Search Console.",
+      "exactPriority": "P1"
+    },
+    {
+      "category": "Duplicate FAQs",
+      "severity": "HIGH",
+      "affectedTools": [
+        "youtube-tag-generator",
+        "hashtag-generator",
+        "pinterest-tag-generator",
+        "soundcloud-tag-generator",
+        "bio-generator",
+        "social-media-post-generator",
+        "author-bio-generator"
+      ],
+      "evidence": "Identical FAQ question repeated across 7 tools: \"How do I optimize the generated content for higher engagement?\"",
+      "whyGoogleDislikesIt": "Duplicated FAQ questions dilute page-level keyword intent and trigger template spam warnings.",
+      "estimatedSeoImpact": "Suppression of FAQPage rich snippets in Search Console.",
+      "exactPriority": "P1"
+    },
+    {
+      "category": "Duplicate FAQs",
+      "severity": "HIGH",
+      "affectedTools": [
+        "bold-text-generator",
+        "cursive-text-generator",
+        "glitch-text-generator",
+        "small-text-generator",
+        "italic-text-generator",
+        "strikethrough-text-generator",
+        "underline-text-generator",
+        "vaporwave-text-generator",
+        "reverse-text-generator",
+        "unicode-text-generator",
+        "special-character-generator",
+        "ascii-text-generator",
+        "creepy-text-generator",
+        "cool-text-generator",
+        "old-english-text-generator",
+        "uwu-text-generator",
+        "leet-text-generator",
+        "typography-generator",
+        "wordart-generator",
+        "all-caps-generator",
+        "lowercase-generator",
+        "graffiti-text-generator"
+      ],
+      "evidence": "Identical FAQ question repeated across 22 tools: \"Why does styled Unicode text look slightly different on some devices?\"",
+      "whyGoogleDislikesIt": "Duplicated FAQ questions dilute page-level keyword intent and trigger template spam warnings.",
+      "estimatedSeoImpact": "Suppression of FAQPage rich snippets in Search Console.",
+      "exactPriority": "P1"
+    },
+    {
+      "category": "Duplicate FAQs",
+      "severity": "HIGH",
+      "affectedTools": [
+        "bold-text-generator",
+        "cursive-text-generator",
+        "glitch-text-generator",
+        "small-text-generator",
+        "italic-text-generator",
+        "strikethrough-text-generator",
+        "underline-text-generator",
+        "vaporwave-text-generator",
+        "reverse-text-generator",
+        "unicode-text-generator",
+        "special-character-generator",
+        "ascii-text-generator",
+        "creepy-text-generator",
+        "cool-text-generator",
+        "old-english-text-generator",
+        "uwu-text-generator",
+        "leet-text-generator",
+        "typography-generator",
+        "wordart-generator",
+        "all-caps-generator",
+        "lowercase-generator",
+        "graffiti-text-generator"
+      ],
+      "evidence": "Identical FAQ question repeated across 22 tools: \"Are there any character limits or fees?\"",
+      "whyGoogleDislikesIt": "Duplicated FAQ questions dilute page-level keyword intent and trigger template spam warnings.",
+      "estimatedSeoImpact": "Suppression of FAQPage rich snippets in Search Console.",
+      "exactPriority": "P1"
+    },
+    {
+      "category": "Duplicate FAQs",
+      "severity": "HIGH",
+      "affectedTools": [
+        "lorem-ipsum-generator",
+        "text-case-converter",
+        "word-counter",
+        "qr-code-text-generator",
+        "repeat-text-generator",
+        "passphrase-generator",
+        "text-summary-generator",
+        "name-tag-generator"
+      ],
+      "evidence": "Identical FAQ question repeated across 8 tools: \"Can I copy or export the generated output for professional use?\"",
+      "whyGoogleDislikesIt": "Duplicated FAQ questions dilute page-level keyword intent and trigger template spam warnings.",
+      "estimatedSeoImpact": "Suppression of FAQPage rich snippets in Search Console.",
+      "exactPriority": "P1"
+    },
+    {
+      "category": "Duplicate FAQs",
+      "severity": "HIGH",
+      "affectedTools": [
+        "uuid-generator",
+        "slug-generator",
+        "hash-generator",
+        "json-formatter",
+        "color-palette-generator",
+        "text-to-binary-generator",
+        "morse-code-generator",
+        "discord-timestamp-generator",
+        "error-message-generator",
+        "cipher-generator",
+        "color-name-generator",
+        "hex-color-generator",
+        "rgb-generator",
+        "css-button-generator",
+        "box-shadow-generator",
+        "border-radius-generator",
+        "regex-generator",
+        "cron-expression-generator",
+        "gradient-generator",
+        "font-pairing-generator",
+        "barcode-generator",
+        "text-shadow-generator",
+        "css-grid-generator",
+        "flexbox-generator",
+        "html-table-generator",
+        "dummy-data-generator",
+        "json-schema-generator",
+        "typescript-type-generator",
+        "sql-query-generator",
+        "htaccess-generator",
+        "pwa-manifest-generator",
+        "form-generator",
+        "random-id-generator"
+      ],
+      "evidence": "Identical FAQ question repeated across 33 tools: \"How do I test and integrate the output into my application?\"",
+      "whyGoogleDislikesIt": "Duplicated FAQ questions dilute page-level keyword intent and trigger template spam warnings.",
+      "estimatedSeoImpact": "Suppression of FAQPage rich snippets in Search Console.",
+      "exactPriority": "P1"
+    },
+    {
+      "category": "Duplicate FAQs",
+      "severity": "HIGH",
+      "affectedTools": [
+        "paragraph-generator",
+        "sentence-generator",
+        "blog-name-generator",
+        "writing-prompt-generator",
+        "ai-prompt-generator",
+        "midjourney-prompt-generator",
+        "blog-outline-generator",
+        "cold-email-generator",
+        "cover-letter-generator",
+        "resume-summary-generator",
+        "ad-copy-generator",
+        "call-to-action-generator",
+        "product-description-generator",
+        "testimonial-generator",
+        "citation-generator",
+        "headline-generator",
+        "email-subject-generator",
+        "synonym-generator",
+        "footnote-generator",
+        "dialogue-tag-generator",
+        "essay-title-generator",
+        "stable-diffusion-prompt-generator",
+        "content-brief-generator",
+        "press-release-generator",
+        "viral-hook-generator",
+        "quiz-generator",
+        "thesis-statement-generator",
+        "landing-page-copy-generator",
+        "flashcard-generator",
+        "study-plan-generator",
+        "lesson-plan-generator"
+      ],
+      "evidence": "Identical FAQ question repeated across 31 tools: \"How should I edit the generated text before publishing?\"",
+      "whyGoogleDislikesIt": "Duplicated FAQ questions dilute page-level keyword intent and trigger template spam warnings.",
+      "estimatedSeoImpact": "Suppression of FAQPage rich snippets in Search Console.",
+      "exactPriority": "P1"
+    },
+    {
+      "category": "Duplicate FAQs",
+      "severity": "HIGH",
+      "affectedTools": [
+        "paragraph-generator",
+        "sentence-generator",
+        "blog-name-generator",
+        "writing-prompt-generator",
+        "ai-prompt-generator",
+        "midjourney-prompt-generator",
+        "blog-outline-generator",
+        "cold-email-generator",
+        "cover-letter-generator",
+        "resume-summary-generator",
+        "ad-copy-generator",
+        "call-to-action-generator",
+        "product-description-generator",
+        "testimonial-generator",
+        "citation-generator",
+        "headline-generator",
+        "email-subject-generator",
+        "synonym-generator",
+        "footnote-generator",
+        "dialogue-tag-generator",
+        "essay-title-generator",
+        "stable-diffusion-prompt-generator",
+        "content-brief-generator",
+        "press-release-generator",
+        "viral-hook-generator",
+        "quiz-generator",
+        "thesis-statement-generator",
+        "landing-page-copy-generator",
+        "flashcard-generator",
+        "study-plan-generator",
+        "lesson-plan-generator"
+      ],
+      "evidence": "Identical FAQ question repeated across 31 tools: \"Can I customize the length, tone, or format of the output?\"",
+      "whyGoogleDislikesIt": "Duplicated FAQ questions dilute page-level keyword intent and trigger template spam warnings.",
+      "estimatedSeoImpact": "Suppression of FAQPage rich snippets in Search Console.",
+      "exactPriority": "P1"
+    }
+  ]
+}

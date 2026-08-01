@@ -72,6 +72,13 @@ export function initDownloads(config: ToolConfig) {
     downloadFile(jsonContent, `${toolSlug}.json`, 'application/json');
   });
 
+  document.getElementById('btn-download-md')?.addEventListener('click', () => {
+    const pairs = getGeneratedPairs();
+    if (pairs.length === 0) return;
+    const mdContent = `# TapToGen Export: ${toolSlug}\n\n` + pairs.map(p => `### ${p.name}\n\n${p.text}\n`).join('\n---\n\n');
+    downloadFile(mdContent, `${toolSlug}.md`, 'text/markdown');
+  });
+
   document.getElementById('btn-download-html')?.addEventListener('click', () => {
     const pairs = getGeneratedPairs();
     if (pairs.length === 0) return;
@@ -99,4 +106,3 @@ export function initDownloads(config: ToolConfig) {
     downloadFile(htmlContent, `${toolSlug}.html`, 'text/html');
   });
 }
-
