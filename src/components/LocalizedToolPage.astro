@@ -29,6 +29,7 @@ import KeyboardShortcuts from '@/components/KeyboardShortcuts.astro';
 import IntroSection from '@/components/IntroSection.astro';
 import FaqSection from '@/components/FaqSection.astro';
 import RelatedSection from '@/components/RelatedSection.astro';
+import UniversalLinkingEngine from '@/components/UniversalLinkingEngine.astro';
 import MobileActionBar from '@/components/MobileActionBar.astro';
 import AuthorByline from '@/components/AuthorByline.astro';
 import PresetExamplesSection from '@/components/PresetExamplesSection.astro';
@@ -1448,33 +1449,8 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, language, copy.h1);
 
         <FaqSection faqTitle={text.faq} faqItems={faqItems.map(f => ({ question: f.q, answer: f.a }))} />
       </div>
-      <RelatedSection title={text.related} links={internalLinks.slice(0, 4)} />
-      {internalLinks.length > 4 && (
-        <RelatedSection title="You May Also Like" links={internalLinks.slice(4, 8)} />
-      )}
 
-      {(matchingHub || nextStepHubs.length > 0) && (
-        <section class="content-card">
-          <h2>{text.explore}</h2>
-          <p>{text.activeLinks}</p>
-          <div class="category-grid">
-            {matchingHub && (
-              <a href={`/tools/${matchingHub.slug}/`} class="category-card">
-                <span class="cat-icon">#</span>
-                <h3>{getLocalizedHubCopy(matchingHub.slug, matchingHub.h1, matchingHub.description, language).title}</h3>
-                <p>{getLocalizedHubCopy(matchingHub.slug, matchingHub.h1, matchingHub.description, language).description}</p>
-              </a>
-            )}
-            {nextStepHubs.map((hub) => (
-              <a href={`/tools/${hub.slug}/`} class="category-card">
-                <span class="cat-icon">#</span>
-                <h3>{getLocalizedHubCopy(hub.slug, hub.h1, hub.description, language).title}</h3>
-                <p>{getLocalizedHubCopy(hub.slug, hub.h1, hub.description, language).description}</p>
-              </a>
-            ))}
-          </div>
-        </section>
-      )}
+      <UniversalLinkingEngine toolSlug={tool.slug} lang={language} />
     </div>      </div>
     </div>
   </section>
