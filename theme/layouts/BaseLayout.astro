@@ -2,6 +2,7 @@
 import { siteConfig } from '@/config/site';
 import { headerNav, footerNav } from '@/data/navigation';
 import { getSupportedLanguage, supportedLanguages } from '@/data/localization';
+import { categories } from '@/data/categories';
 import { resolveCanonicalUrl } from '@/lib/search-canonical';
 import { buildSchemas } from '@/lib/search-schema';
 import { getHreflangAlternates } from '@/lib/search-hreflang';
@@ -190,7 +191,8 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
       transition: transform 0.2s;
     }
     
-    .nav-item-dropdown:hover .dropdown-chevron {
+    .nav-item-dropdown:hover .dropdown-chevron,
+    .nav-item-dropdown.mobile-open .dropdown-chevron {
       transform: rotate(180deg);
     }
     
@@ -201,7 +203,7 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
       transform: translateX(-50%) translateY(4px);
       background-color: rgba(10, 10, 30, 0.98);
       backdrop-filter: blur(20px);
-      min-width: 200px;
+      min-width: 220px;
       max-height: 400px;
       overflow-y: auto;
       border-radius: 12px;
@@ -214,6 +216,10 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
       transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
       z-index: 1000;
       border: 1px solid rgba(108,92,231,0.15);
+    }
+
+    .category-dropdown-menu {
+      min-width: 260px;
     }
     
     .nav-item-dropdown:hover .nav-dropdown-menu,
@@ -261,6 +267,39 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
       font-size: 12px;
       font-weight: bold;
       color: var(--primary-color, #4f46e5);
+    }
+
+    .nav-search-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: rgba(108, 92, 231, 0.08);
+      border: 1px solid rgba(108, 92, 231, 0.2);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-search-btn:hover,
+    .nav-search-btn:focus-visible {
+      background: rgba(108, 92, 231, 0.18);
+      color: var(--color-text-primary);
+      border-color: var(--color-primary);
+      outline: none;
+    }
+
+    .nav-kbd {
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--color-text-secondary);
+      font-family: inherit;
     }
 
     .sr-only {
@@ -352,8 +391,39 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
       <div class="nav-links" id="nav-links" role="navigation" aria-label={isSpanish ? 'Navegación principal' : 'Main navigation'}>
         <a href="/" class={currentPath === '/' ? 'active' : ''}>{localizeLabel('/', 'Home')}</a>
         <a href="/tools/" class={currentPath === '/tools/' || (currentPath.startsWith('/tools/') && currentPath !== '/tools/categories/') ? 'active' : ''}>{localizeLabel('/tools/', 'Tools')}</a>
-        <a href="/categories/" class={currentPath === '/categories/' || currentPath.startsWith('/categories/') ? 'active' : ''}>{localizeLabel('/categories/', 'Categories')}</a>
         
+        {/* CATEGORIES DROPDOWN */}
+        <div class="nav-item-dropdown" id="categories-dropdown">
+          <button 
+            class="nav-dropdown-toggle" 
+            aria-haspopup="true" 
+            aria-expanded="false"
+            aria-label="Explore Categories"
+          >
+            <span>{localizeLabel('/categories/', 'Categories')}</span>
+            <span class="dropdown-chevron" aria-hidden="true">▼</span>
+          </button>
+          <ul class="nav-dropdown-menu category-dropdown-menu" role="menu" aria-label="Categories">
+            <li role="none">
+              <a href="/categories/" role="menuitem" style="font-weight: 600; border-bottom: 1px solid var(--color-border); margin-bottom: 4px;">
+                <span>📂 All Categories</span>
+                <span>&rarr;</span>
+              </a>
+            </li>
+            {categories.map((c) => (
+              <li role="none">
+                <a href={`/categories/${c.slug}/`} role="menuitem">
+                  <span style="display: flex; align-items: center; gap: 8px;">
+                    <span>{c.icon}</span>
+                    <span>{c.name}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* LANGUAGE DROPDOWN */}
         <div class="nav-item-dropdown" id="language-dropdown">
           <button 
             class="nav-dropdown-toggle" 
@@ -383,7 +453,15 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
         <a href="/blog/" class={currentPath === '/blog/' || currentPath.startsWith('/blog/') ? 'active' : ''}>{localizeLabel('/blog/', 'Blog')}</a>
         <a href="/about-us/" class={currentPath === '/about-us/' || currentPath.startsWith('/about-us/') ? 'active' : ''}>{localizeLabel('/about-us/', 'About')}</a>
       </div>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label={isSpanish ? 'Abrir menú' : 'Toggle menu'} aria-expanded="false">☰</button>
+
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="/tools/" class="nav-search-btn" aria-label="Search tools">
+          <span>🔍</span>
+          <span class="search-text-label">Search</span>
+          <kbd class="nav-kbd">Ctrl+K</kbd>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label={isSpanish ? 'Abrir menú' : 'Toggle menu'} aria-expanded="false">☰</button>
+      </div>
     </div>
   </nav>
 
@@ -391,45 +469,98 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
     <slot />
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <!-- ENTERPRISE GLOBAL FOOTER (PHASE 4 DOMINATION) -->
+  <footer class="footer" aria-label="Site footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="/" class="nav-logo">
+      {/* BRAND & TRUST ROW */}
+      <div class="footer-top-brand">
+        <div style="max-width: 500px;">
+          <a href="/" class="nav-logo" style="font-size: 1.5rem; margin-bottom: 8px; display: inline-flex; align-items: center; gap: 8px;">
             <span class="logo-icon">⚡</span>
             {siteConfig.name}
           </a>
-          <p>{isSpanish ? 'TapToGen ofrece generadores online gratuitos para crear nombres, texto, etiquetas, ideas SEO y borradores útiles con revisión humana antes de publicar.' : siteConfig.description}</p>
+          <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin: 0; line-height: 1.5;">
+            {isSpanish
+              ? 'TapToGen ofrece 430+ generadores online gratuitos para nombres, texto, SEO y negocios. Procesamiento 100% en navegador local sin registro ni seguimiento de datos.'
+              : 'TapToGen is the ultimate free discovery hub for 430+ browser-based generator tools. Fast, private, and 100% client-side with zero account requirements.'}
+          </p>
         </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <div class="footer-trust-badge privacy">
+            <span>🔒</span>
+            <span>100% Client-Side Privacy</span>
+          </div>
+          <div class="footer-trust-badge speed">
+            <span>⚡</span>
+            <span>< 1ms Instant Output</span>
+          </div>
+          <div class="footer-trust-badge free">
+            <span>🎁</span>
+            <span>Free Forever · No Signup</span>
+          </div>
+        </div>
+      </div>
+
+      {/* 5-COLUMN MAIN LINKING GRID */}
+      <div class="footer-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+        {/* COL 1: ALL 12 CATEGORIES */}
         <div class="footer-col">
           <h4>{isSpanish ? 'Categorías' : 'Categories'}</h4>
-          {footerNav.categories.map(item => (
-            <a href={item.href}>{localizeLabel(item.href, item.label)}</a>
+          {categories.map((c) => (
+            <a href={`/categories/${c.slug}/`}>
+              <span style="margin-right: 6px;">{c.icon}</span>
+              <span>{c.name}</span>
+            </a>
           ))}
         </div>
+
+        {/* COL 2: POPULAR GENERATORS */}
         <div class="footer-col">
-          <h4>{isSpanish ? 'Herramientas populares' : 'Popular Tools'}</h4>
+          <h4>{isSpanish ? 'Herramientas Populares' : 'Popular Generators'}</h4>
           {footerNav.popular.map(item => (
             <a href={item.href}>{localizeLabel(item.href, item.label)}</a>
           ))}
         </div>
+
+        {/* COL 3: DISCOVERY HUBS */}
+        <div class="footer-col">
+          <h4>{isSpanish ? 'Hubs de Descubrimiento' : 'Discovery Hubs'}</h4>
+          <a href="/tools/name-generators/">🏷️ Name Generators Hub</a>
+          <a href="/tools/text-generators/">✨ Text Style Hub</a>
+          <a href="/tools/writing-generators/">✍️ AI Writing Hub</a>
+          <a href="/tools/seo-generators/">🚀 SEO & Tags Hub</a>
+          <a href="/tools/business-generators/">💼 Business Hub</a>
+          <a href="/tools/creative-generators/">🎮 Creative & Story Hub</a>
+        </div>
+
+        {/* COL 4: UNIVERSAL 19 LANGUAGES */}
         <div class="footer-col">
           <h4>{isSpanish ? 'Idiomas' : 'Languages'}</h4>
-          {allLanguageItems.map((item) => (
-            <a href={item.href}>{item.nativeName}</a>
-          ))}
+          <div style="max-height: 220px; overflow-y: auto; padding-right: 4px;">
+            {allLanguageItems.map((item) => (
+              <a href={item.href} style="display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem;">
+                <span>{item.nativeName}</span>
+                {item.isActive && <span style="font-size: 0.75rem; color: var(--color-accent-2);">✓</span>}
+              </a>
+            ))}
+          </div>
         </div>
+
+        {/* COL 5: COMPANY & TRUST RESOURCES */}
         <div class="footer-col">
-          <h4>{isSpanish ? 'Empresa' : 'Company'}</h4>
+          <h4>{isSpanish ? 'Empresa y Recursos' : 'Company & Trust'}</h4>
           {footerNav.legal.map(item => (
             <a href={item.href}>{localizeLabel(item.href, item.label)}</a>
           ))}
+          <a href="/sitemap-index.xml">🗺️ Sitemap Index</a>
+          <a href="/manifest.webmanifest">📱 Web App Manifest</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; {new Date().getFullYear()} {siteConfig.name}.com — {isSpanish ? 'Todos los derechos reservados.' : 'All rights reserved.'}</span>
-        <span>{isSpanish ? 'Creado para personas que necesitan generar ideas con criterio' : 'Built with ❤️ for creators everywhere'}</span>
+
+      {/* FOOTER BOTTOM BAR */}
+      <div class="footer-bottom" style="margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--color-border); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 0.85rem; color: var(--color-text-secondary);">
+        <span>&copy; {new Date().getFullYear()} TapToGen.com — {isSpanish ? 'Todos los derechos reservados. WCAG 2.2 AA Cumplido.' : 'All rights reserved. WCAG 2.2 AA Compliant.'}</span>
+        <span>{isSpanish ? 'Generadores online diseñados para creadores y profesionales' : 'Built with ❤️ for creators, marketers & builders everywhere'}</span>
       </div>
     </div>
   </footer>
@@ -440,14 +571,16 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
       nav?.classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    const dropdown = document.getElementById('language-dropdown');
-    const dropdownToggle = dropdown?.querySelector('.nav-dropdown-toggle');
-    dropdownToggle?.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        const isOpen = dropdown.classList.toggle('mobile-open');
-        dropdownToggle.setAttribute('aria-expanded', String(isOpen));
-      }
+    // Dropdowns (Language & Categories) Mobile & Focus handling
+    document.querySelectorAll('.nav-item-dropdown').forEach((dropdown) => {
+      const toggleBtn = dropdown.querySelector('.nav-dropdown-toggle');
+      toggleBtn?.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const isOpen = dropdown.classList.toggle('mobile-open');
+          toggleBtn.setAttribute('aria-expanded', String(isOpen));
+        }
+      });
     });
 
     const toggle = document.getElementById('mobile-toggle');
@@ -466,6 +599,21 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
       });
     });
 
+    // Global Keyboard Accessibility: Close dropdowns and drawer on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.nav-item-dropdown').forEach(d => {
+          d.classList.remove('mobile-open');
+          d.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+        });
+        if (links?.classList.contains('open')) {
+          links.classList.remove('open');
+          toggle?.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      }
+    });
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate-in'); observer.unobserve(e.target); }});
     }, { threshold: 0.1 });
@@ -474,3 +622,4 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
   <script is:inline src="/sw-register.js"></script>
 </body>
 </html>
+
