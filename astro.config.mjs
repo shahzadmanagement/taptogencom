@@ -22,7 +22,7 @@ export default defineConfig({
     mdx(),
   ],
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'always',
   },
   vite: {
     plugins: [tailwindcss()],

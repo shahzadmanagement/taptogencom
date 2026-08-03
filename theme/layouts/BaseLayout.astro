@@ -8,6 +8,8 @@ import { buildSchemas } from '@/lib/search-schema';
 import { getHreflangAlternates } from '@/lib/search-hreflang';
 import { buildMetadata } from '@/lib/search-metadata';
 import { getImageMetadata } from '@/lib/search-image-seo';
+import CommandPalette from '@/components/CommandPalette.astro';
+import PwaInstallBanner from '@/components/PwaInstallBanner.astro';
 
 interface Props {
   title: string;
@@ -100,6 +102,16 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <!-- Performance: DNS prefetch for third-party origins -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <!-- Non-blocking Google Fonts: only weights actually used in CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" /></noscript>
   <title>{meta.title}</title>
   <meta name="description" content={meta.description} />
   <link rel="canonical" href={meta.canonical} />
@@ -455,11 +467,11 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
       </div>
 
       <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="/tools/" class="nav-search-btn" aria-label="Search tools">
+        <button type="button" class="nav-search-btn" aria-label="Search tools (Cmd+K)" onclick="window.openCmdPalette ? window.openCmdPalette() : (window.location.href='/tools/')">
           <span>🔍</span>
           <span class="search-text-label">Search</span>
-          <kbd class="nav-kbd">Ctrl+K</kbd>
-        </a>
+          <kbd class="nav-kbd">⌘K</kbd>
+        </button>
         <button class="mobile-toggle" id="mobile-toggle" aria-label={isSpanish ? 'Abrir menú' : 'Toggle menu'} aria-expanded="false">☰</button>
       </div>
     </div>
@@ -619,6 +631,8 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
     }, { threshold: 0.1 });
     document.querySelectorAll('.tool-card, .feature-card, .category-card, .step-card, .faq-item').forEach(el => observer.observe(el));
   </script>
+  <CommandPalette />
+  <PwaInstallBanner />
   <script is:inline src="/sw-register.js"></script>
 </body>
 </html>

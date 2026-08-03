@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ========== TapToGen Premium Design System ========== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+/* Fonts loaded non-blocking via <link rel="preload"> in BaseLayout.astro */
 
 @theme {
   --color-bg-primary: #050510;
@@ -1324,6 +1324,11 @@ textarea.tool-input { min-height: 120px; resize: vertical; line-height: 1.6; }
   margin-bottom: 18px;
   box-shadow: var(--shadow-sm);
 }
+
+/* Touch: remove 300ms tap delay on all interactive cards */
+.tool-card, .category-card, .blog-card, .feature-card, .step-card {
+  touch-action: manipulation;
+}
 .content-card h2:first-child {
   margin-top: 0;
 }
@@ -1467,8 +1472,12 @@ textarea.tool-input { min-height: 120px; resize: vertical; line-height: 1.6; }
     border-bottom: 1px solid var(--color-border);
     padding: 16px;
   }
-  .hero { padding: 120px 0 60px; }
-  .hero-stats { gap: 24px; }
+  .hero { padding: 100px 0 50px; }
+  .hero h1 { font-size: clamp(1.8rem, 6vw, 2.8rem); }
+  .hero p { font-size: 1rem; }
+  .hero-stats { gap: 20px; }
+  .hero-stat .num { font-size: 1.6rem; }
+  .search-bar { margin-bottom: 20px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   .tool-workspace { padding: 24px; }
@@ -1489,15 +1498,24 @@ textarea.tool-input { min-height: 120px; resize: vertical; line-height: 1.6; }
   .palette-swatch { min-height: 90px; }
   .premium-controls .btn,
   .copy-all-btn { width: 100%; justify-content: center; }
-  .tools-grid { grid-template-columns: 1fr 1fr; }
-  .category-grid { grid-template-columns: 1fr 1fr; }
+  .tools-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .category-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
   .steps-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 480px) {
+  .hero { padding: 80px 0 36px; }
+  .hero h1 { font-size: clamp(1.6rem, 8vw, 2.2rem); }
+  .hero-stats { flex-direction: column; gap: 10px; align-items: center; }
+  .hero-stat .num { font-size: 1.4rem; }
+  .container { padding: 0 16px; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .category-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr; }
   .steps-grid { grid-template-columns: 1fr; }
+  .tool-card { padding: 18px; }
   .footer-grid { grid-template-columns: 1fr; }
-  .tool-page { padding-top: 90px; }
+  .tool-page { padding-top: 80px; }
   .workspace-panel,
   .content-card { padding: 16px; }
   .tool-benefits { justify-content: flex-start; }

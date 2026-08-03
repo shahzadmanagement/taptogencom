@@ -1,5 +1,5 @@
 import { resolveCanonicalUrl } from './search-canonical';
-import { getToolLanguageAlternates, getLocalizedToolBySlug, type SupportedLanguageCode } from '../data/localization';
+import { getToolLanguageAlternates, getLocalizedToolBySlug, supportedLanguages, type SupportedLanguageCode } from '../data/localization';
 import { tools } from '../data/tools';
 import { noindexToolSlugs } from '../data/tool-page-data';
 
@@ -46,6 +46,36 @@ export function getHreflangAlternates(pathname: string): HreflangAlternate[] {
       lang: a.lang,
       href: resolveCanonicalUrl(a.href)
     }));
+  }
+
+  // General pages (homepage, categories, tools index, blog, static pages)
+  const isHome = subPath === '/' || subPath === '';
+  const isToolsIndex = subPath === '/tools' || subPath === '/tools/';
+  const isCategoriesIndex = subPath === '/categories' || subPath === '/categories/';
+  const isBlogIndex = subPath === '/blog' || subPath === '/blog/';
+  const isAbout = subPath.startsWith('/about-us');
+  const isContact = subPath.startsWith('/contact-us');
+  const isPrivacy = subPath.startsWith('/privacy');
+  const isTerms = subPath.startsWith('/terms');
+  const isDisclaimer = subPath.startsWith('/disclaimer');
+
+  if (isHome || isToolsIndex || isCategoriesIndex || isBlogIndex || isAbout || isContact || isPrivacy || isTerms || isDisclaimer) {
+    const rawSubPath = subPath.endsWith('/') ? subPath : subPath + '/';
+    const cleanSubPath = rawSubPath === '//' ? '/' : rawSubPath;
+    
+    const alternates: HreflangAlternate[] = supportedLanguages
+      .filter(l => l.enabled && l.indexable)
+      .map(l => {
+        const langPath = l.code === 'en' ? cleanSubPath : `/${l.code}${cleanSubPath}`;
+        return {
+          lang: l.code,
+          href: resolveCanonicalUrl(langPath)
+        };
+      });
+
+    const defaultHref = resolveCanonicalUrl(cleanSubPath);
+    alternates.push({ lang: 'x-default', href: defaultHref });
+    return alternates;
   }
 
   const canonicalUrl = resolveCanonicalUrl(pathname);

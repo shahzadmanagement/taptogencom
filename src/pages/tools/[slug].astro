@@ -223,7 +223,7 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, 'en', tool.name);
                 <span class="panel-kicker">Input</span>
                 <h2>Customize Your Result</h2>
               </div>
-              <span class="generator-type-pill">{tool.generatorType.replace('-', ' ')}</span>
+              <span class="generator-type-pill">{tool.generatorType.replaceAll('-', ' ')}</span>
             </div>
 
             {tool.toolOptions && tool.toolOptions.length > 0 && (
@@ -365,25 +365,37 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, 'en', tool.name);
 
         <section class="content-card">
           <h2>Why Use {tool.name}?</h2>
-          <p>Using {tool.name} saves you time and simplifies your creative or administrative workflow. Instead of manually formatting, brainstorming, or writing from scratch, this tool provides instant suggestions tailored to your user intent. Whether you are generating tags, formatting text, or developing name ideas, {tool.name} handles the heavy lifting in a fraction of a second.</p>
+          {effectiveGuideCopy ? (
+            <p>{tool.description.replace(/<[^>]*>/g, '')} {tool.tagline} — all processed instantly in your browser with zero sign-up, zero ads, and full clipboard export support.</p>
+          ) : (
+            <p>{tool.name} eliminates the manual effort of {tool.primaryKeyword} creation. Instead of spending time brainstorming from scratch, you get a targeted list of results in milliseconds. Every output is generated locally — your inputs are never sent to a server, so your data stays private and the experience remains instant no matter your connection speed.</p>
+          )}
         </section>
 
         <section class="content-card">
-          <h2>Key Benefits</h2>
+          <h2>Key Benefits of {tool.name}</h2>
           <ul>
-            <li><strong>100% Free</strong> - No subscriptions, no microtransactions, and no credit card required.</li>
-            <li><strong>Browser-Based Privacy</strong> - All processing occurs locally on your machine. Your data never leaves your browser.</li>
-            <li><strong>Instant Generation</strong> - Get a list of optimized suggestions in milliseconds.</li>
-            <li><strong>No Registration</strong> - Start using the utility immediately without creating an account or logging in.</li>
+            <li><strong>Designed for {tool.category}</strong> — Built specifically around {tool.primaryKeyword} use cases, not generic output.</li>
+            <li><strong>100% Free, No Limits</strong> — No subscriptions, no credit cards, no usage caps. Generate as many times as you need.</li>
+            <li><strong>Browser-Based Privacy</strong> — All processing runs in your local browser session. Nothing is uploaded or stored server-side.</li>
+            <li><strong>Instant Results</strong> — Client-side execution means zero network round-trips and sub-millisecond output rendering.</li>
+            <li><strong>No Account Required</strong> — Open the page and start immediately. No email, no profile, no friction.</li>
+            <li><strong>Export-Ready Output</strong> — Copy individual results or the full set with one tap. Compatible with any clipboard destination.</li>
           </ul>
         </section>
 
         <section class="content-card">
           <h2>Features of {tool.name}</h2>
           <ul>
-            <li><strong>Interactive Settings</strong> - Customize the tone, count, and style configuration directly from the control panel.</li>
-            <li><strong>One-Click Copying</strong> - Copy individual elements or copy all results instantly with built-in clipboard actions.</li>
-            <li><strong>Clean Formatting</strong> - Outputs copy-ready text without any markup, ready to be pasted anywhere.</li>
+            {tool.toolOptions && tool.toolOptions.length > 0 ? (
+              <li><strong>Configurable Options Panel</strong> — {tool.toolOptions.length} adjustable parameter{tool.toolOptions.length > 1 ? 's' : ''} including {tool.toolOptions.map(o => o.label).join(', ')} let you tailor every generation run.</li>
+            ) : (
+              <li><strong>Smart Defaults</strong> — Pre-tuned parameters produce high-quality {tool.primaryKeyword} results without any manual configuration.</li>
+            )}
+            <li><strong>Example Chips</strong> — One-click seed prompts ({tool.primaryKeyword}{tool.secondaryKeywords.slice(0,1).map(k => `, ${k}`).join('')}) populate the input instantly for fast iteration.</li>
+            <li><strong>One-Click Copy Buttons</strong> — Every result card has its own copy action. A single "Copy All" button exports the complete output to your clipboard.</li>
+            <li><strong>Undo / Redo History</strong> — Step backward or forward through generation sessions without losing previous results.</li>
+            <li><strong>Share Link</strong> — The Share button generates a bookmarkable URL for this tool so you can return or send it to a colleague instantly.</li>
           </ul>
         </section>
 
@@ -437,8 +449,8 @@ const breadcrumbs = getBreadcrumbs(Astro.url.pathname, 'en', tool.name);
 
         <section class="content-card" style="text-align: center; padding: 30px;">
           <h2>Try {tool.name} Now!</h2>
-          <p style="margin-bottom: 16px;">Ready to optimize your workflow? Try {tool.name} now. Simply scroll back up to the interactive console, enter your details, and tap generate to get started immediately!</p>
-          <a href="#" class="btn btn-primary" style="display: inline-block; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; color: #fff; background: var(--color-primary);">Go to Generator</a>
+          <p style="margin-bottom: 16px;">Ready to generate? Scroll back up to the {tool.name} workspace, enter your {tool.primaryKeyword} details, and tap Generate to see instant results.</p>
+          <a href="#tool-workspace" class="btn btn-primary" style="display: inline-block; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; color: #fff; background: var(--color-primary);">Go to Generator ↑</a>
         </section>
 
         <PresetExamplesSection presets={presets} toolName={tool.name} />

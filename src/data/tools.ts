@@ -154,6 +154,7 @@ export const tools: Tool[] = [
     userIntent: 'User wants business/brand name ideas based on keywords.',
     generatorType: 'random-combo',
     popular: true,
+    toolOptions: [{"type":"select","options":[{"value":"general","label":"General Business"},{"value":"tech","label":"Tech / SaaS"},{"value":"ecommerce","label":"E-Commerce / Store"},{"value":"creative","label":"Creative / Agency"},{"value":"services","label":"Local Services"}],"id":"business-industry","label":"Industry / Niche","default":"general"},{"type":"select","options":[{"value":"modern","label":"Modern"},{"value":"friendly","label":"Friendly"},{"value":"premium","label":"Premium"},{"value":"corporate","label":"Corporate"},{"value":"creative","label":"Creative"}],"id":"business-name-style","label":"Name Style","default":"modern"},{"type":"checkbox","default":true,"id":"include-taglines","label":"Include Taglines"}],
     faqItems: [{"q":"How do I select the best output from the Business Name Generator?","a":"Choose options that are short, memorable, easy to spell, and aligned with your target market. Test selected ideas with potential customers before finalizing."},{"q":"Are generated Business Name Generator ideas legally cleared or trademarked?","a":"No. Output suggestions serve as brainstorming drafts. Always perform trademark searches (USPTO/EUIPO), domain availability checks, and local corporate registry searches before commercial use."},{"q":"Can I customize the generated business content for my industry?","a":"Yes. Use built-in option controls to tailor tone, format, and style parameters to match your specific industry or market niche."},{"q":"Is the Business Name Generator free for commercial business planning?","a":"Yes. All generated drafts, names, and templates are 100% free to edit, share, and adapt for commercial or personal business projects."}],
     relatedSlugs: ['domain-name-generator', 'product-name-generator', 'brand-kit-generator', 'restaurant-name-generator'],
   },
@@ -649,6 +650,7 @@ export const tools: Tool[] = [
     metaDescription: 'Generate creative domain name ideas. Enter keywords and get suggestions with popular TLDs — free & instant.',
     userIntent: 'User wants domain name suggestions.',
     generatorType: 'random-combo',
+    toolOptions: [{"type":"select","options":[{"value":"com","label":".com"},{"value":"io","label":".io"},{"value":"co","label":".co"},{"value":"app","label":".app"},{"value":"ai","label":".ai"},{"value":"net","label":".net"},{"value":"org","label":".org"}],"id":"domain-tld","label":"Preferred TLD","default":"com"},{"type":"select","options":[{"value":"brandable","label":"Brandable"},{"value":"short","label":"Short"},{"value":"keyword","label":"Keyword Plus"},{"value":"hyphenless","label":"Clean / Hyphenless"}],"id":"domain-style","label":"Domain Style","default":"brandable"}],
     faqItems: [{"q":"How do I select the best output from the Domain Name Generator?","a":"Choose options that are short, memorable, easy to spell, and aligned with your target market. Test selected ideas with potential customers before finalizing."},{"q":"Are generated Domain Name Generator ideas legally cleared or trademarked?","a":"No. Output suggestions serve as brainstorming drafts. Always perform trademark searches (USPTO/EUIPO), domain availability checks, and local corporate registry searches before commercial use."},{"q":"Can I customize the generated business content for my industry?","a":"Yes. Use built-in option controls to tailor tone, format, and style parameters to match your specific industry or market niche."},{"q":"Is the Domain Name Generator free for commercial business planning?","a":"Yes. All generated drafts, names, and templates are 100% free to edit, share, and adapt for commercial or personal business projects."}],
     relatedSlugs: ['business-name-generator', 'product-name-generator', 'blog-name-generator'],
   },
@@ -2626,6 +2628,7 @@ export const tools: Tool[] = [
     metaDescription: 'Generate sample PIN-style placeholders for demos and UI testing. Not production security advice.',
     userIntent: 'User wants random PIN codes.',
     generatorType: 'utility',
+    toolOptions: [{"type":"number","id":"pin-length","label":"Length (digits)","default":4,"min":4,"max":12},{"type":"number","id":"pin-count","label":"Count","default":5,"min":1,"max":50},{"type":"checkbox","default":true,"id":"pin-allow-repeats","label":"Allow Repeated Digits"}],
     faqItems: [{"q":"How accurate and reliable is the PIN Generator?","a":"Output transformations and calculations strictly follow standard algorithmic rules and deterministic logic, guaranteeing high accuracy across all supported inputs."},{"q":"Is my data kept private when using the PIN Generator?","a":"Yes. The PIN Generator operates 100% locally within your web browser using JavaScript. No text, data inputs, or output results are stored or transmitted to external servers."},{"q":"Is the PIN Generator compatible with mobile browsers and tablets?","a":"Yes. The tool is fully responsive and optimized for desktop, tablet, and mobile browsers (iOS Safari, Android Chrome, Firefox, and Edge)."},{"q":"Can I copy or export the generated output for professional use?","a":"Yes. Click the one-tap copy button or export options to copy formatted outputs directly to your clipboard for instant paste into any workflow."}],
     relatedSlugs: ['password-generator', 'random-number-generator', 'passphrase-generator'],
   },
@@ -3532,6 +3535,7 @@ export const tools: Tool[] = [
     metaDescription: 'Generate sample recovery code placeholders for demos and testing - free & instant.',
     userIntent: 'User wants sample recovery code placeholders.',
     generatorType: 'utility',
+    toolOptions: [{"type":"select","options":[{"value":"8-char","label":"8-Character Blocks"},{"value":"16-char-hyphen","label":"16-Char Hyphenated"},{"value":"hex","label":"Hex Blocks"}],"id":"recovery-format","label":"Code Format","default":"8-char"},{"type":"number","id":"recovery-count","label":"Count","default":10,"min":4,"max":24}],
     faqItems: [{"q":"Are codes and snippets generated by Recovery Code Generator secure and processed locally?","a":"Yes. All computation and string generation executes 100% locally inside your web browser via JavaScript. Zero input data, keys, or tokens are sent to external servers."},{"q":"Does the Recovery Code Generator output follow official W3C, RFC, and syntax specifications?","a":"Yes. Generated code, markup, and formatted structures adhere to modern web specifications (HTML5, CSS3, RFC 4122, JSON, TypeScript standard guidelines)."},{"q":"How do I test and integrate the output into my application?","a":"Copy the generated snippet directly into your codebase, configuration file, or IDE. Test the resulting output in your local dev environment before production deployment."},{"q":"Can I use Recovery Code Generator generated outputs in commercial software?","a":"Yes. All output code, formatted data, and generated assets are free to use in personal, open-source, and commercial applications without licensing fees."}],
     relatedSlugs: ['password-generator', 'pin-generator', 'api-key-generator'],
   },
@@ -4520,6 +4524,7 @@ export const tools: Tool[] = [
     metaDescription: 'Create fictional sample address placeholders for mockups and tests. Not for impersonation or official use.',
     userIntent: 'User wants fake addresses.',
     generatorType: 'random-combo',
+    toolOptions: [{"type":"select","options":[{"value":"us","label":"United States"},{"value":"uk","label":"United Kingdom"},{"value":"ca","label":"Canada"},{"value":"au","label":"Australia"}],"id":"address-country","label":"Country Format","default":"us"},{"type":"number","id":"address-count","label":"Count","default":5,"min":1,"max":20}],
     faqItems: [{"q":"Can I use names and lore generated by Random Address Generator in my book, comic, or game?","a":"Yes. All generated names, lore concepts, and creative assets are 100% free to use in your personal or commercial creative projects, novels, games, and screenplays without royalty obligations."},{"q":"How do I customize the output of Random Address Generator to fit my worldbuilding?","a":"Use the built-in option controls to select specific genres, themes, and styles. Combine generated ideas to create unique, original character and world details."},{"q":"Does the Random Address Generator save or log my creative prompts?","a":"No. The Random Address Generator operates entirely within your web browser using JavaScript. No prompts, story ideas, or generated outputs are sent to external databases."},{"q":"Is Random Address Generator suitable for tabletop gaming (D&D / TTRPG) and fiction writing?","a":"Yes. The tool is specifically designed to aid writers, game masters, and worldbuilders with instant, high-quality creative inspiration."}],
     relatedSlugs: ['fake-name-generator', 'dummy-data-generator', 'random-country-generator'],
   },
@@ -6433,7 +6438,7 @@ export const tools: Tool[] = [
   },
   {
     slug: 'disc-jockey-names-generator',
-    name: 'DJ Name Generator',
+    name: 'Disc Jockey Name Generator',
     icon: 'headphones',
     tagline: 'DJ Name Generator with focused options and review notes',
     description: 'Use DJ Name Generator to create focused draft options with your topic and constraints. Review, edit, and adapt results before use.',
@@ -6739,6 +6744,7 @@ export const tools: Tool[] = [
     metaDescription:"Generate bubble text copyable text styles for bios, captions, labels, and messages. Use clear prompts, compare options, and edit the best result before publishing.",
     userIntent: 'User wants to use Bubble Text Generator',
     generatorType: 'utility',
+    toolOptions: [{"type":"select","options":[{"value":"outline","label":"Outline Bubbles (ⓐⓑⓒ)"},{"value":"filled","label":"Filled Bubbles (🅐🅑🅒)"}],"id":"bubble-style","label":"Bubble Style","default":"outline"}],
     faqItems: [{"q":"How do I use the Bubble Text Generator?","a":"Enter your text in the input box, select your preferred font style or variant control, and copy the generated Unicode result directly to your clipboard."},{"q":"Does the Bubble Text Generator work on Instagram, TikTok, and Discord?","a":"Yes. The generated styles use standard Unicode character sets that are compatible with bio sections, post captions, titles, and messaging platforms."},{"q":"Why does styled Unicode text look slightly different on some devices?","a":"Different operating systems and apps use distinct system fonts to render fallback Unicode glyphs. Preview your result on the target platform to ensure visual consistency."},{"q":"Are there any character limits or fees?","a":"No. The Bubble Text Generator is completely free, runs locally in your browser, and has no hidden fees or copy limits."}],
     relatedSlugs: ["big-text-generator","cute-text-generator","fancy-text-generator"]},
   {
@@ -6908,6 +6914,7 @@ export const tools: Tool[] = [
     metaDescription:"Generate cursive name ideas for characters, profiles, groups, and creative projects. Use clear prompts, compare options, and edit the best result before publish",
     userIntent: 'User wants to use Cursive Name Generator',
     generatorType: 'utility',
+    toolOptions: [{"type":"select","options":[{"value":"script","label":"Classic Script"},{"value":"bold-script","label":"Bold Script"},{"value":"handwritten","label":"Handwritten"}],"id":"cursive-style","label":"Cursive Style","default":"script"}],
     faqItems: [{"q":"How do I use the Cursive Name Generator?","a":"Enter your text in the input box, select your preferred font style or variant control, and copy the generated Unicode result directly to your clipboard."},{"q":"Does the Cursive Name Generator work on Instagram, TikTok, and Discord?","a":"Yes. The generated styles use standard Unicode character sets that are compatible with bio sections, post captions, titles, and messaging platforms."},{"q":"Why does styled Unicode text look slightly different on some devices?","a":"Different operating systems and apps use distinct system fonts to render fallback Unicode glyphs. Preview your result on the target platform to ensure visual consistency."},{"q":"Are there any character limits or fees?","a":"No. The Cursive Name Generator is completely free, runs locally in your browser, and has no hidden fees or copy limits."}],
     relatedSlugs: ["cursive-text-generator","fancy-text-generator","name-generator"]},
   {
@@ -6924,6 +6931,7 @@ export const tools: Tool[] = [
     metaDescription:"Generate cute text copyable text styles for bios, captions, labels, and messages. Use clear prompts, compare options, and edit the best result before publishing or s",
     userIntent: 'User wants to use Cute Text Generator',
     generatorType: 'utility',
+    toolOptions: [{"type":"select","options":[{"value":"hearts","label":"Heart Accents (💖 text 💖)"},{"value":"stars","label":"Star Accents (✨ text ✨)"},{"value":"sparkles","label":"Sparkle Borders"}],"id":"cute-decoration","label":"Decoration Style","default":"sparkles"}],
     faqItems: [{"q":"How do I use the Cute Text Generator?","a":"Enter your text in the input box, select your preferred font style or variant control, and copy the generated Unicode result directly to your clipboard."},{"q":"Does the Cute Text Generator work on Instagram, TikTok, and Discord?","a":"Yes. The generated styles use standard Unicode character sets that are compatible with bio sections, post captions, titles, and messaging platforms."},{"q":"Why does styled Unicode text look slightly different on some devices?","a":"Different operating systems and apps use distinct system fonts to render fallback Unicode glyphs. Preview your result on the target platform to ensure visual consistency."},{"q":"Are there any character limits or fees?","a":"No. The Cute Text Generator is completely free, runs locally in your browser, and has no hidden fees or copy limits."}],
     relatedSlugs: ["bubble-text-generator","brat-text-generator","fancy-text-generator"]},
   {
@@ -7131,7 +7139,8 @@ export const tools: Tool[] = [
     metaDescription:"Generate funny name ideas for characters, profiles, groups, and creative projects. Use clear prompts, compare options, and edit the best result before publishin",
     userIntent: 'User wants to use Funny Name Generator',
     generatorType: 'utility',
-    faqItems: [{ q:"What details make better funny name?", a:"Add a genre, personality, audience, setting, initials, or style so the names feel less generic." }, { q:"Can I use these ideas publicly?", a:"Use them as brainstorming drafts, then check conflicts, trademarks, handles, and community rules before publishing." }, { q:"How should I choose the best name?", a:"Pick a name that is easy to say, easy to spell, memorable, and appropriate for the context." }],
+    toolOptions: [{"type":"select","options":[{"value":"punny","label":"Punny & Wordplay"},{"value":"absurd","label":"Absurd & Silly"},{"value":"sarcastic","label":"Dry & Sarcastic"}],"id":"funny-style","label":"Humor Style","default":"punny"}],
+    faqItems: [{ q:"What details make better funny name?", a:"Add a genre, personality, audience, setting, initials, or style so the names feel less generic." }, { q:"Can I use these ideas publicly?", a:"Use them as brainstorming drafts, then check conflicts, trademarks, handles, and community rules before publishing." }, { q:"How should I choose the best name?", a:"Pick a name that is easy to say, easy to spell, memorable, and appropriate for the context." }, { q:"Are generated funny names free to use?", a:"Yes. All generated names and jokes are 100% free to copy, modify, and use across gaming, social media, and creative projects." }],
     relatedSlugs: ["nickname-generator","stage-name-generator","character-name-generator"]},
   {
     slug: 'gnome-name-generator',
@@ -7345,6 +7354,7 @@ export const tools: Tool[] = [
     metaDescription:"Generate pixel text copyable text styles for bios, captions, labels, and messages. Use clear prompts, compare options, and edit the best result before publishing or",
     userIntent: 'User wants to use Pixel Text Generator',
     generatorType: 'utility',
+    toolOptions: [{"type":"select","options":[{"value":"8bit","label":"8-Bit Arcade"},{"value":"16bit","label":"16-Bit Retro"},{"value":"blocky","label":"Blocky Characters"}],"id":"pixel-style","label":"Pixel Style","default":"8bit"}],
     faqItems: [{"q":"How do I use the Pixel Text Generator?","a":"Enter your text in the input box, select your preferred font style or variant control, and copy the generated Unicode result directly to your clipboard."},{"q":"Does the Pixel Text Generator work on Instagram, TikTok, and Discord?","a":"Yes. The generated styles use standard Unicode character sets that are compatible with bio sections, post captions, titles, and messaging platforms."},{"q":"Why does styled Unicode text look slightly different on some devices?","a":"Different operating systems and apps use distinct system fonts to render fallback Unicode glyphs. Preview your result on the target platform to ensure visual consistency."},{"q":"Are there any character limits or fees?","a":"No. The Pixel Text Generator is completely free, runs locally in your browser, and has no hidden fees or copy limits."}],
     relatedSlugs: ["fancy-text-generator","bold-text-generator","cursive-text-generator"]},
   {
@@ -7449,6 +7459,7 @@ export const tools: Tool[] = [
     metaDescription: 'Create decorative mixed-font cutout text for fictional or design use. No threats or intimidation.',
     userIntent: 'User wants to use Ransom Note Text Generator',
     generatorType: 'utility',
+    toolOptions: [{"type":"select","options":[{"value":"mixed-case","label":"Random Upper/Lower"},{"value":"bracketed","label":"Bracketed Cutouts"},{"value":"spiced","label":"Spiced Symbol Mix"}],"id":"ransom-style","label":"Ransom Style","default":"mixed-case"}],
     faqItems: [{"q":"How do I use the Ransom Note Text Generator?","a":"Enter your text in the input box, select your preferred font style or variant control, and copy the generated Unicode result directly to your clipboard."},{"q":"Does the Ransom Note Text Generator work on Instagram, TikTok, and Discord?","a":"Yes. The generated styles use standard Unicode character sets that are compatible with bio sections, post captions, titles, and messaging platforms."},{"q":"Why does styled Unicode text look slightly different on some devices?","a":"Different operating systems and apps use distinct system fonts to render fallback Unicode glyphs. Preview your result on the target platform to ensure visual consistency."},{"q":"Are there any character limits or fees?","a":"No. The Ransom Note Text Generator is completely free, runs locally in your browser, and has no hidden fees or copy limits."}],
     relatedSlugs: []
   },
@@ -7466,6 +7477,7 @@ export const tools: Tool[] = [
     metaDescription:"Generate retro text copyable text styles for bios, captions, labels, and messages. Use clear prompts, compare options, and edit the best result before publishing or",
     userIntent: 'User wants to use Retro Text Generator',
     generatorType: 'utility',
+    toolOptions: [{"type":"select","options":[{"value":"synthwave","label":"80s Synthwave"},{"value":"arcade","label":"Arcade Pixel"},{"value":"neon","label":"Neon Glow"}],"id":"retro-theme","label":"Retro Theme","default":"synthwave"}],
     faqItems: [{"q":"How do I use the Retro Text Generator?","a":"Enter your text in the input box, select your preferred font style or variant control, and copy the generated Unicode result directly to your clipboard."},{"q":"Does the Retro Text Generator work on Instagram, TikTok, and Discord?","a":"Yes. The generated styles use standard Unicode character sets that are compatible with bio sections, post captions, titles, and messaging platforms."},{"q":"Why does styled Unicode text look slightly different on some devices?","a":"Different operating systems and apps use distinct system fonts to render fallback Unicode glyphs. Preview your result on the target platform to ensure visual consistency."},{"q":"Are there any character limits or fees?","a":"No. The Retro Text Generator is completely free, runs locally in your browser, and has no hidden fees or copy limits."}],
     relatedSlugs: ["fancy-text-generator","bold-text-generator","cursive-text-generator"]},
   {
@@ -7589,6 +7601,7 @@ export const tools: Tool[] = [
     metaDescription:"Generate short code planning drafts and snippets for websites, content, and product work. Use clear prompts, compare options, and edit the best result before publish",
     userIntent: 'User wants to use Short Code Generator',
     generatorType: 'utility',
+    toolOptions: [{"type":"select","options":[{"value":"alphanumeric","label":"Alphanumeric"},{"value":"numeric","label":"Numeric"},{"value":"alpha-upper","label":"Uppercase Alpha"},{"value":"url-safe","label":"URL-Safe Base64"}],"id":"shortcode-type","label":"Code Style","default":"alphanumeric"},{"type":"number","id":"shortcode-length","label":"Length","default":8,"min":4,"max":32},{"type":"number","id":"shortcode-count","label":"Count","default":5,"min":1,"max":50}],
     faqItems: [{"q":"How accurate and reliable is the Short Code Generator?","a":"Output transformations and calculations strictly follow standard algorithmic rules and deterministic logic, guaranteeing high accuracy across all supported inputs."},{"q":"Is my data kept private when using the Short Code Generator?","a":"Yes. The Short Code Generator operates 100% locally within your web browser using JavaScript. No text, data inputs, or output results are stored or transmitted to external servers."},{"q":"Is the Short Code Generator compatible with mobile browsers and tablets?","a":"Yes. The tool is fully responsive and optimized for desktop, tablet, and mobile browsers (iOS Safari, Android Chrome, Firefox, and Edge)."},{"q":"Can I copy or export the generated output for professional use?","a":"Yes. Click the one-tap copy button or export options to copy formatted outputs directly to your clipboard for instant paste into any workflow."}],
     relatedSlugs: ["lorem-ipsum-generator","text-case-converter","word-counter"]},
   {
@@ -7734,6 +7747,7 @@ export const tools: Tool[] = [
     metaDescription:"Generate typewriter text copyable text styles for bios, captions, labels, and messages. Use clear prompts, compare options, and edit the best result before publishin",
     userIntent: 'User wants to use Typewriter Text Generator',
     generatorType: 'utility',
+    toolOptions: [{"type":"select","options":[{"value":"mono","label":"Monospace"},{"value":"vintage","label":"Vintage Serif"},{"value":"code","label":"Terminal Code"}],"id":"typewriter-style","label":"Typewriter Style","default":"mono"}],
     faqItems: [{"q":"How do I use the Typewriter Text Generator?","a":"Enter your text in the input box, select your preferred font style or variant control, and copy the generated Unicode result directly to your clipboard."},{"q":"Does the Typewriter Text Generator work on Instagram, TikTok, and Discord?","a":"Yes. The generated styles use standard Unicode character sets that are compatible with bio sections, post captions, titles, and messaging platforms."},{"q":"Why does styled Unicode text look slightly different on some devices?","a":"Different operating systems and apps use distinct system fonts to render fallback Unicode glyphs. Preview your result on the target platform to ensure visual consistency."},{"q":"Are there any character limits or fees?","a":"No. The Typewriter Text Generator is completely free, runs locally in your browser, and has no hidden fees or copy limits."}],
     relatedSlugs: ["fancy-text-generator","bold-text-generator","cursive-text-generator"]},
   {
@@ -8121,7 +8135,24 @@ export const tools: Tool[] = [
     outputFormat: 'text',
     faqItems: [{"q":"How do I use the Serif Generator?","a":"Enter your text in the input box, select your preferred font style or variant control, and copy the generated Unicode result directly to your clipboard."},{"q":"Does the Serif Generator work on Instagram, TikTok, and Discord?","a":"Yes. The generated styles use standard Unicode character sets that are compatible with bio sections, post captions, titles, and messaging platforms."},{"q":"Why does styled Unicode text look slightly different on some devices?","a":"Different operating systems and apps use distinct system fonts to render fallback Unicode glyphs. Preview your result on the target platform to ensure visual consistency."},{"q":"Are there any character limits or fees?","a":"No. The Serif Generator is completely free, runs locally in your browser, and has no hidden fees or copy limits."}],
     relatedSlugs: ["fancy-text-generator","bold-text-generator","italic-text-generator","unicode-text-generator"],
-  }];
+  }
+];
+
+// Normalize taglines & auto-fill secondary keywords for 100% human-grade UX excellence
+tools.forEach((t) => {
+  if (t.tagline.includes('with focused options and review notes')) {
+    t.tagline = `Generate custom ${t.name.toLowerCase()} ideas, formats & styles instantly`;
+  }
+  if (!t.secondaryKeywords || t.secondaryKeywords.length === 0) {
+    t.secondaryKeywords = [
+      `${t.primaryKeyword} online`,
+      `free ${t.primaryKeyword}`,
+      `best ${t.primaryKeyword}`,
+      `${t.name.toLowerCase()} ideas`,
+      `${t.name.toLowerCase()} maker`
+    ];
+  }
+});
 
 export function getToolBySlug(slug: string): Tool | undefined {
   return tools.find(t => t.slug === slug);

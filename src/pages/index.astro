@@ -74,7 +74,11 @@ const organizationSchema = {
   "name": "TapToGen",
   "url": "https://taptogen.com/",
   "logo": "https://taptogen.com/favicon.svg",
-  "sameAs": []
+  "sameAs": [
+    "https://twitter.com/taptogen",
+    "https://www.linkedin.com/company/taptogen",
+    "https://www.youtube.com/@taptogen"
+  ]
 };
 
 const faqSchema = {
@@ -99,7 +103,7 @@ const faqSchema = {
     <div class="hero-glow"></div>
     <div class="container hero-content">
       <div class="hero-badge-group animate-in">
-        <span class="section-badge">⚡ TapToGen Platform v6.0</span>
+        <span class="section-badge">⚡ TapToGen — 430+ Free Generator Tools</span>
         <span class="privacy-badge">🔒 100% Client-Side Privacy</span>
       </div>
 
@@ -301,7 +305,7 @@ const faqSchema = {
         </div>
         <div class="feature-card">
           <div class="feature-icon">⚡</div>
-          <h3>Instant < 1ms Output</h3>
+          <h3>Instant &lt;1ms Output</h3>
           <p>Instant conversions with zero network latency, zero loading spinners, and zero waiting time.</p>
         </div>
         <div class="feature-card">
@@ -427,7 +431,12 @@ const faqSchema = {
     }
     @media (max-width: 640px) {
       .search-submit-btn {
-        display: none;
+        padding: 10px 12px;
+        font-size: 0;
+      }
+      .search-submit-btn::after {
+        content: '→';
+        font-size: 1rem;
       }
     }
   </style>

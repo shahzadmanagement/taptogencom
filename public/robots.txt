@@ -10,28 +10,55 @@ Disallow: /tmp/
 Disallow: /cache/
 Disallow: /node_modules/
 Disallow: /admin/
-Crawl-delay: 2
 
+# Search Engines
 User-agent: Googlebot
 Allow: /
-Disallow: /api/
-Disallow: /private/
-Disallow: /draft/
-Disallow: /tmp/
-Disallow: /cache/
-Disallow: /node_modules/
-Disallow: /admin/
 
 User-agent: Bingbot
 Allow: /
-Disallow: /api/
-Disallow: /private/
-Disallow: /draft/
-Disallow: /tmp/
-Disallow: /cache/
-Disallow: /node_modules/
-Disallow: /admin/
 
+User-agent: Yandex
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# AI Search & LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Special Google Bots
 User-agent: AdsBot-Google
 Allow: /
 
@@ -44,4 +71,5 @@ Allow: /
 User-agent: Googlebot-News
 Allow: /
 
+# Sitemaps
 Sitemap: https://taptogen.com/sitemap-index.xml

@@ -1,0 +1,171 @@
+---
+---
+
+<div id="pwa-install-container" class="pwa-install-container" style="display: none;">
+  <div class="pwa-install-card">
+    <div class="pwa-install-icon">⚡</div>
+    <div class="pwa-install-info">
+      <div class="pwa-install-title">Install TapToGen App</div>
+      <div class="pwa-install-desc">Fast, 100% offline access to 205+ generator tools from your desktop or phone home screen.</div>
+    </div>
+    <div class="pwa-install-actions">
+      <button id="pwa-install-btn" class="pwa-btn-primary">📲 Install Now</button>
+      <button id="pwa-dismiss-btn" class="pwa-btn-close" aria-label="Dismiss">✕</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    let deferredPrompt;
+    const container = document.getElementById('pwa-install-container');
+    const installBtn = document.getElementById('pwa-install-btn');
+    const dismissBtn = document.getElementById('pwa-dismiss-btn');
+
+    // Check if dismissed previously in session
+    if (sessionStorage.getItem('taptogen_pwa_dismissed') === 'true') {
+      return;
+    }
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent automatic browser banner
+      e.preventDefault();
+      deferredPrompt = e;
+      if (container) {
+        container.style.display = 'block';
+      }
+    });
+
+    if (installBtn) {
+      installBtn.addEventListener('click', async () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          console.log('User installed TapToGen PWA');
+        }
+        deferredPrompt = null;
+        if (container) container.style.display = 'none';
+      });
+    }
+
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', () => {
+        sessionStorage.setItem('taptogen_pwa_dismissed', 'true');
+        if (container) container.style.display = 'none';
+      });
+    }
+
+    // Hide if already running in standalone PWA mode
+    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+      if (container) container.style.display = 'none';
+    }
+  })();
+</script>
+
+<style>
+  .pwa-install-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    animation: pwaSlideUp 0.3s ease-out;
+  }
+
+  @keyframes pwaSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .pwa-install-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #0f172a;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 14px;
+    padding: 14px 18px;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    max-width: 440px;
+    color: #ffffff;
+  }
+
+  .pwa-install-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .pwa-install-info {
+    flex: 1;
+  }
+
+  .pwa-install-title {
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: #f8fafc;
+  }
+
+  .pwa-install-desc {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+
+  .pwa-install-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .pwa-btn-primary {
+    background: #6366f1;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+
+  .pwa-btn-primary:hover {
+    background: #4f46e5;
+  }
+
+  .pwa-btn-close {
+    background: transparent;
+    color: #64748b;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+    transition: color 0.15s ease;
+  }
+
+  .pwa-btn-close:hover {
+    color: #ffffff;
+  }
+
+  @media (max-width: 480px) {
+    .pwa-install-container {
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+    }
+    .pwa-install-card {
+      max-width: 100%;
+    }
+  }
+</style>

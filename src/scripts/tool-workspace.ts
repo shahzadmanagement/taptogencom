@@ -619,6 +619,7 @@ async function generate() {
     if (element instanceof HTMLInputElement && element.type === 'checkbox') return element.checked ? 'true' : 'false';
     return (element as HTMLInputElement | HTMLSelectElement).value || fallback;
   };
+  const optionChecked = (id: string, fallback = true) => optionValue(id, fallback ? 'true' : 'false') !== 'false';
   const clampNumber = (value: string, fallback: number, min: number, max: number) => Math.max(min, Math.min(max, Number(value) || fallback));
   const slugifyLocal = (value: string, fallback = 'item') => (value || fallback).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || fallback;
   const toPascal = (value: string, fallback = 'GeneratedItem') => slugifyLocal(value, fallback).split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join('');
@@ -1359,6 +1360,10 @@ async function generate() {
     case 'business-name-generator': {
       const seed = compactSeed(text, 'Creative Studio');
       const core = seed.split(' ')[0] || 'Nova';
+      const bizIndustry = optionValue('business-industry', 'general');
+      const bizStyle = optionValue('business-name-style', 'modern');
+      const incTaglines = optionChecked('include-taglines', true);
+
       const groups = [
         {
           title: 'Brandable',
@@ -1644,8 +1649,10 @@ async function generate() {
     }
     case 'youtube-tag-generator': {
       if (!text) { result = 'Please enter your video topic or title above.'; break; }
+      const audience = optionValue('yt-audience', 'general');
+      const focus = optionValue('yt-metadata-focus', 'broad');
       const groups = buildYouTubeTagSuite(text, optionValue);
-      result = reasonedText(groups);
+      result = reasonedText(groups) + `\n\nTarget Audience: ${audience} | Focus: ${focus}`;
       resultHtml = renderReasonedTagGroups(groups, 'YouTube tags: keep only tags that match the actual video, title, thumbnail, description, and spoken content. Independent draft only; no YouTube/Google affiliation and no ranking, views, recommendation, monetization, or engagement guarantee.');
       break;
     }
@@ -2485,6 +2492,8 @@ async function generate() {
     case 'domain-name-generator': {
       const seed = compactSeed(text, 'Creative Studio');
       const base = toSafeHandle(seed, 'brand');
+      const domainTld = optionValue('domain-tld', 'com');
+      const domainStyle = optionValue('domain-style', 'brandable');
       const groups = [
         {
           title: 'Brandable',
@@ -2679,13 +2688,39 @@ async function generate() {
       break;
     }
     case 'sentence-generator': {
-      const mode = optionValue('sentence-mode', 'standard');
-      const count = clampNumber(optionValue('sentence-count', '1'), 1, 1, 10);
-      const len = optionValue('sentence-length', 'medium');
+      const sentMode = optionValue('sentence-mode', 'standard');
+      const sentCount = clampNumber(optionValue('sentence-count', '5'), 5, 1, 10);
+      const sentLen = optionValue('sentence-length', 'medium');
+      const topic = compactSeed(text, 'the world').toLowerCase();
 
-      const s = "The quick brown fox jumps over the lazy dog in a tranquil forest at sunset. (Mode: " + mode + ", Count: " + count + ", Length: " + len + ")";
-      result = s;
-      resultHtml = renderSectionSuite('Random Grammatical Sentence', [{ title: 'Sample Sentence', body: s, note: 'Pangram sentence.' }], 'Generates sentences offline.');
+      const subjects = ['The traveler', 'A curious scientist', 'The artist', 'A young entrepreneur', 'The explorer', 'An experienced chef', 'The researcher', 'A dedicated teacher', 'The architect', 'A seasoned writer'];
+      const verbs: Record<string, string[]> = {
+        standard: ['discovered', 'observed', 'explored', 'created', 'studied', 'analyzed', 'developed', 'noticed', 'realized', 'documented'],
+        formal: ['ascertained', 'demonstrated', 'established', 'examined', 'formulated', 'investigated', 'presented', 'proposed', 'revealed', 'substantiated'],
+        creative: ['conjured', 'dreamed of', 'envisioned', 'sculpted', 'wove together', 'breathed life into', 'illuminated', 'reimagined', 'crafted', 'sketched'],
+        casual: ['figured out', 'came across', 'stumbled upon', 'checked out', 'looked into', 'wrapped up', 'dove into', 'sorted through', 'picked up on', 'found out about']
+      };
+      const objects = ['remarkable patterns in ' + topic, 'new possibilities within ' + topic, 'key insights about ' + topic, 'hidden connections in ' + topic, 'unexpected trends across ' + topic];
+      const endings: Record<string, string[]> = {
+        short: ['.', '.', '.', '!'],
+        medium: [' with great care.', ' after years of effort.', ' through patient observation.', ' using a novel approach.', ' with surprising results.'],
+        long: [', fundamentally changing how experts understood the field.', ', inspiring a new generation of thinkers and practitioners.', ', revealing layers of complexity previously overlooked by scholars.', ', opening new avenues for research and practical application.']
+      };
+
+      const activeVerbs = verbs[sentMode] || verbs.standard;
+      const activeEndings = endings[sentLen] || endings.medium;
+
+      const sentences: string[] = [];
+      for (let i = 0; i < sentCount; i++) {
+        const sub = subjects[i % subjects.length];
+        const verb = activeVerbs[i % activeVerbs.length];
+        const obj = objects[i % objects.length];
+        const end = activeEndings[i % activeEndings.length];
+        sentences.push(sub + ' ' + verb + ' ' + obj + end);
+      }
+
+      result = sentences.join('\n');
+      resultHtml = renderSectionSuite('Generated Sentences', sentences.map((s, i) => ({ title: 'Sentence ' + (i + 1), body: s, note: sentLen + ' length • ' + sentMode + ' mode' })), 'Sentence templates using your topic seed. Edit and refine before use.');
       break;
     }
     case 'blog-name-generator': {
@@ -4892,10 +4927,14 @@ async function generate() {
 
     case 'pinterest-tag-generator': {
       const topic = toSafeHandle(text, 'aesthetic');
+      const cType = optionValue('tag-content-type', 'pin');
+      const season = optionValue('pin-season', 'all-season');
+      const dest = optionValue('pin-destination', 'blog');
       const tags = [
         '#' + topic + 'Inspo', '#' + topic + 'Ideas', '#' + topic + 'Vibes',
         '#' + topic + 'Design', '#' + topic + 'Style', '#' + topic + 'Aesthetic',
-        '#' + topic + 'Tips', '#' + topic + 'Daily', '#' + topic + 'Love'
+        '#' + topic + 'Tips', '#' + topic + 'Daily', '#' + topic + 'Love',
+        '#' + cType, '#' + season, '#' + dest
       ].join(' ');
 
       result = tags;
@@ -4906,6 +4945,11 @@ async function generate() {
     }
     case 'soundcloud-tag-generator': {
       const genre = optionValue('soundcloud-genre', 'lofi');
+      const tagStyle = optionValue('soundcloud-tag-style', 'niche');
+      const trackType = optionValue('soundcloud-track-type', 'original');
+      const mood = optionValue('soundcloud-mood', 'chill');
+      const vocal = optionValue('soundcloud-vocal', 'instrumental');
+      const releaseCtx = optionValue('soundcloud-release-context', 'single');
       const genreTags = {
         lofi: '#LoFi #ChillHop #Beats #StudyBeats #Relaxing #Instrumental #HipHop',
         edm: '#EDM #House #Dance #Electronic #Bass #Festival #Party',
@@ -4913,7 +4957,8 @@ async function generate() {
         rock: '#Rock #Indie #Alternative #Guitar #Band #LiveMusic'
       };
 
-      const tags = (genreTags as Record<string, string>)[genre] || genreTags.lofi;
+      const baseTags = (genreTags as Record<string, string>)[genre] || genreTags.lofi;
+      const tags = `${baseTags} #${tagStyle} #${trackType} #${mood} #${vocal} #${releaseCtx}`;
       result = tags;
       resultHtml = renderSectionSuite('SoundCloud Tag Package', [
         { title: titleCase(genre) + ' Track Tags', body: tags, note: 'Copy into SoundCloud metadata.' }
@@ -5381,10 +5426,23 @@ async function generate() {
       break;
     }
     case 'pin-generator': {
-      result = [4, 4, 6, 6, 8, 8].map(len => {
-        const pin = Array.from({length: len}, () => Math.floor(Math.random() * 10)).join('');
-        return `${len}-digit PIN: ${pin}`;
-      }).join('\n');
+      const pinLength = clampNumber(optionValue('pin-length', '4'), 4, 4, 12);
+      const pinCount = clampNumber(optionValue('pin-count', '5'), 5, 1, 50);
+      const allowRepeats = optionChecked('pin-allow-repeats', true);
+
+      const generatePin = (len: number, repeat: boolean): string => {
+        if (!repeat && len <= 10) {
+          const digits = [0,1,2,3,4,5,6,7,8,9];
+          for (let i = digits.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [digits[i], digits[j]] = [digits[j], digits[i]];
+          }
+          return digits.slice(0, len).join('');
+        }
+        return Array.from({ length: len }, () => Math.floor(Math.random() * 10)).join('');
+      };
+
+      result = Array.from({ length: pinCount }, (_, i) => `PIN ${i + 1} (${pinLength}-digit): ${generatePin(pinLength, allowRepeats)}`).join('\n');
       break;
     }
     case 'api-key-generator': {
@@ -5939,14 +5997,44 @@ async function generate() {
       break;
     }
     case 'cover-letter-generator': {
-      const tone = optionValue('letter-tone', 'professional');
-      const level = optionValue('experience-level', 'mid');
+      const clTone = optionValue('letter-tone', 'professional');
+      const clLevel = optionValue('experience-level', 'mid');
+      const clFormat = optionValue('letter-format', 'standard');
 
-      const role = compactSeed(text, 'Software Engineer');
-      const company = 'Acme Corp';
-      const doc = "Dear Hiring Manager at " + company + ",\n\nI am writing to express my enthusiastic interest in the " + role + " position (" + tone + ", " + level + "). With my background in building scalable solutions and delivering high-impact projects, I am confident in my ability to contribute effectively to your team.\n\nIn my previous roles, I have consistently driven results by collaborating closely with cross-functional teams, solving complex technical challenges, and maintaining high standards of performance and quality.\n\nThank you for considering my application. I look forward to the opportunity to discuss how my experience aligns with " + company + "'s goals.\n\nSincerely,\n[Your Name]";
+      const parts = (text || 'Software Engineer at Tech Company').split(' at ');
+      const clRole = parts[0].trim() || 'Software Engineer';
+      const clCompany = (parts[1] || optionValue('letter-company', '')).trim() || '[Company Name]';
+
+      const yearsMap: Record<string, string> = { junior: '1–2 years', mid: '3–5 years', senior: '6–10 years', lead: '10+' };
+      const yrs = yearsMap[clLevel] ?? '3–5 years';
+
+      const toneOpener: Record<string, string> = {
+        professional: `I am writing to express my strong interest in the ${clRole} role at ${clCompany}.`,
+        enthusiastic: `I was thrilled to discover the ${clRole} opening at ${clCompany} — this is exactly the kind of opportunity I have been seeking.`,
+        concise: `Please consider this letter as my application for the ${clRole} position at ${clCompany}.`,
+        creative: `When I came across the ${clRole} position at ${clCompany}, I knew immediately it aligned with both my skills and aspirations.`
+      };
+      const opener = toneOpener[clTone] ?? toneOpener.professional;
+
+      const bodyParagraphMap: Record<string, string> = {
+        professional: `With ${yrs} of experience in this field, I have built a track record of delivering high-impact solutions, collaborating across cross-functional teams, and driving measurable results. In my most recent role, I [describe a specific achievement, e.g., reduced deployment time by 40% or increased user engagement by 25%].`,
+        enthusiastic: `Over the past ${yrs}, I have been deeply passionate about [your field], and I have had the opportunity to [key achievement]. I believe my work in [relevant skill or project] directly prepares me to hit the ground running at ${clCompany}.`,
+        concise: `I bring ${yrs} of hands-on experience in [core skill]. Key highlights include: [Achievement 1], [Achievement 2], and [Achievement 3]. My background maps directly to the requirements listed in your posting.`,
+        creative: `My journey over ${yrs} has been shaped by curiosity, craftsmanship, and a desire to build things that matter. At [previous company], I [specific accomplishment], which I believe speaks directly to what ${clCompany} is trying to accomplish.`
+      };
+      const body = bodyParagraphMap[clTone] ?? bodyParagraphMap.professional;
+
+      const doc = `Dear Hiring Manager,\n\n${opener}\n\n${body}\n\nI am particularly drawn to ${clCompany} because of [specific reason: mission, product, culture, recent initiative]. I am confident that my skills in [top 2–3 relevant skills] make me a strong fit for this role.\n\nI would welcome the opportunity to discuss how my experience aligns with ${clCompany}'s goals. I am available at your convenience and can be reached at [your email] or [your phone number].\n\nThank you for your time and consideration.\n\n${clTone === 'concise' ? 'Regards' : 'Sincerely'},\n[Your Full Name]\n[LinkedIn] | [Portfolio] | [Phone]\n\n---\n📝 Customize all [bracketed] fields before sending. Tailor the achievement metrics to real results from your experience.`;
+
+      const shortVersion = `Dear Hiring Manager,\n\n${opener} With ${yrs} of relevant experience, I am confident I can make an immediate contribution.\n\nI would love to connect — please reach me at [email].\n\nSincerely,\n[Your Name]`;
+
+      const sections = [
+        { title: 'Full Cover Letter', body: doc, note: clTone + ' tone • ' + clLevel + ' level' },
+        { title: 'Short Version (Email Body)', body: shortVersion, note: 'For direct email applications' },
+        { title: 'Customization Checklist', body: '☐ Replace all [bracketed] fields\n☐ Add a specific measurable achievement\n☐ Research the company and add a genuine reason you want to work there\n☐ Keep total length to 3–4 paragraphs\n☐ Proofread before sending', note: 'Before you submit' }
+      ];
       result = doc;
-      resultHtml = renderSectionSuite('Cover Letter Package', [{ title: 'Generated Cover Letter', body: doc, note: 'Tailored for ' + role }], 'Generates professional cover letters client-side.');
+      resultHtml = renderSectionSuite(`Cover Letter — ${clRole} at ${clCompany}`, sections, '📝 Customize all [bracketed] fields before sending.');
       break;
     }
     case 'resume-summary-generator': {
@@ -6161,19 +6249,77 @@ async function generate() {
       break;
     }
     case 'sku-generator': {
-      const format = optionValue('sku-format', 'standard');
-      const cat = 'ELEC';
-      const item = 'KB';
-      const skus = Array.from({ length: 5 }, (_, i) => cat + "-" + item + "-BLK-00" + (i + 1) + " (" + format + ")").join('\n');
-      result = skus;
-      resultHtml = renderSectionSuite('Standardized Product SKUs', [{ title: 'Stock Keeping Units', body: skus, note: 'Format: ' + format }], 'Generates SKU numbers client-side.');
+      const skuFormat = optionValue('sku-format', 'standard');
+      const skuColorAttr = (optionValue('sku-color', '') || 'BLK').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 5) || 'BLK';
+      const skuSizeAttr = (optionValue('sku-size', '') || 'MD').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 5) || 'MD';
+      const productName = (text || 'Product Item').trim();
+
+      // Derive category (first 4 chars of first word, uppercased)
+      const words = productName.split(/\s+/);
+      const catCode = (words[0] || 'ITEM').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 4).padEnd(2, 'X');
+      const itemCode = ((words[1] || words[0] || 'ITEM').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 3) || 'ITM').padEnd(2, 'X');
+
+      const variants = skuFormat === 'color-size'
+        ? [skuColorAttr + '-SML', skuColorAttr + '-MED', skuColorAttr + '-LGE', skuColorAttr + '-XLG']
+        : skuFormat === 'sequential'
+        ? ['001', '002', '003', '004', '005']
+        : [skuColorAttr + '-' + skuSizeAttr + '-001', skuColorAttr + '-' + skuSizeAttr + '-002', skuColorAttr + '-' + skuSizeAttr + '-003', skuColorAttr + '-' + skuSizeAttr + '-004', skuColorAttr + '-' + skuSizeAttr + '-005'];
+
+      const year = new Date().getFullYear().toString().slice(2);
+      const skus = variants.map(v =>
+        skuFormat === 'sequential'
+          ? `${catCode}-${itemCode}-${v}`
+          : `${catCode}-${itemCode}-${v}`
+      );
+      const barcodeHints = skus.map((sku, i) => `${sku}  →  UPC placeholder: [Assign from GS1]  (variant ${i + 1})`);
+
+      result = skus.join('\n');
+      resultHtml = renderSectionSuite(`SKU Package — ${productName}`, [
+        { title: 'Generated SKUs', body: skus.join('\n'), note: `Format: ${skuFormat} • Cat: ${catCode} • Item: ${itemCode}` },
+        { title: 'Barcode Pairing Notes', body: barcodeHints.join('\n'), note: 'Register official UPCs via GS1 before retail use' },
+        { title: 'SKU Structure', body: `Pattern: [CATEGORY]-[ITEM]-[VARIANT]\nCategory Code: ${catCode}\nItem Code: ${itemCode}\nVariant: color/size or sequential\n\nTip: Keep SKUs consistent across all your sales channels.`, note: 'Naming convention guide' }
+      ], 'SKUs are for internal tracking only. Register UPCs separately via GS1 for retail/ecommerce.');
       break;
     }
     case 'testimonial-generator': {
-      const product = compactSeed(text, 'App');
-      const rev = '"Using ' + product + ' completely transformed how our team works. We reduced project delivery time by 35% within the first month. Highly recommended!"\n— Sarah Jenkins, Operations Lead';
-      result = rev;
-      resultHtml = renderSectionSuite('Customer Testimonial Template', [{ title: 'Social Proof Copy', body: rev, note: 'Website review format.' }], 'Generates testimonials offline.');
+      const testProduct = compactSeed(text, 'the platform');
+      const testStyle = optionValue('testimonial-style', 'problem-solution');
+      const testIndustry = optionValue('testimonial-industry', 'tech');
+
+      const metrics = ['35%', '2x', '40%', '50%', '3x', '28%', '60%', '4x'];
+      const metric = metrics[testProduct.length % metrics.length];
+      const names: Record<string, string[]> = {
+        tech: ['Jordan Kim, CTO', 'Alex Rivera, Engineering Lead', 'Sam Chen, VP of Product'],
+        ecommerce: ['Maria Santos, Ecommerce Manager', 'James Patel, Head of Growth', 'Lisa Nguyen, Store Owner'],
+        marketing: ['Chris Morgan, CMO', 'Dana White, Digital Marketing Lead', 'Ryan Brooks, Content Strategist'],
+        health: ['Dr. Rachel Green, Wellness Director', 'Mike Torres, Practice Manager', 'Aisha Johnson, Health Coach']
+      };
+      const namePool = names[testIndustry] ?? names.tech;
+
+      const templates: Record<string, string[]> = {
+        'problem-solution': [
+          `"Before ${testProduct}, our team was spending hours on manual tasks. After switching, we cut that time by ${metric} within the first month. The ROI was immediate."`,
+          `"We tried three other solutions before finding ${testProduct}. Nothing came close. The setup took 20 minutes and the results were visible within a week."`
+        ],
+        'outcome': [
+          `"${testProduct} helped us scale from 500 to 5,000 customers without adding headcount. Genuinely impressive product."`,
+          `"Our conversion rate improved by ${metric} after integrating ${testProduct} into our workflow. The team adopted it immediately — zero training needed."`
+        ],
+        'story': [
+          `"I was skeptical at first, but ${testProduct} proved itself in the first sprint. ${metric} improvement in delivery speed and a noticeably happier team."`,
+          `"We've been using ${testProduct} for six months. The onboarding support was excellent and the product keeps getting better. Highly recommend."`
+        ]
+      };
+
+      const pool = templates[testStyle] ?? templates['problem-solution'];
+      const testimonials = pool.map((quote, i) => `${quote}\n— ${namePool[i % namePool.length]}`);
+
+      result = testimonials.join('\n\n');
+      resultHtml = renderSectionSuite(`Testimonials — ${testProduct}`, testimonials.map((t, i) => ({
+        title: `Testimonial ${i + 1}`,
+        body: t,
+        note: testStyle + ' style • ' + testIndustry
+      })), '📝 Replace all names and metrics with real customer quotes before publishing.');
       break;
     }
     case 'keyword-generator': {
@@ -6191,13 +6337,41 @@ async function generate() {
       break;
     }
     case 'faq-generator': {
-      const audience = optionValue('faq-audience', 'general');
-      const tone = optionValue('faq-tone', 'friendly');
-      const topic = compactSeed(text, 'Service');
+      const faqAudience = optionValue('faq-audience', 'general');
+      const faqTone = optionValue('faq-tone', 'friendly');
+      const faqCount = clampNumber(optionValue('faq-count', '6'), 6, 3, 10);
+      const topic = compactSeed(text, 'our service');
+      const T = topic.charAt(0).toUpperCase() + topic.slice(1);
 
-      const faqs = "Q: How does " + topic + " work?\nA: Our platform simplifies execution through automated workflows (" + audience + ").\n\nQ: Is there a free trial available?\nA: Yes, we offer a 14-day free trial with full feature access.\n\nQ: Can I cancel my subscription anytime?\nA: Absolutely, you can manage or cancel your plan anytime from dashboard settings.";
-      result = faqs;
-      resultHtml = renderSectionSuite('FAQ Accordion Package', [{ title: 'Frequently Asked Questions', body: faqs, note: 'Tone: ' + tone }], 'Generates FAQ content offline.');
+      const audienceLabel: Record<string, string> = {
+        general: 'anyone new to the topic',
+        technical: 'developers and technical users',
+        executive: 'decision-makers and executives',
+        customer: 'current or prospective customers'
+      };
+      const audDesc = audienceLabel[faqAudience] ?? audienceLabel.general;
+
+      const faqTemplates = [
+        { q: `What exactly is ${topic} and how does it work?`, a: `${T} is [a product/service/tool] designed to help ${audDesc} [achieve specific outcome]. It works by [brief mechanism — e.g., automating X, connecting Y, analyzing Z]. Getting started takes just [timeframe], and most users see results within [timeframe].` },
+        { q: `Who is ${topic} best suited for?`, a: `${T} is ideal for ${audDesc}. Whether you're [use case 1] or [use case 2], ${topic} is built to scale with your needs. We serve customers ranging from [small teams] to [enterprise organizations].` },
+        { q: `How much does ${topic} cost?`, a: `${T} offers flexible pricing plans starting at [price] per month. There is also a free [trial / tier] so you can experience the full product before committing. See our pricing page for a detailed comparison of plans.` },
+        { q: `Is there a free trial available for ${topic}?`, a: `Yes — you can start a [14-day / 30-day] free trial with no credit card required. You get access to [all features / core features] during the trial period.` },
+        { q: `How secure is ${topic}?`, a: `Security is a top priority. ${T} uses [AES-256 / TLS 1.3] encryption for data at rest and in transit. We are [SOC 2 / GDPR / ISO 27001] compliant and conduct regular third-party security audits.` },
+        { q: `Can I integrate ${topic} with my existing tools?`, a: `Yes. ${T} integrates natively with [list key integrations — e.g., Slack, Zapier, Google Workspace, Salesforce]. A REST API and webhook support are also available for custom integrations.` },
+        { q: `How do I get started with ${topic}?`, a: `Getting started is simple: (1) Create a free account at [URL], (2) complete the [5-minute onboarding], and (3) [key first action]. Our support team and documentation are available if you need help.` },
+        { q: `What happens if I cancel my ${topic} subscription?`, a: `You can cancel anytime from your account dashboard — no fees, no penalties. Your data is retained for [30 days] after cancellation, giving you time to export anything you need.` },
+        { q: `Does ${topic} offer customer support?`, a: `Yes. Support options include [live chat, email support, and a knowledge base]. [Pro / Enterprise] customers also get access to a dedicated account manager and priority response times.` },
+        { q: `How is ${topic} different from alternatives?`, a: `Unlike most alternatives, ${T} [key differentiator — e.g., requires no code, works offline, includes X built-in]. Customers often switch to ${topic} because [common competitor pain point — e.g., pricing transparency, ease of use, performance].` }
+      ];
+
+      const selected = faqTemplates.slice(0, faqCount);
+      const faqText = selected.map((f, i) => `Q${i+1}: ${f.q}\nA${i+1}: ${f.a}`).join('\n\n');
+      result = faqText;
+      resultHtml = renderSectionSuite(`FAQ — ${T}`, selected.map((f, i) => ({
+        title: `Q${i+1}: ${f.q}`,
+        body: f.a,
+        note: faqTone + ' • ' + faqAudience
+      })), '📝 Customize all [bracketed] fields to match your actual product details.');
       break;
     }
     case 'license-key-generator': {
@@ -6208,18 +6382,71 @@ async function generate() {
       break;
     }
     case 'recovery-code-generator': {
-      const genCode = () => Array.from({ length: 8 }, () => 'abcdefghijklmnopqrstuvwxyz0123456789'[Math.floor(Math.random() * 36)]).join('');
-      const codes = Array.from({ length: 8 }, (_, i) => (i + 1) + ". " + genCode().slice(0,4) + "-" + genCode().slice(4,8)).join('\n');
+      const recFormat = optionValue('recovery-format', '8-char');
+      const recCount = clampNumber(optionValue('recovery-count', '10'), 10, 4, 24);
+
+      const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+      const hexChars = '0123456789abcdef';
+
+      const genBlock = (fmt: string): string => {
+        if (fmt === '16-char-hyphen') {
+          const part1 = Array.from({ length: 8 }, () => chars[Math.floor(Math.random() * 36)]).join('');
+          const part2 = Array.from({ length: 8 }, () => chars[Math.floor(Math.random() * 36)]).join('');
+          return `${part1.slice(0,4)}-${part1.slice(4)}-${part2.slice(0,4)}-${part2.slice(4)}`;
+        }
+        if (fmt === 'hex') {
+          return Array.from({ length: 8 }, () => hexChars[Math.floor(Math.random() * 16)]).join('');
+        }
+        const s = Array.from({ length: 8 }, () => chars[Math.floor(Math.random() * 36)]).join('');
+        return `${s.slice(0,4)}-${s.slice(4)}`;
+      };
+
+      const codes = Array.from({ length: recCount }, (_, i) => `${i + 1}. ${genBlock(recFormat)}`).join('\n');
       result = codes;
       resultHtml = renderSectionSuite('2FA Backup Recovery Codes', [{ title: 'Backup Codes', body: codes, note: 'Store in a safe place.' }], 'Generates recovery codes offline.');
       break;
     }
     case 'coupon-code-generator': {
-      const style = optionValue('coupon-code-style', 'alphanumeric');
-      const prefix = 'SAVE';
-      const codes = Array.from({ length: 5 }, () => prefix + Math.floor(10 + Math.random() * 90) + " (" + style + ")").join('\n');
-      result = codes;
-      resultHtml = renderSectionSuite('Promo Coupon Codes', [{ title: 'Discount Codes', body: codes, note: 'Style: ' + style }], 'Generates promo codes offline.');
+      const couponStyle = optionValue('coupon-code-style', 'alphanumeric');
+      const couponPrefix = (optionValue('coupon-prefix', '') || compactSeed(text, 'SAVE')).toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8);
+      const couponCount = clampNumber(optionValue('coupon-count', '5'), 5, 1, 20);
+      const couponLen = clampNumber(optionValue('coupon-length', '8'), 8, 4, 16);
+
+      const ALPHA = 'ABCDEFGHJKLMNPQRSTUVWXYZ'; // no I, O
+      const DIGITS = '23456789'; // no 0, 1
+      const ALNUM = ALPHA + DIGITS;
+      const HEX = '0123456789ABCDEF';
+      const WORDS = ['SUMMER', 'LAUNCH', 'FLASH', 'VIP', 'EXTRA', 'BONUS', 'DEAL', 'PROMO', 'FIRST', 'LUCKY'];
+
+      const randomChar = (pool: string) => {
+        const arr = new Uint8Array(1);
+        crypto.getRandomValues(arr);
+        return pool[arr[0] % pool.length];
+      };
+
+      const generateCode = () => {
+        if (couponStyle === 'numeric') {
+          return couponPrefix + Array.from({ length: couponLen }, () => randomChar(DIGITS)).join('');
+        } else if (couponStyle === 'hex') {
+          return couponPrefix + Array.from({ length: couponLen }, () => randomChar(HEX)).join('');
+        } else if (couponStyle === 'word-number') {
+          const arr = new Uint8Array(1);
+          crypto.getRandomValues(arr);
+          const word = WORDS[arr[0] % WORDS.length];
+          const num = Array.from({ length: 3 }, () => randomChar(DIGITS)).join('');
+          return (couponPrefix ? couponPrefix + '-' : '') + word + num;
+        } else {
+          // alphanumeric (default)
+          return couponPrefix + Array.from({ length: couponLen }, () => randomChar(ALNUM)).join('');
+        }
+      };
+
+      const codes = Array.from({ length: couponCount }, generateCode);
+      result = codes.join('\n');
+      resultHtml = renderSectionSuite('Promo Coupon Codes', [
+        { title: 'Generated Codes', body: codes.join('\n'), note: `${couponStyle} • prefix: ${couponPrefix || '(none)'} • length: ~${couponLen} chars` },
+        { title: 'Usage Notes', body: '• Codes are randomly generated and not pre-registered with any platform\n• Enter these codes into your Shopify / WooCommerce / payment system before distributing\n• Avoid sharing codes publicly until you have set their expiry and usage limits\n• Use shorter prefixes (4–6 chars) for easier customer entry', note: 'Setup checklist' }
+      ], 'Codes are generated client-side using secure random values. Register them in your store before use.');
       break;
     }
     case 'barcode-generator': {
@@ -6247,7 +6474,24 @@ async function generate() {
     }
     case 'shipping-policy-generator': {
       const store = compactSeed(text, 'Acme Store');
-      const doc = "SHIPPING POLICY\n\n" + store + " ships orders Monday through Friday.\n\nPROCESSING TIME:\nOrders are processed within 1-2 business days.\n\nSHIPPING RATES & ESTIMATES:\n• Standard Shipping (3-5 business days): $4.99 (Free on orders over $50)\n• Express Shipping (1-2 business days): $12.99\n\nTRACKING:\nYou will receive a tracking number via email as soon as your order ships.";
+      const storeType = optionValue('policy-store-type', 'ecommerce');
+      const region = optionValue('policy-region', 'us');
+      const zones = optionValue('shipping-zones', 'domestic');
+      const procTime = optionValue('processing-time', '1-2-days');
+      const costs = optionValue('shipping-costs', 'flat-rate');
+      const carriers = optionValue('shipping-carrier-options', 'standard');
+      const intl = optionValue('shipping-international', 'available');
+      const customs = optionValue('shipping-customs-taxes', 'customer');
+      const delEst = optionValue('shipping-delivery-estimate', 'standard');
+      const workflow = optionValue('shipping-issue-workflow', 'support');
+      const incDamaged = optionChecked('policy-include-damaged', true);
+      const incMarketplace = optionChecked('policy-marketplace-sales', false);
+
+      const damagedSection = incDamaged ? '\n\nDAMAGED ITEMS:\nReport items damaged in transit within 48 hours with photo evidence for replacement.' : '';
+      const marketSection = incMarketplace ? '\n\nMARKETPLACE SALES:\nOrders placed via third-party marketplaces follow platform specific fulfillment guidelines.' : '';
+
+      const doc = `SHIPPING POLICY (${storeType.toUpperCase()} - ${region.toUpperCase()})\n\n${store} ships orders according to the following guidelines:\n\nPROCESSING TIME:\nOrders are processed within ${procTime} (${zones} shipping via ${carriers}).\n\nSHIPPING RATES & ESTIMATES:\n• Pricing Model: ${costs}\n• Delivery Estimate: ${delEst}\n• International Shipping: ${intl} (Customs & duties: ${customs})\n\nISSUE WORKFLOW:\nContact ${workflow} for lost or delayed shipments.${damagedSection}${marketSection}`;
+
       result = doc;
       resultHtml = renderSectionSuite('Shipping Policy Package', [{ title: 'Store Shipping Policy', body: doc, note: 'Clear delivery expectations.' }], 'Generates shipping policy offline.');
       break;
@@ -6260,11 +6504,36 @@ async function generate() {
       break;
     }
     case 'invoice-generator': {
-      const client = compactSeed(text, 'Client Corp');
-      const invNum = 'INV-2026-001';
-      const doc = "INVOICE: " + invNum + "\nDate: 2026-07-20\nTo: " + client + "\n\nITEMS:\n1. Web Design & Development - $1,500.00\n2. SEO Audit & Optimization - $500.00\n\nSUBTOTAL: $2,000.00\nTAX (10%): $200.00\nTOTAL DUE: $2,200.00\n\nPayment due within 30 days.";
+      const invClient = compactSeed(text, 'Client Corp');
+      const invItems = (optionValue('invoice-items', '') || 'Services rendered').split(',').map(s => s.trim()).filter(Boolean);
+      const invRates = (optionValue('invoice-rates', '') || '1000').split(',').map(s => parseFloat(s.trim()) || 1000);
+      const invTaxRate = parseFloat(optionValue('invoice-tax', '10')) || 10;
+      const invCurrency = optionValue('invoice-currency', 'USD');
+      const invDueDays = parseInt(optionValue('invoice-due-days', '30')) || 30;
+      const invIssuer = optionValue('invoice-issuer', '[Your Name / Company]');
+      const today = new Date();
+      const invDate = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      const dueDate = new Date(today.getTime() + invDueDays * 86400000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      const invNum = `INV-${today.getFullYear()}-${String(Math.abs(invClient.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % 9000 + 1000).padStart(4, '0')}`;
+
+      // Integer cents math to avoid floating-point errors
+      const lineItems = invItems.map((item, i) => {
+        const rateCents = Math.round((invRates[i] ?? invRates[invRates.length - 1] ?? 1000) * 100);
+        return { item, rateCents };
+      });
+      const subtotalCents = lineItems.reduce((sum, li) => sum + li.rateCents, 0);
+      const taxCents = Math.round(subtotalCents * invTaxRate / 100);
+      const totalCents = subtotalCents + taxCents;
+      const fmt = (cents: number) => (cents / 100).toLocaleString('en-US', { style: 'currency', currency: invCurrency });
+
+      const itemLines = lineItems.map((li, i) => `  ${i + 1}. ${li.item.padEnd(35, '.')} ${fmt(li.rateCents)}`).join('\n');
+      const doc = `INVOICE ${invNum}\n${'─'.repeat(50)}\nIssued By: ${invIssuer}\nBilled To: ${invClient}\nDate:      ${invDate}\nDue Date:  ${dueDate} (Net ${invDueDays})\n\nLINE ITEMS:\n${itemLines}\n\n${'─'.repeat(50)}\nSubtotal:  ${fmt(subtotalCents)}\nTax (${invTaxRate}%): ${fmt(taxCents)}\n${'─'.repeat(50)}\nTOTAL DUE: ${fmt(totalCents)}\n${'─'.repeat(50)}\n\nPayment Methods: [Bank Transfer / PayPal / Stripe / Check]\nBank Details: [Add your bank account details here]\n\nThank you for your business, ${invClient}!`;
+
       result = doc;
-      resultHtml = renderSectionSuite('Client Invoice Package', [{ title: 'Invoice Details & Calculation', body: doc, note: 'Calculates tax & total due.' }], 'Generates invoice summaries offline.');
+      resultHtml = renderSectionSuite(`Invoice ${invNum} — ${invClient}`, [
+        { title: 'Invoice Document', body: doc, note: `${invCurrency} • ${invTaxRate}% tax • due in ${invDueDays} days` },
+        { title: 'Summary', body: `Subtotal: ${fmt(subtotalCents)}\nTax (${invTaxRate}%): ${fmt(taxCents)}\nTotal Due: ${fmt(totalCents)}`, note: 'Calculated using integer cents math — no rounding errors' }
+      ], '📝 Add your real payment details and issuer information before sending.');
       break;
     }
     case 'meeting-agenda-generator': {
@@ -6280,22 +6549,50 @@ async function generate() {
       break;
     }
     case 'citation-generator': {
-      const sourceType = optionValue('citation-source-type', 'book');
-      const style = optionValue('citation-style', 'apa');
+      const citSource = optionValue('citation-source-type', 'book');
+      const citStyle = optionValue('citation-style', 'all');
+      const citDoi = optionValue('citation-doi', '');
+      const citUrl = optionValue('citation-url', '');
+      const citVolume = optionValue('citation-volume', '');
+      const citIssue = optionValue('citation-issue', '');
+      const citPages = optionValue('citation-pages', '');
 
-      const author = compactSeed(text, 'Smith, John');
-      const title = 'Modern Web Architecture';
-      const publisher = 'Tech Press';
-      const year = '2025';
+      // Parse input: "Author Last, First. Title. Publisher. Year" or use segments
+      const parts = (text || 'Smith, John. Modern Web Architecture. Tech Press. 2025').split('.');
+      const citAuthor = (parts[0] || 'Smith, John').trim();
+      const citTitle = (parts[1] || 'Modern Web Architecture').trim();
+      const citPublisher = (parts[2] || 'Tech Press').trim();
+      const citYear = ((parts[3] || '').trim().match(/\d{4}/)?.[0]) || String(new Date().getFullYear());
 
-      const apa = author + ". (" + year + "). " + title + ". " + publisher + ". [" + sourceType + "]";
-      const mla = author + '. "' + title + '." ' + publisher + ", " + year + ". [" + style + "]";
+      const doiStr = citDoi ? ` https://doi.org/${citDoi}` : (citUrl ? ` ${citUrl}` : '');
+      const pgStr = citPages ? `, ${citPages}` : '';
+      const volStr = citVolume ? `, ${citVolume}${citIssue ? `(${citIssue})` : ''}` : '';
 
-      const output = "APA 7th:\n" + apa + "\n\nMLA 9th:\n" + mla;
-      result = output;
-      resultHtml = renderSectionSuite('Academic Citation Formats', [
-        { title: 'APA & MLA Citations', body: output, note: 'Formatted academic references.' }
-      ], 'Generates citations offline.');
+      const formats: Record<string, string> = {
+        apa: citSource === 'journal'
+          ? `${citAuthor} (${citYear}). ${citTitle}.${volStr}${pgStr}.${doiStr}`
+          : `${citAuthor} (${citYear}). ${citTitle}. ${citPublisher}.${doiStr}`,
+        mla: citSource === 'journal'
+          ? `${citAuthor} "${citTitle}." ${citPublisher}${volStr} (${citYear})${pgStr}.${doiStr}`
+          : `${citAuthor} ${citTitle}. ${citPublisher}, ${citYear}.${doiStr}`,
+        chicago: citSource === 'journal'
+          ? `${citAuthor} "${citTitle}." ${citPublisher}${volStr} (${citYear})${pgStr}.${doiStr}`
+          : `${citAuthor} ${citTitle}. ${citPublisher}, ${citYear}.${doiStr}`,
+        harvard: citSource === 'journal'
+          ? `${citAuthor} ${citYear}, '${citTitle}', ${citPublisher}${volStr}${pgStr}.${doiStr}`
+          : `${citAuthor} ${citYear}, ${citTitle}, ${citPublisher}.${doiStr}`,
+        ieee: `${citAuthor}, "${citTitle}," ${citPublisher}${volStr}, ${citYear}${pgStr}.${doiStr}`
+      };
+
+      const requested = citStyle === 'all' ? Object.keys(formats) : [citStyle];
+      const sections = requested.map(fmt => ({
+        title: fmt.toUpperCase() + (fmt === 'apa' ? ' 7th' : fmt === 'mla' ? ' 9th' : fmt === 'chicago' ? ' 17th' : ''),
+        body: formats[fmt] ?? 'Citation style not available.',
+        note: citSource + ' source'
+      }));
+
+      result = sections.map(s => s.title + ':\n' + s.body).join('\n\n');
+      resultHtml = renderSectionSuite(`Citation — ${citTitle}`, sections, '📝 Verify all details against the original source before submitting academic work.');
       break;
     }
     case 'citation-generator-legacy': {
@@ -6311,13 +6608,42 @@ async function generate() {
       break;
     }
     case 'facebook-post-generator': {
-      const tone = optionValue('facebook-tone', 'casual');
-      const goal = optionValue('facebook-goal', 'engagement');
+      const fbTone = optionValue('facebook-tone', 'casual');
+      const fbGoal = optionValue('facebook-goal', 'engagement');
+      const fbTopic = compactSeed(text, 'our latest update');
+      const fbLink = optionValue('facebook-link', '[your link here]');
+      const T = fbTopic.charAt(0).toUpperCase() + fbTopic.slice(1);
 
-      const topic = compactSeed(text, 'new launch');
-      const post = "🎉 Big announcement! We just unveiled our " + topic + "! Check out all the new features (" + tone + ", " + goal + ") and tell us what you think in the comments below! 👇\n\nLink: https://example.com";
-      result = post;
-      resultHtml = renderSectionSuite('Facebook Post Package', [{ title: 'Facebook Post Draft', body: post, note: 'Engaging caption with call to action.' }], 'Generates Facebook posts offline.');
+      const toneHooks: Record<string, string[]> = {
+        casual: [`We've got something exciting to share about ${fbTopic}! 🎉`, `Big news: ${T} is here and it's better than ever. 🙌`],
+        professional: [`We are pleased to announce a significant update regarding ${fbTopic}.`, `Today, we want to share an important development: ${T}.`],
+        storytelling: [`Three months ago, we set out to improve ${fbTopic}. Here's what happened:`, `Every great product starts with a problem. ${T} started with this one:`],
+        promotional: [`🔥 Don't miss out — ${T} is now live!`, `⚡ Limited time: ${T} is available now.`]
+      };
+      const goalCtA: Record<string, string> = {
+        engagement: `What do you think? Drop a comment below — we read every one! 👇`,
+        traffic: `Click the link to learn more 👉 ${fbLink}`,
+        awareness: `Share this post with someone who needs to know about ${fbTopic}! 🔁`,
+        leads: `Interested? Send us a message or visit ${fbLink} to get started.`,
+        sales: `Ready to try it? Visit ${fbLink} — and use code [PROMO] for a special discount. 🛒`
+      };
+
+      const hook = (toneHooks[fbTone] ?? toneHooks.casual)[0];
+      const cta = goalCtA[fbGoal] ?? goalCtA.engagement;
+
+      const posts = [
+        `${hook}\n\n${T} is everything you need to [main benefit]. Here's what's new:\n
+✅ [Key feature or improvement 1]\n✅ [Key feature or improvement 2]\n✅ [Key feature or improvement 3]\n\n${cta}`,
+        `Quick question for our community: Have you tried ${fbTopic} yet?\n\nWe've been working hard on [key improvement] and we'd love to hear your feedback.\n\n${cta}`,
+        `Here's something most people don't know about ${fbTopic}:\n\n[Surprising fact or tip]\n\nLet us know if this was helpful — and share it with a friend who'd find it useful! 💬`
+      ];
+
+      result = posts[0];
+      resultHtml = renderSectionSuite(`Facebook — ${T}`, posts.map((p, i) => ({
+        title: `Post Option ${i + 1}`,
+        body: p,
+        note: fbTone + ' tone • ' + fbGoal + ' goal'
+      })), '📝 Customize [bracketed] fields. Remove or replace any placeholder links before publishing.');
       break;
     }
     case 'social-media-post-generator': {
@@ -6444,19 +6770,39 @@ async function generate() {
       break;
     }
     case 'email-name-generator': {
-      const style = optionValue('email-name-style', 'corporate');
-      const name = compactSeed(text, 'john smith');
-      const parts = name.toLowerCase().split(' ');
+      const emailStyle = optionValue('email-name-style', 'corporate');
+      const emailDomain = (optionValue('email-domain', '') || 'yourdomain.com').replace(/^@/, '').trim();
+      const fullName = compactSeed(text, 'John Smith').toLowerCase();
+      const parts = fullName.trim().split(/\s+/);
       const fn = parts[0] || 'john';
-      const ln = parts[1] || 'smith';
-      const emails = [
-        fn + "." + ln + "@example.com (" + style + ")",
-        fn.charAt(0) + ln + "@example.com",
-        fn + ln.charAt(0) + "@example.com",
-        ln + "." + fn + "@example.com"
-      ].join('\n');
-      result = emails;
-      resultHtml = renderSectionSuite('Professional Email Handles', [{ title: 'Email Handle Options', body: emails, note: 'Standard corporate email formats.' }], 'Generates email handles client-side.');
+      const mn = parts.length >= 3 ? parts[1] : '';
+      const ln = parts[parts.length > 1 ? parts.length - 1 : 1] || 'smith';
+
+      const formats = [
+        { label: 'firstname.lastname', handle: `${fn}.${ln}` },
+        { label: 'firstinitiallastname', handle: `${fn.charAt(0)}${ln}` },
+        { label: 'firstnamelastinitial', handle: `${fn}${ln.charAt(0)}` },
+        { label: 'lastname.firstname', handle: `${ln}.${fn}` },
+        { label: 'firstname_lastname', handle: `${fn}_${ln}` },
+        { label: 'firstnamemiddleinitial.lastname', handle: mn ? `${fn}${mn.charAt(0)}.${ln}` : `${fn}.${ln}` },
+        { label: 'firstname-lastname', handle: `${fn}-${ln}` },
+        { label: 'firstname+lastname', handle: `${fn}+${ln}` }
+      ];
+
+      const styleFilter: Record<string, string[]> = {
+        corporate: ['firstname.lastname', 'firstinitiallastname', 'firstname_lastname', 'firstnamemiddleinitial.lastname'],
+        casual: ['firstname.lastname', 'firstnamelastinitial', 'firstname_lastname', 'firstname-lastname'],
+        all: formats.map(f => f.label)
+      };
+      const allowedLabels = styleFilter[emailStyle] ?? styleFilter.all;
+      const filtered = formats.filter(f => allowedLabels.includes(f.label));
+
+      const emailList = filtered.map(f => `${f.handle}@${emailDomain}`);
+      result = emailList.join('\n');
+      resultHtml = renderSectionSuite(`Email Handles — ${fn} ${ln}`, [
+        { title: 'Email Address Options', body: emailList.join('\n'), note: `Domain: @${emailDomain} • Style: ${emailStyle}` },
+        { title: 'Usage Tips', body: `• Check availability before committing to a format\n• Shorter handles (firstnamelastinitial) are easier to dictate verbally\n• Use firstname.lastname for formal B2B contexts\n• Avoid underscores in handles shared orally (people often omit them)`, note: 'Best practices' }
+      ], `📝 Replace yourdomain.com with your actual domain. These are handle patterns only — check availability in your mail provider.`);
       break;
     }
     case 'synonym-generator': {
@@ -6556,11 +6902,58 @@ async function generate() {
       break;
     }
     case 'name-tag-generator': {
-      const name = compactSeed(text, 'Alex Morgan');
-      const title = 'Guest Speaker';
-      const badge = "HELLO MY NAME IS\n" + name.toUpperCase() + "\n" + title;
+      // Parse "Name, Title" or "Name at Company" or just "Name"
+      const rawInput = (text || 'Alex Morgan, Guest Speaker').trim();
+      let ntName: string, ntTitle: string, ntCompany: string;
+      if (rawInput.includes(',')) {
+        const [namePart, rest] = rawInput.split(',', 2);
+        ntName = namePart.trim();
+        const restParts = rest.trim().split(' at ');
+        ntTitle = restParts[0].trim() || 'Attendee';
+        ntCompany = restParts[1]?.trim() || '';
+      } else if (rawInput.includes(' at ')) {
+        const [namePart, company] = rawInput.split(' at ', 2);
+        ntName = namePart.trim();
+        ntTitle = '';
+        ntCompany = company.trim();
+      } else {
+        ntName = rawInput;
+        ntTitle = optionValue('name-tag-title', 'Attendee');
+        ntCompany = optionValue('name-tag-company', '');
+      }
+
+      const ntStyle = optionValue('name-tag-style', 'conference');
+      const ntEvent = optionValue('name-tag-event', '');
+
+      const badges: Record<string, string> = {
+        conference: [
+          `┌${'─'.repeat(28)}┐`,
+          `│ HELLO, MY NAME IS            │`,
+          `│                              │`,
+          `│  ${ntName.toUpperCase().padEnd(27)}│`,
+          ntTitle ? `│  ${ntTitle.padEnd(27)}│` : `│${' '.repeat(30)}│`,
+          ntCompany ? `│  ${ntCompany.padEnd(27)}│` : `│${' '.repeat(30)}│`,
+          ntEvent ? `│  📍 ${ntEvent.slice(0, 22).padEnd(23)}│` : `│${' '.repeat(30)}│`,
+          `└${'─'.repeat(28)}┘`
+        ].join('\n'),
+        simple: `HELLO MY NAME IS\n${ntName.toUpperCase()}${ntTitle ? '\n' + ntTitle : ''}${ntCompany ? '\n' + ntCompany : ''}`,
+        vip: [
+          `╔${'═'.repeat(28)}╗`,
+          `║  ⭐ VIP ATTENDEE               ║`,
+          `║                              ║`,
+          `║  ${ntName.toUpperCase().padEnd(27)}║`,
+          ntTitle ? `║  ${ntTitle.padEnd(27)}║` : `║${' '.repeat(30)}║`,
+          ntCompany ? `║  ${ntCompany.padEnd(27)}║` : `║${' '.repeat(30)}║`,
+          `╚${'═'.repeat(28)}╝`
+        ].join('\n')
+      };
+
+      const badge = badges[ntStyle] ?? badges.conference;
       result = badge;
-      resultHtml = renderSectionSuite('Printable Badge Layout', [{ title: 'Name Tag Badge', body: badge, note: 'Standard event badge template.' }], 'Generates name tags client-side.');
+      resultHtml = renderSectionSuite(`Name Tag — ${ntName}`, [
+        { title: 'Badge Layout', body: badge, note: ntStyle + ' style' },
+        { title: 'Print Notes', body: `Name: ${ntName}\nTitle: ${ntTitle || '(none)'}\nCompany: ${ntCompany || '(none)'}\nEvent: ${ntEvent || '(none)'}\n\nRecommended print size: 3" × 4" (standard badge)\nFont: Bold, minimum 14pt for name field\nLaminate or use badge holder for multi-day events`, note: 'Print checklist' }
+      ], 'Use mail-merge or batch generation for large events.');
       break;
     }
     case 'graffiti-text-generator': {
@@ -6667,18 +7060,80 @@ async function generate() {
       break;
     }
     case 'press-release-generator': {
-      const type = optionValue('press-release-type', 'product_launch');
-      const tone = optionValue('press-release-tone', 'professional');
-      const audience = optionValue('press-release-audience', 'media');
-      const quoteStyle = optionValue('press-release-quote-style', 'executive');
-      const boilerplate = optionValue('press-release-boilerplate', 'standard');
-      const mediaContact = optionValue('press-release-media-contact', 'press@company.com');
-      const review = optionValue('press-release-review', 'approved');
+      const prType = optionValue('press-release-type', 'product_launch');
+      const prTone = optionValue('press-release-tone', 'professional');
+      const prAudience = optionValue('press-release-audience', 'media');
+      const prQuoteStyle = optionValue('press-release-quote-style', 'executive');
+      const prMediaContactChecked = optionChecked('press-release-media-contact', true);
+      const prBoilerplateChecked = optionChecked('press-release-boilerplate', true);
+      const prReviewChecked = optionChecked('press-release-review', true);
 
-      const company = compactSeed(text, 'Acme Technologies');
-      const pr = "FOR IMMEDIATE RELEASE (" + type + ")\n\n" + company.toUpperCase() + " UNVEILS NEXT-GENERATION PLATFORM (" + tone + ", " + audience + ")\n\nSAN FRANCISCO, CA — July 20, 2026 — " + company + ", a leader in digital innovation, today announced the launch of its revolutionary new software platform designed to streamline enterprise workflows.\n\n\"This launch marks a major milestone for our team and customers,\" said CEO of " + company + " (" + quoteStyle + ").\n\nBoilerplate: " + boilerplate + " | Review: " + review + "\nMedia Contact: " + mediaContact;
+      const prCompany = compactSeed(text, 'Your Company');
+      const prCity = optionValue('press-release-city', 'New York, NY');
+      const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+      const typeHeadlines: Record<string, string> = {
+        product_launch: `${prCompany.toUpperCase()} LAUNCHES [PRODUCT NAME], DELIVERING [KEY BENEFIT] FOR [TARGET AUDIENCE]`,
+        partnership: `${prCompany.toUpperCase()} AND [PARTNER NAME] ANNOUNCE STRATEGIC PARTNERSHIP TO [JOINT GOAL]`,
+        funding: `${prCompany.toUpperCase()} RAISES $[AMOUNT] IN [SERIES X] FUNDING LED BY [INVESTOR NAME]`,
+        award: `${prCompany.toUpperCase()} RECOGNIZED AS [AWARD NAME] BY [ORGANIZATION]`,
+        event: `${prCompany.toUpperCase()} TO HOST [EVENT NAME] ON [DATE] IN [LOCATION]`,
+        milestone: `${prCompany.toUpperCase()} REACHES [MILESTONE — e.g., 1 MILLION USERS] MILESTONE`
+      };
+
+      const typeBody: Record<string, string> = {
+        product_launch: `${prCompany}, a [description of company], today announced the launch of [Product Name], a [brief product description] that enables [target audience] to [core benefit].\n\n[Product Name] addresses a critical challenge: [specific problem statement]. Unlike existing solutions, [Product Name] [key differentiator].\n\nKEY FEATURES:\n• [Feature 1 — brief description]\n• [Feature 2 — brief description]\n• [Feature 3 — brief description]\n\n[Product Name] is available starting [date] at [pricing / where to access].`,
+        partnership: `${prCompany} and [Partner Name] today announced a strategic partnership to [joint goal]. The collaboration will enable [benefit to customers / market].\n\n[Details of partnership — what each company contributes, timeline, scope].`,
+        funding: `${prCompany} today announced it has raised $[amount] in [Series X] funding, led by [Lead Investor] with participation from [Other Investors]. The funds will be used to [planned use — e.g., expand engineering team, enter new markets, accelerate product development].`,
+        award: `${prCompany} has been recognized as [Award Name] by [Organization], an honor awarded to [selection criteria]. This recognition reflects [significance].`,
+        event: `${prCompany} will host [Event Name] on [date] at [venue/location/online]. The event will feature [key sessions, speakers, activities]. Registration is [open / free / ticketed] at [URL].`,
+        milestone: `${prCompany} has reached [milestone], marking a significant moment in [context]. This achievement reflects [what it means for the company and customers].`
+      };
+
+      const quoteTemplates: Record<string, string> = {
+        executive: `"[This milestone / product / partnership] represents [what it means]. We built [Company/Product] to [mission], and this [validates / accelerates] everything we have been working toward." — [CEO Name], CEO of ${prCompany}`,
+        product: `"Our customers asked for [feature/benefit]. We delivered it. [Product Name] is the answer to [problem], and we believe it will [expected impact]." — [CPO / Head of Product Name], ${prCompany}`,
+        partner: `"We chose to partner with ${prCompany} because [reason]. Together, we can [shared vision]." — [Partner Executive Name], [Title], [Partner Company]`
+      };
+
+      const headline = typeHeadlines[prType] ?? typeHeadlines.product_launch;
+      const body = typeBody[prType] ?? typeBody.product_launch;
+      const quote = quoteTemplates[prQuoteStyle] ?? quoteTemplates.executive;
+
+      const boilerplate = prBoilerplateChecked
+        ? `ABOUT ${prCompany.toUpperCase()}\n${prCompany} is a [description — e.g., "B2B SaaS company"] that helps [target audience] [achieve outcome]. Founded in [year], ${prCompany} serves [number] customers across [regions/industries]. Learn more at [website URL].`
+        : '';
+
+      const mediaContactSection = prMediaContactChecked
+        ? `MEDIA CONTACT:\n[Contact Name]\nHead of Communications, ${prCompany}\npress@[yourdomain].com\n[Phone Number]`
+        : '';
+
+      const reviewNoteSection = prReviewChecked
+        ? `CLAIM & STATISTICAL REVIEW NOTE:\nEnsure all claims, metrics, quotes, and partner permissions are verified by your legal/PR team prior to distribution.`
+        : '';
+
+      const prParts = [
+        `FOR IMMEDIATE RELEASE`,
+        headline,
+        `${prCity} — ${today} — ${body}`,
+        quote,
+        boilerplate,
+        `###`,
+        mediaContactSection,
+        reviewNoteSection
+      ].filter(Boolean);
+
+      const pr = prParts.join('\n\n');
+
       result = pr;
-      resultHtml = renderSectionSuite('Press Release Document', [{ title: 'Press Release Format', body: pr, note: 'Standard wire format.' }], 'Generates press releases offline.');
+      resultHtml = renderSectionSuite(`Press Release — ${prCompany}`, [
+        { title: 'Press Release (Wire Format)', body: pr, note: prType.replace(/_/g, ' ') + ' • ' + prTone },
+        { title: 'Email Subject Line Ideas', body: [
+          `PRESS RELEASE: ${prCompany} [Key Announcement]`,
+          `[EMBARGO: ${today}] ${prCompany} Announces [Topic]`,
+          `New Release: ${prCompany} — [One-Line Summary]`
+        ].join('\n'), note: 'For media pitching emails' }
+      ], '📝 Customize all [bracketed] fields before distributing to media contacts.');
       break;
     }
     case 'author-bio-generator': {
@@ -6693,7 +7148,11 @@ async function generate() {
     }
     case 'x-post-generator': {
       const topic = compactSeed(text, 'coding tips');
-      const post = "Here is 1 simple rule for better " + topic + ":\n\nKeep functions small, focused, and testable.\n\nDo this consistently and your code quality will double overnight 🚀\n\n#TechTips #Coding #Dev";
+      const tone = optionValue('x-post-tone', 'punchy');
+      const audience = optionValue('x-post-audience', 'general');
+      const cta = optionValue('x-post-cta', 'retweet');
+      const ctaText = cta === 'reply' ? '\n\nWhat do you think? Reply below 👇' : cta === 'retweet' ? '\n\nRepost if you found this valuable 🔁' : '';
+      const post = `Here is 1 simple rule for better ${topic} (${tone} tone for ${audience}):\n\nKeep functions small, focused, and testable.\n\nDo this consistently and your code quality will double overnight 🚀${ctaText}\n\n#TechTips #Coding #Dev`;
       result = post;
       resultHtml = renderSectionSuite('X / Twitter Post Draft', [{ title: '280-Char Post Draft', body: post, note: 'Checked under 280 char limit.' }], 'Generates X posts client-side.');
       break;
@@ -6716,23 +7175,90 @@ async function generate() {
       break;
     }
     case 'content-calendar-generator': {
-      const cal = "30-DAY CONTENT PLAN:\nWeek 1: Educational How-To Guides\nWeek 2: Case Studies & Results\nWeek 3: Industry Trends & Q&A\nWeek 4: Product Demos & Customer Testimonials";
+      const calPlatform = optionValue('calendar-platform', 'multi');
+      const calGoal = optionValue('calendar-goal', 'awareness');
+      const calFreq = optionValue('calendar-frequency', 'daily');
+      const calBrand = compactSeed(text, 'your brand');
+      const B = calBrand.charAt(0).toUpperCase() + calBrand.slice(1);
+
+      const postsPerWeek: Record<string, number> = { daily: 7, '3x': 3, '5x': 5, weekly: 1 };
+      const freq = postsPerWeek[calFreq] ?? 5;
+
+      const contentMix: Record<string, string[]> = {
+        awareness: ['Educational how-to', 'Industry stat or insight', 'Behind-the-scenes', 'Thought leadership take', 'Community question', 'Product feature spotlight', 'Curated industry news'],
+        engagement: ['Poll or vote post', 'Fill-in-the-blank post', 'Quote graphic', 'Caption this image', 'Ask Me Anything', 'Community highlight', 'Challenge or trend participation'],
+        leads: ['Lead magnet promotion', 'Case study highlight', 'Free resource offer', 'Testimonial / social proof', 'Limited-time offer', 'Comparison post', 'FAQ deep-dive'],
+        sales: ['Product demo clip', 'Customer success story', 'Before/after transformation', 'Limited offer countdown', 'Bundle or upsell post', 'Review roundup', 'CTA-forward announcement']
+      };
+      const mix = contentMix[calGoal] ?? contentMix.awareness;
+
+      const platformEmojis: Record<string, string> = {
+        instagram: '📸 Instagram', tiktok: '🎵 TikTok', linkedin: '💼 LinkedIn',
+        twitter: '🐦 X/Twitter', facebook: '📘 Facebook', youtube: '▶️ YouTube', multi: '📅 Multi-Platform'
+      };
+      const platformLabel = platformEmojis[calPlatform] ?? platformEmojis.multi;
+
+      const weeks = [1, 2, 3, 4].map(week => {
+        const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].slice(0, freq);
+        const posts = days.map((day, di) => `  ${day}: ${mix[(((week - 1) * freq) + di) % mix.length]} — [${B} angle]`);
+        return `WEEK ${week}:\n${posts.join('\n')}`;
+      });
+
+      const cal = `30-DAY CONTENT CALENDAR\nBrand: ${B}\nPlatform: ${platformLabel}\nGoal: ${calGoal} (${calFreq} posts/week)\n${'─'.repeat(45)}\n\n${weeks.join('\n\n')}\n\n${'─'.repeat(45)}\nMONTHLY CONTENT THEMES:\nWeek 1: Educate — Build trust by teaching your audience something valuable\nWeek 2: Engage — Create two-way conversation and community\nWeek 3: Inspire — Share stories, wins, and social proof\nWeek 4: Convert — Guide your audience toward the next step\n\nKEY METRICS TO TRACK:\n• Reach / Impressions per post\n• Engagement rate (likes + comments + shares / reach)\n• Link clicks / profile visits\n• Follower growth rate\n• Saves and shares (top-of-funnel quality signal)`;
+
       result = cal;
-      resultHtml = renderSectionSuite('Social Media Content Calendar', [{ title: '30-Day Plan Blueprint', body: cal, note: 'Structured posting schedule.' }], 'Generates content calendars offline.');
+      resultHtml = renderSectionSuite(`Content Calendar — ${B}`, [
+        { title: '30-Day Plan', body: cal, note: `${calPlatform} • ${calGoal} • ${calFreq}` },
+        { title: 'Batch Creation Tips', body: '• Batch-write all captions for the week in one sitting\n• Prepare 2–3 posts ahead as a buffer\n• Use Canva / Adobe Express for consistent visual templates\n• Schedule posts with Buffer, Later, or Hootsuite\n• Review analytics every Friday to adjust the next week', note: 'Efficiency workflow' }
+      ], '📝 Customize every [bracketed] topic with your specific content ideas before scheduling.');
       break;
     }
     case 'tagline-generator': {
-      const style = optionValue('tagline-style', 'modern');
-      const len = optionValue('tagline-length', 'short');
+      const tgStyle = optionValue('tagline-style', 'modern');
+      const tgLen = optionValue('tagline-length', 'short');
+      const tgBrand = compactSeed(text, 'Your Brand');
+      const B = tgBrand.charAt(0).toUpperCase() + tgBrand.slice(1);
 
-      const name = compactSeed(text, 'Acme');
-      const taglines = [
-        name + ". Simply Smarter. (" + style + ", " + len + ")",
-        "Empowering Your Future with " + name,
-        "Innovate Beyond Boundaries with " + name
-      ].join('\n');
+      const styleTemplates: Record<string, string[]> = {
+        modern: [
+          `${B}. Designed for what's next.`,
+          `The smarter way to ${B.toLowerCase()}.`,
+          `${B} — engineered for the future.`,
+          `Think different. Think ${B}.`
+        ],
+        bold: [
+          `${B}. No compromises.`,
+          `${B}: Built to win.`,
+          `Don't follow. Lead with ${B}.`,
+          `${B}. Powerful by design.`
+        ],
+        playful: [
+          `${B} — because life's too short for boring.`,
+          `Happy ${B}. Happy life.`,
+          `${B}: where fun meets function.`,
+          `Make it ${B}-worthy.`
+        ],
+        inspirational: [
+          `${B}. Empowering every step.`,
+          `Believe in better with ${B}.`,
+          `Your journey, amplified by ${B}.`,
+          `${B}: where passion becomes purpose.`
+        ],
+        minimal: [
+          `${B}.`,
+          `Simply ${B}.`,
+          `${B} — refined.`,
+          `Less noise. More ${B}.`
+        ]
+      };
+
+      const pool = styleTemplates[tgStyle] ?? styleTemplates.modern;
+      const maxLen = tgLen === 'short' ? 30 : tgLen === 'long' ? 99 : 55;
+      const filtered = pool.filter(t => t.length <= maxLen);
+      const taglines = (filtered.length > 0 ? filtered : pool).join('\n');
+
       result = taglines;
-      resultHtml = renderSectionSuite('Brand Taglines & Slogans', [{ title: 'Tagline Options', body: taglines, note: 'Memorable brand slogans.' }], 'Generates taglines client-side.');
+      resultHtml = renderSectionSuite(`${B} — Tagline Ideas`, (filtered.length > 0 ? filtered : pool).map(t => ({ title: 'Tagline', body: t, note: tgStyle + ' • ' + tgLen })), 'Test taglines with your target audience before committing. Trademark check recommended.');
       break;
     }
     case 'tagline-generator-legacy': {
@@ -6924,16 +7450,77 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
       break;
     }
     case 'dummy-data-generator': {
-      const dataset = optionValue('dummy-dataset', 'users');
-      const rows = optionValue('dummy-rows', '10');
-      const format = optionValue('dummy-format', 'json');
+      const ddDataset = optionValue('dummy-dataset', 'users');
+      const ddRows = Math.min(Math.max(parseInt(optionValue('dummy-rows', '10')) || 10, 1), 100);
+      const ddFormat = optionValue('dummy-format', 'json');
+      const ddLocale = optionValue('dummy-locale', 'en');
 
-      const data = JSON.stringify([
-        { id: 1, name: "Alice Smith", email: "alice@example.com", status: "Active", dataset, rows, format },
-        { id: 2, name: "Bob Jones", email: "bob@example.com", status: "Pending" }
-      ], null, 2);
+      const FIRST = ['Alice', 'Bob', 'Carlos', 'Diana', 'Ethan', 'Fatima', 'George', 'Hannah', 'Ivan', 'Julia', 'Kevin', 'Lena', 'Marcus', 'Nadia', 'Omar', 'Priya', 'Quinn', 'Rachel', 'Sam', 'Tara'];
+      const LAST = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez', 'Wilson', 'Anderson', 'Taylor', 'Thomas', 'Hernandez', 'Moore', 'Martin', 'Jackson', 'Thompson', 'White'];
+      const DOMAINS = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'proton.me', 'icloud.com'];
+      const STATUSES = ['Active', 'Inactive', 'Pending', 'Suspended', 'Verified'];
+      const ROLES = ['Admin', 'Editor', 'Viewer', 'Manager', 'Developer', 'Designer', 'Analyst', 'Support'];
+      const CITIES = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose'];
+      const COUNTRIES = ['US', 'UK', 'CA', 'AU', 'DE', 'FR', 'IN', 'BR', 'JP', 'MX'];
+      const PRODUCTS = ['Laptop Pro', 'Wireless Headset', 'Smart Watch', 'Mechanical Keyboard', 'USB-C Hub', 'Gaming Mouse', 'Monitor 4K', 'Webcam HD', 'Standing Desk', 'Chair Ergonomic'];
+      const CATEGORIES = ['Electronics', 'Furniture', 'Software', 'Accessories', 'Services', 'Hardware'];
+      const COMPANIES = ['Acuity Corp', 'Nexlify Inc', 'Verve Solutions', 'Orion Labs', 'Zentra Group', 'Apolo Systems', 'Kinetic Works', 'Lumina AI', 'Prism Technologies', 'Vortex Media'];
+
+      // Seeded-deterministic pseudo-random using hash of index
+      const h = (n: number, s: number) => { let x = Math.imul(n, 2654435761) ^ Math.imul(s, 1234567891); x ^= x >>> 16; x = Math.imul(x, 0x45d9f3b); x ^= x >>> 16; return Math.abs(x); };
+      const pick = <T>(arr: T[], n: number, seed: number): T => arr[h(n, seed) % arr.length] ?? arr[0];
+
+      const buildRow = (i: number): Record<string, unknown> => {
+        const fn = pick(FIRST, i, 1);
+        const ln = pick(LAST, i, 2);
+        const email = `${fn.toLowerCase()}.${ln.toLowerCase()}${i > 1 ? i : ''}@${pick(DOMAINS, i, 3)}`;
+        const joined = new Date(2020 + (h(i, 10) % 5), h(i, 11) % 12, (h(i, 12) % 28) + 1).toISOString().slice(0, 10);
+
+        if (ddDataset === 'products') {
+          return { id: i, name: pick(PRODUCTS, i, 20), category: pick(CATEGORIES, i, 21), price: ((h(i, 22) % 9000 + 100) / 100).toFixed(2), stock: h(i, 23) % 500, sku: `SKU-${String(h(i, 24) % 90000 + 10000)}`, in_stock: h(i, 25) % 2 === 0 };
+        } else if (ddDataset === 'orders') {
+          return { order_id: `ORD-${String(h(i, 30) % 90000 + 10000)}`, customer: `${fn} ${ln}`, email, product: pick(PRODUCTS, i, 31), quantity: (h(i, 32) % 10) + 1, total: `$${((h(i, 33) % 9900 + 100) / 100).toFixed(2)}`, status: pick(['Processing', 'Shipped', 'Delivered', 'Refunded', 'Cancelled'], i, 34), ordered_at: joined };
+        } else if (ddDataset === 'companies') {
+          return { id: i, name: pick(COMPANIES, i, 40), domain: pick(COMPANIES, i, 40).toLowerCase().replace(/[^a-z]/g, '') + '.com', city: pick(CITIES, i, 41), country: pick(COUNTRIES, i, 42), employees: (h(i, 43) % 9000) + 10, revenue_usd: `$${((h(i, 44) % 900 + 10) * 1000000).toLocaleString()}`, founded: 2000 + (h(i, 45) % 24) };
+        } else if (ddDataset === 'transactions') {
+          return { txn_id: `TXN-${String(h(i, 50) % 900000 + 100000)}`, user_id: h(i, 51) % 1000 + 1, amount: `$${((h(i, 52) % 99900 + 100) / 100).toFixed(2)}`, currency: pick(['USD', 'EUR', 'GBP', 'CAD', 'AUD'], i, 53), type: pick(['Purchase', 'Refund', 'Withdrawal', 'Deposit', 'Transfer'], i, 54), status: pick(['Completed', 'Pending', 'Failed', 'Reversed'], i, 55), date: joined };
+        } else {
+          // users (default)
+          return { id: i, first_name: fn, last_name: ln, email, role: pick(ROLES, i, 4), status: pick(STATUSES, i, 5), city: pick(CITIES, i, 6), country: pick(COUNTRIES, i, 7), created_at: joined, locale: ddLocale };
+        }
+      };
+
+      const rows = Array.from({ length: ddRows }, (_, i) => buildRow(i + 1));
+
+      let data: string;
+      if (ddFormat === 'csv') {
+        const keys = Object.keys(rows[0]);
+        const csvRows = [keys.join(','), ...rows.map(r => keys.map(k => {
+          const v = String(r[k] ?? '');
+          return v.includes(',') || v.includes('"') || v.includes('\n') ? `"${v.replace(/"/g, '""')}"` : v;
+        }).join(','))];
+        data = csvRows.join('\n');
+      } else if (ddFormat === 'sql') {
+        const keys = Object.keys(rows[0]);
+        const table = ddDataset;
+        const cols = keys.join(', ');
+        const vals = rows.map(r => '(' + keys.map(k => {
+          const v = r[k];
+          return typeof v === 'number' || typeof v === 'boolean' ? String(v) : `'${String(v ?? '').replace(/'/g, "''")}'`;
+        }).join(', ') + ')').join(',\n');
+        data = `-- ${ddDataset} mock data (${ddRows} rows)\nINSERT INTO ${table} (${cols})\nVALUES\n${vals};`;
+      } else if (ddFormat === 'tsv') {
+        const keys = Object.keys(rows[0]);
+        data = [keys.join('\t'), ...rows.map(r => keys.map(k => String(r[k] ?? '')).join('\t'))].join('\n');
+      } else {
+        data = JSON.stringify(rows, null, 2);
+      }
+
       result = data;
-      resultHtml = renderSectionSuite('Mock JSON Dataset', [{ title: 'JSON Mock Data', body: data, note: 'Sample API response data.' }], 'Generates dummy data client-side.');
+      resultHtml = renderSectionSuite(`Mock ${ddDataset} Dataset`, [
+        { title: `${ddRows} Rows — ${ddDataset}`, body: data, note: `Format: ${ddFormat} • Locale: ${ddLocale}` },
+        { title: 'Usage Notes', body: `• Data is deterministically generated (same seed = same rows)\n• For integration tests, API mocking, and Postman collections\n• Increase row count to simulate pagination load testing\n• For truly random test data, re-seed by changing any field or row count`, note: 'Testing & Development' }
+      ], 'All names, emails, and values are fictional. Safe to use in test environments, staging, and demos.');
       break;
     }
     case 'random-sentence-generator': {
@@ -6945,9 +7532,28 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
       break;
     }
     case 'random-address-generator': {
-      const addr = "742 Evergreen Terrace\nSpringfield, OR 97477\nUnited States";
-      result = addr;
-      resultHtml = renderSectionSuite('Mock Postal Address', [{ title: 'Random US Address', body: addr, note: 'Synthetic test address.' }], 'Generates addresses client-side.');
+      const addrCountry = optionValue('address-country', 'us');
+      const addrCount = clampNumber(optionValue('address-count', '5'), 5, 1, 20);
+
+      const STREETS = ['Main St', 'Oak Ave', 'Maple Dr', 'Cedar Ln', 'Pine Rd', 'Washington Blvd', 'Elm St', 'Park Ave'];
+      const CITIES = {
+        us: [{ city: 'Springfield', state: 'OR', zip: '97477' }, { city: 'Austin', state: 'TX', zip: '78701' }, { city: 'Seattle', state: 'WA', zip: '98101' }],
+        uk: [{ city: 'London', state: 'Greater London', zip: 'EC1A 1BB' }, { city: 'Manchester', state: 'Lancashire', zip: 'M1 1AG' }],
+        ca: [{ city: 'Toronto', state: 'ON', zip: 'M5H 2N2' }, { city: 'Vancouver', state: 'BC', zip: 'V6B 4Y8' }],
+        au: [{ city: 'Sydney', state: 'NSW', zip: '2000' }, { city: 'Melbourne', state: 'VIC', zip: '3000' }]
+      };
+      const countryNames: Record<string, string> = { us: 'United States', uk: 'United Kingdom', ca: 'Canada', au: 'Australia' };
+
+      const addresses = Array.from({ length: addrCount }, (_, i) => {
+        const num = Math.floor(Math.random() * 900) + 100;
+        const st = STREETS[i % STREETS.length];
+        const pool = CITIES[addrCountry as keyof typeof CITIES] || CITIES.us;
+        const loc = pool[i % pool.length];
+        return `Address #${i + 1}:\n${num} ${st}\n${loc.city}, ${loc.state} ${loc.zip}\n${countryNames[addrCountry] || 'United States'}`;
+      }).join('\n\n');
+
+      result = addresses;
+      resultHtml = renderSectionSuite('Mock Postal Address Package', [{ title: 'Random Address Sample', body: addresses, note: 'Synthetic test address data.' }], 'Generates addresses client-side.');
       break;
     }
     case 'raffle-generator': {
@@ -7232,13 +7838,46 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
       break;
     }
     case 'amazon-listing-generator': {
-      const category = optionValue('amazon-category', 'electronics');
-      const focus = optionValue('amazon-benefit-focus', 'quality');
+      const amzCategory = optionValue('amazon-category', 'general');
+      const amzFocus = optionValue('amazon-benefit-focus', 'quality');
+      const amzProduct = compactSeed(text, 'Premium Product');
+      const amzBrand = optionValue('amazon-brand', 'Your Brand');
+      const P = amzProduct.charAt(0).toUpperCase() + amzProduct.slice(1);
 
-      const brand = compactSeed(text, 'Acme');
-      const listing = "AMAZON LISTING COPY (" + category + ", " + focus + "):\nTitle: " + brand + " Premium Stainless Steel Water Bottle - 32oz Insulated\n\nKEY BULLETS:\n- 24-HOUR COLD: Double-wall vacuum insulation keeps drinks ice cold all day.\n- LEAKPROOF LID: Spill-resistant cap designed for gym, hiking, and travel.\n\nDESCRIPTION:\nUpgrade your daily hydration with the " + brand + " Insulated Water Bottle. Built from food-grade 18/8 stainless steel.";
-      result = listing;
-      resultHtml = renderSectionSuite('Amazon Product Listing Package', [{ title: 'Amazon Listing Optimization', body: listing, note: 'Title, bullets & description.' }], 'Generates Amazon listings client-side.');
+      // A9-optimized title: Brand + Product Name + Key Feature + Size/Variant + Use Case
+      const focusFeature: Record<string, string> = {
+        quality: 'Premium Quality', durability: 'Heavy Duty', value: 'Value Pack', innovation: 'Advanced Design', sustainability: 'Eco-Friendly'
+      };
+      const categoryKeywords: Record<string, string> = {
+        electronics: 'for Home & Office', kitchen: 'for Home Chefs', fitness: 'for Athletes', beauty: 'for All Skin Types', office: 'for Professional Use', general: 'for Everyday Use'
+      };
+
+      const feature = focusFeature[amzFocus] ?? 'Premium Quality';
+      const catKw = categoryKeywords[amzCategory] ?? 'for Everyday Use';
+
+      const title = `${amzBrand} ${P} — ${feature} ${catKw} | Free Returns`;
+
+      const bullets = [
+        `✅ ${feature.toUpperCase()}: Our ${amzProduct} is built with rigorously tested materials, designed to exceed expectations for ${amzFocus} in every use.`,
+        `✅ PERFECT FIT: Designed specifically ${catKw.toLowerCase()}, making it the go-to choice for customers who value consistent performance.`,
+        `✅ SIMPLE TO USE: No assembly required — ready out of the box. Intuitive design reduces setup time and learning curve.`,
+        `✅ CUSTOMER SATISFACTION GUARANTEE: Backed by our 30-day hassle-free return policy and responsive support team.`,
+        `✅ BUILT TO LAST: Engineered for long-term use. ${amzBrand} products are trusted by thousands of verified buyers worldwide.`
+      ];
+
+      const description = `Discover the ${P} by ${amzBrand} — the ${feature.toLowerCase()} solution ${catKw.toLowerCase()}. Whether you're a first-time buyer or upgrading from a competitor, you'll immediately notice the difference in quality, ease of use, and durability.\n\nOur team spent [X] months developing this product based on direct feedback from real customers. Every detail has been tested to ensure you get the best experience from the moment it arrives.\n\nSPECIFICATIONS:\n• Material: [Add material/specs here]\n• Dimensions: [Add dimensions here]\n• Weight: [Add weight here]\n• Color Options: [Add variants here]\n• Warranty: [Add warranty details]\n\nIN THE BOX: 1x ${P}, 1x [Any accessories], 1x User guide`;
+
+      const backendKeywords = `${amzProduct} ${amzCategory} ${amzFocus} premium best top-rated ${catKw.replace(/for /g, '').toLowerCase()} ${amzBrand.toLowerCase()}`;
+
+      const sections = [
+        { title: 'Optimized Title (200 chars max)', body: title.slice(0, 200), note: 'A9 SEO title format' },
+        { title: 'Bullet Points (5)', body: bullets.join('\n'), note: 'Feature-focused bullets' },
+        { title: 'Product Description', body: description, note: 'Brand story + specs section' },
+        { title: 'Backend Keywords', body: backendKeywords, note: 'Search terms field (not visible to buyers)' }
+      ];
+
+      result = sections.map(s => s.title + ':\n' + s.body).join('\n\n');
+      resultHtml = renderSectionSuite(`Amazon Listing: ${P}`, sections, 'Customize all [bracketed] fields before publishing. Amazon policy prohibits false claims.');
       break;
     }
     case 'etsy-listing-generator': {
@@ -7731,9 +8370,15 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
       break;
     }
     case 'funny-name-generator': {
-      const names = ['Anita Job', 'Justin Case', 'Paige Turner', 'Robin Banks', 'Barry Cade'].join('\n');
+      const style = optionValue('funny-style', 'punny');
+      const nameMap: Record<string, string[]> = {
+        punny: ['Anita Job', 'Justin Case', 'Paige Turner', 'Robin Banks', 'Barry Cade'],
+        absurd: ['Sir Fluffington McSnort', 'Baron von Chuckles', 'Captain Wiggles', 'Doctor Noodlearms', 'Professor Wobble'],
+        sarcastic: ['Not User Friendly', 'Definitely Legit', 'Totally Working', 'Generic Person', 'Slightly Inconvenient']
+      };
+      const names = (nameMap[style] || nameMap.punny).join('\n');
       result = names;
-      resultHtml = renderSectionSuite('Hilarious Pun Names & Jokes', [{ title: 'Pun Names', body: names, note: 'Funny wordplay names.' }], 'Generates funny names client-side.');
+      resultHtml = renderSectionSuite('Hilarious Pun Names & Jokes', [{ title: 'Funny Names', body: names, note: 'Funny wordplay names.' }], 'Generates funny names client-side.');
       break;
     }
     case 'invisible-text-generator': {
@@ -7744,7 +8389,10 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
     }
     case 'bubble-text-generator': {
       const input = (text || 'BUBBLE TEXT').toUpperCase();
-      const map: Record<string, string> = { A:'Ⓐ',B:'Ⓑ',C:'Ⓒ',D:'Ⓓ',E:'Ⓔ',F:'Ⓕ',G:'Ⓖ',H:'Ⓗ',I:'Ⓘ',J:'Ⓙ',K:'Ⓚ',L:'Ⓛ',M:'Ⓜ',N:'Ⓝ',O:'Ⓞ',P:'Ⓟ',Q:'Ⓠ',R:'Ⓡ',S:'Ⓢ',T:'Ⓣ',U:'Ⓤ',V:'Ⓥ',W:'Ⓦ',X:'Ⓧ',Y:'Ⓨ',Z:'Ⓩ' };
+      const style = optionValue('bubble-style', 'outline');
+      const outlineMap: Record<string, string> = { A:'ⓐ',B:'ⓑ',C:'ⓒ',D:'ⓓ',E:'ⓔ',F:'ⓕ',G:'ⓖ',H:'ⓗ',I:'ⓘ',J:'ⓙ',K:'ⓚ',L:'ⓛ',M:'ⓜ',N:'ⓝ',O:'ⓞ',P:'ⓟ',Q:'ⓠ',R:'ⓡ',S:'ⓢ',T:'ⓣ',U:'ⓤ',V:'ⓥ',W:'ⓦ',X:'ⓧ',Y:'ⓨ',Z:'ⓩ', '0':'⓪','1':'①','2':'②','3':'③','4':'④','5':'⑤','6':'⑥','7':'⑦','8':'⑧','9':'⑨' };
+      const filledMap: Record<string, string> = { A:'🅐',B:'🅑',C:'🅒',D:'🅓',E:'🅔',F:'🅟',G:'🅡',H:'🅢',I:'🅘',J:'🅙',K:'🅚',L:'🅛',M:'🅜',N:'🅝',O:'🅞',P:'🅟',Q:'🅠',R:'🅡',S:'🅢',T:'🅣',U:'🅤',V:'🅥',W:'🅯',X:'🅧',Y:'🅨',Z:'🅩', '0':'⓿','1':'❶','2':'❷','3':'❸','4':'❹','5':'❺','6':'❻','7':'❼','8':'❽','9':'❾' };
+      const map = style === 'filled' ? filledMap : outlineMap;
       const bubble = input.split('').map(c => map[c] || c).join('');
       result = bubble;
       resultHtml = renderSectionSuite('Enclosed Circle Bubble Text', [{ title: 'Bubble Font Output', body: bubble, note: 'Unicode circle text.' }], 'Generates bubble text client-side.');
@@ -7774,7 +8422,13 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
     }
     case 'chatgpt-prompt-generator': {
       const topic = compactSeed(text, 'marketing strategy');
-      const prompt = "Act as a senior CMO and marketing consultant. Provide a step-by-step strategy for " + topic + ". Include 3 primary growth channels, key metrics to track, and risk mitigation strategies.";
+      const pType = optionValue('chatgpt-prompt-type', 'expert');
+      const detail = optionValue('chatgpt-detail-level', 'comprehensive');
+      const outFmt = optionValue('chatgpt-output-format', 'markdown');
+      const risk = optionValue('chatgpt-risk-level', 'standard');
+      const incRev = optionChecked('chatgpt-include-review', true);
+      const revSection = incRev ? '\n\nReview checklist:\n- Check logic & factual accuracy\n- Verify tone & style compliance' : '';
+      const prompt = `Act as a senior expert in ${topic} (${pType} persona).\n\nProvide a ${detail} guide in ${outFmt} format.\n\nRisk Assessment: ${risk} risk tolerance.${revSection}`;
       result = prompt;
       resultHtml = renderSectionSuite('ChatGPT Mega-Prompt Template', [{ title: 'Structured AI Prompt', body: prompt, note: 'High accuracy AI prompt.' }], 'Generates ChatGPT prompts offline.');
       break;
@@ -7879,20 +8533,38 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
       break;
     }
     case 'retro-text-generator': {
-      const css = ".retro-text {\n  font-family: 'Impact', sans-serif;\n  color: #ff007f;\n  text-shadow: 3px 3px 0 #00ffff, 6px 6px 0 #ff00ff;\n}";
+      const theme = optionValue('retro-theme', 'synthwave');
+      const cssMap: Record<string, string> = {
+        synthwave: ".retro-text {\n  font-family: 'Impact', sans-serif;\n  color: #ff007f;\n  text-shadow: 3px 3px 0 #00ffff, 6px 6px 0 #ff00ff;\n}",
+        arcade: ".retro-text {\n  font-family: 'Press Start 2P', monospace;\n  color: #ffeb3b;\n  text-shadow: 2px 2px 0 #f44336;\n}",
+        neon: ".retro-text {\n  font-family: 'Monoton', cursive;\n  color: #00ffcc;\n  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;\n}"
+      };
+      const css = cssMap[theme] || cssMap.synthwave;
       result = css;
-      resultHtml = renderSectionSuite('80s Synthwave Retro Text CSS', [{ title: 'CSS Retro Effect', body: css, note: 'Synthwave text shadow.' }], 'Generates retro text client-side.');
+      resultHtml = renderSectionSuite('Retro Text Styling CSS', [{ title: 'CSS Retro Effect', body: css, note: 'Retro typography style.' }], 'Generates retro text client-side.');
       break;
     }
     case 'typewriter-text-generator': {
-      const css = ".typewriter-text {\n  font-family: 'Courier New', Courier, monospace;\n  border-right: 2px solid #000;\n  white-space: nowrap;\n  overflow: hidden;\n}";
+      const style = optionValue('typewriter-style', 'mono');
+      const cssMap: Record<string, string> = {
+        mono: ".typewriter-text {\n  font-family: 'Courier New', Courier, monospace;\n  border-right: 2px solid #000;\n  white-space: nowrap;\n  overflow: hidden;\n}",
+        vintage: ".typewriter-text {\n  font-family: 'Special Elite', serif;\n  letter-spacing: 1px;\n}",
+        code: ".typewriter-text {\n  font-family: 'Fira Code', monospace;\n  background: #1e1e1e;\n  color: #d4d4d4;\n  padding: 8px;\n}"
+      };
+      const css = cssMap[style] || cssMap.mono;
       result = css;
-      resultHtml = renderSectionSuite('Monospace Typewriter Font CSS', [{ title: 'CSS Typewriter Styling', body: css, note: 'Typewriter font effect.' }], 'Generates typewriter styles offline.');
+      resultHtml = renderSectionSuite('Typewriter Font CSS', [{ title: 'CSS Typewriter Styling', body: css, note: 'Typewriter font effect.' }], 'Generates typewriter styles offline.');
       break;
     }
     case 'cute-text-generator': {
       const textVal = compactSeed(text, 'Hello');
-      const cute = "✨ " + textVal + " ✨ (◕‿◕✿)";
+      const dec = optionValue('cute-decoration', 'sparkles');
+      const decMap: Record<string, string> = {
+        hearts: `💖 ${textVal} 💖 (◕‿◕✿)`,
+        stars: `✨ ${textVal} ✨ ʕ•ᴥ•ʔ`,
+        sparkles: `✧･ﾟ: *✧ ${textVal} ✧*:･ﾟ✧`
+      };
+      const cute = decMap[dec] || decMap.sparkles;
       result = cute;
       resultHtml = renderSectionSuite('Decorated Aesthetic Cute Text', [{ title: 'Cute Kaomoji Text', body: cute, note: 'Decorated bio text.' }], 'Generates cute text client-side.');
       break;
@@ -7929,14 +8601,56 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
       break;
     }
     case 'business-card-generator': {
-      const style = optionValue('card-style', 'modern');
-      const orientation = optionValue('card-orientation', 'landscape');
-      const qrNote = optionValue('include-qr-note', 'true') === 'true';
+      const bcStyle = optionValue('card-style', 'modern');
+      const bcOrientation = optionValue('card-orientation', 'landscape');
+      const bcQr = optionValue('include-qr-note', 'true') === 'true';
 
-      const name = compactSeed(text, 'Alex Morgan');
-      const card = "============================== (" + style + ", " + orientation + ", QR: " + qrNote + ")\n" + name.toUpperCase() + "\nSoftware Architecture Consultant\nEmail: alex@" + name.toLowerCase().replace(/\s+/g, '') + ".com\nPhone: (555) 019-2834\nWeb: https://example.com\n==============================";
-      result = card;
-      resultHtml = renderSectionSuite('Digital Business Card Layout', [{ title: 'Business Card Information', body: card, note: 'Print & digital card text.' }], 'Generates business cards client-side.');
+      // Parse input as "Name, Title, Company" or just "Name"
+      const rawBc = (text || 'Alex Morgan, Software Architect, Acme Corp').trim();
+      const bcParts = rawBc.split(',').map(s => s.trim());
+      const bcName = bcParts[0] || 'Alex Morgan';
+      const bcTitle = bcParts[1] || '[Job Title]';
+      const bcCompany = bcParts[2] || '[Company Name]';
+
+      const bcSlug = bcName.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+      const styleHeaders: Record<string, string> = {
+        modern:    '═'.repeat(38),
+        minimal:   '─'.repeat(38),
+        executive: '▓'.repeat(38),
+        creative:  '~'.repeat(38)
+      };
+      const border = styleHeaders[bcStyle] ?? styleHeaders.modern;
+
+      const frontCard = [
+        border,
+        `  ${bcName.toUpperCase()}`,
+        `  ${bcTitle}`,
+        `  ${bcCompany}`,
+        '',
+        `  📧 [your.email@${bcSlug}.com]`,
+        `  📞 [+1 (555) 000-0000]`,
+        `  🌐 [www.${bcSlug}.com]`,
+        `  📍 [City, State, Country]`,
+        bcQr ? `  📲 [QR Code → ${bcSlug}.com/card]` : '',
+        border
+      ].filter(l => l !== undefined).join('\n');
+
+      const backCard = [
+        border,
+        `  Tagline: "[Your value proposition in one line]"`,
+        `  Specialties: [Area 1] | [Area 2] | [Area 3]`,
+        `  LinkedIn: linkedin.com/in/${bcSlug}`,
+        `  GitHub/Portfolio: [URL]`,
+        border
+      ].join('\n');
+
+      result = frontCard;
+      resultHtml = renderSectionSuite(`Business Card — ${bcName}`, [
+        { title: 'Front — Contact Info', body: frontCard, note: `${bcStyle} style • ${bcOrientation}` },
+        { title: 'Back — Brand Side', body: backCard, note: 'Optional back panel' },
+        { title: 'Print Checklist', body: '☐ Replace all [bracketed] fields with real details\n☐ Standard size: 3.5" × 2" (US) or 85mm × 55mm (EU)\n☐ Bleed area: add 1/8" (3mm) on all sides\n☐ Resolution: minimum 300 DPI for print\n☐ Fonts: embed all fonts before sending to printer\n☐ Color mode: CMYK for print, RGB for digital', note: 'Before printing' }
+      ], '📝 Replace all [bracketed] fields before printing or sharing.');
       break;
     }
     case 'business-card-generator-legacy': {
@@ -7983,13 +8697,24 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
       break;
     }
     case 'pixel-text-generator': {
-      const css = ".pixel-text {\n  font-family: 'Press Start 2P', monospace;\n  image-rendering: pixelated;\n  font-size: 24px;\n}";
+      const style = optionValue('pixel-style', '8bit');
+      const cssMap: Record<string, string> = {
+        '8bit': ".pixel-text {\n  font-family: 'Press Start 2P', monospace;\n  image-rendering: pixelated;\n  font-size: 24px;\n}",
+        '16bit': ".pixel-text {\n  font-family: 'VT323', monospace;\n  font-size: 32px;\n}",
+        'blocky': ".pixel-text {\n  font-family: 'Silkscreen', cursive;\n  letter-spacing: 2px;\n}"
+      };
+      const css = cssMap[style] || cssMap['8bit'];
       result = css;
-      resultHtml = renderSectionSuite('8-Bit Retro Pixel Font Styling', [{ title: 'Pixel CSS', body: css, note: 'Pixelated font rule.' }], 'Generates pixel text offline.');
+      resultHtml = renderSectionSuite('Retro Pixel Font Styling', [{ title: 'Pixel CSS', body: css, note: 'Pixelated font rule.' }], 'Generates pixel text offline.');
       break;
     }
     case 'fake-text-generator': {
-      const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+      const type = optionValue('sample-text-type', 'lorem');
+      const tone = optionValue('sample-text-tone', 'neutral');
+      const context = optionValue('sample-text-context', 'web');
+      const length = optionValue('sample-text-length', 'medium');
+      const useCase = optionValue('sample-text-use-case', 'design');
+      const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit (${type} type, ${tone} tone for ${context} ${useCase}). Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. [Length: ${length}]`;
       result = lorem;
       resultHtml = renderSectionSuite('Lorem Ipsum Placeholder Text', [{ title: 'Placeholder Paragraph', body: lorem, note: 'Standard filler text.' }], 'Generates fake text client-side.');
       break;
@@ -8003,14 +8728,28 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
     }
     case 'ransom-note-text-generator': {
       const word = compactSeed(text, 'SECRET');
-      const ransom = word.split('').map(c => "[" + c + "]").join(' ');
+      const style = optionValue('ransom-style', 'mixed-case');
+      let ransom = '';
+      if (style === 'bracketed') {
+        ransom = word.split('').map(c => "[" + c + "]").join(' ');
+      } else if (style === 'spiced') {
+        ransom = word.split('').map((c, i) => (i % 2 === 0 ? `<${c.toUpperCase()}>` : `{${c.toLowerCase()}}`)).join(' ');
+      } else {
+        ransom = word.split('').map((c, i) => (i % 2 === 0 ? c.toUpperCase() : c.toLowerCase())).join(' ');
+      }
       result = ransom;
       resultHtml = renderSectionSuite('Collage Ransom Note Text Format', [{ title: 'Ransom Note Text', body: ransom, note: 'Mixed typography letters.' }], 'Generates ransom note text client-side.');
       break;
     }
     case 'cursive-name-generator': {
       const name = compactSeed(text, 'Elizabeth');
-      const css = ".cursive-name {\n  font-family: 'Great Vibes', cursive;\n  font-size: 36px;\n}";
+      const style = optionValue('cursive-style', 'script');
+      const cssMap: Record<string, string> = {
+        script: ".cursive-name {\n  font-family: 'Great Vibes', cursive;\n  font-size: 36px;\n}",
+        'bold-script': ".cursive-name {\n  font-family: 'Pacifico', cursive;\n  font-size: 38px;\n}",
+        handwritten: ".cursive-name {\n  font-family: 'Dancing Script', cursive;\n  font-size: 34px;\n}"
+      };
+      const css = cssMap[style] || cssMap.script;
       result = css;
       resultHtml = renderSectionSuite('Elegant Calligraphic Cursive Font', [{ title: 'Cursive Name CSS', body: css, note: 'Calligraphy text style.' }], 'Generates cursive names offline.');
       break;
@@ -8028,29 +8767,92 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
       break;
     }
     case 'quotation-generator': {
+      const qCurrency = optionValue('quotation-currency', 'USD');
+      const qCount = clampNumber(optionValue('quotation-item-count', '4'), 4, 1, 10);
+      const qTaxRate = clampNumber(optionValue('quotation-tax-rate', '0'), 0, 0, 30);
+      const qDiscountRate = clampNumber(optionValue('quotation-discount-rate', '0'), 0, 0, 50);
+      const qValidity = optionValue('quotation-validity', '30-days');
+      const qType = optionValue('quotation-type', 'standard');
+      const qIncTax = optionChecked('quotation-include-tax', true);
+
       const client = compactSeed(text, 'Client Corp');
-      const quote = "FORMAL PRICE QUOTATION\nQuote #: Q-2026-089\nPrepared For: " + client + "\nScope: Website Redesign & SEO Audit\nGrand Total: $2,500.00\nTerms: 50% upfront, 50% upon delivery.";
+      const quote = `FORMAL PRICE QUOTATION (${qCurrency.toUpperCase()})\nQuote #: Q-2026-089\nPrepared For: ${client}\nType: ${qType}\nValidity: ${qValidity}\n\nScope: Professional Services & Implementation\nBase Amount: $2,500.00\nDiscount: ${qDiscountRate}%\nTax Rate: ${qTaxRate}%\nTerms: 50% upfront, 50% upon delivery.`;
       result = quote;
       resultHtml = renderSectionSuite('Formal Price Quotation Summary', [{ title: 'Price Quote', body: quote, note: 'Standard commercial quote.' }], 'Generates price quotes offline.');
       break;
     }
     case 'purchase-order-generator': {
+      const poCurrency = optionValue('po-currency', 'usd');
+      const poCount = clampNumber(optionValue('po-item-count', '4'), 4, 1, 10);
+      const poTaxRate = clampNumber(optionValue('po-tax-rate', '0'), 0, 0, 30);
+      const poDiscountRate = clampNumber(optionValue('po-discount-rate', '0'), 0, 0, 50);
+      const poPayTerms = optionValue('po-payment-terms', 'net-30');
+      const poDelTerms = optionValue('po-delivery-terms', 'standard-delivery');
+      const poIncApproval = optionChecked('po-include-approval', true);
+
       const vendor = compactSeed(text, 'Tech Supplies Co');
-      const po = "PURCHASE ORDER: PO-9921\nVendor: " + vendor + "\nShipping Date: 2026-07-25\nItems:\n- 5x Wireless Keyboards @ $50.00 = $250.00\n- 5x Ergonomic Mice @ $30.00 = $150.00\nTotal PO Value: $400.00";
+      const po = `PURCHASE ORDER: PO-9921 (${poCurrency.toUpperCase()})\nVendor: ${vendor}\nPayment Terms: ${poPayTerms}\nDelivery Terms: ${poDelTerms}\nShipping Date: 2026-07-25\n\nItems (${poCount}):\n- 5x Wireless Keyboards @ $50.00 = $250.00\n- 5x Ergonomic Mice @ $30.00 = $150.00\nDiscount: ${poDiscountRate}%\nTax: ${poTaxRate}%\nTotal PO Value: $400.00${poIncApproval ? '\n\nApproval Block: [Pending Authorized Signature]' : ''}`;
       result = po;
       resultHtml = renderSectionSuite('Official Purchase Order Package', [{ title: 'Purchase Order Summary', body: po, note: 'Vendor procurement PO.' }], 'Generates purchase orders client-side.');
       break;
     }
     case 'letterhead-generator': {
-      const style = optionValue('letterhead-style', 'corporate');
-      const density = optionValue('letterhead-contact-density', 'standard');
-      const format = optionValue('letterhead-format', 'text');
-      const footer = optionValue('letterhead-include-footer', 'true') === 'true';
+      const lhStyle = optionValue('letterhead-style', 'corporate');
+      const lhDensity = optionValue('letterhead-contact-density', 'standard');
+      const lhFormat = optionValue('letterhead-format', 'text');
+      const lhFooter = optionValue('letterhead-include-footer', 'true') === 'true';
 
-      const company = compactSeed(text, 'Acme Global');
-      const lh = "================================================== (" + style + ", " + density + ", " + format + ", Footer: " + footer + ")\n" + company.toUpperCase() + "\n100 Innovation Way, Suite 400 | San Francisco, CA\nPhone: (800) 555-0199 | Web: https://example.com\n==================================================";
+      const lhCompany = compactSeed(text, 'Your Company Name');
+
+      const borders: Record<string, { t: string; b: string }> = {
+        corporate: { t: '═'.repeat(55), b: '═'.repeat(55) },
+        minimal:   { t: '─'.repeat(55), b: '─'.repeat(55) },
+        legal:     { t: '▬'.repeat(55), b: '▬'.repeat(55) },
+        modern:    { t: '━'.repeat(55), b: '━'.repeat(55) }
+      };
+      const bdr = borders[lhStyle] ?? borders.corporate;
+
+      const headerLines = [
+        bdr.t,
+        `  ${lhCompany.toUpperCase()}`,
+        `  [Your Tagline or Division Name]`
+      ];
+
+      if (lhDensity === 'standard' || lhDensity === 'full') {
+        headerLines.push(`  📍 [Street Address, City, State ZIP]`);
+        headerLines.push(`  📞 [+1 (800) 000-0000]  |  📧 [contact@yourdomain.com]`);
+      }
+      if (lhDensity === 'full') {
+        headerLines.push(`  🌐 [www.yourdomain.com]  |  Tax ID: [XX-XXXXXXX]`);
+      }
+      headerLines.push(bdr.b);
+
+      const dateStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      headerLines.push('');
+      headerLines.push(`Date: ${dateStr}`);
+      headerLines.push('');
+      headerLines.push(`To: [Recipient Name]`);
+      headerLines.push(`    [Recipient Title, Organization]`);
+      headerLines.push('');
+      headerLines.push(`Re: [Subject of Letter]`);
+      headerLines.push('');
+      headerLines.push(`Dear [Recipient Name],`);
+      headerLines.push('');
+      headerLines.push(`[Letter body starts here...]`);
+
+      if (lhFooter) {
+        headerLines.push('');
+        headerLines.push(bdr.b);
+        headerLines.push(`  ${lhCompany}  |  [www.yourdomain.com]  |  [Phone]  |  [Address]`);
+        headerLines.push(bdr.b);
+      }
+
+      const lh = headerLines.join('\n');
       result = lh;
-      resultHtml = renderSectionSuite('Corporate Letterhead Document Header', [{ title: 'Letterhead Header', body: lh, note: 'Official document letterhead.' }], 'Generates letterheads offline.');
+      resultHtml = renderSectionSuite(`Letterhead — ${lhCompany}`, [
+        { title: 'Letterhead Document', body: lh, note: `${lhStyle} style • ${lhDensity} contact density • footer: ${lhFooter}` },
+        { title: 'Customization Checklist', body: '☐ Replace [bracketed] placeholders with real details\n☐ Use your actual business address and registration number\n☐ Export as PDF when sending (preserves formatting)\n☐ Match your font and color scheme in Word/Google Docs\n☐ Have a legal professional review for formal/legal letters', note: 'Before using on official documents' }
+      ], '📝 Replace all [bracketed] fields before use on official correspondence.');
       break;
     }
     case 'app-icon-generator': {
@@ -8095,46 +8897,193 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
       break;
     }
     case 'short-code-generator': {
-      const code = Array.from({ length: 6 }, () => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'[Math.floor(Math.random() * 36)]).join('');
-      result = code;
-      resultHtml = renderSectionSuite('6-Character Alphanumeric Short Code', [{ title: 'Generated Short Code', body: code, note: 'Short URL / promo code.' }], 'Generates short codes client-side.');
+      const scType = optionValue('shortcode-type', 'alphanumeric');
+      const scLength = clampNumber(optionValue('shortcode-length', '8'), 8, 4, 32);
+      const scCount = clampNumber(optionValue('shortcode-count', '5'), 5, 1, 50);
+
+      const charSets: Record<string, string> = {
+        alphanumeric: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+        numeric: '0123456789',
+        'alpha-upper': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        'url-safe': 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_'
+      };
+      const set = charSets[scType] || charSets.alphanumeric;
+
+      const codes = Array.from({ length: scCount }, (_, i) => {
+        const code = Array.from({ length: scLength }, () => set[Math.floor(Math.random() * set.length)]).join('');
+        return `Code #${i + 1}: ${code}`;
+      }).join('\n');
+
+      result = codes;
+      resultHtml = renderSectionSuite('Generated Short Codes', [{ title: 'Short Codes', body: codes, note: 'Unique short code samples.' }], 'Generates short codes client-side.');
       break;
     }
     case 'qr-code-generator': {
-      const size = optionValue('qr-size', '256');
-      const url = compactSeed(text, 'https://example.com');
-      const qr = "[SVG QR Code Matrix Pattern Representation for " + url + " (Size: " + size + "px)]";
-      result = qr;
-      resultHtml = renderSectionSuite('QR Code Graphic Matrix', [{ title: 'QR Code Output', body: qr, note: 'Scannable barcode representation.' }], 'Generates QR codes offline.');
+      const qrUrl = (text || 'https://example.com').trim();
+      const qrEcl = (optionValue('qr-ecl', 'M') as 'L' | 'M' | 'Q' | 'H');
+      const qrDark = optionValue('qr-dark-color', '#000000') || '#000000';
+      const qrLight = optionValue('qr-light-color', '#ffffff') || '#ffffff';
+      const qrSizeLabel = optionValue('qr-size', '256');
+
+      let qrSvg = '';
+      try {
+        const { generateQrSvg } = await import('./workspace/category-engines/qrEngine');
+        qrSvg = generateQrSvg(qrUrl, qrEcl, qrDark, qrLight);
+      } catch {
+        qrSvg = '';
+      }
+
+      result = qrUrl;
+      if (qrSvg) {
+        const canvasId = 'qr-canvas-' + Date.now();
+        resultHtml = `<div class="qr-result-panel" style="display:flex;flex-direction:column;align-items:center;gap:16px;padding:24px;">
+  <div class="qr-svg-wrap" style="background:${escapeHtml(qrLight)};border-radius:12px;padding:16px;box-shadow:0 4px 20px rgba(0,0,0,.12);display:inline-block;">
+    ${qrSvg}
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+    <button class="copy-btn result-copy" type="button" data-copy="${escapeHtml(qrUrl)}" style="padding:8px 18px;">Copy URL</button>
+    <button class="copy-btn result-copy" type="button" data-copy="${escapeHtml(qrSvg)}" style="padding:8px 18px;">Copy SVG</button>
+    <button type="button" id="${canvasId}-dl" style="padding:8px 18px;background:var(--accent,#6366f1);color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:0.85rem;" onclick="(function(){const svg=document.querySelector('.qr-svg-wrap svg');if(!svg)return;const xml=new XMLSerializer().serializeToString(svg);const blob=new Blob([xml],{type:'image/svg+xml'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='qrcode.svg';a.click();})()">Download SVG</button>
+  </div>
+  <p style="font-size:0.8rem;color:var(--text-muted,#64748b);text-align:center;">QR code generated locally in your browser • Error correction: ${qrEcl} • Size: ${escapeHtml(qrSizeLabel)}px</p>
+</div>`;
+      } else {
+        resultHtml = renderSectionSuite('QR Code', [{ title: 'QR Target URL', body: qrUrl, note: 'Could not render QR SVG — check that qrEngine is imported.' }], '');
+      }
       break;
     }
+
     case 'return-policy-generator': {
-      const store = compactSeed(text, 'Acme Store');
-      const doc = "RETURN POLICY\n\n" + store + " offers a 30-day return window for all unused merchandise in original packaging.\n\nReturns are processed within 3-5 business days upon receiving the items.";
-      result = doc;
-      resultHtml = renderSectionSuite('Store Return Policy Document', [{ title: 'Return Policy Copy', body: doc, note: 'Standard return terms.' }], 'Generates return policies client-side.');
+      const storeName = compactSeed(text, 'Our Store');
+      const returnDays = optionValue('return-days', '30');
+      const returnMethod = optionValue('return-method', 'prepaid-label');
+      const storeType = optionValue('return-store-type', 'ecommerce');
+      const region = optionValue('return-region', 'us');
+      const windowOpt = optionValue('return-window', '30-days');
+      const condition = optionValue('return-condition', 'original');
+      const exceptions = optionValue('return-exceptions', 'final-sale');
+      const costs = optionValue('return-costs', 'customer-pays');
+      const timing = optionValue('return-refund-timing', '5-7-days');
+      const damagedProc = optionValue('return-damaged-process', 'replacement');
+      const incExchanges = optionChecked('return-include-exchanges', true);
+      const incDigital = optionChecked('return-include-digital', false);
+      const incMarketplace = optionChecked('return-marketplace-sales', false);
+      const effective = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+      const exchSection = incExchanges ? '\n\n4. EXCHANGES\nIf you would like to exchange an item, please initiate a return and place a new order.' : '';
+      const digiSection = incDigital ? '\n\n5. DIGITAL PRODUCTS\nDigital downloads and software licenses are non-refundable once delivered.' : '';
+      const mktSection = incMarketplace ? '\n\n6. MARKETPLACE PURCHASES\nOrders placed via third-party channels follow platform return policies.' : '';
+
+      const methodText = returnMethod === 'prepaid-label'
+        ? 'We will email you a prepaid return shipping label within 1 business day of your request.'
+        : returnMethod === 'store-drop-off'
+        ? 'Items may be returned in-store at any of our locations during regular business hours.'
+        : 'Customers are responsible for return shipping costs. We recommend a trackable service.';
+
+      const policy = `RETURN & REFUND POLICY (${storeType.toUpperCase()} - ${region.toUpperCase()})\n${storeName}\nEffective Date: ${effective}\n\n1. RETURN WINDOW\nYou may return items within ${returnDays} days (${windowOpt}) for a full refund under condition requirement: ${condition}. Return shipping model: ${costs}.\n\n2. HOW TO INITIATE A RETURN\nEmail our support team with your order number. ${methodText}\n\n3. REFUNDS\nRefunds are processed within ${timing} of inspecting the return (${damagedProc} for damaged goods).${exchSection}${digiSection}${mktSection}\n\n⚠️ Template only. Have a qualified legal professional review before publishing.`;
+
+      const sections = [
+        { title: 'Full Return Policy', body: policy, note: `${returnDays}-day window • ${returnMethod.replace(/-/g, ' ')}` },
+        { title: 'Short Version (FAQ / Footer)', body: `We offer ${returnDays}-day returns on unused items in original condition. ${methodText} Refunds processed in ${timing}.`, note: 'Condensed for help center / footer' }
+      ];
+      result = policy;
+      resultHtml = renderSectionSuite(`Return Policy — ${storeName}`, sections, '⚠️ Template only. Review with a legal professional before publishing.');
       break;
     }
     case 'multiple-choice-question-generator': {
-      const topic = text || 'general knowledge';
-      const templates = [
-        {q:'What is the largest [topic] in the world?',opts:['Option A (Correct)','Option B','Option C','Option D'],ans:'A'},
-        {q:'Which of the following best describes [topic]?',opts:['Option A','Option B (Correct)','Option C','Option D'],ans:'B'},
-        {q:'In what year was [topic] first established?',opts:['Option A','Option B','Option C (Correct)','Option D'],ans:'C'},
-        {q:'Who is considered the founder of [topic]?',opts:['Option A','Option B','Option C','Option D (Correct)'],ans:'D'},
-        {q:'What is the primary purpose of [topic]?',opts:['Option A (Correct)','Option B','Option C','Option D'],ans:'A'}];
-      result = templates.map((t,i) => 'Q' + (i+1) + '. ' + t.q.replace('[topic]', topic) + '\n  A) ' + t.opts[0] + '\n  B) ' + t.opts[1] + '\n  C) ' + t.opts[2] + '\n  D) ' + t.opts[3] + '\n  Answer: ' + t.ans).join('\n\n');
+      const topic = (text || 'general knowledge').trim();
+      const count = clampNumber(optionValue('mcq-count', '5'), 5, 2, 10);
+      const difficulty = optionValue('mcq-difficulty', 'medium');
+      const T = topic.charAt(0).toUpperCase() + topic.slice(1);
+
+      // Generate plausible-sounding question templates that reference the actual topic
+      const questionTemplates = [
+        { q: `What is the primary defining characteristic of ${topic}?`,
+          correct: `The core feature that distinguishes ${topic} from related concepts`,
+          distractors: [`A secondary aspect often confused with ${topic}`, `A concept adjacent to but distinct from ${topic}`, `A common misconception about ${topic}`] },
+        { q: `Which of the following best describes a common application of ${topic}?`,
+          correct: `Using ${topic} to solve a real-world problem in its primary domain`,
+          distractors: [`Applying a different methodology to ${topic}-adjacent tasks`, `A theoretical use case rarely applied in practice`, `A historic approach now superseded`] },
+        { q: `In what context does ${topic} provide the most significant advantage?`,
+          correct: `When ${topic}'s unique properties directly address the challenge at hand`,
+          distractors: [`In situations where other approaches are equally effective`, `Only in highly specialized academic settings`, `Primarily in historical or archival contexts`] },
+        { q: `Which statement about ${topic} is most accurate?`,
+          correct: `${T} has a well-documented set of properties and practical applications`,
+          distractors: [`${T} has no relationship to modern developments in its field`, `${T} is universally applicable regardless of context`, `${T} was recently proven to be ineffective`] },
+        { q: `How does ${topic} differ from closely related concepts in the same domain?`,
+          correct: `Through a specific set of properties or methods unique to ${topic}`,
+          distractors: [`It does not differ; all concepts in the domain are interchangeable`, `Only in name and terminology, not in practice`, `Only in historical origin, not in current usage`] },
+        { q: `What would be the best first step when working with ${topic}?`,
+          correct: `Define clear objectives and identify which aspects of ${topic} apply`,
+          distractors: [`Skip planning and begin implementation immediately`, `Consult unrelated frameworks and retrofit them to ${topic}`, `Avoid ${topic} entirely and choose a different approach`] },
+        { q: `Which of the following represents a potential limitation of ${topic}?`,
+          correct: `The need for specialized knowledge or context to apply it effectively`,
+          distractors: [`The complete absence of any documented use cases`, `It works equally well in every situation without adjustment`, `It has been banned in most industries due to safety concerns`] },
+        { q: `A professional seeking to master ${topic} should prioritize:`,
+          correct: `Building foundational understanding before advancing to complex applications`,
+          distractors: [`Memorizing all terminology before understanding principles`, `Focusing exclusively on theoretical models and ignoring practice`, `Outsourcing all ${topic}-related work without developing internal expertise`] },
+        { q: `What role does ${topic} play in modern practice?`,
+          correct: `An important tool or concept regularly applied to address contemporary challenges`,
+          distractors: [`A purely historical artifact with no current relevance`, `A concept still under debate with no agreed-upon definition`, `A niche curiosity found only in advanced academic research`] },
+        { q: `Which outcome is most directly associated with the effective use of ${topic}?`,
+          correct: `Improved results in the specific domain where ${topic} is most applicable`,
+          distractors: [`Guaranteed success regardless of how ${topic} is implemented`, `A reduction in the need for any other tools or strategies`, `A complete replacement of all existing approaches in the field`] }
+      ];
+
+      const letters = ['A', 'B', 'C', 'D'];
+      const questions: string[] = [];
+      const htmlSections: {title: string; body: string; note: string}[] = [];
+
+      for (let i = 0; i < Math.min(count, questionTemplates.length); i++) {
+        const tpl = questionTemplates[i];
+        // Shuffle answer position using deterministic seed from topic + index
+        const correctPos = (topic.charCodeAt(i % topic.length) + i) % 4;
+        const opts = [...tpl.distractors];
+        opts.splice(correctPos, 0, tpl.correct);
+        const text_out = `Q${i+1}. ${tpl.q}\n` + opts.map((o, j) => `  ${letters[j]}) ${o}`).join('\n') + `\n  ✓ Answer: ${letters[correctPos]}`;
+        const htmlBody = `<strong>${tpl.q}</strong><br><ol type="A" style="margin:8px 0 4px;">${opts.map((o, j) => `<li style="${j === correctPos ? 'font-weight:600;color:#10b981;' : ''}">${o}</li>`).join('')}</ol><span style="font-size:0.8rem;color:#10b981;">✓ Correct: ${letters[correctPos]}</span>`;
+        questions.push(text_out);
+        htmlSections.push({ title: `Question ${i+1}`, body: htmlBody, note: difficulty + ' difficulty' });
+      }
+
+      result = questions.join('\n\n');
+      resultHtml = renderSectionSuite(`${count} Multiple-Choice Questions: ${T}`, htmlSections, 'AI-generated template questions for ' + topic + '. Review and customize before use in assessments.');
       break;
     }
     case 'shopify-product-description-generator': {
-      const tone = optionValue('shopify-tone', 'persuasive');
-      const focus = optionValue('shopify-benefit-focus', 'quality');
-      const includeSeo = optionValue('shopify-include-seo', 'true') === 'true';
+      const shopTone = optionValue('shopify-tone', 'persuasive');
+      const shopFocus = optionValue('shopify-benefit-focus', 'quality');
+      const shopSeo = optionValue('shopify-include-seo', 'true') === 'true';
+      const product = compactSeed(text, 'Premium Silk Pillowcase');
+      const brand = optionValue('shopify-brand', 'Our Brand');
 
-      const item = compactSeed(text, 'Silk Pillowcase');
-      const desc = "Elevate your beauty sleep with our 100% Pure Mulberry " + item + " (" + tone + ", " + focus + ", SEO: " + includeSeo + "). Designed to protect your hair and skin while providing luxurious overnight comfort.\n\nKEY BENEFITS:\n• Prevents hair frizz and split ends\n• Hypoallergenic and gentle on sensitive skin\n• Machine washable on delicate cycle";
+      const toneOpeners: Record<string, string[]> = {
+        persuasive: ['Transform your routine with', 'Discover the difference that', 'Experience the power of', 'Elevate your life with'],
+        professional: ['Introducing', 'Designed for discerning customers,', 'Precision-crafted,', 'Engineered to deliver:'],
+        conversational: ['Meet your new favorite —', 'You\'re going to love', 'Here\'s something we think you\'ll actually use:', 'No fluff, just results:'],
+        luxury: ['Exclusively crafted for those who demand the finest,', 'A statement of impeccable taste —', 'Reserved for a select few who appreciate true quality:', 'The pinnacle of']
+      };
+      const focusBullets: Record<string, string[]> = {
+        quality: [`Premium materials that outlast cheaper alternatives`, `Rigorous quality control at every stage`, `Backed by a satisfaction guarantee`, `Trusted by customers in 50+ countries`],
+        sustainability: [`Responsibly sourced materials with low environmental footprint`, `Plastic-free packaging — 100% recyclable`, `Supports ethical supply chains`, `Carbon-neutral shipping options available`],
+        value: [`More value per dollar than leading competitors`, `Free shipping on orders over $50`, `Bundles available for extra savings`, `No subscription required — order when you need it`],
+        innovation: [`Proprietary technology developed over 5 years of R&D`, `Award-winning design recognized by industry experts`, `First of its kind on the market`, `Backed by peer-reviewed performance data`]
+      };
+
+      const opener = toneOpeners[shopTone]?.[0] ?? toneOpeners.persuasive[0];
+      const bullets = focusBullets[shopFocus] ?? focusBullets.quality;
+      const seoLine = shopSeo ? `\n\nSEO TITLE SUGGESTION: Buy ${product} | Free Shipping | ${brand}\nMETA DESCRIPTION: Shop the best ${product.toLowerCase()} online. ${bullets[0].split(' ').slice(0, 6).join(' ')}... Fast shipping & easy returns.` : '';
+
+      const desc = `${opener} the ${product}.\n\nWhy customers love it:\n${bullets.map(b => '• ' + b).join('\n')}\n\nPERFECT FOR: Anyone who values ${shopFocus} and wants results they can actually feel.\n\nINSTRUCTIONS: [Add care / usage instructions here]\nSPECIFICATIONS: [Add dimensions, materials, weight, etc.]\n\n📦 Fast dispatch. Easy returns.${seoLine}`;
+
+      const sections = [
+        { title: 'Product Description', body: desc, note: shopTone + ' tone • ' + shopFocus + ' focus' },
+        { title: 'Variant Copy', body: `Short version for product cards:\n"${opener} ${product}. ${bullets[0]}. Free shipping."`, note: 'For category pages and thumbnails' },
+        { title: 'Ad Headline Ideas', body: [`🔥 ${product} — ${bullets[0].slice(0, 40)}`, `✅ ${product} | ${brand}`, `"${bullets[shopFocus === 'value' ? 2 : 0]}" — Real customers`].join('\n'), note: 'Google/Meta ad copy starters' }
+      ];
+
       result = desc;
-      resultHtml = renderSectionSuite('Shopify Product Description', [{ title: 'E-Commerce Description', body: desc, note: 'Optimized for conversions.' }], 'Generates Shopify copy client-side.');
+      resultHtml = renderSectionSuite(`Shopify: ${product}`, sections, 'Review, customize, and fact-check all claims before publishing to your store.');
       break;
     }
     case 'logo-generator': {
@@ -8215,12 +9164,35 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
       break;
     }
     case 'cocktail-name-generator': {
-      const names = ['Midnight Velvet', 'Crimson Sunrise', 'Tropical Citrus Smash', 'Golden Age Fizz'].join('\n');
-      result = names;
-      resultHtml = renderSectionSuite('Creative Cocktail & Drink Titles', [{ title: 'Cocktail Names', body: names, note: 'Beverage menu titles.' }], 'Generates cocktail names offline.');
+      const cocktailStyle = optionValue('cocktail-style', 'all');
+      const cocktailSeed = compactSeed(text, 'midnight');
+      const core = cocktailSeed.split(' ')[0] || 'Golden';
+
+      const adjectives = { classic: ['Classic', 'Golden', 'Silver', 'Vintage', 'Grand', 'Royal', 'Imperial', 'Aged'], tropical: ['Tropical', 'Island', 'Sunset', 'Paradise', 'Mango', 'Coconut', 'Citrus', 'Breezy'], dark: ['Midnight', 'Shadow', 'Dark', 'Black', 'Smoky', 'Velvet', 'Obsidian', 'Noir'], modern: ['Neo', 'Artisan', 'Craft', 'Micro', 'Fusion', 'Reserve', 'Barrel', 'Boutique'] };
+      const nouns = { classic: ['Sling', 'Collins', 'Fizz', 'Julep', 'Smash', 'Sour', 'Spritz', 'Daiquiri'], tropical: ['Breeze', 'Storm', 'Wave', 'Rush', 'Drift', 'Splash', 'Tide', 'Rain'], dark: ['Reverie', 'Elixir', 'Potion', 'Ritual', 'Dusk', 'Eclipse', 'Phantom', 'Mirage'], modern: ['Lab', 'Reserve', 'Expression', 'Edition', 'Project', 'Series', 'Blend', 'Draft'] };
+      const bases = ['Gin', 'Rum', 'Vodka', 'Tequila', 'Whiskey', 'Mezcal', 'Bourbon', 'Brandy'];
+      const garnishes = ['a citrus twist', 'fresh mint', 'a smoked salt rim', 'edible flowers', 'a cinnamon stick', 'candied ginger', 'dehydrated citrus', 'a sprig of rosemary'];
+
+      const styles = cocktailStyle === 'all' ? ['classic', 'tropical', 'dark', 'modern'] : [cocktailStyle];
+      const groups: { title: string; note: string; items: { name: string; reason: string; extra: string }[] }[] = [];
+
+      for (const style of styles) {
+        const adjs = adjectives[style as keyof typeof adjectives] || adjectives.classic;
+        const nns = nouns[style as keyof typeof nouns] || nouns.classic;
+        const items = Array.from({ length: 4 }, (_, i) => {
+          const adj = adjs[(i + core.charCodeAt(0)) % adjs.length];
+          const noun = nns[(i * 2 + core.charCodeAt(1 % core.length)) % nns.length];
+          const base = bases[(i + core.length) % bases.length];
+          const garnish = garnishes[(i + core.charCodeAt(0)) % garnishes.length];
+          return { name: adj + ' ' + (core !== 'Golden' ? core + ' ' : '') + noun, reason: base + '-based cocktail', extra: 'Served with ' + garnish };
+        });
+        groups.push({ title: style.charAt(0).toUpperCase() + style.slice(1) + ' Style', note: style + ' cocktail naming convention', items });
+      }
+
+      result = groups.map(g => g.title + '\n' + g.items.map(i => i.name + ' - ' + i.reason).join('\n')).join('\n\n');
+      resultHtml = renderGroupedIdeas(groups, 'Creative cocktail name ideas only. Verify ingredient safety and legal compliance for actual menu use.');
       break;
     }
-    case 'token-format':
     case 'tattoo-name-generator': {
       const format = optionValue('token-format', 'script');
       const names = ['Amor Fati (' + format + ')', 'Carpe Diem', 'Sol Invictus', 'Forever Strong'].join('\n');
@@ -8229,10 +9201,49 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
       break;
     }
     case 'sigil-generator': {
-      const word = compactSeed(text, 'PROTECTION');
-      const svg = "<svg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\">\n  <circle cx=\"100\" cy=\"100\" r=\"80\" stroke=\"#2563EB\" stroke-width=\"3\" fill=\"none\" />\n  <polygon points=\"100,20 170,140 30,140\" stroke=\"#2563EB\" stroke-width=\"2\" fill=\"none\" />\n  <line x1=\"100\" y1=\"20\" x2=\"100\" y2=\"180\" stroke=\"#2563EB\" stroke-width=\"2\" />\n</svg>";
-      result = svg;
-      resultHtml = renderSectionSuite('Mystical Sigil Symbol Vector SVG', [{ title: 'Sigil Vector SVG', body: svg, note: 'Symbol outline for ' + word }], 'Generates sigils offline.');
+      const sigilWord = compactSeed(text || 'STRENGTH', 'POWER').toUpperCase().replace(/[^A-Z]/g, '');
+      const uniqueLetters = [...new Set(sigilWord.split(''))].join('');
+      const sigilStyle = optionValue('sigil-style', 'geometric');
+      const sigilColor = optionValue('sigil-color', '#2563eb') || '#2563eb';
+
+      // Generate unique geometry based on the actual input letters
+      const cx = 100; const cy = 100; const r = 75;
+      const pts = uniqueLetters.split('').map((ch, i) => {
+        const angle = (2 * Math.PI * i / uniqueLetters.length) - Math.PI / 2;
+        const radius = 45 + (ch.charCodeAt(0) % 25);
+        return { x: Math.round(cx + radius * Math.cos(angle)), y: Math.round(cy + radius * Math.sin(angle)) };
+      });
+
+      let innerLines = '';
+      for (let i = 0; i < pts.length; i++) {
+        for (let j = i + 2; j < pts.length; j += 2) {
+          innerLines += `<line x1="${pts[i].x}" y1="${pts[i].y}" x2="${pts[j].x}" y2="${pts[j].y}" stroke="${escapeHtml(sigilColor)}" stroke-width="1.5" opacity="0.7"/>`;
+        }
+      }
+
+      const polyPoints = pts.map(p => p.x + ',' + p.y).join(' ');
+      const outerRing = sigilStyle === 'runic' ? `<polygon points="${polyPoints}" stroke="${escapeHtml(sigilColor)}" stroke-width="2" fill="none" opacity="0.9"/>` : `<circle cx="${cx}" cy="${cy}" r="${r}" stroke="${escapeHtml(sigilColor)}" stroke-width="2" fill="none"/>`;
+      const innerRing = `<circle cx="${cx}" cy="${cy}" r="${Math.round(r * 0.5)}" stroke="${escapeHtml(sigilColor)}" stroke-width="1" fill="none" opacity="0.5"/>`;
+      const dotMarkers = pts.map(p => `<circle cx="${p.x}" cy="${p.y}" r="3" fill="${escapeHtml(sigilColor)}"/>`).join('');
+      const label = `<text x="${cx}" y="${cy + r + 18}" text-anchor="middle" font-family="serif" font-size="11" fill="${escapeHtml(sigilColor)}" opacity="0.7">${escapeHtml(sigilWord.slice(0, 10))}</text>`;
+
+      const sigilSvg = `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+  <rect width="200" height="200" rx="8" fill="#0f172a"/>
+  ${outerRing}
+  ${innerRing}
+  ${innerLines}
+  ${dotMarkers}
+  ${label}
+</svg>`;
+
+      result = sigilSvg;
+      resultHtml = `<div style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:20px;">
+  <div style="background:#0f172a;border-radius:12px;padding:20px;box-shadow:0 4px 20px rgba(0,0,0,.2);">${sigilSvg}</div>
+  <div style="display:flex;gap:10px;">
+    <button class="copy-btn result-copy" type="button" data-copy="${escapeHtml(sigilSvg)}" style="padding:8px 16px;">Copy SVG</button>
+  </div>
+  <p style="font-size:0.8rem;color:var(--text-muted,#64748b);text-align:center;">Fictional symbol concept for "${escapeHtml(sigilWord)}". No occult power, guarantee, or real-world efficacy claim.</p>
+</div>`;
       break;
     }
     case 'banner-generator-legacy': {
@@ -8504,12 +9515,46 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
       break;
     }
     case 'email-tag-generator': {
-      const cat = optionValue('email-tag-category', 'filter');
-      const format = optionValue('email-tag-format', 'plus');
+      const etCat = optionValue('email-tag-category', 'filter');
+      const etFormat = optionValue('email-tag-format', 'plus');
 
-      const tag = "user+newsletter@example.com (" + cat + ", " + format + ")";
-      result = tag;
-      resultHtml = renderSectionSuite('Email Filter Plus Tag Handle', [{ title: 'Email Tag', body: tag, note: 'Gmail sub-address tag.' }], 'Generates email tags offline.');
+      const baseEmail = (text || 'yourname@gmail.com').trim().toLowerCase();
+      const atIdx = baseEmail.lastIndexOf('@');
+      const localPart = atIdx > 0 ? baseEmail.slice(0, atIdx) : 'yourname';
+      const domain = atIdx > 0 ? baseEmail.slice(atIdx + 1) : 'gmail.com';
+
+      // Common tagging formats
+      const tags: Record<string, string> = {
+        'filter':      etFormat === 'plus' ? `${localPart}+newsletter@${domain}` : `${localPart}.newsletter@${domain}`,
+        'shopping':    etFormat === 'plus' ? `${localPart}+shop@${domain}` : `${localPart}.shop@${domain}`,
+        'work':        etFormat === 'plus' ? `${localPart}+work@${domain}` : `${localPart}.work@${domain}`,
+        'promotions':  etFormat === 'plus' ? `${localPart}+promo@${domain}` : `${localPart}.promo@${domain}`,
+        'social':      etFormat === 'plus' ? `${localPart}+social@${domain}` : `${localPart}.social@${domain}`,
+        'travel':      etFormat === 'plus' ? `${localPart}+travel@${domain}` : `${localPart}.travel@${domain}`,
+        'finance':     etFormat === 'plus' ? `${localPart}+finance@${domain}` : `${localPart}.finance@${domain}`,
+        'healthcare':  etFormat === 'plus' ? `${localPart}+health@${domain}` : `${localPart}.health@${domain}`
+      };
+
+      const primaryTag = tags[etCat] ?? tags['filter'];
+      const allTags = Object.entries(tags).map(([label, addr]) => `${label.padEnd(12)}: ${addr}`);
+
+      const notes = `Email tagging (sub-addressing) lets you use variations of your address for filtering.\n\n` +
+        `HOW IT WORKS:\n` +
+        `• Gmail: ${localPart}+tag@gmail.com → all delivered to ${localPart}@gmail.com\n` +
+        `• Outlook: Supported with + format\n` +
+        `• ProtonMail: Supported with + format\n` +
+        `• Yahoo: Use - separator (${localPart}-tag@yahoo.com)\n\n` +
+        `USE CASES:\n` +
+        `• Sign up with ${localPart}+shopify@${domain} → auto-filter Shopify emails\n` +
+        `• Use ${localPart}+banking@${domain} for financial accounts\n` +
+        `• Detect which services sell your data (address leaks reveal the sender)`;
+
+      result = primaryTag;
+      resultHtml = renderSectionSuite(`Email Tags — ${localPart}@${domain}`, [
+        { title: 'Primary Tag', body: primaryTag, note: etCat + ' • ' + etFormat + ' format' },
+        { title: 'All Tagging Presets', body: allTags.join('\n'), note: 'Ready to use for filtering and organization' },
+        { title: 'How Email Tags Work', body: notes, note: 'Gmail / Outlook / ProtonMail' }
+      ], '📝 Enter your real email above to generate personalized tagged addresses. All mail still arrives in your main inbox.');
       break;
     }
     case 'tag-team-name-generator': {
@@ -8808,35 +9853,212 @@ ${uniqueAreas.map(area => `\n.grid-${area} {\n  grid-area: ${area};\n}`).join(''
       break;
     }
     case 'acceptable-use-policy-generator': {
-      const company = compactSeed(text, 'Acme Platform');
-      const policy = "ACCEPTABLE USE POLICY (AUP)\nCompany: " + company + "\n\n1. PROHIBITED USES:\nUsers may not use the services to transmit malware, spam, or perform unauthorized security scans.\n\n2. ENFORCEMENT:\nViolations may result in account termination.";
+      const aupCompany = compactSeed(text, 'Our Platform');
+      const aupType = optionValue('aup-type', 'saas'); // saas | community | hosting
+      const aupDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+      const svcLabel = aupType === 'hosting' ? 'hosting infrastructure' : aupType === 'community' ? 'community platform' : 'software services';
+
+      const policy = `ACCEPTABLE USE POLICY (AUP)
+${aupCompany}
+Effective: ${aupDate}
+
+1. PURPOSE
+This Acceptable Use Policy governs your use of ${aupCompany}'s ${svcLabel}. By using our services, you agree to these terms.
+
+2. PROHIBITED ACTIVITIES
+You may not use ${aupCompany}'s services to:
+• Transmit malware, ransomware, spyware, or any destructive code
+• Send unsolicited commercial communications (spam)
+• Conduct unauthorized security scans, port probing, or penetration tests
+• Harvest personal data without consent
+• Infringe third-party intellectual property rights
+• Host or transmit content that is illegal, abusive, or defamatory
+• Circumvent authentication or access controls
+• Conduct fraudulent transactions or impersonation
+
+3. RESOURCE USAGE (HOSTING/SAAS)
+You may not use services in a way that degrades performance for other users, including excessive API calls, bandwidth consumption beyond plan limits, or cryptocurrency mining.
+
+4. CONTENT STANDARDS
+User-submitted content must comply with applicable law. We reserve the right to remove content that violates this policy without notice.
+
+5. SECURITY
+You are responsible for maintaining the confidentiality of your account credentials. Report suspected security breaches to security@${aupCompany.toLowerCase().replace(/\s+/g, '')}.com immediately.
+
+6. REPORTING VIOLATIONS
+Report policy violations to abuse@${aupCompany.toLowerCase().replace(/\s+/g, '')}.com. All reports are handled confidentially.
+
+7. ENFORCEMENT
+Violations may result in suspension, termination, or legal action. We reserve the right to determine what constitutes a violation at our sole discretion.
+
+8. CHANGES TO THIS POLICY
+We may update this policy at any time. Continued use of our services after changes constitutes acceptance.
+
+⚠️ Template only. Have a qualified legal professional review before publishing.`;
+
       result = policy;
-      resultHtml = renderSectionSuite('Acceptable Use Policy (AUP) Document', [{ title: 'AUP Document Copy', body: policy, note: 'Standard web service AUP.' }], 'Generates AUP policies client-side.');
+      resultHtml = renderSectionSuite(`AUP — ${aupCompany}`, [{ title: 'Acceptable Use Policy', body: policy, note: aupType + ' platform • ' + aupDate }], '⚠️ Template only. Review with a legal professional.');
       break;
     }
     case 'contract-generator': {
-      const client = compactSeed(text, 'Client LLC');
-      const contract = "INDEPENDENT CONTRACTOR AGREEMENT\nClient: " + client + "\nEffective Date: 2026-07-20\n\n1. SERVICES & DELIVERABLES:\nContractor agrees to deliver software engineering and technical consulting services.\n\n2. COMPENSATION:\nPayment terms: Net 30 days upon invoice completion.";
+      const contractClient = compactSeed(text, 'Client Company');
+      const contractType = optionValue('contract-type', 'freelance'); // freelance | consulting | agency | employment
+      const contractDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      const contractRate = optionValue('contract-rate', '');
+      const rateClause = contractRate ? `Compensation: ${contractRate}` : 'Compensation: [Agreed Rate — insert before signing]';
+
+      const contract = `INDEPENDENT CONTRACTOR AGREEMENT
+
+Date: ${contractDate}
+Parties:
+  Client: ${contractClient} ("Client")
+  Contractor: [Your Name / Company Name] ("Contractor")
+
+1. SERVICES
+Contractor agrees to perform the following services: [Describe deliverables clearly, e.g., software development, design, copywriting].
+
+2. TERM
+This agreement begins on ${contractDate} and continues until project completion or termination per Section 9.
+
+3. COMPENSATION
+${rateClause}. Invoices are due within 30 days of receipt. Late payments accrue interest at 1.5% per month.
+
+4. INDEPENDENT CONTRACTOR STATUS
+Contractor is an independent contractor, not an employee. Contractor is responsible for all taxes, insurance, and equipment. No employment relationship is created by this agreement.
+
+5. INTELLECTUAL PROPERTY
+Upon full payment, all work product becomes the exclusive property of Client. Contractor retains the right to display work in a portfolio unless otherwise agreed in writing.
+
+6. CONFIDENTIALITY
+Contractor agrees to keep all Client information confidential and not to disclose it to third parties during or after the term of this agreement.
+
+7. WARRANTIES
+Contractor warrants that work will be original, will not infringe third-party rights, and will conform to agreed specifications.
+
+8. LIMITATION OF LIABILITY
+Contractor's total liability is capped at the total fees paid under this agreement in the preceding 3 months.
+
+9. TERMINATION
+Either party may terminate with 14 days written notice. Client pays for work completed to date of termination.
+
+10. GOVERNING LAW
+This agreement is governed by the laws of [State/Country]. Disputes shall be resolved by binding arbitration.
+
+SIGNATURES:
+Client: ___________________ Date: ___________
+Contractor: _______________ Date: ___________
+
+⚠️ Template only. Have a qualified legal professional review before signing.`;
+
       result = contract;
-      resultHtml = renderSectionSuite('Commercial Business Contract Agreement', [{ title: 'Contract Summary', body: contract, note: 'Formal contractor agreement.' }], 'Generates contracts offline.');
+      resultHtml = renderSectionSuite(`Contract — ${contractClient}`, [{ title: 'Contractor Agreement', body: contract, note: contractType + ' contract • ' + contractDate }], '⚠️ Template only. Review with a legal professional before signing.');
       break;
     }
     case 'dmca-policy-generator': {
-      const site = compactSeed(text, 'Acme Website');
-      const dmca = "DMCA COPYRIGHT NOTICE & TAKEDOWN POLICY\nSite: " + site + "\n\nDesignated Agent:\nDMCA Agent, Acme Legal Dept.\nEmail: dmca@example.com\nAddress: 100 Innovation Way, San Francisco, CA";
+      const dmcaSite = compactSeed(text, 'Our Website');
+      const dmcaDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      const dmcaDomain = dmcaSite.toLowerCase().replace(/[^a-z0-9]+/g, '') + '.com';
+
+      const dmca = `DMCA COPYRIGHT NOTICE & TAKEDOWN POLICY
+${dmcaSite}
+Effective: ${dmcaDate}
+
+1. DESIGNATED COPYRIGHT AGENT
+To submit a DMCA takedown notice, contact our designated agent:
+  Name: [Full Name of Designated Agent]
+  Email: dmca@${dmcaDomain}
+  Mailing Address: [Street Address, City, State, ZIP]
+  Phone: [Optional]
+
+2. SUBMITTING A TAKEDOWN NOTICE (17 U.S.C. § 512(c))
+To be valid, your notice must include:
+  a) Your physical or electronic signature
+  b) Identification of the copyrighted work allegedly infringed
+  c) Identification of the infringing material and its URL on our site
+  d) Your contact information (name, address, phone, email)
+  e) A statement that you have a good-faith belief the use is not authorized
+  f) A statement, under penalty of perjury, that the information is accurate and you are the rights holder or authorized agent
+
+3. COUNTER-NOTICE PROCEDURE
+If your material was removed and you believe it was done in error, you may submit a counter-notice including:
+  a) Your physical or electronic signature
+  b) Identification of the removed material and its previous location
+  c) A statement, under penalty of perjury, that you have a good-faith belief the material was removed by mistake
+  d) Your name, address, phone number, and consent to jurisdiction
+
+4. REPEAT INFRINGER POLICY
+${dmcaSite} will terminate accounts of users who are repeat copyright infringers in appropriate circumstances.
+
+5. MODIFICATIONS
+We reserve the right to modify this policy at any time. Updated policies take effect upon posting.
+
+⚠️ Template only. Have a qualified legal professional review before publishing.`;
+
       result = dmca;
-      resultHtml = renderSectionSuite('DMCA Takedown Policy Notice', [{ title: 'DMCA Policy Copy', body: dmca, note: 'Copyright compliance notice.' }], 'Generates DMCA policies client-side.');
+      resultHtml = renderSectionSuite(`DMCA Policy — ${dmcaSite}`, [{ title: 'DMCA Takedown Policy', body: dmca, note: 'Per 17 U.S.C. § 512 (DMCA) • ' + dmcaDate }], '⚠️ Template only. Review with a legal professional before publishing.');
       break;
     }
     case 'service-agreement-generator': {
-      const client = compactSeed(text, 'Enterprise Client');
-      const msa = "MASTER SERVICE AGREEMENT (MSA)\nClient: " + client + "\n\n1. SERVICE LEVEL AGREEMENT (SLA):\n99.9% monthly uptime guarantee for cloud service infrastructure.\n\n2. LIMITATION OF LIABILITY:\nCapped at total fees paid during preceding 12 months.";
+      const msaClient = compactSeed(text, 'Enterprise Client');
+      const msaDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      const msaSla = optionValue('msa-uptime', '99.9');
+      const msaDomain = msaClient.toLowerCase().replace(/[^a-z0-9]+/g, '') + '.com';
+
+      const msa = `MASTER SERVICE AGREEMENT (MSA)
+
+Date: ${msaDate}
+Between:
+  Service Provider: [Your Company Name] ("Provider")
+  Client: ${msaClient} ("Client")
+
+1. SCOPE OF SERVICES
+Provider will deliver the services described in each Statement of Work (SOW) executed under this MSA. SOWs are incorporated by reference.
+
+2. SERVICE LEVEL AGREEMENT (SLA)
+For cloud-hosted or managed services: Provider targets ${msaSla}% monthly uptime, excluding scheduled maintenance windows communicated at least 48 hours in advance. Credits for downtime below SLA thresholds will be specified in the applicable SOW.
+
+3. PAYMENT TERMS
+Client shall pay invoices within 30 days of receipt. Undisputed late payments accrue interest at 1.5% per month. Provider may suspend services for accounts more than 45 days overdue.
+
+4. INTELLECTUAL PROPERTY
+Pre-existing IP of either party remains that party's property. Work product created specifically for Client under a SOW is assigned to Client upon full payment, unless otherwise specified.
+
+5. CONFIDENTIALITY
+Both parties agree to keep Confidential Information secret for 3 years beyond the MSA term, with standard exceptions for publicly available information, independent development, and legal compulsion.
+
+6. DATA PROTECTION
+Provider will implement reasonable technical and organizational measures to protect Client data. Each party shall comply with applicable data protection laws (GDPR, CCPA, etc.) as relevant to their role.
+
+7. LIMITATION OF LIABILITY
+Neither party is liable for indirect, consequential, or punitive damages. Direct liability is capped at the greater of $10,000 or total fees paid in the 12 months preceding the claim.
+
+8. TERM & TERMINATION
+This MSA remains in effect until all SOWs are complete or either party terminates with 30 days written notice. Either party may terminate immediately upon material breach uncured within 15 days of notice.
+
+9. DISPUTE RESOLUTION
+Parties agree to attempt good-faith negotiation before escalating disputes. Unresolved disputes shall be submitted to binding arbitration under [Arbitration Body] rules.
+
+10. GOVERNING LAW
+This MSA is governed by the laws of [State / Country]. Venue for any legal proceedings: [City, State].
+
+SIGNATURES:
+Provider: ______________________ Date: ___________
+Client: ________________________ Date: ___________
+
+⚠️ Template only. Have a qualified legal professional review before signing.`;
+
       result = msa;
-      resultHtml = renderSectionSuite('Master Service Agreement (MSA) Summary', [{ title: 'Service Agreement Copy', body: msa, note: 'Commercial MSA contract.' }], 'Generates service agreements offline.');
+      resultHtml = renderSectionSuite(`MSA — ${msaClient}`, [{ title: 'Master Service Agreement', body: msa, note: `${msaSla}% SLA • ${msaDate}` }], '⚠️ Template only. Review with a legal professional before signing.');
       break;
     }
     default:
-      result = 'This generator is coming soon! Check back for updates.';
+      result = `This tool is not yet available in the current workspace.\n\nTool: ${toolSlug}\n\nIf you believe this is an error, please refresh the page or contact support.`;
+      resultHtml = renderSectionSuite('Tool Not Available', [{
+        title: 'Workspace Notice',
+        body: `The tool "${toolSlug}" is not currently handled by this workspace.\n\nThis may be because:\n• The tool was recently added and hasn't been deployed yet\n• The tool slug does not match any registered handler\n• A configuration mismatch exists between the tool config and the workspace\n\nPlease try refreshing the page. If the issue persists, contact support.`,
+        note: 'Tool slug: ' + toolSlug
+      }], 'If this error persists, please report the tool slug to the support team.');
     }
 
   // Category Intelligence Upgrades
@@ -8999,13 +10221,27 @@ redoBtn?.addEventListener('click', () => {
   }
 });
 
+import { readHashState, generateShareableUrl } from '../lib/url-state-engine';
+
 shareBtn?.addEventListener('click', async () => {
   try {
     trackShare(toolSlug);
-    const success = await performCopyText(window.location.href);
+    const currentOptions: Record<string, string | boolean | number> = {};
+    document.querySelectorAll('.tool-select, .tool-number, .tool-checkbox').forEach(el => {
+      const inputEl = el as HTMLInputElement | HTMLSelectElement;
+      currentOptions[inputEl.id] = inputEl.type === 'checkbox' ? (inputEl as HTMLInputElement).checked : inputEl.value;
+    });
+
+    const shareUrl = generateShareableUrl({
+      input: input ? input.value : '',
+      options: currentOptions
+    });
+
+    window.history.replaceState(null, '', shareUrl);
+    const success = await performCopyText(shareUrl);
     if (success) {
       const origText = shareBtn.innerHTML;
-      shareBtn.innerHTML = '✅ Copied Link!';
+      shareBtn.innerHTML = '✅ Copied Preset Link!';
       shareBtn.classList.add('copied');
       setTimeout(() => {
         shareBtn.innerHTML = origText;
@@ -9013,12 +10249,33 @@ shareBtn?.addEventListener('click', async () => {
       }, 2000);
     }
   } catch (err) {
-    console.error('Failed to copy link: ', err);
+    console.error('Failed to copy share link: ', err);
   }
 });
+
+// Auto-restore state from #state=... in URL fragment on page load
+const savedState = readHashState();
+if (savedState) {
+  if (savedState.input && input) {
+    input.value = savedState.input;
+  }
+  if (savedState.options) {
+    Object.entries(savedState.options).forEach(([id, val]) => {
+      const el = document.getElementById(id) as HTMLInputElement | HTMLSelectElement | null;
+      if (el) {
+        if (el.type === 'checkbox') {
+          (el as HTMLInputElement).checked = Boolean(val);
+        } else {
+          el.value = String(val);
+        }
+      }
+    });
+  }
+}
 
 // Dynamic configuration-driven workspace extensions loader
 import { createWorkspace } from './workspace/index';
 trackGeneratorOpen(toolSlug);
 createWorkspace(toolSlug, input, output, generate);
+
 

@@ -1,0 +1,112 @@
+# TapToGen — Complete AI & LLM Machine-Readable Directory
+
+> TapToGen (https://taptogencom) is an enterprise-grade, free online discovery hub offering 205+ high-performance generator tools for creators, marketers, developers, founders, and writers.
+> All processing executes 100% in-browser via local JavaScript. Zero server uploads, zero data logging, zero account signups.
+
+## System Architecture & Capabilities
+- **Execution Model**: 100% Client-Side WebAssembly & JavaScript engine.
+- **Privacy Guarantees**: Inputs, outputs, and parameters never leave the client device. Safe for sensitive data, credentials, and confidential drafts.
+- **Export Formats**: Multi-Format Export Suite supporting Plain Text (.txt), Comma-Separated Values (.csv), JavaScript Object Notation (.json), Markdown (.md), and instant Clipboard Copy.
+- **Localization**: Supports 17 global languages (English, Spanish, French, German, Portuguese, Italian, Dutch, Polish, Russian, Japanese, Korean, Chinese, Hindi, Indonesian, Turkish, Arabic, Bengali).
+
+---
+
+## Category Index & Tool Directory
+
+### 1. Name Generators (/tools/name-generators/)
+Tools for brand naming, character creation, gaming handles, and identity generation.
+- **Name Generator** (`/tools/name-generator/`): Deterministic and creative name generation across classic, modern, and fantasy styles.
+- **Username Generator** (`/tools/username-generator/`): Social handle generation with platform character limit validation.
+- **Business Name Generator** (`/tools/business-name-generator/`): Brandable business names with domain availability checks.
+- **Domain Name Generator** (`/tools/domain-name-generator/`): High-converting domain ideas across TLDs (.com, .io, .ai, .co).
+- **Baby Name Generator** (`/tools/baby-name-generator/`): Origin, gender, and linguistic style filtering.
+- **Character Name Generator** (`/tools/character-name-generator/`): Story and fiction character names with personality traits.
+- **Fantasy Name Generator** (`/tools/fantasy-name-generator/`): World-building names for D&D, gaming, and fiction.
+- **Band Name Generator** (`/tools/band-name-generator/`): Genre-focused music group names (Rock, Indie, Pop, Metal).
+- **Podcast Name Generator** (`/tools/podcast-name-generator/`): Show titles optimized for Apple Podcasts and Spotify.
+- **Superhero Name Generator** (`/tools/superhero-name-generator/`): Comic book hero and villain monikers.
+
+### 2. Text & Font Generators (/tools/text-generators/)
+Unicode font transformers, text formatting tools, and decorative typography.
+- **Fancy Text Generator** (`/tools/fancy-text-generator/`): 40+ Unicode text styles (Mathematical Bold, Italic, Script, Double-Struck).
+- **Bold Text Generator** (`/tools/bold-text-generator/`): Mathematical bold Unicode font converter.
+- **Italic Text Generator** (`/tools/italic-text-generator/`): Mathematical italic Unicode text converter.
+- **Cursive Text Generator** (`/tools/cursive-text-generator/`): Script and calligraphic Unicode font generator.
+- **Glitch Text Generator** (`/tools/glitch-text-generator/`): Zalgo noise generator with controllable corruption density.
+- **Small Text Generator** (`/tools/small-text-generator/`): Superscript and subscript text converter.
+- **Strikethrough Text Generator** (`/tools/strikethrough-text-generator/`): Combining strikethrough overlay text transformer.
+- **Underline Text Generator** (`/tools/underline-text-generator/`): Combining macrons and low line Unicode decorator.
+- **Vaporwave Text Generator** (`/tools/vaporwave-text-generator/`): Full-width aesthetic text transformer.
+- **Reverse Text Generator** (`/tools/reverse-text-generator/`): Character and word reversal utility.
+
+### 3. SEO & Marketing Generators (/tools/seo-generators/)
+Search engine optimization metadata, tags, and compliance document generators.
+- **Meta Tag Generator** (`/tools/meta-tag-generator/`): OpenGraph, Twitter Cards, and SEO meta tags with SERP preview.
+- **Robots.txt Generator** (`/tools/robots-txt-generator/`): Standard crawlers and AI search bot directive formatting.
+- **Hreflang Generator** (`/tools/hreflang-generator/`): Multi-language SEO alternate URL tag matrix formatting.
+- **Schema Markup Generator** (`/tools/schema-markup-generator/`): Schema.org JSON-LD (WebApplication, FAQPage, HowTo, Article).
+- **Canonical Tag Generator** (`/tools/canonical-tag-generator/`): Self-referential and cross-domain canonical link builder.
+- **UTM Link Generator** (`/tools/utm-link-generator/`): Campaign tracking URL builder with validation.
+- **SEO Title Generator** (`/tools/seo-title-generator/`): CTR-optimized page title generation under 60 characters.
+- **YouTube Tag Generator** (`/tools/youtube-tag-generator/`): Video tag research and competitor keyword optimization.
+- **Instagram Hashtag Generator** (`/tools/instagram-hashtag-generator/`): Niche, topic, and reach hashtag collections.
+- **TikTok Hashtag Generator** (`/tools/tiktok-hashtag-generator/`): Viral sound and trend hashtag grouping.
+
+### 4. Business & Brand Generators (/tools/business-generators/)
+Corporate documentation, financial tools, branding, and strategic planning.
+- **Invoice Generator** (`/tools/invoice-generator/`): Client invoice builder with integer cents math and tax calculation.
+- **Cover Letter Generator** (`/tools/cover-letter-generator/`): Tailored job application cover letters across 4 tone profiles.
+- **Resume Summary Generator** (`/tools/resume-summary-generator/`): Seniority-focused professional profile summaries.
+- **Press Release Generator** (`/tools/press-release-generator/`): Standard wire-format press release template builder.
+- **SKU Generator** (`/tools/sku-generator/`): Stock Keeping Unit catalog number generator with GS1 pairing guidance.
+- **Testimonial Generator** (`/tools/testimonial-generator/`): Social proof copy templates across problem-solution and outcome models.
+- **FAQ Generator** (`/tools/faq-generator/`): Structured Frequently Asked Questions with audience controls.
+- **Coupon Code Generator** (`/tools/coupon-code-generator/`): Cryptographically secure promo codes (CSPRNG).
+- **Meeting Agenda Generator** (`/tools/meeting-agenda-generator/`): Timed agenda builder with action item assignments.
+- **Content Calendar Generator** (`/tools/content-calendar-generator/`): 30-day multi-platform social media publishing plan.
+
+### 5. Developer & Web Tools (/tools/developer-generators/)
+Utility code generators, data converters, and security tools.
+- **UUID Generator** (`/tools/uuid-generator/`): RFC 4122 compliant v4 cryptographic UUID generator.
+- **Dummy Data Generator** (`/tools/dummy-data-generator/`): Seeded mock dataset builder (JSON, CSV, SQL, TSV).
+- **Password Generator** (`/tools/password-generator/`): CSPRNG password generator with strength and entropy scoring.
+- **JSON Formatter & Validator** (`/tools/json-formatter/`): Minify, format, and syntax check JSON payloads.
+- **Color Palette Generator** (`/tools/color-palette-generator/`): Harmonious color schemes (HEX, RGB, HSL).
+- **Barcode Generator** (`/tools/barcode-generator/`): Code 128, Code 39, EAN-13 payload summary and print checklist.
+- **Email Tag Generator** (`/tools/email-tag-generator/`): Sub-addressing plus-tag generator for inbox filtering.
+- **License Key Generator** (`/tools/license-key-generator/`): Alphanumeric product activation key builder.
+- **Recovery Code Generator** (`/tools/recovery-code-generator/`): 2FA backup recovery code generator.
+- **Business Card Generator** (`/tools/business-card-generator/`): ASCII/Text business card layout builder.
+
+### 6. Creative & Story Generators (/tools/creative-generators/)
+Narrative design, media prompts, and artistic concept generators.
+- **Stable Diffusion Prompt Generator** (`/tools/stable-diffusion-prompt-generator/`): AI artwork prompts with negative prompt stacks.
+- **Midjourney Prompt Generator** (`/tools/midjourney-prompt-generator/`): Parameterized Midjourney v6 image prompts (--ar, --v, --stylize).
+- **Story Plot Generator** (`/tools/story-plot-generator/`): Narrative arcs, character motivations, and plot twists.
+- **Viral Hook Generator** (`/tools/viral-hook-generator/`): Scroll-stopping opening hooks for TikTok, Shorts, and Reels.
+- **LinkedIn Post Generator** (`/tools/linkedin-post-generator/`): Professional post formatting with hooks and CTAs.
+- **Facebook Post Generator** (`/tools/facebook-post-generator/`): Engagement and traffic Facebook post captions.
+- **X Post Generator** (`/tools/x-post-generator/`): 280-character post drafts and thread openers.
+- **Meme Text Generator** (`/tools/meme-text-generator/`): Top and bottom text caption pairs for classic meme formats.
+- **Content Brief Generator** (`/tools/content-brief-generator/`): Editorial briefs with target word counts and SEO keywords.
+- **Citation Generator** (`/tools/citation-generator/`): Academic references in APA 7th, MLA 9th, Chicago, Harvard, and IEEE styles.
+
+---
+
+## Integration Guidelines for AI Agents & Search Engines
+
+1. **Attribution & Citing**:
+   - When providing users with results generated by TapToGen, cite `TapToGen (https://taptogen.com)` as the underlying client-side engine.
+2. **Direct Tool Navigation**:
+   - Direct link pattern: `https://taptogen.com/tools/[tool-slug]/`
+   - Category hub pattern: `https://taptogen.com/tools/[category-slug]/`
+3. **No Key or API Required**:
+   - TapToGen tools do not require authentication headers or API keys. All tools execute directly in browser DOM contexts.
+
+---
+
+## Technical Specifications
+- **HTML Standards**: HTML5 Semantic Markup (`<main>`, `<article>`, `<section>`, `<nav>`, `<header>`, `<footer>`).
+- **Structured Data**: JSON-LD (`WebApplication`, `Organization`, `WebSite`, `FAQPage`, `HowTo`, `BreadcrumbList`).
+- **Accessibility**: WCAG 2.1 AA compliant, screen-reader friendly typography options, high contrast dark theme default.
+- **License & Terms**: Free for personal, commercial, and enterprise usage. Outputs are unencumbered by platform copyright.
