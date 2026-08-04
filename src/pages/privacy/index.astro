@@ -1,33 +1,142 @@
 ---
 import BaseLayout from 'theme/layouts/BaseLayout.astro';
+
+const lastUpdated = 'August 2026';
+const contactEmail = 'contact@taptogen.com';
+
+const privacySchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy Policy — TapToGen",
+  "url": "https://taptogen.com/privacy/",
+  "dateModified": "2026-08-01"
+};
 ---
-<BaseLayout title="Privacy Policy — TapToGen" description="Read TapToGen's privacy policy. Learn how we handle your data and protect your privacy when using our free online generator tools." canonical="/privacy/">
+<BaseLayout
+  title="Privacy Policy — TapToGen"
+  description="Read TapToGen's comprehensive privacy policy. Learn how we collect, use, and protect your data under GDPR, CCPA, and global privacy laws when using our free generator tools."
+  canonical="/privacy/"
+  schema={[privacySchema]}
+>
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><span>Privacy Policy</span></div>
       <h1>Privacy <span class="gradient-text">Policy</span></h1>
-      <p>Last updated: May 2026</p>
+      <p>Last updated: {lastUpdated}</p>
     </div>
   </section>
+
   <div class="container">
-    <div class="content-section">
-      <h2>Introduction</h2>
-      <p>At TapToGen ("we", "us", "our"), we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard information when you visit our website at taptogen.com (the "Site").</p>
-      <h2>Information We Collect</h2>
-      <p><strong>Data You Enter Into Tools:</strong> All generator tools on TapToGen run entirely in your browser. We do not collect, store, transmit, or log any text, names, or other content you enter into our tools.</p>
-      <p><strong>Automatically Collected Data:</strong> We may collect standard web analytics data such as page views, browser type, device type, and approximate location. This data is aggregated and anonymous.</p>
-      <h2>Cookies</h2>
-      <p>We may use essential cookies to ensure the website functions correctly. Third-party services such as analytics or advertising partners may set their own cookies. You can control cookie preferences through your browser settings.</p>
-      <h2>Third-Party Services</h2>
-      <p>We may use third-party services such as Google Analytics and Google AdSense. These services have their own privacy policies governing data collection.</p>
-      <h2>Data Security</h2>
-      <p>We implement reasonable security measures to protect the Site. However, no method of transmission over the internet is 100% secure.</p>
-      <h2>Children's Privacy</h2>
-      <p>TapToGen is not directed at children under 13. We do not knowingly collect personal information from children.</p>
-      <h2>Changes to This Policy</h2>
-      <p>We may update this Privacy Policy from time to time. We will notify users of significant changes by updating the "Last updated" date.</p>
-      <h2>Contact</h2>
-      <p>If you have questions about this Privacy Policy, contact us at <a href="mailto:contact@taptogen.com" style="color:var(--color-accent-2);">contact@taptogen.com</a>.</p>
+    <div class="content-section" style="max-width:800px;">
+
+      <h2>1. Introduction</h2>
+      <p>TapToGen ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit <strong>taptogen.com</strong> ("the Site"). Please read this policy carefully. If you disagree with its terms, please discontinue use of the Site.</p>
+
+      <h2>2. Data Controller</h2>
+      <p>For users in the European Economic Area (EEA) and United Kingdom, TapToGen acts as the <strong>data controller</strong> for the limited analytics data described in this policy. Contact us at <a href={`mailto:${contactEmail}`} style="color:var(--color-accent-2);">{contactEmail}</a> for any data-related enquiries.</p>
+
+      <h2>3. Information We Collect</h2>
+      <h3>3.1 Data You Enter Into Tools</h3>
+      <p>All generator tools on TapToGen run <strong>entirely in your browser</strong> using client-side JavaScript. We do <strong>not</strong> collect, store, transmit, or log any text, names, prompts, or other content you type into our tools. Your input never leaves your device.</p>
+
+      <h3>3.2 Automatically Collected Data</h3>
+      <p>When you visit the Site, we may automatically collect certain technical information, including:</p>
+      <ul>
+        <li>IP address (anonymized)</li>
+        <li>Browser type and version</li>
+        <li>Device type and operating system</li>
+        <li>Pages visited and time spent</li>
+        <li>Referring URL</li>
+        <li>Approximate geographic location (country/region level only)</li>
+      </ul>
+      <p>This data is collected via Google Analytics 4 with IP anonymization enabled and is used only in aggregated, anonymous form to understand general usage patterns.</p>
+
+      <h3>3.3 Cookies</h3>
+      <p>We use the following types of cookies:</p>
+      <ul>
+        <li><strong>Essential Cookies</strong>: Required for the Site to function correctly (e.g., session state, security).</li>
+        <li><strong>Analytics Cookies</strong>: Used by Google Analytics 4 to collect anonymous usage statistics. These can be disabled via your browser settings or the <a href="/cookies/" style="color:var(--color-accent-2);">Cookie Preferences</a> page.</li>
+        <li><strong>Advertising Cookies</strong>: TapToGen may display advertisements through Google AdSense. Google uses cookies to serve ads based on your visit to our site and other sites on the internet. You may opt out at <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" style="color:var(--color-accent-2);">google.com/settings/ads</a>.</li>
+      </ul>
+      <p>See our <a href="/cookie-policy/" style="color:var(--color-accent-2);">Cookie Policy</a> for full details.</p>
+
+      <h2>4. Legal Basis for Processing (GDPR / UK GDPR)</h2>
+      <p>If you are in the EEA or UK, we process your data under the following legal bases:</p>
+      <ul>
+        <li><strong>Legitimate Interests</strong>: Analytics data is processed to understand how users interact with the Site and to improve our services.</li>
+        <li><strong>Consent</strong>: Non-essential cookies (analytics, advertising) are only placed after your consent, where required by law.</li>
+        <li><strong>Legal Obligation</strong>: We may process data if required by applicable law.</li>
+      </ul>
+
+      <h2>5. How We Use Your Information</h2>
+      <ul>
+        <li>To analyze and improve Site performance and user experience</li>
+        <li>To serve contextual or interest-based advertisements via Google AdSense</li>
+        <li>To respond to your enquiries when you contact us</li>
+        <li>To comply with applicable laws and regulations</li>
+        <li>To protect the security and integrity of the Site</li>
+      </ul>
+
+      <h2>6. Third-Party Services</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:0.9rem;margin:16px 0;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--glass-border);text-align:left;">
+            <th style="padding:10px 12px;font-weight:600;">Service</th>
+            <th style="padding:10px 12px;font-weight:600;">Purpose</th>
+            <th style="padding:10px 12px;font-weight:600;">Privacy Policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--glass-border);">
+            <td style="padding:10px 12px;">Google Analytics 4</td>
+            <td style="padding:10px 12px;">Anonymous usage analytics</td>
+            <td style="padding:10px 12px;"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--color-accent-2);">Google Privacy Policy</a></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--glass-border);">
+            <td style="padding:10px 12px;">Google AdSense</td>
+            <td style="padding:10px 12px;">Display advertising</td>
+            <td style="padding:10px 12px;"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--color-accent-2);">Google Privacy Policy</a></td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;">Google Fonts</td>
+            <td style="padding:10px 12px;">Typography (Inter, Space Grotesk)</td>
+            <td style="padding:10px 12px;"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--color-accent-2);">Google Privacy Policy</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>7. Data Retention</h2>
+      <p>Analytics data is retained by Google Analytics for <strong>14 months</strong> by default. We do not retain any personally identifiable information. Contact form messages (if submitted) are retained for up to 12 months and then deleted.</p>
+
+      <h2>8. Your Privacy Rights</h2>
+      <p>Depending on your location, you may have the following rights regarding your data:</p>
+      <ul>
+        <li><strong>Access</strong>: Request a copy of the personal data we hold about you</li>
+        <li><strong>Rectification</strong>: Request correction of inaccurate data</li>
+        <li><strong>Erasure</strong>: Request deletion of your personal data ("right to be forgotten")</li>
+        <li><strong>Restriction</strong>: Request that we restrict processing of your data</li>
+        <li><strong>Portability</strong>: Receive your data in a structured, machine-readable format</li>
+        <li><strong>Objection</strong>: Object to processing based on legitimate interests</li>
+        <li><strong>Withdraw Consent</strong>: Withdraw consent at any time (does not affect prior lawful processing)</li>
+      </ul>
+      <p><strong>California Residents (CCPA)</strong>: You have the right to know what personal information is collected, opt out of the sale of your personal information, and request deletion. TapToGen does <strong>not</strong> sell personal information.</p>
+      <p>To exercise any of these rights, contact us at <a href={`mailto:${contactEmail}`} style="color:var(--color-accent-2);">{contactEmail}</a>.</p>
+
+      <h2>9. Children's Privacy</h2>
+      <p>TapToGen is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal information through our Site, please contact us immediately at <a href={`mailto:${contactEmail}`} style="color:var(--color-accent-2);">{contactEmail}</a> and we will delete it promptly.</p>
+
+      <h2>10. Data Security</h2>
+      <p>We implement industry-standard security measures to protect our Site, including HTTPS/TLS encryption, strict HTTP security headers (HSTS, CSP, X-Frame-Options), and content delivery via a global CDN. Since all tool processing is client-side, your tool inputs are never transmitted over any network connection.</p>
+
+      <h2>11. International Transfers</h2>
+      <p>If you are located outside the United States, your information may be transferred to and processed in the United States (where Google's servers are primarily located). By using the Site, you consent to this transfer. Where required by GDPR, appropriate safeguards (Standard Contractual Clauses) are in place.</p>
+
+      <h2>12. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy periodically. We will notify users of significant changes by updating the "Last updated" date at the top of this page. Continued use of the Site after any changes constitutes acceptance of the updated policy.</p>
+
+      <h2>13. Contact Us</h2>
+      <p>If you have questions about this Privacy Policy or wish to exercise your privacy rights, contact us at:</p>
+      <p><strong>TapToGen</strong><br/>Email: <a href={`mailto:${contactEmail}`} style="color:var(--color-accent-2);">{contactEmail}</a></p>
     </div>
   </div>
 </BaseLayout>

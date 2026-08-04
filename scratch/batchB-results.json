@@ -1,0 +1,28 @@
+{
+  "totalTools": 430,
+  "totalIssues": 3,
+  "byType": {
+    "DESC_TOO_LONG": 2,
+    "KW_NOT_IN_TITLE": 1
+  },
+  "issues": [
+    {
+      "slug": "roast-generator",
+      "type": "DESC_TOO_LONG",
+      "value": 171,
+      "text": "Free Roast Generator — draft playful, opt-in-friendly roast lines with clean alternatives and off-limits reminders. Customize tone and review before use. 100% client-side."
+    },
+    {
+      "slug": "jwt-generator",
+      "type": "DESC_TOO_LONG",
+      "value": 168,
+      "text": "Free JWT Generator — create and decode JSON Web Token samples with configurable headers, payloads, and algorithm selection. 100% client-side, no data stored externally."
+    },
+    {
+      "slug": "scifi-name-generator",
+      "type": "KW_NOT_IN_TITLE",
+      "value": "sci fi name generator",
+      "text": "Sci-Fi Name Generator — Futuristic Character Names"
+    }
+  ]
+}

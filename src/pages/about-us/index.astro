@@ -1,34 +1,118 @@
 ---
 import BaseLayout from 'theme/layouts/BaseLayout.astro';
 import { siteConfig } from '@/config/site';
+
+const lastUpdated = 'August 2026';
+const contactEmail = siteConfig.contactEmail;
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About TapToGen",
+  "url": "https://taptogen.com/about-us/",
+  "description": "Learn about TapToGen's mission, team, technology, and commitment to free, private, browser-based generator tools.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "TapToGen",
+    "url": "https://taptogen.com/",
+    "logo": "https://taptogen.com/favicon.svg",
+    "foundingDate": "2024",
+    "description": "TapToGen is a free online discovery hub for 430+ browser-based generator tools covering names, text fonts, SEO, AI writing, business, and developer utilities.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": contactEmail,
+      "contactType": "customer support"
+    }
+  }
+};
 ---
-<BaseLayout title="About Us — TapToGen" description="Learn about TapToGen, the free online generator tools platform built for creators, developers, marketers, and everyone who needs instant digital generation." canonical="/about-us/">
+<BaseLayout
+  title="About TapToGen — The Story Behind Our Free Generator Tools Platform"
+  description="Learn about TapToGen's mission to make premium generator tools free, fast, and private for everyone. 430+ browser-based tools, 18 languages, and 100% client-side privacy."
+  canonical="/about-us/"
+  schema={[aboutSchema]}
+>
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><span>About Us</span></div>
       <span class="section-badge">🏢 About</span>
       <h1>About <span class="gradient-text">TapToGen</span></h1>
-      <p>The story behind the internet's most premium generator tools platform</p>
+      <p>The story behind the internet's most privacy-first generator tools platform</p>
     </div>
   </section>
+
   <div class="container">
-    <div class="content-section">
+    <div class="content-section" style="max-width:800px;">
+
       <h2>Our Mission</h2>
-      <p>TapToGen was built with one simple idea: generator tools should be free, fast, beautiful, and private. No signups, no ads covering every pixel, no selling your data — just premium tools that work instantly.</p>
-      <p>We believe that everyone — from a student writing an essay to a startup founder naming their company — deserves access to high-quality digital generation tools without barriers.</p>
+      <p>TapToGen was built with one core belief: <strong>generator tools should be free, fast, beautiful, and private for everyone</strong>. No signups. No data collection. No paywalls blocking tools you need. No ads covering every pixel. Just premium, browser-based tools that work instantly for any creator, developer, marketer, or writer.</p>
+      <p>We believe that everyone — from a student drafting an essay to a startup founder naming their company, from a developer generating UUIDs to a gamer picking a username — deserves access to high-quality digital generation tools without barriers.</p>
+
       <h2>What We Offer</h2>
-      <p>TapToGen provides a growing collection of generator tools including name generators, fancy text and font generators, social media tag generators, bio and caption generators, SEO tools, business name generators, and many more utility generators.</p>
-      <p>Every tool is designed to run entirely in your browser. Your data never touches our servers — everything happens locally on your device.</p>
+      <p>TapToGen provides <strong>430+ generator tools</strong> organized across 12 categories and available in <strong>18 languages</strong>:</p>
+      <ul>
+        <li><strong>Name Generators</strong> — brand names, baby names, character names, fantasy names, gaming handles</li>
+        <li><strong>Font & Text Style Generators</strong> — fancy text, bold, italic, cursive, glitch, vaporwave, Unicode styles</li>
+        <li><strong>Social Media Generators</strong> — hashtags, YouTube tags, Instagram captions, TikTok content</li>
+        <li><strong>Bio & Caption Generators</strong> — Instagram bios, LinkedIn summaries, Twitter bios, TikTok bios</li>
+        <li><strong>SEO & Marketing Generators</strong> — meta tags, robots.txt, schema markup, SEO titles, UTM links</li>
+        <li><strong>AI Writing Generators</strong> — paragraphs, blog outlines, headlines, cover letters, ad copy</li>
+        <li><strong>Business & Brand Generators</strong> — invoices, receipts, proposals, privacy policies, contracts</li>
+        <li><strong>Developer & Web Tools</strong> — UUID, password, JWT, color palette, QR codes, CSS generators</li>
+        <li><strong>Creative & Story Generators</strong> — story plots, Midjourney prompts, song lyrics, game ideas</li>
+        <li><strong>Gaming & Fantasy Generators</strong> — D&D characters, dragon names, fantasy worlds, RPG quests</li>
+        <li><strong>Utility Generators</strong> — lorem ipsum, word counter, text case converter, PIN codes</li>
+        <li><strong>Random Generators</strong> — dice, coin flip, random number, wheel spinner, decision tools</li>
+      </ul>
+
+      <h2>Our Technology Principles</h2>
+      <p>Every tool on TapToGen is built on a foundation of three non-negotiable technical principles:</p>
+
+      <div style="display:grid;gap:16px;margin:24px 0;">
+        <div style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:12px;padding:20px 24px;">
+          <h3 style="margin:0 0 8px;font-size:1rem;">🔒 100% Client-Side Privacy</h3>
+          <p style="margin:0;color:var(--color-text-secondary);font-size:0.9rem;">Every generator tool runs entirely in your browser via JavaScript. Your inputs, generated outputs, and preferences never leave your device — they are never transmitted to or stored on any server. This is not just a policy promise; it is a technical architecture guarantee.</p>
+        </div>
+        <div style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:12px;padding:20px 24px;">
+          <h3 style="margin:0 0 8px;font-size:1rem;">⚡ Instant Performance</h3>
+          <p style="margin:0;color:var(--color-text-secondary);font-size:0.9rem;">TapToGen generates 7,284+ static HTML pages at build time, served via a global CDN. There is no server round-trip, no database query, and no loading spinner — every page loads in milliseconds.</p>
+        </div>
+        <div style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:12px;padding:20px 24px;">
+          <h3 style="margin:0 0 8px;font-size:1rem;">🌍 18-Language Localization</h3>
+          <p style="margin:0;color:var(--color-text-secondary);font-size:0.9rem;">Every tool is localized into 18 languages including Spanish, French, German, Portuguese, Italian, Dutch, Polish, Russian, Japanese, Korean, Hindi, Indonesian, Turkish, Arabic, Bengali, Swedish, and Bulgarian — making TapToGen genuinely global.</p>
+        </div>
+      </div>
+
       <h2>Our Principles</h2>
       <ul>
-        <li><strong>Privacy First</strong> — Your inputs never leave your device</li>
+        <li><strong>Privacy First</strong> — Your inputs never leave your device. Ever.</li>
         <li><strong>Always Free</strong> — No paywalls, no premium tiers, no hidden costs</li>
-        <li><strong>Quality Design</strong> — Premium UI/UX that makes tools a joy to use</li>
+        <li><strong>Quality Design</strong> — Premium dark UI that makes tools a joy to use</li>
         <li><strong>Useful Output</strong> — Genuinely helpful generators, not random noise</li>
-        <li><strong>Fast & Light</strong> — Optimized performance on every device</li>
+        <li><strong>Fast & Light</strong> — Optimized performance on every device and connection speed</li>
+        <li><strong>Global Reach</strong> — Available in 18 languages for a worldwide audience</li>
+        <li><strong>EEAT Commitment</strong> — Content reviewed for expertise, accuracy, and trustworthiness</li>
       </ul>
+
+      <h2>Editorial Standards & EEAT</h2>
+      <p>TapToGen maintains the following editorial standards across all content and tool pages:</p>
+      <ul>
+        <li>All tool descriptions include honest expectations — we note when generated content should be reviewed before use</li>
+        <li>Legal document generators (privacy policies, terms, contracts) include explicit disclaimers to consult a legal professional</li>
+        <li>Brand-adjacent tools include non-affiliation disclaimers</li>
+        <li>FAQ content reflects real user questions with substantive, accurate answers</li>
+        <li>Security tools clearly communicate the cryptographic methods used</li>
+      </ul>
+
       <h2>Contact Us</h2>
-      <p>Have feedback, suggestions, or questions? We'd love to hear from you. Reach out at <a href={`mailto:${siteConfig.contactEmail}`} style="color:var(--color-accent-2);">{siteConfig.contactEmail}</a> or visit our <a href="/contact-us/" style="color:var(--color-accent-2);">contact page</a>.</p>
+      <p>Have feedback, suggestions, bug reports, or questions? We'd love to hear from you.</p>
+      <p>Email: <a href={`mailto:${contactEmail}`} style="color:var(--color-accent-2);">{contactEmail}</a><br/>
+      Contact form: <a href="/contact-us/" style="color:var(--color-accent-2);">Visit our Contact page</a></p>
+
+      <div style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:12px;padding:24px;margin-top:40px;text-align:center;">
+        <p style="margin:0 0 16px;font-size:1rem;font-weight:600;">Ready to start generating?</p>
+        <a href="/tools/" class="btn btn-primary">Explore 430+ Free Tools →</a>
+      </div>
     </div>
   </div>
 </BaseLayout>

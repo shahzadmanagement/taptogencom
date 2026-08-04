@@ -1,95 +1,481 @@
 # TapToGen — Complete AI & LLM Machine-Readable Directory
+# Updated: 2026-08-04
 
-> TapToGen (https://taptogencom) is an enterprise-grade, free online discovery hub offering 205+ high-performance generator tools for creators, marketers, developers, founders, and writers.
+> TapToGen (https://taptogen.com) is an enterprise-grade, free online discovery hub offering 430+ high-performance generator tools for creators, marketers, developers, founders, and writers.
 > All processing executes 100% in-browser via local JavaScript. Zero server uploads, zero data logging, zero account signups.
 
 ## System Architecture & Capabilities
-- **Execution Model**: 100% Client-Side WebAssembly & JavaScript engine.
+- **Execution Model**: 100% Client-Side JavaScript engine running in the browser sandbox.
 - **Privacy Guarantees**: Inputs, outputs, and parameters never leave the client device. Safe for sensitive data, credentials, and confidential drafts.
-- **Export Formats**: Multi-Format Export Suite supporting Plain Text (.txt), Comma-Separated Values (.csv), JavaScript Object Notation (.json), Markdown (.md), and instant Clipboard Copy.
-- **Localization**: Supports 17 global languages (English, Spanish, French, German, Portuguese, Italian, Dutch, Polish, Russian, Japanese, Korean, Chinese, Hindi, Indonesian, Turkish, Arabic, Bengali).
+- **Export Formats**: Multi-Format Export Suite supporting Plain Text (.txt), CSV (.csv), JSON (.json), Markdown (.md), and instant Clipboard Copy.
+- **Localization**: Supports 18 global languages (English, Spanish, French, German, Portuguese, Italian, Dutch, Polish, Russian, Japanese, Korean, Hindi, Indonesian, Turkish, Arabic, Bengali, Swedish, Bulgarian).
+- **Total Tools**: 430+ generator tools across 13 categories.
 
 ---
 
-## Category Index & Tool Directory
+## Category Index & Complete Tool Directory
 
 ### 1. Name Generators (/tools/name-generators/)
-Tools for brand naming, character creation, gaming handles, and identity generation.
-- **Name Generator** (`/tools/name-generator/`): Deterministic and creative name generation across classic, modern, and fantasy styles.
-- **Username Generator** (`/tools/username-generator/`): Social handle generation with platform character limit validation.
-- **Business Name Generator** (`/tools/business-name-generator/`): Brandable business names with domain availability checks.
-- **Domain Name Generator** (`/tools/domain-name-generator/`): High-converting domain ideas across TLDs (.com, .io, .ai, .co).
-- **Baby Name Generator** (`/tools/baby-name-generator/`): Origin, gender, and linguistic style filtering.
-- **Character Name Generator** (`/tools/character-name-generator/`): Story and fiction character names with personality traits.
-- **Fantasy Name Generator** (`/tools/fantasy-name-generator/`): World-building names for D&D, gaming, and fiction.
-- **Band Name Generator** (`/tools/band-name-generator/`): Genre-focused music group names (Rock, Indie, Pop, Metal).
-- **Podcast Name Generator** (`/tools/podcast-name-generator/`): Show titles optimized for Apple Podcasts and Spotify.
-- **Superhero Name Generator** (`/tools/superhero-name-generator/`): Comic book hero and villain monikers.
+15 tools for name generators.
+- **Name Generator** (`/tools/name-generator/`): Brainstorm general name ideas for characters, brands, games, profiles, and creative drafts
+- **Username Generator** (`/tools/username-generator/`): Create unique usernames for gaming, social media, and online accounts
+- **Japanese Name Generator** (`/tools/japanese-name-generator/`): Generate unique, memorable japanese name options with style filters and instant copy
+- **Korean Name Generator** (`/tools/korean-name-generator/`): Generate unique, memorable korean name options with style filters and instant copy
+- **Baby Name Generator With Last Name** (`/tools/baby-name-generator-with-last-name/`): Generate unique, memorable baby name with last name options with style filters and instant copy
+- **Nickname Generator Based On Name** (`/tools/nickname-generator-based-on-name/`): Generate unique, memorable nickname based on name options with style filters and instant copy
+- **Club Name Generator** (`/tools/club-name-generator/`): Create club name ideas with clearer prompts and useful variations
+- **Dinosaur Name Generator** (`/tools/dinosaur-name-generator/`): Create dinosaur name ideas with clearer prompts and useful variations
+- **Dog Name Generator** (`/tools/dog-name-generator/`): Create dog names for pet owners, fosters, and shelters
+- **Funny Name Generator** (`/tools/funny-name-generator/`): Create funny name ideas with clearer prompts and useful variations
+- **Pen Name Generator** (`/tools/pen-name-generator/`): Create pen name ideas with clearer prompts and useful variations
+- **Pet Name Generator** (`/tools/pet-name-generator/`): Create pet name ideas with clearer prompts and useful variations
+- **Sports Team Name Generator** (`/tools/sports-team-name-generator/`): Create sports team name ideas with clearer prompts and useful variations
+- **Victorian Name Generator** (`/tools/victorian-name-generator/`): Generate unique, memorable victorian name options with style filters and instant copy
+- **Racehorse Name Generator** (`/tools/racehorse-name-generator/`): Generate unique, memorable racehorse name options with style filters and instant copy
 
-### 2. Text & Font Generators (/tools/text-generators/)
-Unicode font transformers, text formatting tools, and decorative typography.
-- **Fancy Text Generator** (`/tools/fancy-text-generator/`): 40+ Unicode text styles (Mathematical Bold, Italic, Script, Double-Struck).
-- **Bold Text Generator** (`/tools/bold-text-generator/`): Mathematical bold Unicode font converter.
-- **Italic Text Generator** (`/tools/italic-text-generator/`): Mathematical italic Unicode text converter.
-- **Cursive Text Generator** (`/tools/cursive-text-generator/`): Script and calligraphic Unicode font generator.
-- **Glitch Text Generator** (`/tools/glitch-text-generator/`): Zalgo noise generator with controllable corruption density.
-- **Small Text Generator** (`/tools/small-text-generator/`): Superscript and subscript text converter.
-- **Strikethrough Text Generator** (`/tools/strikethrough-text-generator/`): Combining strikethrough overlay text transformer.
-- **Underline Text Generator** (`/tools/underline-text-generator/`): Combining macrons and low line Unicode decorator.
-- **Vaporwave Text Generator** (`/tools/vaporwave-text-generator/`): Full-width aesthetic text transformer.
-- **Reverse Text Generator** (`/tools/reverse-text-generator/`): Character and word reversal utility.
+### 2. Font & Text Style Generators (/tools/text-generators/)
+15 tools for font & text style generators.
+- **Fancy Text Generator** (`/tools/fancy-text-generator/`): Convert plain text to 50+ aesthetic Unicode fonts & decorations instantly
+- **Banner Generator** (`/tools/banner-generator/`): Create banner drafts with clearer prompts and useful variations
+- **Big Text Generator** (`/tools/big-text-generator/`): Create big text styles with clearer prompts and useful variations
+- **Brat Text Generator** (`/tools/brat-text-generator/`): Create brat text styles with clearer prompts and useful variations
+- **Bubble Text Generator** (`/tools/bubble-text-generator/`): Create bubble text styles with clearer prompts and useful variations
+- **Cursive Name Generator** (`/tools/cursive-name-generator/`): Create cursive name styles with clearer prompts and useful variations
+- **Cute Text Generator** (`/tools/cute-text-generator/`): Create cute text styles with clearer prompts and useful variations
+- **Invisible Text Generator** (`/tools/invisible-text-generator/`): Create invisible text styles with clearer prompts and useful variations
+- **Pixel Text Generator** (`/tools/pixel-text-generator/`): Create pixel text styles with clearer prompts and useful variations
+- **Ransom Note Text Generator** (`/tools/ransom-note-text-generator/`): Create chaotic cutout-style text for creative projects and party designs.
+- **Retro Text Generator** (`/tools/retro-text-generator/`): Create retro text styles with clearer prompts and useful variations
+- **Tattoo Name Generator** (`/tools/tattoo-name-generator/`): Create tattoo name ideas with clearer prompts and useful variations
+- **Typewriter Text Generator** (`/tools/typewriter-text-generator/`): Create typewriter text styles with clearer prompts and useful variations
+- **Papyrus Generator** (`/tools/papyrus-generator/`): Convert ancient scroll style text for fantasy notes, props, classroom mockups, and themed messages
+- **Serif Generator** (`/tools/serif-generator/`): Convert serif-style Unicode text for headings, names, captions, and decorative labels
 
-### 3. SEO & Marketing Generators (/tools/seo-generators/)
-Search engine optimization metadata, tags, and compliance document generators.
-- **Meta Tag Generator** (`/tools/meta-tag-generator/`): OpenGraph, Twitter Cards, and SEO meta tags with SERP preview.
-- **Robots.txt Generator** (`/tools/robots-txt-generator/`): Standard crawlers and AI search bot directive formatting.
-- **Hreflang Generator** (`/tools/hreflang-generator/`): Multi-language SEO alternate URL tag matrix formatting.
-- **Schema Markup Generator** (`/tools/schema-markup-generator/`): Schema.org JSON-LD (WebApplication, FAQPage, HowTo, Article).
-- **Canonical Tag Generator** (`/tools/canonical-tag-generator/`): Self-referential and cross-domain canonical link builder.
-- **UTM Link Generator** (`/tools/utm-link-generator/`): Campaign tracking URL builder with validation.
-- **SEO Title Generator** (`/tools/seo-title-generator/`): CTR-optimized page title generation under 60 characters.
-- **YouTube Tag Generator** (`/tools/youtube-tag-generator/`): Video tag research and competitor keyword optimization.
-- **Instagram Hashtag Generator** (`/tools/instagram-hashtag-generator/`): Niche, topic, and reach hashtag collections.
-- **TikTok Hashtag Generator** (`/tools/tiktok-hashtag-generator/`): Viral sound and trend hashtag grouping.
+### 3. Bio & Caption Generators (/tools/bio-generators/)
+2 tools for bio & caption generators.
+- **Responsible YouTube Hook Generator** (`/tools/youtube-hook-generator/`): Draft honest YouTube hook and intro ideas that match the video
+- **LinkedIn Summary Generator** (`/tools/linkedin-summary-generator/`): Draft professional LinkedIn summary sections
 
-### 4. Business & Brand Generators (/tools/business-generators/)
-Corporate documentation, financial tools, branding, and strategic planning.
-- **Invoice Generator** (`/tools/invoice-generator/`): Client invoice builder with integer cents math and tax calculation.
-- **Cover Letter Generator** (`/tools/cover-letter-generator/`): Tailored job application cover letters across 4 tone profiles.
-- **Resume Summary Generator** (`/tools/resume-summary-generator/`): Seniority-focused professional profile summaries.
-- **Press Release Generator** (`/tools/press-release-generator/`): Standard wire-format press release template builder.
-- **SKU Generator** (`/tools/sku-generator/`): Stock Keeping Unit catalog number generator with GS1 pairing guidance.
-- **Testimonial Generator** (`/tools/testimonial-generator/`): Social proof copy templates across problem-solution and outcome models.
-- **FAQ Generator** (`/tools/faq-generator/`): Structured Frequently Asked Questions with audience controls.
-- **Coupon Code Generator** (`/tools/coupon-code-generator/`): Cryptographically secure promo codes (CSPRNG).
-- **Meeting Agenda Generator** (`/tools/meeting-agenda-generator/`): Timed agenda builder with action item assignments.
-- **Content Calendar Generator** (`/tools/content-calendar-generator/`): 30-day multi-platform social media publishing plan.
+### 4. Utility Generators (/tools/utility-generators/)
+17 tools for utility generators.
+- **NDA Generator** (`/tools/nda-generator/`): Draft informational NDA outline sections
+- **Price Tag Generator** (`/tools/price-tag-generator/`): Draft price tag copy and labels for retail mockups, product displays, menus, and shop drafts
+- **Product Tag Generator** (`/tools/product-tag-generator/`): Draft product tag copy for retail products, ecommerce mockups, packaging, and catalog drafts
+- **Clothing Tag Generator** (`/tools/clothing-tag-generator/`): Brainstorm clothing tag copy for apparel brands, product mockups, and care labels
+- **Pick A Name Generator** (`/tools/pick-a-name-generator/`): Use random name picking for classrooms, giveaways, teams, and shortlist decisions
+- **Geo Tag Generator** (`/tools/geo-tag-generator/`): Process and geo tag output instantly with precision controls
+- **Secret Santa Name Generator** (`/tools/secret-santa-name-generator/`): Process and secret santa name output instantly with precision controls
+- **Anagram Of Name Generator** (`/tools/anagram-of-name-generator/`): Process and anagram of name output instantly with precision controls
+- **Phonetic Spelling Generator** (`/tools/phonetic-spelling-of-name-generator/`): Process and phonetic spelling output instantly with precision controls
+- **IPA Generator** (`/tools/ipa-generator/`): Draft IPA-style pronunciation drafts for names, words, lessons, scripts, and pronunciation notes
+- **Name Combination Generator** (`/tools/name-combination-generator/`): Blend names into couple, baby, brand, or username ideas
+- **Name Pronunciation Generator** (`/tools/name-pronunciation-generator/`): Draft name pronunciation guides for introductions, rosters, events, videos, and profile notes
+- **Color Palette Generator From Name** (`/tools/color-palette-generator-from-name/`): Generate deterministic color palettes from a name
+- **Team Name Generator By Keyword** (`/tools/team-name-generator-using-keywords/`): Process and team name by keyword output instantly with precision controls
+- **QR Code Generator** (`/tools/qr-code-generator/`): Create qr code drafts with clearer prompts and useful variations
+- **Short Code Generator** (`/tools/short-code-generator/`): Create short code drafts with clearer prompts and useful variations
+- **IUPAC Name Generator** (`/tools/iupac-name-generator/`): Process and iupac name output instantly with precision controls
 
-### 5. Developer & Web Tools (/tools/developer-generators/)
-Utility code generators, data converters, and security tools.
-- **UUID Generator** (`/tools/uuid-generator/`): RFC 4122 compliant v4 cryptographic UUID generator.
-- **Dummy Data Generator** (`/tools/dummy-data-generator/`): Seeded mock dataset builder (JSON, CSV, SQL, TSV).
-- **Password Generator** (`/tools/password-generator/`): CSPRNG password generator with strength and entropy scoring.
-- **JSON Formatter & Validator** (`/tools/json-formatter/`): Minify, format, and syntax check JSON payloads.
-- **Color Palette Generator** (`/tools/color-palette-generator/`): Harmonious color schemes (HEX, RGB, HSL).
-- **Barcode Generator** (`/tools/barcode-generator/`): Code 128, Code 39, EAN-13 payload summary and print checklist.
-- **Email Tag Generator** (`/tools/email-tag-generator/`): Sub-addressing plus-tag generator for inbox filtering.
-- **License Key Generator** (`/tools/license-key-generator/`): Alphanumeric product activation key builder.
-- **Recovery Code Generator** (`/tools/recovery-code-generator/`): 2FA backup recovery code generator.
-- **Business Card Generator** (`/tools/business-card-generator/`): ASCII/Text business card layout builder.
+### 5. Random Generators (/tools/random-generators/)
+7 tools for random generators.
+- **Random Address Generator** (`/tools/random-address-generator/`): Create fictional sample address placeholders
+- **Raffle Generator** (`/tools/raffle-generator/`): Create raffle ideas for creators, writers, and planners
+- **Giveaway Winner Generator** (`/tools/giveaway-generator/`): Generate random giveaway winner results with custom constraints and filters
+- **Roast Generator** (`/tools/roast-generator/`): Draft friendly opt-in roast lines
+- **Random List Generator** (`/tools/random-list-generator/`): Create random list ideas for creators, writers, and planners
+- **Random Color Generator** (`/tools/random-color-generator/`): Create random color ideas for creators, writers, and planners
+- **Wheel Spinner Generator** (`/tools/wheel-spinner-generator/`): Build random spinner wheels for classrooms, giveaways, team choices, and quick decisions
 
-### 6. Creative & Story Generators (/tools/creative-generators/)
-Narrative design, media prompts, and artistic concept generators.
-- **Stable Diffusion Prompt Generator** (`/tools/stable-diffusion-prompt-generator/`): AI artwork prompts with negative prompt stacks.
-- **Midjourney Prompt Generator** (`/tools/midjourney-prompt-generator/`): Parameterized Midjourney v6 image prompts (--ar, --v, --stylize).
-- **Story Plot Generator** (`/tools/story-plot-generator/`): Narrative arcs, character motivations, and plot twists.
-- **Viral Hook Generator** (`/tools/viral-hook-generator/`): Scroll-stopping opening hooks for TikTok, Shorts, and Reels.
-- **LinkedIn Post Generator** (`/tools/linkedin-post-generator/`): Professional post formatting with hooks and CTAs.
-- **Facebook Post Generator** (`/tools/facebook-post-generator/`): Engagement and traffic Facebook post captions.
-- **X Post Generator** (`/tools/x-post-generator/`): 280-character post drafts and thread openers.
-- **Meme Text Generator** (`/tools/meme-text-generator/`): Top and bottom text caption pairs for classic meme formats.
-- **Content Brief Generator** (`/tools/content-brief-generator/`): Editorial briefs with target word counts and SEO keywords.
-- **Citation Generator** (`/tools/citation-generator/`): Academic references in APA 7th, MLA 9th, Chicago, Harvard, and IEEE styles.
+### 6. General Generators (/tools/general-generators/)
+252 tools for general generators.
+- **Instagram Bio Generator** (`/tools/instagram-bio-generator/`): Create compelling Instagram bios that attract followers and reflect your personality
+- **Meta Tag Generator** (`/tools/meta-tag-generator/`): Generate HTML meta tags, Open Graph tags, and Twitter Cards for perfect SEO
+- **Bold Text Generator** (`/tools/bold-text-generator/`): Convert text to bold Unicode characters for social media bios and posts
+- **Cursive Text Generator** (`/tools/cursive-text-generator/`): Transform text into elegant cursive Unicode fonts for Instagram and TikTok
+- **Glitch Text Generator** (`/tools/glitch-text-generator/`): Add digital distortion effects to your text for edgy social media aesthetics
+- **Password Generator** (`/tools/password-generator/`): Generate cryptographically strong, memorable passwords with custom rules
+- **Lorem Ipsum Generator** (`/tools/lorem-ipsum-generator/`): Create custom placeholder text in multiple formats for mockups and prototypes
+- **Fantasy Name Generator** (`/tools/fantasy-name-generator/`): Generate immersive, lore-friendly fantasy names for characters, worlds, and stories
+- **Text Case Converter** (`/tools/text-case-converter/`): Convert text between uppercase, lowercase, title case, camelCase, and more
+- **Team Name Generator** (`/tools/team-name-generator/`): Generate creative, memorable team names for sports, work, and gaming groups
+- **Robots Txt Generator** (`/tools/robots-txt-generator/`): Build a valid robots.txt file with precise crawler rules and sitemap declaration
+- **Word Counter** (`/tools/word-counter/`): Count words, characters, sentences, and reading time in real-time
+- **Uuid Generator** (`/tools/uuid-generator/`): Generate RFC 4122 compliant UUIDs (v1, v4, v5) for database and API use
+- **Random Number Generator** (`/tools/random-number-generator/`): Generate truly random numbers with custom ranges, seeds, and formats
+- **Small Text Generator** (`/tools/small-text-generator/`): Convert text to small superscript and subscript Unicode characters
+- **Italic Text Generator** (`/tools/italic-text-generator/`): Transform text into italic Unicode styles for emphasis on any platform
+- **Strikethrough Text Generator** (`/tools/strikethrough-text-generator/`): Add ~~strikethrough~~ formatting to text for social media and messaging apps
+- **Underline Text Generator** (`/tools/underline-text-generator/`): Create underlined text using Unicode for platforms that don't support HTML
+- **Vaporwave Text Generator** (`/tools/vaporwave-text-generator/`): Transform text into aesthetic wide vaporwave / FULLWIDTH Unicode characters
+- **Reverse Text Generator** (`/tools/reverse-text-generator/`): Mirror and reverse text, words, or sentences instantly
+- **Unicode Text Generator** (`/tools/unicode-text-generator/`): Convert any text to 50+ Unicode fonts, symbols, and decorative styles
+- **Twitter Bio Generator** (`/tools/twitter-bio-generator/`): Craft a punchy Twitter/X bio that communicates your brand in 160 characters
+- **Tiktok Bio Generator** (`/tools/tiktok-bio-generator/`): Create a catchy TikTok bio that grows your following and shows your personality
+- **Linkedin Bio Generator** (`/tools/linkedin-bio-generator/`): Draft a professional LinkedIn About section that showcases your expertise
+- **Domain Name Generator** (`/tools/domain-name-generator/`): Find creative, available domain name ideas for your next online project
+- **Product Name Generator** (`/tools/product-name-generator/`): Generate high-quality product name generator results with custom options and instant export
+- **Baby Name Generator** (`/tools/baby-name-generator/`): Generate high-quality baby name generator results with custom options and instant export
+- **Middle Name Generator** (`/tools/middle-name-generator/`): Generate high-quality middle name generator results with custom options and instant export
+- **Last Name Generator** (`/tools/last-name-generator/`): Generate high-quality last name generator results with custom options and instant export
+- **Discord Name Generator** (`/tools/discord-name-generator/`): Generate high-quality discord name generator results with custom options and instant export
+- **Clan Name Generator** (`/tools/clan-name-generator/`): Generate high-quality clan name generator results with custom options and instant export
+- **Band Name Generator** (`/tools/band-name-generator/`): Generate high-quality band name generator results with custom options and instant export
+- **Superhero Name Generator** (`/tools/superhero-name-generator/`): Generate high-quality superhero name generator results with custom options and instant export
+- **Rap Name Generator** (`/tools/rap-name-generator/`): Generate high-quality rap name generator results with custom options and instant export
+- **Song Name Generator** (`/tools/song-name-generator/`): Generate high-quality song name generator results with custom options and instant export
+- **Paragraph Generator** (`/tools/paragraph-generator/`): Generate structured, readable paragraphs for any topic, tone, and audience
+- **Sentence Generator** (`/tools/sentence-generator/`): Generate high-quality sentence generator results with custom options and instant export
+- **Blog Name Generator** (`/tools/blog-name-generator/`): Generate high-quality blog name generator results with custom options and instant export
+- **Pirate Name Generator** (`/tools/pirate-name-generator/`): Generate high-quality pirate name generator results with custom options and instant export
+- **Medieval Name Generator** (`/tools/medieval-name-generator/`): Generate high-quality medieval name generator results with custom options and instant export
+- **Hreflang Tag Generator** (`/tools/hreflang-tag-generator/`): Generate high-quality hreflang tag generator results with custom options and instant export
+- **Schema Tag Generator** (`/tools/schema-tag-generator/`): Generate high-quality schema tag generator results with custom options and instant export
+- **Slug Generator** (`/tools/slug-generator/`): Generate high-quality slug generator results with custom options and instant export
+- **Hash Generator** (`/tools/hash-generator/`): Generate high-quality hash generator results with custom options and instant export
+- **Json Formatter** (`/tools/json-formatter/`): Generate high-quality json formatter results with custom options and instant export
+- **Coin Flip** (`/tools/coin-flip/`): Generate high-quality coin flip results with custom options and instant export
+- **Dice Roller** (`/tools/dice-roller/`): Generate high-quality dice roller results with custom options and instant export
+- **Color Palette Generator** (`/tools/color-palette-generator/`): Generate harmonious color palettes for UI design, branding, and art
+- **Town Name Generator** (`/tools/town-name-generator/`): Generate high-quality town name generator results with custom options and instant export
+- **Kingdom Name Generator** (`/tools/kingdom-name-generator/`): Generate high-quality kingdom name generator results with custom options and instant export
+- **Dragon Name Generator** (`/tools/dragon-name-generator/`): Generate high-quality dragon name generator results with custom options and instant export
+- **Wolf Name Generator** (`/tools/wolf-name-generator/`): Generate high-quality wolf name generator results with custom options and instant export
+- **Demon Name Generator** (`/tools/demon-name-generator/`): Generate high-quality demon name generator results with custom options and instant export
+- **Elf Name Generator** (`/tools/elf-name-generator/`): Generate high-quality elf name generator results with custom options and instant export
+- **Podcast Name Generator** (`/tools/podcast-name-generator/`): Generate high-quality podcast name generator results with custom options and instant export
+- **Youtube Name Generator** (`/tools/youtube-name-generator/`): Generate high-quality youtube name generator results with custom options and instant export
+- **Instagram Caption Generator** (`/tools/instagram-caption-generator/`): Generate engaging Instagram captions with hooks, hashtags, and CTAs
+- **Nickname Generator** (`/tools/nickname-generator/`): Generate high-quality nickname generator results with custom options and instant export
+- **Hashtag Generator** (`/tools/hashtag-generator/`): Generate targeted hashtag sets for Instagram, TikTok, X, and LinkedIn
+- **Etsy Tag Generator** (`/tools/etsy-tag-generator/`): Generate high-quality etsy tag generator results with custom options and instant export
+- **Writing Prompt Generator** (`/tools/writing-prompt-generator/`): Generate high-quality writing prompt generator results with custom options and instant export
+- **Text To Binary Generator** (`/tools/text-to-binary-generator/`): Generate high-quality text to binary generator results with custom options and instant export
+- **Morse Code Generator** (`/tools/morse-code-generator/`): Generate high-quality morse code generator results with custom options and instant export
+- **Anime Name Generator** (`/tools/anime-name-generator/`): Generate high-quality anime name generator results with custom options and instant export
+- **Fake Name Generator** (`/tools/fake-name-generator/`): Generate high-quality fake name generator results with custom options and instant export
+- **Qr Code Text Generator** (`/tools/qr-code-text-generator/`): Generate high-quality qr code text generator results with custom options and instant export
+- **Dnd Name Generator** (`/tools/dnd-name-generator/`): Generate high-quality dnd name generator results with custom options and instant export
+- **Orc Name Generator** (`/tools/orc-name-generator/`): Generate high-quality orc name generator results with custom options and instant export
+- **Witch Name Generator** (`/tools/witch-name-generator/`): Generate high-quality witch name generator results with custom options and instant export
+- **Alien Name Generator** (`/tools/alien-name-generator/`): Generate high-quality alien name generator results with custom options and instant export
+- **Vampire Name Generator** (`/tools/vampire-name-generator/`): Generate high-quality vampire name generator results with custom options and instant export
+- **Fairy Name Generator** (`/tools/fairy-name-generator/`): Generate high-quality fairy name generator results with custom options and instant export
+- **Goblin Name Generator** (`/tools/goblin-name-generator/`): Generate high-quality goblin name generator results with custom options and instant export
+- **Character Name Generator** (`/tools/character-name-generator/`): Generate high-quality character name generator results with custom options and instant export
+- **Story Name Generator** (`/tools/story-name-generator/`): Generate high-quality story name generator results with custom options and instant export
+- **Twitch Name Generator** (`/tools/twitch-name-generator/`): Generate high-quality twitch name generator results with custom options and instant export
+- **Random Phrase Generator** (`/tools/random-phrase-generator/`): Generate high-quality random phrase generator results with custom options and instant export
+- **Special Character Generator** (`/tools/special-character-generator/`): Generate high-quality special character generator results with custom options and instant export
+- **Ascii Text Generator** (`/tools/ascii-text-generator/`): Generate high-quality ascii text generator results with custom options and instant export
+- **Creepy Text Generator** (`/tools/creepy-text-generator/`): Generate high-quality creepy text generator results with custom options and instant export
+- **Gaming Name Generator** (`/tools/gaming-name-generator/`): Generate high-quality gaming name generator results with custom options and instant export
+- **Guild Name Generator** (`/tools/guild-name-generator/`): Generate high-quality guild name generator results with custom options and instant export
+- **Planet Name Generator** (`/tools/planet-name-generator/`): Generate high-quality planet name generator results with custom options and instant export
+- **Island Name Generator** (`/tools/island-name-generator/`): Generate high-quality island name generator results with custom options and instant export
+- **Shop Name Generator** (`/tools/shop-name-generator/`): Generate high-quality shop name generator results with custom options and instant export
+- **Cafe Name Generator** (`/tools/cafe-name-generator/`): Generate high-quality cafe name generator results with custom options and instant export
+- **Project Name Generator** (`/tools/project-name-generator/`): Generate high-quality project name generator results with custom options and instant export
+- **Stage Name Generator** (`/tools/stage-name-generator/`): Generate high-quality stage name generator results with custom options and instant export
+- **Wrestling Name Generator** (`/tools/wrestling-name-generator/`): Generate high-quality wrestling name generator results with custom options and instant export
+- **Cool Text Generator** (`/tools/cool-text-generator/`): Generate high-quality cool text generator results with custom options and instant export
+- **Old English Text Generator** (`/tools/old-english-text-generator/`): Generate high-quality old english text generator results with custom options and instant export
+- **Uwu Text Generator** (`/tools/uwu-text-generator/`): Generate high-quality uwu text generator results with custom options and instant export
+- **Leet Text Generator** (`/tools/leet-text-generator/`): Generate high-quality leet text generator results with custom options and instant export
+- **Random Text Generator** (`/tools/random-text-generator/`): Generate high-quality random text generator results with custom options and instant export
+- **Discord Timestamp Generator** (`/tools/discord-timestamp-generator/`): Generate high-quality discord timestamp generator results with custom options and instant export
+- **Canonical Tag Generator** (`/tools/canonical-tag-generator/`): Generate high-quality canonical tag generator results with custom options and instant export
+- **Utm Generator** (`/tools/utm-generator/`): Generate high-quality utm generator results with custom options and instant export
+- **Gibberish Generator** (`/tools/gibberish-generator/`): Generate high-quality gibberish generator results with custom options and instant export
+- **Shakespeare Insult Generator** (`/tools/shakespeare-insult-generator/`): Generate high-quality shakespeare insult generator results with custom options and instant export
+- **Tiktok Name Generator** (`/tools/tiktok-name-generator/`): Generate high-quality tiktok name generator results with custom options and instant export
+- **Instagram Name Generator** (`/tools/instagram-name-generator/`): Generate high-quality instagram name generator results with custom options and instant export
+- **Couple Name Generator** (`/tools/couple-name-generator/`): Generate high-quality couple name generator results with custom options and instant export
+- **Dwarf Name Generator** (`/tools/dwarf-name-generator/`): Generate high-quality dwarf name generator results with custom options and instant export
+- **Tiefling Name Generator** (`/tools/tiefling-name-generator/`): Generate high-quality tiefling name generator results with custom options and instant export
+- **School Name Generator** (`/tools/school-name-generator/`): Generate high-quality school name generator results with custom options and instant export
+- **Street Name Generator** (`/tools/street-name-generator/`): Generate high-quality street name generator results with custom options and instant export
+- **Book Club Name Generator** (`/tools/book-club-name-generator/`): Generate high-quality book club name generator results with custom options and instant export
+- **Seo Title Generator** (`/tools/seo-title-generator/`): Create click-worthy, keyword-optimized page titles under 60 characters
+- **Pinterest Tag Generator** (`/tools/pinterest-tag-generator/`): Generate high-quality pinterest tag generator results with custom options and instant export
+- **Soundcloud Tag Generator** (`/tools/soundcloud-tag-generator/`): Generate high-quality soundcloud tag generator results with custom options and instant export
+- **Comeback Generator** (`/tools/comeback-generator/`): Generate high-quality comeback generator results with custom options and instant export
+- **Error Message Generator** (`/tools/error-message-generator/`): Generate high-quality error message generator results with custom options and instant export
+- **Cipher Generator** (`/tools/cipher-generator/`): Generate high-quality cipher generator results with custom options and instant export
+- **Repeat Text Generator** (`/tools/repeat-text-generator/`): Generate high-quality repeat text generator results with custom options and instant export
+- **Magic Name Generator** (`/tools/magic-name-generator/`): Generate high-quality magic name generator results with custom options and instant export
+- **Angel Name Generator** (`/tools/angel-name-generator/`): Generate high-quality angel name generator results with custom options and instant export
+- **Tavern Name Generator** (`/tools/tavern-name-generator/`): Generate high-quality tavern name generator results with custom options and instant export
+- **Dungeon Name Generator** (`/tools/dungeon-name-generator/`): Generate high-quality dungeon name generator results with custom options and instant export
+- **Cat Name Generator** (`/tools/cat-name-generator/`): Generate high-quality cat name generator results with custom options and instant export
+- **Horse Name Generator** (`/tools/horse-name-generator/`): Generate high-quality horse name generator results with custom options and instant export
+- **Twitter Name Generator** (`/tools/twitter-name-generator/`): Generate high-quality twitter name generator results with custom options and instant export
+- **Snapchat Name Generator** (`/tools/snapchat-name-generator/`): Generate high-quality snapchat name generator results with custom options and instant export
+- **Linkedin Headline Generator** (`/tools/linkedin-headline-generator/`): Generate high-quality linkedin headline generator results with custom options and instant export
+- **Bio Generator** (`/tools/bio-generator/`): Generate high-quality bio generator results with custom options and instant export
+- **Slogan Generator** (`/tools/slogan-generator/`): Generate high-quality slogan generator results with custom options and instant export
+- **Wifi Name Generator** (`/tools/wifi-name-generator/`): Generate high-quality wifi name generator results with custom options and instant export
+- **Color Name Generator** (`/tools/color-name-generator/`): Generate high-quality color name generator results with custom options and instant export
+- **Hex Color Generator** (`/tools/hex-color-generator/`): Generate high-quality hex color generator results with custom options and instant export
+- **Rgb Generator** (`/tools/rgb-generator/`): Generate high-quality rgb generator results with custom options and instant export
+- **Ai Prompt Generator** (`/tools/ai-prompt-generator/`): Generate high-quality ai prompt generator results with custom options and instant export
+- **Midjourney Prompt Generator** (`/tools/midjourney-prompt-generator/`): Generate high-quality midjourney prompt generator results with custom options and instant export
+- **Passphrase Generator** (`/tools/passphrase-generator/`): Generate high-quality passphrase generator results with custom options and instant export
+- **Pin Generator** (`/tools/pin-generator/`): Generate high-quality pin generator results with custom options and instant export
+- **Api Key Generator** (`/tools/api-key-generator/`): Generate high-quality api key generator results with custom options and instant export
+- **Privacy Policy Generator** (`/tools/privacy-policy-generator/`): Generate high-quality privacy policy generator results with custom options and instant export
+- **Terms Generator** (`/tools/terms-generator/`): Generate high-quality terms generator results with custom options and instant export
+- **Cookie Policy Generator** (`/tools/cookie-policy-generator/`): Generate high-quality cookie policy generator results with custom options and instant export
+- **Disclaimer Generator** (`/tools/disclaimer-generator/`): Generate high-quality disclaimer generator results with custom options and instant export
+- **Open Graph Generator** (`/tools/open-graph-generator/`): Generate high-quality open graph generator results with custom options and instant export
+- **Twitter Card Generator** (`/tools/twitter-card-generator/`): Generate high-quality twitter card generator results with custom options and instant export
+- **Youtube Description Generator** (`/tools/youtube-description-generator/`): Generate high-quality youtube description generator results with custom options and instant export
+- **Tiktok Caption Generator** (`/tools/tiktok-caption-generator/`): Generate high-quality tiktok caption generator results with custom options and instant export
+- **Css Button Generator** (`/tools/css-button-generator/`): Generate high-quality css button generator results with custom options and instant export
+- **Box Shadow Generator** (`/tools/box-shadow-generator/`): Generate high-quality box shadow generator results with custom options and instant export
+- **Border Radius Generator** (`/tools/border-radius-generator/`): Generate high-quality border radius generator results with custom options and instant export
+- **Regex Generator** (`/tools/regex-generator/`): Generate high-quality regex generator results with custom options and instant export
+- **Cron Expression Generator** (`/tools/cron-expression-generator/`): Generate high-quality cron expression generator results with custom options and instant export
+- **Random Letter Generator** (`/tools/random-letter-generator/`): Generate high-quality random letter generator results with custom options and instant export
+- **Random Question Generator** (`/tools/random-question-generator/`): Generate high-quality random question generator results with custom options and instant export
+- **Truth Or Dare Generator** (`/tools/truth-or-dare-generator/`): Generate high-quality truth or dare generator results with custom options and instant export
+- **Would You Rather Generator** (`/tools/would-you-rather-generator/`): Generate high-quality would you rather generator results with custom options and instant export
+- **Joke Generator** (`/tools/joke-generator/`): Generate high-quality joke generator results with custom options and instant export
+- **Compliment Generator** (`/tools/compliment-generator/`): Generate high-quality compliment generator results with custom options and instant export
+- **Email Signature Generator** (`/tools/email-signature-generator/`): Generate high-quality email signature generator results with custom options and instant export
+- **Gradient Generator** (`/tools/gradient-generator/`): Generate high-quality gradient generator results with custom options and instant export
+- **Font Pairing Generator** (`/tools/font-pairing-generator/`): Generate high-quality font pairing generator results with custom options and instant export
+- **Blog Outline Generator** (`/tools/blog-outline-generator/`): Create SEO-structured blog post outlines with H2s, H3s, and key talking points
+- **Cold Email Generator** (`/tools/cold-email-generator/`): Generate high-quality cold email generator results with custom options and instant export
+- **Cover Letter Generator** (`/tools/cover-letter-generator/`): Generate high-quality cover letter generator results with custom options and instant export
+- **Resume Summary Generator** (`/tools/resume-summary-generator/`): Generate high-quality resume summary generator results with custom options and instant export
+- **Ad Copy Generator** (`/tools/ad-copy-generator/`): Generate high-quality ad copy generator results with custom options and instant export
+- **Call To Action Generator** (`/tools/call-to-action-generator/`): Generate high-quality call to action generator results with custom options and instant export
+- **Product Description Generator** (`/tools/product-description-generator/`): Generate high-quality product description generator results with custom options and instant export
+- **Random Emoji Generator** (`/tools/random-emoji-generator/`): Generate high-quality random emoji generator results with custom options and instant export
+- **Random Country Generator** (`/tools/random-country-generator/`): Generate high-quality random country generator results with custom options and instant export
+- **Random Date Generator** (`/tools/random-date-generator/`): Generate high-quality random date generator results with custom options and instant export
+- **Random Choice Generator** (`/tools/random-choice-generator/`): Generate high-quality random choice generator results with custom options and instant export
+- **Game Idea Generator** (`/tools/game-idea-generator/`): Generate high-quality game idea generator results with custom options and instant export
+- **Rpg Character Generator** (`/tools/rpg-character-generator/`): Generate high-quality rpg character generator results with custom options and instant export
+- **Npc Generator** (`/tools/npc-generator/`): Generate high-quality npc generator results with custom options and instant export
+- **Quest Generator** (`/tools/quest-generator/`): Generate high-quality quest generator results with custom options and instant export
+- **Story Plot Generator** (`/tools/story-plot-generator/`): Generate compelling story plot ideas with conflict, character arcs, and resolution
+- **Riddle Generator** (`/tools/riddle-generator/`): Generate high-quality riddle generator results with custom options and instant export
+- **Icebreaker Generator** (`/tools/icebreaker-generator/`): Generate high-quality icebreaker generator results with custom options and instant export
+- **Product Title Generator** (`/tools/product-title-generator/`): Generate high-quality product title generator results with custom options and instant export
+- **Sku Generator** (`/tools/sku-generator/`): Generate high-quality sku generator results with custom options and instant export
+- **Testimonial Generator** (`/tools/testimonial-generator/`): Generate high-quality testimonial generator results with custom options and instant export
+- **Keyword Generator** (`/tools/keyword-generator/`): Generate high-quality keyword generator results with custom options and instant export
+- **Faq Generator** (`/tools/faq-generator/`): Generate high-quality faq generator results with custom options and instant export
+- **License Key Generator** (`/tools/license-key-generator/`): Generate high-quality license key generator results with custom options and instant export
+- **Recovery Code Generator** (`/tools/recovery-code-generator/`): Generate high-quality recovery code generator results with custom options and instant export
+- **Coupon Code Generator** (`/tools/coupon-code-generator/`): Generate high-quality coupon code generator results with custom options and instant export
+- **Barcode Generator** (`/tools/barcode-generator/`): Generate high-quality barcode generator results with custom options and instant export
+- **Refund Policy Generator** (`/tools/refund-policy-generator/`): Generate high-quality refund policy generator results with custom options and instant export
+- **Shipping Policy Generator** (`/tools/shipping-policy-generator/`): Generate high-quality shipping policy generator results with custom options and instant export
+- **Affiliate Disclosure Generator** (`/tools/affiliate-disclosure-generator/`): Generate high-quality affiliate disclosure generator results with custom options and instant export
+- **Invoice Generator** (`/tools/invoice-generator/`): Create professional, print-ready invoices with line items, taxes, and totals
+- **Meeting Agenda Generator** (`/tools/meeting-agenda-generator/`): Generate high-quality meeting agenda generator results with custom options and instant export
+- **Citation Generator** (`/tools/citation-generator/`): Generate high-quality citation generator results with custom options and instant export
+- **Linkedin Post Generator** (`/tools/linkedin-post-generator/`): Generate high-quality linkedin post generator results with custom options and instant export
+- **Facebook Post Generator** (`/tools/facebook-post-generator/`): Generate high-quality facebook post generator results with custom options and instant export
+- **Headline Generator** (`/tools/headline-generator/`): Generate high-quality headline generator results with custom options and instant export
+- **Meme Text Generator** (`/tools/meme-text-generator/`): Generate high-quality meme text generator results with custom options and instant export
+- **Startup Name Generator** (`/tools/startup-name-generator/`): Generate high-quality startup name generator results with custom options and instant export
+- **Photography Name Generator** (`/tools/photography-name-generator/`): Generate high-quality photography name generator results with custom options and instant export
+- **Art Name Generator** (`/tools/art-name-generator/`): Generate high-quality art name generator results with custom options and instant export
+- **Avatar Name Generator** (`/tools/avatar-name-generator/`): Generate high-quality avatar name generator results with custom options and instant export
+- **Video Game Name Generator** (`/tools/video-game-name-generator/`): Generate high-quality video game name generator results with custom options and instant export
+- **Text Summary Generator** (`/tools/text-summary-generator/`): Generate high-quality text summary generator results with custom options and instant export
+- **Typography Generator** (`/tools/typography-generator/`): Generate high-quality typography generator results with custom options and instant export
+- **Wordart Generator** (`/tools/wordart-generator/`): Generate high-quality wordart generator results with custom options and instant export
+- **Social Media Post Generator** (`/tools/social-media-post-generator/`): Generate high-quality social media post generator results with custom options and instant export
+- **Email Subject Generator** (`/tools/email-subject-generator/`): Generate high-quality email subject generator results with custom options and instant export
+- **Drag Name Generator** (`/tools/drag-name-generator/`): Generate high-quality drag name generator results with custom options and instant export
+- **Gamertag Generator** (`/tools/gamertag-generator/`): Generate high-quality gamertag generator results with custom options and instant export
+- **Dragonborn Name Generator** (`/tools/dragonborn-name-generator/`): Generate high-quality dragonborn name generator results with custom options and instant export
+- **Email Name Generator** (`/tools/email-name-generator/`): Generate high-quality email name generator results with custom options and instant export
+- **Synonym Generator** (`/tools/synonym-generator/`): Generate high-quality synonym generator results with custom options and instant export
+- **Footnote Generator** (`/tools/footnote-generator/`): Generate high-quality footnote generator results with custom options and instant export
+- **All Caps Generator** (`/tools/all-caps-generator/`): Generate high-quality all caps generator results with custom options and instant export
+- **Lowercase Generator** (`/tools/lowercase-generator/`): Generate high-quality lowercase generator results with custom options and instant export
+- **Corporate Speak Generator** (`/tools/corporate-speak-generator/`): Generate high-quality corporate speak generator results with custom options and instant export
+- **Random Word Generator** (`/tools/random-word-generator/`): Generate high-quality random word generator results with custom options and instant export
+- **Dialogue Tag Generator** (`/tools/dialogue-tag-generator/`): Generate high-quality dialogue tag generator results with custom options and instant export
+- **Name Tag Generator** (`/tools/name-tag-generator/`): Generate high-quality name tag generator results with custom options and instant export
+- **Graffiti Text Generator** (`/tools/graffiti-text-generator/`): Generate high-quality graffiti text generator results with custom options and instant export
+- **Tag Cloud Generator** (`/tools/tag-cloud-generator/`): Generate high-quality tag cloud generator results with custom options and instant export
+- **Blog Tag Generator** (`/tools/blog-tag-generator/`): Generate high-quality blog tag generator results with custom options and instant export
+- **Random Height Generator** (`/tools/random-height-generator/`): Generate high-quality random height generator results with custom options and instant export
+- **Essay Title Generator** (`/tools/essay-title-generator/`): Generate high-quality essay title generator results with custom options and instant export
+- **Ao3 Tag Generator** (`/tools/ao3-tag-generator/`): Generate high-quality ao3 tag generator results with custom options and instant export
+- **Stable Diffusion Prompt Generator** (`/tools/stable-diffusion-prompt-generator/`): Generate high-quality stable diffusion prompt generator results with custom options and instant export
+- **Character Prompt Generator** (`/tools/character-prompt-generator/`): Generate high-quality character prompt generator results with custom options and instant export
+- **Content Brief Generator** (`/tools/content-brief-generator/`): Generate high-quality content brief generator results with custom options and instant export
+- **Press Release Generator** (`/tools/press-release-generator/`): Generate high-quality press release generator results with custom options and instant export
+- **Author Bio Generator** (`/tools/author-bio-generator/`): Generate high-quality author bio generator results with custom options and instant export
+- **X Post Generator** (`/tools/x-post-generator/`): Generate high-quality x post generator results with custom options and instant export
+- **Viral Hook Generator** (`/tools/viral-hook-generator/`): Generate high-quality viral hook generator results with custom options and instant export
+- **Content Calendar Generator** (`/tools/content-calendar-generator/`): Generate high-quality content calendar generator results with custom options and instant export
+- **Tagline Generator** (`/tools/tagline-generator/`): Generate high-quality tagline generator results with custom options and instant export
+- **Text Shadow Generator** (`/tools/text-shadow-generator/`): Generate high-quality text shadow generator results with custom options and instant export
+- **Css Grid Generator** (`/tools/css-grid-generator/`): Generate high-quality css grid generator results with custom options and instant export
+- **Flexbox Generator** (`/tools/flexbox-generator/`): Generate high-quality flexbox generator results with custom options and instant export
+- **Html Table Generator** (`/tools/html-table-generator/`): Generate high-quality html table generator results with custom options and instant export
+- **JWT Token Generator** (`/tools/jwt-generator/`): Generate tailored jwt token generator options with custom style filters, format controls, and instant copy/export options.
+- **Random ID Generator** (`/tools/random-id-generator/`): Generate tailored random id generator options with custom style filters, format controls, and instant copy/export options.
+- **Werewolf Name Generator** (`/tools/werewolf-name-generator/`): Generate high-quality werewolf name generator results with custom options and instant export
+- **Sibling Name Generator** (`/tools/sibling-name-generator/`): Generate high-quality sibling name generator results with custom options and instant export
+- **Name Generator Wheel** (`/tools/name-generator-wheel/`): Generate high-quality name generator wheel results with custom options and instant export
+- **Cake Company Names Generator** (`/tools/cake-company-names-generator/`): Generate high-quality cake company names generator results with custom options and instant export
+- **Car Name Generator** (`/tools/car-name-generator/`): Generate high-quality car name generator results with custom options and instant export
+- **Pet Tag Generator** (`/tools/pet-tag-generator/`): Generate high-quality pet tag generator results with custom options and instant export
+- **Dj Tag Generator** (`/tools/dj-tag-generator/`): Generate high-quality dj tag generator results with custom options and instant export
+- **Clan Tag Generator** (`/tools/clan-tag-generator/`): Generate high-quality clan tag generator results with custom options and instant export
+- **Hang Tag Generator** (`/tools/hang-tag-generator/`): Generate high-quality hang tag generator results with custom options and instant export
+- **Art Tag Generator** (`/tools/art-tag-generator/`): Generate high-quality art tag generator results with custom options and instant export
+- **Email Tag Generator** (`/tools/email-tag-generator/`): Generate high-quality email tag generator results with custom options and instant export
+- **Tag Team Name Generator** (`/tools/tag-team-name-generator/`): Generate high-quality tag team name generator results with custom options and instant export
+- **Goth Name Generator** (`/tools/goth-name-generator/`): Generate high-quality goth name generator results with custom options and instant export
+- **Last Name And First Name Generator** (`/tools/last-name-and-first-name-generator/`): Generate high-quality last name and first name generator results with custom options and instant export
+- **Performer Names Generator** (`/tools/performer-names-generator/`): Generate high-quality performer names generator results with custom options and instant export
+- **Mountain Name Generator** (`/tools/mountain-name-generator/`): Generate high-quality mountain name generator results with custom options and instant export
+
+### 7. business-generators
+- **Business Name Generator** (`/tools/business-name-generator/`): Generate creative business names and brand ideas
+- **Product Bullet Points Generator** (`/tools/product-bullet-points-generator/`): Create product bullet points ideas for founders, marketers, and small teams
+- **Amazon Listing Generator** (`/tools/amazon-listing-generator/`): Draft Amazon listing copy
+- **Etsy Listing Generator** (`/tools/etsy-listing-generator/`): Draft Etsy shop listing descriptions
+- **Customer Persona Generator** (`/tools/customer-persona-generator/`): Brainstorm customer persona drafts for marketing, product, sales, and messaging work
+- **Brand Kit Generator** (`/tools/brand-kit-generator/`): Brainstorm brand kit direction for small businesses, creators, launches, and mockups
+- **Product Benefits Generator** (`/tools/product-benefits-generator/`): Create product benefits ideas for founders, marketers, and small teams
+- **Restaurant Name Generator** (`/tools/restaurant-name-generator/`): Generate high-quality restaurant name generator results with custom options and instant export
+- **Coffee Shop Name Generator** (`/tools/coffee-shop-name-generator/`): Brainstorm coffee shop name ideas for cafes, roasters, carts, and fictional venues
+- **Receipt Generator** (`/tools/receipt-generator/`): Draft sample receipt templates
+- **Newsletter Name Generator** (`/tools/newsletter-name-generator/`): Generate high-quality newsletter name generator results with custom options and instant export
+- **Minutes Of Meeting Generator** (`/tools/minutes-of-meeting-generator/`): Draft meeting minutes drafts for team meetings, project notes, committees, and follow-ups
+- **Event Name Generator** (`/tools/event-name-generator/`): Brainstorm event name ideas for conferences, parties, retreats, festivals, and galas
+- **Diner Name Generator** (`/tools/diner-name-generator/`): Generate high-quality diner name generator results with custom options and instant export
+- **Project Name Generator Keywords** (`/tools/project-name-generator-keywords/`): Generate project names from your keywords
+- **Disc Jockey Name Generator** (`/tools/disc-jockey-names-generator/`): Generate high-quality disc jockey name generator results with custom options and instant export
+- **Trademark-Friendly Name Generator** (`/tools/trademark-friendly-name-generator/`): Generate high-quality trademark-friendly name generator results with custom options and instant export
+- **Acceptable Use Policy Generator** (`/tools/acceptable-use-policy-generator/`): Draft informational acceptable use policy sections
+- **App Icon Generator** (`/tools/app-icon-generator/`): Generate high-quality app icon generator results with custom options and instant export
+- **App Name Generator** (`/tools/app-name-generator/`): Create app name ideas for founders, designers, and indie builders
+- **Bakery Name Generator** (`/tools/bakery-name-generator/`): Create bakery names for home bakers and food founders
+- **Business Card Generator** (`/tools/business-card-generator/`): Generate high-quality business card generator results with custom options and instant export
+- **Contract Generator** (`/tools/contract-generator/`): Draft informational contract outline sections
+- **DMCA Policy Generator** (`/tools/dmca-policy-generator/`): Draft informational copyright notice policy sections
+- **Estimate Generator** (`/tools/estimate-generator/`): Generate high-quality estimate generator results with custom options and instant export
+- **Farm Name Generator** (`/tools/farm-name-generator/`): Brainstorm farm, ranch, and homestead names for farm brands, cozy games, fiction, and local projects
+- **Food Truck Name Generator** (`/tools/food-truck-name-generator/`): Create food truck names for food founders, writers, and event planners
+- **Hotel Name Generator** (`/tools/hotel-name-generator/`): Generate high-quality hotel name generator results with custom options and instant export
+- **Letterhead Generator** (`/tools/letterhead-generator/`): Create letterhead drafts with clearer prompts and useful variations
+- **Logo Generator** (`/tools/logo-generator/`): Generate high-quality logo generator results with custom options and instant export
+- **Proposal Generator** (`/tools/proposal-generator/`): Generate high-quality proposal generator results with custom options and instant export
+- **Purchase Order Generator** (`/tools/purchase-order-generator/`): Draft sample purchase order sections with review notes
+- **Quotation Generator** (`/tools/quotation-generator/`): Draft sample quotation sections with pricing placeholders
+- **Return Policy Generator** (`/tools/return-policy-generator/`): Draft ecommerce return policy sections for merchant review
+- **Salon Name Generator** (`/tools/salon-name-generator/`): Create salon name ideas for founders, marketers, and small teams
+- **Service Agreement Generator** (`/tools/service-agreement-generator/`): Draft informational service agreement sections
+- **Shopify Product Description Generator** (`/tools/shopify-product-description-generator/`): Draft truthful product description sections
+- **Poster Generator** (`/tools/poster-generator/`): Generate high-quality poster generator results with custom options and instant export
+- **Flyer Generator** (`/tools/flyer-generator/`): Generate high-quality flyer generator results with custom options and instant export
+
+### 8. social-media-tools
+- **YouTube Tag Generator** (`/tools/youtube-tag-generator/`): Generate relevant, SEO-optimized YouTube tags that improve video discoverability
+- **Channel Name Generator** (`/tools/channel-name-generator/`): Create channel names for video creators, streamers, and educators
+- **Display Name Generator** (`/tools/display-name-generator/`): Create display name ideas with clearer prompts and useful variations
+
+### 9. developer-generators
+- **Dummy Data Generator** (`/tools/dummy-data-generator/`): Create dummy data for developers, QA testers, and designers
+- **JSON Schema Generator** (`/tools/json-schema-generator/`): Generate high-quality json schema generator results with custom options and instant export
+- **TypeScript Type Generator** (`/tools/typescript-type-generator/`): Create typescript type ideas for developers, students, and QA testers
+- **SQL Query Generator** (`/tools/sql-query-generator/`): Draft SQL queries with table, column, and review notes
+- **.htaccess Generator** (`/tools/htaccess-generator/`): Generate high-quality .htaccess generator results with custom options and instant export
+- **PWA Manifest Generator** (`/tools/pwa-manifest-generator/`): Create PWA manifest drafts for web developers and product teams
+- **HTML Form Generator** (`/tools/form-generator/`): Generate high-quality html form generator results with custom options and instant export
+- **GraphQL Query Generator** (`/tools/graphql-query-generator/`): Generate high-quality graphql query generator results with custom options and instant export
+- **Mock API Generator** (`/tools/mock-api-generator/`): Create mock api ideas for developers, students, and QA testers
+- **CSS Pattern Generator** (`/tools/pattern-generator/`): Create css pattern drafts for developers, students, and QA testers
+- **CSS Blob Generator** (`/tools/blob-generator/`): Create CSS blob shapes for hero sections, avatars, badges, and background accents
+- **CSS Wave Generator** (`/tools/wave-generator/`): Create CSS and SVG wave dividers for landing pages, section breaks, and web mockups
+- **CSS Code Generator** (`/tools/css-code-generator/`): Generate clean, cross-browser CSS code for buttons, cards, and animations
+- **Favicon Generator** (`/tools/favicon-generator/`): Create favicon drafts with clearer prompts and useful variations
+- **HTML Code Generator** (`/tools/html-code-generator/`): Generate valid HTML5 boilerplate and component code snippets
+- **Token Generator** (`/tools/token-generator/`): Generate browser-local token samples
+
+### 10. creative-generators
+- **Character Backstory Generator** (`/tools/character-backstory-generator/`): Generate high-quality character backstory generator results with custom options and instant export
+- **Worldbuilding Generator** (`/tools/worldbuilding-generator/`): Brainstorm worldbuilding ideas for fantasy, sci-fi, RPG, and fiction settings
+- **Video Prompt Generator** (`/tools/video-prompt-generator/`): Brainstorm video prompt ideas for YouTube, Shorts, Reels, tutorials, and product demos
+- **Album Name Generator** (`/tools/album-name-generator/`): Create album names for musicians, producers, and labels
+- **Book Name Generator** (`/tools/book-name-generator/`): Generate high-quality book name generator results with custom options and instant export
+- **Movie Name Generator** (`/tools/movie-name-generator/`): Generate high-quality movie name generator results with custom options and instant export
+- **College Name Generator** (`/tools/college-name-generator/`): Generate high-quality college name generator results with custom options and instant export
+- **Flower Name Generator** (`/tools/flower-name-generator/`): Create flower names for writers, gardeners, and brand brainstormers
+- **Newspaper Name Generator** (`/tools/newspaper-name-generator/`): Brainstorm newspaper and publication names for fictional towns, school papers, newsletters, and media projects
+- **Plant Name Generator** (`/tools/plant-name-generator/`): Generate high-quality plant name generator results with custom options and instant export
+- **Title Name Generator** (`/tools/title-name-generator/`): Brainstorm title and project name ideas for books, articles, reports, games, and creative projects
+- **Warrior Name Generator** (`/tools/warrior-name-generator/`): Brainstorm warrior character names for fantasy stories, RPGs, games, and faction lists
+- **Cyberpunk Name Generator** (`/tools/cyberpunk-name-generator/`): Generate high-quality cyberpunk name generator results with custom options and instant export
+- **Sci-Fi Name Generator** (`/tools/scifi-name-generator/`): Generate high-quality sci-fi name generator results with custom options and instant export
+- **Fantasy Language Generator** (`/tools/fantasy-language-generator/`): Brainstorm fictional fantasy language ideas for worldbuilding, RPG notes, stories, and naming systems
+- **Cocktail Name Generator** (`/tools/cocktail-name-generator/`): Create cocktail name ideas with clearer prompts and useful variations
+- **DJ Name Generator** (`/tools/dj-name-generator/`): Generate high-quality dj name generator results with custom options and instant export
+- **Mood Board Generator** (`/tools/mood-board-generator/`): Create mood board drafts with clearer prompts and useful variations
+- **Playlist Name Generator** (`/tools/playlist-name-generator/`): Create playlist name ideas with clearer prompts and useful variations
+- **Ship Name Generator** (`/tools/ship-name-generator/`): Create ship name ideas with clearer prompts and useful variations
+- **Sigil Generator** (`/tools/sigil-generator/`): Generate high-quality sigil generator results with custom options and instant export
+- **Spaceship Name Generator** (`/tools/spaceship-name-generator/`): Create spaceship name ideas with clearer prompts and useful variations
+- **Ancient Greek-Inspired Name Generator** (`/tools/ancient-greek-inspired-name-generator/`): Generate high-quality ancient greek-inspired name generator results with custom options and instant export
+- **Roman-Inspired Character Name Generator** (`/tools/roman-inspired-character-name-generator/`): Generate high-quality roman-inspired character name generator results with custom options and instant export
+- **Ancient Egyptian-Inspired Name Generator** (`/tools/ancient-egyptian-inspired-name-generator/`): Generate high-quality ancient egyptian-inspired name generator results with custom options and instant export
+- **Emo Name Generator** (`/tools/emo-name-generator/`): Generate high-quality emo name generator results with custom options and instant export
+
+### 11. ai-writing-generators
+- **Quiz Question Generator** (`/tools/quiz-generator/`): Create quiz question ideas for creators, writers, and planners
+- **Thesis Statement Generator** (`/tools/thesis-statement-generator/`): Create thesis statement ideas for creators, writers, and planners
+- **Landing Page Copy Generator** (`/tools/landing-page-copy-generator/`): Generate high-quality landing page copy generator results with custom options and instant export
+- **Flashcard Generator** (`/tools/flashcard-generator/`): Create flashcard prompts for students, teachers, and trainers
+- **Study Plan Generator** (`/tools/study-plan-generator/`): Create study plan ideas for creators, writers, and planners
+- **Lesson Plan Generator** (`/tools/lesson-plan-generator/`): Generate high-quality lesson plan generator results with custom options and instant export
+- **Research Question Generator** (`/tools/research-question-generator/`): Create research question ideas for creators, writers, and planners
+- **Bibliography Generator** (`/tools/bibliography-generator/`): Create bibliography drafts for students, researchers, and writers
+- **Essay Topic Generator** (`/tools/essay-topic-generator/`): Generate high-quality essay topic generator results with custom options and instant export
+- **Multiple Choice Question Generator** (`/tools/multiple-choice-generator/`): Create multiple choice question ideas for creators, writers, and planners
+- **Sales Email Generator** (`/tools/sales-email-generator/`): Draft respectful sales emails by lead type, CTA, and tone
+- **Follow-Up Email Generator** (`/tools/follow-up-email-generator/`): Generate high-quality follow-up email generator results with custom options and instant export
+- **Productivity Prompt Generator** (`/tools/productivity-prompt-generator/`): Generate high-quality productivity prompt generator results with custom options and instant export
+- **Worksheet Generator** (`/tools/worksheet-generator/`): Create worksheet templates for teachers, tutors, homeschool planning, and study sessions
+- **Rubric Generator** (`/tools/rubric-generator/`): Create rubric ideas for creators, writers, and planners
+- **Assignment Generator** (`/tools/assignment-generator/`): Create assignment brief drafts for teachers, trainers, and course planning
+- **ChatGPT Prompt Generator** (`/tools/chatgpt-prompt-generator/`): Build structured prompt templates with review safeguards
+- **DALL-E Prompt Generator** (`/tools/dalle-prompt-generator/`): Brainstorm rights-aware image prompts for original AI image concepts, campaigns, and creative briefs
+- **Sample Placeholder Text Generator** (`/tools/fake-text-generator/`): Create clearly labeled sample text for mockups, templates, and demos
+
+### 12. seo-generators
+- **Image Alt Text Generator** (`/tools/image-alt-text-generator/`): Generate high-quality image alt text generator results with custom options and instant export
+- **Breadcrumb Generator** (`/tools/breadcrumb-generator/`): Create breadcrumb drafts with clearer prompts and useful variations
+- **Meta Description Generator** (`/tools/meta-description-generator/`): Create meta description drafts with clearer prompts and useful variations
+- **Sitemap Generator** (`/tools/sitemap-generator/`): Create sitemap drafts with clearer prompts and useful variations
+
+### 13. gaming-generators
+- **D&D Character Generator** (`/tools/dnd-character-generator/`): Generate high-quality d&d character generator results with custom options and instant export
+- **Dungeon Generator** (`/tools/dungeon-generator/`): Create dungeon drafts with clearer prompts and useful variations
+- **Viking Name Generator** (`/tools/viking-name-generator/`): Brainstorm Viking and Norse-inspired names for RPG characters, historical fantasy, and worldbuilding
+- **Wizard Name Generator** (`/tools/wizard-name-generator/`): Brainstorm wizard and mage names for fantasy stories, tabletop games, and character sheets
+- **Villain Name Generator** (`/tools/villain-name-generator/`): Brainstorm original villain names for fiction, RPGs, games, comics, and story planning
+- **City Name Generator** (`/tools/city-name-generator/`): Create city names for worldbuilders and game masters
+- **Forest Name Generator** (`/tools/forest-name-generator/`): Generate high-quality forest name generator results with custom options and instant export
+- **Barbarian Name Generator** (`/tools/barbarian-name-generator/`): Create barbarian name ideas with clearer prompts and useful variations
+- **Castle Name Generator** (`/tools/castle-name-generator/`): Create castle name ideas with clearer prompts and useful variations
+- **Cowboy Name Generator** (`/tools/cowboy-name-generator/`): Create cowboy name ideas with clearer prompts and useful variations
+- **Gnome Name Generator** (`/tools/gnome-name-generator/`): Create gnome name ideas with clearer prompts and useful variations
+- **Mermaid Name Generator** (`/tools/mermaid-name-generator/`): Create mermaid name ideas with clearer prompts and useful variations
+- **Monster Name Generator** (`/tools/monster-name-generator/`): Create monster name ideas with clearer prompts and useful variations
+- **Robot Name Generator** (`/tools/robot-name-generator/`): Create robot name ideas with clearer prompts and useful variations
+- **Fantasy Map Generator** (`/tools/fantasy-map-generator/`): Generate fictional region maps and worldbuilding blueprints
 
 ---
 
@@ -106,7 +492,10 @@ Narrative design, media prompts, and artistic concept generators.
 ---
 
 ## Technical Specifications
-- **HTML Standards**: HTML5 Semantic Markup (`<main>`, `<article>`, `<section>`, `<nav>`, `<header>`, `<footer>`).
-- **Structured Data**: JSON-LD (`WebApplication`, `Organization`, `WebSite`, `FAQPage`, `HowTo`, `BreadcrumbList`).
-- **Accessibility**: WCAG 2.1 AA compliant, screen-reader friendly typography options, high contrast dark theme default.
+- **HTML Standards**: HTML5 Semantic Markup.
+- **Structured Data**: JSON-LD (WebApplication, Organization, WebSite, FAQPage, HowTo, BreadcrumbList).
+- **Accessibility**: WCAG 2.1 AA compliant, screen-reader friendly, high contrast dark theme default.
 - **License & Terms**: Free for personal, commercial, and enterprise usage. Outputs are unencumbered by platform copyright.
+- **Contact**: contact@taptogen.com
+- **Main Sitemap**: https://taptogen.com/sitemap-index.xml
+- **Full Directory**: https://taptogen.com/llms-full.txt

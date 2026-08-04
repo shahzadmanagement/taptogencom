@@ -29,6 +29,9 @@ const redirectRoutes = [
   ['/tools/facebook-hashtag-generator/', '/tools/hashtag-generator/'],
   ['/tools/instagram-hashtag-generator/', '/tools/hashtag-generator/'],
   ['/tools/tiktok-hashtag-generator/', '/tools/hashtag-generator/'],
+  ['/cookie-policy/', '/cookies/'],
+  ['/privacy-policy/', '/privacy/'],
+  ['/terms-of-service/', '/terms/'],
 ].map(([from, to]) => ({
   src: `^${from.replaceAll('/', '\\/')}?$`,
   headers: {

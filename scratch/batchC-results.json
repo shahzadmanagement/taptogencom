@@ -1,0 +1,10 @@
+{
+  "totalIssues": 1,
+  "issues": [
+    {
+      "type": "BLOG_EMPTY",
+      "detail": "Blog page shows \"Coming Soon\" — thin EEAT signal, AdSense risk"
+    }
+  ],
+  "brokenRelatedList": []
+}

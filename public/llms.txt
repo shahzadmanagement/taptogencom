@@ -1,6 +1,35 @@
 # TapToGen — Free Online Generator Tools
 
-> TapToGen (https://taptogen.com) is a free, privacy-first online generator tools platform. We offer 205+ instant generator tools covering text, names, fonts, hashtags, bios, usernames, SEO, gaming, security, legal, business, and developer utilities. All processing executes 100% in-browser via local JavaScript with no signup or server logging required.
+> TapToGen (https://taptogen.com) is a free, privacy-first online generator tools platform. We offer 430+ instant generator tools covering text, names, fonts, hashtags, bios, usernames, SEO, gaming, security, legal, business, and developer utilities. All processing executes 100% in-browser via local JavaScript with no signup or server logging required.
+
+## Full Machine-Readable Directory & API Spec
+- Full LLM Specification & Catalog: https://taptogen.com/llms-full.txt
+
+## Categories (12)
+- Name Generators: brand name, username, baby name, character, fantasy, band, podcast, superhero
+- Font & Text Style Generators: fancy text, bold, italic, cursive, glitch, small, strikethrough, underline, vaporwave, reverse
+- Social Media & Tag Generators: YouTube tags, Instagram hashtags, TikTok hashtags, hashtag grouping
+- Bio & Caption Generators: Instagram bio/caption, Twitter bio, TikTok bio, LinkedIn bio/post, Facebook post, YouTube description
+- SEO & Marketing Generators: meta tags, robots.txt, hreflang, schema markup, canonical tags, UTM links, SEO titles, FAQ, press release
+- Gaming & Fantasy Generators: D&D, dragons, elves, Fortnite, Minecraft, Valorant, RPG character, quest, game title
+- Creative & Story Generators: story plot, viral hook, song, meme text, art name, photography name, Midjourney prompt, Stable Diffusion prompt
+- AI Text & Writing Generators: paragraph, sentence, blog outline, headline, citation, cover letter, resume summary, ad copy, product description
+- Business & Brand Generators: business name, domain, slogan, SKU, testimonial, invoice, meeting agenda, coupon code, content calendar
+- Developer & Web Generators: UUID, hash, JSON formatter, color palette, barcode, email tag, license key, recovery code, password
+- Utility Generators: password, passphrase, PIN, lorem ipsum, word counter, text case converter, QR code, text summary
+- Random Generators: random number, coin flip, dice roller, random text/choice, comeback, truth or dare, joke, icebreaker
+
+## Key Policies & Guarantees
+- 100% Client-Side: Inputs and generated data never leave the user's browser
+- Privacy-First: No account creation, tracking cookies, or server logging
+- Commercial Usage: All output is 100% free for commercial use
+- Languages: 18 supported (English, Spanish, French, German, Portuguese, Italian, Dutch, Polish, Russian, Japanese, Korean, Hindi, Indonesian, Turkish, Arabic, Bengali, Swedish, Bulgarian)
+
+## Links & Feeds
+- Full Directory: https://taptogen.com/llms-full.txt
+- Main Sitemap: https://taptogen.com/sitemap-index.xml
+- Contact: contact@taptogen.com
+
 
 ## Full Machine-Readable Directory & API Spec
 - Full LLM Specification & Catalog: https://taptogen.com/llms-full.txt
