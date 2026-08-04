@@ -1,122 +1,89 @@
 ---
 import BaseLayout from 'theme/layouts/BaseLayout.astro';
-
-const articles = [
-  {
-    slug: 'how-to-use-fancy-text-generator',
-    title: 'How to Use a Fancy Text Generator for Instagram Bios and TikTok Profiles',
-    excerpt: 'Learn how Unicode-based fancy text generators work, which platforms support them, and how to get the most compelling results for your social media profiles.',
-    category: 'Text & Fonts',
-    readTime: '5 min read',
-    date: 'July 2026',
-    icon: '✨',
-  },
-  {
-    slug: 'name-generator-guide',
-    title: 'The Complete Guide to Choosing the Right Name Generator for Your Project',
-    excerpt: 'From brand names to character names, gaming handles to baby names — discover how to pick the right generator tool, interpret results, and verify trademark availability.',
-    category: 'Name Generators',
-    readTime: '7 min read',
-    date: 'July 2026',
-    icon: '👤',
-  },
-  {
-    slug: 'seo-meta-tag-best-practices',
-    title: 'SEO Meta Tags in 2026: Best Practices for Titles, Descriptions, and Open Graph',
-    excerpt: 'A practical guide to writing meta titles under 60 characters, meta descriptions that improve CTR, and Open Graph tags that look great when shared on social media.',
-    category: 'SEO Tools',
-    readTime: '8 min read',
-    date: 'June 2026',
-    icon: '🔍',
-  },
-  {
-    slug: 'ai-writing-generator-tips',
-    title: '10 Tips for Getting Better Results From AI Writing Generator Tools',
-    excerpt: 'AI writing generators are powerful starting points — but the quality of your output depends heavily on how you frame your inputs. Learn 10 practical techniques to improve every result.',
-    category: 'AI Writing',
-    readTime: '6 min read',
-    date: 'June 2026',
-    icon: '✍️',
-  },
-  {
-    slug: 'password-generator-security-guide',
-    title: 'Why Client-Side Password Generators Are More Secure Than You Think',
-    excerpt: 'Understand how browser-based password generators work, why they are safer than server-side tools, and best practices for creating and storing strong passwords in 2026.',
-    category: 'Security & Privacy',
-    readTime: '5 min read',
-    date: 'May 2026',
-    icon: '🔐',
-  },
-  {
-    slug: 'business-name-generator-brand-guide',
-    title: 'From Generator to Brand: How to Turn a Business Name Suggestion Into a Real Company Identity',
-    excerpt: 'Using a business name generator is step one. This guide covers trademark checks, domain availability, social handle verification, and building your visual brand from a generated name.',
-    category: 'Business & Brand',
-    readTime: '9 min read',
-    date: 'May 2026',
-    icon: '🏢',
-  },
-];
+import { blogPosts } from '@/data/blog-posts';
 
 const blogSchema = {
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "TapToGen Blog",
-  "url": "https://taptogen.com/blog/",
-  "description": "Practical guides, tips, and insights about generator tools, naming, SEO, AI writing, and digital creativity.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "TapToGen",
-    "url": "https://taptogen.com/"
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  'name': 'TapToGen Blog',
+  'url': 'https://taptogen.com/blog/',
+  'description': 'Practical guides, technical strategies, and tutorials about generator tools, naming, SEO, AI writing, and digital privacy.',
+  'publisher': {
+    '@type': 'Organization',
+    'name': 'TapToGen',
+    'url': 'https://taptogen.com/'
   }
 };
+
+const categories = Array.from(new Set(blogPosts.map(p => p.category)));
 ---
+
 <BaseLayout
-  title="Blog — TapToGen | Generator Tool Guides & Tips"
-  description="Read practical guides about generator tools, naming strategies, SEO best practices, AI writing tips, and digital creativity — all from the TapToGen team."
+  title="Blog — TapToGen | Generator Tool Guides, SEO & Brand Strategies"
+  description="Explore 10 comprehensive guides covering fancy text formatting, business name generation, SEO meta tags, AI prompt engineering, client-side password security, and YouTube SEO."
   canonical="/blog/"
   schema={[blogSchema]}
 >
+  <!-- HERO SECTION -->
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumb"><a href="/">Home</a><span class="sep">›</span><span>Blog</span></div>
-      <span class="section-badge">📖 Blog</span>
-      <h1>TapToGen <span class="gradient-text">Blog</span></h1>
-      <p>Practical guides, tips, and strategies for generator tools, naming, SEO, and digital creativity</p>
+      <span class="section-badge">📖 Guides & Research</span>
+      <h1>TapToGen <span class="gradient-text">Blog & Guides</span></h1>
+      <p>Research-backed guides, technical strategies, and tutorials for generator tools, naming, SEO, and digital creativity</p>
     </div>
   </section>
 
-  <section class="tools-section" style="padding-top:0;">
+  <!-- BLOG GRID SECTION -->
+  <section class="tools-section" style="padding-top: 0; padding-bottom: 80px;">
     <div class="container">
-      <div class="tools-grid" style="grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px;">
-        {articles.map((article) => (
-          <article class="tool-card" style="display:flex;flex-direction:column;gap:12px;padding:28px;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
-              <span style="font-size:1.6rem;">{article.icon}</span>
-              <span class="tool-tag" style="font-size:0.75rem;">{article.category}</span>
-            </div>
-            <h2 style="font-size:1.05rem;font-weight:700;line-height:1.4;margin:0;">{article.title}</h2>
-            <p style="font-size:0.9rem;color:var(--color-text-secondary);line-height:1.6;flex:1;margin:0;">{article.excerpt}</p>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px;">
-              <span style="font-size:0.8rem;color:var(--color-text-muted);">{article.date} · {article.readTime}</span>
-              <span style="font-size:0.85rem;color:var(--color-accent-1);font-weight:600;">Read Guide →</span>
-            </div>
-          </article>
+      <!-- CATEGORY BADGES -->
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px;">
+        <span class="tool-tag" style="background: var(--gradient-main); color: #fff; padding: 6px 14px; border-radius: 100px; font-weight: 600;">All ({blogPosts.length})</span>
+        {categories.map(cat => (
+          <span class="tool-tag" style="padding: 6px 14px; border-radius: 100px; font-weight: 500;">{cat}</span>
         ))}
       </div>
 
-      <div style="text-align:center;margin-top:60px;padding:40px;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:16px;">
-        <span style="font-size:2.5rem;display:block;margin-bottom:16px;">🔔</span>
-        <h2 style="font-size:1.3rem;margin-bottom:8px;">More Articles Coming Soon</h2>
-        <p style="color:var(--color-text-secondary);margin-bottom:24px;">We publish new practical guides every month covering tools, SEO, naming, and digital strategy.</p>
-        <a href="/tools/" class="btn btn-primary">Explore All 430+ Tools →</a>
+      <!-- ARTICLES GRID -->
+      <div class="tools-grid" style="grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px;">
+        {blogPosts.map((article) => (
+          <article class="tool-card blog-card" style="display: flex; flex-direction: column; gap: 14px; padding: 28px; position: relative;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 1.8rem;">{article.icon}</span>
+              <span class="tool-tag" style="font-size: 0.75rem;">{article.category}</span>
+            </div>
+            
+            <h2 style="font-size: 1.1rem; font-weight: 700; line-height: 1.4; margin: 0;">
+              <a href={`/blog/${article.slug}/`} style="color: inherit; text-decoration: none;" class="article-title-link">
+                {article.title}
+              </a>
+            </h2>
+            
+            <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; flex: 1; margin: 0;">
+              {article.excerpt}
+            </p>
+            
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 12px; padding-top: 16px; border-top: 1px solid var(--color-border); font-size: 0.82rem; color: var(--color-text-muted);">
+              <span>{article.publishDate} • {article.readTime}</span>
+              <a href={`/blog/${article.slug}/`} style="color: var(--color-accent-1); font-weight: 600; text-decoration: none;">Read Guide →</a>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
   <style>
-    .tool-card h2 {
-      font-size: 1.05rem;
+    .blog-card {
+      transition: var(--transition);
+    }
+    .blog-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--color-accent-1);
+    }
+    .article-title-link:hover {
+      color: var(--color-accent-2) !important;
     }
   </style>
 </BaseLayout>
