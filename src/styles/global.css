@@ -1,0 +1,19 @@
+
+/* --- Universal Cross-Device Mobile Responsiveness & iOS Auto-Zoom Prevention --- */
+@media (max-width: 768px) {
+  input, select, textarea, .tool-select, .tool-number, .tool-text, .cmd-palette-input {
+    font-size: 16px !important; /* Prevents iOS Safari auto-zoom on focus */
+  }
+  
+  pre, code, .tool-output, .preview-code, .result-output {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    overflow-x: auto !important;
+    max-width: 100% !important;
+  }
+  
+  .container, .workspace-panel, .tool-workspace, .cmd-palette-modal {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}

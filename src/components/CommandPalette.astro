@@ -111,6 +111,10 @@ const searchableTools = tools.map((tool) => ({
       renderResults();
     }
 
+    function escapeHtml(str) {
+      return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+    }
+
     function renderResults() {
       if (!resultsContainer) return;
       if (filteredTools.length === 0) {
@@ -119,13 +123,13 @@ const searchableTools = tools.map((tool) => ({
       }
 
       const html = filteredTools.slice(0, 30).map((tool, idx) => `
-        <a href="${tool.href}" class="cmd-result-item ${idx === selectedIndex ? 'selected' : ''}" data-index="${idx}">
+        <a href="${escapeHtml(tool.href)}" class="cmd-result-item ${idx === selectedIndex ? 'selected' : ''}" data-index="${idx}">
           <div class="cmd-item-icon">⚡</div>
           <div class="cmd-item-info">
-            <div class="cmd-item-title">${tool.name}</div>
-            <div class="cmd-item-desc">${tool.description}...</div>
+            <div class="cmd-item-title">${escapeHtml(tool.name)}</div>
+            <div class="cmd-item-desc">${escapeHtml(tool.description)}...</div>
           </div>
-          <span class="cmd-item-cat">${tool.category}</span>
+          <span class="cmd-item-cat">${escapeHtml(tool.category)}</span>
         </a>
       `).join('');
 
@@ -235,7 +239,7 @@ const searchableTools = tools.map((tool) => ({
   }
 
   .cmd-palette-modal {
-    width: 100%;
+    width: calc(100vw - 32px);
     max-width: 640px;
     background: #0f172a;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -265,7 +269,7 @@ const searchableTools = tools.map((tool) => ({
     border: none;
     outline: none;
     color: #ffffff;
-    font-size: 1.05rem;
+    font-size: 1rem; /* Prevents iOS Safari zoom */
     font-family: inherit;
   }
 

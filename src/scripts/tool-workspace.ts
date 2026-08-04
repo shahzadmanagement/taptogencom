@@ -10278,4 +10278,77 @@ import { createWorkspace } from './workspace/index';
 trackGeneratorOpen(toolSlug);
 createWorkspace(toolSlug, input, output, generate);
 
+// --- Phase 2 & Phase 3: Multi-Format Exporters, Toast Alerts, & History Persistence ---
+function triggerDownload(content: string, filename: string, mimeType: string) {
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function showToast(message: string) {
+  let toast = document.getElementById('taptogen-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'taptogen-toast';
+    toast.style.cssText = 'position:fixed;bottom:24px;right:24px;background:rgba(15,23,42,0.9);color:#fff;padding:12px 20px;border-radius:10px;font-size:0.875rem;font-weight:500;z-index:9999;box-shadow:0 10px 25px rgba(0,0,0,0.3);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.1);transition:opacity 0.3s ease,transform 0.3s ease;opacity:0;transform:translateY(10px);pointer-events:none;';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.style.opacity = '1';
+  toast.style.transform = 'translateY(0)';
+  setTimeout(() => {
+    if (toast) {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(10px)';
+    }
+  }, 2500);
+}
+
+// Wire Download Toolbar Buttons
+document.getElementById('btn-download-txt')?.addEventListener('click', () => {
+  const val = output ? output.value : result;
+  if (!val) return;
+  triggerDownload(val, `${toolSlug}-output.txt`, 'text/plain;charset=utf-8');
+  showToast('📥 Downloaded as TXT file');
+});
+
+document.getElementById('btn-download-csv')?.addEventListener('click', () => {
+  const val = output ? output.value : result;
+  if (!val) return;
+  const rows = val.split('\n').map(line => `"${line.replace(/"/g, '""')}"`).join('\n');
+  const csvContent = `Output\n${rows}`;
+  triggerDownload(csvContent, `${toolSlug}-output.csv`, 'text/csv;charset=utf-8');
+  showToast('📊 Downloaded as CSV file');
+});
+
+document.getElementById('btn-download-md')?.addEventListener('click', () => {
+  const val = output ? output.value : result;
+  if (!val) return;
+  const mdContent = `# ${titleCase(toolSlug.replace(/-/g, ' '))}\n\n\`\`\`\n${val}\n\`\`\`\n`;
+  triggerDownload(mdContent, `${toolSlug}-output.md`, 'text/markdown;charset=utf-8');
+  showToast('📝 Downloaded as Markdown file');
+});
+
+document.getElementById('btn-download-html')?.addEventListener('click', () => {
+  const val = output ? output.value : result;
+  if (!val) return;
+  const htmlContent = `<!DOCTYPE html>\n<html>\n<head><title>${titleCase(toolSlug.replace(/-/g, ' '))}</title></head>\n<body>\n<pre>${escapeHtml(val)}</pre>\n</body>\n</html>`;
+  triggerDownload(htmlContent, `${toolSlug}-output.html`, 'text/html;charset=utf-8');
+  showToast('🌐 Downloaded as HTML file');
+});
+
+document.getElementById('btn-download-json')?.addEventListener('click', () => {
+  const val = output ? output.value : result;
+  if (!val) return;
+  const jsonContent = JSON.stringify({ tool: toolSlug, timestamp: new Date().toISOString(), output: val.split('\n') }, null, 2);
+  triggerDownload(jsonContent, `${toolSlug}-output.json`, 'application/json;charset=utf-8');
+  showToast('📄 Downloaded as JSON file');
+});
+
 

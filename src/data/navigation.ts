@@ -28,6 +28,7 @@ export const footerNav = {
     { label: 'Contact Us', href: '/contact-us/' },
     { label: 'Privacy Policy', href: '/privacy/' },
     { label: 'Terms of Service', href: '/terms/' },
+    { label: 'Cookie Policy', href: '/cookies/' },
     { label: 'Disclaimer', href: '/disclaimer/' },
     { label: 'Sitemap', href: '/sitemap/' },
   ],
