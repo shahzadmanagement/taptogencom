@@ -47,8 +47,11 @@ body {
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100vw;
   min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body::before {
@@ -64,10 +67,10 @@ body::before {
   z-index: 0;
 }
 
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
-button { cursor: pointer; font-family: inherit; }
-input, textarea, select { font-family: inherit; }
+a { color: inherit; text-decoration: none; touch-action: manipulation; }
+img { max-width: 100%; height: auto; display: block; }
+button { cursor: pointer; font-family: inherit; touch-action: manipulation; min-height: 44px; }
+input, textarea, select { font-family: inherit; touch-action: manipulation; min-height: 44px; }
 
 *:focus-visible { outline: 2px solid var(--color-accent-1); outline-offset: 2px; }
 

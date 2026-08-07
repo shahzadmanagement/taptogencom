@@ -1,18 +1,15 @@
 ---
 import BaseLayout from 'theme/layouts/BaseLayout.astro';
 import { getBreadcrumbs } from '@/lib/search-breadcrumb';
-import { getRelatedTools, type Tool } from '@/data/tools';
-import { noindexToolSlugs, pass20ControlMap } from '@/data/tool-page-data';
-import { getInternalLinks } from '@/lib/search-internal-links';
+import { type Tool } from '@/data/tools';
+import { pass20ControlMap } from '@/data/tool-page-data';
 import { toolHubs } from '@/data/hubs';
 import {
   createLocalizedFaqItems,
   createLocalizedGuide,
   getLanguageSwitchRoute,
-  getLocalizedToolByCanonicalId,
   getLocalizedPageCopy,
   getLocalizedSafetyNote,
-  getLocalizedHubCopy,
   getLocalizedUiLabel,
   getToolLanguageAlternates,
   getSupportedLanguage,
@@ -28,7 +25,6 @@ import HistoryPanel from '@/components/HistoryPanel.astro';
 import KeyboardShortcuts from '@/components/KeyboardShortcuts.astro';
 import IntroSection from '@/components/IntroSection.astro';
 import FaqSection from '@/components/FaqSection.astro';
-import RelatedSection from '@/components/RelatedSection.astro';
 import UniversalLinkingEngine from '@/components/UniversalLinkingEngine.astro';
 import MobileActionBar from '@/components/MobileActionBar.astro';
 import AuthorByline from '@/components/AuthorByline.astro';
@@ -36,7 +32,6 @@ import PresetExamplesSection from '@/components/PresetExamplesSection.astro';
 import ExpertInsightSection from '@/components/ExpertInsightSection.astro';
 import ComparisonSection from '@/components/ComparisonSection.astro';
 import {
-  getUniqueFaqsForTool,
   getPresetsForTool,
   getExpertInsightsForTool,
   getComparisonBlockForTool
@@ -1127,11 +1122,7 @@ const text = ({
   ctaBtn: 'Go to Generator'
 };
 
-const internalLinks = getInternalLinks(Astro.url.pathname, language);
 const matchingHub = toolHubs.find((hub) => hub.slug === tool.categorySlug || hub.categorySlugs.includes(tool.categorySlug));
-const nextStepHubs = toolHubs
-  .filter((hub) => hub.slug !== matchingHub?.slug && (matchingHub?.relatedHubSlugs.includes(hub.slug) || hub.relatedHubSlugs.includes(matchingHub?.slug || '')))
-  .slice(0, 3);
 
 const faqItems = createLocalizedFaqItems(localized);
 const guideCopy = createLocalizedGuide(tool, localized);

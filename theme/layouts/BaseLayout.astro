@@ -628,10 +628,18 @@ const localizeLabel = (href: string, label: string) => isSpanish ? (footerLabelM
       }
     });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate-in'); observer.unobserve(e.target); }});
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.tool-card, .feature-card, .category-card, .step-card, .faq-item').forEach(el => observer.observe(el));
+    const initAnimations = () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate-in'); observer.unobserve(e.target); }});
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.tool-card, .feature-card, .category-card, .step-card, .faq-item').forEach(el => observer.observe(el));
+    };
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(initAnimations);
+    } else {
+      setTimeout(initAnimations, 200);
+    }
   </script>
   <CommandPalette />
   <PwaInstallBanner />

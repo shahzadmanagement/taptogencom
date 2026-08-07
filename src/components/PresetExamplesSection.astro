@@ -18,7 +18,7 @@ const { presets, toolName } = Astro.props;
       Review these real-world preset examples to see how input prompts and settings transform into optimized outputs.
     </p>
     <div style="display: flex; flex-direction: column; gap: 1rem;">
-      {presets.map((preset, i) => (
+      {presets.map((preset) => (
         <div style="padding: 1rem; border-radius: 8px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
           <div style="font-size: 0.9rem; font-weight: 600; color: #818cf8; margin-bottom: 0.5rem;">
             {preset.title}

@@ -1,19 +1,17 @@
 ---
 import BaseLayout from 'theme/layouts/BaseLayout.astro';
 import { getBreadcrumbs } from '@/lib/search-breadcrumb';
-import { tools, getRelatedTools, type Tool } from '@/data/tools';
+import { tools, type Tool } from '@/data/tools';
 import { getEffectiveGuideCopy, getNoindexSafetyProfile, noindexToolSlugs, pass20ControlMap } from '@/data/tool-page-data';
 import { toolHubs } from '@/data/hubs';
-import { getLanguageSwitchRoute, getLocalizedToolByCanonicalId, getSupportedLanguage, getToolLanguageAlternates, localizedPilotLanguages } from '@/data/localization';
+import { getLocalizedToolByCanonicalId, getToolLanguageAlternates, localizedPilotLanguages } from '@/data/localization';
 import { toolConfigs } from '@/config';
 import MetricsPanel from '@/components/MetricsPanel.astro';
 import DownloadToolbar from '@/components/DownloadToolbar.astro';
 import PreviewTabs from '@/components/PreviewTabs.astro';
 import HistoryPanel from '@/components/HistoryPanel.astro';
 import KeyboardShortcuts from '@/components/KeyboardShortcuts.astro';
-import SchemaMarkup from '@/components/SchemaMarkup.astro';
 import IntroSection from '@/components/IntroSection.astro';
-import ExamplesSection from '@/components/ExamplesSection.astro';
 import FaqSection from '@/components/FaqSection.astro';
 import RelatedSection from '@/components/RelatedSection.astro';
 import AuthorByline from '@/components/AuthorByline.astro';
@@ -172,7 +170,6 @@ const schemas = [
 
 const effectiveGuideCopy = getEffectiveGuideCopy(tool);
 const alternates = getToolLanguageAlternates(slug);
-const localizedSwitchLanguages = localizedPilotLanguages.filter((language) => getLocalizedToolByCanonicalId(slug, language));
 const breadcrumbs = getBreadcrumbs(Astro.url.pathname, 'en', tool.name);
 ---
 <BaseLayout
