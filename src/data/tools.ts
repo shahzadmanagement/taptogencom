@@ -26,7 +26,7 @@ export interface Tool {
   faqItems: { q: string; a: string }[];
   relatedSlugs: string[];
   toolOptions?: ToolOption[];
-  outputFormat?: 'text' | 'html' | 'image' | 'list' | 'ui';
+  outputFormat?: 'text' | 'html' | 'image' | 'list' | 'ui' | 'code';
   disclaimer?: string;
 }
 
@@ -50,7 +50,7 @@ export const tools: Tool[] = [
       "unicode text converter"
     ],
     "metaTitle": "Fancy Text Generator - Copy & Paste 50+ Aesthetic Fonts",
-    "metaDescription": "Generate stylish fancy text with 50+ aesthetic fonts, symbols, and decorations. Copy and paste cursive, bold, gothic, small caps, and bubble styles for.",
+    "metaDescription": "Generate stylish fancy text with 50+ aesthetic fonts, symbols, and decorations. Copy and paste cursive, bold, gothic, small caps, and bubble styles instantly.",
     "userIntent": "User wants to convert plain text into decorative Unicode font styles for social media.",
     "generatorType": "text-transform",
     "popular": true,
@@ -286,7 +286,7 @@ export const tools: Tool[] = [
     "tagline": "Create compelling Instagram bios that attract followers and reflect your personality",
     "description": "The <strong>Instagram Bio Generator</strong> is a free browser-based tool for generating instagram bio generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "instagram bio generator",
     "secondaryKeywords": [
       "instagram bio generator",
@@ -336,7 +336,7 @@ export const tools: Tool[] = [
     "tagline": "Generate HTML meta tags, Open Graph tags, and Twitter Cards for perfect SEO",
     "description": "The <strong>Meta Tag Generator</strong> is a free browser-based tool for generating meta tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "meta tag generator",
     "secondaryKeywords": [
       "meta tag generator",
@@ -386,7 +386,7 @@ export const tools: Tool[] = [
     "tagline": "Convert text to bold Unicode characters for social media bios and posts",
     "description": "The <strong>Bold Text Generator</strong> is a free browser-based tool for generating bold text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "bold text generator",
     "secondaryKeywords": [
       "bold text generator",
@@ -436,7 +436,7 @@ export const tools: Tool[] = [
     "tagline": "Transform text into elegant cursive Unicode fonts for Instagram and TikTok",
     "description": "The <strong>Cursive Text Generator</strong> is a free browser-based tool for generating cursive text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "cursive text generator",
     "secondaryKeywords": [
       "cursive text generator",
@@ -486,7 +486,7 @@ export const tools: Tool[] = [
     "tagline": "Add digital distortion effects to your text for edgy social media aesthetics",
     "description": "The <strong>Glitch Text Generator</strong> is a free browser-based tool for generating glitch text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "glitch text generator",
     "secondaryKeywords": [
       "glitch text generator",
@@ -536,7 +536,7 @@ export const tools: Tool[] = [
     "tagline": "Generate cryptographically strong, memorable passwords with custom rules",
     "description": "The <strong>Password Generator</strong> is a free browser-based tool for generating password generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "password generator",
     "secondaryKeywords": [
       "password generator",
@@ -586,7 +586,7 @@ export const tools: Tool[] = [
     "tagline": "Create custom placeholder text in multiple formats for mockups and prototypes",
     "description": "The <strong>Lorem Ipsum Generator</strong> is a free browser-based tool for generating lorem ipsum generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "lorem ipsum generator",
     "secondaryKeywords": [
       "lorem ipsum generator",
@@ -636,7 +636,7 @@ export const tools: Tool[] = [
     "tagline": "Generate immersive, lore-friendly fantasy names for characters, worlds, and stories",
     "description": "The <strong>Fantasy Name Generator</strong> is a free browser-based tool for generating fantasy name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "fantasy name generator",
     "secondaryKeywords": [
       "fantasy name generator",
@@ -686,7 +686,7 @@ export const tools: Tool[] = [
     "tagline": "Convert text between uppercase, lowercase, title case, camelCase, and more",
     "description": "The <strong>Text Case Converter</strong> is a free browser-based tool for generating text case converter results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "text case converter",
     "secondaryKeywords": [
       "text case converter",
@@ -736,7 +736,7 @@ export const tools: Tool[] = [
     "tagline": "Generate creative, memorable team names for sports, work, and gaming groups",
     "description": "The <strong>Team Name Generator</strong> is a free browser-based tool for generating team name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Name Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "name-generators",
     "primaryKeyword": "team name generator",
     "secondaryKeywords": [
       "team name generator",
@@ -775,7 +775,6 @@ export const tools: Tool[] = [
     "relatedSlugs": [
       "name-generator",
       "username-generator",
-      "team-name-generator",
       "baby-name-generator"
     ]
   },
@@ -786,7 +785,7 @@ export const tools: Tool[] = [
     "tagline": "Build a valid robots.txt file with precise crawler rules and sitemap declaration",
     "description": "The <strong>Robots Txt Generator</strong> is a free browser-based tool for generating robots txt generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "robots txt generator",
     "secondaryKeywords": [
       "robots txt generator",
@@ -836,7 +835,7 @@ export const tools: Tool[] = [
     "tagline": "Count words, characters, sentences, and reading time in real-time",
     "description": "The <strong>Word Counter</strong> is a free browser-based tool for generating word counter results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "word counter",
     "secondaryKeywords": [
       "word counter",
@@ -845,7 +844,7 @@ export const tools: Tool[] = [
     ],
     "metaTitle": "Word Counter — Free Online Tool",
     "metaDescription": "Free Word Counter — generate word counter results instantly in your browser. Customize options, copy results, and export instantly. No signup, 100% private.",
-    "userIntent": "User wants word counter.",
+    "userIntent": "User needs an instant, privacy-focused online tool to count words, characters, sentences, paragraphs, and estimated reading time.",
     "generatorType": "text-transform",
     "popular": false,
     "toolOptions": [],
@@ -886,7 +885,7 @@ export const tools: Tool[] = [
     "tagline": "Generate RFC 4122 compliant UUIDs (v1, v4, v5) for database and API use",
     "description": "The <strong>Uuid Generator</strong> is a free browser-based tool for generating uuid generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "uuid generator",
     "secondaryKeywords": [
       "uuid generator",
@@ -936,7 +935,7 @@ export const tools: Tool[] = [
     "tagline": "Generate truly random numbers with custom ranges, seeds, and formats",
     "description": "The <strong>Random Number Generator</strong> is a free browser-based tool for generating random number generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "random number generator",
     "secondaryKeywords": [
       "random number generator",
@@ -986,7 +985,7 @@ export const tools: Tool[] = [
     "tagline": "Convert text to small superscript and subscript Unicode characters",
     "description": "The <strong>Small Text Generator</strong> is a free browser-based tool for generating small text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "small text generator",
     "secondaryKeywords": [
       "small text generator",
@@ -1036,7 +1035,7 @@ export const tools: Tool[] = [
     "tagline": "Transform text into italic Unicode styles for emphasis on any platform",
     "description": "The <strong>Italic Text Generator</strong> is a free browser-based tool for generating italic text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "italic text generator",
     "secondaryKeywords": [
       "italic text generator",
@@ -1086,7 +1085,7 @@ export const tools: Tool[] = [
     "tagline": "Add ~~strikethrough~~ formatting to text for social media and messaging apps",
     "description": "The <strong>Strikethrough Text Generator</strong> is a free browser-based tool for generating strikethrough text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "strikethrough text generator",
     "secondaryKeywords": [
       "strikethrough text generator",
@@ -1136,7 +1135,7 @@ export const tools: Tool[] = [
     "tagline": "Create underlined text using Unicode for platforms that don't support HTML",
     "description": "The <strong>Underline Text Generator</strong> is a free browser-based tool for generating underline text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "underline text generator",
     "secondaryKeywords": [
       "underline text generator",
@@ -1186,7 +1185,7 @@ export const tools: Tool[] = [
     "tagline": "Transform text into aesthetic wide vaporwave / FULLWIDTH Unicode characters",
     "description": "The <strong>Vaporwave Text Generator</strong> is a free browser-based tool for generating vaporwave text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "vaporwave text generator",
     "secondaryKeywords": [
       "vaporwave text generator",
@@ -1236,7 +1235,7 @@ export const tools: Tool[] = [
     "tagline": "Mirror and reverse text, words, or sentences instantly",
     "description": "The <strong>Reverse Text Generator</strong> is a free browser-based tool for generating reverse text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "reverse text generator",
     "secondaryKeywords": [
       "reverse text generator",
@@ -1286,7 +1285,7 @@ export const tools: Tool[] = [
     "tagline": "Convert any text to 50+ Unicode fonts, symbols, and decorative styles",
     "description": "The <strong>Unicode Text Generator</strong> is a free browser-based tool for generating unicode text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "unicode text generator",
     "secondaryKeywords": [
       "unicode text generator",
@@ -1336,7 +1335,7 @@ export const tools: Tool[] = [
     "tagline": "Craft a punchy Twitter/X bio that communicates your brand in 160 characters",
     "description": "The <strong>Twitter Bio Generator</strong> is a free browser-based tool for generating twitter bio generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "twitter bio generator",
     "secondaryKeywords": [
       "twitter bio generator",
@@ -1386,7 +1385,7 @@ export const tools: Tool[] = [
     "tagline": "Create a catchy TikTok bio that grows your following and shows your personality",
     "description": "The <strong>Tiktok Bio Generator</strong> is a free browser-based tool for generating tiktok bio generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "tiktok bio generator",
     "secondaryKeywords": [
       "tiktok bio generator",
@@ -1436,7 +1435,7 @@ export const tools: Tool[] = [
     "tagline": "Draft a professional LinkedIn About section that showcases your expertise",
     "description": "The <strong>Linkedin Bio Generator</strong> is a free browser-based tool for generating linkedin bio generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "linkedin bio generator",
     "secondaryKeywords": [
       "linkedin bio generator",
@@ -1486,7 +1485,7 @@ export const tools: Tool[] = [
     "tagline": "Find creative, available domain name ideas for your next online project",
     "description": "The <strong>Domain Name Generator</strong> is a free browser-based tool for generating domain name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "domain name generator",
     "secondaryKeywords": [
       "domain name generator",
@@ -1536,7 +1535,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality product name generator results with custom options and instant export",
     "description": "The <strong>Product Name Generator</strong> is a free browser-based tool for generating product name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "product name generator",
     "secondaryKeywords": [
       "product name generator",
@@ -1586,7 +1585,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality baby name generator results with custom options and instant export",
     "description": "The <strong>Baby Name Generator</strong> is a free browser-based tool for generating baby name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Name Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "name-generators",
     "primaryKeyword": "baby name generator",
     "secondaryKeywords": [
       "baby name generator",
@@ -1625,8 +1624,7 @@ export const tools: Tool[] = [
     "relatedSlugs": [
       "name-generator",
       "username-generator",
-      "team-name-generator",
-      "baby-name-generator"
+      "team-name-generator"
     ]
   },
   {
@@ -1636,7 +1634,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality middle name generator results with custom options and instant export",
     "description": "The <strong>Middle Name Generator</strong> is a free browser-based tool for generating middle name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Name Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "name-generators",
     "primaryKeyword": "middle name generator",
     "secondaryKeywords": [
       "middle name generator",
@@ -1686,7 +1684,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality last name generator results with custom options and instant export",
     "description": "The <strong>Last Name Generator</strong> is a free browser-based tool for generating last name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Name Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "name-generators",
     "primaryKeyword": "last name generator",
     "secondaryKeywords": [
       "last name generator",
@@ -1736,7 +1734,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality discord name generator results with custom options and instant export",
     "description": "The <strong>Discord Name Generator</strong> is a free browser-based tool for generating discord name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Name Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "name-generators",
     "primaryKeyword": "discord name generator",
     "secondaryKeywords": [
       "discord name generator",
@@ -1786,7 +1784,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality clan name generator results with custom options and instant export",
     "description": "The <strong>Clan Name Generator</strong> is a free browser-based tool for generating clan name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "clan name generator",
     "secondaryKeywords": [
       "clan name generator",
@@ -1836,7 +1834,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality band name generator results with custom options and instant export",
     "description": "The <strong>Band Name Generator</strong> is a free browser-based tool for generating band name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "band name generator",
     "secondaryKeywords": [
       "band name generator",
@@ -1886,7 +1884,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality superhero name generator results with custom options and instant export",
     "description": "The <strong>Superhero Name Generator</strong> is a free browser-based tool for generating superhero name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "superhero name generator",
     "secondaryKeywords": [
       "superhero name generator",
@@ -1936,7 +1934,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality rap name generator results with custom options and instant export",
     "description": "The <strong>Rap Name Generator</strong> is a free browser-based tool for generating rap name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "rap name generator",
     "secondaryKeywords": [
       "rap name generator",
@@ -1986,7 +1984,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality song name generator results with custom options and instant export",
     "description": "The <strong>Song Name Generator</strong> is a free browser-based tool for generating song name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "song name generator",
     "secondaryKeywords": [
       "song name generator",
@@ -2036,7 +2034,7 @@ export const tools: Tool[] = [
     "tagline": "Generate structured, readable paragraphs for any topic, tone, and audience",
     "description": "The <strong>Paragraph Generator</strong> is a free browser-based tool for generating paragraph generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "paragraph generator",
     "secondaryKeywords": [
       "paragraph generator",
@@ -2086,7 +2084,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality sentence generator results with custom options and instant export",
     "description": "The <strong>Sentence Generator</strong> is a free browser-based tool for generating sentence generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "sentence generator",
     "secondaryKeywords": [
       "sentence generator",
@@ -2136,7 +2134,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality blog name generator results with custom options and instant export",
     "description": "The <strong>Blog Name Generator</strong> is a free browser-based tool for generating blog name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "blog name generator",
     "secondaryKeywords": [
       "blog name generator",
@@ -2186,7 +2184,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality pirate name generator results with custom options and instant export",
     "description": "The <strong>Pirate Name Generator</strong> is a free browser-based tool for generating pirate name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "pirate name generator",
     "secondaryKeywords": [
       "pirate name generator",
@@ -2236,7 +2234,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality medieval name generator results with custom options and instant export",
     "description": "The <strong>Medieval Name Generator</strong> is a free browser-based tool for generating medieval name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "medieval name generator",
     "secondaryKeywords": [
       "medieval name generator",
@@ -2286,7 +2284,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality hreflang tag generator results with custom options and instant export",
     "description": "The <strong>Hreflang Tag Generator</strong> is a free browser-based tool for generating hreflang tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "hreflang tag generator",
     "secondaryKeywords": [
       "hreflang tag generator",
@@ -2336,7 +2334,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality schema tag generator results with custom options and instant export",
     "description": "The <strong>Schema Tag Generator</strong> is a free browser-based tool for generating schema tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "schema tag generator",
     "secondaryKeywords": [
       "schema tag generator",
@@ -2386,7 +2384,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality slug generator results with custom options and instant export",
     "description": "The <strong>Slug Generator</strong> is a free browser-based tool for generating slug generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "slug generator",
     "secondaryKeywords": [
       "slug generator",
@@ -2436,7 +2434,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality hash generator results with custom options and instant export",
     "description": "The <strong>Hash Generator</strong> is a free browser-based tool for generating hash generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "hash generator",
     "secondaryKeywords": [
       "hash generator",
@@ -2486,7 +2484,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality json formatter results with custom options and instant export",
     "description": "The <strong>Json Formatter</strong> is a free browser-based tool for generating json formatter results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "json formatter",
     "secondaryKeywords": [
       "json formatter",
@@ -2536,16 +2534,16 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality coin flip results with custom options and instant export",
     "description": "The <strong>Coin Flip</strong> is a free browser-based tool for generating coin flip results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "coin flip",
     "secondaryKeywords": [
       "coin flip",
       "free coin flip",
       "coin flip online"
     ],
-    "metaTitle": "Coin Flip — Free Online Tool",
+    "metaTitle": "Coin Flip Generator — Free Online Coin Toss Tool",
     "metaDescription": "Free Coin Flip — generate coin flip results instantly in your browser. Customize options, copy results, and export instantly. No signup, 100% private.",
-    "userIntent": "User wants coin flip.",
+    "userIntent": "User needs a fast, fair, and customizable virtual coin flipper to make instant decisions or random selections.",
     "generatorType": "random-combo",
     "popular": false,
     "toolOptions": [],
@@ -2586,7 +2584,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality dice roller results with custom options and instant export",
     "description": "The <strong>Dice Roller</strong> is a free browser-based tool for generating dice roller results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "dice roller",
     "secondaryKeywords": [
       "dice roller",
@@ -2595,7 +2593,7 @@ export const tools: Tool[] = [
     ],
     "metaTitle": "Dice Roller — Free Online Tool",
     "metaDescription": "Free Dice Roller — generate dice roller results instantly in your browser. Customize options, copy results, and export instantly. No signup, 100% private.",
-    "userIntent": "User wants dice roller.",
+    "userIntent": "User needs an instant, versatile virtual dice roller for tabletop gaming, decision making, and random number generation.",
     "generatorType": "random-combo",
     "popular": false,
     "toolOptions": [],
@@ -2636,7 +2634,7 @@ export const tools: Tool[] = [
     "tagline": "Generate harmonious color palettes for UI design, branding, and art",
     "description": "The <strong>Color Palette Generator</strong> is a free browser-based tool for generating color palette generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "color palette generator",
     "secondaryKeywords": [
       "color palette generator",
@@ -2686,7 +2684,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality town name generator results with custom options and instant export",
     "description": "The <strong>Town Name Generator</strong> is a free browser-based tool for generating town name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "town name generator",
     "secondaryKeywords": [
       "town name generator",
@@ -2736,7 +2734,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality kingdom name generator results with custom options and instant export",
     "description": "The <strong>Kingdom Name Generator</strong> is a free browser-based tool for generating kingdom name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "kingdom name generator",
     "secondaryKeywords": [
       "kingdom name generator",
@@ -2786,7 +2784,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality dragon name generator results with custom options and instant export",
     "description": "The <strong>Dragon Name Generator</strong> is a free browser-based tool for generating dragon name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "dragon name generator",
     "secondaryKeywords": [
       "dragon name generator",
@@ -2836,7 +2834,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality wolf name generator results with custom options and instant export",
     "description": "The <strong>Wolf Name Generator</strong> is a free browser-based tool for generating wolf name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "wolf name generator",
     "secondaryKeywords": [
       "wolf name generator",
@@ -2886,7 +2884,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality demon name generator results with custom options and instant export",
     "description": "The <strong>Demon Name Generator</strong> is a free browser-based tool for generating demon name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "demon name generator",
     "secondaryKeywords": [
       "demon name generator",
@@ -2936,7 +2934,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality elf name generator results with custom options and instant export",
     "description": "The <strong>Elf Name Generator</strong> is a free browser-based tool for generating elf name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "elf name generator",
     "secondaryKeywords": [
       "elf name generator",
@@ -2986,7 +2984,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality podcast name generator results with custom options and instant export",
     "description": "The <strong>Podcast Name Generator</strong> is a free browser-based tool for generating podcast name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "podcast name generator",
     "secondaryKeywords": [
       "podcast name generator",
@@ -3036,7 +3034,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality youtube name generator results with custom options and instant export",
     "description": "The <strong>Youtube Name Generator</strong> is a free browser-based tool for generating youtube name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "youtube name generator",
     "secondaryKeywords": [
       "youtube name generator",
@@ -3086,7 +3084,7 @@ export const tools: Tool[] = [
     "tagline": "Generate engaging Instagram captions with hooks, hashtags, and CTAs",
     "description": "The <strong>Instagram Caption Generator</strong> is a free browser-based tool for generating instagram caption generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "instagram caption generator",
     "secondaryKeywords": [
       "instagram caption generator",
@@ -3136,7 +3134,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality nickname generator results with custom options and instant export",
     "description": "The <strong>Nickname Generator</strong> is a free browser-based tool for generating nickname generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Name Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "name-generators",
     "primaryKeyword": "nickname generator",
     "secondaryKeywords": [
       "nickname generator",
@@ -3186,7 +3184,7 @@ export const tools: Tool[] = [
     "tagline": "Generate targeted hashtag sets for Instagram, TikTok, X, and LinkedIn",
     "description": "The <strong>Hashtag Generator</strong> is a free browser-based tool for generating hashtag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Social Media & Tag Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "social-media-tools",
     "primaryKeyword": "hashtag generator",
     "secondaryKeywords": [
       "hashtag generator",
@@ -3236,7 +3234,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality etsy tag generator results with custom options and instant export",
     "description": "The <strong>Etsy Tag Generator</strong> is a free browser-based tool for generating etsy tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "etsy tag generator",
     "secondaryKeywords": [
       "etsy tag generator",
@@ -3286,7 +3284,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality writing prompt generator results with custom options and instant export",
     "description": "The <strong>Writing Prompt Generator</strong> is a free browser-based tool for generating writing prompt generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "writing prompt generator",
     "secondaryKeywords": [
       "writing prompt generator",
@@ -3336,7 +3334,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality text to binary generator results with custom options and instant export",
     "description": "The <strong>Text To Binary Generator</strong> is a free browser-based tool for generating text to binary generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "text to binary generator",
     "secondaryKeywords": [
       "text to binary generator",
@@ -3386,7 +3384,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality morse code generator results with custom options and instant export",
     "description": "The <strong>Morse Code Generator</strong> is a free browser-based tool for generating morse code generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "morse code generator",
     "secondaryKeywords": [
       "morse code generator",
@@ -3436,7 +3434,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality anime name generator results with custom options and instant export",
     "description": "The <strong>Anime Name Generator</strong> is a free browser-based tool for generating anime name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "anime name generator",
     "secondaryKeywords": [
       "anime name generator",
@@ -3486,7 +3484,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality fake name generator results with custom options and instant export",
     "description": "The <strong>Fake Name Generator</strong> is a free browser-based tool for generating fake name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "fake name generator",
     "secondaryKeywords": [
       "fake name generator",
@@ -3536,7 +3534,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality qr code text generator results with custom options and instant export",
     "description": "The <strong>Qr Code Text Generator</strong> is a free browser-based tool for generating qr code text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "qr code text generator",
     "secondaryKeywords": [
       "qr code text generator",
@@ -3586,7 +3584,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality dnd name generator results with custom options and instant export",
     "description": "The <strong>Dnd Name Generator</strong> is a free browser-based tool for generating dnd name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "dnd name generator",
     "secondaryKeywords": [
       "dnd name generator",
@@ -3636,7 +3634,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality orc name generator results with custom options and instant export",
     "description": "The <strong>Orc Name Generator</strong> is a free browser-based tool for generating orc name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "orc name generator",
     "secondaryKeywords": [
       "orc name generator",
@@ -3686,7 +3684,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality witch name generator results with custom options and instant export",
     "description": "The <strong>Witch Name Generator</strong> is a free browser-based tool for generating witch name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "witch name generator",
     "secondaryKeywords": [
       "witch name generator",
@@ -3736,7 +3734,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality alien name generator results with custom options and instant export",
     "description": "The <strong>Alien Name Generator</strong> is a free browser-based tool for generating alien name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "alien name generator",
     "secondaryKeywords": [
       "alien name generator",
@@ -3786,7 +3784,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality vampire name generator results with custom options and instant export",
     "description": "The <strong>Vampire Name Generator</strong> is a free browser-based tool for generating vampire name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "vampire name generator",
     "secondaryKeywords": [
       "vampire name generator",
@@ -3836,7 +3834,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality fairy name generator results with custom options and instant export",
     "description": "The <strong>Fairy Name Generator</strong> is a free browser-based tool for generating fairy name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "fairy name generator",
     "secondaryKeywords": [
       "fairy name generator",
@@ -3886,7 +3884,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality goblin name generator results with custom options and instant export",
     "description": "The <strong>Goblin Name Generator</strong> is a free browser-based tool for generating goblin name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "goblin name generator",
     "secondaryKeywords": [
       "goblin name generator",
@@ -3936,7 +3934,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality character name generator results with custom options and instant export",
     "description": "The <strong>Character Name Generator</strong> is a free browser-based tool for generating character name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "character name generator",
     "secondaryKeywords": [
       "character name generator",
@@ -3986,7 +3984,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality story name generator results with custom options and instant export",
     "description": "The <strong>Story Name Generator</strong> is a free browser-based tool for generating story name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "story name generator",
     "secondaryKeywords": [
       "story name generator",
@@ -4036,7 +4034,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality twitch name generator results with custom options and instant export",
     "description": "The <strong>Twitch Name Generator</strong> is a free browser-based tool for generating twitch name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "twitch name generator",
     "secondaryKeywords": [
       "twitch name generator",
@@ -4086,7 +4084,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality random phrase generator results with custom options and instant export",
     "description": "The <strong>Random Phrase Generator</strong> is a free browser-based tool for generating random phrase generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "random phrase generator",
     "secondaryKeywords": [
       "random phrase generator",
@@ -4136,7 +4134,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality special character generator results with custom options and instant export",
     "description": "The <strong>Special Character Generator</strong> is a free browser-based tool for generating special character generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "special character generator",
     "secondaryKeywords": [
       "special character generator",
@@ -4186,7 +4184,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality ascii text generator results with custom options and instant export",
     "description": "The <strong>Ascii Text Generator</strong> is a free browser-based tool for generating ascii text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "ascii text generator",
     "secondaryKeywords": [
       "ascii text generator",
@@ -4236,7 +4234,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality creepy text generator results with custom options and instant export",
     "description": "The <strong>Creepy Text Generator</strong> is a free browser-based tool for generating creepy text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "creepy text generator",
     "secondaryKeywords": [
       "creepy text generator",
@@ -4286,7 +4284,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality gaming name generator results with custom options and instant export",
     "description": "The <strong>Gaming Name Generator</strong> is a free browser-based tool for generating gaming name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "gaming name generator",
     "secondaryKeywords": [
       "gaming name generator",
@@ -4336,7 +4334,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality guild name generator results with custom options and instant export",
     "description": "The <strong>Guild Name Generator</strong> is a free browser-based tool for generating guild name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "guild name generator",
     "secondaryKeywords": [
       "guild name generator",
@@ -4386,7 +4384,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality planet name generator results with custom options and instant export",
     "description": "The <strong>Planet Name Generator</strong> is a free browser-based tool for generating planet name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "planet name generator",
     "secondaryKeywords": [
       "planet name generator",
@@ -4436,7 +4434,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality island name generator results with custom options and instant export",
     "description": "The <strong>Island Name Generator</strong> is a free browser-based tool for generating island name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "island name generator",
     "secondaryKeywords": [
       "island name generator",
@@ -4486,7 +4484,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality shop name generator results with custom options and instant export",
     "description": "The <strong>Shop Name Generator</strong> is a free browser-based tool for generating shop name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "shop name generator",
     "secondaryKeywords": [
       "shop name generator",
@@ -4536,7 +4534,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality cafe name generator results with custom options and instant export",
     "description": "The <strong>Cafe Name Generator</strong> is a free browser-based tool for generating cafe name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "cafe name generator",
     "secondaryKeywords": [
       "cafe name generator",
@@ -4586,7 +4584,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality project name generator results with custom options and instant export",
     "description": "The <strong>Project Name Generator</strong> is a free browser-based tool for generating project name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "project name generator",
     "secondaryKeywords": [
       "project name generator",
@@ -4636,7 +4634,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality stage name generator results with custom options and instant export",
     "description": "The <strong>Stage Name Generator</strong> is a free browser-based tool for generating stage name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "stage name generator",
     "secondaryKeywords": [
       "stage name generator",
@@ -4686,7 +4684,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality wrestling name generator results with custom options and instant export",
     "description": "The <strong>Wrestling Name Generator</strong> is a free browser-based tool for generating wrestling name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "wrestling name generator",
     "secondaryKeywords": [
       "wrestling name generator",
@@ -4736,7 +4734,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality cool text generator results with custom options and instant export",
     "description": "The <strong>Cool Text Generator</strong> is a free browser-based tool for generating cool text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "cool text generator",
     "secondaryKeywords": [
       "cool text generator",
@@ -4786,7 +4784,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality old english text generator results with custom options and instant export",
     "description": "The <strong>Old English Text Generator</strong> is a free browser-based tool for generating old english text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "old english text generator",
     "secondaryKeywords": [
       "old english text generator",
@@ -4836,7 +4834,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality uwu text generator results with custom options and instant export",
     "description": "The <strong>Uwu Text Generator</strong> is a free browser-based tool for generating uwu text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "uwu text generator",
     "secondaryKeywords": [
       "uwu text generator",
@@ -4886,7 +4884,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality leet text generator results with custom options and instant export",
     "description": "The <strong>Leet Text Generator</strong> is a free browser-based tool for generating leet text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "leet text generator",
     "secondaryKeywords": [
       "leet text generator",
@@ -4936,7 +4934,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality random text generator results with custom options and instant export",
     "description": "The <strong>Random Text Generator</strong> is a free browser-based tool for generating random text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "random text generator",
     "secondaryKeywords": [
       "random text generator",
@@ -4986,7 +4984,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality discord timestamp generator results with custom options and instant export",
     "description": "The <strong>Discord Timestamp Generator</strong> is a free browser-based tool for generating discord timestamp generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "discord timestamp generator",
     "secondaryKeywords": [
       "discord timestamp generator",
@@ -5036,7 +5034,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality canonical tag generator results with custom options and instant export",
     "description": "The <strong>Canonical Tag Generator</strong> is a free browser-based tool for generating canonical tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "canonical tag generator",
     "secondaryKeywords": [
       "canonical tag generator",
@@ -5086,7 +5084,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality utm generator results with custom options and instant export",
     "description": "The <strong>Utm Generator</strong> is a free browser-based tool for generating utm generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "utm generator",
     "secondaryKeywords": [
       "utm generator",
@@ -5136,7 +5134,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality gibberish generator results with custom options and instant export",
     "description": "The <strong>Gibberish Generator</strong> is a free browser-based tool for generating gibberish generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "gibberish generator",
     "secondaryKeywords": [
       "gibberish generator",
@@ -5186,7 +5184,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality shakespeare insult generator results with custom options and instant export",
     "description": "The <strong>Shakespeare Insult Generator</strong> is a free browser-based tool for generating shakespeare insult generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "shakespeare insult generator",
     "secondaryKeywords": [
       "shakespeare insult generator",
@@ -5236,7 +5234,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality tiktok name generator results with custom options and instant export",
     "description": "The <strong>Tiktok Name Generator</strong> is a free browser-based tool for generating tiktok name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "tiktok name generator",
     "secondaryKeywords": [
       "tiktok name generator",
@@ -5286,7 +5284,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality instagram name generator results with custom options and instant export",
     "description": "The <strong>Instagram Name Generator</strong> is a free browser-based tool for generating instagram name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "instagram name generator",
     "secondaryKeywords": [
       "instagram name generator",
@@ -5336,7 +5334,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality couple name generator results with custom options and instant export",
     "description": "The <strong>Couple Name Generator</strong> is a free browser-based tool for generating couple name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Name Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "name-generators",
     "primaryKeyword": "couple name generator",
     "secondaryKeywords": [
       "couple name generator",
@@ -5386,7 +5384,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality dwarf name generator results with custom options and instant export",
     "description": "The <strong>Dwarf Name Generator</strong> is a free browser-based tool for generating dwarf name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "dwarf name generator",
     "secondaryKeywords": [
       "dwarf name generator",
@@ -5436,7 +5434,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality tiefling name generator results with custom options and instant export",
     "description": "The <strong>Tiefling Name Generator</strong> is a free browser-based tool for generating tiefling name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "tiefling name generator",
     "secondaryKeywords": [
       "tiefling name generator",
@@ -5486,7 +5484,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality school name generator results with custom options and instant export",
     "description": "The <strong>School Name Generator</strong> is a free browser-based tool for generating school name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "school name generator",
     "secondaryKeywords": [
       "school name generator",
@@ -5536,7 +5534,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality street name generator results with custom options and instant export",
     "description": "The <strong>Street Name Generator</strong> is a free browser-based tool for generating street name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "street name generator",
     "secondaryKeywords": [
       "street name generator",
@@ -5586,7 +5584,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality book club name generator results with custom options and instant export",
     "description": "The <strong>Book Club Name Generator</strong> is a free browser-based tool for generating book club name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "book club name generator",
     "secondaryKeywords": [
       "book club name generator",
@@ -5636,7 +5634,7 @@ export const tools: Tool[] = [
     "tagline": "Create click-worthy, keyword-optimized page titles under 60 characters",
     "description": "The <strong>Seo Title Generator</strong> is a free browser-based tool for generating seo title generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "seo title generator",
     "secondaryKeywords": [
       "seo title generator",
@@ -5686,7 +5684,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality pinterest tag generator results with custom options and instant export",
     "description": "The <strong>Pinterest Tag Generator</strong> is a free browser-based tool for generating pinterest tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Social Media & Tag Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "social-media-tools",
     "primaryKeyword": "pinterest tag generator",
     "secondaryKeywords": [
       "pinterest tag generator",
@@ -5736,7 +5734,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality soundcloud tag generator results with custom options and instant export",
     "description": "The <strong>Soundcloud Tag Generator</strong> is a free browser-based tool for generating soundcloud tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Social Media & Tag Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "social-media-tools",
     "primaryKeyword": "soundcloud tag generator",
     "secondaryKeywords": [
       "soundcloud tag generator",
@@ -5786,7 +5784,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality comeback generator results with custom options and instant export",
     "description": "The <strong>Comeback Generator</strong> is a free browser-based tool for generating comeback generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "comeback generator",
     "secondaryKeywords": [
       "comeback generator",
@@ -5836,7 +5834,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality error message generator results with custom options and instant export",
     "description": "The <strong>Error Message Generator</strong> is a free browser-based tool for generating error message generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "error message generator",
     "secondaryKeywords": [
       "error message generator",
@@ -5886,7 +5884,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality cipher generator results with custom options and instant export",
     "description": "The <strong>Cipher Generator</strong> is a free browser-based tool for generating cipher generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "cipher generator",
     "secondaryKeywords": [
       "cipher generator",
@@ -5936,7 +5934,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality repeat text generator results with custom options and instant export",
     "description": "The <strong>Repeat Text Generator</strong> is a free browser-based tool for generating repeat text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "repeat text generator",
     "secondaryKeywords": [
       "repeat text generator",
@@ -5986,7 +5984,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality magic name generator results with custom options and instant export",
     "description": "The <strong>Magic Name Generator</strong> is a free browser-based tool for generating magic name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "magic name generator",
     "secondaryKeywords": [
       "magic name generator",
@@ -6036,7 +6034,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality angel name generator results with custom options and instant export",
     "description": "The <strong>Angel Name Generator</strong> is a free browser-based tool for generating angel name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "angel name generator",
     "secondaryKeywords": [
       "angel name generator",
@@ -6086,7 +6084,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality tavern name generator results with custom options and instant export",
     "description": "The <strong>Tavern Name Generator</strong> is a free browser-based tool for generating tavern name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "tavern name generator",
     "secondaryKeywords": [
       "tavern name generator",
@@ -6136,7 +6134,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality dungeon name generator results with custom options and instant export",
     "description": "The <strong>Dungeon Name Generator</strong> is a free browser-based tool for generating dungeon name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "dungeon name generator",
     "secondaryKeywords": [
       "dungeon name generator",
@@ -6186,7 +6184,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality cat name generator results with custom options and instant export",
     "description": "The <strong>Cat Name Generator</strong> is a free browser-based tool for generating cat name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Name Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "name-generators",
     "primaryKeyword": "cat name generator",
     "secondaryKeywords": [
       "cat name generator",
@@ -6236,7 +6234,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality horse name generator results with custom options and instant export",
     "description": "The <strong>Horse Name Generator</strong> is a free browser-based tool for generating horse name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Name Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "name-generators",
     "primaryKeyword": "horse name generator",
     "secondaryKeywords": [
       "horse name generator",
@@ -6286,7 +6284,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality twitter name generator results with custom options and instant export",
     "description": "The <strong>Twitter Name Generator</strong> is a free browser-based tool for generating twitter name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "twitter name generator",
     "secondaryKeywords": [
       "twitter name generator",
@@ -6336,7 +6334,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality snapchat name generator results with custom options and instant export",
     "description": "The <strong>Snapchat Name Generator</strong> is a free browser-based tool for generating snapchat name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "snapchat name generator",
     "secondaryKeywords": [
       "snapchat name generator",
@@ -6386,7 +6384,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality linkedin headline generator results with custom options and instant export",
     "description": "The <strong>Linkedin Headline Generator</strong> is a free browser-based tool for generating linkedin headline generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "linkedin headline generator",
     "secondaryKeywords": [
       "linkedin headline generator",
@@ -6436,7 +6434,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality bio generator results with custom options and instant export",
     "description": "The <strong>Bio Generator</strong> is a free browser-based tool for generating bio generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "bio generator",
     "secondaryKeywords": [
       "bio generator",
@@ -6486,7 +6484,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality slogan generator results with custom options and instant export",
     "description": "The <strong>Slogan Generator</strong> is a free browser-based tool for generating slogan generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "slogan generator",
     "secondaryKeywords": [
       "slogan generator",
@@ -6536,7 +6534,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality wifi name generator results with custom options and instant export",
     "description": "The <strong>Wifi Name Generator</strong> is a free browser-based tool for generating wifi name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "wifi name generator",
     "secondaryKeywords": [
       "wifi name generator",
@@ -6586,7 +6584,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality color name generator results with custom options and instant export",
     "description": "The <strong>Color Name Generator</strong> is a free browser-based tool for generating color name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "color name generator",
     "secondaryKeywords": [
       "color name generator",
@@ -6636,7 +6634,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality hex color generator results with custom options and instant export",
     "description": "The <strong>Hex Color Generator</strong> is a free browser-based tool for generating hex color generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "hex color generator",
     "secondaryKeywords": [
       "hex color generator",
@@ -6686,7 +6684,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality rgb generator results with custom options and instant export",
     "description": "The <strong>Rgb Generator</strong> is a free browser-based tool for generating rgb generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "rgb generator",
     "secondaryKeywords": [
       "rgb generator",
@@ -6736,7 +6734,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality ai prompt generator results with custom options and instant export",
     "description": "The <strong>Ai Prompt Generator</strong> is a free browser-based tool for generating ai prompt generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "ai prompt generator",
     "secondaryKeywords": [
       "ai prompt generator",
@@ -6786,7 +6784,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality midjourney prompt generator results with custom options and instant export",
     "description": "The <strong>Midjourney Prompt Generator</strong> is a free browser-based tool for generating midjourney prompt generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "midjourney prompt generator",
     "secondaryKeywords": [
       "midjourney prompt generator",
@@ -6836,7 +6834,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality passphrase generator results with custom options and instant export",
     "description": "The <strong>Passphrase Generator</strong> is a free browser-based tool for generating passphrase generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "passphrase generator",
     "secondaryKeywords": [
       "passphrase generator",
@@ -6886,7 +6884,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality pin generator results with custom options and instant export",
     "description": "The <strong>Pin Generator</strong> is a free browser-based tool for generating pin generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "pin generator",
     "secondaryKeywords": [
       "pin generator",
@@ -6936,7 +6934,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality api key generator results with custom options and instant export",
     "description": "The <strong>Api Key Generator</strong> is a free browser-based tool for generating api key generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "api key generator",
     "secondaryKeywords": [
       "api key generator",
@@ -6986,7 +6984,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality privacy policy generator results with custom options and instant export",
     "description": "The <strong>Privacy Policy Generator</strong> is a free browser-based tool for generating privacy policy generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "privacy policy generator",
     "secondaryKeywords": [
       "privacy policy generator",
@@ -7036,7 +7034,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality terms generator results with custom options and instant export",
     "description": "The <strong>Terms Generator</strong> is a free browser-based tool for generating terms generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "terms generator",
     "secondaryKeywords": [
       "terms generator",
@@ -7086,7 +7084,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality cookie policy generator results with custom options and instant export",
     "description": "The <strong>Cookie Policy Generator</strong> is a free browser-based tool for generating cookie policy generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "cookie policy generator",
     "secondaryKeywords": [
       "cookie policy generator",
@@ -7136,7 +7134,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality disclaimer generator results with custom options and instant export",
     "description": "The <strong>Disclaimer Generator</strong> is a free browser-based tool for generating disclaimer generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "disclaimer generator",
     "secondaryKeywords": [
       "disclaimer generator",
@@ -7186,7 +7184,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality open graph generator results with custom options and instant export",
     "description": "The <strong>Open Graph Generator</strong> is a free browser-based tool for generating open graph generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "open graph generator",
     "secondaryKeywords": [
       "open graph generator",
@@ -7236,7 +7234,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality twitter card generator results with custom options and instant export",
     "description": "The <strong>Twitter Card Generator</strong> is a free browser-based tool for generating twitter card generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "twitter card generator",
     "secondaryKeywords": [
       "twitter card generator",
@@ -7286,7 +7284,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality youtube description generator results with custom options and instant export",
     "description": "The <strong>Youtube Description Generator</strong> is a free browser-based tool for generating youtube description generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "youtube description generator",
     "secondaryKeywords": [
       "youtube description generator",
@@ -7336,7 +7334,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality tiktok caption generator results with custom options and instant export",
     "description": "The <strong>Tiktok Caption Generator</strong> is a free browser-based tool for generating tiktok caption generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "tiktok caption generator",
     "secondaryKeywords": [
       "tiktok caption generator",
@@ -7386,7 +7384,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality css button generator results with custom options and instant export",
     "description": "The <strong>Css Button Generator</strong> is a free browser-based tool for generating css button generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "css button generator",
     "secondaryKeywords": [
       "css button generator",
@@ -7436,7 +7434,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality box shadow generator results with custom options and instant export",
     "description": "The <strong>Box Shadow Generator</strong> is a free browser-based tool for generating box shadow generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "box shadow generator",
     "secondaryKeywords": [
       "box shadow generator",
@@ -7486,7 +7484,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality border radius generator results with custom options and instant export",
     "description": "The <strong>Border Radius Generator</strong> is a free browser-based tool for generating border radius generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "border radius generator",
     "secondaryKeywords": [
       "border radius generator",
@@ -7536,7 +7534,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality regex generator results with custom options and instant export",
     "description": "The <strong>Regex Generator</strong> is a free browser-based tool for generating regex generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "regex generator",
     "secondaryKeywords": [
       "regex generator",
@@ -7586,7 +7584,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality cron expression generator results with custom options and instant export",
     "description": "The <strong>Cron Expression Generator</strong> is a free browser-based tool for generating cron expression generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "cron expression generator",
     "secondaryKeywords": [
       "cron expression generator",
@@ -7636,7 +7634,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality random letter generator results with custom options and instant export",
     "description": "The <strong>Random Letter Generator</strong> is a free browser-based tool for generating random letter generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "random letter generator",
     "secondaryKeywords": [
       "random letter generator",
@@ -7686,7 +7684,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality random question generator results with custom options and instant export",
     "description": "The <strong>Random Question Generator</strong> is a free browser-based tool for generating random question generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "random question generator",
     "secondaryKeywords": [
       "random question generator",
@@ -7736,7 +7734,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality truth or dare generator results with custom options and instant export",
     "description": "The <strong>Truth Or Dare Generator</strong> is a free browser-based tool for generating truth or dare generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "truth or dare generator",
     "secondaryKeywords": [
       "truth or dare generator",
@@ -7786,7 +7784,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality would you rather generator results with custom options and instant export",
     "description": "The <strong>Would You Rather Generator</strong> is a free browser-based tool for generating would you rather generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "would you rather generator",
     "secondaryKeywords": [
       "would you rather generator",
@@ -7836,7 +7834,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality joke generator results with custom options and instant export",
     "description": "The <strong>Joke Generator</strong> is a free browser-based tool for generating joke generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "joke generator",
     "secondaryKeywords": [
       "joke generator",
@@ -7886,7 +7884,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality compliment generator results with custom options and instant export",
     "description": "The <strong>Compliment Generator</strong> is a free browser-based tool for generating compliment generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "compliment generator",
     "secondaryKeywords": [
       "compliment generator",
@@ -7936,7 +7934,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality email signature generator results with custom options and instant export",
     "description": "The <strong>Email Signature Generator</strong> is a free browser-based tool for generating email signature generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "email signature generator",
     "secondaryKeywords": [
       "email signature generator",
@@ -7986,7 +7984,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality gradient generator results with custom options and instant export",
     "description": "The <strong>Gradient Generator</strong> is a free browser-based tool for generating gradient generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "gradient generator",
     "secondaryKeywords": [
       "gradient generator",
@@ -8036,7 +8034,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality font pairing generator results with custom options and instant export",
     "description": "The <strong>Font Pairing Generator</strong> is a free browser-based tool for generating font pairing generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "font pairing generator",
     "secondaryKeywords": [
       "font pairing generator",
@@ -8086,7 +8084,7 @@ export const tools: Tool[] = [
     "tagline": "Create SEO-structured blog post outlines with H2s, H3s, and key talking points",
     "description": "The <strong>Blog Outline Generator</strong> is a free browser-based tool for generating blog outline generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "blog outline generator",
     "secondaryKeywords": [
       "blog outline generator",
@@ -8136,7 +8134,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality cold email generator results with custom options and instant export",
     "description": "The <strong>Cold Email Generator</strong> is a free browser-based tool for generating cold email generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "cold email generator",
     "secondaryKeywords": [
       "cold email generator",
@@ -8186,7 +8184,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality cover letter generator results with custom options and instant export",
     "description": "The <strong>Cover Letter Generator</strong> is a free browser-based tool for generating cover letter generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "cover letter generator",
     "secondaryKeywords": [
       "cover letter generator",
@@ -8236,7 +8234,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality resume summary generator results with custom options and instant export",
     "description": "The <strong>Resume Summary Generator</strong> is a free browser-based tool for generating resume summary generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "resume summary generator",
     "secondaryKeywords": [
       "resume summary generator",
@@ -8286,7 +8284,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality ad copy generator results with custom options and instant export",
     "description": "The <strong>Ad Copy Generator</strong> is a free browser-based tool for generating ad copy generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "ad copy generator",
     "secondaryKeywords": [
       "ad copy generator",
@@ -8336,7 +8334,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality call to action generator results with custom options and instant export",
     "description": "The <strong>Call To Action Generator</strong> is a free browser-based tool for generating call to action generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "call to action generator",
     "secondaryKeywords": [
       "call to action generator",
@@ -8386,7 +8384,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality product description generator results with custom options and instant export",
     "description": "The <strong>Product Description Generator</strong> is a free browser-based tool for generating product description generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "product description generator",
     "secondaryKeywords": [
       "product description generator",
@@ -8436,7 +8434,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality random emoji generator results with custom options and instant export",
     "description": "The <strong>Random Emoji Generator</strong> is a free browser-based tool for generating random emoji generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "random emoji generator",
     "secondaryKeywords": [
       "random emoji generator",
@@ -8486,7 +8484,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality random country generator results with custom options and instant export",
     "description": "The <strong>Random Country Generator</strong> is a free browser-based tool for generating random country generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "random country generator",
     "secondaryKeywords": [
       "random country generator",
@@ -8536,7 +8534,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality random date generator results with custom options and instant export",
     "description": "The <strong>Random Date Generator</strong> is a free browser-based tool for generating random date generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "random date generator",
     "secondaryKeywords": [
       "random date generator",
@@ -8586,7 +8584,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality random choice generator results with custom options and instant export",
     "description": "The <strong>Random Choice Generator</strong> is a free browser-based tool for generating random choice generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "random choice generator",
     "secondaryKeywords": [
       "random choice generator",
@@ -8636,7 +8634,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality game idea generator results with custom options and instant export",
     "description": "The <strong>Game Idea Generator</strong> is a free browser-based tool for generating game idea generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "game idea generator",
     "secondaryKeywords": [
       "game idea generator",
@@ -8686,7 +8684,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality rpg character generator results with custom options and instant export",
     "description": "The <strong>Rpg Character Generator</strong> is a free browser-based tool for generating rpg character generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "rpg character generator",
     "secondaryKeywords": [
       "rpg character generator",
@@ -8736,7 +8734,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality npc generator results with custom options and instant export",
     "description": "The <strong>Npc Generator</strong> is a free browser-based tool for generating npc generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "npc generator",
     "secondaryKeywords": [
       "npc generator",
@@ -8786,7 +8784,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality quest generator results with custom options and instant export",
     "description": "The <strong>Quest Generator</strong> is a free browser-based tool for generating quest generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "quest generator",
     "secondaryKeywords": [
       "quest generator",
@@ -8836,7 +8834,7 @@ export const tools: Tool[] = [
     "tagline": "Generate compelling story plot ideas with conflict, character arcs, and resolution",
     "description": "The <strong>Story Plot Generator</strong> is a free browser-based tool for generating story plot generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "story plot generator",
     "secondaryKeywords": [
       "story plot generator",
@@ -8886,7 +8884,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality riddle generator results with custom options and instant export",
     "description": "The <strong>Riddle Generator</strong> is a free browser-based tool for generating riddle generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "riddle generator",
     "secondaryKeywords": [
       "riddle generator",
@@ -8936,7 +8934,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality icebreaker generator results with custom options and instant export",
     "description": "The <strong>Icebreaker Generator</strong> is a free browser-based tool for generating icebreaker generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "icebreaker generator",
     "secondaryKeywords": [
       "icebreaker generator",
@@ -8986,7 +8984,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality product title generator results with custom options and instant export",
     "description": "The <strong>Product Title Generator</strong> is a free browser-based tool for generating product title generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "product title generator",
     "secondaryKeywords": [
       "product title generator",
@@ -9036,7 +9034,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality sku generator results with custom options and instant export",
     "description": "The <strong>Sku Generator</strong> is a free browser-based tool for generating sku generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "sku generator",
     "secondaryKeywords": [
       "sku generator",
@@ -9086,7 +9084,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality testimonial generator results with custom options and instant export",
     "description": "The <strong>Testimonial Generator</strong> is a free browser-based tool for generating testimonial generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "testimonial generator",
     "secondaryKeywords": [
       "testimonial generator",
@@ -9136,7 +9134,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality keyword generator results with custom options and instant export",
     "description": "The <strong>Keyword Generator</strong> is a free browser-based tool for generating keyword generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "keyword generator",
     "secondaryKeywords": [
       "keyword generator",
@@ -9186,7 +9184,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality faq generator results with custom options and instant export",
     "description": "The <strong>Faq Generator</strong> is a free browser-based tool for generating faq generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "faq generator",
     "secondaryKeywords": [
       "faq generator",
@@ -9236,7 +9234,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality license key generator results with custom options and instant export",
     "description": "The <strong>License Key Generator</strong> is a free browser-based tool for generating license key generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "license key generator",
     "secondaryKeywords": [
       "license key generator",
@@ -9286,7 +9284,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality recovery code generator results with custom options and instant export",
     "description": "The <strong>Recovery Code Generator</strong> is a free browser-based tool for generating recovery code generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "recovery code generator",
     "secondaryKeywords": [
       "recovery code generator",
@@ -9336,7 +9334,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality coupon code generator results with custom options and instant export",
     "description": "The <strong>Coupon Code Generator</strong> is a free browser-based tool for generating coupon code generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "coupon code generator",
     "secondaryKeywords": [
       "coupon code generator",
@@ -9386,7 +9384,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality barcode generator results with custom options and instant export",
     "description": "The <strong>Barcode Generator</strong> is a free browser-based tool for generating barcode generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "barcode generator",
     "secondaryKeywords": [
       "barcode generator",
@@ -9436,7 +9434,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality refund policy generator results with custom options and instant export",
     "description": "The <strong>Refund Policy Generator</strong> is a free browser-based tool for generating refund policy generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "refund policy generator",
     "secondaryKeywords": [
       "refund policy generator",
@@ -9486,7 +9484,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality shipping policy generator results with custom options and instant export",
     "description": "The <strong>Shipping Policy Generator</strong> is a free browser-based tool for generating shipping policy generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "shipping policy generator",
     "secondaryKeywords": [
       "shipping policy generator",
@@ -9536,7 +9534,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality affiliate disclosure generator results with custom options and instant export",
     "description": "The <strong>Affiliate Disclosure Generator</strong> is a free browser-based tool for generating affiliate disclosure generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "affiliate disclosure generator",
     "secondaryKeywords": [
       "affiliate disclosure generator",
@@ -9586,7 +9584,7 @@ export const tools: Tool[] = [
     "tagline": "Create professional, print-ready invoices with line items, taxes, and totals",
     "description": "The <strong>Invoice Generator</strong> is a free browser-based tool for generating invoice generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "invoice generator",
     "secondaryKeywords": [
       "invoice generator",
@@ -9636,7 +9634,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality meeting agenda generator results with custom options and instant export",
     "description": "The <strong>Meeting Agenda Generator</strong> is a free browser-based tool for generating meeting agenda generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "meeting agenda generator",
     "secondaryKeywords": [
       "meeting agenda generator",
@@ -9686,7 +9684,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality citation generator results with custom options and instant export",
     "description": "The <strong>Citation Generator</strong> is a free browser-based tool for generating citation generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "citation generator",
     "secondaryKeywords": [
       "citation generator",
@@ -9736,7 +9734,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality linkedin post generator results with custom options and instant export",
     "description": "The <strong>Linkedin Post Generator</strong> is a free browser-based tool for generating linkedin post generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "linkedin post generator",
     "secondaryKeywords": [
       "linkedin post generator",
@@ -9786,7 +9784,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality facebook post generator results with custom options and instant export",
     "description": "The <strong>Facebook Post Generator</strong> is a free browser-based tool for generating facebook post generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "facebook post generator",
     "secondaryKeywords": [
       "facebook post generator",
@@ -9836,7 +9834,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality headline generator results with custom options and instant export",
     "description": "The <strong>Headline Generator</strong> is a free browser-based tool for generating headline generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "headline generator",
     "secondaryKeywords": [
       "headline generator",
@@ -9886,7 +9884,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality meme text generator results with custom options and instant export",
     "description": "The <strong>Meme Text Generator</strong> is a free browser-based tool for generating meme text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "meme text generator",
     "secondaryKeywords": [
       "meme text generator",
@@ -9936,7 +9934,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality startup name generator results with custom options and instant export",
     "description": "The <strong>Startup Name Generator</strong> is a free browser-based tool for generating startup name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "startup name generator",
     "secondaryKeywords": [
       "startup name generator",
@@ -9986,7 +9984,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality photography name generator results with custom options and instant export",
     "description": "The <strong>Photography Name Generator</strong> is a free browser-based tool for generating photography name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "photography name generator",
     "secondaryKeywords": [
       "photography name generator",
@@ -10036,7 +10034,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality art name generator results with custom options and instant export",
     "description": "The <strong>Art Name Generator</strong> is a free browser-based tool for generating art name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "art name generator",
     "secondaryKeywords": [
       "art name generator",
@@ -10086,7 +10084,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality avatar name generator results with custom options and instant export",
     "description": "The <strong>Avatar Name Generator</strong> is a free browser-based tool for generating avatar name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "avatar name generator",
     "secondaryKeywords": [
       "avatar name generator",
@@ -10136,7 +10134,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality video game name generator results with custom options and instant export",
     "description": "The <strong>Video Game Name Generator</strong> is a free browser-based tool for generating video game name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "video game name generator",
     "secondaryKeywords": [
       "video game name generator",
@@ -10186,7 +10184,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality text summary generator results with custom options and instant export",
     "description": "The <strong>Text Summary Generator</strong> is a free browser-based tool for generating text summary generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "text summary generator",
     "secondaryKeywords": [
       "text summary generator",
@@ -10236,7 +10234,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality typography generator results with custom options and instant export",
     "description": "The <strong>Typography Generator</strong> is a free browser-based tool for generating typography generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "typography generator",
     "secondaryKeywords": [
       "typography generator",
@@ -10286,7 +10284,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality wordart generator results with custom options and instant export",
     "description": "The <strong>Wordart Generator</strong> is a free browser-based tool for generating wordart generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "wordart generator",
     "secondaryKeywords": [
       "wordart generator",
@@ -10336,7 +10334,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality social media post generator results with custom options and instant export",
     "description": "The <strong>Social Media Post Generator</strong> is a free browser-based tool for generating social media post generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "social media post generator",
     "secondaryKeywords": [
       "social media post generator",
@@ -10386,7 +10384,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality email subject generator results with custom options and instant export",
     "description": "The <strong>Email Subject Generator</strong> is a free browser-based tool for generating email subject generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "email subject generator",
     "secondaryKeywords": [
       "email subject generator",
@@ -10436,7 +10434,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality drag name generator results with custom options and instant export",
     "description": "The <strong>Drag Name Generator</strong> is a free browser-based tool for generating drag name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "drag name generator",
     "secondaryKeywords": [
       "drag name generator",
@@ -10486,7 +10484,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality gamertag generator results with custom options and instant export",
     "description": "The <strong>Gamertag Generator</strong> is a free browser-based tool for generating gamertag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "gamertag generator",
     "secondaryKeywords": [
       "gamertag generator",
@@ -10536,7 +10534,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality dragonborn name generator results with custom options and instant export",
     "description": "The <strong>Dragonborn Name Generator</strong> is a free browser-based tool for generating dragonborn name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "dragonborn name generator",
     "secondaryKeywords": [
       "dragonborn name generator",
@@ -10586,7 +10584,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality email name generator results with custom options and instant export",
     "description": "The <strong>Email Name Generator</strong> is a free browser-based tool for generating email name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "email name generator",
     "secondaryKeywords": [
       "email name generator",
@@ -10636,7 +10634,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality synonym generator results with custom options and instant export",
     "description": "The <strong>Synonym Generator</strong> is a free browser-based tool for generating synonym generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "synonym generator",
     "secondaryKeywords": [
       "synonym generator",
@@ -10686,7 +10684,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality footnote generator results with custom options and instant export",
     "description": "The <strong>Footnote Generator</strong> is a free browser-based tool for generating footnote generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "footnote generator",
     "secondaryKeywords": [
       "footnote generator",
@@ -10736,7 +10734,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality all caps generator results with custom options and instant export",
     "description": "The <strong>All Caps Generator</strong> is a free browser-based tool for generating all caps generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "all caps generator",
     "secondaryKeywords": [
       "all caps generator",
@@ -10786,7 +10784,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality lowercase generator results with custom options and instant export",
     "description": "The <strong>Lowercase Generator</strong> is a free browser-based tool for generating lowercase generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "lowercase generator",
     "secondaryKeywords": [
       "lowercase generator",
@@ -10836,7 +10834,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality corporate speak generator results with custom options and instant export",
     "description": "The <strong>Corporate Speak Generator</strong> is a free browser-based tool for generating corporate speak generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "corporate speak generator",
     "secondaryKeywords": [
       "corporate speak generator",
@@ -10886,7 +10884,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality random word generator results with custom options and instant export",
     "description": "The <strong>Random Word Generator</strong> is a free browser-based tool for generating random word generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "random word generator",
     "secondaryKeywords": [
       "random word generator",
@@ -10936,7 +10934,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality dialogue tag generator results with custom options and instant export",
     "description": "The <strong>Dialogue Tag Generator</strong> is a free browser-based tool for generating dialogue tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "dialogue tag generator",
     "secondaryKeywords": [
       "dialogue tag generator",
@@ -10986,7 +10984,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality name tag generator results with custom options and instant export",
     "description": "The <strong>Name Tag Generator</strong> is a free browser-based tool for generating name tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "name tag generator",
     "secondaryKeywords": [
       "name tag generator",
@@ -11036,7 +11034,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality graffiti text generator results with custom options and instant export",
     "description": "The <strong>Graffiti Text Generator</strong> is a free browser-based tool for generating graffiti text generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Font & Text Style Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "text-font-generators",
     "primaryKeyword": "graffiti text generator",
     "secondaryKeywords": [
       "graffiti text generator",
@@ -11086,7 +11084,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality tag cloud generator results with custom options and instant export",
     "description": "The <strong>Tag Cloud Generator</strong> is a free browser-based tool for generating tag cloud generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "tag cloud generator",
     "secondaryKeywords": [
       "tag cloud generator",
@@ -11136,7 +11134,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality blog tag generator results with custom options and instant export",
     "description": "The <strong>Blog Tag Generator</strong> is a free browser-based tool for generating blog tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "blog tag generator",
     "secondaryKeywords": [
       "blog tag generator",
@@ -11186,7 +11184,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality random height generator results with custom options and instant export",
     "description": "The <strong>Random Height Generator</strong> is a free browser-based tool for generating random height generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Random Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "random-generators",
     "primaryKeyword": "random height generator",
     "secondaryKeywords": [
       "random height generator",
@@ -11236,7 +11234,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality essay title generator results with custom options and instant export",
     "description": "The <strong>Essay Title Generator</strong> is a free browser-based tool for generating essay title generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "essay title generator",
     "secondaryKeywords": [
       "essay title generator",
@@ -11286,7 +11284,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality ao3 tag generator results with custom options and instant export",
     "description": "The <strong>Ao3 Tag Generator</strong> is a free browser-based tool for generating ao3 tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "ao3 tag generator",
     "secondaryKeywords": [
       "ao3 tag generator",
@@ -11336,7 +11334,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality stable diffusion prompt generator results with custom options and instant export",
     "description": "The <strong>Stable Diffusion Prompt Generator</strong> is a free browser-based tool for generating stable diffusion prompt generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "stable diffusion prompt generator",
     "secondaryKeywords": [
       "stable diffusion prompt generator",
@@ -11386,7 +11384,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality character prompt generator results with custom options and instant export",
     "description": "The <strong>Character Prompt Generator</strong> is a free browser-based tool for generating character prompt generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "character prompt generator",
     "secondaryKeywords": [
       "character prompt generator",
@@ -11436,7 +11434,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality content brief generator results with custom options and instant export",
     "description": "The <strong>Content Brief Generator</strong> is a free browser-based tool for generating content brief generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "content brief generator",
     "secondaryKeywords": [
       "content brief generator",
@@ -11486,7 +11484,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality press release generator results with custom options and instant export",
     "description": "The <strong>Press Release Generator</strong> is a free browser-based tool for generating press release generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "press release generator",
     "secondaryKeywords": [
       "press release generator",
@@ -11536,7 +11534,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality author bio generator results with custom options and instant export",
     "description": "The <strong>Author Bio Generator</strong> is a free browser-based tool for generating author bio generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "author bio generator",
     "secondaryKeywords": [
       "author bio generator",
@@ -11586,7 +11584,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality x post generator results with custom options and instant export",
     "description": "The <strong>X Post Generator</strong> is a free browser-based tool for generating x post generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Bio & Caption Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "bio-caption-generators",
     "primaryKeyword": "x post generator",
     "secondaryKeywords": [
       "x post generator",
@@ -11636,7 +11634,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality viral hook generator results with custom options and instant export",
     "description": "The <strong>Viral Hook Generator</strong> is a free browser-based tool for generating viral hook generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "AI Text & Writing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "ai-writing-generators",
     "primaryKeyword": "viral hook generator",
     "secondaryKeywords": [
       "viral hook generator",
@@ -11686,7 +11684,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality content calendar generator results with custom options and instant export",
     "description": "The <strong>Content Calendar Generator</strong> is a free browser-based tool for generating content calendar generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "SEO & Marketing Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "seo-generators",
     "primaryKeyword": "content calendar generator",
     "secondaryKeywords": [
       "content calendar generator",
@@ -11736,7 +11734,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality tagline generator results with custom options and instant export",
     "description": "The <strong>Tagline Generator</strong> is a free browser-based tool for generating tagline generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business & Brand Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "tagline generator",
     "secondaryKeywords": [
       "tagline generator",
@@ -11786,7 +11784,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality text shadow generator results with custom options and instant export",
     "description": "The <strong>Text Shadow Generator</strong> is a free browser-based tool for generating text shadow generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "text shadow generator",
     "secondaryKeywords": [
       "text shadow generator",
@@ -11836,7 +11834,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality css grid generator results with custom options and instant export",
     "description": "The <strong>Css Grid Generator</strong> is a free browser-based tool for generating css grid generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "css grid generator",
     "secondaryKeywords": [
       "css grid generator",
@@ -11886,7 +11884,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality flexbox generator results with custom options and instant export",
     "description": "The <strong>Flexbox Generator</strong> is a free browser-based tool for generating flexbox generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "flexbox generator",
     "secondaryKeywords": [
       "flexbox generator",
@@ -11936,7 +11934,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality html table generator results with custom options and instant export",
     "description": "The <strong>Html Table Generator</strong> is a free browser-based tool for generating html table generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "html table generator",
     "secondaryKeywords": [
       "html table generator",
@@ -12729,7 +12727,7 @@ export const tools: Tool[] = [
     "tagline": "Generate tailored jwt token generator options with custom style filters, format controls, and instant copy/export options.",
     "description": "The <strong>JWT Token Generator</strong> is a free browser-based tool for generating jwt generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "jwt generator",
     "secondaryKeywords": [
       "free jwt generator",
@@ -12776,7 +12774,7 @@ export const tools: Tool[] = [
     "tagline": "Generate tailored random id generator options with custom style filters, format controls, and instant copy/export options.",
     "description": "The <strong>Random ID Generator</strong> is a free browser-based tool for generating random id generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Developer & Web Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "developer-generators",
     "primaryKeyword": "random id generator",
     "secondaryKeywords": [
       "free random id generator",
@@ -14482,7 +14480,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality werewolf name generator results with custom options and instant export",
     "description": "The <strong>Werewolf Name Generator</strong> is a free browser-based tool for generating werewolf name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "werewolf name generator",
     "secondaryKeywords": [
       "werewolf name generator",
@@ -15506,7 +15504,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality sibling name generator results with custom options and instant export",
     "description": "The <strong>Sibling Name Generator</strong> is a free browser-based tool for generating sibling name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Human Name Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "sibling name generator",
     "secondaryKeywords": [
       "sibling name generator",
@@ -15605,7 +15603,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality name generator wheel results with custom options and instant export",
     "description": "The <strong>Name Generator Wheel</strong> is a free browser-based tool for generating name generator wheel results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "name generator wheel",
     "secondaryKeywords": [
       "name generator wheel",
@@ -15655,7 +15653,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality cake company names generator results with custom options and instant export",
     "description": "The <strong>Cake Company Names Generator</strong> is a free browser-based tool for generating cake company names generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "cake company names generator",
     "secondaryKeywords": [
       "cake company names generator",
@@ -15705,7 +15703,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality car name generator results with custom options and instant export",
     "description": "The <strong>Car Name Generator</strong> is a free browser-based tool for generating car name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "car name generator",
     "secondaryKeywords": [
       "car name generator",
@@ -15851,7 +15849,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality pet tag generator results with custom options and instant export",
     "description": "The <strong>Pet Tag Generator</strong> is a free browser-based tool for generating pet tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "pet tag generator",
     "secondaryKeywords": [
       "pet tag generator",
@@ -15901,7 +15899,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality dj tag generator results with custom options and instant export",
     "description": "The <strong>Dj Tag Generator</strong> is a free browser-based tool for generating dj tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "dj tag generator",
     "secondaryKeywords": [
       "dj tag generator",
@@ -15951,7 +15949,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality clan tag generator results with custom options and instant export",
     "description": "The <strong>Clan Tag Generator</strong> is a free browser-based tool for generating clan tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "clan tag generator",
     "secondaryKeywords": [
       "clan tag generator",
@@ -16001,7 +15999,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality hang tag generator results with custom options and instant export",
     "description": "The <strong>Hang Tag Generator</strong> is a free browser-based tool for generating hang tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "hang tag generator",
     "secondaryKeywords": [
       "hang tag generator",
@@ -16051,7 +16049,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality art tag generator results with custom options and instant export",
     "description": "The <strong>Art Tag Generator</strong> is a free browser-based tool for generating art tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "art tag generator",
     "secondaryKeywords": [
       "art tag generator",
@@ -16101,7 +16099,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality email tag generator results with custom options and instant export",
     "description": "The <strong>Email Tag Generator</strong> is a free browser-based tool for generating email tag generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Utility Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "utility-generators",
     "primaryKeyword": "email tag generator",
     "secondaryKeywords": [
       "email tag generator",
@@ -16151,7 +16149,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality tag team name generator results with custom options and instant export",
     "description": "The <strong>Tag Team Name Generator</strong> is a free browser-based tool for generating tag team name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "tag team name generator",
     "secondaryKeywords": [
       "tag team name generator",
@@ -16391,7 +16389,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality goth name generator results with custom options and instant export",
     "description": "The <strong>Goth Name Generator</strong> is a free browser-based tool for generating goth name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Creative & Story Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "creative-generators",
     "primaryKeyword": "goth name generator",
     "secondaryKeywords": [
       "goth name generator",
@@ -16536,7 +16534,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality last name and first name generator results with custom options and instant export",
     "description": "The <strong>Last Name And First Name Generator</strong> is a free browser-based tool for generating last name and first name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Name Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "name-generators",
     "primaryKeyword": "last name and first name generator",
     "secondaryKeywords": [
       "last name and first name generator",
@@ -16828,7 +16826,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality performer names generator results with custom options and instant export",
     "description": "The <strong>Performer Names Generator</strong> is a free browser-based tool for generating performer names generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Business Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "business-generators",
     "primaryKeyword": "performer names generator",
     "secondaryKeywords": [
       "performer names generator",
@@ -17068,7 +17066,7 @@ export const tools: Tool[] = [
     "tagline": "Generate high-quality mountain name generator results with custom options and instant export",
     "description": "The <strong>Mountain Name Generator</strong> is a free browser-based tool for generating mountain name generator results instantly. Configure your options, generate multiple outputs, and copy your favorites to clipboard. No signup required — all processing is 100% client-side.",
     "category": "Gaming & Fantasy Generators",
-    "categorySlug": "general-generators",
+    "categorySlug": "gaming-generators",
     "primaryKeyword": "mountain name generator",
     "secondaryKeywords": [
       "mountain name generator",

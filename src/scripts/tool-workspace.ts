@@ -10310,25 +10310,37 @@ function showToast(message: string) {
   }, 2500);
 }
 
+function getOutputText(): string {
+  const outputEl = document.getElementById('tool-output') as HTMLTextAreaElement | HTMLInputElement | null;
+  if (outputEl && outputEl.value) {
+    return outputEl.value;
+  }
+  const resultDiv = document.getElementById('tool-result') || document.getElementById('tool-output');
+  if (resultDiv) {
+    return resultDiv.innerText || resultDiv.textContent || '';
+  }
+  return '';
+}
+
 // Wire Download Toolbar Buttons
 document.getElementById('btn-download-txt')?.addEventListener('click', () => {
-  const val = output ? output.value : result;
+  const val = getOutputText();
   if (!val) return;
   triggerDownload(val, `${toolSlug}-output.txt`, 'text/plain;charset=utf-8');
   showToast('📥 Downloaded as TXT file');
 });
 
 document.getElementById('btn-download-csv')?.addEventListener('click', () => {
-  const val = output ? output.value : result;
+  const val = getOutputText();
   if (!val) return;
-  const rows = val.split('\n').map(line => `"${line.replace(/"/g, '""')}"`).join('\n');
+  const rows = val.split('\n').map((line: string) => `"${line.replace(/"/g, '""')}"`).join('\n');
   const csvContent = `Output\n${rows}`;
   triggerDownload(csvContent, `${toolSlug}-output.csv`, 'text/csv;charset=utf-8');
   showToast('📊 Downloaded as CSV file');
 });
 
 document.getElementById('btn-download-md')?.addEventListener('click', () => {
-  const val = output ? output.value : result;
+  const val = getOutputText();
   if (!val) return;
   const mdContent = `# ${titleCase(toolSlug.replace(/-/g, ' '))}\n\n\`\`\`\n${val}\n\`\`\`\n`;
   triggerDownload(mdContent, `${toolSlug}-output.md`, 'text/markdown;charset=utf-8');
@@ -10336,7 +10348,7 @@ document.getElementById('btn-download-md')?.addEventListener('click', () => {
 });
 
 document.getElementById('btn-download-html')?.addEventListener('click', () => {
-  const val = output ? output.value : result;
+  const val = getOutputText();
   if (!val) return;
   const htmlContent = `<!DOCTYPE html>\n<html>\n<head><title>${titleCase(toolSlug.replace(/-/g, ' '))}</title></head>\n<body>\n<pre>${escapeHtml(val)}</pre>\n</body>\n</html>`;
   triggerDownload(htmlContent, `${toolSlug}-output.html`, 'text/html;charset=utf-8');
@@ -10344,7 +10356,7 @@ document.getElementById('btn-download-html')?.addEventListener('click', () => {
 });
 
 document.getElementById('btn-download-json')?.addEventListener('click', () => {
-  const val = output ? output.value : result;
+  const val = getOutputText();
   if (!val) return;
   const jsonContent = JSON.stringify({ tool: toolSlug, timestamp: new Date().toISOString(), output: val.split('\n') }, null, 2);
   triggerDownload(jsonContent, `${toolSlug}-output.json`, 'application/json;charset=utf-8');

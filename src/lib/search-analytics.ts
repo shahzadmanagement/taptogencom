@@ -44,6 +44,8 @@ export function getEventsLog(): SearchEvent[] {
   }
 }
 
+export const getLoggedEvents = getEventsLog;
+
 export function trackSearchEvent(event: Omit<SearchEvent, 'timestamp' | 'sessionId'>): void {
   const fullEvent: SearchEvent = {
     ...event,

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from 'theme/layouts/BaseLayout.astro';
-import { blogPosts, getBlogPostBySlug, getRelatedBlogPosts } from '@/data/blog-posts';
-import { getToolBySlug } from '@/data/tools';
+import { blogPosts, getBlogPostBySlug, getRelatedBlogPosts, type BlogPost } from '@/data/blog-posts';
+import { getToolBySlug, type Tool } from '@/data/tools';
 
 export function getStaticPaths() {
   return blogPosts.map((post) => ({
@@ -18,8 +18,8 @@ if (!post) {
 
 const relatedPosts = getRelatedBlogPosts(post.slug, 3);
 const relatedTools = post.relatedToolSlugs
-  .map((toolSlug) => getToolBySlug(toolSlug))
-  .filter((tool): tool is NonNullable<typeof tool> => Boolean(tool));
+  .map((toolSlug: string) => getToolBySlug(toolSlug))
+  .filter((tool): tool is Tool => Boolean(tool));
 
 const blogPostingSchema = {
   '@context': 'https://schema.org',
@@ -99,7 +99,7 @@ const blogPostingSchema = {
         <div class="toc-box-mobile">
           <div class="toc-title">📌 Table of Contents</div>
           <ul>
-            {post.tableOfContents.map((toc) => (
+            {post.tableOfContents.map((toc: { id: string; title: string }) => (
               <li><a href={`#${toc.id}`}>{toc.title}</a></li>
             ))}
           </ul>
@@ -127,7 +127,7 @@ const blogPostingSchema = {
           <div class="related-tools-section" style="margin-top: 50px; padding-top: 40px; border-top: 1px solid var(--color-border);">
             <h3 style="margin-top: 0; font-size: 1.3rem; margin-bottom: 20px;">⚡ Try Free Related Generators</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px;">
-              {relatedTools.map((tool) => (
+              {relatedTools.map((tool: Tool) => (
                 <a href={`/tools/${tool.slug}/`} class="tool-card-mini" style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; text-decoration: none; transition: var(--transition);">
                   <span style="font-size: 1.8rem;">{tool.icon}</span>
                   <div>
@@ -150,7 +150,7 @@ const blogPostingSchema = {
           <h2 style="font-size: 1.6rem; margin-top: 8px;">Related Practical Guides</h2>
         </div>
         <div class="tools-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
-          {relatedPosts.map((rel) => (
+          {relatedPosts.map((rel: BlogPost) => (
             <article class="tool-card" style="display: flex; flex-direction: column; gap: 12px; padding: 24px;">
               <div style="display: flex; align-items: center; gap: 8px;">
                 <span style="font-size: 1.4rem;">{rel.icon}</span>
